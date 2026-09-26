@@ -1,0 +1,74 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  linux:
+    name: linux (pure crates)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust
+        run: rustup show
+
+      - uses: Swatinem/rust-cache@v2
+
+      - name: cargo fmt
+        run: cargo fmt --check
+
+      - name: cargo clippy (pure crates)
+        run: cargo clippy -p gr-core -p gr-parser-api -p gr-parser-winamax -p gr-stats -p gr-equity -- -D warnings
+
+      - name: cargo test (pure crates)
+        run: cargo test -p gr-core -p gr-parser-api -p gr-parser-winamax -p gr-stats -p gr-equity
+
+  windows:
+    name: windows (build + full tests)
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust
+        run: rustup show
+
+      - uses: Swatinem/rust-cache@v2
+
+      - uses: pnpm/action-setup@v4
+        with:
+          package_json_file: ui/package.json
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+          cache-dependency-path: ui/pnpm-lock.yaml
+
+      - name: Install ui dependencies
+        run: pnpm --dir ui install --frozen-lockfile
+
+      - name: ui lint + typecheck
+        run: |
+          pnpm --dir ui lint
+          pnpm --dir ui typecheck
+
+      - name: ui tests
+        run: pnpm --dir ui test
+
+      - name: cargo test (workspace)
+        run: cargo test --workspace
+
+      - name: cargo clippy (workspace)
+        run: cargo clippy --workspace -- -D warnings
+
+      - name: Install tauri-cli
+        run: cargo install tauri-cli --version "^2" --locked
+
+      - name: Build Tauri (no bundle)
+        run: cargo tauri build --no-bundle

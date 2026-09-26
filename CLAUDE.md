@@ -36,7 +36,7 @@ Ce fichier est lu automatiquement par Claude Code. Il fixe **comment** travaille
 - **R-PERF : ne pas régresser les benchs** (`cargo bench -p gr-parser-winamax`, `-p gr-stats`). Si une story touche l'import ou les requêtes, indiquer le résultat avant/après dans le résumé.
 
 ## 4. Commandes
-Pré-requis Windows : Rust stable (MSVC), Visual Studio Build Tools 2022 (C++), Node 20 LTS + pnpm, WebView2, `just` (`winget install Casey.Just`).
+Pré-requis Windows : Rust stable (MSVC), Visual Studio Build Tools 2022 (C++), Node 22 LTS + pnpm, WebView2, `just` (`winget install Casey.Just`).
 
 ```
 just setup          # pnpm install + cargo fetch

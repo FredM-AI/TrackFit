@@ -46,7 +46,7 @@ Le calendrier est serré. En cas de retard, les stories **C** glissent d'abord e
 - `just check` passe. ✅ (fmt, clippy, cargo test, ui lint/typecheck/test)
 - Profil `dev` configuré (`[profile.dev.package."*"] opt-level = 1`). ✅
 
-### M0-3 · CI et release GitHub Actions · M · `TODO`
+### M0-3 · CI et release GitHub Actions · M · `DOING` — CI verte sur la PR le 26/09 (linux 8s, windows 18min20 sans cache). Reste : merger, ajouter les checks obligatoires à la protection de `main`, puis valider `release.yml` avec un tag `v0.0.1`.
 - `ci.yml` :
   - job `linux` (ubuntu-latest) : fmt, clippy et tests des crates pures (`gr-core`, `gr-parser-*`, `gr-stats`, `gr-equity`) ;
   - job `windows` (windows-latest) : build Tauri, tests complets et tests `ui` ;
