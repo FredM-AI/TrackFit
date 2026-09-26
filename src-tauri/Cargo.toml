@@ -1,0 +1,24 @@
+[package]
+name = "graphite"
+version.workspace = true
+description = "Graphite - tracker de poker MTT pour Winamax (100% local)"
+authors = ["Frederic"]
+license.workspace = true
+repository = "https://github.com/FredM-AI/TrackFit"
+edition.workspace = true
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "graphite_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2.6.3", features = [] }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+log = "0.4"
+tauri = { version = "2.11.6", features = [] }
+tauri-plugin-log = "2"
