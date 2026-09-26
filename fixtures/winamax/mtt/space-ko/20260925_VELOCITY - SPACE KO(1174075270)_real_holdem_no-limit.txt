@@ -1,0 +1,4347 @@
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-1-1790319833 - Holdem no limit (25/100/200) - 2026/09/25 07:03:53 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #6 is the button
+Seat 2: Hero (20000, 1€ bounty)
+Seat 3: P0001 (20000, 1€ bounty)
+Seat 4: P0002 (19975, 1€ bounty)
+Seat 5: P0003 (19380, 1€ bounty)
+Seat 6: P0004 (19950, 1€ bounty)
+*** ANTE/BLINDS ***
+Hero posts ante 25
+P0003 posts ante 25
+P0004 posts ante 25
+Hero posts small blind 100
+P0003 posts big blind 200
+Dealt to Hero [9s 2s]
+*** PRE-FLOP *** 
+P0004 folds
+Hero calls 100
+P0003 checks
+*** FLOP *** [6c Ad Kh]
+Hero checks
+P0003 checks
+*** TURN *** [6c Ad Kh][4s]
+Hero bets 380
+P0003 folds
+Hero collected 855 from pot
+*** SUMMARY ***
+Total pot 855 | No rake
+Board: [6c Ad Kh 4s]
+Seat 2: Hero (small blind) won 855
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-2-1790319886 - Holdem no limit (25/100/200) - 2026/09/25 07:04:46 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #2 is the button
+Seat 1: P0005 (20000, 1€ bounty)
+Seat 2: Hero (20250, 1€ bounty)
+Seat 3: P0001 (20000, 1€ bounty)
+Seat 4: P0002 (19975, 1€ bounty)
+Seat 5: P0003 (19155, 1€ bounty)
+Seat 6: P0004 (19925, 1€ bounty)
+*** ANTE/BLINDS ***
+P0003 posts ante 25
+P0004 posts ante 25
+P0005 posts ante 25
+Hero posts ante 25
+P0003 posts small blind 100
+P0004 posts big blind 200
+Dealt to Hero [8d Ad]
+*** PRE-FLOP *** 
+P0005 raises 300 to 500
+Hero calls 500
+P0003 folds
+P0004 folds
+*** FLOP *** [4h Ts 5c]
+P0005 checks
+Hero checks
+*** TURN *** [4h Ts 5c][Jd]
+P0005 checks
+Hero checks
+*** RIVER *** [4h Ts 5c Jd][3h]
+P0005 bets 490
+Hero folds
+P0005 collected 1890 from pot
+*** SUMMARY ***
+Total pot 1890 | No rake
+Board: [4h Ts 5c Jd 3h]
+Seat 1: P0005 won 1890
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-3-1790319919 - Holdem no limit (25/100/200) - 2026/09/25 07:05:19 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #5 is the button
+Seat 1: P0005 (20875, 1€ bounty)
+Seat 2: Hero (19725, 1€ bounty)
+Seat 3: P0001 (20000, 1€ bounty)
+Seat 4: P0002 (19975, 1€ bounty)
+Seat 5: P0003 (19030, 1€ bounty)
+Seat 6: P0004 (19700, 1€ bounty)
+*** ANTE/BLINDS ***
+P0004 posts ante 25
+P0005 posts ante 25
+Hero posts ante 25
+P0001 posts ante 25
+P0002 posts ante 25
+P0003 posts ante 25
+P0004 posts small blind 100
+P0005 posts big blind 200
+Dealt to Hero [9h 8c]
+*** PRE-FLOP *** 
+Hero folds
+P0001 folds
+P0002 folds
+P0003 raises 220 to 420
+P0004 folds
+P0005 raises 840 to 1260
+P0003 calls 840
+*** FLOP *** [6h 8s 6c]
+P0005 checks
+P0003 checks
+*** TURN *** [6h 8s 6c][Jd]
+P0005 checks
+P0003 checks
+*** RIVER *** [6h 8s 6c Jd][3s]
+P0005 bets 969
+P0003 folds
+P0005 collected 3739 from pot
+*** SUMMARY ***
+Total pot 3739 | No rake
+Board: [6h 8s 6c Jd 3s]
+Seat 1: P0005 (big blind) won 3739
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-4-1790319971 - Holdem no limit (25/100/200) - 2026/09/25 07:06:11 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #6 is the button
+Seat 1: P0005 (22360, 1€ bounty)
+Seat 2: Hero (19700, 1€ bounty)
+Seat 3: P0001 (19975, 1€ bounty)
+Seat 4: P0002 (19950, 1€ bounty)
+Seat 5: P0003 (17745, 1€ bounty)
+Seat 6: P0004 (19575, 1€ bounty)
+*** ANTE/BLINDS ***
+P0005 posts ante 25
+Hero posts ante 25
+P0001 posts ante 25
+P0002 posts ante 25
+P0003 posts ante 25
+P0004 posts ante 25
+P0005 posts small blind 100
+Hero posts big blind 200
+Dealt to Hero [Td 9d]
+*** PRE-FLOP *** 
+P0001 folds
+P0002 folds
+P0003 folds
+P0004 calls 200
+P0005 folds
+Hero checks
+*** FLOP *** [Qs 7h 4s]
+Hero checks
+P0004 checks
+*** TURN *** [Qs 7h 4s][7d]
+Hero checks
+P0004 bets 325
+Hero folds
+P0004 collected 975 from pot
+*** SUMMARY ***
+Total pot 975 | No rake
+Board: [Qs 7h 4s 7d]
+Seat 6: P0004 (button) won 975
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-5-1790320024 - Holdem no limit (25/100/200) - 2026/09/25 07:07:04 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #1 is the button
+Seat 1: P0005 (22235, 1€ bounty)
+Seat 2: Hero (19475, 1€ bounty)
+Seat 3: P0001 (19950, 1€ bounty)
+Seat 4: P0002 (19925, 1€ bounty)
+Seat 5: P0003 (17720, 1€ bounty)
+Seat 6: P0004 (20000, 1€ bounty)
+*** ANTE/BLINDS ***
+Hero posts ante 25
+P0001 posts ante 25
+P0005 posts ante 25
+P0002 posts ante 25
+P0003 posts ante 25
+P0004 posts ante 25
+Hero posts small blind 100
+P0001 posts big blind 200
+Dealt to Hero [4h 3c]
+*** PRE-FLOP *** 
+P0002 folds
+P0003 folds
+P0004 folds
+P0005 raises 250 to 450
+Hero folds
+P0001 calls 250
+*** FLOP *** [Kh Td 5s]
+P0001 checks
+P0005 checks
+*** TURN *** [Kh Td 5s][Ac]
+P0001 checks
+P0005 bets 403
+P0001 calls 403
+*** RIVER *** [Kh Td 5s Ac][Js]
+P0001 checks
+P0005 checks
+*** SHOW DOWN ***
+P0005 shows [Jh 8c] (One pair : Jacks)
+P0001 shows [8s As] (One pair : Aces)
+P0001 collected 1956 from pot
+*** SUMMARY ***
+Total pot 1956 | No rake
+Board: [Kh Td 5s Ac Js]
+Seat 1: P0005 (button) showed [Jh 8c] and lost with One pair : Jacks
+Seat 3: P0001 (big blind) showed [8s As] and won 1956 with One pair : Aces
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-6-1790320078 - Holdem no limit (25/100/200) - 2026/09/25 07:07:58 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #2 is the button
+Seat 1: P0005 (21357, 1€ bounty)
+Seat 2: Hero (19350, 1€ bounty)
+Seat 3: P0001 (21028, 1€ bounty)
+Seat 4: P0002 (19900, 1€ bounty)
+Seat 5: P0003 (17695, 1€ bounty)
+Seat 6: P0004 (19975, 1€ bounty)
+*** ANTE/BLINDS ***
+P0001 posts ante 25
+P0002 posts ante 25
+P0005 posts ante 25
+Hero posts ante 25
+P0003 posts ante 25
+P0004 posts ante 25
+P0001 posts small blind 100
+P0002 posts big blind 200
+Dealt to Hero [Tc 4d]
+*** PRE-FLOP *** 
+P0003 folds
+P0004 calls 200
+P0005 folds
+Hero folds
+P0001 raises 400 to 600
+P0002 calls 400
+P0004 calls 400
+*** FLOP *** [8h 6c Ac]
+P0001 checks
+P0002 bets 1268
+P0004 calls 1268
+P0001 calls 1268
+*** TURN *** [8h 6c Ac][Ks]
+P0001 checks
+P0002 checks
+P0004 checks
+*** RIVER *** [8h 6c Ac Ks][5c]
+P0001 bets 3740
+P0002 raises 14267 to 18007 and is all-in
+P0004 calls 18007
+P0001 folds
+*** SHOW DOWN ***
+P0004 shows [7h 9c] (Straight 9 high)
+P0002 shows [Qc 4c] (Flush Ace high)
+P0002 collected 45508 from pot
+*** SUMMARY ***
+Total pot 45508 | No rake
+Board: [8h 6c Ac Ks 5c]
+Seat 4: P0002 (big blind) showed [Qc 4c] and won 45508 with Flush Ace high
+Seat 6: P0004 showed [7h 9c] and lost with Straight 9 high
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-7-1790320141 - Holdem no limit (25/100/200) - 2026/09/25 07:09:01 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #3 is the button
+Seat 1: P0005 (21332, 1€ bounty)
+Seat 2: Hero (19325, 1€ bounty)
+Seat 3: P0001 (15395, 1€ bounty)
+Seat 4: P0002 (45508, 1€ bounty)
+Seat 5: P0003 (17670, 1€ bounty)
+Seat 6: P0004 (75, 1€ bounty)
+*** ANTE/BLINDS ***
+P0002 posts ante 25
+P0003 posts ante 25
+P0005 posts ante 25
+Hero posts ante 25
+P0001 posts ante 25
+P0004 posts ante 25
+P0002 posts small blind 100
+P0003 posts big blind 200
+Dealt to Hero [3d Qh]
+*** PRE-FLOP *** 
+P0004 calls 50 and is all-in
+P0005 folds
+Hero calls 200
+P0001 calls 200
+P0002 raises 45283 to 45483 and is all-in
+P0003 folds
+Hero folds
+P0001 calls 15170 and is all-in
+*** FLOP *** [Ks 4c Kh]
+*** TURN *** [Ks 4c Kh][7c]
+*** RIVER *** [Ks 4c Kh 7c][Tc]
+*** SHOW DOWN ***
+P0001 shows [9s 8c] (One pair : Kings)
+P0004 shows [6d Jh] (One pair : Kings)
+P0002 shows [Ac Kc] (Flush Ace high)
+P0002 collected 61453 from pot
+*** SUMMARY ***
+Total pot 61453 | No rake
+Board: [Ks 4c Kh 7c Tc]
+Seat 3: P0001 (button) showed [9s 8c] and lost with One pair : Kings
+Seat 4: P0002 (small blind) showed [Ac Kc] and won 61453 with Flush Ace high
+Seat 6: P0004 showed [6d Jh] and lost with One pair : Kings
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-8-1790320215 - Holdem no limit (25/100/200) - 2026/09/25 07:10:15 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #4 is the button
+Seat 1: P0005 (21307, 1€ bounty)
+Seat 2: Hero (19100, 1€ bounty)
+Seat 4: P0002 (61453, 1.70€ bounty)
+Seat 5: P0003 (17445, 1€ bounty)
+*** ANTE/BLINDS ***
+P0003 posts ante 25
+P0005 posts ante 25
+Hero posts ante 25
+P0002 posts ante 25
+P0003 posts small blind 100
+P0005 posts big blind 200
+Dealt to Hero [Ks Kd]
+*** PRE-FLOP *** 
+Hero raises 250 to 450
+P0002 folds
+P0003 folds
+P0005 calls 250
+*** FLOP *** [Th 9s Jh]
+P0005 checks
+Hero bets 600
+P0005 calls 600
+*** TURN *** [Th 9s Jh][As]
+P0005 checks
+Hero checks
+*** RIVER *** [Th 9s Jh As][Kh]
+P0005 checks
+Hero checks
+*** SHOW DOWN ***
+Hero shows [Ks Kd] (Trips of Kings)
+P0005 shows [Tc Qh] (Straight Ace high)
+P0005 collected 2300 from pot
+*** SUMMARY ***
+Total pot 2300 | No rake
+Board: [Th 9s Jh As Kh]
+Seat 1: P0005 (big blind) showed [Tc Qh] and won 2300 with Straight Ace high
+Seat 2: Hero showed [Ks Kd] and lost with Trips of Kings
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-9-1790320242 - Holdem no limit (25/100/200) - 2026/09/25 07:10:42 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #5 is the button
+Seat 1: P0005 (22532, 1€ bounty)
+Seat 2: Hero (18025, 1€ bounty)
+Seat 3: P0006 (20000, 1€ bounty)
+Seat 4: P0002 (61428, 1.70€ bounty)
+Seat 5: P0003 (17320, 1€ bounty)
+Seat 6: P0007 (29100, 1€ bounty)
+*** ANTE/BLINDS ***
+P0005 posts ante 25
+Hero posts ante 25
+P0006 posts ante 25
+P0002 posts ante 25
+P0003 posts ante 25
+P0005 posts small blind 100
+Hero posts big blind 200
+Dealt to Hero [9s 8h]
+*** PRE-FLOP *** 
+P0006 folds
+P0002 raises 200 to 400
+P0003 calls 400
+P0005 folds
+Hero calls 200
+*** FLOP *** [Jc 9h 9d]
+Hero checks
+P0002 checks
+P0003 bets 727
+Hero calls 727
+P0002 folds
+*** TURN *** [Jc 9h 9d][Qc]
+Hero checks
+P0003 checks
+*** RIVER *** [Jc 9h 9d Qc][2d]
+Hero bets 2200
+P0003 folds
+Hero collected 5079 from pot
+*** SUMMARY ***
+Total pot 5079 | No rake
+Board: [Jc 9h 9d Qc 2d]
+Seat 2: Hero (big blind) won 5079
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-10-1790320305 - Holdem no limit (25/100/200) - 2026/09/25 07:11:45 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #1 is the button
+Seat 1: P0005 (22407, 1€ bounty)
+Seat 2: Hero (19752, 1€ bounty)
+Seat 3: P0006 (19975, 1€ bounty)
+Seat 4: P0002 (61003, 1.70€ bounty)
+Seat 5: P0003 (16168, 1€ bounty)
+Seat 6: P0007 (29100, 1€ bounty)
+*** ANTE/BLINDS ***
+Hero posts ante 25
+P0006 posts ante 25
+P0005 posts ante 25
+P0002 posts ante 25
+P0003 posts ante 25
+P0007 posts ante 25
+Hero posts small blind 100
+P0006 posts big blind 200
+Dealt to Hero [Th 9s]
+*** PRE-FLOP *** 
+P0002 folds
+P0003 folds
+P0007 folds
+P0005 raises 250 to 450
+Hero folds
+P0006 folds
+P0005 collected 900 from pot
+*** SUMMARY ***
+Total pot 900 | No rake
+Seat 1: P0005 (button) won 900
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-11-1790320322 - Holdem no limit (25/100/200) - 2026/09/25 07:12:02 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #2 is the button
+Seat 1: P0005 (22832, 1€ bounty)
+Seat 2: Hero (19627, 1€ bounty)
+Seat 3: P0006 (19750, 1€ bounty)
+Seat 4: P0002 (60978, 1.70€ bounty)
+Seat 5: P0003 (16143, 1€ bounty)
+Seat 6: P0007 (29075, 1€ bounty)
+*** ANTE/BLINDS ***
+P0006 posts ante 25
+P0002 posts ante 25
+P0005 posts ante 25
+Hero posts ante 25
+P0003 posts ante 25
+P0007 posts ante 25
+P0006 posts small blind 100
+P0002 posts big blind 200
+Dealt to Hero [Th 5h]
+*** PRE-FLOP *** 
+P0003 folds
+P0007 folds
+P0005 folds
+Hero folds
+P0006 raises 400 to 600
+P0002 folds
+P0006 collected 950 from pot
+*** SUMMARY ***
+Total pot 950 | No rake
+Seat 3: P0006 (small blind) won 950
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-12-1790320336 - Holdem no limit (25/100/200) - 2026/09/25 07:12:16 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #3 is the button
+Seat 1: P0005 (22807, 1€ bounty)
+Seat 2: Hero (19602, 1€ bounty)
+Seat 3: P0006 (20075, 1€ bounty)
+Seat 4: P0002 (60753, 1.70€ bounty)
+Seat 5: P0003 (16118, 1€ bounty)
+Seat 6: P0007 (29050, 1€ bounty)
+*** ANTE/BLINDS ***
+P0002 posts ante 25
+P0003 posts ante 25
+P0005 posts ante 25
+Hero posts ante 25
+P0006 posts ante 25
+P0007 posts ante 25
+P0002 posts small blind 100
+P0003 posts big blind 200
+Dealt to Hero [4d 6s]
+*** PRE-FLOP *** 
+P0007 folds
+P0005 folds
+Hero folds
+P0006 raises 650 to 850
+P0002 raises 59878 to 60728 and is all-in
+P0003 folds
+P0006 folds
+P0002 collected 61928 from pot
+*** SUMMARY ***
+Total pot 61928 | No rake
+Seat 4: P0002 (small blind) won 61928
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-13-1790320355 - Holdem no limit (25/100/200) - 2026/09/25 07:12:35 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #4 is the button
+Seat 1: P0005 (22782, 1€ bounty)
+Seat 2: Hero (19577, 1€ bounty)
+Seat 3: P0006 (19200, 1€ bounty)
+Seat 4: P0002 (61928, 1.70€ bounty)
+Seat 5: P0003 (15893, 1€ bounty)
+Seat 6: P0007 (29025, 1€ bounty)
+*** ANTE/BLINDS ***
+P0003 posts ante 25
+P0007 posts ante 25
+P0005 posts ante 25
+Hero posts ante 25
+P0006 posts ante 25
+P0002 posts ante 25
+P0003 posts small blind 100
+P0007 posts big blind 200
+Dealt to Hero [7c 6s]
+*** PRE-FLOP *** 
+P0005 raises 250 to 450
+Hero folds
+P0006 folds
+P0002 calls 450
+P0003 folds
+P0007 folds
+*** FLOP *** [9h 2d 3d]
+P0005 checks
+P0002 bets 878
+P0005 folds
+P0002 collected 2228 from pot
+*** SUMMARY ***
+Total pot 2228 | No rake
+Board: [9h 2d 3d]
+Seat 4: P0002 (button) won 2228
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-14-1790320377 - Holdem no limit (25/100/200) - 2026/09/25 07:12:57 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #5 is the button
+Seat 1: P0005 (22307, 1€ bounty)
+Seat 2: Hero (19552, 1€ bounty)
+Seat 3: P0006 (19175, 1€ bounty)
+Seat 4: P0002 (62803, 1.70€ bounty)
+Seat 5: P0003 (15768, 1€ bounty)
+Seat 6: P0007 (28800, 1€ bounty)
+*** ANTE/BLINDS ***
+P0007 posts ante 25
+P0005 posts ante 25
+Hero posts ante 25
+P0006 posts ante 25
+P0002 posts ante 25
+P0003 posts ante 25
+P0007 posts small blind 100
+P0005 posts big blind 200
+Dealt to Hero [2c Tc]
+*** PRE-FLOP *** 
+Hero folds
+P0006 calls 200
+P0002 folds
+P0003 raises 600 to 800
+P0007 folds
+P0005 folds
+P0006 calls 600
+*** FLOP *** [Th Kh Ac]
+P0006 checks
+P0003 bets 677
+P0006 calls 677
+*** TURN *** [Th Kh Ac][6d]
+P0006 checks
+P0003 bets 2553
+P0006 folds
+P0003 collected 5957 from pot
+*** SUMMARY ***
+Total pot 5957 | No rake
+Board: [Th Kh Ac 6d]
+Seat 5: P0003 (button) won 5957
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-15-1790320440 - Holdem no limit (25/100/200) - 2026/09/25 07:14:00 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #6 is the button
+Seat 1: P0005 (22082, 1€ bounty)
+Seat 2: Hero (19527, 1€ bounty)
+Seat 3: P0006 (17673, 1€ bounty)
+Seat 4: P0002 (62778, 1.70€ bounty)
+Seat 5: P0003 (17670, 1€ bounty)
+Seat 6: P0007 (28675, 1€ bounty)
+*** ANTE/BLINDS ***
+P0005 posts ante 25
+Hero posts ante 25
+P0006 posts ante 25
+P0002 posts ante 25
+P0003 posts ante 25
+P0007 posts ante 25
+P0005 posts small blind 100
+Hero posts big blind 200
+Dealt to Hero [5d Kc]
+*** PRE-FLOP *** 
+P0006 folds
+P0002 folds
+P0003 folds
+P0007 folds
+P0005 calls 100
+Hero checks
+*** FLOP *** [Kh As Td]
+P0005 bets 275
+Hero calls 275
+*** TURN *** [Kh As Td][8d]
+P0005 checks
+Hero checks
+*** RIVER *** [Kh As Td 8d][Ac]
+P0005 checks
+Hero bets 550
+P0005 folds
+Hero collected 1650 from pot
+*** SUMMARY ***
+Total pot 1650 | No rake
+Board: [Kh As Td 8d Ac]
+Seat 2: Hero (big blind) won 1650
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-16-1790320476 - Holdem no limit (25/100/200) - 2026/09/25 07:14:36 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #1 is the button
+Seat 1: P0005 (21582, 1€ bounty)
+Seat 2: Hero (20127, 1€ bounty)
+Seat 3: P0006 (17648, 1€ bounty)
+Seat 4: P0002 (62753, 1.70€ bounty)
+Seat 5: P0003 (17645, 1€ bounty)
+Seat 6: P0007 (28650, 1€ bounty)
+*** ANTE/BLINDS ***
+Hero posts ante 25
+P0006 posts ante 25
+P0005 posts ante 25
+P0002 posts ante 25
+P0003 posts ante 25
+P0007 posts ante 25
+Hero posts small blind 100
+P0006 posts big blind 200
+Dealt to Hero [9h 8c]
+*** PRE-FLOP *** 
+P0002 folds
+P0003 raises 220 to 420
+P0007 folds
+P0005 folds
+Hero folds
+P0006 raises 17203 to 17623 and is all-in
+P0003 folds
+P0006 collected 18293 from pot
+*** SUMMARY ***
+Total pot 18293 | No rake
+Seat 3: P0006 (big blind) won 18293
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-17-1790320492 - Holdem no limit (25/100/200) - 2026/09/25 07:14:52 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #2 is the button
+Seat 1: P0005 (21557, 1€ bounty)
+Seat 2: Hero (20002, 1€ bounty)
+Seat 3: P0006 (18293, 1€ bounty)
+Seat 4: P0002 (62728, 1.70€ bounty)
+Seat 5: P0003 (17200, 1€ bounty)
+Seat 6: P0007 (28625, 1€ bounty)
+*** ANTE/BLINDS ***
+P0006 posts ante 25
+P0002 posts ante 25
+P0005 posts ante 25
+Hero posts ante 25
+P0003 posts ante 25
+P0007 posts ante 25
+P0006 posts small blind 100
+P0002 posts big blind 200
+Dealt to Hero [9c 6d]
+*** PRE-FLOP *** 
+P0003 folds
+P0007 folds
+P0005 folds
+Hero folds
+P0006 calls 100
+P0002 checks
+*** FLOP *** [As 7h Tc]
+P0006 bets 358
+P0002 calls 358
+*** TURN *** [As 7h Tc][Qh]
+P0006 bets 1013
+P0002 calls 1013
+*** RIVER *** [As 7h Tc Qh][4c]
+P0006 checks
+P0002 checks
+*** SHOW DOWN ***
+P0006 shows [9s Ts] (One pair : Tens)
+P0002 shows [6s Ah] (One pair : Aces)
+P0002 collected 3292 from pot
+*** SUMMARY ***
+Total pot 3292 | No rake
+Board: [As 7h Tc Qh 4c]
+Seat 3: P0006 (small blind) showed [9s Ts] and lost with One pair : Tens
+Seat 4: P0002 (big blind) showed [6s Ah] and won 3292 with One pair : Aces
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-18-1790320520 - Holdem no limit (25/100/200) - 2026/09/25 07:15:20 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #3 is the button
+Seat 1: P0005 (21532, 1€ bounty)
+Seat 2: Hero (19977, 1€ bounty)
+Seat 3: P0006 (16697, 1€ bounty)
+Seat 4: P0002 (64424, 1.70€ bounty)
+Seat 5: P0003 (17175, 1€ bounty)
+Seat 6: P0007 (28600, 1€ bounty)
+*** ANTE/BLINDS ***
+P0002 posts ante 25
+P0003 posts ante 25
+P0005 posts ante 25
+Hero posts ante 25
+P0006 posts ante 25
+P0007 posts ante 25
+P0002 posts small blind 100
+P0003 posts big blind 200
+Dealt to Hero [Jd As]
+*** PRE-FLOP *** 
+P0007 folds
+P0005 raises 250 to 450
+Hero raises 1125 to 1575
+P0006 folds
+P0002 folds
+P0003 folds
+P0005 folds
+Hero collected 2475 from pot
+*** SUMMARY ***
+Total pot 2475 | No rake
+Seat 2: Hero won 2475
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-19-1790320548 - Holdem no limit (25/100/200) - 2026/09/25 07:15:48 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #4 is the button
+Seat 2: Hero (20852, 1€ bounty)
+Seat 3: P0006 (16672, 1€ bounty)
+Seat 4: P0002 (64299, 1.70€ bounty)
+Seat 5: P0003 (16950, 1€ bounty)
+Seat 6: P0007 (28575, 1€ bounty)
+*** ANTE/BLINDS ***
+P0003 posts ante 25
+P0007 posts ante 25
+Hero posts ante 25
+P0006 posts ante 25
+P0002 posts ante 25
+P0003 posts small blind 100
+P0007 posts big blind 200
+Dealt to Hero [Td Jd]
+*** PRE-FLOP *** 
+Hero raises 250 to 450
+P0006 raises 1325 to 1775
+P0002 folds
+P0003 folds
+P0007 folds
+Hero calls 1325
+*** FLOP *** [4c 3s 8s]
+Hero checks
+P0006 bets 14872 and is all-in
+Hero folds
+P0006 collected 18847 from pot
+*** SUMMARY ***
+Total pot 18847 | No rake
+Board: [4c 3s 8s]
+Seat 3: P0006 won 18847
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-20-1790320583 - Holdem no limit (25/100/200) - 2026/09/25 07:16:23 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #5 is the button
+Seat 1: P0008 (20000, 1€ bounty)
+Seat 2: Hero (19052, 1€ bounty)
+Seat 3: P0006 (18847, 1€ bounty)
+Seat 4: P0002 (64274, 1.70€ bounty)
+Seat 5: P0003 (16825, 1€ bounty)
+Seat 6: P0007 (28350, 1€ bounty)
+*** ANTE/BLINDS ***
+P0007 posts ante 25
+P0008 posts ante 25
+Hero posts ante 25
+P0006 posts ante 25
+P0002 posts ante 25
+P0003 posts ante 25
+P0007 posts small blind 100
+P0008 posts big blind 200
+Dealt to Hero [4d Jh]
+*** PRE-FLOP *** 
+Hero folds
+P0006 folds
+P0002 calls 200
+P0003 raises 600 to 800
+P0007 calls 700
+P0008 folds
+P0002 calls 600
+*** FLOP *** [Ah 2h 6s]
+P0007 checks
+P0002 checks
+P0003 bets 908
+P0007 folds
+P0002 folds
+P0003 collected 3658 from pot
+*** SUMMARY ***
+Total pot 3658 | No rake
+Board: [Ah 2h 6s]
+Seat 5: P0003 (button) won 3658
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-21-1790320620 - Holdem no limit (25/100/200) - 2026/09/25 07:17:00 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #6 is the button
+Seat 1: P0008 (19775, 1€ bounty)
+Seat 2: Hero (19027, 1€ bounty)
+Seat 3: P0006 (18822, 1€ bounty)
+Seat 4: P0002 (63449, 1.70€ bounty)
+Seat 5: P0003 (18750, 1€ bounty)
+Seat 6: P0007 (27525, 1€ bounty)
+*** ANTE/BLINDS ***
+P0008 posts ante 25
+Hero posts ante 25
+P0006 posts ante 25
+P0002 posts ante 25
+P0003 posts ante 25
+P0007 posts ante 25
+P0008 posts small blind 100
+Hero posts big blind 200
+Dealt to Hero [2h 9s]
+*** PRE-FLOP *** 
+P0006 calls 200
+P0002 raises 400 to 600
+P0003 folds
+P0007 raises 2800 to 3400
+P0008 folds
+Hero folds
+P0006 folds
+P0002 folds
+P0007 collected 4650 from pot
+*** SUMMARY ***
+Total pot 4650 | No rake
+Seat 6: P0007 (button) won 4650
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-22-1790320653 - Holdem no limit (25/100/200) - 2026/09/25 07:17:33 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #1 is the button
+Seat 1: P0008 (19650, 1€ bounty)
+Seat 2: Hero (18802, 1€ bounty)
+Seat 3: P0006 (18597, 1€ bounty)
+Seat 4: P0002 (62824, 1.70€ bounty)
+Seat 5: P0003 (18725, 1€ bounty)
+Seat 6: P0007 (28750, 1€ bounty)
+*** ANTE/BLINDS ***
+Hero posts ante 25
+P0006 posts ante 25
+P0008 posts ante 25
+P0002 posts ante 25
+P0003 posts ante 25
+P0007 posts ante 25
+Hero posts small blind 100
+P0006 posts big blind 200
+Dealt to Hero [6s 4s]
+*** PRE-FLOP *** 
+P0002 folds
+P0003 folds
+P0007 folds
+P0008 folds
+Hero calls 100
+P0006 checks
+*** FLOP *** [Qs Jh Qh]
+Hero bets 200
+P0006 folds
+Hero collected 750 from pot
+*** SUMMARY ***
+Total pot 750 | No rake
+Board: [Qs Jh Qh]
+Seat 2: Hero (small blind) won 750
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-23-1790320725 - Holdem no limit (25/100/200) - 2026/09/25 07:18:45 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #2 is the button
+Seat 1: P0008 (19625, 1€ bounty)
+Seat 2: Hero (19127, 1€ bounty)
+Seat 3: P0006 (18372, 1€ bounty)
+Seat 4: P0002 (62799, 1.70€ bounty)
+Seat 5: P0003 (18700, 1€ bounty)
+Seat 6: P0007 (28725, 1€ bounty)
+*** ANTE/BLINDS ***
+P0006 posts ante 25
+P0002 posts ante 25
+P0008 posts ante 25
+Hero posts ante 25
+P0003 posts ante 25
+P0007 posts ante 25
+P0006 posts small blind 100
+P0002 posts big blind 200
+Dealt to Hero [9h 8s]
+*** PRE-FLOP *** 
+P0003 raises 220 to 420
+P0007 folds
+P0008 folds
+Hero folds
+P0006 folds
+P0002 raises 1580 to 2000
+P0003 calls 1580
+*** FLOP *** [6c Kh 8d]
+P0002 bets 2125
+P0003 folds
+P0002 collected 6375 from pot
+*** SUMMARY ***
+Total pot 6375 | No rake
+Board: [6c Kh 8d]
+Seat 4: P0002 (big blind) won 6375
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-24-1790320762 - Holdem no limit (25/100/200) - 2026/09/25 07:19:22 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #3 is the button
+Seat 1: P0008 (19600, 1€ bounty)
+Seat 2: Hero (19102, 1€ bounty)
+Seat 3: P0006 (18247, 1€ bounty)
+Seat 4: P0002 (65024, 1.70€ bounty)
+Seat 5: P0003 (16675, 1€ bounty)
+Seat 6: P0007 (28700, 1€ bounty)
+*** ANTE/BLINDS ***
+P0002 posts ante 25
+P0003 posts ante 25
+P0008 posts ante 25
+Hero posts ante 25
+P0006 posts ante 25
+P0007 posts ante 25
+P0002 posts small blind 100
+P0003 posts big blind 200
+Dealt to Hero [7s As]
+*** PRE-FLOP *** 
+P0007 raises 350 to 550
+P0008 folds
+Hero calls 550
+P0006 folds
+P0002 calls 450
+P0003 folds
+*** FLOP *** [8d Jh Th]
+P0002 checks
+P0007 checks
+Hero checks
+*** TURN *** [8d Jh Th][Jd]
+P0002 checks
+P0007 bets 1000
+Hero folds
+P0002 calls 1000
+*** RIVER *** [8d Jh Th Jd][7h]
+P0002 checks
+P0007 checks
+*** SHOW DOWN ***
+P0002 shows [5d Qd] (One pair : Jacks)
+P0007 shows [Qs Tc] (Two pairs : Jacks and Tens)
+P0007 collected 4000 from pot
+*** SUMMARY ***
+Total pot 4000 | No rake
+Board: [8d Jh Th Jd 7h]
+Seat 4: P0002 (small blind) showed [5d Qd] and lost with One pair : Jacks
+Seat 6: P0007 showed [Qs Tc] and won 4000 with Two pairs : Jacks and Tens
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-25-1790320793 - Holdem no limit (25/100/200) - 2026/09/25 07:19:53 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #4 is the button
+Seat 1: P0008 (19575, 1€ bounty)
+Seat 2: Hero (18527, 1€ bounty)
+Seat 3: P0006 (18222, 1€ bounty)
+Seat 4: P0002 (63449, 1.70€ bounty)
+Seat 5: P0003 (16450, 1€ bounty)
+Seat 6: P0007 (31125, 1€ bounty)
+*** ANTE/BLINDS ***
+P0003 posts ante 25
+P0007 posts ante 25
+P0008 posts ante 25
+Hero posts ante 25
+P0006 posts ante 25
+P0002 posts ante 25
+P0003 posts small blind 100
+P0007 posts big blind 200
+Dealt to Hero [Qh 5h]
+*** PRE-FLOP *** 
+P0008 folds
+Hero folds
+P0006 calls 200
+P0002 calls 200
+P0003 folds
+P0007 raises 350 to 550
+P0006 calls 350
+P0002 calls 350
+*** FLOP *** [3h Jd 4h]
+P0007 checks
+P0006 bets 1235
+P0002 folds
+P0007 raises 29315 to 30550 and is all-in
+P0006 folds
+P0007 collected 33685 from pot
+*** SUMMARY ***
+Total pot 33685 | No rake
+Board: [3h Jd 4h]
+Seat 6: P0007 (big blind) won 33685
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-26-1790320831 - Holdem no limit (25/100/200) - 2026/09/25 07:20:31 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #5 is the button
+Seat 1: P0008 (19550, 1€ bounty)
+Seat 2: Hero (18502, 1€ bounty)
+Seat 3: P0006 (16412, 1€ bounty)
+Seat 4: P0002 (62874, 1.70€ bounty)
+Seat 5: P0003 (16325, 1€ bounty)
+Seat 6: P0007 (33685, 1€ bounty)
+*** ANTE/BLINDS ***
+P0007 posts ante 25
+P0008 posts ante 25
+Hero posts ante 25
+P0006 posts ante 25
+P0002 posts ante 25
+P0003 posts ante 25
+P0007 posts small blind 100
+P0008 posts big blind 200
+Dealt to Hero [2d Jd]
+*** PRE-FLOP *** 
+Hero folds
+P0006 raises 200 to 400
+P0002 raises 900 to 1300
+P0003 folds
+P0007 folds
+P0008 folds
+P0006 calls 900
+*** FLOP *** [8d 7h 9h]
+P0006 checks
+P0002 bets 61549 and is all-in
+P0006 folds
+P0002 collected 64599 from pot
+*** SUMMARY ***
+Total pot 64599 | No rake
+Board: [8d 7h 9h]
+Seat 4: P0002 won 64599
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-27-1790320870 - Holdem no limit (25/100/200) - 2026/09/25 07:21:10 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #6 is the button
+Seat 1: P0008 (19325, 1€ bounty)
+Seat 2: Hero (18477, 1€ bounty)
+Seat 3: P0006 (15087, 1€ bounty)
+Seat 4: P0002 (64599, 1.70€ bounty)
+Seat 5: P0003 (16300, 1€ bounty)
+Seat 6: P0007 (33560, 1€ bounty)
+*** ANTE/BLINDS ***
+P0008 posts ante 25
+Hero posts ante 25
+P0006 posts ante 25
+P0002 posts ante 25
+P0003 posts ante 25
+P0007 posts ante 25
+P0008 posts small blind 100
+Hero posts big blind 200
+Dealt to Hero [5h 8h]
+*** PRE-FLOP *** 
+P0006 folds
+P0002 folds
+P0003 folds
+P0007 calls 200
+P0008 folds
+Hero checks
+*** FLOP *** [Kh Qs 4d]
+Hero checks
+P0007 checks
+*** TURN *** [Kh Qs 4d][2d]
+Hero checks
+P0007 checks
+*** RIVER *** [Kh Qs 4d 2d][9d]
+Hero checks
+P0007 checks
+*** SHOW DOWN ***
+Hero shows [5h 8h] (High card : King)
+P0007 shows [Jd Jc] (One pair : Jacks)
+P0007 collected 650 from pot
+*** SUMMARY ***
+Total pot 650 | No rake
+Board: [Kh Qs 4d 2d 9d]
+Seat 2: Hero (big blind) showed [5h 8h] and lost with High card : King
+Seat 6: P0007 (button) showed [Jd Jc] and won 650 with One pair : Jacks
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-28-1790320893 - Holdem no limit (25/100/200) - 2026/09/25 07:21:33 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #1 is the button
+Seat 1: P0008 (19200, 1€ bounty)
+Seat 2: Hero (18252, 1€ bounty)
+Seat 3: P0006 (15062, 1€ bounty)
+Seat 4: P0002 (64574, 1.70€ bounty)
+Seat 5: P0003 (16275, 1€ bounty)
+Seat 6: P0007 (33985, 1€ bounty)
+*** ANTE/BLINDS ***
+Hero posts ante 25
+P0006 posts ante 25
+P0008 posts ante 25
+P0002 posts ante 25
+P0003 posts ante 25
+P0007 posts ante 25
+Hero posts small blind 100
+P0006 posts big blind 200
+Dealt to Hero [7h Td]
+*** PRE-FLOP *** 
+P0002 folds
+P0003 raises 220 to 420
+P0007 folds
+P0008 folds
+Hero folds
+P0006 calls 220
+*** FLOP *** [5d Ks 8c]
+P0006 checks
+P0003 bets 360
+P0006 folds
+P0003 collected 1450 from pot
+*** SUMMARY ***
+Total pot 1450 | No rake
+Board: [5d Ks 8c]
+Seat 5: P0003 won 1450
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-29-1790320914 - Holdem no limit (25/100/200) - 2026/09/25 07:21:54 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #2 is the button
+Seat 1: P0008 (19175, 1€ bounty)
+Seat 2: Hero (18127, 1€ bounty)
+Seat 3: P0006 (14617, 1€ bounty)
+Seat 4: P0002 (64549, 1.70€ bounty)
+Seat 5: P0003 (16920, 1€ bounty)
+Seat 6: P0007 (33960, 1€ bounty)
+*** ANTE/BLINDS ***
+P0006 posts ante 25
+P0002 posts ante 25
+P0008 posts ante 25
+Hero posts ante 25
+P0003 posts ante 25
+P0007 posts ante 25
+P0006 posts small blind 100
+P0002 posts big blind 200
+Dealt to Hero [Tc Kc]
+*** PRE-FLOP *** 
+P0003 folds
+P0007 raises 500 to 700
+P0008 folds
+Hero calls 700
+P0006 folds
+P0002 calls 500
+*** FLOP *** [Qs Jd Ad]
+P0002 checks
+P0007 checks
+Hero bets 1300
+P0002 folds
+P0007 folds
+Hero collected 3650 from pot
+*** SUMMARY ***
+Total pot 3650 | No rake
+Board: [Qs Jd Ad]
+Seat 2: Hero (button) won 3650
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-30-1790320962 - Holdem no limit (25/100/200) - 2026/09/25 07:22:42 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #3 is the button
+Seat 1: P0008 (19150, 1€ bounty)
+Seat 2: Hero (19752, 1€ bounty)
+Seat 3: P0006 (14492, 1€ bounty)
+Seat 4: P0002 (63824, 1.70€ bounty)
+Seat 5: P0003 (16895, 1€ bounty)
+Seat 6: P0007 (33235, 1€ bounty)
+*** ANTE/BLINDS ***
+P0002 posts ante 25
+P0003 posts ante 25
+P0008 posts ante 25
+Hero posts ante 25
+P0006 posts ante 25
+P0007 posts ante 25
+P0002 posts small blind 100
+P0003 posts big blind 200
+Dealt to Hero [4s 8s]
+*** PRE-FLOP *** 
+P0007 folds
+P0008 folds
+Hero folds
+P0006 calls 200
+P0002 calls 100
+P0003 checks
+*** FLOP *** [Ts Ad 5s]
+P0002 checks
+P0003 checks
+P0006 bets 600
+P0002 calls 600
+P0003 folds
+*** TURN *** [Ts Ad 5s][As]
+P0002 checks
+P0006 checks
+*** RIVER *** [Ts Ad 5s As][Qs]
+P0002 checks
+P0006 checks
+*** SHOW DOWN ***
+P0006 shows [3c 4c] (One pair : Aces)
+P0002 shows [Kh Tc] (Two pairs : Aces and Tens)
+P0002 collected 1950 from pot
+*** SUMMARY ***
+Total pot 1950 | No rake
+Board: [Ts Ad 5s As Qs]
+Seat 3: P0006 (button) showed [3c 4c] and lost with One pair : Aces
+Seat 4: P0002 (small blind) showed [Kh Tc] and won 1950 with Two pairs : Aces and Tens
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-31-1790320993 - Holdem no limit (25/100/200) - 2026/09/25 07:23:13 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #4 is the button
+Seat 1: P0008 (19125, 1€ bounty)
+Seat 2: Hero (19727, 1€ bounty)
+Seat 3: P0006 (13667, 1€ bounty)
+Seat 4: P0002 (64949, 1.70€ bounty)
+Seat 5: P0003 (16670, 1€ bounty)
+Seat 6: P0007 (33210, 1€ bounty)
+*** ANTE/BLINDS ***
+P0003 posts ante 25
+P0007 posts ante 25
+P0008 posts ante 25
+Hero posts ante 25
+P0006 posts ante 25
+P0002 posts ante 25
+P0003 posts small blind 100
+P0007 posts big blind 200
+Dealt to Hero [Kh 6c]
+*** PRE-FLOP *** 
+P0008 raises 200 to 400
+Hero folds
+P0006 folds
+P0002 calls 400
+P0003 folds
+P0007 calls 200
+*** FLOP *** [Js Qs 5d]
+P0007 checks
+P0008 checks
+P0002 bets 300
+P0007 folds
+P0008 calls 300
+*** TURN *** [Js Qs 5d][2d]
+P0008 checks
+P0002 checks
+*** RIVER *** [Js Qs 5d 2d][4h]
+P0008 checks
+P0002 checks
+*** SHOW DOWN ***
+P0002 shows [6d 5h] (One pair : 5)
+P0008 shows [9d 9s] (One pair : 9)
+P0008 collected 2050 from pot
+*** SUMMARY ***
+Total pot 2050 | No rake
+Board: [Js Qs 5d 2d 4h]
+Seat 1: P0008 showed [9d 9s] and won 2050 with One pair : 9
+Seat 4: P0002 (button) showed [6d 5h] and lost with One pair : 5
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-32-1790321018 - Holdem no limit (25/100/200) - 2026/09/25 07:23:38 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #5 is the button
+Seat 1: P0008 (20450, 1€ bounty)
+Seat 2: Hero (19702, 1€ bounty)
+Seat 3: P0006 (13642, 1€ bounty)
+Seat 4: P0002 (64224, 1.70€ bounty)
+Seat 5: P0003 (16545, 1€ bounty)
+Seat 6: P0007 (32785, 1€ bounty)
+*** ANTE/BLINDS ***
+P0007 posts ante 25
+P0008 posts ante 25
+Hero posts ante 25
+P0006 posts ante 25
+P0002 posts ante 25
+P0003 posts ante 25
+P0007 posts small blind 100
+P0008 posts big blind 200
+Dealt to Hero [6h 8s]
+*** PRE-FLOP *** 
+Hero folds
+P0006 raises 650 to 850
+P0002 folds
+P0003 folds
+P0007 folds
+P0008 folds
+P0006 collected 1300 from pot
+*** SUMMARY ***
+Total pot 1300 | No rake
+Seat 3: P0006 won 1300
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-33-1790321038 - Holdem no limit (25/100/200) - 2026/09/25 07:23:58 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #6 is the button
+Seat 1: P0008 (20225, 1€ bounty)
+Seat 2: Hero (19677, 1€ bounty)
+Seat 3: P0006 (14067, 1€ bounty)
+Seat 4: P0002 (64199, 1.70€ bounty)
+Seat 5: P0003 (16520, 1€ bounty)
+Seat 6: P0007 (32660, 1€ bounty)
+*** ANTE/BLINDS ***
+P0008 posts ante 25
+Hero posts ante 25
+P0006 posts ante 25
+P0002 posts ante 25
+P0003 posts ante 25
+P0007 posts ante 25
+P0008 posts small blind 100
+Hero posts big blind 200
+Dealt to Hero [8h 3c]
+*** PRE-FLOP *** 
+P0006 folds
+P0002 raises 200 to 400
+P0003 folds
+P0007 raises 1250 to 1650
+P0008 folds
+Hero folds
+P0002 calls 1250
+*** FLOP *** [5s 8s As]
+P0002 checks
+P0007 checks
+*** TURN *** [5s 8s As][Th]
+P0002 checks
+P0007 checks
+*** RIVER *** [5s 8s As Th][9c]
+P0002 checks
+P0007 bets 1875
+P0002 calls 1875
+*** SHOW DOWN ***
+P0002 shows [Tc Qh] (One pair : Tens)
+P0007 shows [Ks 7s] (Flush Ace high)
+P0007 collected 7500 from pot
+*** SUMMARY ***
+Total pot 7500 | No rake
+Board: [5s 8s As Th 9c]
+Seat 4: P0002 showed [Tc Qh] and lost with One pair : Tens
+Seat 6: P0007 (button) showed [Ks 7s] and won 7500 with Flush Ace high
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #5042614887692369958-34-1790321071 - Holdem no limit (25/100/200) - 2026/09/25 07:24:31 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #1 is the button
+Seat 1: P0008 (20100, 1€ bounty)
+Seat 2: Hero (19452, 1€ bounty)
+Seat 3: P0006 (14042, 1€ bounty)
+Seat 4: P0002 (60649, 1.70€ bounty)
+Seat 5: P0003 (16495, 1€ bounty)
+Seat 6: P0007 (36610, 1€ bounty)
+*** ANTE/BLINDS ***
+Hero posts ante 25
+P0006 posts ante 25
+P0008 posts ante 25
+P0002 posts ante 25
+P0003 posts ante 25
+P0007 posts ante 25
+Hero posts small blind 100
+P0006 posts big blind 200
+Dealt to Hero [2s 8s]
+*** PRE-FLOP *** 
+P0002 raises 220 to 420
+P0003 folds
+P0007 folds
+P0008 calls 420
+Hero folds
+P0006 calls 220
+*** FLOP *** [8h Td Tc]
+P0006 checks
+P0002 bets 755
+P0008 folds
+P0006 calls 755
+*** TURN *** [8h Td Tc][Ad]
+P0006 checks
+P0002 checks
+*** RIVER *** [8h Td Tc Ad][5c]
+P0006 bets 1963
+P0002 calls 1963
+*** SHOW DOWN ***
+P0006 shows [7h Jc] (One pair : Tens)
+P0002 shows [Qc 8c] (Two pairs : Tens and 8)
+P0002 collected 6946 from pot
+*** SUMMARY ***
+Total pot 6946 | No rake
+Board: [8h Td Tc Ad 5c]
+Seat 3: P0006 (big blind) showed [7h Jc] and lost with One pair : Tens
+Seat 4: P0002 showed [Qc 8c] and won 6946 with Two pairs : Tens and 8
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 2 - HandId: #5042614887692369958-35-1790321112 - Holdem no limit (30/125/250) - 2026/09/25 07:25:12 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #2 is the button
+Seat 1: P0008 (19655, 1€ bounty)
+Seat 2: Hero (19327, 1€ bounty)
+Seat 3: P0006 (10879, 1€ bounty)
+Seat 4: P0002 (64432, 1.70€ bounty)
+Seat 5: P0003 (16470, 1€ bounty)
+Seat 6: P0007 (36585, 1€ bounty)
+*** ANTE/BLINDS ***
+P0006 posts ante 30
+P0002 posts ante 30
+P0008 posts ante 30
+Hero posts ante 30
+P0003 posts ante 30
+P0007 posts ante 30
+P0006 posts small blind 125
+P0002 posts big blind 250
+Dealt to Hero [8c Ks]
+*** PRE-FLOP *** 
+P0003 raises 275 to 525
+P0007 folds
+P0008 folds
+Hero folds
+P0006 folds
+P0002 folds
+P0003 collected 1080 from pot
+*** SUMMARY ***
+Total pot 1080 | No rake
+Seat 5: P0003 won 1080
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 2 - HandId: #5042614887692369958-36-1790321126 - Holdem no limit (30/125/250) - 2026/09/25 07:25:26 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #3 is the button
+Seat 1: P0008 (19625, 1€ bounty)
+Seat 2: Hero (19297, 1€ bounty)
+Seat 3: P0006 (10724, 1€ bounty)
+Seat 4: P0002 (64152, 1.70€ bounty)
+Seat 5: P0003 (16995, 1€ bounty)
+Seat 6: P0007 (36555, 1€ bounty)
+*** ANTE/BLINDS ***
+P0002 posts ante 30
+P0003 posts ante 30
+P0008 posts ante 30
+Hero posts ante 30
+P0006 posts ante 30
+P0007 posts ante 30
+P0002 posts small blind 125
+P0003 posts big blind 250
+Dealt to Hero [Ks 3s]
+*** PRE-FLOP *** 
+P0007 folds
+P0008 folds
+Hero folds
+P0006 calls 250
+P0002 calls 125
+P0003 checks
+*** FLOP *** [6s As 6d]
+P0002 checks
+P0003 checks
+P0006 bets 465
+P0002 folds
+P0003 folds
+P0006 collected 1395 from pot
+*** SUMMARY ***
+Total pot 1395 | No rake
+Board: [6s As 6d]
+Seat 3: P0006 (button) won 1395
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 2 - HandId: #5042614887692369958-37-1790321172 - Holdem no limit (30/125/250) - 2026/09/25 07:26:12 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #4 is the button
+Seat 1: P0008 (19595, 1€ bounty)
+Seat 2: Hero (19267, 1€ bounty)
+Seat 3: P0006 (11374, 1€ bounty)
+Seat 4: P0002 (63872, 1.70€ bounty)
+Seat 5: P0003 (16715, 1€ bounty)
+Seat 6: P0007 (36525, 1€ bounty)
+*** ANTE/BLINDS ***
+P0003 posts ante 30
+P0007 posts ante 30
+P0008 posts ante 30
+Hero posts ante 30
+P0006 posts ante 30
+P0002 posts ante 30
+P0003 posts small blind 125
+P0007 posts big blind 250
+Dealt to Hero [Kh 7d]
+*** PRE-FLOP *** 
+P0008 folds
+Hero folds
+P0006 folds
+P0002 folds
+P0003 calls 125
+P0007 checks
+*** FLOP *** [Ah 2s Ad]
+P0003 checks
+P0007 checks
+*** TURN *** [Ah 2s Ad][6s]
+P0003 checks
+P0007 checks
+*** RIVER *** [Ah 2s Ad 6s][9d]
+P0003 checks
+P0007 checks
+*** SHOW DOWN ***
+P0007 shows [7s Qc] (One pair : Aces)
+P0003 shows [2h Th] (Two pairs : Aces and 2)
+P0003 collected 680 from pot
+*** SUMMARY ***
+Total pot 680 | No rake
+Board: [Ah 2s Ad 6s 9d]
+Seat 5: P0003 (small blind) showed [2h Th] and won 680 with Two pairs : Aces and 2
+Seat 6: P0007 (big blind) showed [7s Qc] and lost with One pair : Aces
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 2 - HandId: #5042614887692369958-38-1790321244 - Holdem no limit (30/125/250) - 2026/09/25 07:27:24 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #5 is the button
+Seat 1: P0008 (19565, 1€ bounty)
+Seat 2: Hero (19237, 1€ bounty)
+Seat 3: P0006 (11344, 1€ bounty)
+Seat 4: P0002 (63842, 1.70€ bounty)
+Seat 5: P0003 (17115, 1€ bounty)
+Seat 6: P0007 (36245, 1€ bounty)
+*** ANTE/BLINDS ***
+P0007 posts ante 30
+P0008 posts ante 30
+Hero posts ante 30
+P0006 posts ante 30
+P0002 posts ante 30
+P0003 posts ante 30
+P0007 posts small blind 125
+P0008 posts big blind 250
+Dealt to Hero [Kc Jc]
+*** PRE-FLOP *** 
+Hero raises 313 to 563
+P0006 folds
+P0002 calls 563
+P0003 folds
+P0007 folds
+P0008 calls 313
+*** FLOP *** [6d Js Th]
+P0008 checks
+Hero checks
+P0002 checks
+*** TURN *** [6d Js Th][8h]
+P0008 checks
+Hero bets 1500
+P0002 calls 1500
+P0008 folds
+*** RIVER *** [6d Js Th 8h][Jd]
+Hero bets 1648
+P0002 folds
+Hero collected 6642 from pot
+*** SUMMARY ***
+Total pot 6642 | No rake
+Board: [6d Js Th 8h Jd]
+Seat 2: Hero won 6642
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 2 - HandId: #5042614887692369958-39-1790321292 - Holdem no limit (30/125/250) - 2026/09/25 07:28:12 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #6 is the button
+Seat 1: P0008 (18972, 1€ bounty)
+Seat 2: Hero (22138, 1€ bounty)
+Seat 3: P0006 (11314, 1€ bounty)
+Seat 4: P0002 (61749, 1.70€ bounty)
+Seat 5: P0003 (17085, 1€ bounty)
+Seat 6: P0007 (36090, 1€ bounty)
+*** ANTE/BLINDS ***
+P0008 posts ante 30
+Hero posts ante 30
+P0006 posts ante 30
+P0002 posts ante 30
+P0003 posts ante 30
+P0007 posts ante 30
+P0008 posts small blind 125
+Hero posts big blind 250
+Dealt to Hero [3h 3c]
+*** PRE-FLOP *** 
+P0006 folds
+P0002 raises 250 to 500
+P0003 folds
+P0007 folds
+P0008 folds
+Hero calls 250
+*** FLOP *** [Th Ah Ac]
+Hero checks
+P0002 checks
+*** TURN *** [Th Ah Ac][2d]
+Hero checks
+P0002 bets 500
+Hero folds
+P0002 collected 1805 from pot
+*** SUMMARY ***
+Total pot 1805 | No rake
+Board: [Th Ah Ac 2d]
+Seat 4: P0002 won 1805
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 2 - HandId: #5042614887692369958-40-1790321331 - Holdem no limit (30/125/250) - 2026/09/25 07:28:51 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #1 is the button
+Seat 1: P0008 (18817, 1€ bounty)
+Seat 2: Hero (21608, 1€ bounty)
+Seat 3: P0006 (11284, 1€ bounty)
+Seat 5: P0003 (17055, 1€ bounty)
+Seat 6: P0007 (36060, 1€ bounty)
+*** ANTE/BLINDS ***
+Hero posts ante 30
+P0006 posts ante 30
+P0008 posts ante 30
+P0003 posts ante 30
+P0007 posts ante 30
+Hero posts small blind 125
+P0006 posts big blind 250
+Dealt to Hero [Kd Ad]
+*** PRE-FLOP *** 
+P0003 folds
+P0007 folds
+P0008 folds
+Hero raises 625 to 875
+P0006 folds
+Hero collected 1275 from pot
+*** SUMMARY ***
+Total pot 1275 | No rake
+Seat 2: Hero (small blind) won 1275
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 2 - HandId: #5042614887692369958-41-1790321350 - Holdem no limit (30/125/250) - 2026/09/25 07:29:10 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #2 is the button
+Seat 1: P0008 (18787, 1€ bounty)
+Seat 2: Hero (21978, 1€ bounty)
+Seat 3: P0006 (11004, 1€ bounty)
+Seat 5: P0003 (17025, 1€ bounty)
+Seat 6: P0007 (36030, 1€ bounty)
+*** ANTE/BLINDS ***
+P0006 posts ante 30
+P0003 posts ante 30
+P0008 posts ante 30
+Hero posts ante 30
+P0007 posts ante 30
+P0006 posts small blind 125
+P0003 posts big blind 250
+Dealt to Hero [7s Ac]
+*** PRE-FLOP *** 
+P0007 folds
+P0008 folds
+Hero raises 313 to 563
+P0006 calls 438
+P0003 folds
+*** FLOP *** [7h 6c Kc]
+P0006 checks
+Hero checks
+*** TURN *** [7h 6c Kc][As]
+P0006 checks
+Hero bets 1221
+P0006 raises 2930 to 4151
+Hero raises 17234 to 21385 and is all-in
+P0006 calls 6260 and is all-in
+*** RIVER *** [7h 6c Kc As][5s]
+*** SHOW DOWN ***
+P0006 shows [5c Ad] (Two pairs : Aces and 5)
+Hero shows [7s Ac] (Two pairs : Aces and 7)
+Hero collected 33322 from pot
+*** SUMMARY ***
+Total pot 33322 | No rake
+Board: [7h 6c Kc As 5s]
+Seat 2: Hero (button) showed [7s Ac] and won 33322 with Two pairs : Aces and 7
+Seat 3: P0006 (small blind) showed [5c Ad] and lost with Two pairs : Aces and 5
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 3 - HandId: #5042614887692369958-42-1790321415 - Holdem no limit (35/150/300) - 2026/09/25 07:30:15 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #3 is the button
+Seat 1: P0008 (18757, 1€ bounty)
+Seat 2: Hero (33322, 2€ bounty)
+Seat 4: P0009 (20000, 1€ bounty)
+Seat 5: P0003 (16745, 1€ bounty)
+Seat 6: P0007 (36000, 1€ bounty)
+*** ANTE/BLINDS ***
+P0003 posts ante 35
+P0007 posts ante 35
+P0008 posts ante 35
+Hero posts ante 35
+P0003 posts small blind 150
+P0007 posts big blind 300
+Dealt to Hero [Ts 8h]
+*** PRE-FLOP *** 
+P0008 folds
+Hero raises 375 to 675
+P0003 raises 2025 to 2700
+P0007 folds
+Hero folds
+P0003 collected 3815 from pot
+*** SUMMARY ***
+Total pot 3815 | No rake
+Seat 5: P0003 (small blind) won 3815
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 3 - HandId: #5042614887692369958-43-1790321451 - Holdem no limit (35/150/300) - 2026/09/25 07:30:51 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #5 is the button
+Seat 1: P0008 (18722, 1€ bounty)
+Seat 2: Hero (32612, 2€ bounty)
+Seat 3: P0010 (20000, 1€ bounty)
+Seat 4: P0009 (20000, 1€ bounty)
+Seat 5: P0003 (17825, 1€ bounty)
+Seat 6: P0007 (35665, 1€ bounty)
+*** ANTE/BLINDS ***
+P0007 posts ante 35
+P0008 posts ante 35
+Hero posts ante 35
+P0010 posts ante 35
+P0009 posts ante 35
+P0003 posts ante 35
+P0007 posts small blind 150
+P0008 posts big blind 300
+Dealt to Hero [Jd 7s]
+*** PRE-FLOP *** 
+Hero folds
+P0010 folds
+P0009 calls 300
+P0003 folds
+P0007 calls 150
+P0008 checks
+*** FLOP *** [Td 4h 2c]
+P0007 checks
+P0008 checks
+P0009 checks
+*** TURN *** [Td 4h 2c][4s]
+P0007 checks
+P0008 bets 450
+P0009 folds
+P0007 folds
+P0008 collected 1560 from pot
+*** SUMMARY ***
+Total pot 1560 | No rake
+Board: [Td 4h 2c 4s]
+Seat 1: P0008 (big blind) won 1560
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 3 - HandId: #5042614887692369958-44-1790321504 - Holdem no limit (35/150/300) - 2026/09/25 07:31:44 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #6 is the button
+Seat 1: P0008 (19497, 1€ bounty)
+Seat 2: Hero (32577, 2€ bounty)
+Seat 3: P0010 (19965, 1€ bounty)
+Seat 4: P0009 (19665, 1€ bounty)
+Seat 5: P0003 (17790, 1€ bounty)
+Seat 6: P0007 (35330, 1€ bounty)
+*** ANTE/BLINDS ***
+P0008 posts ante 35
+Hero posts ante 35
+P0010 posts ante 35
+P0009 posts ante 35
+P0003 posts ante 35
+P0007 posts ante 35
+P0008 posts small blind 150
+Hero posts big blind 300
+Dealt to Hero [6s Kd]
+*** PRE-FLOP *** 
+P0010 folds
+P0009 calls 300
+P0003 folds
+P0007 folds
+P0008 folds
+Hero checks
+*** FLOP *** [7d Ad 8c]
+Hero checks
+P0009 bets 960
+Hero folds
+P0009 collected 1920 from pot
+*** SUMMARY ***
+Total pot 1920 | No rake
+Board: [7d Ad 8c]
+Seat 4: P0009 won 1920
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 3 - HandId: #5042614887692369958-45-1790321573 - Holdem no limit (35/150/300) - 2026/09/25 07:32:53 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #1 is the button
+Seat 1: P0008 (19312, 1€ bounty)
+Seat 2: Hero (32242, 2€ bounty)
+Seat 3: P0010 (19930, 1€ bounty)
+Seat 4: P0009 (20290, 1€ bounty)
+Seat 5: P0003 (17755, 1€ bounty)
+Seat 6: P0007 (35295, 1€ bounty)
+*** ANTE/BLINDS ***
+Hero posts ante 35
+P0010 posts ante 35
+P0008 posts ante 35
+P0009 posts ante 35
+P0003 posts ante 35
+P0007 posts ante 35
+Hero posts small blind 150
+P0010 posts big blind 300
+Dealt to Hero [8d 7d]
+*** PRE-FLOP *** 
+P0009 folds
+P0003 folds
+P0007 folds
+P0008 folds
+Hero raises 750 to 1050
+P0010 folds
+Hero collected 1560 from pot
+*** SUMMARY ***
+Total pot 1560 | No rake
+Seat 2: Hero (small blind) won 1560
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 3 - HandId: #5042614887692369958-46-1790321629 - Holdem no limit (35/150/300) - 2026/09/25 07:33:49 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #2 is the button
+Seat 1: P0008 (19277, 1€ bounty)
+Seat 2: Hero (32717, 2€ bounty)
+Seat 3: P0010 (19595, 1€ bounty)
+Seat 4: P0009 (20255, 1€ bounty)
+Seat 5: P0003 (17720, 1€ bounty)
+Seat 6: P0007 (35260, 1€ bounty)
+*** ANTE/BLINDS ***
+P0010 posts ante 35
+P0009 posts ante 35
+P0008 posts ante 35
+Hero posts ante 35
+P0003 posts ante 35
+P0007 posts ante 35
+P0010 posts small blind 150
+P0009 posts big blind 300
+Dealt to Hero [2c 9c]
+*** PRE-FLOP *** 
+P0003 folds
+P0007 folds
+P0008 raises 300 to 600
+Hero folds
+P0010 folds
+P0009 folds
+P0008 collected 1260 from pot
+*** SUMMARY ***
+Total pot 1260 | No rake
+Seat 1: P0008 won 1260
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 3 - HandId: #5042614887692369958-47-1790321670 - Holdem no limit (35/150/300) - 2026/09/25 07:34:30 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #3 is the button
+Seat 1: P0008 (19902, 1€ bounty)
+Seat 2: Hero (32682, 2€ bounty)
+Seat 3: P0010 (19410, 1€ bounty)
+Seat 4: P0009 (19920, 1€ bounty)
+Seat 5: P0003 (17685, 1€ bounty)
+Seat 6: P0007 (35225, 1€ bounty)
+*** ANTE/BLINDS ***
+P0009 posts ante 35
+P0003 posts ante 35
+P0008 posts ante 35
+Hero posts ante 35
+P0010 posts ante 35
+P0007 posts ante 35
+P0009 posts small blind 150
+P0003 posts big blind 300
+Dealt to Hero [2s 6c]
+*** PRE-FLOP *** 
+P0007 raises 750 to 1050
+P0008 folds
+Hero folds
+P0010 folds
+P0009 folds
+P0003 folds
+P0007 collected 1710 from pot
+*** SUMMARY ***
+Total pot 1710 | No rake
+Seat 6: P0007 won 1710
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 3 - HandId: #5042614887692369958-48-1790321694 - Holdem no limit (35/150/300) - 2026/09/25 07:34:54 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #4 is the button
+Seat 1: P0008 (19867, 1€ bounty)
+Seat 2: Hero (32647, 2€ bounty)
+Seat 3: P0010 (19375, 1€ bounty)
+Seat 4: P0009 (19735, 1€ bounty)
+Seat 5: P0003 (17350, 1€ bounty)
+Seat 6: P0007 (35850, 1€ bounty)
+*** ANTE/BLINDS ***
+P0003 posts ante 35
+P0007 posts ante 35
+P0008 posts ante 35
+Hero posts ante 35
+P0010 posts ante 35
+P0009 posts ante 35
+P0003 posts small blind 150
+P0007 posts big blind 300
+Dealt to Hero [Ks 7c]
+*** PRE-FLOP *** 
+P0008 folds
+Hero folds
+P0010 folds
+P0009 raises 19400 to 19700 and is all-in
+P0003 folds
+P0007 folds
+P0009 collected 20360 from pot
+*** SUMMARY ***
+Total pot 20360 | No rake
+Seat 4: P0009 (button) won 20360
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 4 - HandId: #5042614887692369958-49-1790321752 - Holdem no limit (40/175/350) - 2026/09/25 07:35:52 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #5 is the button
+Seat 1: P0008 (19832, 1€ bounty)
+Seat 2: Hero (32612, 2€ bounty)
+Seat 3: P0010 (19340, 1€ bounty)
+Seat 4: P0009 (20360, 1€ bounty)
+Seat 5: P0003 (17165, 1€ bounty)
+Seat 6: P0007 (35515, 1€ bounty)
+*** ANTE/BLINDS ***
+P0007 posts ante 40
+P0008 posts ante 40
+Hero posts ante 40
+P0010 posts ante 40
+P0009 posts ante 40
+P0003 posts ante 40
+P0007 posts small blind 175
+P0008 posts big blind 350
+Dealt to Hero [3h Th]
+*** PRE-FLOP *** 
+Hero folds
+P0010 folds
+P0009 raises 350 to 700
+P0003 raises 1400 to 2100
+P0007 folds
+P0008 folds
+P0009 raises 18220 to 20320 and is all-in
+P0003 calls 15025 and is all-in
+*** FLOP *** [9c 9h 4h]
+*** TURN *** [9c 9h 4h][5d]
+*** RIVER *** [9c 9h 4h 5d][8h]
+*** SHOW DOWN ***
+P0009 shows [Kd Qd] (One pair : 9)
+P0003 shows [Ad Qc] (One pair : 9)
+P0003 collected 35015 from main pot
+P0009 collected 3195 from side pot 1
+*** SUMMARY ***
+Total pot 38210 | No rake
+Board: [9c 9h 4h 5d 8h]
+Seat 4: P0009 showed [Kd Qd] and won 3195 with One pair : 9
+Seat 5: P0003 (button) showed [Ad Qc] and won 35015 with One pair : 9
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 4 - HandId: #5042614887692369958-50-1790321800 - Holdem no limit (40/175/350) - 2026/09/25 07:36:40 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #6 is the button
+Seat 1: P0008 (19442, 1€ bounty)
+Seat 2: Hero (32572, 2€ bounty)
+Seat 3: P0010 (19300, 1€ bounty)
+Seat 4: P0009 (3195, 1€ bounty)
+Seat 5: P0003 (35015, 1€ bounty)
+Seat 6: P0007 (35300, 1€ bounty)
+*** ANTE/BLINDS ***
+P0008 posts ante 40
+Hero posts ante 40
+P0010 posts ante 40
+P0009 posts ante 40
+P0003 posts ante 40
+P0007 posts ante 40
+P0008 posts small blind 175
+Hero posts big blind 350
+Dealt to Hero [3h 3c]
+*** PRE-FLOP *** 
+P0010 folds
+P0009 calls 350
+P0003 raises 1050 to 1400
+P0007 raises 2450 to 3850
+P0008 folds
+Hero folds
+P0009 calls 2805 and is all-in
+P0003 calls 2450
+*** FLOP *** [7d Jd 7h]
+P0003 checks
+P0007 bets 31410 and is all-in
+P0003 calls 31125 and is all-in
+*** TURN *** [7d Jd 7h][Th]
+*** RIVER *** [7d Jd 7h Th][Td]
+*** SHOW DOWN ***
+P0009 shows [4s Ks] (Two pairs : Tens and 7)
+P0003 shows [Qd 5d] (Flush Queen high)
+P0007 shows [Ac Jc] (Two pairs : Jacks and Tens)
+P0007 collected 285 from side pot 1
+P0003 collected 73870 from main pot
+*** SUMMARY ***
+Total pot 74155 | No rake
+Board: [7d Jd 7h Th Td]
+Seat 4: P0009 showed [4s Ks] and lost with Two pairs : Tens and 7
+Seat 5: P0003 showed [Qd 5d] and won 73870 with Flush Queen high
+Seat 6: P0007 (button) showed [Ac Jc] and won 285 with Two pairs : Jacks and Tens
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 4 - HandId: #5042614887692369958-51-1790321856 - Holdem no limit (40/175/350) - 2026/09/25 07:37:36 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #1 is the button
+Seat 1: P0008 (19227, 1€ bounty)
+Seat 2: Hero (32182, 2€ bounty)
+Seat 3: P0010 (19260, 1€ bounty)
+Seat 5: P0003 (73870, 1.20€ bounty)
+Seat 6: P0007 (285, 1€ bounty)
+*** ANTE/BLINDS ***
+Hero posts ante 40
+P0010 posts ante 40
+P0008 posts ante 40
+P0003 posts ante 40
+P0007 posts ante 40
+Hero posts small blind 175
+P0010 posts big blind 350
+Dealt to Hero [7d Kd]
+*** PRE-FLOP *** 
+P0003 raises 385 to 735
+P0007 calls 245 and is all-in
+P0008 folds
+Hero calls 560
+P0010 calls 385
+*** FLOP *** [9s Th 3h]
+Hero checks
+P0010 checks
+P0003 checks
+*** TURN *** [9s Th 3h][2c]
+Hero checks
+P0010 bets 1325
+P0003 calls 1325
+Hero folds
+*** RIVER *** [9s Th 3h 2c][Ah]
+P0010 checks
+P0003 checks
+*** SHOW DOWN ***
+P0003 shows [Js 8s] (High card : Ace)
+P0010 shows [Qd 3d] (One pair : 3)
+P0007 shows [7h Kh] (Flush Ace high)
+P0007 collected 1180 from main pot
+P0010 collected 4120 from side pot 1
+*** SUMMARY ***
+Total pot 5300 | No rake
+Board: [9s Th 3h 2c Ah]
+Seat 3: P0010 (big blind) showed [Qd 3d] and won 4120 with One pair : 3
+Seat 5: P0003 showed [Js 8s] and lost with High card : Ace
+Seat 6: P0007 showed [7h Kh] and won 1180 with Flush Ace high
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 4 - HandId: #5042614887692369958-52-1790321903 - Holdem no limit (40/175/350) - 2026/09/25 07:38:23 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #2 is the button
+Seat 1: P0008 (19187, 1€ bounty)
+Seat 2: Hero (31407, 2€ bounty)
+Seat 3: P0010 (21280, 1€ bounty)
+Seat 5: P0003 (71770, 1.20€ bounty)
+Seat 6: P0007 (1180, 1€ bounty)
+*** ANTE/BLINDS ***
+P0010 posts ante 40
+P0003 posts ante 40
+P0008 posts ante 40
+Hero posts ante 40
+P0007 posts ante 40
+P0010 posts small blind 175
+P0003 posts big blind 350
+Dealt to Hero [Ks 2h]
+*** PRE-FLOP *** 
+P0007 raises 790 to 1140 and is all-in
+P0008 folds
+Hero folds
+P0010 calls 965
+P0003 calls 790
+*** FLOP *** [8c Tc Ah]
+P0010 bets 1195
+P0003 folds
+*** TURN *** [8c Tc Ah][Kh]
+*** RIVER *** [8c Tc Ah Kh][9d]
+*** SHOW DOWN ***
+P0010 shows [Qc 3c] (High card : Ace)
+P0007 shows [6c Kc] (One pair : Kings)
+P0007 collected 3620 from main pot
+P0010 collected 1195 from side pot 1
+*** SUMMARY ***
+Total pot 4815 | No rake
+Board: [8c Tc Ah Kh 9d]
+Seat 3: P0010 (small blind) showed [Qc 3c] and won 1195 with High card : Ace
+Seat 6: P0007 showed [6c Kc] and won 3620 with One pair : Kings
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 4 - HandId: #5042614887692369958-53-1790321926 - Holdem no limit (40/175/350) - 2026/09/25 07:38:46 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #3 is the button
+Seat 1: P0008 (19147, 1€ bounty)
+Seat 2: Hero (31367, 2€ bounty)
+Seat 3: P0010 (20100, 1€ bounty)
+Seat 4: P0011 (20000, 1€ bounty)
+Seat 5: P0003 (70590, 1.20€ bounty)
+Seat 6: P0007 (3620, 1€ bounty)
+*** ANTE/BLINDS ***
+P0003 posts ante 40
+P0007 posts ante 40
+P0008 posts ante 40
+Hero posts ante 40
+P0010 posts ante 40
+P0003 posts small blind 175
+P0007 posts big blind 350
+Dealt to Hero [6s Ac]
+*** PRE-FLOP *** 
+P0008 folds
+Hero raises 350 to 700
+P0010 calls 700
+P0003 folds
+P0007 folds
+*** FLOP *** [3c 2h 8d]
+Hero checks
+P0010 bets 1063
+Hero calls 1063
+*** TURN *** [3c 2h 8d][3h]
+Hero checks
+P0010 bets 3188
+Hero folds
+P0010 collected 7439 from pot
+*** SUMMARY ***
+Total pot 7439 | No rake
+Board: [3c 2h 8d 3h]
+Seat 3: P0010 (button) won 7439
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 4 - HandId: #5042614887692369958-54-1790321952 - Holdem no limit (40/175/350) - 2026/09/25 07:39:12 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #5 is the button
+Seat 1: P0008 (19107, 1€ bounty)
+Seat 2: Hero (29564, 2€ bounty)
+Seat 3: P0010 (22548, 1€ bounty)
+Seat 4: P0011 (20000, 1€ bounty)
+Seat 5: P0003 (70375, 1.20€ bounty)
+Seat 6: P0007 (3230, 1€ bounty)
+*** ANTE/BLINDS ***
+P0007 posts ante 40
+P0008 posts ante 40
+Hero posts ante 40
+P0010 posts ante 40
+P0011 posts ante 40
+P0003 posts ante 40
+P0007 posts small blind 175
+P0008 posts big blind 350
+Dealt to Hero [Td 6d]
+*** PRE-FLOP *** 
+Hero folds
+P0010 folds
+P0011 raises 350 to 700
+P0003 calls 700
+P0007 raises 2490 to 3190 and is all-in
+P0008 folds
+P0011 raises 16770 to 19960 and is all-in
+P0003 folds
+*** FLOP *** [Qd Js Jd]
+*** TURN *** [Qd Js Jd][5c]
+*** RIVER *** [Qd Js Jd 5c][5h]
+*** SHOW DOWN ***
+P0011 shows [2h 2s] (Two pairs : Jacks and 5)
+P0007 shows [Jc Th] (Full of Jacks and 5)
+P0007 collected 7670 from main pot
+P0011 collected 16770 from side pot 1
+*** SUMMARY ***
+Total pot 24440 | No rake
+Board: [Qd Js Jd 5c 5h]
+Seat 4: P0011 showed [2h 2s] and won 16770 with Two pairs : Jacks and 5
+Seat 6: P0007 (small blind) showed [Jc Th] and won 7670 with Full of Jacks and 5
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 4 - HandId: #5042614887692369958-55-1790321985 - Holdem no limit (40/175/350) - 2026/09/25 07:39:45 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #6 is the button
+Seat 1: P0008 (18717, 1€ bounty)
+Seat 2: Hero (29524, 2€ bounty)
+Seat 3: P0010 (22508, 1€ bounty)
+Seat 4: P0011 (16770, 1€ bounty)
+Seat 5: P0003 (69635, 1.20€ bounty)
+Seat 6: P0007 (7670, 1€ bounty)
+*** ANTE/BLINDS ***
+P0008 posts ante 40
+Hero posts ante 40
+P0010 posts ante 40
+P0011 posts ante 40
+P0003 posts ante 40
+P0007 posts ante 40
+P0008 posts small blind 175
+Hero posts big blind 350
+Dealt to Hero [5s 8d]
+*** PRE-FLOP *** 
+P0010 folds
+P0011 folds
+P0003 raises 385 to 735
+P0007 folds
+P0008 folds
+Hero folds
+P0003 collected 1500 from pot
+*** SUMMARY ***
+Total pot 1500 | No rake
+Seat 5: P0003 won 1500
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 5 - HandId: #5042614887692369958-56-1790322016 - Holdem no limit (50/200/400) - 2026/09/25 07:40:16 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #1 is the button
+Seat 1: P0008 (18502, 1€ bounty)
+Seat 2: Hero (29134, 2€ bounty)
+Seat 3: P0010 (22468, 1€ bounty)
+Seat 4: P0011 (16730, 1€ bounty)
+Seat 5: P0003 (70360, 1.20€ bounty)
+Seat 6: P0007 (7630, 1€ bounty)
+*** ANTE/BLINDS ***
+Hero posts ante 50
+P0010 posts ante 50
+P0008 posts ante 50
+P0011 posts ante 50
+P0003 posts ante 50
+P0007 posts ante 50
+Hero posts small blind 200
+P0010 posts big blind 400
+Dealt to Hero [As 5d]
+*** PRE-FLOP *** 
+P0011 folds
+P0003 raises 440 to 840
+P0007 raises 6740 to 7580 and is all-in
+P0008 folds
+Hero folds
+P0010 folds
+P0003 calls 6740
+*** FLOP *** [6h 5s Ad]
+*** TURN *** [6h 5s Ad][8d]
+*** RIVER *** [6h 5s Ad 8d][2c]
+*** SHOW DOWN ***
+P0003 shows [Qh 9d] (High card : Ace)
+P0007 shows [Ac Jc] (One pair : Aces)
+P0007 collected 16060 from pot
+*** SUMMARY ***
+Total pot 16060 | No rake
+Board: [6h 5s Ad 8d 2c]
+Seat 5: P0003 showed [Qh 9d] and lost with High card : Ace
+Seat 6: P0007 showed [Ac Jc] and won 16060 with One pair : Aces
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 5 - HandId: #5042614887692369958-57-1790322064 - Holdem no limit (50/200/400) - 2026/09/25 07:41:04 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #2 is the button
+Seat 1: P0008 (18452, 1€ bounty)
+Seat 2: Hero (28884, 2€ bounty)
+Seat 3: P0010 (22018, 1€ bounty)
+Seat 4: P0011 (16680, 1€ bounty)
+Seat 5: P0003 (62730, 1.20€ bounty)
+Seat 6: P0007 (16060, 1€ bounty)
+*** ANTE/BLINDS ***
+P0010 posts ante 50
+P0011 posts ante 50
+P0008 posts ante 50
+Hero posts ante 50
+P0003 posts ante 50
+P0007 posts ante 50
+P0010 posts small blind 200
+P0011 posts big blind 400
+Dealt to Hero [5c 4c]
+*** PRE-FLOP *** 
+P0003 folds
+P0007 folds
+P0008 folds
+Hero raises 500 to 900
+P0010 folds
+P0011 folds
+Hero collected 1800 from pot
+*** SUMMARY ***
+Total pot 1800 | No rake
+Seat 2: Hero (button) won 1800
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 5 - HandId: #5042614887692369958-58-1790322075 - Holdem no limit (50/200/400) - 2026/09/25 07:41:15 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #3 is the button
+Seat 1: P0008 (18402, 1€ bounty)
+Seat 2: Hero (29734, 2€ bounty)
+Seat 3: P0010 (21768, 1€ bounty)
+Seat 4: P0011 (16230, 1€ bounty)
+Seat 5: P0003 (62680, 1.20€ bounty)
+Seat 6: P0007 (16010, 1€ bounty)
+*** ANTE/BLINDS ***
+P0011 posts ante 50
+P0003 posts ante 50
+P0008 posts ante 50
+Hero posts ante 50
+P0010 posts ante 50
+P0007 posts ante 50
+P0011 posts small blind 200
+P0003 posts big blind 400
+Dealt to Hero [As 6c]
+*** PRE-FLOP *** 
+P0007 folds
+P0008 folds
+Hero folds
+P0010 folds
+P0011 calls 200
+P0003 checks
+*** FLOP *** [6s Ks 7h]
+P0011 checks
+P0003 bets 561
+P0011 folds
+P0003 collected 1661 from pot
+*** SUMMARY ***
+Total pot 1661 | No rake
+Board: [6s Ks 7h]
+Seat 5: P0003 (big blind) won 1661
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 5 - HandId: #5042614887692369958-59-1790322168 - Holdem no limit (50/200/400) - 2026/09/25 07:42:48 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #4 is the button
+Seat 1: P0008 (18352, 1€ bounty)
+Seat 2: Hero (29684, 2€ bounty)
+Seat 3: P0010 (21718, 1€ bounty)
+Seat 4: P0011 (15780, 1€ bounty)
+Seat 5: P0003 (63330, 1.20€ bounty)
+Seat 6: P0007 (15960, 1€ bounty)
+*** ANTE/BLINDS ***
+P0003 posts ante 50
+P0007 posts ante 50
+P0008 posts ante 50
+Hero posts ante 50
+P0010 posts ante 50
+P0011 posts ante 50
+P0003 posts small blind 200
+P0007 posts big blind 400
+Dealt to Hero [4d 3h]
+*** PRE-FLOP *** 
+P0008 raises 400 to 800
+Hero folds
+P0010 folds
+P0011 folds
+P0003 folds
+P0007 folds
+P0008 collected 1700 from pot
+*** SUMMARY ***
+Total pot 1700 | No rake
+Seat 1: P0008 won 1700
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 5 - HandId: #5042614887692369958-60-1790322201 - Holdem no limit (50/200/400) - 2026/09/25 07:43:21 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #5 is the button
+Seat 1: P0008 (19202, 1€ bounty)
+Seat 2: Hero (29634, 2€ bounty)
+Seat 3: P0010 (21668, 1€ bounty)
+Seat 4: P0011 (15730, 1€ bounty)
+Seat 5: P0003 (63080, 1.20€ bounty)
+Seat 6: P0007 (15510, 1€ bounty)
+*** ANTE/BLINDS ***
+P0007 posts ante 50
+P0008 posts ante 50
+Hero posts ante 50
+P0010 posts ante 50
+P0011 posts ante 50
+P0003 posts ante 50
+P0007 posts small blind 200
+P0008 posts big blind 400
+Dealt to Hero [8d Jh]
+*** PRE-FLOP *** 
+Hero folds
+P0010 raises 480 to 880
+P0011 folds
+P0003 folds
+P0007 folds
+P0008 raises 2320 to 3200
+P0010 folds
+P0008 collected 4580 from pot
+*** SUMMARY ***
+Total pot 4580 | No rake
+Seat 1: P0008 (big blind) won 4580
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 5 - HandId: #5042614887692369958-61-1790322268 - Holdem no limit (50/200/400) - 2026/09/25 07:44:28 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #6 is the button
+Seat 1: P0008 (20532, 1€ bounty)
+Seat 2: Hero (29584, 2€ bounty)
+Seat 3: P0010 (20738, 1€ bounty)
+Seat 4: P0011 (15680, 1€ bounty)
+Seat 5: P0003 (63030, 1.20€ bounty)
+Seat 6: P0007 (15260, 1€ bounty)
+*** ANTE/BLINDS ***
+P0008 posts ante 50
+Hero posts ante 50
+P0010 posts ante 50
+P0011 posts ante 50
+P0003 posts ante 50
+P0007 posts ante 50
+P0008 posts small blind 200
+Hero posts big blind 400
+Dealt to Hero [5h 5s]
+*** PRE-FLOP *** 
+P0010 folds
+P0011 folds
+P0003 folds
+P0007 raises 14810 to 15210 and is all-in
+P0008 raises 5272 to 20482 and is all-in
+Hero folds
+*** FLOP *** [3s Js Tc]
+*** TURN *** [3s Js Tc][Qc]
+*** RIVER *** [3s Js Tc Qc][Qd]
+*** SHOW DOWN ***
+P0007 shows [6h 2h] (One pair : Queens)
+P0008 shows [Kh 3d] (Two pairs : Queens and 3)
+P0008 collected 36392 from pot
+*** SUMMARY ***
+Total pot 36392 | No rake
+Board: [3s Js Tc Qc Qd]
+Seat 1: P0008 (small blind) showed [Kh 3d] and won 36392 with Two pairs : Queens and 3
+Seat 6: P0007 (button) showed [6h 2h] and lost with One pair : Queens
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 6 - HandId: #5042614887692369958-62-1790322314 - Holdem no limit (60/250/500) - 2026/09/25 07:45:14 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #1 is the button
+Seat 1: P0008 (36392, 1.50€ bounty)
+Seat 2: Hero (29134, 2€ bounty)
+Seat 3: P0010 (20688, 1€ bounty)
+Seat 4: P0011 (15630, 1€ bounty)
+Seat 5: P0003 (62980, 1.20€ bounty)
+*** ANTE/BLINDS ***
+Hero posts ante 60
+P0010 posts ante 60
+P0008 posts ante 60
+P0011 posts ante 60
+P0003 posts ante 60
+Hero posts small blind 250
+P0010 posts big blind 500
+Dealt to Hero [3d 2c]
+*** PRE-FLOP *** 
+P0011 folds
+P0003 raises 550 to 1050
+P0008 folds
+Hero folds
+P0010 folds
+P0003 collected 2100 from pot
+*** SUMMARY ***
+Total pot 2100 | No rake
+Seat 5: P0003 won 2100
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 6 - HandId: #5042614887692369958-63-1790322328 - Holdem no limit (60/250/500) - 2026/09/25 07:45:28 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #2 is the button
+Seat 1: P0008 (36332, 1.50€ bounty)
+Seat 2: Hero (28824, 2€ bounty)
+Seat 3: P0010 (20128, 1€ bounty)
+Seat 4: P0011 (15570, 1€ bounty)
+Seat 5: P0003 (63970, 1.20€ bounty)
+*** ANTE/BLINDS ***
+P0010 posts ante 60
+P0011 posts ante 60
+P0008 posts ante 60
+Hero posts ante 60
+P0003 posts ante 60
+P0010 posts small blind 250
+P0011 posts big blind 500
+Dealt to Hero [3d 6h]
+*** PRE-FLOP *** 
+P0003 raises 550 to 1050
+P0008 folds
+Hero folds
+P0010 folds
+P0011 calls 550
+*** FLOP *** [4c 8h Js]
+P0011 checks
+P0003 bets 875
+P0011 folds
+P0003 collected 3525 from pot
+*** SUMMARY ***
+Total pot 3525 | No rake
+Board: [4c 8h Js]
+Seat 5: P0003 won 3525
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 6 - HandId: #5042614887692369958-64-1790322374 - Holdem no limit (60/250/500) - 2026/09/25 07:46:14 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #3 is the button
+Seat 1: P0008 (36272, 1.50€ bounty)
+Seat 2: Hero (28764, 2€ bounty)
+Seat 3: P0010 (19818, 1€ bounty)
+Seat 4: P0011 (14460, 1€ bounty)
+Seat 5: P0003 (65510, 1.20€ bounty)
+Seat 6: P0012 (20000, 1€ bounty)
+*** ANTE/BLINDS ***
+P0011 posts ante 60
+P0003 posts ante 60
+P0008 posts ante 60
+Hero posts ante 60
+P0010 posts ante 60
+P0012 posts ante 60
+P0011 posts small blind 250
+P0003 posts big blind 500
+Dealt to Hero [Jc 2s]
+*** PRE-FLOP *** 
+P0012 folds
+P0008 folds
+Hero folds
+P0010 folds
+P0011 raises 750 to 1250
+P0003 calls 750
+*** FLOP *** [3h Ad Ts]
+P0011 checks
+P0003 checks
+*** TURN *** [3h Ad Ts][9h]
+P0011 checks
+P0003 bets 1459
+P0011 folds
+P0003 collected 4319 from pot
+*** SUMMARY ***
+Total pot 4319 | No rake
+Board: [3h Ad Ts 9h]
+Seat 5: P0003 (big blind) won 4319
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 6 - HandId: #5042614887692369958-65-1790322422 - Holdem no limit (60/250/500) - 2026/09/25 07:47:02 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #4 is the button
+Seat 1: P0008 (36212, 1.50€ bounty)
+Seat 2: Hero (28704, 2€ bounty)
+Seat 3: P0010 (19758, 1€ bounty)
+Seat 4: P0011 (13150, 1€ bounty)
+Seat 5: P0003 (67060, 1.20€ bounty)
+Seat 6: P0012 (19940, 1€ bounty)
+*** ANTE/BLINDS ***
+P0003 posts ante 60
+P0012 posts ante 60
+P0008 posts ante 60
+Hero posts ante 60
+P0010 posts ante 60
+P0011 posts ante 60
+P0003 posts small blind 250
+P0012 posts big blind 500
+Dealt to Hero [3c 7c]
+*** PRE-FLOP *** 
+P0008 folds
+Hero folds
+P0010 folds
+P0011 raises 500 to 1000
+P0003 folds
+P0012 folds
+P0011 collected 2110 from pot
+*** SUMMARY ***
+Total pot 2110 | No rake
+Seat 4: P0011 (button) won 2110
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 6 - HandId: #5042614887692369958-66-1790322444 - Holdem no limit (60/250/500) - 2026/09/25 07:47:24 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #5 is the button
+Seat 1: P0008 (36152, 1.50€ bounty)
+Seat 2: Hero (28644, 2€ bounty)
+Seat 3: P0010 (19698, 1€ bounty)
+Seat 4: P0011 (14200, 1€ bounty)
+Seat 5: P0003 (66750, 1.20€ bounty)
+Seat 6: P0012 (19380, 1€ bounty)
+*** ANTE/BLINDS ***
+P0012 posts ante 60
+P0008 posts ante 60
+Hero posts ante 60
+P0010 posts ante 60
+P0011 posts ante 60
+P0003 posts ante 60
+P0012 posts small blind 250
+P0008 posts big blind 500
+Dealt to Hero [Jd 8c]
+*** PRE-FLOP *** 
+Hero folds
+P0010 folds
+P0011 folds
+P0003 raises 550 to 1050
+P0012 folds
+P0008 folds
+P0003 collected 2160 from pot
+*** SUMMARY ***
+Total pot 2160 | No rake
+Seat 5: P0003 (button) won 2160
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 6 - HandId: #5042614887692369958-67-1790322460 - Holdem no limit (60/250/500) - 2026/09/25 07:47:40 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #6 is the button
+Seat 1: P0008 (35592, 1.50€ bounty)
+Seat 2: Hero (28584, 2€ bounty)
+Seat 3: P0010 (19638, 1€ bounty)
+Seat 4: P0011 (14140, 1€ bounty)
+Seat 5: P0003 (67800, 1.20€ bounty)
+Seat 6: P0012 (19070, 1€ bounty)
+*** ANTE/BLINDS ***
+P0008 posts ante 60
+Hero posts ante 60
+P0010 posts ante 60
+P0011 posts ante 60
+P0003 posts ante 60
+P0012 posts ante 60
+P0008 posts small blind 250
+Hero posts big blind 500
+Dealt to Hero [As Js]
+*** PRE-FLOP *** 
+P0010 folds
+P0011 raises 500 to 1000
+P0003 calls 1000
+P0012 folds
+P0008 folds
+Hero raises 4000 to 5000
+P0011 raises 9080 to 14080 and is all-in
+P0003 folds
+Hero calls 9080
+*** FLOP *** [8h 2h 3h]
+*** TURN *** [8h 2h 3h][2d]
+*** RIVER *** [8h 2h 3h 2d][9d]
+*** SHOW DOWN ***
+Hero shows [As Js] (One pair : 2)
+P0011 shows [Td Th] (Two pairs : Tens and 2)
+P0011 collected 29770 from pot
+*** SUMMARY ***
+Total pot 29770 | No rake
+Board: [8h 2h 3h 2d 9d]
+Seat 2: Hero (big blind) showed [As Js] and lost with One pair : 2
+Seat 4: P0011 showed [Td Th] and won 29770 with Two pairs : Tens and 2
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 6 - HandId: #5042614887692369958-68-1790322516 - Holdem no limit (60/250/500) - 2026/09/25 07:48:36 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #1 is the button
+Seat 1: P0008 (35282, 1.50€ bounty)
+Seat 2: Hero (14444, 2€ bounty)
+Seat 3: P0010 (19578, 1€ bounty)
+Seat 4: P0011 (29770, 1€ bounty)
+Seat 5: P0003 (66740, 1.20€ bounty)
+Seat 6: P0012 (19010, 1€ bounty)
+*** ANTE/BLINDS ***
+Hero posts ante 60
+P0010 posts ante 60
+P0008 posts ante 60
+P0011 posts ante 60
+P0003 posts ante 60
+P0012 posts ante 60
+Hero posts small blind 250
+P0010 posts big blind 500
+Dealt to Hero [2s 3h]
+*** PRE-FLOP *** 
+P0011 folds
+P0003 folds
+P0012 folds
+P0008 folds
+Hero folds
+P0010 collected 1110 from pot
+*** SUMMARY ***
+Total pot 1110 | No rake
+Seat 3: P0010 (big blind) won 1110
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 6 - HandId: #5042614887692369958-69-1790322536 - Holdem no limit (60/250/500) - 2026/09/25 07:48:56 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #2 is the button
+Seat 1: P0008 (35222, 1.50€ bounty)
+Seat 2: Hero (14134, 2€ bounty)
+Seat 3: P0010 (20128, 1€ bounty)
+Seat 4: P0011 (29710, 1€ bounty)
+Seat 5: P0003 (66680, 1.20€ bounty)
+Seat 6: P0012 (18950, 1€ bounty)
+*** ANTE/BLINDS ***
+P0010 posts ante 60
+P0011 posts ante 60
+P0008 posts ante 60
+Hero posts ante 60
+P0003 posts ante 60
+P0012 posts ante 60
+P0010 posts small blind 250
+P0011 posts big blind 500
+Dealt to Hero [Kc 6s]
+*** PRE-FLOP *** 
+P0003 folds
+P0012 folds
+P0008 raises 500 to 1000
+Hero folds
+P0010 folds
+P0011 calls 500
+*** FLOP *** [9c 8d Ks]
+P0011 checks
+P0008 checks
+*** TURN *** [9c 8d Ks][6c]
+P0011 checks
+P0008 bets 1250
+P0011 raises 5110 to 6360
+P0008 folds
+P0011 collected 10220 from pot
+*** SUMMARY ***
+Total pot 10220 | No rake
+Board: [9c 8d Ks 6c]
+Seat 4: P0011 (big blind) won 10220
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 6 - HandId: #5042614887692369958-70-1790322600 - Holdem no limit (60/250/500) - 2026/09/25 07:50:00 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #3 is the button
+Seat 1: P0008 (32912, 1.50€ bounty)
+Seat 2: Hero (14074, 2€ bounty)
+Seat 3: P0010 (19818, 1€ bounty)
+Seat 4: P0011 (32510, 1€ bounty)
+Seat 5: P0003 (66620, 1.20€ bounty)
+Seat 6: P0012 (18890, 1€ bounty)
+*** ANTE/BLINDS ***
+P0011 posts ante 60
+P0003 posts ante 60
+P0008 posts ante 60
+Hero posts ante 60
+P0010 posts ante 60
+P0012 posts ante 60
+P0011 posts small blind 250
+P0003 posts big blind 500
+Dealt to Hero [6h 8h]
+*** PRE-FLOP *** 
+P0012 raises 500 to 1000
+P0008 calls 1000
+Hero folds
+P0010 folds
+P0011 folds
+P0003 calls 500
+*** FLOP *** [5d 6c 2h]
+P0003 checks
+P0012 checks
+P0008 checks
+*** TURN *** [5d 6c 2h][4s]
+P0003 checks
+P0012 checks
+P0008 checks
+*** RIVER *** [5d 6c 2h 4s][Th]
+P0003 checks
+P0012 checks
+P0008 checks
+*** SHOW DOWN ***
+P0003 shows [Qc Kh] (High card : King)
+P0012 shows [Qs 9s] (High card : Queen)
+P0008 shows [Js Ah] (High card : Ace)
+P0008 collected 3610 from pot
+*** SUMMARY ***
+Total pot 3610 | No rake
+Board: [5d 6c 2h 4s Th]
+Seat 1: P0008 showed [Js Ah] and won 3610 with High card : Ace
+Seat 5: P0003 (big blind) showed [Qc Kh] and lost with High card : King
+Seat 6: P0012 showed [Qs 9s] and lost with High card : Queen
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 7 - HandId: #5042614887692369958-71-1790322652 - Holdem no limit (70/300/600) - 2026/09/25 07:50:52 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #4 is the button
+Seat 1: P0008 (35462, 1.50€ bounty)
+Seat 2: Hero (14014, 2€ bounty)
+Seat 3: P0010 (19758, 1€ bounty)
+Seat 4: P0011 (32200, 1€ bounty)
+Seat 5: P0003 (65560, 1.20€ bounty)
+Seat 6: P0012 (17830, 1€ bounty)
+*** ANTE/BLINDS ***
+P0003 posts ante 70
+P0012 posts ante 70
+P0008 posts ante 70
+Hero posts ante 70
+P0010 posts ante 70
+P0011 posts ante 70
+P0003 posts small blind 300
+P0012 posts big blind 600
+Dealt to Hero [Qd 9h]
+*** PRE-FLOP *** 
+P0008 folds
+Hero folds
+P0010 folds
+P0011 raises 750 to 1350
+P0003 folds
+P0012 folds
+P0011 collected 2670 from pot
+*** SUMMARY ***
+Total pot 2670 | No rake
+Seat 4: P0011 (button) won 2670
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 7 - HandId: #5042614887692369958-72-1790322685 - Holdem no limit (70/300/600) - 2026/09/25 07:51:25 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #5 is the button
+Seat 1: P0008 (35392, 1.50€ bounty)
+Seat 2: Hero (13944, 2€ bounty)
+Seat 3: P0010 (19688, 1€ bounty)
+Seat 4: P0011 (33450, 1€ bounty)
+Seat 5: P0003 (65190, 1.20€ bounty)
+Seat 6: P0012 (17160, 1€ bounty)
+*** ANTE/BLINDS ***
+P0012 posts ante 70
+P0008 posts ante 70
+Hero posts ante 70
+P0010 posts ante 70
+P0011 posts ante 70
+P0003 posts ante 70
+P0012 posts small blind 300
+P0008 posts big blind 600
+Dealt to Hero [Kc 8h]
+*** PRE-FLOP *** 
+Hero folds
+P0010 folds
+P0011 folds
+P0003 raises 660 to 1260
+P0012 folds
+P0008 folds
+P0003 collected 2580 from pot
+*** SUMMARY ***
+Total pot 2580 | No rake
+Seat 5: P0003 (button) won 2580
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 7 - HandId: #5042614887692369958-73-1790322714 - Holdem no limit (70/300/600) - 2026/09/25 07:51:54 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #6 is the button
+Seat 1: P0008 (34722, 1.50€ bounty)
+Seat 2: Hero (13874, 2€ bounty)
+Seat 3: P0010 (19618, 1€ bounty)
+Seat 4: P0011 (33380, 1€ bounty)
+Seat 5: P0003 (66440, 1.20€ bounty)
+Seat 6: P0012 (16790, 1€ bounty)
+*** ANTE/BLINDS ***
+P0008 posts ante 70
+Hero posts ante 70
+P0010 posts ante 70
+P0011 posts ante 70
+P0003 posts ante 70
+P0012 posts ante 70
+P0008 posts small blind 300
+Hero posts big blind 600
+Dealt to Hero [9d Td]
+*** PRE-FLOP *** 
+P0010 folds
+P0011 folds
+P0003 folds
+P0012 folds
+P0008 raises 900 to 1500
+Hero calls 900
+*** FLOP *** [3s Kc 8h]
+P0008 checks
+Hero checks
+*** TURN *** [3s Kc 8h][Jc]
+P0008 checks
+Hero bets 2100
+P0008 folds
+Hero collected 5520 from pot
+*** SUMMARY ***
+Total pot 5520 | No rake
+Board: [3s Kc 8h Jc]
+Seat 2: Hero (big blind) won 5520
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 7 - HandId: #5042614887692369958-74-1790322745 - Holdem no limit (70/300/600) - 2026/09/25 07:52:25 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #1 is the button
+Seat 1: P0008 (33152, 1.50€ bounty)
+Seat 2: Hero (15724, 2€ bounty)
+Seat 3: P0010 (19548, 1€ bounty)
+Seat 4: P0011 (33310, 1€ bounty)
+Seat 5: P0003 (66370, 1.20€ bounty)
+Seat 6: P0012 (16720, 1€ bounty)
+*** ANTE/BLINDS ***
+Hero posts ante 70
+P0010 posts ante 70
+P0008 posts ante 70
+P0011 posts ante 70
+P0003 posts ante 70
+P0012 posts ante 70
+Hero posts small blind 300
+P0010 posts big blind 600
+Dealt to Hero [2c 4c]
+*** PRE-FLOP *** 
+P0011 raises 600 to 1200
+P0003 calls 1200
+P0012 folds
+P0008 folds
+Hero folds
+P0010 folds
+*** FLOP *** [Ac 4h Jh]
+P0011 checks
+P0003 checks
+*** TURN *** [Ac 4h Jh][9s]
+P0011 bets 930
+P0003 folds
+P0011 collected 4650 from pot
+*** SUMMARY ***
+Total pot 4650 | No rake
+Board: [Ac 4h Jh 9s]
+Seat 4: P0011 won 4650
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 7 - HandId: #5042614887692369958-75-1790322794 - Holdem no limit (70/300/600) - 2026/09/25 07:53:14 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #2 is the button
+Seat 1: P0008 (33082, 1.50€ bounty)
+Seat 2: Hero (15354, 2€ bounty)
+Seat 3: P0010 (18878, 1€ bounty)
+Seat 4: P0011 (35760, 1€ bounty)
+Seat 5: P0003 (65100, 1.20€ bounty)
+Seat 6: P0012 (16650, 1€ bounty)
+*** ANTE/BLINDS ***
+P0010 posts ante 70
+P0011 posts ante 70
+P0008 posts ante 70
+Hero posts ante 70
+P0003 posts ante 70
+P0012 posts ante 70
+P0010 posts small blind 300
+P0011 posts big blind 600
+Dealt to Hero [Kd Tc]
+*** PRE-FLOP *** 
+P0003 folds
+P0012 folds
+P0008 raises 600 to 1200
+Hero folds
+P0010 folds
+P0011 calls 600
+*** FLOP *** [Ts 9d 6h]
+P0011 checks
+P0008 checks
+*** TURN *** [Ts 9d 6h][Qs]
+P0011 checks
+P0008 checks
+*** RIVER *** [Ts 9d 6h Qs][9c]
+P0011 bets 1560
+P0008 folds
+P0011 collected 4680 from pot
+*** SUMMARY ***
+Total pot 4680 | No rake
+Board: [Ts 9d 6h Qs 9c]
+Seat 4: P0011 (big blind) won 4680
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 7 - HandId: #5042614887692369958-76-1790322830 - Holdem no limit (70/300/600) - 2026/09/25 07:53:50 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #3 is the button
+Seat 1: P0008 (31812, 1.50€ bounty)
+Seat 2: Hero (15284, 2€ bounty)
+Seat 3: P0010 (18508, 1€ bounty)
+Seat 4: P0011 (37610, 1€ bounty)
+Seat 5: P0003 (65030, 1.20€ bounty)
+Seat 6: P0012 (16580, 1€ bounty)
+*** ANTE/BLINDS ***
+P0011 posts ante 70
+P0003 posts ante 70
+P0008 posts ante 70
+Hero posts ante 70
+P0010 posts ante 70
+P0012 posts ante 70
+P0011 posts small blind 300
+P0003 posts big blind 600
+Dealt to Hero [4c 5s]
+*** PRE-FLOP *** 
+P0012 folds
+P0008 folds
+Hero folds
+P0010 folds
+P0011 calls 300
+P0003 checks
+*** FLOP *** [6d 8h As]
+P0011 checks
+P0003 checks
+*** TURN *** [6d 8h As][3s]
+P0011 bets 810
+P0003 folds
+P0011 collected 2430 from pot
+*** SUMMARY ***
+Total pot 2430 | No rake
+Board: [6d 8h As 3s]
+Seat 4: P0011 (small blind) won 2430
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 7 - HandId: #5042614887692369958-77-1790323260 - Holdem no limit (70/300/600) - 2026/09/25 08:01:00 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #4 is the button
+Seat 1: P0008 (31742, 1.50€ bounty)
+Seat 2: Hero (15214, 2€ bounty)
+Seat 3: P0010 (18438, 1€ bounty)
+Seat 4: P0011 (38560, 1€ bounty)
+Seat 5: P0003 (64360, 1.20€ bounty)
+Seat 6: P0012 (16510, 1€ bounty)
+*** ANTE/BLINDS ***
+P0003 posts ante 70
+P0012 posts ante 70
+P0008 posts ante 70
+Hero posts ante 70
+P0010 posts ante 70
+P0011 posts ante 70
+P0003 posts small blind 300
+P0012 posts big blind 600
+Dealt to Hero [2d 4s]
+*** PRE-FLOP *** 
+P0008 folds
+Hero folds
+P0010 folds
+P0011 folds
+P0003 calls 300
+P0012 checks
+*** FLOP *** [4d Th 7s]
+P0003 checks
+P0012 bets 1296
+P0003 calls 1296
+*** TURN *** [4d Th 7s][Qc]
+P0003 checks
+P0012 checks
+*** RIVER *** [4d Th 7s Qc][Kd]
+P0003 checks
+P0012 checks
+*** SHOW DOWN ***
+P0012 shows [Tc 6c] (One pair : Tens)
+P0003 shows [Qd Js] (One pair : Queens)
+P0003 collected 4212 from pot
+*** SUMMARY ***
+Total pot 4212 | No rake
+Board: [4d Th 7s Qc Kd]
+Seat 5: P0003 (small blind) showed [Qd Js] and won 4212 with One pair : Queens
+Seat 6: P0012 (big blind) showed [Tc 6c] and lost with One pair : Tens
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 8 - HandId: #5042614887692369958-78-1790323404 - Holdem no limit (80/350/700) - 2026/09/25 08:03:24 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #5 is the button
+Seat 1: P0008 (31672, 1.50€ bounty)
+Seat 2: Hero (15144, 2€ bounty)
+Seat 3: P0010 (18368, 1€ bounty)
+Seat 4: P0011 (38490, 1€ bounty)
+Seat 5: P0003 (66606, 1.20€ bounty)
+Seat 6: P0012 (14544, 1€ bounty)
+*** ANTE/BLINDS ***
+P0012 posts ante 80
+P0008 posts ante 80
+Hero posts ante 80
+P0010 posts ante 80
+P0011 posts ante 80
+P0003 posts ante 80
+P0012 posts small blind 350
+P0008 posts big blind 700
+Dealt to Hero [5c Jh]
+*** PRE-FLOP *** 
+Hero folds
+P0010 folds
+P0011 folds
+P0003 raises 770 to 1470
+P0012 raises 12994 to 14464 and is all-in
+P0008 folds
+P0003 folds
+P0012 collected 17114 from pot
+*** SUMMARY ***
+Total pot 17114 | No rake
+Seat 6: P0012 (small blind) won 17114
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 8 - HandId: #5042614887692369958-79-1790323454 - Holdem no limit (80/350/700) - 2026/09/25 08:04:14 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #6 is the button
+Seat 1: P0008 (30892, 1.50€ bounty)
+Seat 2: Hero (15064, 2€ bounty)
+Seat 3: P0010 (18288, 1€ bounty)
+Seat 4: P0011 (38410, 1€ bounty)
+Seat 5: P0003 (65056, 1.20€ bounty)
+Seat 6: P0012 (17114, 1€ bounty)
+*** ANTE/BLINDS ***
+P0008 posts ante 80
+Hero posts ante 80
+P0010 posts ante 80
+P0011 posts ante 80
+P0003 posts ante 80
+P0012 posts ante 80
+P0008 posts small blind 350
+Hero posts big blind 700
+Dealt to Hero [Jd 7d]
+*** PRE-FLOP *** 
+P0010 folds
+P0011 folds
+P0003 raises 770 to 1470
+P0012 folds
+P0008 folds
+Hero calls 770
+*** FLOP *** [6c Ad 2h]
+Hero checks
+P0003 bets 1244
+Hero folds
+P0003 collected 5014 from pot
+*** SUMMARY ***
+Total pot 5014 | No rake
+Board: [6c Ad 2h]
+Seat 5: P0003 won 5014
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 8 - HandId: #5042614887692369958-80-1790323485 - Holdem no limit (80/350/700) - 2026/09/25 08:04:45 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #1 is the button
+Seat 1: P0008 (30462, 1.50€ bounty)
+Seat 2: Hero (13514, 2€ bounty)
+Seat 3: P0010 (18208, 1€ bounty)
+Seat 4: P0011 (38330, 1€ bounty)
+Seat 5: P0003 (67276, 1.20€ bounty)
+Seat 6: P0012 (17034, 1€ bounty)
+*** ANTE/BLINDS ***
+Hero posts ante 80
+P0010 posts ante 80
+P0008 posts ante 80
+P0011 posts ante 80
+P0003 posts ante 80
+P0012 posts ante 80
+Hero posts small blind 350
+P0010 posts big blind 700
+Dealt to Hero [Ah 9c]
+*** PRE-FLOP *** 
+P0011 raises 700 to 1400
+P0003 folds
+P0012 folds
+P0008 folds
+Hero folds
+P0010 folds
+P0011 collected 2930 from pot
+*** SUMMARY ***
+Total pot 2930 | No rake
+Seat 4: P0011 won 2930
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 8 - HandId: #5042614887692369958-81-1790323511 - Holdem no limit (80/350/700) - 2026/09/25 08:05:11 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #2 is the button
+Seat 1: P0008 (30382, 1.50€ bounty)
+Seat 2: Hero (13084, 2€ bounty)
+Seat 3: P0010 (17428, 1€ bounty)
+Seat 4: P0011 (39780, 1€ bounty)
+Seat 5: P0003 (67196, 1.20€ bounty)
+Seat 6: P0012 (16954, 1€ bounty)
+*** ANTE/BLINDS ***
+P0010 posts ante 80
+P0011 posts ante 80
+P0008 posts ante 80
+Hero posts ante 80
+P0003 posts ante 80
+P0012 posts ante 80
+P0010 posts small blind 350
+P0011 posts big blind 700
+Dealt to Hero [3c 5c]
+*** PRE-FLOP *** 
+P0003 folds
+P0012 folds
+P0008 folds
+Hero folds
+P0010 folds
+P0011 collected 1530 from pot
+*** SUMMARY ***
+Total pot 1530 | No rake
+Seat 4: P0011 (big blind) won 1530
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 8 - HandId: #5042614887692369958-82-1790323531 - Holdem no limit (80/350/700) - 2026/09/25 08:05:31 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #3 is the button
+Seat 1: P0008 (30302, 1.50€ bounty)
+Seat 2: Hero (13004, 2€ bounty)
+Seat 3: P0010 (16998, 1€ bounty)
+Seat 4: P0011 (40530, 1€ bounty)
+Seat 5: P0003 (67116, 1.20€ bounty)
+Seat 6: P0012 (16874, 1€ bounty)
+*** ANTE/BLINDS ***
+P0011 posts ante 80
+P0003 posts ante 80
+P0008 posts ante 80
+Hero posts ante 80
+P0010 posts ante 80
+P0012 posts ante 80
+P0011 posts small blind 350
+P0003 posts big blind 700
+Dealt to Hero [2d 3c]
+*** PRE-FLOP *** 
+P0012 folds
+P0008 folds
+Hero folds
+P0010 raises 840 to 1540
+P0011 folds
+P0003 calls 840
+*** FLOP *** [9s Jh Th]
+P0003 checks
+P0010 bets 2581
+P0003 folds
+P0010 collected 6491 from pot
+*** SUMMARY ***
+Total pot 6491 | No rake
+Board: [9s Jh Th]
+Seat 3: P0010 (button) won 6491
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 9 - HandId: #5042614887692369958-83-1790323576 - Holdem no limit (100/400/800) - 2026/09/25 08:06:16 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #4 is the button
+Seat 1: P0008 (30222, 1.50€ bounty)
+Seat 2: Hero (12924, 2€ bounty)
+Seat 3: P0010 (19288, 1€ bounty)
+Seat 4: P0011 (40100, 1€ bounty)
+Seat 5: P0003 (65496, 1.20€ bounty)
+Seat 6: P0012 (16794, 1€ bounty)
+*** ANTE/BLINDS ***
+P0003 posts ante 100
+P0012 posts ante 100
+P0008 posts ante 100
+Hero posts ante 100
+P0010 posts ante 100
+P0011 posts ante 100
+P0003 posts small blind 400
+P0012 posts big blind 800
+Dealt to Hero [Ks Qh]
+*** PRE-FLOP *** 
+P0008 folds
+Hero raises 800 to 1600
+P0010 folds
+P0011 folds
+P0003 calls 1200
+P0012 folds
+*** FLOP *** [6d 7c 6h]
+P0003 checks
+Hero bets 1200
+P0003 folds
+Hero collected 5800 from pot
+*** SUMMARY ***
+Total pot 5800 | No rake
+Board: [6d 7c 6h]
+Seat 2: Hero won 5800
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 9 - HandId: #5042614887692369958-84-1790323602 - Holdem no limit (100/400/800) - 2026/09/25 08:06:42 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #5 is the button
+Seat 1: P0008 (30122, 1.50€ bounty)
+Seat 2: Hero (15824, 2€ bounty)
+Seat 3: P0010 (19188, 1€ bounty)
+Seat 4: P0011 (40000, 1€ bounty)
+Seat 5: P0003 (63796, 1.20€ bounty)
+Seat 6: P0012 (15894, 1€ bounty)
+*** ANTE/BLINDS ***
+P0012 posts ante 100
+P0008 posts ante 100
+Hero posts ante 100
+P0010 posts ante 100
+P0011 posts ante 100
+P0003 posts ante 100
+P0012 posts small blind 400
+P0008 posts big blind 800
+Dealt to Hero [Kd Qs]
+*** PRE-FLOP *** 
+Hero raises 800 to 1600
+P0010 folds
+P0011 folds
+P0003 folds
+P0012 folds
+P0008 folds
+Hero collected 3400 from pot
+*** SUMMARY ***
+Total pot 3400 | No rake
+Seat 2: Hero won 3400
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 9 - HandId: #5042614887692369958-85-1790323618 - Holdem no limit (100/400/800) - 2026/09/25 08:06:58 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #6 is the button
+Seat 1: P0008 (29222, 1.50€ bounty)
+Seat 2: Hero (17524, 2€ bounty)
+Seat 3: P0010 (19088, 1€ bounty)
+Seat 4: P0011 (39900, 1€ bounty)
+Seat 5: P0003 (63696, 1.20€ bounty)
+Seat 6: P0012 (15394, 1€ bounty)
+*** ANTE/BLINDS ***
+P0008 posts ante 100
+Hero posts ante 100
+P0010 posts ante 100
+P0011 posts ante 100
+P0003 posts ante 100
+P0012 posts ante 100
+P0008 posts small blind 400
+Hero posts big blind 800
+Dealt to Hero [3s Ks]
+*** PRE-FLOP *** 
+P0010 folds
+P0011 folds
+P0003 folds
+P0012 folds
+P0008 calls 400
+Hero checks
+*** FLOP *** [3h Kc 7c]
+P0008 checks
+Hero bets 1200
+P0008 folds
+Hero collected 3400 from pot
+*** SUMMARY ***
+Total pot 3400 | No rake
+Board: [3h Kc 7c]
+Seat 2: Hero (big blind) won 3400
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 9 - HandId: #5042614887692369958-86-1790323640 - Holdem no limit (100/400/800) - 2026/09/25 08:07:20 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #1 is the button
+Seat 1: P0008 (28322, 1.50€ bounty)
+Seat 2: Hero (18824, 2€ bounty)
+Seat 3: P0010 (18988, 1€ bounty)
+Seat 4: P0011 (39800, 1€ bounty)
+Seat 5: P0003 (63596, 1.20€ bounty)
+Seat 6: P0012 (15294, 1€ bounty)
+*** ANTE/BLINDS ***
+Hero posts ante 100
+P0010 posts ante 100
+P0008 posts ante 100
+P0011 posts ante 100
+P0003 posts ante 100
+P0012 posts ante 100
+Hero posts small blind 400
+P0010 posts big blind 800
+Dealt to Hero [5d 8c]
+*** PRE-FLOP *** 
+P0011 calls 800
+P0003 folds
+P0012 folds
+P0008 folds
+Hero folds
+P0010 checks
+*** FLOP *** [4s 9s Jd]
+P0010 checks
+P0011 checks
+*** TURN *** [4s 9s Jd][8d]
+P0010 checks
+P0011 bets 1300
+P0010 calls 1300
+*** RIVER *** [4s 9s Jd 8d][3h]
+P0010 checks
+P0011 checks
+*** SHOW DOWN ***
+P0010 shows [Qd 2c] (High card : Queen)
+P0011 shows [Td Kc] (High card : King)
+P0011 collected 5200 from pot
+*** SUMMARY ***
+Total pot 5200 | No rake
+Board: [4s 9s Jd 8d 3h]
+Seat 3: P0010 (big blind) showed [Qd 2c] and lost with High card : Queen
+Seat 4: P0011 showed [Td Kc] and won 5200 with High card : King
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 9 - HandId: #5042614887692369958-87-1790323695 - Holdem no limit (100/400/800) - 2026/09/25 08:08:15 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #2 is the button
+Seat 1: P0008 (28222, 1.50€ bounty)
+Seat 2: Hero (18324, 2€ bounty)
+Seat 3: P0010 (16788, 1€ bounty)
+Seat 4: P0011 (42800, 1€ bounty)
+Seat 5: P0003 (63496, 1.20€ bounty)
+Seat 6: P0012 (15194, 1€ bounty)
+*** ANTE/BLINDS ***
+P0010 posts ante 100
+P0011 posts ante 100
+P0008 posts ante 100
+Hero posts ante 100
+P0003 posts ante 100
+P0012 posts ante 100
+P0010 posts small blind 400
+P0011 posts big blind 800
+Dealt to Hero [Qh Qd]
+*** PRE-FLOP *** 
+P0003 folds
+P0012 folds
+P0008 folds
+Hero raises 800 to 1600
+P0010 folds
+P0011 calls 800
+*** FLOP *** [Jh 5d Kd]
+P0011 checks
+Hero bets 1200
+P0011 folds
+Hero collected 5400 from pot
+*** SUMMARY ***
+Total pot 5400 | No rake
+Board: [Jh 5d Kd]
+Seat 2: Hero (button) won 5400
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 9 - HandId: #5042614887692369958-88-1790323723 - Holdem no limit (100/400/800) - 2026/09/25 08:08:43 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #3 is the button
+Seat 1: P0008 (28122, 1.50€ bounty)
+Seat 2: Hero (20824, 2€ bounty)
+Seat 3: P0010 (16288, 1€ bounty)
+Seat 4: P0011 (41100, 1€ bounty)
+Seat 5: P0003 (63396, 1.20€ bounty)
+Seat 6: P0012 (15094, 1€ bounty)
+*** ANTE/BLINDS ***
+P0011 posts ante 100
+P0003 posts ante 100
+P0008 posts ante 100
+Hero posts ante 100
+P0010 posts ante 100
+P0012 posts ante 100
+P0011 posts small blind 400
+P0003 posts big blind 800
+Dealt to Hero [Qs 6s]
+*** PRE-FLOP *** 
+P0012 folds
+P0008 folds
+Hero folds
+P0010 folds
+P0011 folds
+P0003 collected 1800 from pot
+*** SUMMARY ***
+Total pot 1800 | No rake
+Seat 5: P0003 (big blind) won 1800
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 9 - HandId: #5042614887692369958-89-1790323744 - Holdem no limit (100/400/800) - 2026/09/25 08:09:04 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #4 is the button
+Seat 1: P0008 (28022, 1.50€ bounty)
+Seat 2: Hero (20724, 2€ bounty)
+Seat 3: P0010 (16188, 1€ bounty)
+Seat 4: P0011 (40600, 1€ bounty)
+Seat 5: P0003 (64296, 1.20€ bounty)
+Seat 6: P0012 (14994, 1€ bounty)
+*** ANTE/BLINDS ***
+P0003 posts ante 100
+P0012 posts ante 100
+P0008 posts ante 100
+Hero posts ante 100
+P0010 posts ante 100
+P0011 posts ante 100
+P0003 posts small blind 400
+P0012 posts big blind 800
+Dealt to Hero [Qc 2c]
+*** PRE-FLOP *** 
+P0008 folds
+Hero folds
+P0010 folds
+P0011 folds
+P0003 raises 1400 to 2200
+P0012 folds
+P0003 collected 3600 from pot
+*** SUMMARY ***
+Total pot 3600 | No rake
+Seat 5: P0003 (small blind) won 3600
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 9 - HandId: #5042614887692369958-90-1790323764 - Holdem no limit (100/400/800) - 2026/09/25 08:09:24 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #5 is the button
+Seat 1: P0008 (27922, 1.50€ bounty)
+Seat 2: Hero (20624, 2€ bounty)
+Seat 3: P0010 (16088, 1€ bounty)
+Seat 4: P0011 (40500, 1€ bounty)
+Seat 5: P0003 (65596, 1.20€ bounty)
+Seat 6: P0012 (14094, 1€ bounty)
+*** ANTE/BLINDS ***
+P0012 posts ante 100
+P0008 posts ante 100
+Hero posts ante 100
+P0010 posts ante 100
+P0011 posts ante 100
+P0003 posts ante 100
+P0012 posts small blind 400
+P0008 posts big blind 800
+Dealt to Hero [8d Qs]
+*** PRE-FLOP *** 
+Hero folds
+P0010 raises 800 to 1600
+P0011 folds
+P0003 calls 1600
+P0012 calls 1200
+P0008 folds
+*** FLOP *** [Ac 5c 8h]
+P0012 checks
+P0010 bets 2046
+P0003 folds
+P0012 folds
+P0010 collected 8246 from pot
+*** SUMMARY ***
+Total pot 8246 | No rake
+Board: [Ac 5c 8h]
+Seat 3: P0010 won 8246
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 9 - HandId: #5042614887692369958-91-1790323799 - Holdem no limit (100/400/800) - 2026/09/25 08:09:59 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #6 is the button
+Seat 1: P0008 (27022, 1.50€ bounty)
+Seat 2: Hero (20524, 2€ bounty)
+Seat 3: P0010 (20588, 1€ bounty)
+Seat 4: P0011 (40400, 1€ bounty)
+Seat 5: P0003 (63896, 1.20€ bounty)
+Seat 6: P0012 (12394, 1€ bounty)
+*** ANTE/BLINDS ***
+P0008 posts ante 100
+Hero posts ante 100
+P0010 posts ante 100
+P0011 posts ante 100
+P0003 posts ante 100
+P0012 posts ante 100
+P0008 posts small blind 400
+Hero posts big blind 800
+Dealt to Hero [6h 9d]
+*** PRE-FLOP *** 
+P0010 folds
+P0011 raises 800 to 1600
+P0003 folds
+P0012 calls 1600
+P0008 folds
+Hero folds
+*** FLOP *** [5h 4h 3s]
+P0011 checks
+P0012 bets 1750
+P0011 folds
+P0012 collected 6750 from pot
+*** SUMMARY ***
+Total pot 6750 | No rake
+Board: [5h 4h 3s]
+Seat 6: P0012 (button) won 6750
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 9 - HandId: #5042614887692369958-92-1790323836 - Holdem no limit (100/400/800) - 2026/09/25 08:10:36 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #1 is the button
+Seat 1: P0008 (26522, 1.50€ bounty)
+Seat 2: Hero (19624, 2€ bounty)
+Seat 3: P0010 (20488, 1€ bounty)
+Seat 4: P0011 (38700, 1€ bounty)
+Seat 5: P0003 (63796, 1.20€ bounty)
+Seat 6: P0012 (15694, 1€ bounty)
+*** ANTE/BLINDS ***
+Hero posts ante 100
+P0010 posts ante 100
+P0008 posts ante 100
+P0011 posts ante 100
+P0003 posts ante 100
+P0012 posts ante 100
+Hero posts small blind 400
+P0010 posts big blind 800
+Dealt to Hero [7h Js]
+*** PRE-FLOP *** 
+P0011 calls 800
+P0003 folds
+P0012 folds
+P0008 folds
+Hero folds
+P0010 checks
+*** FLOP *** [5c Jd 7c]
+P0010 checks
+P0011 checks
+*** TURN *** [5c Jd 7c][Tc]
+P0010 checks
+P0011 checks
+*** RIVER *** [5c Jd 7c Tc][6c]
+P0010 checks
+P0011 checks
+*** SHOW DOWN ***
+P0011 shows [9d Ks] (High card : King)
+P0010 shows [4s 7d] (One pair : 7)
+P0010 collected 2600 from pot
+*** SUMMARY ***
+Total pot 2600 | No rake
+Board: [5c Jd 7c Tc 6c]
+Seat 3: P0010 (big blind) showed [4s 7d] and won 2600 with One pair : 7
+Seat 4: P0011 showed [9d Ks] and lost with High card : King
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 10 - HandId: #5042614887692369958-93-1790323880 - Holdem no limit (120/500/1000) - 2026/09/25 08:11:20 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #2 is the button
+Seat 1: P0008 (26422, 1.50€ bounty)
+Seat 2: Hero (19124, 2€ bounty)
+Seat 3: P0010 (22188, 1€ bounty)
+Seat 4: P0011 (37800, 1€ bounty)
+Seat 5: P0003 (63696, 1.20€ bounty)
+Seat 6: P0012 (15594, 1€ bounty)
+*** ANTE/BLINDS ***
+P0010 posts ante 120
+P0011 posts ante 120
+P0008 posts ante 120
+Hero posts ante 120
+P0003 posts ante 120
+P0012 posts ante 120
+P0010 posts small blind 500
+P0011 posts big blind 1000
+Dealt to Hero [Qc 9s]
+*** PRE-FLOP *** 
+P0003 raises 1100 to 2100
+P0012 folds
+P0008 folds
+Hero folds
+P0010 folds
+P0011 folds
+P0003 collected 4320 from pot
+*** SUMMARY ***
+Total pot 4320 | No rake
+Seat 5: P0003 won 4320
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 10 - HandId: #5042614887692369958-94-1790323896 - Holdem no limit (120/500/1000) - 2026/09/25 08:11:36 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #3 is the button
+Seat 1: P0008 (26302, 1.50€ bounty)
+Seat 2: Hero (19004, 2€ bounty)
+Seat 3: P0010 (21568, 1€ bounty)
+Seat 4: P0011 (36680, 1€ bounty)
+Seat 5: P0003 (65796, 1.20€ bounty)
+Seat 6: P0012 (15474, 1€ bounty)
+*** ANTE/BLINDS ***
+P0011 posts ante 120
+P0003 posts ante 120
+P0008 posts ante 120
+Hero posts ante 120
+P0010 posts ante 120
+P0012 posts ante 120
+P0011 posts small blind 500
+P0003 posts big blind 1000
+Dealt to Hero [Qs Jh]
+*** PRE-FLOP *** 
+P0012 folds
+P0008 folds
+Hero raises 1000 to 2000
+P0010 folds
+P0011 folds
+P0003 folds
+Hero collected 4220 from pot
+*** SUMMARY ***
+Total pot 4220 | No rake
+Seat 2: Hero won 4220
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 10 - HandId: #5042614887692369958-95-1790323934 - Holdem no limit (120/500/1000) - 2026/09/25 08:12:14 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #4 is the button
+Seat 1: P0008 (26182, 1.50€ bounty)
+Seat 2: Hero (21104, 2€ bounty)
+Seat 3: P0010 (21448, 1€ bounty)
+Seat 4: P0011 (36060, 1€ bounty)
+Seat 5: P0003 (64676, 1.20€ bounty)
+Seat 6: P0012 (15354, 1€ bounty)
+*** ANTE/BLINDS ***
+P0003 posts ante 120
+P0012 posts ante 120
+P0008 posts ante 120
+Hero posts ante 120
+P0010 posts ante 120
+P0011 posts ante 120
+P0003 posts small blind 500
+P0012 posts big blind 1000
+Dealt to Hero [8c Kd]
+*** PRE-FLOP *** 
+P0008 folds
+Hero folds
+P0010 raises 1200 to 2200
+P0011 folds
+P0003 folds
+P0012 folds
+P0010 collected 4420 from pot
+*** SUMMARY ***
+Total pot 4420 | No rake
+Seat 3: P0010 won 4420
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 10 - HandId: #5042614887692369958-96-1790323968 - Holdem no limit (120/500/1000) - 2026/09/25 08:12:48 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #5 is the button
+Seat 1: P0008 (26062, 1.50€ bounty)
+Seat 2: Hero (20984, 2€ bounty)
+Seat 3: P0010 (23548, 1€ bounty)
+Seat 4: P0011 (35940, 1€ bounty)
+Seat 5: P0003 (64056, 1.20€ bounty)
+Seat 6: P0012 (14234, 1€ bounty)
+*** ANTE/BLINDS ***
+P0012 posts ante 120
+P0008 posts ante 120
+Hero posts ante 120
+P0010 posts ante 120
+P0011 posts ante 120
+P0003 posts ante 120
+P0012 posts small blind 500
+P0008 posts big blind 1000
+Dealt to Hero [7c 8h]
+*** PRE-FLOP *** 
+Hero folds
+P0010 raises 1200 to 2200
+P0011 calls 2200
+P0003 folds
+P0012 folds
+P0008 folds
+*** FLOP *** [Qd 8d 5d]
+P0010 bets 2185
+P0011 folds
+P0010 collected 8805 from pot
+*** SUMMARY ***
+Total pot 8805 | No rake
+Board: [Qd 8d 5d]
+Seat 3: P0010 won 8805
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 10 - HandId: #5042614887692369958-97-1790324015 - Holdem no limit (120/500/1000) - 2026/09/25 08:13:35 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #6 is the button
+Seat 1: P0008 (24942, 1.50€ bounty)
+Seat 2: Hero (20864, 2€ bounty)
+Seat 3: P0010 (27848, 1€ bounty)
+Seat 4: P0011 (33620, 1€ bounty)
+Seat 5: P0003 (63936, 1.20€ bounty)
+Seat 6: P0012 (13614, 1€ bounty)
+*** ANTE/BLINDS ***
+P0008 posts ante 120
+Hero posts ante 120
+P0010 posts ante 120
+P0011 posts ante 120
+P0003 posts ante 120
+P0012 posts ante 120
+P0008 posts small blind 500
+Hero posts big blind 1000
+Dealt to Hero [Kd 8c]
+*** PRE-FLOP *** 
+P0010 folds
+P0011 folds
+P0003 folds
+P0012 raises 12494 to 13494 and is all-in
+P0008 raises 11328 to 24822 and is all-in
+Hero folds
+*** FLOP *** [Jd 3d 5s]
+*** TURN *** [Jd 3d 5s][8h]
+*** RIVER *** [Jd 3d 5s 8h][8d]
+*** SHOW DOWN ***
+P0008 shows [Th Ts] (Two pairs : Tens and 8)
+P0012 shows [Ad Jc] (Two pairs : Jacks and 8)
+P0012 collected 28708 from main pot
+P0008 collected 11328 from side pot 1
+*** SUMMARY ***
+Total pot 40036 | No rake
+Board: [Jd 3d 5s 8h 8d]
+Seat 1: P0008 (small blind) showed [Th Ts] and won 11328 with Two pairs : Tens and 8
+Seat 6: P0012 (button) showed [Ad Jc] and won 28708 with Two pairs : Jacks and 8
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 10 - HandId: #5042614887692369958-98-1790324070 - Holdem no limit (120/500/1000) - 2026/09/25 08:14:30 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #1 is the button
+Seat 1: P0008 (11328, 1.50€ bounty)
+Seat 2: Hero (19744, 2€ bounty)
+Seat 3: P0010 (27728, 1€ bounty)
+Seat 4: P0011 (33500, 1€ bounty)
+Seat 5: P0003 (63816, 1.20€ bounty)
+Seat 6: P0012 (28708, 1€ bounty)
+*** ANTE/BLINDS ***
+Hero posts ante 120
+P0010 posts ante 120
+P0008 posts ante 120
+P0011 posts ante 120
+P0003 posts ante 120
+P0012 posts ante 120
+Hero posts small blind 500
+P0010 posts big blind 1000
+Dealt to Hero [Ts 3d]
+*** PRE-FLOP *** 
+P0011 folds
+P0003 folds
+P0012 folds
+P0008 raises 10208 to 11208 and is all-in
+Hero folds
+P0010 folds
+P0008 collected 13428 from pot
+*** SUMMARY ***
+Total pot 13428 | No rake
+Seat 1: P0008 (button) won 13428
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 10 - HandId: #5042614887692369958-99-1790324092 - Holdem no limit (120/500/1000) - 2026/09/25 08:14:52 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #2 is the button
+Seat 1: P0008 (13428, 1.50€ bounty)
+Seat 2: Hero (19124, 2€ bounty)
+Seat 3: P0010 (26608, 1€ bounty)
+Seat 4: P0011 (33380, 1€ bounty)
+Seat 5: P0003 (63696, 1.20€ bounty)
+Seat 6: P0012 (28588, 1€ bounty)
+*** ANTE/BLINDS ***
+P0010 posts ante 120
+P0011 posts ante 120
+P0008 posts ante 120
+Hero posts ante 120
+P0003 posts ante 120
+P0012 posts ante 120
+P0010 posts small blind 500
+P0011 posts big blind 1000
+Dealt to Hero [Kd Jd]
+*** PRE-FLOP *** 
+P0003 folds
+P0012 raises 2000 to 3000
+P0008 folds
+Hero calls 3000
+P0010 folds
+P0011 folds
+*** FLOP *** [Ks 9h 6h]
+P0012 bets 2055
+Hero calls 2055
+*** TURN *** [Ks 9h 6h][Qc]
+P0012 checks
+Hero bets 6165
+P0012 folds
+Hero collected 18495 from pot
+*** SUMMARY ***
+Total pot 18495 | No rake
+Board: [Ks 9h 6h Qc]
+Seat 2: Hero (button) won 18495
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 10 - HandId: #5042614887692369958-100-1790324157 - Holdem no limit (120/500/1000) - 2026/09/25 08:15:57 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #3 is the button
+Seat 1: P0008 (13308, 1.50€ bounty)
+Seat 2: Hero (26279, 2€ bounty)
+Seat 3: P0010 (25988, 1€ bounty)
+Seat 4: P0011 (32260, 1€ bounty)
+Seat 5: P0003 (63576, 1.20€ bounty)
+Seat 6: P0012 (23413, 1€ bounty)
+*** ANTE/BLINDS ***
+P0011 posts ante 120
+P0003 posts ante 120
+P0008 posts ante 120
+Hero posts ante 120
+P0010 posts ante 120
+P0012 posts ante 120
+P0011 posts small blind 500
+P0003 posts big blind 1000
+Dealt to Hero [Qh Ts]
+*** PRE-FLOP *** 
+P0012 folds
+P0008 folds
+Hero folds
+P0010 folds
+P0011 folds
+P0003 collected 2220 from pot
+*** SUMMARY ***
+Total pot 2220 | No rake
+Seat 5: P0003 (big blind) won 2220
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 11 - HandId: #5042614887692369958-101-1790324192 - Holdem no limit (140/600/1200) - 2026/09/25 08:16:32 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #4 is the button
+Seat 1: P0008 (13188, 1.50€ bounty)
+Seat 2: Hero (26159, 2€ bounty)
+Seat 3: P0010 (25868, 1€ bounty)
+Seat 4: P0011 (31640, 1€ bounty)
+Seat 5: P0003 (64676, 1.20€ bounty)
+Seat 6: P0012 (23293, 1€ bounty)
+*** ANTE/BLINDS ***
+P0003 posts ante 140
+P0012 posts ante 140
+P0008 posts ante 140
+Hero posts ante 140
+P0010 posts ante 140
+P0011 posts ante 140
+P0003 posts small blind 600
+P0012 posts big blind 1200
+Dealt to Hero [9d 6d]
+*** PRE-FLOP *** 
+P0008 folds
+Hero folds
+P0010 folds
+P0011 raises 1200 to 2400
+P0003 folds
+P0012 calls 1200
+*** FLOP *** [4c 7c Qd]
+P0012 checks
+P0011 checks
+*** TURN *** [4c 7c Qd][Js]
+P0012 checks
+P0011 checks
+*** RIVER *** [4c 7c Qd Js][4d]
+P0012 checks
+P0011 checks
+*** SHOW DOWN ***
+P0012 shows [Ks 8s] (One pair : 4)
+P0011 shows [3h Ad] (One pair : 4)
+P0011 collected 6240 from pot
+*** SUMMARY ***
+Total pot 6240 | No rake
+Board: [4c 7c Qd Js 4d]
+Seat 4: P0011 (button) showed [3h Ad] and won 6240 with One pair : 4
+Seat 6: P0012 (big blind) showed [Ks 8s] and lost with One pair : 4
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 11 - HandId: #5042614887692369958-102-1790324238 - Holdem no limit (140/600/1200) - 2026/09/25 08:17:18 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #5 is the button
+Seat 1: P0008 (13048, 1.50€ bounty)
+Seat 2: Hero (26019, 2€ bounty)
+Seat 3: P0010 (25728, 1€ bounty)
+Seat 4: P0011 (35340, 1€ bounty)
+Seat 5: P0003 (63936, 1.20€ bounty)
+Seat 6: P0012 (20753, 1€ bounty)
+*** ANTE/BLINDS ***
+P0012 posts ante 140
+P0008 posts ante 140
+Hero posts ante 140
+P0010 posts ante 140
+P0011 posts ante 140
+P0003 posts ante 140
+P0012 posts small blind 600
+P0008 posts big blind 1200
+Dealt to Hero [2h Jh]
+*** PRE-FLOP *** 
+Hero folds
+P0010 folds
+P0011 folds
+P0003 raises 1320 to 2520
+P0012 folds
+P0008 raises 10388 to 12908 and is all-in
+P0003 folds
+P0008 collected 16868 from pot
+*** SUMMARY ***
+Total pot 16868 | No rake
+Seat 1: P0008 (big blind) won 16868
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 11 - HandId: #5042614887692369958-103-1790324284 - Holdem no limit (140/600/1200) - 2026/09/25 08:18:04 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #6 is the button
+Seat 1: P0008 (16868, 1.50€ bounty)
+Seat 2: Hero (25879, 2€ bounty)
+Seat 3: P0010 (25588, 1€ bounty)
+Seat 4: P0011 (35200, 1€ bounty)
+Seat 5: P0003 (61276, 1.20€ bounty)
+Seat 6: P0012 (20013, 1€ bounty)
+*** ANTE/BLINDS ***
+P0008 posts ante 140
+Hero posts ante 140
+P0010 posts ante 140
+P0011 posts ante 140
+P0003 posts ante 140
+P0012 posts ante 140
+P0008 posts small blind 600
+Hero posts big blind 1200
+Dealt to Hero [Kd 8s]
+*** PRE-FLOP *** 
+P0010 folds
+P0011 folds
+P0003 folds
+P0012 raises 1800 to 3000
+P0008 raises 13728 to 16728 and is all-in
+Hero folds
+P0012 raises 3145 to 19873 and is all-in
+*** FLOP *** [8h 3h As]
+*** TURN *** [8h 3h As][Js]
+*** RIVER *** [8h 3h As Js][Ac]
+*** SHOW DOWN ***
+P0008 shows [Tc Td] (Two pairs : Aces and Tens)
+P0012 shows [Jc Jd] (Full of Jacks and Aces)
+P0012 collected 38641 from pot
+*** SUMMARY ***
+Total pot 38641 | No rake
+Board: [8h 3h As Js Ac]
+Seat 1: P0008 (small blind) showed [Tc Td] and lost with Two pairs : Aces and Tens
+Seat 6: P0012 (button) showed [Jc Jd] and won 38641 with Full of Jacks and Aces
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 11 - HandId: #5042614887692369958-104-1790324338 - Holdem no limit (140/600/1200) - 2026/09/25 08:18:58 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #1 is the button
+Seat 2: Hero (24539, 2€ bounty)
+Seat 3: P0010 (25448, 1€ bounty)
+Seat 4: P0011 (35060, 1€ bounty)
+Seat 5: P0003 (61136, 1.20€ bounty)
+Seat 6: P0012 (38641, 1.30€ bounty)
+*** ANTE/BLINDS ***
+Hero posts ante 140
+P0010 posts ante 140
+P0011 posts ante 140
+P0003 posts ante 140
+P0012 posts ante 140
+Hero posts small blind 600
+P0010 posts big blind 1200
+Dealt to Hero [Ah 6h]
+*** PRE-FLOP *** 
+P0011 raises 1200 to 2400
+P0003 folds
+P0012 calls 2400
+Hero folds
+P0010 raises 22908 to 25308 and is all-in
+P0011 folds
+P0012 folds
+P0010 collected 31408 from pot
+*** SUMMARY ***
+Total pot 31408 | No rake
+Seat 3: P0010 (big blind) won 31408
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 11 - HandId: #5042614887692369958-105-1790324366 - Holdem no limit (140/600/1200) - 2026/09/25 08:19:26 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #2 is the button
+Seat 1: P0013 (38743, 2.70€ bounty)
+Seat 2: Hero (23799, 2€ bounty)
+Seat 3: P0010 (31408, 1€ bounty)
+Seat 4: P0011 (32520, 1€ bounty)
+Seat 5: P0003 (60996, 1.20€ bounty)
+Seat 6: P0012 (36101, 1.30€ bounty)
+*** ANTE/BLINDS ***
+P0010 posts ante 140
+P0011 posts ante 140
+P0013 posts ante 140
+Hero posts ante 140
+P0003 posts ante 140
+P0012 posts ante 140
+P0010 posts small blind 600
+P0011 posts big blind 1200
+Dealt to Hero [9h 6c]
+*** PRE-FLOP *** 
+P0003 folds
+P0012 folds
+P0013 folds
+Hero folds
+P0010 calls 600
+P0011 raises 31180 to 32380 and is all-in
+P0010 calls 30068 and is all-in
+*** FLOP *** [8s Kh 5h]
+*** TURN *** [8s Kh 5h][Js]
+*** RIVER *** [8s Kh 5h Js][3c]
+*** SHOW DOWN ***
+P0010 shows [Ks Kc] (Trips of Kings)
+P0011 shows [Qh Ah] (High card : Ace)
+P0011 collected 1112 from side pot 1
+P0010 collected 63376 from main pot
+*** SUMMARY ***
+Total pot 64488 | No rake
+Board: [8s Kh 5h Js 3c]
+Seat 3: P0010 (small blind) showed [Ks Kc] and won 63376 with Trips of Kings
+Seat 4: P0011 (big blind) showed [Qh Ah] and won 1112 with High card : Ace
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 11 - HandId: #5042614887692369958-106-1790324431 - Holdem no limit (140/600/1200) - 2026/09/25 08:20:31 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #3 is the button
+Seat 1: P0013 (38603, 2.70€ bounty)
+Seat 2: Hero (23659, 2€ bounty)
+Seat 3: P0010 (63376, 1€ bounty)
+Seat 4: P0011 (1112, 1€ bounty)
+Seat 5: P0003 (60856, 1.20€ bounty)
+Seat 6: P0012 (35961, 1.30€ bounty)
+*** ANTE/BLINDS ***
+P0011 posts ante 140
+P0003 posts ante 140
+P0013 posts ante 140
+Hero posts ante 140
+P0010 posts ante 140
+P0012 posts ante 140
+P0011 posts small blind 600
+P0003 posts big blind 1200
+Dealt to Hero [Qs Kd]
+*** PRE-FLOP *** 
+P0012 folds
+P0013 folds
+Hero raises 1200 to 2400
+P0010 calls 2400
+P0011 calls 372 and is all-in
+P0003 calls 1200
+*** FLOP *** [Jh 3d 8s]
+P0003 checks
+Hero checks
+P0010 checks
+*** TURN *** [Jh 3d 8s][2s]
+P0003 bets 4596
+Hero folds
+P0010 folds
+*** RIVER *** [Jh 3d 8s 2s][7c]
+*** SHOW DOWN ***
+P0011 shows [As 6c] (High card : Ace)
+P0003 shows [Td Jc] (One pair : Jacks)
+P0003 collected 13608 from pot
+*** SUMMARY ***
+Total pot 13608 | No rake
+Board: [Jh 3d 8s 2s 7c]
+Seat 4: P0011 (small blind) showed [As 6c] and lost with High card : Ace
+Seat 5: P0003 (big blind) showed [Td Jc] and won 13608 with One pair : Jacks
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 12 - HandId: #5042614887692369958-107-1790324491 - Holdem no limit (160/700/1400) - 2026/09/25 08:21:31 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #4 is the button
+Seat 1: P0013 (38463, 2.70€ bounty)
+Seat 2: Hero (21119, 2€ bounty)
+Seat 3: P0010 (60836, 1€ bounty)
+Seat 5: P0003 (67328, 1.40€ bounty)
+Seat 6: P0012 (35821, 1.30€ bounty)
+*** ANTE/BLINDS ***
+P0003 posts ante 160
+P0012 posts ante 160
+P0013 posts ante 160
+Hero posts ante 160
+P0010 posts ante 160
+P0003 posts small blind 700
+P0012 posts big blind 1400
+Dealt to Hero [Ah 9h]
+*** PRE-FLOP *** 
+P0013 folds
+Hero raises 19559 to 20959 and is all-in
+P0010 folds
+P0003 folds
+P0012 folds
+Hero collected 23859 from pot
+*** SUMMARY ***
+Total pot 23859 | No rake
+Seat 2: Hero won 23859
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 12 - HandId: #5042614887692369958-108-1790324513 - Holdem no limit (160/700/1400) - 2026/09/25 08:21:53 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #5 is the button
+Seat 1: P0013 (38303, 2.70€ bounty)
+Seat 2: Hero (23859, 2€ bounty)
+Seat 3: P0010 (60676, 1€ bounty)
+Seat 4: P0014 (11559, 1.70€ bounty)
+Seat 5: P0003 (66468, 1.40€ bounty)
+Seat 6: P0012 (34261, 1.30€ bounty)
+*** ANTE/BLINDS ***
+P0012 posts ante 160
+P0013 posts ante 160
+Hero posts ante 160
+P0010 posts ante 160
+P0014 posts ante 160
+P0003 posts ante 160
+P0012 posts small blind 700
+P0013 posts big blind 1400
+Dealt to Hero [2d Tc]
+*** PRE-FLOP *** 
+Hero folds
+P0010 folds
+P0014 folds
+P0003 raises 1540 to 2940
+P0012 folds
+P0013 calls 1540
+*** FLOP *** [8d 2h 8s]
+P0013 checks
+P0003 bets 2488
+P0013 raises 5764 to 8252
+P0003 calls 5764
+*** TURN *** [8d 2h 8s][Ad]
+P0013 checks
+P0003 checks
+*** RIVER *** [8d 2h 8s Ad][Jc]
+P0013 bets 26951 and is all-in
+P0003 folds
+P0013 collected 50995 from pot
+*** SUMMARY ***
+Total pot 50995 | No rake
+Board: [8d 2h 8s Ad Jc]
+Seat 1: P0013 (big blind) won 50995
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 12 - HandId: #5042614887692369958-109-1790324615 - Holdem no limit (160/700/1400) - 2026/09/25 08:23:35 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #6 is the button
+Seat 1: P0013 (50995, 2.70€ bounty)
+Seat 2: Hero (23699, 2€ bounty)
+Seat 3: P0010 (60516, 1€ bounty)
+Seat 4: P0014 (11399, 1.70€ bounty)
+Seat 5: P0003 (55116, 1.40€ bounty)
+Seat 6: P0012 (33401, 1.30€ bounty)
+*** ANTE/BLINDS ***
+P0013 posts ante 160
+Hero posts ante 160
+P0010 posts ante 160
+P0014 posts ante 160
+P0003 posts ante 160
+P0012 posts ante 160
+P0013 posts small blind 700
+Hero posts big blind 1400
+Dealt to Hero [6h 3d]
+*** PRE-FLOP *** 
+P0010 folds
+P0014 calls 1400
+P0003 raises 3500 to 4900
+P0012 folds
+P0013 folds
+Hero folds
+P0014 calls 3500
+*** FLOP *** [2h Qs Ac]
+P0014 checks
+P0003 bets 4244
+P0014 raises 2095 to 6339 and is all-in
+P0003 folds
+P0014 collected 23443 from pot
+*** SUMMARY ***
+Total pot 23443 | No rake
+Board: [2h Qs Ac]
+Seat 4: P0014 won 23443
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 12 - HandId: #5042614887692369958-110-1790324674 - Holdem no limit (160/700/1400) - 2026/09/25 08:24:34 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #1 is the button
+Seat 1: P0013 (50135, 2.70€ bounty)
+Seat 2: Hero (22139, 2€ bounty)
+Seat 3: P0010 (60356, 1€ bounty)
+Seat 4: P0014 (23443, 1.70€ bounty)
+Seat 5: P0003 (45812, 1.40€ bounty)
+Seat 6: P0012 (33241, 1.30€ bounty)
+*** ANTE/BLINDS ***
+Hero posts ante 160
+P0010 posts ante 160
+P0013 posts ante 160
+P0014 posts ante 160
+P0003 posts ante 160
+P0012 posts ante 160
+Hero posts small blind 700
+P0010 posts big blind 1400
+Dealt to Hero [Qd 7d]
+*** PRE-FLOP *** 
+P0014 folds
+P0003 raises 1540 to 2940
+P0012 folds
+P0013 folds
+Hero folds
+P0010 folds
+P0003 collected 6000 from pot
+*** SUMMARY ***
+Total pot 6000 | No rake
+Seat 5: P0003 won 6000
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 12 - HandId: #5042614887692369958-111-1790324721 - Holdem no limit (160/700/1400) - 2026/09/25 08:25:21 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #2 is the button
+Seat 1: P0013 (49975, 2.70€ bounty)
+Seat 2: Hero (21279, 2€ bounty)
+Seat 3: P0010 (58796, 1€ bounty)
+Seat 4: P0014 (23283, 1.70€ bounty)
+Seat 5: P0003 (48712, 1.40€ bounty)
+Seat 6: P0012 (33081, 1.30€ bounty)
+*** ANTE/BLINDS ***
+P0010 posts ante 160
+P0014 posts ante 160
+P0013 posts ante 160
+Hero posts ante 160
+P0003 posts ante 160
+P0012 posts ante 160
+P0010 posts small blind 700
+P0014 posts big blind 1400
+Dealt to Hero [8c 9c]
+*** PRE-FLOP *** 
+P0003 folds
+P0012 folds
+P0013 folds
+Hero folds
+P0010 folds
+P0014 collected 3060 from pot
+*** SUMMARY ***
+Total pot 3060 | No rake
+Seat 4: P0014 (big blind) won 3060
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 12 - HandId: #5042614887692369958-112-1790324738 - Holdem no limit (160/700/1400) - 2026/09/25 08:25:38 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #3 is the button
+Seat 1: P0013 (49815, 2.70€ bounty)
+Seat 2: Hero (21119, 2€ bounty)
+Seat 3: P0010 (57936, 1€ bounty)
+Seat 4: P0014 (24783, 1.70€ bounty)
+Seat 5: P0003 (48552, 1.40€ bounty)
+Seat 6: P0012 (32921, 1.30€ bounty)
+*** ANTE/BLINDS ***
+P0014 posts ante 160
+P0003 posts ante 160
+P0013 posts ante 160
+Hero posts ante 160
+P0010 posts ante 160
+P0012 posts ante 160
+P0014 posts small blind 700
+P0003 posts big blind 1400
+Dealt to Hero [7d 3d]
+*** PRE-FLOP *** 
+P0012 folds
+P0013 raises 1400 to 2800
+Hero folds
+P0010 folds
+P0014 calls 2100
+P0003 folds
+*** FLOP *** [6h Qd 3s]
+P0014 checks
+P0013 bets 3184
+P0014 calls 3184
+*** TURN *** [6h Qd 3s][4d]
+P0014 checks
+P0013 checks
+*** RIVER *** [6h Qd 3s 4d][Qs]
+P0014 bets 9313
+P0013 folds
+P0014 collected 23641 from pot
+*** SUMMARY ***
+Total pot 23641 | No rake
+Board: [6h Qd 3s 4d Qs]
+Seat 4: P0014 (small blind) won 23641
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 13 - HandId: #5042614887692369958-113-1790324772 - Holdem no limit (200/800/1600) - 2026/09/25 08:26:12 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #4 is the button
+Seat 1: P0013 (43671, 2.70€ bounty)
+Seat 2: Hero (20959, 2€ bounty)
+Seat 3: P0010 (57776, 1€ bounty)
+Seat 4: P0014 (32967, 1.70€ bounty)
+Seat 5: P0003 (46992, 1.40€ bounty)
+Seat 6: P0012 (32761, 1.30€ bounty)
+*** ANTE/BLINDS ***
+P0003 posts ante 200
+P0012 posts ante 200
+P0013 posts ante 200
+Hero posts ante 200
+P0010 posts ante 200
+P0014 posts ante 200
+P0003 posts small blind 800
+P0012 posts big blind 1600
+Dealt to Hero [5s Js]
+*** PRE-FLOP *** 
+P0013 folds
+Hero folds
+P0010 raises 1920 to 3520
+P0014 calls 3520
+P0003 folds
+P0012 raises 7040 to 10560
+P0010 raises 47016 to 57576 and is all-in
+P0014 folds
+P0012 calls 22001 and is all-in
+*** FLOP *** [4h 9c Kc]
+*** TURN *** [4h 9c Kc][Tc]
+*** RIVER *** [4h 9c Kc Tc][2d]
+*** SHOW DOWN ***
+P0010 shows [Qh Ah] (High card : Ace)
+P0012 shows [Kh Ks] (Trips of Kings)
+P0012 collected 70642 from main pot
+P0010 collected 25015 from side pot 1
+*** SUMMARY ***
+Total pot 95657 | No rake
+Board: [4h 9c Kc Tc 2d]
+Seat 3: P0010 showed [Qh Ah] and won 25015 with High card : Ace
+Seat 6: P0012 (big blind) showed [Kh Ks] and won 70642 with Trips of Kings
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 13 - HandId: #5042614887692369958-114-1790324800 - Holdem no limit (200/800/1600) - 2026/09/25 08:26:40 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #5 is the button
+Seat 1: P0013 (43471, 2.70€ bounty)
+Seat 2: Hero (20759, 2€ bounty)
+Seat 3: P0010 (25015, 1€ bounty)
+Seat 4: P0014 (29247, 1.70€ bounty)
+Seat 5: P0003 (45992, 1.40€ bounty)
+Seat 6: P0012 (70642, 1.30€ bounty)
+*** ANTE/BLINDS ***
+P0012 posts ante 200
+P0013 posts ante 200
+Hero posts ante 200
+P0010 posts ante 200
+P0014 posts ante 200
+P0003 posts ante 200
+P0012 posts small blind 800
+P0013 posts big blind 1600
+Dealt to Hero [Jd 2d]
+*** PRE-FLOP *** 
+Hero folds
+P0010 folds
+P0014 folds
+P0003 folds
+P0012 raises 1600 to 3200
+P0013 calls 1600
+*** FLOP *** [Ad 2h Kd]
+P0012 bets 3800
+P0013 folds
+P0012 collected 11400 from pot
+*** SUMMARY ***
+Total pot 11400 | No rake
+Board: [Ad 2h Kd]
+Seat 6: P0012 (small blind) won 11400
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 13 - HandId: #5042614887692369958-115-1790324822 - Holdem no limit (200/800/1600) - 2026/09/25 08:27:02 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #6 is the button
+Seat 1: P0013 (40071, 2.70€ bounty)
+Seat 2: Hero (20559, 2€ bounty)
+Seat 3: P0010 (24815, 1€ bounty)
+Seat 4: P0014 (29047, 1.70€ bounty)
+Seat 5: P0003 (45792, 1.40€ bounty)
+Seat 6: P0012 (74842, 1.30€ bounty)
+*** ANTE/BLINDS ***
+P0013 posts ante 200
+Hero posts ante 200
+P0010 posts ante 200
+P0014 posts ante 200
+P0003 posts ante 200
+P0012 posts ante 200
+P0013 posts small blind 800
+Hero posts big blind 1600
+Dealt to Hero [Th 2h]
+*** PRE-FLOP *** 
+P0010 folds
+P0014 folds
+P0003 raises 1760 to 3360
+P0012 calls 3360
+P0013 calls 2560
+Hero calls 1760
+*** FLOP *** [Ks 4c Ad]
+P0013 checks
+Hero checks
+P0003 bets 3660
+P0012 calls 3660
+P0013 calls 3660
+Hero folds
+*** TURN *** [Ks 4c Ad][Qh]
+P0013 checks
+P0003 bets 38572 and is all-in
+P0012 calls 38572
+P0013 folds
+*** RIVER *** [Ks 4c Ad Qh][4h]
+*** SHOW DOWN ***
+P0003 shows [Qc Kd] (Two pairs : Kings and Queens)
+P0012 shows [4s 4d] (Quads of 4)
+P0012 collected 102764 from pot
+*** SUMMARY ***
+Total pot 102764 | No rake
+Board: [Ks 4c Ad Qh 4h]
+Seat 5: P0003 showed [Qc Kd] and lost with Two pairs : Kings and Queens
+Seat 6: P0012 (button) showed [4s 4d] and won 102764 with Quads of 4
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 13 - HandId: #5042614887692369958-116-1790324906 - Holdem no limit (200/800/1600) - 2026/09/25 08:28:26 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #1 is the button
+Seat 1: P0013 (32851, 2.70€ bounty)
+Seat 2: Hero (16999, 2€ bounty)
+Seat 3: P0010 (24615, 1€ bounty)
+Seat 4: P0014 (28847, 1.70€ bounty)
+Seat 6: P0012 (131814, 2.70€ bounty)
+*** ANTE/BLINDS ***
+Hero posts ante 200
+P0010 posts ante 200
+P0013 posts ante 200
+P0014 posts ante 200
+P0012 posts ante 200
+Hero posts small blind 800
+P0010 posts big blind 1600
+Dealt to Hero [6h 5c]
+*** PRE-FLOP *** 
+P0014 folds
+P0012 folds
+P0013 folds
+Hero folds
+P0010 collected 3400 from pot
+*** SUMMARY ***
+Total pot 3400 | No rake
+Seat 3: P0010 (big blind) won 3400
+
+
+Winamax Poker - Tournament "VELOCITY - SPACE KO" buyIn: 1.80€ + 0.20€ level: 13 - HandId: #5042614887692369958-117-1790324922 - Holdem no limit (200/800/1600) - 2026/09/25 08:28:42 UTC
+Table: 'VELOCITY - SPACE KO(1174075270)#0037' 6-max (real money) Seat #2 is the button
+Seat 1: P0013 (32651, 2.70€ bounty)
+Seat 2: Hero (15999, 2€ bounty)
+Seat 3: P0010 (26215, 1€ bounty)
+Seat 4: P0014 (28647, 1.70€ bounty)
+Seat 6: P0012 (131614, 2.70€ bounty)
+*** ANTE/BLINDS ***
+P0010 posts ante 200
+P0014 posts ante 200
+P0013 posts ante 200
+Hero posts ante 200
+P0012 posts ante 200
+P0010 posts small blind 800
+P0014 posts big blind 1600
+Dealt to Hero [Th Qs]
+*** PRE-FLOP *** 
+P0012 folds
+P0013 folds
+Hero raises 14199 to 15799 and is all-in
+P0010 raises 10216 to 26015 and is all-in
+P0014 folds
+*** FLOP *** [3d 7d Td]
+*** TURN *** [3d 7d Td][Kd]
+*** RIVER *** [3d 7d Td Kd][9c]
+*** SHOW DOWN ***
+Hero shows [Th Qs] (One pair : Tens)
+P0010 shows [3c 3s] (Trips of 3)
+P0010 collected 44414 from pot
+*** SUMMARY ***
+Total pot 44414 | No rake
+Board: [3d 7d Td Kd 9c]
+Seat 2: Hero (button) showed [Th Qs] and lost with One pair : Tens
+Seat 3: P0010 (small blind) showed [3c 3s] and won 44414 with Trips of 3
+
+

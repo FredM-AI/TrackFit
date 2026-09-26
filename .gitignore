@@ -1,0 +1,22 @@
+# Rust
+/target/
+**/*.rs.bk
+# Node / UI
+node_modules/
+ui/dist/
+# Tauri
+src-tauri/target/
+src-tauri/gen/
+# Données locales Graphite (jamais versionnées)
+graphite-data/
+*.db
+*.db-wal
+*.db-shm
+*.duckdb
+# Historiques Winamax NON anonymisés
+fixtures/raw/
+# Divers
+.env
+.DS_Store
+Thumbs.db
+*.log
