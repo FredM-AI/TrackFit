@@ -24,7 +24,7 @@ Le calendrier est serré. En cas de retard, les stories **C** glissent d'abord e
 
 ## M0 — Fondations
 
-### M0-1 · Création du repo GitHub · M · `DOING` — repo créé, Git et GitHub CLI installés et connectés (26/09). Reste : premier commit + protection de `main`.
+### M0-1 · Création du repo GitHub · M · `DONE` — repo créé, premier commit poussé, `main` protégée (PR obligatoire, 0 approbation requise, pas de push direct, admins inclus) le 26/09.
 **Action de Frédéric (manuelle, ~15 min), guidée par Claude Code :**
 1. Créer un compte GitHub (si besoin) et installer **Git for Windows** et **GitHub CLI** : `winget install Git.Git GitHub.cli`.
 2. `gh auth login` (HTTPS, via le navigateur).
