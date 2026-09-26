@@ -1,0 +1,54 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  release:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust
+        run: rustup show
+
+      - uses: Swatinem/rust-cache@v2
+
+      - uses: pnpm/action-setup@v4
+        with:
+          package_json_file: ui/package.json
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+          cache-dependency-path: ui/pnpm-lock.yaml
+
+      - name: Install ui dependencies
+        run: pnpm --dir ui install --frozen-lockfile
+
+      - name: Install tauri-cli
+        run: cargo install tauri-cli --version "^2" --locked
+
+      - name: Build portable exe
+        run: cargo tauri build --no-bundle --features analytics-duckdb
+
+      - name: Package portable zip
+        shell: pwsh
+        run: |
+          $version = "${{ github.ref_name }}"
+          $stagingDir = "graphite-$version-portable"
+          New-Item -ItemType Directory -Path $stagingDir | Out-Null
+          Copy-Item "src-tauri/target/release/graphite.exe" -Destination $stagingDir
+          Copy-Item "README.md" -Destination $stagingDir
+          Compress-Archive -Path "$stagingDir/*" -DestinationPath "$stagingDir.zip"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: graphite-${{ github.ref_name }}-portable.zip
