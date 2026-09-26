@@ -35,15 +35,16 @@ Le calendrier est serré. En cas de retard, les stories **C** glissent d'abord e
 - Repo privé `graphite` créé.
 - Premier commit contenant `CLAUDE.md`, `docs/PRD.md`, `docs/BACKLOG.md`, `.gitignore` (Rust/Node/Tauri + `graphite-data/`, `*.db`, `fixtures/raw/`).
 
-### M0-2 · Toolchain et squelette du workspace · M · `TODO`
-- Installer : Rust stable MSVC, VS Build Tools 2022 (C++), Node 20 LTS, pnpm, `just`, `sccache` (optionnel).
-- Créer le workspace Cargo et les crates vides de la §7.3, `src-tauri` (Tauri 2) et `ui` (Vite + React 19 + TS strict + Tailwind + shadcn/ui).
-- Créer le `justfile` avec les commandes de `CLAUDE.md` §4.
+### M0-2 · Toolchain et squelette du workspace · M · `DONE` — le 26/09.
+- Installé : Rust stable MSVC (rustup), VS Build Tools 2022 (C++), Node **22.17** (déjà présent, pas de LTS 20 réinstallé — à surveiller si un module natif l'exige), pnpm, `just`. `sccache` non installé (optionnel).
+- Workspace Cargo créé (10 crates vides de la §7.3, lint `clippy::pedantic` en warn), `src-tauri` (Tauri 2 via `cargo tauri init`) et `ui` (Vite + React 19 + TS strict + Tailwind v4 + TanStack Query/Table + Zustand + i18next + ECharts + Vitest/Testing Library). **shadcn/ui non initialisé** : ses presets de police (Geist/Lucide) entrent en conflit avec les polices Inter/JetBrains Mono du PRD §16 — à faire dans M0-5 avec les tokens de design.
+- `justfile` créé avec les commandes de `CLAUDE.md` §4 (`just perf` dépend de `tools/perf.ps1`, pas encore créé — prévu en M8-4).
+- Bug résolu : conflit de versions `windows-core` (0.61.2 vs 0.62.2) entre `tauri-runtime` 2.12.0 et `tauri-runtime-wry` 2.11.4 — épinglé `tauri-runtime = 2.11.3` dans `Cargo.lock`.
 
 **CA :**
-- `just dev` ouvre une fenêtre « Graphite ».
-- `just check` passe.
-- Profil `dev` configuré (`[profile.dev.package."*"] opt-level = 1`).
+- `just dev` ouvre une fenêtre « Graphite ». ✅ (vérifié, process tué après confirmation)
+- `just check` passe. ✅ (fmt, clippy, cargo test, ui lint/typecheck/test)
+- Profil `dev` configuré (`[profile.dev.package."*"] opt-level = 1`). ✅
 
 ### M0-3 · CI et release GitHub Actions · M · `TODO`
 - `ci.yml` :
