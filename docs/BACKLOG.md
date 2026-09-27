@@ -103,13 +103,13 @@ Le calendrier est serré. En cas de retard, les stories **C** glissent d'abord e
 
 ## M1 — Parser Winamax (§8.1–8.3, `docs/formats/winamax.md`)
 
-### M1-1 · Types de domaine `gr-core` · M · `TODO`
-Card, Rank, Suit, Street, ActionKind, Position, Money(cents), Chips, HandRecord, SeatInfo, ActionRecord, PotResult, TournamentSummary, KoType.
+### M1-1 · Types de domaine `gr-core` · M · `DONE` — le 27/09.
+Card, Rank, Suit, Street, ActionKind, Position, Money(cents), Chips, HandRecord, SeatInfo, ActionRecord, PotResult, TournamentSummary, KoType. `ActionRecord` porte aussi `pot: Option<PotKind>` (pot vise par un `collected`) et `shown_cards`/`shown_label` (pour `Shows`), afin de rester fidele au texte brut sans logique de calcul (celle-ci arrive avec `gr-parser-winamax` et `gr-stats`).
 
 **CA :**
-- Sérialisation serde.
-- Parsing et affichage des cartes (`"Ah"`).
-- Tests unitaires.
+- Sérialisation serde. ✅ (roundtrip testé sur `ActionRecord`, `HandRecord`, `TournamentSummary`)
+- Parsing et affichage des cartes (`"Ah"`). ✅ (`FromStr`/`Display` sur `Card`, erreurs typées via `thiserror`)
+- Tests unitaires. ✅ (14 tests, `cargo clippy -p gr-core -- -D warnings` et `cargo fmt --check` verts)
 
 ### M1-2 · Trait `RoomParser` et détection · M · `TODO`
 Détection de room et de langue par signature d'en-tête ; gestion de l'encodage (BOM UTF-8, repli Windows-1252 si le corpus l'exige).
