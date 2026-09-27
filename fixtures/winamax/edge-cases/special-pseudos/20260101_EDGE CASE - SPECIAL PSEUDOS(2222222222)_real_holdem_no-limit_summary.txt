@@ -1,0 +1,15 @@
+Winamax Poker - Tournament summary : EDGE CASE - SPECIAL PSEUDOS(2222222222)
+Player : Hero
+Buy-In : 1€ + 0€
+Registered players : 3
+Mode : tt
+Type : normal
+Speed : normal
+Flight ID : 0
+Levels : Levels : [50-100:10:600:holdem-no-limit]
+Prizepool : 0€
+Tournament started 2026/01/01 00:00:00 UTC
+You played 1min 0s
+You finished in 1st place
+You won 1€
+

@@ -1,0 +1,66 @@
+---
+source: crates/gr-parser-winamax/src/snapshot_tests.rs
+expression: hands
+---
+[
+    HandRecord {
+        room_hand_id: "#1111111111111111111-1-1000000000",
+        tournament_name: "EDGE CASE - SPECIAL PSEUDOS",
+        tournament_room_id: "2222222222",
+        table_name: "EDGE CASE - SPECIAL PSEUDOS(2222222222)#0001",
+        table_max_seats: 6,
+        button_seat: 1,
+        level: 1,
+        sb: Chips(
+            50,
+        ),
+        bb: Chips(
+            100,
+        ),
+        ante: Chips(
+            10,
+        ),
+        played_at: 1767225600000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Jean Dupont",
+                starting_stack: Chips(
+                    20000,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "Marie-Claire.99_x",
+                starting_stack: Chips(
+                    20000,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    20000,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+]

@@ -1,0 +1,7239 @@
+---
+source: crates/gr-parser-winamax/src/snapshot_tests.rs
+expression: hands
+---
+[
+    HandRecord {
+        room_hand_id: "#4661644738712043524-1-1775050747",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#003",
+        table_max_seats: 6,
+        button_seat: 6,
+        level: 1,
+        sb: Chips(
+            50,
+        ),
+        bb: Chips(
+            100,
+        ),
+        ante: Chips(
+            12,
+        ),
+        played_at: 1775050747000,
+        seats: [
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    9000,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    9000,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    9000,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043524-2-1775050792",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#003",
+        table_max_seats: 6,
+        button_seat: 2,
+        level: 1,
+        sb: Chips(
+            50,
+        ),
+        bb: Chips(
+            100,
+        ),
+        ante: Chips(
+            12,
+        ),
+        played_at: 1775050792000,
+        seats: [
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    9424,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    8888,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    8688,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043524-3-1775050803",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#003",
+        table_max_seats: 6,
+        button_seat: 5,
+        level: 2,
+        sb: Chips(
+            60,
+        ),
+        bb: Chips(
+            120,
+        ),
+        ante: Chips(
+            14,
+        ),
+        played_at: 1775050803000,
+        seats: [
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    9598,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    8826,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    8576,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043524-4-1775050822",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#003",
+        table_max_seats: 6,
+        button_seat: 6,
+        level: 2,
+        sb: Chips(
+            60,
+        ),
+        bb: Chips(
+            120,
+        ),
+        ante: Chips(
+            14,
+        ),
+        played_at: 1775050822000,
+        seats: [
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    9464,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0003",
+                starting_stack: Chips(
+                    7602,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    8572,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    8964,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043524-5-1775050840",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#003",
+        table_max_seats: 6,
+        button_seat: 2,
+        level: 2,
+        sb: Chips(
+            60,
+        ),
+        bb: Chips(
+            120,
+        ),
+        ante: Chips(
+            14,
+        ),
+        played_at: 1775050840000,
+        seats: [
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    9390,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0003",
+                starting_stack: Chips(
+                    7468,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    8558,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    9186,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043524-6-1775050865",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#003",
+        table_max_seats: 6,
+        button_seat: 4,
+        level: 2,
+        sb: Chips(
+            60,
+        ),
+        bb: Chips(
+            120,
+        ),
+        ante: Chips(
+            14,
+        ),
+        played_at: 1775050865000,
+        seats: [
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    9376,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0003",
+                starting_stack: Chips(
+                    7630,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    8424,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    9172,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043524-7-1775050906",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#003",
+        table_max_seats: 6,
+        button_seat: 5,
+        level: 2,
+        sb: Chips(
+            60,
+        ),
+        bb: Chips(
+            120,
+        ),
+        ante: Chips(
+            14,
+        ),
+        played_at: 1775050906000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0004",
+                starting_stack: Chips(
+                    9000,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    9362,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0005",
+                starting_stack: Chips(
+                    8902,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0003",
+                starting_stack: Chips(
+                    8987,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    7215,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    9038,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043524-8-1775051001",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#003",
+        table_max_seats: 6,
+        button_seat: 6,
+        level: 2,
+        sb: Chips(
+            60,
+        ),
+        bb: Chips(
+            120,
+        ),
+        ante: Chips(
+            14,
+        ),
+        played_at: 1775051001000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0004",
+                starting_stack: Chips(
+                    8866,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    7565,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0005",
+                starting_stack: Chips(
+                    8888,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0003",
+                starting_stack: Chips(
+                    8973,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    7201,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    11011,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043524-9-1775051068",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#003",
+        table_max_seats: 6,
+        button_seat: 1,
+        level: 2,
+        sb: Chips(
+            60,
+        ),
+        bb: Chips(
+            120,
+        ),
+        ante: Chips(
+            14,
+        ),
+        played_at: 1775051068000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0004",
+                starting_stack: Chips(
+                    8792,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    8307,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0005",
+                starting_stack: Chips(
+                    8262,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    7187,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    10997,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-11-1775051158",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 4,
+        level: 3,
+        sb: Chips(
+            70,
+        ),
+        bb: Chips(
+            140,
+        ),
+        ante: Chips(
+            16,
+        ),
+        played_at: 1775051158000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    8266,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    7173,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    14021,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    15115,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0009",
+                starting_stack: Chips(
+                    9068,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-12-1775051219",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 5,
+        level: 3,
+        sb: Chips(
+            70,
+        ),
+        bb: Chips(
+            140,
+        ),
+        ante: Chips(
+            16,
+        ),
+        played_at: 1775051219000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    7970,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    9000,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    7157,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    16795,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    12809,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0009",
+                starting_stack: Chips(
+                    8912,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-13-1775051273",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 6,
+        level: 3,
+        sb: Chips(
+            70,
+        ),
+        bb: Chips(
+            140,
+        ),
+        ante: Chips(
+            16,
+        ),
+        played_at: 1775051273000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    8400,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    8984,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    7141,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    16779,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    12513,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0009",
+                starting_stack: Chips(
+                    8826,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-14-1775051313",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 1,
+        level: 3,
+        sb: Chips(
+            70,
+        ),
+        bb: Chips(
+            140,
+        ),
+        ante: Chips(
+            16,
+        ),
+        played_at: 1775051313000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    8314,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    8828,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    7125,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    16763,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    12803,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0009",
+                starting_stack: Chips(
+                    8810,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-15-1775051361",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 2,
+        level: 3,
+        sb: Chips(
+            70,
+        ),
+        bb: Chips(
+            140,
+        ),
+        ante: Chips(
+            16,
+        ),
+        played_at: 1775051361000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    9094,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    8742,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    6969,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    16747,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    12297,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0009",
+                starting_stack: Chips(
+                    8794,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-16-1775051391",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 3,
+        level: 3,
+        sb: Chips(
+            70,
+        ),
+        bb: Chips(
+            140,
+        ),
+        ante: Chips(
+            16,
+        ),
+        played_at: 1775051391000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    9078,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    8726,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    5739,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    16591,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    13731,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-17-1775051427",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 4,
+        level: 4,
+        sb: Chips(
+            80,
+        ),
+        bb: Chips(
+            160,
+        ),
+        ante: Chips(
+            20,
+        ),
+        played_at: 1775051427000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    9062,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    18060,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    5443,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    16295,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    5005,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-18-1775051447",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 5,
+        level: 4,
+        sb: Chips(
+            80,
+        ),
+        bb: Chips(
+            160,
+        ),
+        ante: Chips(
+            20,
+        ),
+        played_at: 1775051447000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    8882,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    18040,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    5423,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    11290,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    10230,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-19-1775051482",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 1,
+        level: 4,
+        sb: Chips(
+            80,
+        ),
+        bb: Chips(
+            160,
+        ),
+        ante: Chips(
+            20,
+        ),
+        played_at: 1775051482000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    8782,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    17860,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    16549,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    1060,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    9614,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-20-1775051507",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 2,
+        level: 4,
+        sb: Chips(
+            80,
+        ),
+        bb: Chips(
+            160,
+        ),
+        ante: Chips(
+            20,
+        ),
+        played_at: 1775051507000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    8762,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    17760,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    16369,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    1380,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    9594,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-21-1775051548",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 3,
+        level: 4,
+        sb: Chips(
+            80,
+        ),
+        bb: Chips(
+            160,
+        ),
+        ante: Chips(
+            20,
+        ),
+        played_at: 1775051548000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    8742,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    19280,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    16269,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    9574,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-22-1775051580",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 4,
+        level: 4,
+        sb: Chips(
+            80,
+        ),
+        bb: Chips(
+            160,
+        ),
+        ante: Chips(
+            20,
+        ),
+        played_at: 1775051580000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    8722,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    19260,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    18149,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0011",
+                starting_stack: Chips(
+                    9000,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    7734,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0012",
+                starting_stack: Chips(
+                    18021,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-23-1775051605",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 5,
+        level: 4,
+        sb: Chips(
+            80,
+        ),
+        bb: Chips(
+            160,
+        ),
+        ante: Chips(
+            20,
+        ),
+        played_at: 1775051605000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    8702,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    19240,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    17793,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0011",
+                starting_stack: Chips(
+                    9000,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    8310,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0012",
+                starting_stack: Chips(
+                    17841,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-1-1775051644",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 6,
+        level: 4,
+        sb: Chips(
+            80,
+        ),
+        bb: Chips(
+            160,
+        ),
+        ante: Chips(
+            20,
+        ),
+        played_at: 1775051644000,
+        seats: [
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    9000,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    8960,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0014",
+                starting_stack: Chips(
+                    7368,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    17773,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-2-1775051651",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 2,
+        level: 4,
+        sb: Chips(
+            80,
+        ),
+        bb: Chips(
+            160,
+        ),
+        ante: Chips(
+            20,
+        ),
+        played_at: 1775051651000,
+        seats: [
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    8900,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    8960,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0014",
+                starting_stack: Chips(
+                    7488,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    17753,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-3-1775051699",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 5,
+        level: 4,
+        sb: Chips(
+            80,
+        ),
+        bb: Chips(
+            160,
+        ),
+        ante: Chips(
+            20,
+        ),
+        played_at: 1775051699000,
+        seats: [
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    8560,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0015",
+                starting_stack: Chips(
+                    752,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    8960,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0014",
+                starting_stack: Chips(
+                    10408,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    15173,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-4-1775052060",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 6,
+        level: 5,
+        sb: Chips(
+            100,
+        ),
+        bb: Chips(
+            200,
+        ),
+        ante: Chips(
+            25,
+        ),
+        played_at: 1775052060000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0016",
+                starting_stack: Chips(
+                    9000,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    7650,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0015",
+                starting_stack: Chips(
+                    2376,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    8940,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0014",
+                starting_stack: Chips(
+                    9814,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    15073,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-5-1775052177",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 2,
+        level: 5,
+        sb: Chips(
+            100,
+        ),
+        bb: Chips(
+            200,
+        ),
+        ante: Chips(
+            25,
+        ),
+        played_at: 1775052177000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0016",
+                starting_stack: Chips(
+                    9000,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    10101,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    8915,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0014",
+                starting_stack: Chips(
+                    9789,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    15048,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-6-1775052288",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 3,
+        level: 5,
+        sb: Chips(
+            100,
+        ),
+        bb: Chips(
+            200,
+        ),
+        ante: Chips(
+            25,
+        ),
+        played_at: 1775052288000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0016",
+                starting_stack: Chips(
+                    8975,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    10601,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    8490,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0014",
+                starting_stack: Chips(
+                    9764,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    15023,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-7-1775052315",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 4,
+        level: 5,
+        sb: Chips(
+            100,
+        ),
+        bb: Chips(
+            200,
+        ),
+        ante: Chips(
+            25,
+        ),
+        played_at: 1775052315000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0016",
+                starting_stack: Chips(
+                    8950,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    10576,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    8790,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0014",
+                starting_stack: Chips(
+                    9539,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    14998,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-8-1775052363",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 5,
+        level: 6,
+        sb: Chips(
+            125,
+        ),
+        bb: Chips(
+            250,
+        ),
+        ante: Chips(
+            30,
+        ),
+        played_at: 1775052363000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0016",
+                starting_stack: Chips(
+                    160,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    10551,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    9000,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    17955,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0014",
+                starting_stack: Chips(
+                    9414,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    14773,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-9-1775052388",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 6,
+        level: 6,
+        sb: Chips(
+            125,
+        ),
+        bb: Chips(
+            250,
+        ),
+        ante: Chips(
+            30,
+        ),
+        played_at: 1775052388000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0016",
+                starting_stack: Chips(
+                    440,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    10521,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    8970,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    17925,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0014",
+                starting_stack: Chips(
+                    9384,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    14613,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-10-1775052422",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 1,
+        level: 6,
+        sb: Chips(
+            125,
+        ),
+        bb: Chips(
+            250,
+        ),
+        ante: Chips(
+            30,
+        ),
+        played_at: 1775052422000,
+        seats: [
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    11581,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    8940,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    17895,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0014",
+                starting_stack: Chips(
+                    9354,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    14083,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-11-1775052436",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 2,
+        level: 6,
+        sb: Chips(
+            125,
+        ),
+        bb: Chips(
+            250,
+        ),
+        ante: Chips(
+            30,
+        ),
+        played_at: 1775052436000,
+        seats: [
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    11426,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    8660,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    18390,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0014",
+                starting_stack: Chips(
+                    9324,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    14053,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-12-1775052449",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 3,
+        level: 6,
+        sb: Chips(
+            125,
+        ),
+        bb: Chips(
+            250,
+        ),
+        ante: Chips(
+            30,
+        ),
+        played_at: 1775052449000,
+        seats: [
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    11396,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    8505,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    17860,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0014",
+                starting_stack: Chips(
+                    9294,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    14798,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-13-1775052482",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 4,
+        level: 6,
+        sb: Chips(
+            125,
+        ),
+        bb: Chips(
+            250,
+        ),
+        ante: Chips(
+            30,
+        ),
+        played_at: 1775052482000,
+        seats: [
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    11366,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    7275,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    19430,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0014",
+                starting_stack: Chips(
+                    9014,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    14768,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-14-1775052525",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 5,
+        level: 6,
+        sb: Chips(
+            125,
+        ),
+        bb: Chips(
+            250,
+        ),
+        ante: Chips(
+            30,
+        ),
+        played_at: 1775052525000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0018",
+                starting_stack: Chips(
+                    9000,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    11336,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    5049,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    19400,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0014",
+                starting_stack: Chips(
+                    8859,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    17209,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-15-1775052575",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 6,
+        level: 6,
+        sb: Chips(
+            125,
+        ),
+        bb: Chips(
+            250,
+        ),
+        ante: Chips(
+            30,
+        ),
+        played_at: 1775052575000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0018",
+                starting_stack: Chips(
+                    4647,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    11306,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    5019,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    19370,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0014",
+                starting_stack: Chips(
+                    8829,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    21682,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-16-1775052593",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 1,
+        level: 6,
+        sb: Chips(
+            125,
+        ),
+        bb: Chips(
+            250,
+        ),
+        ante: Chips(
+            30,
+        ),
+        played_at: 1775052593000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0018",
+                starting_stack: Chips(
+                    5047,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    11026,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    4989,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    19340,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0014",
+                starting_stack: Chips(
+                    8799,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    21652,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-17-1775052637",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 2,
+        level: 6,
+        sb: Chips(
+            125,
+        ),
+        bb: Chips(
+            250,
+        ),
+        ante: Chips(
+            30,
+        ),
+        played_at: 1775052637000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0018",
+                starting_stack: Chips(
+                    10589,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    10871,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    4709,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    14293,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0014",
+                starting_stack: Chips(
+                    8769,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    21622,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-18-1775052701",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 3,
+        level: 7,
+        sb: Chips(
+            150,
+        ),
+        bb: Chips(
+            300,
+        ),
+        ante: Chips(
+            35,
+        ),
+        played_at: 1775052701000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0018",
+                starting_stack: Chips(
+                    7680,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    10841,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    7988,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    14013,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0014",
+                starting_stack: Chips(
+                    8739,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    21592,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-19-1775052754",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 4,
+        level: 7,
+        sb: Chips(
+            150,
+        ),
+        bb: Chips(
+            300,
+        ),
+        ante: Chips(
+            35,
+        ),
+        played_at: 1775052754000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0018",
+                starting_stack: Chips(
+                    6236,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    13325,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    7953,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    13378,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0014",
+                starting_stack: Chips(
+                    8404,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    21557,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-20-1775052869",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 5,
+        level: 7,
+        sb: Chips(
+            150,
+        ),
+        bb: Chips(
+            300,
+        ),
+        ante: Chips(
+            35,
+        ),
+        played_at: 1775052869000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0018",
+                starting_stack: Chips(
+                    6201,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    13290,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    8728,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    13343,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0014",
+                starting_stack: Chips(
+                    8069,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    21222,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-21-1775052925",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 6,
+        level: 7,
+        sb: Chips(
+            150,
+        ),
+        bb: Chips(
+            300,
+        ),
+        ante: Chips(
+            35,
+        ),
+        played_at: 1775052925000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0018",
+                starting_stack: Chips(
+                    4966,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    13255,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    8693,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    13308,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0014",
+                starting_stack: Chips(
+                    9744,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    20887,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-22-1775053005",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 1,
+        level: 8,
+        sb: Chips(
+            175,
+        ),
+        bb: Chips(
+            350,
+        ),
+        ante: Chips(
+            40,
+        ),
+        played_at: 1775053005000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0018",
+                starting_stack: Chips(
+                    11272,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    12920,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    8658,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    12373,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0014",
+                starting_stack: Chips(
+                    4778,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    20852,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-23-1775053092",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 2,
+        level: 8,
+        sb: Chips(
+            175,
+        ),
+        bb: Chips(
+            350,
+        ),
+        ante: Chips(
+            40,
+        ),
+        played_at: 1775053092000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0018",
+                starting_stack: Chips(
+                    2614,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    11116,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    23978,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    12333,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    20812,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-24-1775053123",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 3,
+        level: 8,
+        sb: Chips(
+            175,
+        ),
+        bb: Chips(
+            350,
+        ),
+        ante: Chips(
+            40,
+        ),
+        played_at: 1775053123000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0018",
+                starting_stack: Chips(
+                    3299,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    11076,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    23763,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    11943,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    20772,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-25-1775053171",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 4,
+        level: 8,
+        sb: Chips(
+            175,
+        ),
+        bb: Chips(
+            350,
+        ),
+        ante: Chips(
+            40,
+        ),
+        played_at: 1775053171000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0018",
+                starting_stack: Chips(
+                    2559,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    6361,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    23723,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    17828,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    20382,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-26-1775053226",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 6,
+        level: 8,
+        sb: Chips(
+            175,
+        ),
+        bb: Chips(
+            350,
+        ),
+        ante: Chips(
+            40,
+        ),
+        played_at: 1775053226000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0018",
+                starting_stack: Chips(
+                    5413,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    6321,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    21164,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    17788,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    20167,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-27-1775053241",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 1,
+        level: 8,
+        sb: Chips(
+            175,
+        ),
+        bb: Chips(
+            350,
+        ),
+        ante: Chips(
+            40,
+        ),
+        played_at: 1775053241000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0018",
+                starting_stack: Chips(
+                    6273,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    5581,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    21124,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    17748,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    20127,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-28-1775053273",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 2,
+        level: 9,
+        sb: Chips(
+            200,
+        ),
+        bb: Chips(
+            400,
+        ),
+        ante: Chips(
+            50,
+        ),
+        played_at: 1775053273000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0018",
+                starting_stack: Chips(
+                    5883,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    5191,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    21984,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    17708,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    20087,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-29-1775053334",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 3,
+        level: 9,
+        sb: Chips(
+            200,
+        ),
+        bb: Chips(
+            400,
+        ),
+        ante: Chips(
+            50,
+        ),
+        played_at: 1775053334000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0018",
+                starting_stack: Chips(
+                    4064,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    5141,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    24353,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    17258,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    20037,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-30-1775053366",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 4,
+        level: 9,
+        sb: Chips(
+            200,
+        ),
+        bb: Chips(
+            400,
+        ),
+        ante: Chips(
+            50,
+        ),
+        played_at: 1775053366000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0018",
+                starting_stack: Chips(
+                    3614,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    5091,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    24303,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    18258,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    19587,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-31-1775053385",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 6,
+        level: 9,
+        sb: Chips(
+            200,
+        ),
+        bb: Chips(
+            400,
+        ),
+        ante: Chips(
+            50,
+        ),
+        played_at: 1775053385000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0018",
+                starting_stack: Chips(
+                    11142,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    22166,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    18208,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    19337,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-32-1775053426",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 1,
+        level: 9,
+        sb: Chips(
+            200,
+        ),
+        bb: Chips(
+            400,
+        ),
+        ante: Chips(
+            50,
+        ),
+        played_at: 1775053426000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0018",
+                starting_stack: Chips(
+                    12492,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0019",
+                starting_stack: Chips(
+                    8950,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    21716,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    17358,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    19287,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-33-1775053436",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 3,
+        level: 9,
+        sb: Chips(
+            200,
+        ),
+        bb: Chips(
+            400,
+        ),
+        ante: Chips(
+            50,
+        ),
+        played_at: 1775053436000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0018",
+                starting_stack: Chips(
+                    13242,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0019",
+                starting_stack: Chips(
+                    8950,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    21466,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    16908,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    19237,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-34-1775053466",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 4,
+        level: 9,
+        sb: Chips(
+            200,
+        ),
+        bb: Chips(
+            400,
+        ),
+        ante: Chips(
+            50,
+        ),
+        played_at: 1775053466000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0018",
+                starting_stack: Chips(
+                    7864,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0019",
+                starting_stack: Chips(
+                    8900,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    21416,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    22836,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    18787,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-35-1775053483",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 6,
+        level: 9,
+        sb: Chips(
+            200,
+        ),
+        bb: Chips(
+            400,
+        ),
+        ante: Chips(
+            50,
+        ),
+        played_at: 1775053483000,
+        seats: [
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0019",
+                starting_stack: Chips(
+                    8850,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    21366,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    31050,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    18537,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043527-36-1775053507",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#006",
+        table_max_seats: 6,
+        button_seat: 1,
+        level: 9,
+        sb: Chips(
+            200,
+        ),
+        bb: Chips(
+            400,
+        ),
+        ante: Chips(
+            50,
+        ),
+        played_at: 1775053507000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0020",
+                starting_stack: Chips(
+                    22046,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0019",
+                starting_stack: Chips(
+                    6299,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    21316,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    31000,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    21188,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-58-1775053584",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 4,
+        level: 10,
+        sb: Chips(
+            250,
+        ),
+        bb: Chips(
+            500,
+        ),
+        ante: Chips(
+            60,
+        ),
+        played_at: 1775053584000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    14889,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    30516,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0021",
+                starting_stack: Chips(
+                    23613,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0022",
+                starting_stack: Chips(
+                    9046,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    30950,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0012",
+                starting_stack: Chips(
+                    28073,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-59-1775053633",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 6,
+        level: 10,
+        sb: Chips(
+            250,
+        ),
+        bb: Chips(
+            500,
+        ),
+        ante: Chips(
+            60,
+        ),
+        played_at: 1775053633000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    13829,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    33006,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0021",
+                starting_stack: Chips(
+                    22553,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0022",
+                starting_stack: Chips(
+                    8986,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    30950,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0012",
+                starting_stack: Chips(
+                    27763,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-60-1775053677",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 1,
+        level: 10,
+        sb: Chips(
+            250,
+        ),
+        bb: Chips(
+            500,
+        ),
+        ante: Chips(
+            60,
+        ),
+        played_at: 1775053677000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    13519,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    31641,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0021",
+                starting_stack: Chips(
+                    22493,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    32805,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0012",
+                starting_stack: Chips(
+                    27703,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-61-1775053695",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 2,
+        level: 10,
+        sb: Chips(
+            250,
+        ),
+        bb: Chips(
+            500,
+        ),
+        ante: Chips(
+            60,
+        ),
+        played_at: 1775053695000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    13459,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    32381,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0021",
+                starting_stack: Chips(
+                    21933,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    32745,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0012",
+                starting_stack: Chips(
+                    27643,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-62-1775053732",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 3,
+        level: 10,
+        sb: Chips(
+            250,
+        ),
+        bb: Chips(
+            500,
+        ),
+        ante: Chips(
+            60,
+        ),
+        played_at: 1775053732000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    13399,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    32321,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0021",
+                starting_stack: Chips(
+                    44046,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    10812,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0012",
+                starting_stack: Chips(
+                    27583,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-63-1775053746",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 5,
+        level: 10,
+        sb: Chips(
+            250,
+        ),
+        bb: Chips(
+            500,
+        ),
+        ante: Chips(
+            60,
+        ),
+        played_at: 1775053746000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    13339,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    32261,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0021",
+                starting_stack: Chips(
+                    43486,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    12052,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0012",
+                starting_stack: Chips(
+                    27023,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-64-1775053784",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 6,
+        level: 10,
+        sb: Chips(
+            250,
+        ),
+        bb: Chips(
+            500,
+        ),
+        ante: Chips(
+            60,
+        ),
+        played_at: 1775053784000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    12779,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    33251,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0021",
+                starting_stack: Chips(
+                    43426,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    11992,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0012",
+                starting_stack: Chips(
+                    26713,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-65-1775053851",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 1,
+        level: 10,
+        sb: Chips(
+            250,
+        ),
+        bb: Chips(
+            500,
+        ),
+        ante: Chips(
+            60,
+        ),
+        played_at: 1775053851000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    12469,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    40034,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0021",
+                starting_stack: Chips(
+                    41366,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    11932,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0012",
+                starting_stack: Chips(
+                    22360,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-66-1775053928",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 2,
+        level: 11,
+        sb: Chips(
+            300,
+        ),
+        bb: Chips(
+            600,
+        ),
+        ante: Chips(
+            70,
+        ),
+        played_at: 1775053928000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    12409,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    40774,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0021",
+                starting_stack: Chips(
+                    40806,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0023",
+                starting_stack: Chips(
+                    9000,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    11872,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0012",
+                starting_stack: Chips(
+                    22300,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-67-1775053994",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 3,
+        level: 11,
+        sb: Chips(
+            300,
+        ),
+        bb: Chips(
+            600,
+        ),
+        ante: Chips(
+            70,
+        ),
+        played_at: 1775053994000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    12339,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    40704,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0021",
+                starting_stack: Chips(
+                    31806,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0023",
+                starting_stack: Chips(
+                    18280,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    11802,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-68-1775054061",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 4,
+        level: 11,
+        sb: Chips(
+            300,
+        ),
+        bb: Chips(
+            600,
+        ),
+        ante: Chips(
+            70,
+        ),
+        played_at: 1775054061000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    12269,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    39434,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0021",
+                starting_stack: Chips(
+                    36679,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0023",
+                starting_stack: Chips(
+                    15417,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    11132,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0024",
+                starting_stack: Chips(
+                    7630,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-69-1775054082",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 5,
+        level: 11,
+        sb: Chips(
+            300,
+        ),
+        bb: Chips(
+            600,
+        ),
+        ante: Chips(
+            70,
+        ),
+        played_at: 1775054082000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    12199,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    38164,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0021",
+                starting_stack: Chips(
+                    36609,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0023",
+                starting_stack: Chips(
+                    17867,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    10762,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0024",
+                starting_stack: Chips(
+                    6960,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-70-1775054124",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 6,
+        level: 11,
+        sb: Chips(
+            300,
+        ),
+        bb: Chips(
+            600,
+        ),
+        ante: Chips(
+            70,
+        ),
+        played_at: 1775054124000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    11529,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    38094,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0023",
+                starting_stack: Chips(
+                    17197,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    12612,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0024",
+                starting_stack: Chips(
+                    6590,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-71-1775054147",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 1,
+        level: 11,
+        sb: Chips(
+            300,
+        ),
+        bb: Chips(
+            600,
+        ),
+        ante: Chips(
+            70,
+        ),
+        played_at: 1775054147000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    11159,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    38674,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0023",
+                starting_stack: Chips(
+                    17127,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    12542,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0024",
+                starting_stack: Chips(
+                    6520,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-72-1775054209",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 2,
+        level: 12,
+        sb: Chips(
+            350,
+        ),
+        bb: Chips(
+            700,
+        ),
+        ante: Chips(
+            80,
+        ),
+        played_at: 1775054209000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    11089,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    36442,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0023",
+                starting_stack: Chips(
+                    19569,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    12472,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0024",
+                starting_stack: Chips(
+                    6450,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-73-1775054223",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 4,
+        level: 12,
+        sb: Chips(
+            350,
+        ),
+        bb: Chips(
+            700,
+        ),
+        ante: Chips(
+            80,
+        ),
+        played_at: 1775054223000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    12459,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    36362,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0023",
+                starting_stack: Chips(
+                    19139,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    11692,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0024",
+                starting_stack: Chips(
+                    6370,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-74-1775054294",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 5,
+        level: 12,
+        sb: Chips(
+            350,
+        ),
+        bb: Chips(
+            700,
+        ),
+        ante: Chips(
+            80,
+        ),
+        played_at: 1775054294000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    12419,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    36321,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0019",
+                starting_stack: Chips(
+                    4412,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0023",
+                starting_stack: Chips(
+                    22582,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    11302,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0024",
+                starting_stack: Chips(
+                    3597,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-75-1775054333",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 6,
+        level: 12,
+        sb: Chips(
+            350,
+        ),
+        bb: Chips(
+            700,
+        ),
+        ante: Chips(
+            80,
+        ),
+        played_at: 1775054333000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    11639,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    36241,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0019",
+                starting_stack: Chips(
+                    4332,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0023",
+                starting_stack: Chips(
+                    22502,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    11222,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0024",
+                starting_stack: Chips(
+                    4697,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-76-1775054364",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 1,
+        level: 12,
+        sb: Chips(
+            350,
+        ),
+        bb: Chips(
+            700,
+        ),
+        ante: Chips(
+            80,
+        ),
+        played_at: 1775054364000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    11209,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    35461,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0019",
+                starting_stack: Chips(
+                    4252,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0023",
+                starting_stack: Chips(
+                    23952,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    11142,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0024",
+                starting_stack: Chips(
+                    4617,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-77-1775054422",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 2,
+        level: 12,
+        sb: Chips(
+            350,
+        ),
+        bb: Chips(
+            700,
+        ),
+        ante: Chips(
+            80,
+        ),
+        played_at: 1775054422000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    11622,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    36114,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0019",
+                starting_stack: Chips(
+                    4906,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0023",
+                starting_stack: Chips(
+                    24365,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    11555,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0024",
+                starting_stack: Chips(
+                    5031,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-78-1775054449",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 3,
+        level: 12,
+        sb: Chips(
+            350,
+        ),
+        bb: Chips(
+            700,
+        ),
+        ante: Chips(
+            80,
+        ),
+        played_at: 1775054449000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    11542,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    36034,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0019",
+                starting_stack: Chips(
+                    6006,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0023",
+                starting_stack: Chips(
+                    23585,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    11475,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-79-1775054478",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 4,
+        level: 13,
+        sb: Chips(
+            400,
+        ),
+        bb: Chips(
+            800,
+        ),
+        ante: Chips(
+            100,
+        ),
+        played_at: 1775054478000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    11462,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    32594,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0019",
+                starting_stack: Chips(
+                    5926,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0023",
+                starting_stack: Chips(
+                    27965,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    10695,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-80-1775054590",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 5,
+        level: 13,
+        sb: Chips(
+            400,
+        ),
+        bb: Chips(
+            800,
+        ),
+        ante: Chips(
+            100,
+        ),
+        played_at: 1775054590000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    15187,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    32219,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0019",
+                starting_stack: Chips(
+                    7151,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0023",
+                starting_stack: Chips(
+                    29190,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    11520,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-81-1775054621",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 1,
+        level: 13,
+        sb: Chips(
+            400,
+        ),
+        bb: Chips(
+            800,
+        ),
+        ante: Chips(
+            100,
+        ),
+        played_at: 1775054621000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    14687,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    31319,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0023",
+                starting_stack: Chips(
+                    29090,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    14720,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0021",
+                starting_stack: Chips(
+                    9000,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-82-1775054680",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 2,
+        level: 13,
+        sb: Chips(
+            400,
+        ),
+        bb: Chips(
+            800,
+        ),
+        ante: Chips(
+            100,
+        ),
+        played_at: 1775054680000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    14980,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    33712,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0023",
+                starting_stack: Chips(
+                    27783,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    15013,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0021",
+                starting_stack: Chips(
+                    9293,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-83-1775054711",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 4,
+        level: 13,
+        sb: Chips(
+            400,
+        ),
+        bb: Chips(
+            800,
+        ),
+        ante: Chips(
+            100,
+        ),
+        played_at: 1775054711000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    14880,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    33612,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0024",
+                starting_stack: Chips(
+                    9000,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0023",
+                starting_stack: Chips(
+                    27283,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    25006,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-84-1775054736",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 5,
+        level: 13,
+        sb: Chips(
+            400,
+        ),
+        bb: Chips(
+            800,
+        ),
+        ante: Chips(
+            100,
+        ),
+        played_at: 1775054736000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    13980,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0024",
+                starting_stack: Chips(
+                    10600,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0023",
+                starting_stack: Chips(
+                    27183,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    24506,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0019",
+                starting_stack: Chips(
+                    11785,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-85-1775054765",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 1,
+        level: 14,
+        sb: Chips(
+            500,
+        ),
+        bb: Chips(
+            1000,
+        ),
+        ante: Chips(
+            120,
+        ),
+        played_at: 1775054765000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    13480,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0024",
+                starting_stack: Chips(
+                    9700,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0023",
+                starting_stack: Chips(
+                    31083,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    22006,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0019",
+                starting_stack: Chips(
+                    11785,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-86-1775054781",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 3,
+        level: 14,
+        sb: Chips(
+            500,
+        ),
+        bb: Chips(
+            1000,
+        ),
+        ante: Chips(
+            120,
+        ),
+        played_at: 1775054781000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    13360,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0024",
+                starting_stack: Chips(
+                    9080,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0023",
+                starting_stack: Chips(
+                    32063,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    21886,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0019",
+                starting_stack: Chips(
+                    11665,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-87-1775054796",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 4,
+        level: 14,
+        sb: Chips(
+            500,
+        ),
+        bb: Chips(
+            1000,
+        ),
+        ante: Chips(
+            120,
+        ),
+        played_at: 1775054796000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    13240,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0024",
+                starting_stack: Chips(
+                    8960,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0023",
+                starting_stack: Chips(
+                    31443,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    20766,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0019",
+                starting_stack: Chips(
+                    13645,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-88-1775054848",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 5,
+        level: 14,
+        sb: Chips(
+            500,
+        ),
+        bb: Chips(
+            1000,
+        ),
+        ante: Chips(
+            120,
+        ),
+        played_at: 1775054848000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    13120,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0024",
+                starting_stack: Chips(
+                    8840,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0023",
+                starting_stack: Chips(
+                    26688,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    20146,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0019",
+                starting_stack: Chips(
+                    19260,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-89-1775054888",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 6,
+        level: 14,
+        sb: Chips(
+            500,
+        ),
+        bb: Chips(
+            1000,
+        ),
+        ante: Chips(
+            120,
+        ),
+        played_at: 1775054888000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    12742,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0025",
+                starting_stack: Chips(
+                    27353,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0023",
+                starting_stack: Chips(
+                    27310,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    31587,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0019",
+                starting_stack: Chips(
+                    19382,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4661644738712043522-90-1775054925",
+        tournament_name: "Hit&Run W Series Ticket 10€",
+        tournament_room_id: "1085373745",
+        table_name: "Hit&Run W Series Ticket 10€(1085373745)#001",
+        table_max_seats: 6,
+        button_seat: 1,
+        level: 14,
+        sb: Chips(
+            500,
+        ),
+        bb: Chips(
+            1000,
+        ),
+        ante: Chips(
+            120,
+        ),
+        played_at: 1775054925000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    26844,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0025",
+                starting_stack: Chips(
+                    26233,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0023",
+                starting_stack: Chips(
+                    27190,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    18845,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0019",
+                starting_stack: Chips(
+                    19262,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+]

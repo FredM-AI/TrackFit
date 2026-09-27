@@ -7,3 +7,6 @@ license.workspace = true
 [dependencies]
 gr-core = { path = "../gr-core" }
 gr-parser-api = { path = "../gr-parser-api" }
+
+[dev-dependencies]
+insta = "1"

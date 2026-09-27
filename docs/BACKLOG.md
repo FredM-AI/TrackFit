@@ -123,10 +123,13 @@ Card, Rank, Suit, Street, ActionKind, Position, Money(cents), Chips, HandRecord,
 - Un fichier tronqué au milieu d'une main renvoie N mains complètes, plus un offset qui s'arrête avant la main incomplète. ✅
 - Tests avec des troncatures à chaque ligne d'une main (property test). ✅ (troncature à chaque ligne de la 2e main **et** de la dernière main du fixture réel `space-ko/`, 117 mains)
 
-### M1-4 · En-tête, table, sièges, blindes/antes · M · `TODO` (PAR-4/5/6)
+### M1-4 · En-tête, table, sièges, blindes/antes · M · `DONE` (PAR-4/5/6) — le 27/09.
+`WinamaxParser::parse_hand` (parsing manuel, sans dépendance `regex` — formats assez rigides pour s'en passer) : en-tête (nom, `HandId`, level, ante/SB/BB, date → epoch ms via un petit convertisseur maison, validé contre le timestamp Unix du `HandId` d'une vraie main), table (nom, ID tournoi, taille, bouton), sièges (pseudo, tapis, bounty). Actions/board/pots restent vides (M1-5) ; `dealt_in` vaut toujours `true` pour l'instant (l'exclusion des joueurs non distribués dépend du flux d'actions, affinée en M1-5).
+**Bug découvert et corrigé au passage :** 6 des fixtures anonymisées en M0-4 avaient dérivé en CRLF dans ma copie de travail locale (le blob git était resté en LF, correct) — corrigé directement sur disque, sans impact sur le dépôt.
+
 **CA :**
-- Snapshots validés sur tout le corpus.
-- Les pseudos avec espaces et caractères spéciaux sont couverts par un edge-case.
+- Snapshots validés sur tout le corpus. ✅ (`insta`, un snapshot par fichier de mains — 9 fichiers, 1679 mains réelles + 1 main synthétique)
+- Les pseudos avec espaces et caractères spéciaux sont couverts par un edge-case. ✅ `fixtures/winamax/edge-cases/special-pseudos/` — fixture **synthétique** (l'anonymisation ayant effacé ces caractères des pseudos réels dans tous les autres fixtures), pseudos fictifs avec espace (« Jean Dupont ») et points/tirets/underscores (« Marie-Claire.99_x »)
 
 ### M1-5 · Actions, streets, board, showdown, pots · M · `TODO` (PAR-7 à PAR-10)
 **CA :**

@@ -1,0 +1,1482 @@
+---
+source: crates/gr-parser-winamax/src/snapshot_tests.rs
+expression: hands
+---
+[
+    HandRecord {
+        room_hand_id: "#4983175559677739015-25-1789039199",
+        tournament_name: "#4 - W SERIES - GIANT - DAY 1",
+        tournament_room_id: "1160235973",
+        table_name: "#4 - W SERIES - GIANT - DAY 1(1160235973)#0006",
+        table_max_seats: 6,
+        button_seat: 3,
+        level: 1,
+        sb: Chips(
+            100,
+        ),
+        bb: Chips(
+            200,
+        ),
+        ante: Chips(
+            25,
+        ),
+        played_at: 1789039199000,
+        seats: [
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    19575,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    97398,
+                ),
+                bounty: Some(
+                    Money(
+                        640,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    20000,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0003",
+                starting_stack: Chips(
+                    19975,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4983175559677739015-26-1789039219",
+        tournament_name: "#4 - W SERIES - GIANT - DAY 1",
+        tournament_room_id: "1160235973",
+        table_name: "#4 - W SERIES - GIANT - DAY 1(1160235973)#0006",
+        table_max_seats: 6,
+        button_seat: 4,
+        level: 1,
+        sb: Chips(
+            100,
+        ),
+        bb: Chips(
+            200,
+        ),
+        ante: Chips(
+            25,
+        ),
+        played_at: 1789039219000,
+        seats: [
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    19550,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    97373,
+                ),
+                bounty: Some(
+                    Money(
+                        640,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0004",
+                starting_stack: Chips(
+                    24598,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    20075,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0003",
+                starting_stack: Chips(
+                    19950,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4983175559677739015-27-1789039245",
+        tournament_name: "#4 - W SERIES - GIANT - DAY 1",
+        tournament_room_id: "1160235973",
+        table_name: "#4 - W SERIES - GIANT - DAY 1(1160235973)#0006",
+        table_max_seats: 6,
+        button_seat: 5,
+        level: 1,
+        sb: Chips(
+            100,
+        ),
+        bb: Chips(
+            200,
+        ),
+        ante: Chips(
+            25,
+        ),
+        played_at: 1789039245000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0005",
+                starting_stack: Chips(
+                    20000,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    19525,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    98048,
+                ),
+                bounty: Some(
+                    Money(
+                        640,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0004",
+                starting_stack: Chips(
+                    24598,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    19950,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0003",
+                starting_stack: Chips(
+                    19425,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4983175559677739015-28-1789039345",
+        tournament_name: "#4 - W SERIES - GIANT - DAY 1",
+        tournament_room_id: "1160235973",
+        table_name: "#4 - W SERIES - GIANT - DAY 1(1160235973)#0006",
+        table_max_seats: 6,
+        button_seat: 6,
+        level: 1,
+        sb: Chips(
+            100,
+        ),
+        bb: Chips(
+            200,
+        ),
+        ante: Chips(
+            25,
+        ),
+        played_at: 1789039345000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0005",
+                starting_stack: Chips(
+                    19575,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    19500,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    98023,
+                ),
+                bounty: Some(
+                    Money(
+                        640,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0004",
+                starting_stack: Chips(
+                    25861,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    19925,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0003",
+                starting_stack: Chips(
+                    18662,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4983175559677739015-29-1789039384",
+        tournament_name: "#4 - W SERIES - GIANT - DAY 1",
+        tournament_room_id: "1160235973",
+        table_name: "#4 - W SERIES - GIANT - DAY 1(1160235973)#0006",
+        table_max_seats: 6,
+        button_seat: 1,
+        level: 1,
+        sb: Chips(
+            100,
+        ),
+        bb: Chips(
+            200,
+        ),
+        ante: Chips(
+            25,
+        ),
+        played_at: 1789039384000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0005",
+                starting_stack: Chips(
+                    19450,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    19275,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    97998,
+                ),
+                bounty: Some(
+                    Money(
+                        640,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    20350,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0003",
+                starting_stack: Chips(
+                    18637,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4983175559677739015-30-1789039451",
+        tournament_name: "#4 - W SERIES - GIANT - DAY 1",
+        tournament_room_id: "1160235973",
+        table_name: "#4 - W SERIES - GIANT - DAY 1(1160235973)#0006",
+        table_max_seats: 6,
+        button_seat: 2,
+        level: 1,
+        sb: Chips(
+            100,
+        ),
+        bb: Chips(
+            200,
+        ),
+        ante: Chips(
+            25,
+        ),
+        played_at: 1789039451000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0005",
+                starting_stack: Chips(
+                    18356,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    18750,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    99667,
+                ),
+                bounty: Some(
+                    Money(
+                        640,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    20000,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    20325,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0003",
+                starting_stack: Chips(
+                    18612,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4983175559677739015-31-1789039496",
+        tournament_name: "#4 - W SERIES - GIANT - DAY 1",
+        tournament_room_id: "1160235973",
+        table_name: "#4 - W SERIES - GIANT - DAY 1(1160235973)#0006",
+        table_max_seats: 6,
+        button_seat: 3,
+        level: 1,
+        sb: Chips(
+            100,
+        ),
+        bb: Chips(
+            200,
+        ),
+        ante: Chips(
+            25,
+        ),
+        played_at: 1789039496000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0005",
+                starting_stack: Chips(
+                    18331,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    18725,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    103042,
+                ),
+                bounty: Some(
+                    Money(
+                        640,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    19775,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    17250,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0003",
+                starting_stack: Chips(
+                    18587,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4983175559677739015-32-1789039535",
+        tournament_name: "#4 - W SERIES - GIANT - DAY 1",
+        tournament_room_id: "1160235973",
+        table_name: "#4 - W SERIES - GIANT - DAY 1(1160235973)#0006",
+        table_max_seats: 6,
+        button_seat: 4,
+        level: 1,
+        sb: Chips(
+            100,
+        ),
+        bb: Chips(
+            200,
+        ),
+        ante: Chips(
+            25,
+        ),
+        played_at: 1789039535000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0005",
+                starting_stack: Chips(
+                    18306,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    18700,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    123317,
+                ),
+                bounty: Some(
+                    Money(
+                        660,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    17025,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0003",
+                starting_stack: Chips(
+                    18362,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4983175559677739015-33-1789039560",
+        tournament_name: "#4 - W SERIES - GIANT - DAY 1",
+        tournament_room_id: "1160235973",
+        table_name: "#4 - W SERIES - GIANT - DAY 1(1160235973)#0006",
+        table_max_seats: 6,
+        button_seat: 5,
+        level: 1,
+        sb: Chips(
+            100,
+        ),
+        bb: Chips(
+            200,
+        ),
+        ante: Chips(
+            25,
+        ),
+        played_at: 1789039560000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0005",
+                starting_stack: Chips(
+                    18281,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    18675,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    123717,
+                ),
+                bounty: Some(
+                    Money(
+                        660,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    16900,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0003",
+                starting_stack: Chips(
+                    18137,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4983175559677739015-34-1789039583",
+        tournament_name: "#4 - W SERIES - GIANT - DAY 1",
+        tournament_room_id: "1160235973",
+        table_name: "#4 - W SERIES - GIANT - DAY 1(1160235973)#0006",
+        table_max_seats: 6,
+        button_seat: 6,
+        level: 1,
+        sb: Chips(
+            100,
+        ),
+        bb: Chips(
+            200,
+        ),
+        ante: Chips(
+            25,
+        ),
+        played_at: 1789039583000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0005",
+                starting_stack: Chips(
+                    18056,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    18150,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    123192,
+                ),
+                bounty: Some(
+                    Money(
+                        660,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    20000,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    16875,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0003",
+                starting_stack: Chips(
+                    19437,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4983175559677739015-35-1789039624",
+        tournament_name: "#4 - W SERIES - GIANT - DAY 1",
+        tournament_room_id: "1160235973",
+        table_name: "#4 - W SERIES - GIANT - DAY 1(1160235973)#0006",
+        table_max_seats: 6,
+        button_seat: 1,
+        level: 1,
+        sb: Chips(
+            100,
+        ),
+        bb: Chips(
+            200,
+        ),
+        ante: Chips(
+            25,
+        ),
+        played_at: 1789039624000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0005",
+                starting_stack: Chips(
+                    17931,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    17925,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    123167,
+                ),
+                bounty: Some(
+                    Money(
+                        660,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    20425,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    16850,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0003",
+                starting_stack: Chips(
+                    19412,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4983175559677739015-36-1789039716",
+        tournament_name: "#4 - W SERIES - GIANT - DAY 1",
+        tournament_room_id: "1160235973",
+        table_name: "#4 - W SERIES - GIANT - DAY 1(1160235973)#0006",
+        table_max_seats: 6,
+        button_seat: 2,
+        level: 1,
+        sb: Chips(
+            100,
+        ),
+        bb: Chips(
+            200,
+        ),
+        ante: Chips(
+            25,
+        ),
+        played_at: 1789039716000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0005",
+                starting_stack: Chips(
+                    17906,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    17700,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    118916,
+                ),
+                bounty: Some(
+                    Money(
+                        660,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    24976,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    16825,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0003",
+                starting_stack: Chips(
+                    19387,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4983175559677739015-37-1789039752",
+        tournament_name: "#4 - W SERIES - GIANT - DAY 1",
+        tournament_room_id: "1160235973",
+        table_name: "#4 - W SERIES - GIANT - DAY 1(1160235973)#0006",
+        table_max_seats: 6,
+        button_seat: 3,
+        level: 1,
+        sb: Chips(
+            100,
+        ),
+        bb: Chips(
+            200,
+        ),
+        ante: Chips(
+            25,
+        ),
+        played_at: 1789039752000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0005",
+                starting_stack: Chips(
+                    17881,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    17225,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    119941,
+                ),
+                bounty: Some(
+                    Money(
+                        660,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    24501,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    16800,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0003",
+                starting_stack: Chips(
+                    19362,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4983175559677739015-38-1789039808",
+        tournament_name: "#4 - W SERIES - GIANT - DAY 1",
+        tournament_room_id: "1160235973",
+        table_name: "#4 - W SERIES - GIANT - DAY 1(1160235973)#0006",
+        table_max_seats: 6,
+        button_seat: 4,
+        level: 1,
+        sb: Chips(
+            100,
+        ),
+        bb: Chips(
+            200,
+        ),
+        ante: Chips(
+            25,
+        ),
+        played_at: 1789039808000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0005",
+                starting_stack: Chips(
+                    17856,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    24260,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    113306,
+                ),
+                bounty: Some(
+                    Money(
+                        660,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    24376,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    16575,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0003",
+                starting_stack: Chips(
+                    19337,
+                ),
+                bounty: Some(
+                    Money(
+                        100,
+                    ),
+                ),
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+]
