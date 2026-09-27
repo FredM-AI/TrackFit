@@ -25,15 +25,17 @@ impl Money {
 
 impl Add for Money {
     type Output = Money;
+    /// Saturante (R-NOPANIC) : un montant reel ne peut jamais approcher `i64::MAX`
+    /// centimes, mais une entree fuzzee/adversariale pourrait s'en approcher.
     fn add(self, rhs: Self) -> Self::Output {
-        Money(self.0 + rhs.0)
+        Money(self.0.saturating_add(rhs.0))
     }
 }
 
 impl Sub for Money {
     type Output = Money;
     fn sub(self, rhs: Self) -> Self::Output {
-        Money(self.0 - rhs.0)
+        Money(self.0.saturating_sub(rhs.0))
     }
 }
 
@@ -65,15 +67,16 @@ impl Chips {
 
 impl Add for Chips {
     type Output = Chips;
+    /// Saturante (R-NOPANIC), meme raison que `Money::add`.
     fn add(self, rhs: Self) -> Self::Output {
-        Chips(self.0 + rhs.0)
+        Chips(self.0.saturating_add(rhs.0))
     }
 }
 
 impl Sub for Chips {
     type Output = Chips;
     fn sub(self, rhs: Self) -> Self::Output {
-        Chips(self.0 - rhs.0)
+        Chips(self.0.saturating_sub(rhs.0))
     }
 }
 
@@ -113,5 +116,13 @@ mod tests {
         let b = Chips::from_i64(5_000);
         assert_eq!((a + b).amount(), 25_000);
         assert_eq!((a - b).amount(), 15_000);
+    }
+
+    #[test]
+    fn chips_and_money_saturate_instead_of_overflowing() {
+        let near_max = Chips::from_i64(i64::MAX - 1);
+        assert_eq!((near_max + near_max).amount(), i64::MAX);
+        let near_min = Chips::from_i64(i64::MIN + 1);
+        assert_eq!((near_min - Chips::from_i64(10)).amount(), i64::MIN);
     }
 }

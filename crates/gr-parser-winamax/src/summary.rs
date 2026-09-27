@@ -67,29 +67,32 @@ fn parse_buyin_line(line: &str, line_no: usize) -> Result<(Money, Money, Money),
 /// `Xh `, `Ymin ` et/ou `Zs`, dans cet ordre, tout sous-ensemble etant possible
 /// (`"5min 27s"`, `"1h 36min 43s"`, `"1min 0s"`).
 fn parse_duration_seconds(s: &str, line: &str, line_no: usize) -> Result<u32, ParseError> {
+    // Arithmetique saturante (R-NOPANIC) : une duree fuzzee/adversariale ne
+    // doit jamais faire deborder le u32, meme si elle n'a aucun sens reel.
     let mut seconds: u32 = 0;
     let mut rest = s.trim();
     if let Some(idx) = rest.find('h') {
-        seconds += rest[..idx]
+        let hours: u32 = rest[..idx]
             .trim()
-            .parse::<u32>()
-            .map_err(|_| err(line_no, line, "heures de duree"))?
-            * 3600;
+            .parse()
+            .map_err(|_| err(line_no, line, "heures de duree"))?;
+        seconds = seconds.saturating_add(hours.saturating_mul(3600));
         rest = rest[idx + 1..].trim();
     }
     if let Some(idx) = rest.find("min") {
-        seconds += rest[..idx]
+        let minutes: u32 = rest[..idx]
             .trim()
-            .parse::<u32>()
-            .map_err(|_| err(line_no, line, "minutes de duree"))?
-            * 60;
+            .parse()
+            .map_err(|_| err(line_no, line, "minutes de duree"))?;
+        seconds = seconds.saturating_add(minutes.saturating_mul(60));
         rest = rest[idx + 3..].trim();
     }
     if let Some(idx) = rest.find('s') {
-        seconds += rest[..idx]
+        let secs: u32 = rest[..idx]
             .trim()
-            .parse::<u32>()
+            .parse()
             .map_err(|_| err(line_no, line, "secondes de duree"))?;
+        seconds = seconds.saturating_add(secs);
     }
     Ok(seconds)
 }

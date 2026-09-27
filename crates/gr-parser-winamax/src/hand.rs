@@ -605,13 +605,13 @@ pub(crate) fn parse_hand(text: &str) -> Result<HandRecord, ParseError> {
             &mut total_contrib,
         )?;
         dealt_in.insert(action.pseudo.clone(), true);
-        if action.kind == ActionKind::Collected {
-            record_collected(
-                &mut pots,
-                &action.pseudo,
-                action.amount.expect("Collected porte toujours un montant"),
-                action.pot.expect("Collected porte toujours un PotKind"),
-            );
+        // R-NOPANIC : pas d'expect() ici meme si parse_action_line garantit
+        // toujours amount+pot pour un Collected — on ignore silencieusement
+        // plutot que de paniquer si cette garantie venait a etre brisee.
+        if let (ActionKind::Collected, Some(amount), Some(pot)) =
+            (action.kind, action.amount, action.pot)
+        {
+            record_collected(&mut pots, &action.pseudo, amount, pot);
         }
         actions.push(action);
     }
