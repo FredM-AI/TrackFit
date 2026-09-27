@@ -3,3 +3,7 @@ name = "gr-parser-winamax"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
+
+[dependencies]
+gr-core = { path = "../gr-core" }
+gr-parser-api = { path = "../gr-parser-api" }

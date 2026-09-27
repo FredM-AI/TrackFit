@@ -9,3 +9,4 @@
 - docs: M0-4 clôturé — Frédéric valide le report des 3 cas encore manquants (tickets, fichier en cours) ; notés dans « Idées / à trier ». M0 est intégralement terminé.
 - feat(ui): shell UI (barre latérale, filtres, barre d'état), tokens de design monochrome (§16), TanStack Router (9 écrans + Logs), i18next FR/EN, règle ESLint i18next/no-literal-string active (M0-5).
 - feat(gr-core): types de domaine (Card/Rank/Suit, Money/Chips, Street, Position, ActionKind/ActionRecord, SeatInfo, HandRecord, TournamentSummary/KoType), sérialisation serde, parsing/affichage des cartes, 14 tests (M1-1). M1 démarré.
+- feat(parser): trait `RoomParser` (`gr-parser-api`) et détection Winamax (`gr-parser-winamax`) ; 100% des fixtures committés détectés (M1-2).
