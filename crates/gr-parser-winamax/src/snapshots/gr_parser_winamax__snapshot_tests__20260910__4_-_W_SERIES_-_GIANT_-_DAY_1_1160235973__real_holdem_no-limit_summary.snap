@@ -1,0 +1,38 @@
+---
+source: crates/gr-parser-winamax/src/snapshot_tests.rs
+expression: summary
+---
+TournamentSummary {
+    room_tournament_id: "1160235973",
+    name: "#4 - W SERIES - GIANT - DAY 1",
+    buyin_prize: Money(
+        80,
+    ),
+    buyin_bounty: Money(
+        100,
+    ),
+    buyin_fee: Money(
+        20,
+    ),
+    mode: "tt",
+    tournament_type: "flight",
+    speed: "normal",
+    flight_id: 4199,
+    bullets: [
+        TournamentBullet {
+            entry_no: 1,
+            late_reg_bust: true,
+            finish_position: Some(
+                383,
+            ),
+            played_seconds: 1855,
+            prize: Money(
+                0,
+            ),
+            bounty: Money(
+                0,
+            ),
+            registered_snapshot: 429,
+        },
+    ],
+}

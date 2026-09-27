@@ -10,6 +10,7 @@ mod money_format;
 #[cfg(test)]
 mod snapshot_tests;
 mod split;
+mod summary;
 
 pub use detect::WinamaxParser;
 pub use split::split_hand_blocks;

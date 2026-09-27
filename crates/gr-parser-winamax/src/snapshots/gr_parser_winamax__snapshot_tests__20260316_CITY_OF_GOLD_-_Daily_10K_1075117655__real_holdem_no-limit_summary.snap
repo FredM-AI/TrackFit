@@ -1,0 +1,38 @@
+---
+source: crates/gr-parser-winamax/src/snapshot_tests.rs
+expression: summary
+---
+TournamentSummary {
+    room_tournament_id: "1075117655",
+    name: "CITY OF GOLD - Daily 10K",
+    buyin_prize: Money(
+        0,
+    ),
+    buyin_bounty: Money(
+        0,
+    ),
+    buyin_fee: Money(
+        0,
+    ),
+    mode: "tt",
+    tournament_type: "normal",
+    speed: "turbo",
+    flight_id: 0,
+    bullets: [
+        TournamentBullet {
+            entry_no: 1,
+            late_reg_bust: false,
+            finish_position: Some(
+                6260,
+            ),
+            played_seconds: 1860,
+            prize: Money(
+                0,
+            ),
+            bounty: Money(
+                0,
+            ),
+            registered_snapshot: 16580,
+        },
+    ],
+}

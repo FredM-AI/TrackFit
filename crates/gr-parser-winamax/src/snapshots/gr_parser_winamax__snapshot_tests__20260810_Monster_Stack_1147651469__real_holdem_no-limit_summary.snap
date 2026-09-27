@@ -1,0 +1,38 @@
+---
+source: crates/gr-parser-winamax/src/snapshot_tests.rs
+expression: summary
+---
+TournamentSummary {
+    room_tournament_id: "1147651469",
+    name: "Monster Stack",
+    buyin_prize: Money(
+        180,
+    ),
+    buyin_bounty: Money(
+        0,
+    ),
+    buyin_fee: Money(
+        20,
+    ),
+    mode: "tt",
+    tournament_type: "normal",
+    speed: "normal",
+    flight_id: 0,
+    bullets: [
+        TournamentBullet {
+            entry_no: 1,
+            late_reg_bust: false,
+            finish_position: Some(
+                4,
+            ),
+            played_seconds: 17432,
+            prize: Money(
+                3047,
+            ),
+            bounty: Money(
+                0,
+            ),
+            registered_snapshot: 154,
+        },
+    ],
+}

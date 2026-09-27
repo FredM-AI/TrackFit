@@ -1,0 +1,53 @@
+---
+source: crates/gr-parser-winamax/src/snapshot_tests.rs
+expression: summary
+---
+TournamentSummary {
+    room_tournament_id: "1085373745",
+    name: "Hit&Run W Series Ticket 10\\u20ac",
+    buyin_prize: Money(
+        180,
+    ),
+    buyin_bounty: Money(
+        0,
+    ),
+    buyin_fee: Money(
+        20,
+    ),
+    mode: "tt",
+    tournament_type: "wys",
+    speed: "semiturbo",
+    flight_id: 0,
+    bullets: [
+        TournamentBullet {
+            entry_no: 1,
+            late_reg_bust: true,
+            finish_position: Some(
+                20,
+            ),
+            played_seconds: 4498,
+            prize: Money(
+                0,
+            ),
+            bounty: Money(
+                0,
+            ),
+            registered_snapshot: 59,
+        },
+        TournamentBullet {
+            entry_no: 2,
+            late_reg_bust: false,
+            finish_position: Some(
+                20,
+            ),
+            played_seconds: 4562,
+            prize: Money(
+                0,
+            ),
+            bounty: Money(
+                0,
+            ),
+            registered_snapshot: 59,
+        },
+    ],
+}

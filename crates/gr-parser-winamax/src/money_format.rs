@@ -1,3 +1,9 @@
+/// Retire le suffixe `€` d'un montant (`"1€"` -> `"1"`), sans le symbole `$`
+/// ni d'autre devise : R-MONEY impose l'euro uniquement (D22).
+pub(crate) fn strip_euro_suffix(s: &str) -> Option<&str> {
+    s.strip_suffix('\u{20ac}')
+}
+
 /// Parse un montant en euros du format Winamax (`"1"`, `"0.80"`, `"31.41"`) en
 /// centimes. Toujours 0 ou 2 decimales dans le corpus observe (§5.2, §8.2-4).
 pub(crate) fn parse_euros_to_cents(s: &str) -> Option<i64> {

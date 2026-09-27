@@ -1,0 +1,53 @@
+---
+source: crates/gr-parser-winamax/src/snapshot_tests.rs
+expression: summary
+---
+TournamentSummary {
+    room_tournament_id: "1173012730",
+    name: "OBELISK - TRIDENT SPACE KO",
+    buyin_prize: Money(
+        80,
+    ),
+    buyin_bounty: Money(
+        100,
+    ),
+    buyin_fee: Money(
+        20,
+    ),
+    mode: "tt",
+    tournament_type: "knockout",
+    speed: "turbo",
+    flight_id: 0,
+    bullets: [
+        TournamentBullet {
+            entry_no: 1,
+            late_reg_bust: true,
+            finish_position: Some(
+                737,
+            ),
+            played_seconds: 327,
+            prize: Money(
+                0,
+            ),
+            bounty: Money(
+                0,
+            ),
+            registered_snapshot: 812,
+        },
+        TournamentBullet {
+            entry_no: 2,
+            late_reg_bust: false,
+            finish_position: Some(
+                7,
+            ),
+            played_seconds: 5803,
+            prize: Money(
+                3479,
+            ),
+            bounty: Money(
+                1740,
+            ),
+            registered_snapshot: 1141,
+        },
+    ],
+}

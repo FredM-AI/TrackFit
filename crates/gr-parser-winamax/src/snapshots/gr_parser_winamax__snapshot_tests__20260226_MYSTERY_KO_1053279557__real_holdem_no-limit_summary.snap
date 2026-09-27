@@ -1,0 +1,38 @@
+---
+source: crates/gr-parser-winamax/src/snapshot_tests.rs
+expression: summary
+---
+TournamentSummary {
+    room_tournament_id: "1053279557",
+    name: "MYSTERY KO",
+    buyin_prize: Money(
+        60,
+    ),
+    buyin_bounty: Money(
+        30,
+    ),
+    buyin_fee: Money(
+        10,
+    ),
+    mode: "tt",
+    tournament_type: "knockout",
+    speed: "normal",
+    flight_id: 0,
+    bullets: [
+        TournamentBullet {
+            entry_no: 1,
+            late_reg_bust: false,
+            finish_position: Some(
+                6,
+            ),
+            played_seconds: 15776,
+            prize: Money(
+                465,
+            ),
+            bounty: Money(
+                0,
+            ),
+            registered_snapshot: 151,
+        },
+    ],
+}

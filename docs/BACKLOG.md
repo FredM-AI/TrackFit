@@ -141,14 +141,17 @@ Parsing complet des actions (posts/folds/checks/calls/bets/raises/shows/collecte
 - Pots partagés (7 cas dans le fixture OBELISK) et heads-up à une table 3-max (`(small blind) (button)`). ✅ (7/7 détectés ; le heads-up ne demande aucun code dédié, il découle de l'ordre séquentiel des actions dans le texte)
 - Calcul de l'excédent non suivi par main (champ `uncalled_excess`), utilisé par l'EV all-in (M5-4). ✅
 
-### M1-6 · Parser de summaries · M · `TODO` (PAR-12, §8.6)
+### M1-6 · Parser de summaries · M · `DONE` (PAR-12, §8.6) — le 27/09.
+`WinamaxParser::parse_summary` : découpage en blocs (un par entrée, séparés par une ligne vide), buy-in à 2 ou 3 composantes (`P€+F€` ou `P€+B€+F€`), les 3 formes de `You won` (prize seul / bounty seul / les deux), durée `Xh Ymin Zs` (tout sous-ensemble), place (suffixe ordinal ignoré). `RoomParser` est désormais **entièrement implémenté** pour `WinamaxParser` (detect + parse_hand + parse_summary tous présents).
+**Précision de périmètre :** le « découpage des mains par `entry_no` » (réapparition du Hero après élimination) cité dans la CA relève en réalité de la corrélation mains↔summary, explicitement prévue en **M2-6** (« les re-entries sont comptées ») — `parse_summary` produit un `entry_no` par bloc (1, 2, … dans l'ordre du fichier), mais le rattachement aux mains individuelles n'est pas fait ici.
+
 **CA :**
-- Buy-in décomposé prize/bounty/fee.
-- Summaries **multi-blocs** (un par entrée), suffixe ` - Late Registration`, `You won X€ + Bounty Y€` / `You won Bounty Y€` / ligne absente.
-- Découpage des mains par `entry_no` (réapparition du Hero après élimination).
-- Test chiffré : OBELISK → 2 entrées, coût 4,00 €, gains 52,19 €, profit +48,19 €, place 7.
-- Tickets : uniquement quand le fixture sera fourni.
-- Snapshots validés.
+- Buy-in décomposé prize/bounty/fee. ✅ (y compris freeroll `0€+0€`)
+- Summaries **multi-blocs** (un par entrée), suffixe ` - Late Registration`, `You won X€ + Bounty Y€` / `You won Bounty Y€` / ligne absente. ✅
+- Découpage des mains par `entry_no` (réapparition du Hero après élimination). ⚠️ différé en M2-6 (voir précision de périmètre ci-dessus)
+- Test chiffré : OBELISK → 2 entrées, coût 4,00 €, gains 52,19 €, profit +48,19 €, place 7. ✅ (exact, calculé à partir du `TournamentSummary` parsé)
+- Tickets : uniquement quand le fixture sera fourni. ✅ (toujours aucun exemple, non implémenté — cf. Idées/à trier)
+- Snapshots validés. ✅ (9 fichiers summary, `insta`)
 
 ### M1-7 · Robustesse et benchs du parser · M · `TODO` (PAR-14/15)
 **CA :**

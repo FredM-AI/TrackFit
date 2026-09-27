@@ -13,3 +13,4 @@
 - feat(parser): découpage des mains (`split_hand_blocks`, séparateur `\n\n\n`) avec gestion des blocs incomplets et offset de reprise ; testé par troncature ligne par ligne sur un vrai fixture (M1-3).
 - feat(parser): parsing de l'en-tête/table/sièges (`WinamaxParser::parse_hand`), conversion de date sans dépendance validée contre le HandId réel, 9 snapshots `insta` (1679 mains) ; edge-case synthétique pour les pseudos à espaces/points/tirets (M1-4).
 - feat(parser): actions/streets/board/pots complets, invariant de conservation PAR-11 vérifié sur tout le corpus, `uncalled_excess` calculé par une formule arithmétique générale (pas de détection de texte « side pot ») ; bug de reset des mises preflop trouvé et corrigé (M1-5).
+- feat(parser): `parse_summary` (buy-in prize/bounty/fee, multi-blocs, Late Registration, 3 formes de `You won`) ; `RoomParser` entièrement implémenté pour `WinamaxParser`. Test chiffré OBELISK exact (M1-6).

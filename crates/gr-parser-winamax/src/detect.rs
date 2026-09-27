@@ -1,11 +1,26 @@
-use gr_core::HandRecord;
-use gr_parser_api::{strip_bom, Detection, Language, ParseError, Room};
+use gr_core::{HandRecord, TournamentSummary};
+use gr_parser_api::{strip_bom, Detection, Language, ParseError, Room, RoomParser};
 
 use crate::hand;
+use crate::summary;
 
 /// Signature commune aux fichiers de mains (`Winamax Poker - Tournament "..."`)
 /// et de summary (`Winamax Poker - Tournament summary : ...`), §4.1/§5.1.
 const SIGNATURE: &str = "Winamax Poker - Tournament";
+
+fn detect_impl(input: &[u8]) -> Option<Detection> {
+    let bytes = strip_bom(input);
+    let text = std::str::from_utf8(bytes).ok()?;
+    let first_line = text.lines().next()?;
+    if first_line.starts_with(SIGNATURE) {
+        Some(Detection {
+            room: Room::Winamax,
+            language: Language::English,
+        })
+    } else {
+        None
+    }
+}
 
 /// Parser du format Winamax (fichiers en anglais meme avec un client FR, ADR-005).
 #[derive(Debug, Default, Clone, Copy)]
@@ -15,27 +30,38 @@ impl WinamaxParser {
     /// Detecte si `input` est un fichier Winamax, en tolerant un BOM UTF-8 en tete (PAR-2).
     #[must_use]
     pub fn detect(input: &[u8]) -> Option<Detection> {
-        let bytes = strip_bom(input);
-        let text = std::str::from_utf8(bytes).ok()?;
-        let first_line = text.lines().next()?;
-        if first_line.starts_with(SIGNATURE) {
-            Some(Detection {
-                room: Room::Winamax,
-                language: Language::English,
-            })
-        } else {
-            None
-        }
+        detect_impl(input)
     }
 
-    /// Parse une main (PAR-4/5/6). Les actions, le board et les pots restent
-    /// vides jusqu'a M1-5.
+    /// Parse une main complete (PAR-4 a PAR-11).
     ///
     /// # Errors
-    /// Renvoie une [`ParseError`] si l'en-tete, la table ou un siege ne
-    /// correspond a aucun motif connu (PAR-15).
+    /// Renvoie une [`ParseError`] si une ligne ne correspond a aucun motif
+    /// connu, ou si l'invariant de conservation des jetons est viole (PAR-15).
     pub fn parse_hand(text: &str) -> Result<HandRecord, ParseError> {
         hand::parse_hand(text)
+    }
+
+    /// Parse un fichier summary complet (PAR-12).
+    ///
+    /// # Errors
+    /// Renvoie une [`ParseError`] si une ligne ne correspond a aucun motif connu (PAR-15).
+    pub fn parse_summary(text: &str) -> Result<TournamentSummary, ParseError> {
+        summary::parse_summary(text)
+    }
+}
+
+impl RoomParser for WinamaxParser {
+    fn detect(&self, input: &[u8]) -> Option<Detection> {
+        detect_impl(input)
+    }
+
+    fn parse_hand(&self, text: &str) -> Result<HandRecord, ParseError> {
+        hand::parse_hand(text)
+    }
+
+    fn parse_summary(&self, text: &str) -> Result<TournamentSummary, ParseError> {
+        summary::parse_summary(text)
     }
 }
 
