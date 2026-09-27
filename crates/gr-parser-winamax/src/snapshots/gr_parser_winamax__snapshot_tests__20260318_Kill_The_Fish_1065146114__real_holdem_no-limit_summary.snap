@@ -1,0 +1,38 @@
+---
+source: crates/gr-parser-winamax/src/snapshot_tests.rs
+expression: summary
+---
+TournamentSummary {
+    room_tournament_id: "1065146114",
+    name: "Kill The Fish",
+    buyin_prize: Money(
+        90,
+    ),
+    buyin_bounty: Money(
+        90,
+    ),
+    buyin_fee: Money(
+        20,
+    ),
+    mode: "tt",
+    tournament_type: "knockout",
+    speed: "semiturbo",
+    flight_id: 0,
+    bullets: [
+        TournamentBullet {
+            entry_no: 1,
+            late_reg_bust: false,
+            finish_position: Some(
+                2,
+            ),
+            played_seconds: 13125,
+            prize: Money(
+                4158,
+            ),
+            bounty: Money(
+                1369,
+            ),
+            registered_snapshot: 218,
+        },
+    ],
+}
