@@ -1,0 +1,3257 @@
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4661644738712043524-1-1775050747 - Holdem no limit (12/50/100) - 2026/04/01 13:39:07 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#003' 6-max (real money) Seat #6 is the button
+Seat 2: P0001 (9000)
+Seat 5: Hero (9000)
+Seat 6: P0002 (9000)
+*** ANTE/BLINDS ***
+P0001 posts ante 12
+Hero posts ante 12
+P0002 posts ante 12
+P0001 posts small blind 50
+Hero posts big blind 100
+Dealt to Hero [7d Ac]
+*** PRE-FLOP *** 
+P0002 raises 200 to 300
+P0001 raises 1230 to 1530
+Hero folds
+P0002 folds
+P0001 collected 1966 from pot
+*** SUMMARY ***
+Total pot 1966 | No rake
+Seat 2: P0001 (small blind) won 1966
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4661644738712043524-2-1775050792 - Holdem no limit (12/50/100) - 2026/04/01 13:39:52 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#003' 6-max (real money) Seat #2 is the button
+Seat 2: P0001 (9424)
+Seat 5: Hero (8888)
+Seat 6: P0002 (8688)
+*** ANTE/BLINDS ***
+Hero posts ante 12
+P0002 posts ante 12
+P0001 posts ante 12
+Hero posts small blind 50
+P0002 posts big blind 100
+Dealt to Hero [Qd 4h]
+*** PRE-FLOP *** 
+P0001 raises 210 to 310
+Hero folds
+P0002 folds
+P0001 collected 496 from pot
+*** SUMMARY ***
+Total pot 496 | No rake
+Seat 2: P0001 (button) won 496
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 2 - HandId: #4661644738712043524-3-1775050803 - Holdem no limit (14/60/120) - 2026/04/01 13:40:03 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#003' 6-max (real money) Seat #5 is the button
+Seat 2: P0001 (9598)
+Seat 5: Hero (8826)
+Seat 6: P0002 (8576)
+*** ANTE/BLINDS ***
+P0002 posts ante 14
+P0001 posts ante 14
+Hero posts ante 14
+P0002 posts small blind 60
+P0001 posts big blind 120
+Dealt to Hero [7h Kh]
+*** PRE-FLOP *** 
+Hero raises 120 to 240
+P0002 raises 720 to 960
+P0001 folds
+Hero folds
+P0002 collected 1362 from pot
+*** SUMMARY ***
+Total pot 1362 | No rake
+Seat 6: P0002 (small blind) won 1362
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 2 - HandId: #4661644738712043524-4-1775050822 - Holdem no limit (14/60/120) - 2026/04/01 13:40:22 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#003' 6-max (real money) Seat #6 is the button
+Seat 2: P0001 (9464)
+Seat 4: P0003 (7602)
+Seat 5: Hero (8572)
+Seat 6: P0002 (8964)
+*** ANTE/BLINDS ***
+P0001 posts ante 14
+P0003 posts ante 14
+Hero posts ante 14
+P0002 posts ante 14
+P0001 posts small blind 60
+P0003 posts big blind 120
+Dealt to Hero [Th 3c]
+*** PRE-FLOP *** 
+Hero folds
+P0002 raises 240 to 360
+P0001 folds
+P0003 folds
+P0002 collected 596 from pot
+*** SUMMARY ***
+Total pot 596 | No rake
+Seat 6: P0002 (button) won 596
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 2 - HandId: #4661644738712043524-5-1775050840 - Holdem no limit (14/60/120) - 2026/04/01 13:40:40 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#003' 6-max (real money) Seat #2 is the button
+Seat 2: P0001 (9390)
+Seat 4: P0003 (7468)
+Seat 5: Hero (8558)
+Seat 6: P0002 (9186)
+*** ANTE/BLINDS ***
+P0003 posts ante 14
+Hero posts ante 14
+P0001 posts ante 14
+P0002 posts ante 14
+P0003 posts small blind 60
+Hero posts big blind 120
+Dealt to Hero [Ts 4c]
+*** PRE-FLOP *** 
+P0002 folds
+P0001 folds
+P0003 raises 296 to 416
+Hero folds
+P0003 collected 592 from pot
+*** SUMMARY ***
+Total pot 592 | No rake
+Seat 4: P0003 (small blind) won 592
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 2 - HandId: #4661644738712043524-6-1775050865 - Holdem no limit (14/60/120) - 2026/04/01 13:41:05 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#003' 6-max (real money) Seat #4 is the button
+Seat 2: P0001 (9376)
+Seat 4: P0003 (7630)
+Seat 5: Hero (8424)
+Seat 6: P0002 (9172)
+*** ANTE/BLINDS ***
+Hero posts ante 14
+P0002 posts ante 14
+P0001 posts ante 14
+P0003 posts ante 14
+Hero posts small blind 60
+P0002 posts big blind 120
+Dealt to Hero [Qh 9h]
+*** PRE-FLOP *** 
+P0001 folds
+P0003 raises 120 to 240
+Hero calls 180
+P0002 folds
+*** FLOP *** [7c 3s 6h]
+Hero checks
+P0003 bets 230
+Hero calls 230
+*** TURN *** [7c 3s 6h][4s]
+Hero checks
+P0003 checks
+*** RIVER *** [7c 3s 6h 4s][8c]
+Hero bets 725
+P0003 calls 725
+*** SHOW DOWN ***
+Hero shows [Qh 9h] (High card : Queen)
+P0003 shows [7h 8h] (Two pairs : 8 and 7)
+P0003 collected 2566 from pot
+*** SUMMARY ***
+Total pot 2566 | No rake
+Board: [7c 3s 6h 4s 8c]
+Seat 4: P0003 (button) showed [7h 8h] and won 2566 with Two pairs : 8 and 7
+Seat 5: Hero (small blind) showed [Qh 9h] and lost with High card : Queen
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 2 - HandId: #4661644738712043524-7-1775050906 - Holdem no limit (14/60/120) - 2026/04/01 13:41:46 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#003' 6-max (real money) Seat #5 is the button
+Seat 1: P0004 (9000)
+Seat 2: P0001 (9362)
+Seat 3: P0005 (8902)
+Seat 4: P0003 (8987)
+Seat 5: Hero (7215)
+Seat 6: P0002 (9038)
+*** ANTE/BLINDS ***
+P0002 posts ante 14
+P0004 posts ante 14
+P0001 posts ante 14
+P0005 posts ante 14
+P0003 posts ante 14
+Hero posts ante 14
+P0002 posts small blind 60
+P0004 posts big blind 120
+Dealt to Hero [As 4c]
+*** PRE-FLOP *** 
+P0001 raises 252 to 372
+P0005 folds
+P0003 folds
+Hero folds
+P0002 calls 312
+P0004 folds
+*** FLOP *** [Kd 7d Ts]
+P0002 checks
+P0001 bets 635
+P0002 calls 635
+*** TURN *** [Kd 7d Ts][6d]
+P0002 checks
+P0001 checks
+*** RIVER *** [Kd 7d Ts 6d][9d]
+P0002 checks
+P0001 bets 776
+P0002 raises 776 to 1552
+P0001 folds
+P0002 collected 4546 from pot
+*** SUMMARY ***
+Total pot 4546 | No rake
+Board: [Kd 7d Ts 6d 9d]
+Seat 6: P0002 (small blind) won 4546
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 2 - HandId: #4661644738712043524-8-1775051001 - Holdem no limit (14/60/120) - 2026/04/01 13:43:21 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#003' 6-max (real money) Seat #6 is the button
+Seat 1: P0004 (8866)
+Seat 2: P0001 (7565)
+Seat 3: P0005 (8888)
+Seat 4: P0003 (8973)
+Seat 5: Hero (7201)
+Seat 6: P0002 (11011)
+*** ANTE/BLINDS ***
+P0004 posts ante 14
+P0001 posts ante 14
+P0005 posts ante 14
+P0003 posts ante 14
+Hero posts ante 14
+P0002 posts ante 14
+P0004 posts small blind 60
+P0001 posts big blind 120
+Dealt to Hero [2h Qs]
+*** PRE-FLOP *** 
+P0005 raises 150 to 270
+P0003 folds
+Hero folds
+P0002 folds
+P0004 folds
+P0001 calls 150
+*** FLOP *** [6s 5c 5s]
+P0001 checks
+P0005 bets 342
+P0001 raises 650 to 992
+P0005 folds
+P0001 collected 2018 from pot
+*** SUMMARY ***
+Total pot 2018 | No rake
+Board: [6s 5c 5s]
+Seat 2: P0001 (big blind) won 2018
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 2 - HandId: #4661644738712043524-9-1775051068 - Holdem no limit (14/60/120) - 2026/04/01 13:44:28 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#003' 6-max (real money) Seat #1 is the button
+Seat 1: P0004 (8792)
+Seat 2: P0001 (8307)
+Seat 3: P0005 (8262)
+Seat 5: Hero (7187)
+Seat 6: P0002 (10997)
+*** ANTE/BLINDS ***
+P0001 posts ante 14
+P0005 posts ante 14
+P0004 posts ante 14
+Hero posts ante 14
+P0002 posts ante 14
+P0001 posts small blind 60
+P0005 posts big blind 120
+Dealt to Hero [7h 8d]
+*** PRE-FLOP *** 
+Hero folds
+P0002 folds
+P0004 folds
+P0001 folds
+P0005 collected 250 from pot
+*** SUMMARY ***
+Total pot 250 | No rake
+Seat 3: P0005 (big blind) won 250
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 3 - HandId: #4661644738712043522-11-1775051158 - Holdem no limit (16/70/140) - 2026/04/01 13:45:58 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #4 is the button
+Seat 1: P0006 (8266)
+Seat 3: Hero (7173)
+Seat 4: P0007 (14021)
+Seat 5: P0008 (15115)
+Seat 6: P0009 (9068)
+*** ANTE/BLINDS ***
+P0008 posts ante 16
+P0009 posts ante 16
+P0006 posts ante 16
+Hero posts ante 16
+P0007 posts ante 16
+P0008 posts small blind 70
+P0009 posts big blind 140
+Dealt to Hero [2c 3h]
+*** PRE-FLOP *** 
+P0006 raises 140 to 280
+Hero folds
+P0007 calls 280
+P0008 calls 210
+P0009 folds
+*** FLOP *** [Ac 5h 8s]
+P0008 bets 140
+P0006 folds
+P0007 raises 600 to 740
+P0008 calls 600
+*** TURN *** [Ac 5h 8s][Kd]
+P0008 checks
+P0007 bets 1270
+P0008 calls 1270
+*** RIVER *** [Ac 5h 8s Kd][Kh]
+P0008 checks
+P0007 checks
+*** SHOW DOWN ***
+P0008 shows [8h Th] (Two pairs : Kings and 8)
+P0007 shows [Ah Tc] (Two pairs : Aces and Kings)
+P0007 collected 5080 from pot
+*** SUMMARY ***
+Total pot 5080 | No rake
+Board: [Ac 5h 8s Kd Kh]
+Seat 4: P0007 (button) showed [Ah Tc] and won 5080 with Two pairs : Aces and Kings
+Seat 5: P0008 (small blind) showed [8h Th] and lost with Two pairs : Kings and 8
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 3 - HandId: #4661644738712043522-12-1775051219 - Holdem no limit (16/70/140) - 2026/04/01 13:46:59 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #5 is the button
+Seat 1: P0006 (7970)
+Seat 2: P0010 (9000)
+Seat 3: Hero (7157)
+Seat 4: P0007 (16795)
+Seat 5: P0008 (12809)
+Seat 6: P0009 (8912)
+*** ANTE/BLINDS ***
+P0009 posts ante 16
+P0006 posts ante 16
+P0010 posts ante 16
+Hero posts ante 16
+P0007 posts ante 16
+P0008 posts ante 16
+P0009 posts small blind 70
+P0006 posts big blind 140
+Dealt to Hero [Ks 4h]
+*** PRE-FLOP *** 
+P0010 folds
+Hero folds
+P0007 folds
+P0008 raises 140 to 280
+P0009 folds
+P0006 calls 140
+*** FLOP *** [8h 6d 5s]
+P0006 checks
+P0008 checks
+*** TURN *** [8h 6d 5s][Jc]
+P0006 bets 542
+P0008 folds
+P0006 collected 1268 from pot
+*** SUMMARY ***
+Total pot 1268 | No rake
+Board: [8h 6d 5s Jc]
+Seat 1: P0006 (big blind) won 1268
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 3 - HandId: #4661644738712043522-13-1775051273 - Holdem no limit (16/70/140) - 2026/04/01 13:47:53 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #6 is the button
+Seat 1: P0006 (8400)
+Seat 2: P0010 (8984)
+Seat 3: Hero (7141)
+Seat 4: P0007 (16779)
+Seat 5: P0008 (12513)
+Seat 6: P0009 (8826)
+*** ANTE/BLINDS ***
+P0006 posts ante 16
+P0010 posts ante 16
+Hero posts ante 16
+P0007 posts ante 16
+P0008 posts ante 16
+P0009 posts ante 16
+P0006 posts small blind 70
+P0010 posts big blind 140
+Dealt to Hero [6s Th]
+*** PRE-FLOP *** 
+Hero folds
+P0007 folds
+P0008 calls 140
+P0009 folds
+P0006 folds
+P0010 checks
+*** FLOP *** [Qh 8h 2h]
+P0010 checks
+P0008 bets 140
+P0010 folds
+P0008 collected 586 from pot
+*** SUMMARY ***
+Total pot 586 | No rake
+Board: [Qh 8h 2h]
+Seat 5: P0008 won 586
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 3 - HandId: #4661644738712043522-14-1775051313 - Holdem no limit (16/70/140) - 2026/04/01 13:48:33 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #1 is the button
+Seat 1: P0006 (8314)
+Seat 2: P0010 (8828)
+Seat 3: Hero (7125)
+Seat 4: P0007 (16763)
+Seat 5: P0008 (12803)
+Seat 6: P0009 (8810)
+*** ANTE/BLINDS ***
+P0010 posts ante 16
+Hero posts ante 16
+P0006 posts ante 16
+P0007 posts ante 16
+P0008 posts ante 16
+P0009 posts ante 16
+P0010 posts small blind 70
+Hero posts big blind 140
+Dealt to Hero [5s 4c]
+*** PRE-FLOP *** 
+P0007 folds
+P0008 calls 140
+P0009 folds
+P0006 raises 350 to 490
+P0010 folds
+Hero folds
+P0008 calls 350
+*** FLOP *** [7h 9c 8d]
+P0008 checks
+P0006 bets 424
+P0008 folds
+P0006 collected 1710 from pot
+*** SUMMARY ***
+Total pot 1710 | No rake
+Board: [7h 9c 8d]
+Seat 1: P0006 (button) won 1710
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 3 - HandId: #4661644738712043522-15-1775051361 - Holdem no limit (16/70/140) - 2026/04/01 13:49:21 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #2 is the button
+Seat 1: P0006 (9094)
+Seat 2: P0010 (8742)
+Seat 3: Hero (6969)
+Seat 4: P0007 (16747)
+Seat 5: P0008 (12297)
+Seat 6: P0009 (8794)
+*** ANTE/BLINDS ***
+Hero posts ante 16
+P0007 posts ante 16
+P0006 posts ante 16
+P0010 posts ante 16
+P0008 posts ante 16
+P0009 posts ante 16
+Hero posts small blind 70
+P0007 posts big blind 140
+Dealt to Hero [3c Ac]
+*** PRE-FLOP *** 
+P0008 raises 140 to 280
+P0009 folds
+P0006 folds
+P0010 folds
+Hero calls 210
+P0007 folds
+*** FLOP *** [Ts 3d Ah]
+Hero checks
+P0008 bets 140
+Hero raises 350 to 490
+P0008 calls 350
+*** TURN *** [Ts 3d Ah][Tc]
+Hero checks
+P0008 checks
+*** RIVER *** [Ts 3d Ah Tc][7h]
+Hero bets 444
+P0008 raises 2664 to 3108
+Hero folds
+P0008 collected 5328 from pot
+*** SUMMARY ***
+Total pot 5328 | No rake
+Board: [Ts 3d Ah Tc 7h]
+Seat 5: P0008 won 5328
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 3 - HandId: #4661644738712043522-16-1775051391 - Holdem no limit (16/70/140) - 2026/04/01 13:49:51 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #3 is the button
+Seat 1: P0006 (9078)
+Seat 2: P0010 (8726)
+Seat 3: Hero (5739)
+Seat 4: P0007 (16591)
+Seat 5: P0008 (13731)
+*** ANTE/BLINDS ***
+P0007 posts ante 16
+P0008 posts ante 16
+P0006 posts ante 16
+P0010 posts ante 16
+Hero posts ante 16
+P0007 posts small blind 70
+P0008 posts big blind 140
+Dealt to Hero [Tc Qc]
+*** PRE-FLOP *** 
+P0006 folds
+P0010 raises 140 to 280
+Hero calls 280
+P0007 calls 210
+P0008 calls 140
+*** FLOP *** [3s 8s Js]
+P0007 checks
+P0008 bets 1200
+P0010 calls 1200
+Hero folds
+P0007 folds
+*** TURN *** [3s 8s Js][2h]
+P0008 bets 3600
+P0010 calls 3600
+*** RIVER *** [3s 8s Js 2h][2c]
+P0008 bets 7020
+P0010 calls 3630 and is all-in
+*** SHOW DOWN ***
+P0010 shows [Ad Ac] (Two pairs : Aces and 2)
+P0008 shows [Jh 5c] (Two pairs : Jacks and 2)
+P0008 collected 3390 from side pot 1
+P0010 collected 18060 from main pot
+*** SUMMARY ***
+Total pot 21450 | No rake
+Board: [3s 8s Js 2h 2c]
+Seat 2: P0010 showed [Ad Ac] and won 18060 with Two pairs : Aces and 2
+Seat 5: P0008 (big blind) showed [Jh 5c] and won 3390 with Two pairs : Jacks and 2
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 4 - HandId: #4661644738712043522-17-1775051427 - Holdem no limit (20/80/160) - 2026/04/01 13:50:27 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #4 is the button
+Seat 1: P0006 (9062)
+Seat 2: P0010 (18060)
+Seat 3: Hero (5443)
+Seat 4: P0007 (16295)
+Seat 5: P0008 (5005)
+*** ANTE/BLINDS ***
+P0008 posts ante 20
+P0006 posts ante 20
+P0010 posts ante 20
+Hero posts ante 20
+P0007 posts ante 20
+P0008 posts small blind 80
+P0006 posts big blind 160
+Dealt to Hero [3c 9d]
+*** PRE-FLOP *** 
+P0010 folds
+Hero folds
+P0007 raises 160 to 320
+P0008 raises 4665 to 4985 and is all-in
+P0006 folds
+P0007 calls 4665
+*** FLOP *** [Kh 9s Td]
+*** TURN *** [Kh 9s Td][6c]
+*** RIVER *** [Kh 9s Td 6c][Jd]
+*** SHOW DOWN ***
+P0007 shows [8h 6h] (One pair : 6)
+P0008 shows [Qd 8d] (Straight King high)
+P0008 collected 10230 from pot
+*** SUMMARY ***
+Total pot 10230 | No rake
+Board: [Kh 9s Td 6c Jd]
+Seat 4: P0007 (button) showed [8h 6h] and lost with One pair : 6
+Seat 5: P0008 (small blind) showed [Qd 8d] and won 10230 with Straight King high
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 4 - HandId: #4661644738712043522-18-1775051447 - Holdem no limit (20/80/160) - 2026/04/01 13:50:47 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #5 is the button
+Seat 1: P0006 (8882)
+Seat 2: P0010 (18040)
+Seat 3: Hero (5423)
+Seat 4: P0007 (11290)
+Seat 5: P0008 (10230)
+*** ANTE/BLINDS ***
+P0006 posts ante 20
+P0010 posts ante 20
+Hero posts ante 20
+P0007 posts ante 20
+P0008 posts ante 20
+P0006 posts small blind 80
+P0010 posts big blind 160
+Dealt to Hero [Ks Qd]
+*** PRE-FLOP *** 
+Hero raises 160 to 320
+P0007 raises 480 to 800
+P0008 calls 800
+P0006 folds
+P0010 folds
+Hero calls 480
+*** FLOP *** [Td Kd 5d]
+Hero checks
+P0007 checks
+P0008 bets 2740
+Hero raises 1863 to 4603 and is all-in
+P0007 raises 5867 to 10470 and is all-in
+P0008 calls 6670 and is all-in
+*** TURN *** [Td Kd 5d][Qh]
+*** RIVER *** [Td Kd 5d Qh][9s]
+*** SHOW DOWN ***
+Hero shows [Ks Qd] (Two pairs : Kings and Queens)
+P0007 shows [Ah Ac] (One pair : Aces)
+P0008 shows [Kh 9d] (Two pairs : Kings and 9)
+P0008 collected 9614 from side pot 1
+P0007 collected 1060 from side pot 2
+Hero collected 16549 from main pot
+*** SUMMARY ***
+Total pot 27223 | No rake
+Board: [Td Kd 5d Qh 9s]
+Seat 3: Hero showed [Ks Qd] and won 16549 with Two pairs : Kings and Queens
+Seat 4: P0007 showed [Ah Ac] and won 1060 with One pair : Aces
+Seat 5: P0008 (button) showed [Kh 9d] and won 9614 with Two pairs : Kings and 9
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 4 - HandId: #4661644738712043522-19-1775051482 - Holdem no limit (20/80/160) - 2026/04/01 13:51:22 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #1 is the button
+Seat 1: P0006 (8782)
+Seat 2: P0010 (17860)
+Seat 3: Hero (16549)
+Seat 4: P0007 (1060)
+Seat 5: P0008 (9614)
+*** ANTE/BLINDS ***
+P0010 posts ante 20
+Hero posts ante 20
+P0006 posts ante 20
+P0007 posts ante 20
+P0008 posts ante 20
+P0010 posts small blind 80
+Hero posts big blind 160
+Dealt to Hero [9d 7c]
+*** PRE-FLOP *** 
+P0007 raises 880 to 1040 and is all-in
+P0008 folds
+P0006 folds
+P0010 folds
+Hero folds
+P0007 collected 1380 from pot
+*** SUMMARY ***
+Total pot 1380 | No rake
+Seat 4: P0007 won 1380
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 4 - HandId: #4661644738712043522-20-1775051507 - Holdem no limit (20/80/160) - 2026/04/01 13:51:47 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #2 is the button
+Seat 1: P0006 (8762)
+Seat 2: P0010 (17760)
+Seat 3: Hero (16369)
+Seat 4: P0007 (1380)
+Seat 5: P0008 (9594)
+*** ANTE/BLINDS ***
+Hero posts ante 20
+P0007 posts ante 20
+P0006 posts ante 20
+P0010 posts ante 20
+P0008 posts ante 20
+Hero posts small blind 80
+P0007 posts big blind 160
+Dealt to Hero [7s 9s]
+*** PRE-FLOP *** 
+P0008 folds
+P0006 folds
+P0010 raises 160 to 320
+Hero folds
+P0007 raises 1040 to 1360 and is all-in
+P0010 calls 1040
+*** FLOP *** [Th 6s 3d]
+*** TURN *** [Th 6s 3d][Tc]
+*** RIVER *** [Th 6s 3d Tc][Ks]
+*** SHOW DOWN ***
+P0007 shows [7h 7c] (Two pairs : Tens and 7)
+P0010 shows [Kc Qd] (Two pairs : Kings and Tens)
+P0010 collected 2900 from pot
+*** SUMMARY ***
+Total pot 2900 | No rake
+Board: [Th 6s 3d Tc Ks]
+Seat 2: P0010 (button) showed [Kc Qd] and won 2900 with Two pairs : Kings and Tens
+Seat 4: P0007 (big blind) showed [7h 7c] and lost with Two pairs : Tens and 7
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 4 - HandId: #4661644738712043522-21-1775051548 - Holdem no limit (20/80/160) - 2026/04/01 13:52:28 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #3 is the button
+Seat 1: P0006 (8742)
+Seat 2: P0010 (19280)
+Seat 3: Hero (16269)
+Seat 5: P0008 (9574)
+*** ANTE/BLINDS ***
+P0008 posts ante 20
+P0006 posts ante 20
+P0010 posts ante 20
+Hero posts ante 20
+P0008 posts big blind 160
+Dealt to Hero [Ah 2c]
+*** PRE-FLOP *** 
+P0006 folds
+P0010 folds
+Hero raises 160 to 320
+P0008 calls 160
+*** FLOP *** [8d 4s Ac]
+P0008 checks
+Hero bets 240
+P0008 calls 240
+*** TURN *** [8d 4s Ac][5d]
+P0008 checks
+Hero bets 640
+P0008 calls 640
+*** RIVER *** [8d 4s Ac 5d][3d]
+P0008 checks
+Hero bets 620
+P0008 calls 620
+*** SHOW DOWN ***
+P0008 shows [4h 9c] (One pair : 4)
+Hero shows [Ah 2c] (Straight 5 high)
+Hero collected 3720 from pot
+*** SUMMARY ***
+Total pot 3720 | No rake
+Board: [8d 4s Ac 5d 3d]
+Seat 3: Hero (button) showed [Ah 2c] and won 3720 with Straight 5 high
+Seat 5: P0008 (big blind) showed [4h 9c] and lost with One pair : 4
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 4 - HandId: #4661644738712043522-22-1775051580 - Holdem no limit (20/80/160) - 2026/04/01 13:53:00 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #4 is the button
+Seat 1: P0006 (8722)
+Seat 2: P0010 (19260)
+Seat 3: Hero (18149)
+Seat 4: P0011 (9000)
+Seat 5: P0008 (7734)
+Seat 6: P0012 (18021)
+*** ANTE/BLINDS ***
+P0008 posts ante 20
+P0012 posts ante 20
+P0006 posts ante 20
+P0010 posts ante 20
+Hero posts ante 20
+P0008 posts small blind 80
+P0012 posts big blind 160
+Dealt to Hero [Kh Js]
+*** PRE-FLOP *** 
+P0006 folds
+P0010 folds
+Hero raises 176 to 336
+P0008 raises 7378 to 7714 and is all-in
+P0012 folds
+Hero folds
+P0008 collected 8310 from pot
+*** SUMMARY ***
+Total pot 8310 | No rake
+Seat 5: P0008 (small blind) won 8310
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 4 - HandId: #4661644738712043522-23-1775051605 - Holdem no limit (20/80/160) - 2026/04/01 13:53:25 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #5 is the button
+Seat 1: P0006 (8702)
+Seat 2: P0010 (19240)
+Seat 3: Hero (17793)
+Seat 4: P0011 (9000)
+Seat 5: P0008 (8310)
+Seat 6: P0012 (17841)
+*** ANTE/BLINDS ***
+P0012 posts ante 20
+P0006 posts ante 20
+P0010 posts ante 20
+Hero posts ante 20
+P0011 posts ante 20
+P0008 posts ante 20
+P0012 posts small blind 80
+P0006 posts big blind 160
+Dealt to Hero [Jh 7s]
+*** PRE-FLOP *** 
+P0010 folds
+Hero folds
+P0011 raises 320 to 480
+P0008 folds
+P0012 folds
+P0006 folds
+P0011 collected 840 from pot
+*** SUMMARY ***
+Total pot 840 | No rake
+Seat 4: P0011 won 840
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 4 - HandId: #4661644738712043527-1-1775051644 - Holdem no limit (20/80/160) - 2026/04/01 13:54:04 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #6 is the button
+Seat 2: P0013 (9000)
+Seat 4: P0007 (8960)
+Seat 5: P0014 (7368)
+Seat 6: Hero (17773)
+*** ANTE/BLINDS ***
+P0013 posts ante 20
+P0014 posts ante 20
+Hero posts ante 20
+P0013 posts small blind 80
+P0014 posts big blind 160
+Dealt to Hero [Ts 5h]
+*** PRE-FLOP *** 
+Hero folds
+P0013 folds
+P0014 collected 300 from pot
+*** SUMMARY ***
+Total pot 300 | No rake
+Seat 5: P0014 (big blind) won 300
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 4 - HandId: #4661644738712043527-2-1775051651 - Holdem no limit (20/80/160) - 2026/04/01 13:54:11 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #2 is the button
+Seat 2: P0013 (8900)
+Seat 4: P0007 (8960)
+Seat 5: P0014 (7488)
+Seat 6: Hero (17753)
+*** ANTE/BLINDS ***
+P0014 posts ante 20
+Hero posts ante 20
+P0013 posts ante 20
+P0014 posts small blind 80
+Hero posts big blind 160
+Dealt to Hero [Ad Kd]
+*** PRE-FLOP *** 
+P0013 raises 160 to 320
+P0014 calls 240
+Hero raises 1280 to 1600
+P0013 folds
+P0014 calls 1280
+*** FLOP *** [Qs 7s Ts]
+P0014 bets 160
+Hero raises 800 to 960
+P0014 calls 800
+*** TURN *** [Qs 7s Ts][8s]
+P0014 checks
+Hero checks
+*** RIVER *** [Qs 7s Ts 8s][Ks]
+P0014 bets 4908 and is all-in
+Hero folds
+P0014 collected 10408 from pot
+*** SUMMARY ***
+Total pot 10408 | No rake
+Board: [Qs 7s Ts 8s Ks]
+Seat 5: P0014 (small blind) won 10408
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 4 - HandId: #4661644738712043527-3-1775051699 - Holdem no limit (20/80/160) - 2026/04/01 13:54:59 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #5 is the button
+Seat 2: P0013 (8560)
+Seat 3: P0015 (752)
+Seat 4: P0007 (8960)
+Seat 5: P0014 (10408)
+Seat 6: Hero (15173)
+*** ANTE/BLINDS ***
+Hero posts ante 20
+P0013 posts ante 20
+P0015 posts ante 20
+P0007 posts ante 20
+P0014 posts ante 20
+Hero posts small blind 80
+P0013 posts big blind 160
+Dealt to Hero [2d Js]
+*** PRE-FLOP *** 
+P0015 raises 160 to 320
+P0007 folds
+P0014 calls 320
+Hero folds
+P0013 calls 160
+*** FLOP *** [2s 7h 8h]
+P0013 checks
+P0015 checks
+P0014 checks
+*** TURN *** [2s 7h 8h][4h]
+P0013 bets 570
+P0015 calls 412 and is all-in
+P0014 calls 570
+*** RIVER *** [2s 7h 8h 4h][2h]
+P0013 checks
+P0014 bets 2692
+P0013 folds
+*** SHOW DOWN ***
+P0015 shows [5h Ac] (Flush 8 high)
+P0014 shows [3h 9d] (Flush 8 high)
+P0014 collected 3008 from side pot 1
+P0015 collected 2376 from main pot
+*** SUMMARY ***
+Total pot 5384 | No rake
+Board: [2s 7h 8h 4h 2h]
+Seat 3: P0015 showed [5h Ac] and won 2376 with Flush 8 high
+Seat 5: P0014 (button) showed [3h 9d] and won 3008 with Flush 8 high
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 5 - HandId: #4661644738712043527-4-1775052060 - Holdem no limit (25/100/200) - 2026/04/01 14:01:00 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #6 is the button
+Seat 1: P0016 (9000)
+Seat 2: P0013 (7650)
+Seat 3: P0015 (2376)
+Seat 4: P0007 (8940)
+Seat 5: P0014 (9814)
+Seat 6: Hero (15073)
+*** ANTE/BLINDS ***
+P0013 posts ante 25
+P0015 posts ante 25
+P0007 posts ante 25
+P0014 posts ante 25
+Hero posts ante 25
+P0013 posts small blind 100
+P0015 posts big blind 200
+Dealt to Hero [3d Jh]
+*** PRE-FLOP *** 
+P0007 folds
+P0014 folds
+Hero folds
+P0013 raises 500 to 700
+P0015 calls 500
+*** FLOP *** [Qs 8s 6c]
+P0013 bets 763
+P0015 raises 888 to 1651 and is all-in
+P0013 calls 888
+*** TURN *** [Qs 8s 6c][Td]
+*** RIVER *** [Qs 8s 6c Td][Ks]
+*** SHOW DOWN ***
+P0015 shows [7d 5d] (High card : King)
+P0013 shows [4d Kd] (One pair : Kings)
+P0013 collected 4827 from pot
+*** SUMMARY ***
+Total pot 4827 | No rake
+Board: [Qs 8s 6c Td Ks]
+Seat 2: P0013 (small blind) showed [4d Kd] and won 4827 with One pair : Kings
+Seat 3: P0015 (big blind) showed [7d 5d] and lost with High card : King
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 5 - HandId: #4661644738712043527-5-1775052177 - Holdem no limit (25/100/200) - 2026/04/01 14:02:57 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #2 is the button
+Seat 1: P0016 (9000)
+Seat 2: P0013 (10101)
+Seat 4: P0007 (8915)
+Seat 5: P0014 (9789)
+Seat 6: Hero (15048)
+*** ANTE/BLINDS ***
+P0007 posts ante 25
+P0016 posts ante 25
+P0013 posts ante 25
+P0014 posts ante 25
+Hero posts ante 25
+P0007 posts big blind 200
+Dealt to Hero [Tc 7s]
+*** PRE-FLOP *** 
+P0014 folds
+Hero folds
+P0016 folds
+P0013 raises 200 to 400
+P0007 calls 200
+*** FLOP *** [8h Qc Qh]
+P0007 checks
+P0013 checks
+*** TURN *** [8h Qc Qh][8d]
+P0007 checks
+P0013 checks
+*** RIVER *** [8h Qc Qh 8d][Kd]
+P0007 checks
+P0013 bets 601
+P0007 folds
+P0013 collected 1526 from pot
+*** SUMMARY ***
+Total pot 1526 | No rake
+Board: [8h Qc Qh 8d Kd]
+Seat 2: P0013 (button) won 1526
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 5 - HandId: #4661644738712043527-6-1775052288 - Holdem no limit (25/100/200) - 2026/04/01 14:04:48 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #3 is the button
+Seat 1: P0016 (8975)
+Seat 2: P0013 (10601)
+Seat 4: P0007 (8490)
+Seat 5: P0014 (9764)
+Seat 6: Hero (15023)
+*** ANTE/BLINDS ***
+P0007 posts ante 25
+P0014 posts ante 25
+P0016 posts ante 25
+P0013 posts ante 25
+Hero posts ante 25
+P0007 posts small blind 100
+P0014 posts big blind 200
+Dealt to Hero [Kc 8s]
+*** PRE-FLOP *** 
+Hero folds
+P0016 folds
+P0013 folds
+P0007 raises 200 to 400
+P0014 folds
+P0007 collected 725 from pot
+*** SUMMARY ***
+Total pot 725 | No rake
+Seat 4: P0007 (small blind) won 725
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 5 - HandId: #4661644738712043527-7-1775052315 - Holdem no limit (25/100/200) - 2026/04/01 14:05:15 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #4 is the button
+Seat 1: P0016 (8950)
+Seat 2: P0013 (10576)
+Seat 4: P0007 (8790)
+Seat 5: P0014 (9539)
+Seat 6: Hero (14998)
+*** ANTE/BLINDS ***
+P0014 posts ante 25
+Hero posts ante 25
+P0016 posts ante 25
+P0013 posts ante 25
+P0007 posts ante 25
+P0014 posts small blind 100
+Hero posts big blind 200
+Dealt to Hero [5d Jd]
+*** PRE-FLOP *** 
+P0016 raises 200 to 400
+P0013 folds
+P0007 raises 200 to 600
+P0014 folds
+Hero folds
+P0016 raises 1625 to 2225
+P0007 raises 6540 to 8765 and is all-in
+P0016 raises 160 to 8925 and is all-in
+*** FLOP *** [6h 8c 2s]
+*** TURN *** [6h 8c 2s][As]
+*** RIVER *** [6h 8c 2s As][6c]
+*** SHOW DOWN ***
+P0016 shows [Kd Qd] (One pair : 6)
+P0007 shows [Ac 9d] (Two pairs : Aces and 6)
+P0007 collected 17955 from main pot
+P0016 collected 160 from side pot 1
+*** SUMMARY ***
+Total pot 18115 | No rake
+Board: [6h 8c 2s As 6c]
+Seat 1: P0016 showed [Kd Qd] and won 160 with One pair : 6
+Seat 4: P0007 (button) showed [Ac 9d] and won 17955 with Two pairs : Aces and 6
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 6 - HandId: #4661644738712043527-8-1775052363 - Holdem no limit (30/125/250) - 2026/04/01 14:06:03 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #5 is the button
+Seat 1: P0016 (160)
+Seat 2: P0013 (10551)
+Seat 3: P0017 (9000)
+Seat 4: P0007 (17955)
+Seat 5: P0014 (9414)
+Seat 6: Hero (14773)
+*** ANTE/BLINDS ***
+Hero posts ante 30
+P0016 posts ante 30
+P0013 posts ante 30
+P0017 posts ante 30
+P0007 posts ante 30
+P0014 posts ante 30
+Hero posts small blind 125
+P0016 posts big blind 130 and is all-in
+Dealt to Hero [Ac 6d]
+*** PRE-FLOP *** 
+P0013 folds
+P0017 folds
+P0007 folds
+P0014 folds
+Hero raises 370 to 500
+*** FLOP *** [9h Jc Td]
+*** TURN *** [9h Jc Td][5h]
+*** RIVER *** [9h Jc Td 5h][6c]
+*** SHOW DOWN ***
+P0016 shows [Th 4s] (One pair : Tens)
+Hero shows [Ac 6d] (One pair : 6)
+Hero collected 370 from side pot 1
+P0016 collected 440 from main pot
+*** SUMMARY ***
+Total pot 810 | No rake
+Board: [9h Jc Td 5h 6c]
+Seat 1: P0016 (big blind) showed [Th 4s] and won 440 with One pair : Tens
+Seat 6: Hero (small blind) showed [Ac 6d] and won 370 with One pair : 6
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 6 - HandId: #4661644738712043527-9-1775052388 - Holdem no limit (30/125/250) - 2026/04/01 14:06:28 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #6 is the button
+Seat 1: P0016 (440)
+Seat 2: P0013 (10521)
+Seat 3: P0017 (8970)
+Seat 4: P0007 (17925)
+Seat 5: P0014 (9384)
+Seat 6: Hero (14613)
+*** ANTE/BLINDS ***
+P0016 posts ante 30
+P0013 posts ante 30
+P0017 posts ante 30
+P0007 posts ante 30
+P0014 posts ante 30
+Hero posts ante 30
+P0016 posts small blind 125
+P0013 posts big blind 250
+Dealt to Hero [Ad Jc]
+*** PRE-FLOP *** 
+P0017 folds
+P0007 folds
+P0014 folds
+Hero raises 250 to 500
+P0016 calls 285 and is all-in
+P0013 calls 250
+*** FLOP *** [8h 7h 5d]
+P0013 bets 1272
+Hero folds
+*** TURN *** [8h 7h 5d][8d]
+*** RIVER *** [8h 7h 5d 8d][9c]
+*** SHOW DOWN ***
+P0016 shows [2d Qd] (One pair : 8)
+P0013 shows [Th Td] (Two pairs : Tens and 8)
+P0013 collected 2862 from pot
+*** SUMMARY ***
+Total pot 2862 | No rake
+Board: [8h 7h 5d 8d 9c]
+Seat 1: P0016 (small blind) showed [2d Qd] and lost with One pair : 8
+Seat 2: P0013 (big blind) showed [Th Td] and won 2862 with Two pairs : Tens and 8
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 6 - HandId: #4661644738712043527-10-1775052422 - Holdem no limit (30/125/250) - 2026/04/01 14:07:02 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #1 is the button
+Seat 2: P0013 (11581)
+Seat 3: P0017 (8940)
+Seat 4: P0007 (17895)
+Seat 5: P0014 (9354)
+Seat 6: Hero (14083)
+*** ANTE/BLINDS ***
+P0013 posts ante 30
+P0017 posts ante 30
+P0007 posts ante 30
+P0014 posts ante 30
+Hero posts ante 30
+P0013 posts small blind 125
+P0017 posts big blind 250
+Dealt to Hero [6c Th]
+*** PRE-FLOP *** 
+P0007 raises 250 to 500
+P0014 folds
+Hero folds
+P0013 folds
+P0017 folds
+P0007 collected 1025 from pot
+*** SUMMARY ***
+Total pot 1025 | No rake
+Seat 4: P0007 won 1025
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 6 - HandId: #4661644738712043527-11-1775052436 - Holdem no limit (30/125/250) - 2026/04/01 14:07:16 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #2 is the button
+Seat 2: P0013 (11426)
+Seat 3: P0017 (8660)
+Seat 4: P0007 (18390)
+Seat 5: P0014 (9324)
+Seat 6: Hero (14053)
+*** ANTE/BLINDS ***
+P0017 posts ante 30
+P0007 posts ante 30
+P0013 posts ante 30
+P0014 posts ante 30
+Hero posts ante 30
+P0017 posts small blind 125
+P0007 posts big blind 250
+Dealt to Hero [Qd Ah]
+*** PRE-FLOP *** 
+P0014 folds
+Hero raises 250 to 500
+P0013 folds
+P0017 folds
+P0007 calls 250
+*** FLOP *** [3h 9d Qc]
+P0007 checks
+Hero bets 421
+P0007 folds
+Hero collected 1696 from pot
+*** SUMMARY ***
+Total pot 1696 | No rake
+Board: [3h 9d Qc]
+Seat 6: Hero won 1696
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 6 - HandId: #4661644738712043527-12-1775052449 - Holdem no limit (30/125/250) - 2026/04/01 14:07:29 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #3 is the button
+Seat 2: P0013 (11396)
+Seat 3: P0017 (8505)
+Seat 4: P0007 (17860)
+Seat 5: P0014 (9294)
+Seat 6: Hero (14798)
+*** ANTE/BLINDS ***
+P0007 posts ante 30
+P0014 posts ante 30
+P0013 posts ante 30
+P0017 posts ante 30
+Hero posts ante 30
+P0007 posts small blind 125
+P0014 posts big blind 250
+Dealt to Hero [4d 6h]
+*** PRE-FLOP *** 
+Hero folds
+P0013 folds
+P0017 raises 250 to 500
+P0007 calls 375
+P0014 folds
+*** FLOP *** [9h As 7h]
+P0007 bets 700
+P0017 calls 700
+*** TURN *** [9h As 7h][Jh]
+P0007 bets 1400
+P0017 folds
+P0007 collected 4200 from pot
+*** SUMMARY ***
+Total pot 4200 | No rake
+Board: [9h As 7h Jh]
+Seat 4: P0007 (small blind) won 4200
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 6 - HandId: #4661644738712043527-13-1775052482 - Holdem no limit (30/125/250) - 2026/04/01 14:08:02 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #4 is the button
+Seat 2: P0013 (11366)
+Seat 3: P0017 (7275)
+Seat 4: P0007 (19430)
+Seat 5: P0014 (9014)
+Seat 6: Hero (14768)
+*** ANTE/BLINDS ***
+P0014 posts ante 30
+Hero posts ante 30
+P0013 posts ante 30
+P0017 posts ante 30
+P0007 posts ante 30
+P0014 posts small blind 125
+Hero posts big blind 250
+Dealt to Hero [Qc Js]
+*** PRE-FLOP *** 
+P0013 folds
+P0017 raises 250 to 500
+P0007 folds
+P0014 folds
+Hero calls 250
+*** FLOP *** [Qs 4h 3d]
+Hero checks
+P0017 bets 446
+Hero calls 446
+*** TURN *** [Qs 4h 3d][Jc]
+Hero checks
+P0017 bets 1250
+Hero raises 1500 to 2750
+P0017 folds
+Hero collected 6167 from pot
+*** SUMMARY ***
+Total pot 6167 | No rake
+Board: [Qs 4h 3d Jc]
+Seat 6: Hero (big blind) won 6167
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 6 - HandId: #4661644738712043527-14-1775052525 - Holdem no limit (30/125/250) - 2026/04/01 14:08:45 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #5 is the button
+Seat 1: P0018 (9000)
+Seat 2: P0013 (11336)
+Seat 3: P0017 (5049)
+Seat 4: P0007 (19400)
+Seat 5: P0014 (8859)
+Seat 6: Hero (17209)
+*** ANTE/BLINDS ***
+Hero posts ante 30
+P0018 posts ante 30
+P0013 posts ante 30
+P0017 posts ante 30
+P0007 posts ante 30
+P0014 posts ante 30
+Hero posts small blind 125
+P0018 posts big blind 250
+Dealt to Hero [4h 3h]
+*** PRE-FLOP *** 
+P0013 folds
+P0017 folds
+P0007 folds
+P0014 folds
+Hero calls 125
+P0018 raises 680 to 930
+Hero calls 680
+*** FLOP *** [5s 2d 2h]
+Hero checks
+P0018 bets 1326
+Hero calls 1326
+*** TURN *** [5s 2d 2h][7s]
+Hero checks
+P0018 bets 250
+Hero calls 250
+*** RIVER *** [5s 2d 2h 7s][Ah]
+Hero checks
+P0018 bets 1817
+Hero calls 1817
+*** SHOW DOWN ***
+P0018 shows [Jc Ks] (One pair : 2)
+Hero shows [4h 3h] (Straight 5 high)
+Hero collected 8826 from pot
+*** SUMMARY ***
+Total pot 8826 | No rake
+Board: [5s 2d 2h 7s Ah]
+Seat 1: P0018 (big blind) showed [Jc Ks] and lost with One pair : 2
+Seat 6: Hero (small blind) showed [4h 3h] and won 8826 with Straight 5 high
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 6 - HandId: #4661644738712043527-15-1775052575 - Holdem no limit (30/125/250) - 2026/04/01 14:09:35 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #6 is the button
+Seat 1: P0018 (4647)
+Seat 2: P0013 (11306)
+Seat 3: P0017 (5019)
+Seat 4: P0007 (19370)
+Seat 5: P0014 (8829)
+Seat 6: Hero (21682)
+*** ANTE/BLINDS ***
+P0018 posts ante 30
+P0013 posts ante 30
+P0017 posts ante 30
+P0007 posts ante 30
+P0014 posts ante 30
+Hero posts ante 30
+P0018 posts small blind 125
+P0013 posts big blind 250
+Dealt to Hero [9s 4c]
+*** PRE-FLOP *** 
+P0017 folds
+P0007 folds
+P0014 folds
+Hero folds
+P0018 raises 250 to 500
+P0013 folds
+P0018 collected 930 from pot
+*** SUMMARY ***
+Total pot 930 | No rake
+Seat 1: P0018 (small blind) won 930
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 6 - HandId: #4661644738712043527-16-1775052593 - Holdem no limit (30/125/250) - 2026/04/01 14:09:53 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #1 is the button
+Seat 1: P0018 (5047)
+Seat 2: P0013 (11026)
+Seat 3: P0017 (4989)
+Seat 4: P0007 (19340)
+Seat 5: P0014 (8799)
+Seat 6: Hero (21652)
+*** ANTE/BLINDS ***
+P0013 posts ante 30
+P0017 posts ante 30
+P0018 posts ante 30
+P0007 posts ante 30
+P0014 posts ante 30
+Hero posts ante 30
+P0013 posts small blind 125
+P0017 posts big blind 250
+Dealt to Hero [5s 4c]
+*** PRE-FLOP *** 
+P0007 raises 250 to 500
+P0014 folds
+Hero folds
+P0018 raises 1000 to 1500
+P0013 folds
+P0017 folds
+P0007 raises 17810 to 19310 and is all-in
+P0018 calls 3517 and is all-in
+*** FLOP *** [Kc 5c 6d]
+*** TURN *** [Kc 5c 6d][9c]
+*** RIVER *** [Kc 5c 6d 9c][7d]
+*** SHOW DOWN ***
+P0018 shows [Ac 7c] (Flush Ace high)
+P0007 shows [Ad 9d] (One pair : 9)
+P0007 collected 14293 from side pot 1
+P0018 collected 10589 from main pot
+*** SUMMARY ***
+Total pot 24882 | No rake
+Board: [Kc 5c 6d 9c 7d]
+Seat 1: P0018 (button) showed [Ac 7c] and won 10589 with Flush Ace high
+Seat 4: P0007 showed [Ad 9d] and won 14293 with One pair : 9
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 6 - HandId: #4661644738712043527-17-1775052637 - Holdem no limit (30/125/250) - 2026/04/01 14:10:37 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #2 is the button
+Seat 1: P0018 (10589)
+Seat 2: P0013 (10871)
+Seat 3: P0017 (4709)
+Seat 4: P0007 (14293)
+Seat 5: P0014 (8769)
+Seat 6: Hero (21622)
+*** ANTE/BLINDS ***
+P0017 posts ante 30
+P0007 posts ante 30
+P0018 posts ante 30
+P0013 posts ante 30
+P0014 posts ante 30
+Hero posts ante 30
+P0017 posts small blind 125
+P0007 posts big blind 250
+Dealt to Hero [9c 4s]
+*** PRE-FLOP *** 
+P0014 folds
+Hero folds
+P0018 calls 250
+P0013 folds
+P0017 calls 125
+P0007 checks
+*** FLOP *** [8c Kd 8h]
+P0017 checks
+P0007 checks
+P0018 bets 326
+P0017 calls 326
+P0007 folds
+*** TURN *** [8c Kd 8h][5h]
+P0017 checks
+P0018 bets 554
+P0017 calls 554
+*** RIVER *** [8c Kd 8h 5h][Ts]
+P0017 checks
+P0018 bets 1749
+P0017 calls 1749
+*** SHOW DOWN ***
+P0018 shows [7d 3d] (One pair : 8)
+P0017 shows [9d 8d] (Trips of 8)
+P0017 collected 6188 from pot
+*** SUMMARY ***
+Total pot 6188 | No rake
+Board: [8c Kd 8h 5h Ts]
+Seat 1: P0018 showed [7d 3d] and lost with One pair : 8
+Seat 3: P0017 (small blind) showed [9d 8d] and won 6188 with Trips of 8
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 7 - HandId: #4661644738712043527-18-1775052701 - Holdem no limit (35/150/300) - 2026/04/01 14:11:41 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #3 is the button
+Seat 1: P0018 (7680)
+Seat 2: P0013 (10841)
+Seat 3: P0017 (7988)
+Seat 4: P0007 (14013)
+Seat 5: P0014 (8739)
+Seat 6: Hero (21592)
+*** ANTE/BLINDS ***
+P0007 posts ante 35
+P0014 posts ante 35
+P0018 posts ante 35
+P0013 posts ante 35
+P0017 posts ante 35
+Hero posts ante 35
+P0007 posts small blind 150
+P0014 posts big blind 300
+Dealt to Hero [Jh 2s]
+*** PRE-FLOP *** 
+Hero folds
+P0018 calls 300
+P0013 raises 300 to 600
+P0017 folds
+P0007 calls 450
+P0014 folds
+P0018 calls 300
+*** FLOP *** [Qs 6c 9c]
+P0007 checks
+P0018 bets 809
+P0013 raises 2981 to 3790
+P0007 folds
+P0018 folds
+P0013 collected 6909 from pot
+*** SUMMARY ***
+Total pot 6909 | No rake
+Board: [Qs 6c 9c]
+Seat 2: P0013 won 6909
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 7 - HandId: #4661644738712043527-19-1775052754 - Holdem no limit (35/150/300) - 2026/04/01 14:12:34 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #4 is the button
+Seat 1: P0018 (6236)
+Seat 2: P0013 (13325)
+Seat 3: P0017 (7953)
+Seat 4: P0007 (13378)
+Seat 5: P0014 (8404)
+Seat 6: Hero (21557)
+*** ANTE/BLINDS ***
+P0014 posts ante 35
+Hero posts ante 35
+P0018 posts ante 35
+P0013 posts ante 35
+P0017 posts ante 35
+P0007 posts ante 35
+P0014 posts small blind 150
+Hero posts big blind 300
+Dealt to Hero [3s 9s]
+*** PRE-FLOP *** 
+P0018 folds
+P0013 folds
+P0017 calls 300
+P0007 folds
+P0014 calls 150
+Hero checks
+*** FLOP *** [8h 8c Qh]
+P0014 checks
+Hero checks
+P0017 checks
+*** TURN *** [8h 8c Qh][Qd]
+P0014 checks
+Hero checks
+P0017 checks
+*** RIVER *** [8h 8c Qh Qd][Kd]
+P0014 checks
+Hero checks
+P0017 bets 450
+P0014 folds
+Hero folds
+P0017 collected 1560 from pot
+*** SUMMARY ***
+Total pot 1560 | No rake
+Board: [8h 8c Qh Qd Kd]
+Seat 3: P0017 won 1560
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 7 - HandId: #4661644738712043527-20-1775052869 - Holdem no limit (35/150/300) - 2026/04/01 14:14:29 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #5 is the button
+Seat 1: P0018 (6201)
+Seat 2: P0013 (13290)
+Seat 3: P0017 (8728)
+Seat 4: P0007 (13343)
+Seat 5: P0014 (8069)
+Seat 6: Hero (21222)
+*** ANTE/BLINDS ***
+Hero posts ante 35
+P0018 posts ante 35
+P0013 posts ante 35
+P0017 posts ante 35
+P0007 posts ante 35
+P0014 posts ante 35
+Hero posts small blind 150
+P0018 posts big blind 300
+Dealt to Hero [Qh 9c]
+*** PRE-FLOP *** 
+P0013 folds
+P0017 folds
+P0007 folds
+P0014 calls 300
+Hero calls 150
+P0018 checks
+*** FLOP *** [6h Td 5c]
+Hero checks
+P0018 bets 300
+P0014 calls 300
+Hero folds
+*** TURN *** [6h Td 5c][5s]
+P0018 bets 300
+P0014 calls 300
+*** RIVER *** [6h Td 5c 5s][Jc]
+P0018 bets 300
+P0014 calls 300
+*** SHOW DOWN ***
+P0018 shows [4s 2h] (One pair : 5)
+P0014 shows [Ts Ac] (Two pairs : Tens and 5)
+P0014 collected 2910 from pot
+*** SUMMARY ***
+Total pot 2910 | No rake
+Board: [6h Td 5c 5s Jc]
+Seat 1: P0018 (big blind) showed [4s 2h] and lost with One pair : 5
+Seat 5: P0014 (button) showed [Ts Ac] and won 2910 with Two pairs : Tens and 5
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 7 - HandId: #4661644738712043527-21-1775052925 - Holdem no limit (35/150/300) - 2026/04/01 14:15:25 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #6 is the button
+Seat 1: P0018 (4966)
+Seat 2: P0013 (13255)
+Seat 3: P0017 (8693)
+Seat 4: P0007 (13308)
+Seat 5: P0014 (9744)
+Seat 6: Hero (20887)
+*** ANTE/BLINDS ***
+P0018 posts ante 35
+P0013 posts ante 35
+P0017 posts ante 35
+P0007 posts ante 35
+P0014 posts ante 35
+Hero posts ante 35
+P0018 posts small blind 150
+P0013 posts big blind 300
+Dealt to Hero [6d Th]
+*** PRE-FLOP *** 
+P0017 folds
+P0007 raises 300 to 600
+P0014 calls 600
+Hero folds
+P0018 calls 450
+P0013 folds
+*** FLOP *** [8h Jh 5d]
+P0018 bets 300
+P0007 calls 300
+P0014 calls 300
+*** TURN *** [8h Jh 5d][6h]
+P0018 bets 1124
+P0007 folds
+P0014 calls 1124
+*** RIVER *** [8h Jh 5d 6h][9c]
+P0018 bets 2907 and is all-in
+P0014 calls 2907
+*** SHOW DOWN ***
+P0014 shows [5s 3s] (One pair : 5)
+P0018 shows [9h 5c] (Two pairs : 9 and 5)
+P0018 collected 11272 from pot
+*** SUMMARY ***
+Total pot 11272 | No rake
+Board: [8h Jh 5d 6h 9c]
+Seat 1: P0018 (small blind) showed [9h 5c] and won 11272 with Two pairs : 9 and 5
+Seat 5: P0014 showed [5s 3s] and lost with One pair : 5
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 8 - HandId: #4661644738712043527-22-1775053005 - Holdem no limit (40/175/350) - 2026/04/01 14:16:45 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #1 is the button
+Seat 1: P0018 (11272)
+Seat 2: P0013 (12920)
+Seat 3: P0017 (8658)
+Seat 4: P0007 (12373)
+Seat 5: P0014 (4778)
+Seat 6: Hero (20852)
+*** ANTE/BLINDS ***
+P0013 posts ante 40
+P0017 posts ante 40
+P0018 posts ante 40
+P0007 posts ante 40
+P0014 posts ante 40
+Hero posts ante 40
+P0013 posts small blind 175
+P0017 posts big blind 350
+Dealt to Hero [5c 3d]
+*** PRE-FLOP *** 
+P0007 folds
+P0014 calls 350
+Hero folds
+P0018 raises 350 to 700
+P0013 calls 525
+P0017 calls 350
+P0014 calls 350
+*** FLOP *** [Ts Qh Jc]
+P0013 checks
+P0017 checks
+P0014 checks
+P0018 bets 1064
+P0013 calls 1064
+P0017 raises 3136 to 4200
+P0014 calls 4038 and is all-in
+P0018 calls 3136
+P0013 folds
+*** TURN *** [Ts Qh Jc][4s]
+P0017 bets 3718 and is all-in
+P0018 calls 3718
+*** RIVER *** [Ts Qh Jc 4s][4c]
+*** SHOW DOWN ***
+P0018 shows [8d As] (One pair : 4)
+P0014 shows [6h Jd] (Two pairs : Jacks and 4)
+P0017 shows [Js Tc] (Two pairs : Jacks and Tens)
+P0017 collected 23978 from pot
+*** SUMMARY ***
+Total pot 23978 | No rake
+Board: [Ts Qh Jc 4s 4c]
+Seat 1: P0018 (button) showed [8d As] and lost with One pair : 4
+Seat 3: P0017 (big blind) showed [Js Tc] and won 23978 with Two pairs : Jacks and Tens
+Seat 5: P0014 showed [6h Jd] and lost with Two pairs : Jacks and 4
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 8 - HandId: #4661644738712043527-23-1775053092 - Holdem no limit (40/175/350) - 2026/04/01 14:18:12 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #2 is the button
+Seat 1: P0018 (2614)
+Seat 2: P0013 (11116)
+Seat 3: P0017 (23978)
+Seat 4: P0007 (12333)
+Seat 6: Hero (20812)
+*** ANTE/BLINDS ***
+P0017 posts ante 40
+P0007 posts ante 40
+P0018 posts ante 40
+P0013 posts ante 40
+Hero posts ante 40
+P0017 posts small blind 175
+P0007 posts big blind 350
+Dealt to Hero [Td 5s]
+*** PRE-FLOP *** 
+Hero folds
+P0018 raises 350 to 700
+P0013 folds
+P0017 folds
+P0007 folds
+P0018 collected 1425 from pot
+*** SUMMARY ***
+Total pot 1425 | No rake
+Seat 1: P0018 won 1425
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 8 - HandId: #4661644738712043527-24-1775053123 - Holdem no limit (40/175/350) - 2026/04/01 14:18:43 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #3 is the button
+Seat 1: P0018 (3299)
+Seat 2: P0013 (11076)
+Seat 3: P0017 (23763)
+Seat 4: P0007 (11943)
+Seat 6: Hero (20772)
+*** ANTE/BLINDS ***
+P0007 posts ante 40
+Hero posts ante 40
+P0018 posts ante 40
+P0013 posts ante 40
+P0017 posts ante 40
+P0007 posts small blind 175
+Hero posts big blind 350
+Dealt to Hero [Th 3d]
+*** PRE-FLOP *** 
+P0018 calls 350
+P0013 raises 350 to 700
+P0017 folds
+P0007 calls 525
+Hero folds
+P0018 calls 350
+*** FLOP *** [Ks 8c As]
+P0007 checks
+P0018 checks
+P0013 bets 1325
+P0007 calls 1325
+P0018 folds
+*** TURN *** [Ks 8c As][5s]
+P0007 checks
+P0013 checks
+*** RIVER *** [Ks 8c As 5s][6h]
+P0007 bets 2650
+P0013 calls 2650
+*** SHOW DOWN ***
+P0013 shows [7d Ad] (One pair : Aces)
+P0007 shows [Qs Ts] (Flush Ace high)
+P0007 collected 10600 from pot
+*** SUMMARY ***
+Total pot 10600 | No rake
+Board: [Ks 8c As 5s 6h]
+Seat 2: P0013 showed [7d Ad] and lost with One pair : Aces
+Seat 4: P0007 (small blind) showed [Qs Ts] and won 10600 with Flush Ace high
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 8 - HandId: #4661644738712043527-25-1775053171 - Holdem no limit (40/175/350) - 2026/04/01 14:19:31 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #4 is the button
+Seat 1: P0018 (2559)
+Seat 2: P0013 (6361)
+Seat 3: P0017 (23723)
+Seat 4: P0007 (17828)
+Seat 6: Hero (20382)
+*** ANTE/BLINDS ***
+Hero posts ante 40
+P0018 posts ante 40
+P0013 posts ante 40
+P0017 posts ante 40
+P0007 posts ante 40
+Hero posts small blind 175
+P0018 posts big blind 350
+Dealt to Hero [Qc 2h]
+*** PRE-FLOP *** 
+P0013 folds
+P0017 raises 525 to 875
+P0007 folds
+Hero folds
+P0018 raises 1644 to 2519 and is all-in
+P0017 calls 1644
+*** FLOP *** [Td 4s Th]
+*** TURN *** [Td 4s Th][6h]
+*** RIVER *** [Td 4s Th 6h][3d]
+*** SHOW DOWN ***
+P0017 shows [9c Kc] (One pair : Tens)
+P0018 shows [5d Ah] (One pair : Tens)
+P0018 collected 5413 from pot
+*** SUMMARY ***
+Total pot 5413 | No rake
+Board: [Td 4s Th 6h 3d]
+Seat 1: P0018 (big blind) showed [5d Ah] and won 5413 with One pair : Tens
+Seat 3: P0017 showed [9c Kc] and lost with One pair : Tens
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 8 - HandId: #4661644738712043527-26-1775053226 - Holdem no limit (40/175/350) - 2026/04/01 14:20:26 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #6 is the button
+Seat 1: P0018 (5413)
+Seat 2: P0013 (6321)
+Seat 3: P0017 (21164)
+Seat 4: P0007 (17788)
+Seat 6: Hero (20167)
+*** ANTE/BLINDS ***
+P0018 posts ante 40
+P0013 posts ante 40
+P0017 posts ante 40
+P0007 posts ante 40
+Hero posts ante 40
+P0018 posts small blind 175
+P0013 posts big blind 350
+Dealt to Hero [4d Qs]
+*** PRE-FLOP *** 
+P0017 folds
+P0007 folds
+Hero folds
+P0018 raises 350 to 700
+P0013 calls 350
+*** FLOP *** [Kc 2c Ad]
+P0018 bets 350
+P0013 folds
+P0018 collected 1950 from pot
+*** SUMMARY ***
+Total pot 1950 | No rake
+Board: [Kc 2c Ad]
+Seat 1: P0018 (small blind) won 1950
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 8 - HandId: #4661644738712043527-27-1775053241 - Holdem no limit (40/175/350) - 2026/04/01 14:20:41 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #1 is the button
+Seat 1: P0018 (6273)
+Seat 2: P0013 (5581)
+Seat 3: P0017 (21124)
+Seat 4: P0007 (17748)
+Seat 6: Hero (20127)
+*** ANTE/BLINDS ***
+P0013 posts ante 40
+P0017 posts ante 40
+P0018 posts ante 40
+P0007 posts ante 40
+Hero posts ante 40
+P0013 posts small blind 175
+P0017 posts big blind 350
+Dealt to Hero [9d 3d]
+*** PRE-FLOP *** 
+P0007 folds
+Hero folds
+P0018 calls 350
+P0013 calls 175
+P0017 raises 20734 to 21084 and is all-in
+P0018 folds
+P0013 folds
+P0017 collected 21984 from pot
+*** SUMMARY ***
+Total pot 21984 | No rake
+Seat 3: P0017 (big blind) won 21984
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 9 - HandId: #4661644738712043527-28-1775053273 - Holdem no limit (50/200/400) - 2026/04/01 14:21:13 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #2 is the button
+Seat 1: P0018 (5883)
+Seat 2: P0013 (5191)
+Seat 3: P0017 (21984)
+Seat 4: P0007 (17708)
+Seat 6: Hero (20087)
+*** ANTE/BLINDS ***
+P0017 posts ante 50
+P0007 posts ante 50
+P0018 posts ante 50
+P0013 posts ante 50
+Hero posts ante 50
+P0017 posts small blind 200
+P0007 posts big blind 400
+Dealt to Hero [7h 4c]
+*** PRE-FLOP *** 
+Hero folds
+P0018 calls 400
+P0013 folds
+P0017 calls 200
+P0007 checks
+*** FLOP *** [6d 9h Ac]
+P0017 checks
+P0007 checks
+P0018 bets 507
+P0017 calls 507
+P0007 folds
+*** TURN *** [6d 9h Ac][5h]
+P0017 checks
+P0018 checks
+*** RIVER *** [6d 9h Ac 5h][4d]
+P0017 checks
+P0018 bets 862
+P0017 raises 20165 to 21027 and is all-in
+P0018 folds
+P0017 collected 24353 from pot
+*** SUMMARY ***
+Total pot 24353 | No rake
+Board: [6d 9h Ac 5h 4d]
+Seat 3: P0017 (small blind) won 24353
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 9 - HandId: #4661644738712043527-29-1775053334 - Holdem no limit (50/200/400) - 2026/04/01 14:22:14 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #3 is the button
+Seat 1: P0018 (4064)
+Seat 2: P0013 (5141)
+Seat 3: P0017 (24353)
+Seat 4: P0007 (17258)
+Seat 6: Hero (20037)
+*** ANTE/BLINDS ***
+P0007 posts ante 50
+Hero posts ante 50
+P0018 posts ante 50
+P0013 posts ante 50
+P0017 posts ante 50
+P0007 posts small blind 200
+Hero posts big blind 400
+Dealt to Hero [4h 7d]
+*** PRE-FLOP *** 
+P0018 calls 400
+P0013 folds
+P0017 folds
+P0007 raises 16808 to 17208 and is all-in
+Hero folds
+P0018 folds
+P0007 collected 18258 from pot
+*** SUMMARY ***
+Total pot 18258 | No rake
+Seat 4: P0007 (small blind) won 18258
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 9 - HandId: #4661644738712043527-30-1775053366 - Holdem no limit (50/200/400) - 2026/04/01 14:22:46 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #4 is the button
+Seat 1: P0018 (3614)
+Seat 2: P0013 (5091)
+Seat 3: P0017 (24303)
+Seat 4: P0007 (18258)
+Seat 6: Hero (19587)
+*** ANTE/BLINDS ***
+Hero posts ante 50
+P0018 posts ante 50
+P0013 posts ante 50
+P0017 posts ante 50
+P0007 posts ante 50
+Hero posts small blind 200
+P0018 posts big blind 400
+Dealt to Hero [4d 7h]
+*** PRE-FLOP *** 
+P0013 raises 4641 to 5041 and is all-in
+P0017 raises 4641 to 9682
+P0007 folds
+Hero folds
+P0018 calls 3164 and is all-in
+*** FLOP *** [2s Th Td]
+*** TURN *** [2s Th Td][As]
+*** RIVER *** [2s Th Td As][9d]
+*** SHOW DOWN ***
+P0013 shows [Kh Jd] (One pair : Tens)
+P0018 shows [9c Qc] (Two pairs : Tens and 9)
+P0017 shows [6c 6h] (Two pairs : Tens and 6)
+P0017 collected 7595 from side pot 1
+P0018 collected 11142 from main pot
+*** SUMMARY ***
+Total pot 18737 | No rake
+Board: [2s Th Td As 9d]
+Seat 1: P0018 (big blind) showed [9c Qc] and won 11142 with Two pairs : Tens and 9
+Seat 2: P0013 showed [Kh Jd] and lost with One pair : Tens
+Seat 3: P0017 showed [6c 6h] and won 7595 with Two pairs : Tens and 6
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 9 - HandId: #4661644738712043527-31-1775053385 - Holdem no limit (50/200/400) - 2026/04/01 14:23:05 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #6 is the button
+Seat 1: P0018 (11142)
+Seat 3: P0017 (22166)
+Seat 4: P0007 (18208)
+Seat 6: Hero (19337)
+*** ANTE/BLINDS ***
+P0018 posts ante 50
+P0017 posts ante 50
+P0007 posts ante 50
+Hero posts ante 50
+P0018 posts small blind 200
+P0017 posts big blind 400
+Dealt to Hero [2c 9s]
+*** PRE-FLOP *** 
+P0007 calls 400
+Hero folds
+P0018 raises 400 to 800
+P0017 folds
+P0007 calls 400
+*** FLOP *** [Jc 4s As]
+P0018 checks
+P0007 checks
+*** TURN *** [Jc 4s As][Qd]
+P0018 checks
+P0007 checks
+*** RIVER *** [Jc 4s As Qd][Tc]
+P0018 bets 1430
+P0007 folds
+P0018 collected 3630 from pot
+*** SUMMARY ***
+Total pot 3630 | No rake
+Board: [Jc 4s As Qd Tc]
+Seat 1: P0018 (small blind) won 3630
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 9 - HandId: #4661644738712043527-32-1775053426 - Holdem no limit (50/200/400) - 2026/04/01 14:23:46 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #1 is the button
+Seat 1: P0018 (12492)
+Seat 2: P0019 (8950)
+Seat 3: P0017 (21716)
+Seat 4: P0007 (17358)
+Seat 6: Hero (19287)
+*** ANTE/BLINDS ***
+P0017 posts ante 50
+P0007 posts ante 50
+P0018 posts ante 50
+Hero posts ante 50
+P0017 posts small blind 200
+P0007 posts big blind 400
+Dealt to Hero [Ts 6s]
+*** PRE-FLOP *** 
+Hero folds
+P0018 raises 400 to 800
+P0017 folds
+P0007 folds
+P0018 collected 1600 from pot
+*** SUMMARY ***
+Total pot 1600 | No rake
+Seat 1: P0018 (button) won 1600
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 9 - HandId: #4661644738712043527-33-1775053436 - Holdem no limit (50/200/400) - 2026/04/01 14:23:56 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #3 is the button
+Seat 1: P0018 (13242)
+Seat 2: P0019 (8950)
+Seat 3: P0017 (21466)
+Seat 4: P0007 (16908)
+Seat 6: Hero (19237)
+*** ANTE/BLINDS ***
+P0007 posts ante 50
+Hero posts ante 50
+P0018 posts ante 50
+P0019 posts ante 50
+P0017 posts ante 50
+P0007 posts small blind 200
+Hero posts big blind 400
+Dealt to Hero [9s 9d]
+*** PRE-FLOP *** 
+P0018 raises 600 to 1000
+P0019 folds
+P0017 folds
+P0007 raises 2000 to 3000
+Hero folds
+P0018 calls 2000
+*** FLOP *** [2c 6h Kc]
+P0007 checks
+P0018 bets 2328
+P0007 raises 11530 to 13858 and is all-in
+P0018 folds
+P0007 collected 22836 from pot
+*** SUMMARY ***
+Total pot 22836 | No rake
+Board: [2c 6h Kc]
+Seat 4: P0007 (small blind) won 22836
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 9 - HandId: #4661644738712043527-34-1775053466 - Holdem no limit (50/200/400) - 2026/04/01 14:24:26 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #4 is the button
+Seat 1: P0018 (7864)
+Seat 2: P0019 (8900)
+Seat 3: P0017 (21416)
+Seat 4: P0007 (22836)
+Seat 6: Hero (18787)
+*** ANTE/BLINDS ***
+Hero posts ante 50
+P0018 posts ante 50
+P0019 posts ante 50
+P0017 posts ante 50
+P0007 posts ante 50
+Hero posts small blind 200
+P0018 posts big blind 400
+Dealt to Hero [3d Qc]
+*** PRE-FLOP *** 
+P0019 folds
+P0017 folds
+P0007 raises 22386 to 22786 and is all-in
+Hero folds
+P0018 calls 7414 and is all-in
+*** FLOP *** [Qd 5d 8s]
+*** TURN *** [Qd 5d 8s][Th]
+*** RIVER *** [Qd 5d 8s Th][2d]
+*** SHOW DOWN ***
+P0018 shows [7c Ac] (High card : Ace)
+P0007 shows [Ad 9d] (Flush Ace high)
+P0007 collected 31050 from pot
+*** SUMMARY ***
+Total pot 31050 | No rake
+Board: [Qd 5d 8s Th 2d]
+Seat 1: P0018 (big blind) showed [7c Ac] and lost with High card : Ace
+Seat 4: P0007 (button) showed [Ad 9d] and won 31050 with Flush Ace high
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 9 - HandId: #4661644738712043527-35-1775053483 - Holdem no limit (50/200/400) - 2026/04/01 14:24:43 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #6 is the button
+Seat 2: P0019 (8850)
+Seat 3: P0017 (21366)
+Seat 4: P0007 (31050)
+Seat 6: Hero (18537)
+*** ANTE/BLINDS ***
+P0019 posts ante 50
+P0017 posts ante 50
+P0007 posts ante 50
+Hero posts ante 50
+P0019 posts big blind 400
+Dealt to Hero [7d 8c]
+*** PRE-FLOP *** 
+P0017 folds
+P0007 folds
+Hero raises 400 to 800
+P0019 calls 400
+*** FLOP *** [4h 5d Td]
+P0019 checks
+Hero checks
+*** TURN *** [4h 5d Td][Qd]
+P0019 bets 630
+Hero calls 630
+*** RIVER *** [4h 5d Td Qd][6s]
+P0019 bets 1071
+Hero calls 1071
+*** SHOW DOWN ***
+P0019 shows [Kc Ts] (One pair : Tens)
+Hero shows [7d 8c] (Straight 8 high)
+Hero collected 5202 from pot
+*** SUMMARY ***
+Total pot 5202 | No rake
+Board: [4h 5d Td Qd 6s]
+Seat 2: P0019 (big blind) showed [Kc Ts] and lost with One pair : Tens
+Seat 6: Hero (button) showed [7d 8c] and won 5202 with Straight 8 high
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 9 - HandId: #4661644738712043527-36-1775053507 - Holdem no limit (50/200/400) - 2026/04/01 14:25:07 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#006' 6-max (real money) Seat #1 is the button
+Seat 1: P0020 (22046)
+Seat 2: P0019 (6299)
+Seat 3: P0017 (21316)
+Seat 4: P0007 (31000)
+Seat 6: Hero (21188)
+*** ANTE/BLINDS ***
+P0019 posts ante 50
+P0017 posts ante 50
+P0007 posts ante 50
+Hero posts ante 50
+P0019 posts small blind 200
+P0017 posts big blind 400
+Dealt to Hero [Jh Ad]
+*** PRE-FLOP *** 
+P0007 folds
+Hero raises 400 to 800
+P0019 raises 5449 to 6249 and is all-in
+P0017 folds
+Hero calls 5449
+*** FLOP *** [5s 3s 4h]
+*** TURN *** [5s 3s 4h][Qc]
+*** RIVER *** [5s 3s 4h Qc][8d]
+*** SHOW DOWN ***
+Hero shows [Jh Ad] (High card : Ace)
+P0019 shows [5c 5d] (Trips of 5)
+P0019 collected 13098 from pot
+*** SUMMARY ***
+Total pot 13098 | No rake
+Board: [5s 3s 4h Qc 8d]
+Seat 2: P0019 (small blind) showed [5c 5d] and won 13098 with Trips of 5
+Seat 6: Hero showed [Jh Ad] and lost with High card : Ace
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 10 - HandId: #4661644738712043522-58-1775053584 - Holdem no limit (60/250/500) - 2026/04/01 14:26:24 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #4 is the button
+Seat 1: Hero (14889)
+Seat 2: P0010 (30516)
+Seat 3: P0021 (23613)
+Seat 4: P0022 (9046)
+Seat 5: P0007 (30950)
+Seat 6: P0012 (28073)
+*** ANTE/BLINDS ***
+P0012 posts ante 60
+Hero posts ante 60
+P0010 posts ante 60
+P0021 posts ante 60
+P0022 posts ante 60
+P0012 posts small blind 250
+Hero posts big blind 500
+Dealt to Hero [7d 9d]
+*** PRE-FLOP *** 
+P0010 raises 500 to 1000
+P0021 calls 1000
+P0022 folds
+P0012 folds
+Hero calls 500
+*** FLOP *** [5d Ah 6c]
+Hero checks
+P0010 checks
+P0021 checks
+*** TURN *** [5d Ah 6c][6s]
+Hero checks
+P0010 checks
+P0021 checks
+*** RIVER *** [5d Ah 6c 6s][Qs]
+Hero checks
+P0010 checks
+P0021 checks
+*** SHOW DOWN ***
+Hero shows [7d 9d] (One pair : 6)
+P0021 shows [Th 2h] (One pair : 6)
+P0010 shows [3s 3c] (Two pairs : 6 and 3)
+P0010 collected 3550 from pot
+*** SUMMARY ***
+Total pot 3550 | No rake
+Board: [5d Ah 6c 6s Qs]
+Seat 1: Hero (big blind) showed [7d 9d] and lost with One pair : 6
+Seat 2: P0010 showed [3s 3c] and won 3550 with Two pairs : 6 and 3
+Seat 3: P0021 showed [Th 2h] and lost with One pair : 6
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 10 - HandId: #4661644738712043522-59-1775053633 - Holdem no limit (60/250/500) - 2026/04/01 14:27:13 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #6 is the button
+Seat 1: Hero (13829)
+Seat 2: P0010 (33006)
+Seat 3: P0021 (22553)
+Seat 4: P0022 (8986)
+Seat 5: P0007 (30950)
+Seat 6: P0012 (27763)
+*** ANTE/BLINDS ***
+Hero posts ante 60
+P0010 posts ante 60
+P0021 posts ante 60
+P0022 posts ante 60
+P0007 posts ante 60
+P0012 posts ante 60
+Hero posts small blind 250
+P0010 posts big blind 500
+Dealt to Hero [7d Qh]
+*** PRE-FLOP *** 
+P0021 folds
+P0022 folds
+P0007 calls 500
+P0012 folds
+Hero folds
+P0010 checks
+*** FLOP *** [Tc 8s Ts]
+P0010 checks
+P0007 bets 805
+P0010 calls 805
+*** TURN *** [Tc 8s Ts][Kd]
+P0010 checks
+P0007 bets 1610
+P0010 folds
+P0007 collected 4830 from pot
+*** SUMMARY ***
+Total pot 4830 | No rake
+Board: [Tc 8s Ts Kd]
+Seat 5: P0007 won 4830
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 10 - HandId: #4661644738712043522-60-1775053677 - Holdem no limit (60/250/500) - 2026/04/01 14:27:57 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #1 is the button
+Seat 1: Hero (13519)
+Seat 2: P0010 (31641)
+Seat 3: P0021 (22493)
+Seat 5: P0007 (32805)
+Seat 6: P0012 (27703)
+*** ANTE/BLINDS ***
+P0010 posts ante 60
+P0021 posts ante 60
+Hero posts ante 60
+P0007 posts ante 60
+P0012 posts ante 60
+P0010 posts small blind 250
+P0021 posts big blind 500
+Dealt to Hero [6d 3s]
+*** PRE-FLOP *** 
+P0007 folds
+P0012 folds
+Hero folds
+P0010 raises 750 to 1250
+P0021 folds
+P0010 collected 2050 from pot
+*** SUMMARY ***
+Total pot 2050 | No rake
+Seat 2: P0010 (small blind) won 2050
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 10 - HandId: #4661644738712043522-61-1775053695 - Holdem no limit (60/250/500) - 2026/04/01 14:28:15 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #2 is the button
+Seat 1: Hero (13459)
+Seat 2: P0010 (32381)
+Seat 3: P0021 (21933)
+Seat 5: P0007 (32745)
+Seat 6: P0012 (27643)
+*** ANTE/BLINDS ***
+P0021 posts ante 60
+P0007 posts ante 60
+Hero posts ante 60
+P0010 posts ante 60
+P0012 posts ante 60
+P0021 posts small blind 250
+P0007 posts big blind 500
+Dealt to Hero [Ts 3h]
+*** PRE-FLOP *** 
+P0012 folds
+Hero folds
+P0010 folds
+P0021 calls 250
+P0007 checks
+*** FLOP *** [8c 5h Ah]
+P0021 checks
+P0007 bets 845
+P0021 calls 845
+*** TURN *** [8c 5h Ah][2c]
+P0021 bets 20528 and is all-in
+P0007 raises 10812 to 31340 and is all-in
+*** RIVER *** [8c 5h Ah 2c][Qd]
+*** SHOW DOWN ***
+P0021 shows [2h 2d] (Trips of 2)
+P0007 shows [Ac 6d] (One pair : Aces)
+P0007 collected 10812 from side pot 1
+P0021 collected 44046 from main pot
+*** SUMMARY ***
+Total pot 54858 | No rake
+Board: [8c 5h Ah 2c Qd]
+Seat 3: P0021 (small blind) showed [2h 2d] and won 44046 with Trips of 2
+Seat 5: P0007 (big blind) showed [Ac 6d] and won 10812 with One pair : Aces
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 10 - HandId: #4661644738712043522-62-1775053732 - Holdem no limit (60/250/500) - 2026/04/01 14:28:52 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #3 is the button
+Seat 1: Hero (13399)
+Seat 2: P0010 (32321)
+Seat 3: P0021 (44046)
+Seat 5: P0007 (10812)
+Seat 6: P0012 (27583)
+*** ANTE/BLINDS ***
+P0007 posts ante 60
+P0012 posts ante 60
+Hero posts ante 60
+P0010 posts ante 60
+P0021 posts ante 60
+P0007 posts small blind 250
+P0012 posts big blind 500
+Dealt to Hero [5s 9h]
+*** PRE-FLOP *** 
+Hero folds
+P0010 folds
+P0021 calls 500
+P0007 raises 10252 to 10752 and is all-in
+P0012 folds
+P0021 folds
+P0007 collected 12052 from pot
+*** SUMMARY ***
+Total pot 12052 | No rake
+Seat 5: P0007 (small blind) won 12052
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 10 - HandId: #4661644738712043522-63-1775053746 - Holdem no limit (60/250/500) - 2026/04/01 14:29:06 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #5 is the button
+Seat 1: Hero (13339)
+Seat 2: P0010 (32261)
+Seat 3: P0021 (43486)
+Seat 5: P0007 (12052)
+Seat 6: P0012 (27023)
+*** ANTE/BLINDS ***
+P0012 posts ante 60
+Hero posts ante 60
+P0010 posts ante 60
+P0021 posts ante 60
+P0007 posts ante 60
+P0012 posts small blind 250
+Hero posts big blind 500
+Dealt to Hero [3h 6c]
+*** PRE-FLOP *** 
+P0010 raises 500 to 1000
+P0021 folds
+P0007 folds
+P0012 folds
+Hero folds
+P0010 collected 2050 from pot
+*** SUMMARY ***
+Total pot 2050 | No rake
+Seat 2: P0010 won 2050
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 10 - HandId: #4661644738712043522-64-1775053784 - Holdem no limit (60/250/500) - 2026/04/01 14:29:44 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #6 is the button
+Seat 1: Hero (12779)
+Seat 2: P0010 (33251)
+Seat 3: P0021 (43426)
+Seat 5: P0007 (11992)
+Seat 6: P0012 (26713)
+*** ANTE/BLINDS ***
+Hero posts ante 60
+P0010 posts ante 60
+P0021 posts ante 60
+P0007 posts ante 60
+P0012 posts ante 60
+Hero posts small blind 250
+P0010 posts big blind 500
+Dealt to Hero [5c 2h]
+*** PRE-FLOP *** 
+P0021 calls 500
+P0007 folds
+P0012 raises 1500 to 2000
+Hero folds
+P0010 calls 1500
+P0021 calls 1500
+*** FLOP *** [8h 7s 4d]
+P0010 checks
+P0021 checks
+P0012 bets 2293
+P0010 calls 2293
+P0021 folds
+*** TURN *** [8h 7s 4d][Td]
+P0010 checks
+P0012 checks
+*** RIVER *** [8h 7s 4d Td][5d]
+P0010 bets 6568
+P0012 folds
+P0010 collected 17704 from pot
+*** SUMMARY ***
+Total pot 17704 | No rake
+Board: [8h 7s 4d Td 5d]
+Seat 2: P0010 (big blind) won 17704
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 10 - HandId: #4661644738712043522-65-1775053851 - Holdem no limit (60/250/500) - 2026/04/01 14:30:51 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #1 is the button
+Seat 1: Hero (12469)
+Seat 2: P0010 (40034)
+Seat 3: P0021 (41366)
+Seat 5: P0007 (11932)
+Seat 6: P0012 (22360)
+*** ANTE/BLINDS ***
+P0010 posts ante 60
+P0021 posts ante 60
+Hero posts ante 60
+P0007 posts ante 60
+P0012 posts ante 60
+P0010 posts small blind 250
+P0021 posts big blind 500
+Dealt to Hero [Jd 7h]
+*** PRE-FLOP *** 
+P0007 folds
+P0012 folds
+Hero folds
+P0010 calls 250
+P0021 checks
+*** FLOP *** [3c Jh 9c]
+P0010 checks
+P0021 checks
+*** TURN *** [3c Jh 9c][Th]
+P0010 checks
+P0021 checks
+*** RIVER *** [3c Jh 9c Th][Ah]
+P0010 bets 500
+P0021 folds
+P0010 collected 1800 from pot
+*** SUMMARY ***
+Total pot 1800 | No rake
+Board: [3c Jh 9c Th Ah]
+Seat 2: P0010 (small blind) won 1800
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 11 - HandId: #4661644738712043522-66-1775053928 - Holdem no limit (70/300/600) - 2026/04/01 14:32:08 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #2 is the button
+Seat 1: Hero (12409)
+Seat 2: P0010 (40774)
+Seat 3: P0021 (40806)
+Seat 4: P0023 (9000)
+Seat 5: P0007 (11872)
+Seat 6: P0012 (22300)
+*** ANTE/BLINDS ***
+P0021 posts ante 70
+P0023 posts ante 70
+Hero posts ante 70
+P0010 posts ante 70
+P0007 posts ante 70
+P0012 posts ante 70
+P0021 posts small blind 300
+P0023 posts big blind 600
+Dealt to Hero [3s 2s]
+*** PRE-FLOP *** 
+P0007 folds
+P0012 folds
+Hero folds
+P0010 folds
+P0021 raises 600 to 1200
+P0023 calls 600
+*** FLOP *** [6c 8h Qs]
+P0021 bets 600
+P0023 raises 7130 to 7730 and is all-in
+P0021 calls 7130
+*** TURN *** [6c 8h Qs][Jc]
+*** RIVER *** [6c 8h Qs Jc][3d]
+*** SHOW DOWN ***
+P0021 shows [8s Ac] (One pair : 8)
+P0023 shows [2d Qd] (One pair : Queens)
+P0023 collected 18280 from pot
+*** SUMMARY ***
+Total pot 18280 | No rake
+Board: [6c 8h Qs Jc 3d]
+Seat 3: P0021 (small blind) showed [8s Ac] and lost with One pair : 8
+Seat 4: P0023 (big blind) showed [2d Qd] and won 18280 with One pair : Queens
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 11 - HandId: #4661644738712043522-67-1775053994 - Holdem no limit (70/300/600) - 2026/04/01 14:33:14 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #3 is the button
+Seat 1: Hero (12339)
+Seat 2: P0010 (40704)
+Seat 3: P0021 (31806)
+Seat 4: P0023 (18280)
+Seat 5: P0007 (11802)
+*** ANTE/BLINDS ***
+P0023 posts ante 70
+P0007 posts ante 70
+Hero posts ante 70
+P0010 posts ante 70
+P0021 posts ante 70
+P0023 posts small blind 300
+P0007 posts big blind 600
+Dealt to Hero [3s 4d]
+*** PRE-FLOP *** 
+Hero folds
+P0010 raises 600 to 1200
+P0021 calls 1200
+P0023 calls 900
+P0007 folds
+*** FLOP *** [Qh Ks 2h]
+P0023 checks
+P0010 checks
+P0021 checks
+*** TURN *** [Qh Ks 2h][5c]
+P0023 bets 1593
+P0010 folds
+P0021 calls 1593
+*** RIVER *** [Qh Ks 2h 5c][7h]
+P0023 checks
+P0021 bets 5028
+P0023 folds
+P0021 collected 12764 from pot
+*** SUMMARY ***
+Total pot 12764 | No rake
+Board: [Qh Ks 2h 5c 7h]
+Seat 3: P0021 (button) won 12764
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 11 - HandId: #4661644738712043522-68-1775054061 - Holdem no limit (70/300/600) - 2026/04/01 14:34:21 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #4 is the button
+Seat 1: Hero (12269)
+Seat 2: P0010 (39434)
+Seat 3: P0021 (36679)
+Seat 4: P0023 (15417)
+Seat 5: P0007 (11132)
+Seat 6: P0024 (7630)
+*** ANTE/BLINDS ***
+P0007 posts ante 70
+P0024 posts ante 70
+Hero posts ante 70
+P0010 posts ante 70
+P0021 posts ante 70
+P0023 posts ante 70
+P0007 posts small blind 300
+P0024 posts big blind 600
+Dealt to Hero [9d 7s]
+*** PRE-FLOP *** 
+Hero folds
+P0010 raises 600 to 1200
+P0021 folds
+P0023 raises 14147 to 15347 and is all-in
+P0007 folds
+P0024 folds
+P0010 folds
+P0023 collected 17867 from pot
+*** SUMMARY ***
+Total pot 17867 | No rake
+Seat 4: P0023 (button) won 17867
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 11 - HandId: #4661644738712043522-69-1775054082 - Holdem no limit (70/300/600) - 2026/04/01 14:34:42 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #5 is the button
+Seat 1: Hero (12199)
+Seat 2: P0010 (38164)
+Seat 3: P0021 (36609)
+Seat 4: P0023 (17867)
+Seat 5: P0007 (10762)
+Seat 6: P0024 (6960)
+*** ANTE/BLINDS ***
+P0024 posts ante 70
+Hero posts ante 70
+P0010 posts ante 70
+P0021 posts ante 70
+P0023 posts ante 70
+P0007 posts ante 70
+P0024 posts small blind 300
+Hero posts big blind 600
+Dealt to Hero [8h Qd]
+*** PRE-FLOP *** 
+P0010 folds
+P0021 folds
+P0023 calls 600
+P0007 raises 10092 to 10692 and is all-in
+P0024 folds
+Hero folds
+P0023 folds
+P0007 collected 12612 from pot
+*** SUMMARY ***
+Total pot 12612 | No rake
+Seat 5: P0007 (button) won 12612
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 11 - HandId: #4661644738712043522-70-1775054124 - Holdem no limit (70/300/600) - 2026/04/01 14:35:24 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #6 is the button
+Seat 1: Hero (11529)
+Seat 2: P0010 (38094)
+Seat 4: P0023 (17197)
+Seat 5: P0007 (12612)
+Seat 6: P0024 (6590)
+*** ANTE/BLINDS ***
+Hero posts ante 70
+P0010 posts ante 70
+P0023 posts ante 70
+P0007 posts ante 70
+P0024 posts ante 70
+Hero posts small blind 300
+P0010 posts big blind 600
+Dealt to Hero [7h 2d]
+*** PRE-FLOP *** 
+P0023 folds
+P0007 folds
+P0024 folds
+Hero folds
+P0010 collected 1250 from pot
+*** SUMMARY ***
+Total pot 1250 | No rake
+Seat 2: P0010 (big blind) won 1250
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 11 - HandId: #4661644738712043522-71-1775054147 - Holdem no limit (70/300/600) - 2026/04/01 14:35:47 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #1 is the button
+Seat 1: Hero (11159)
+Seat 2: P0010 (38674)
+Seat 4: P0023 (17127)
+Seat 5: P0007 (12542)
+Seat 6: P0024 (6520)
+*** ANTE/BLINDS ***
+P0010 posts ante 70
+P0023 posts ante 70
+Hero posts ante 70
+P0007 posts ante 70
+P0024 posts ante 70
+P0010 posts small blind 300
+P0023 posts big blind 600
+Dealt to Hero [2h Kh]
+*** PRE-FLOP *** 
+P0007 folds
+P0024 folds
+Hero folds
+P0010 calls 300
+P0023 checks
+*** FLOP *** [6d Tc 3d]
+P0010 bets 600
+P0023 calls 600
+*** TURN *** [6d Tc 3d][4c]
+P0010 checks
+P0023 bets 962
+P0010 calls 962
+*** RIVER *** [6d Tc 3d 4c][7h]
+P0010 checks
+P0023 bets 3038
+P0010 folds
+P0023 collected 7712 from pot
+*** SUMMARY ***
+Total pot 7712 | No rake
+Board: [6d Tc 3d 4c 7h]
+Seat 4: P0023 (big blind) won 7712
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 12 - HandId: #4661644738712043522-72-1775054209 - Holdem no limit (80/350/700) - 2026/04/01 14:36:49 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #2 is the button
+Seat 1: Hero (11089)
+Seat 2: P0010 (36442)
+Seat 4: P0023 (19569)
+Seat 5: P0007 (12472)
+Seat 6: P0024 (6450)
+*** ANTE/BLINDS ***
+P0023 posts ante 80
+P0007 posts ante 80
+Hero posts ante 80
+P0010 posts ante 80
+P0024 posts ante 80
+P0023 posts small blind 350
+P0007 posts big blind 700
+Dealt to Hero [As Qs]
+*** PRE-FLOP *** 
+P0024 folds
+Hero raises 10309 to 11009 and is all-in
+P0010 folds
+P0023 folds
+P0007 folds
+Hero collected 12459 from pot
+*** SUMMARY ***
+Total pot 12459 | No rake
+Seat 1: Hero won 12459
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 12 - HandId: #4661644738712043522-73-1775054223 - Holdem no limit (80/350/700) - 2026/04/01 14:37:03 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #4 is the button
+Seat 1: Hero (12459)
+Seat 2: P0010 (36362)
+Seat 4: P0023 (19139)
+Seat 5: P0007 (11692)
+Seat 6: P0024 (6370)
+*** ANTE/BLINDS ***
+P0007 posts ante 80
+P0024 posts ante 80
+Hero posts ante 80
+P0010 posts ante 80
+P0023 posts ante 80
+P0007 posts small blind 350
+P0024 posts big blind 700
+Dealt to Hero [9d Ts]
+*** PRE-FLOP *** 
+Hero folds
+P0010 folds
+P0023 calls 700
+P0007 folds
+P0024 checks
+*** FLOP *** [8h 2d 5s]
+P0024 checks
+P0023 bets 753
+P0024 calls 753
+*** TURN *** [8h 2d 5s][4d]
+P0024 checks
+P0023 bets 1280
+P0024 calls 1280
+*** RIVER *** [8h 2d 5s 4d][Jd]
+P0024 checks
+P0023 bets 4040
+P0024 folds
+P0023 collected 10256 from pot
+*** SUMMARY ***
+Total pot 10256 | No rake
+Board: [8h 2d 5s 4d Jd]
+Seat 4: P0023 (button) won 10256
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 12 - HandId: #4661644738712043522-74-1775054294 - Holdem no limit (80/350/700) - 2026/04/01 14:38:14 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #5 is the button
+Seat 1: Hero (12419)
+Seat 2: P0010 (36321)
+Seat 3: P0019 (4412)
+Seat 4: P0023 (22582)
+Seat 5: P0007 (11302)
+Seat 6: P0024 (3597)
+*** ANTE/BLINDS ***
+P0024 posts ante 80
+Hero posts ante 80
+P0010 posts ante 80
+P0019 posts ante 80
+P0023 posts ante 80
+P0007 posts ante 80
+P0024 posts small blind 350
+Hero posts big blind 700
+Dealt to Hero [5c 2d]
+*** PRE-FLOP *** 
+P0010 folds
+P0019 folds
+P0023 folds
+P0007 folds
+P0024 raises 2817 to 3517 and is all-in
+Hero folds
+P0024 collected 4697 from pot
+*** SUMMARY ***
+Total pot 4697 | No rake
+Seat 6: P0024 (small blind) won 4697
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 12 - HandId: #4661644738712043522-75-1775054333 - Holdem no limit (80/350/700) - 2026/04/01 14:38:53 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #6 is the button
+Seat 1: Hero (11639)
+Seat 2: P0010 (36241)
+Seat 3: P0019 (4332)
+Seat 4: P0023 (22502)
+Seat 5: P0007 (11222)
+Seat 6: P0024 (4697)
+*** ANTE/BLINDS ***
+Hero posts ante 80
+P0010 posts ante 80
+P0019 posts ante 80
+P0023 posts ante 80
+P0007 posts ante 80
+P0024 posts ante 80
+Hero posts small blind 350
+P0010 posts big blind 700
+Dealt to Hero [Jd 7d]
+*** PRE-FLOP *** 
+P0019 folds
+P0023 raises 2230 to 2930
+P0007 folds
+P0024 folds
+Hero folds
+P0010 folds
+P0023 collected 4460 from pot
+*** SUMMARY ***
+Total pot 4460 | No rake
+Seat 4: P0023 won 4460
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 12 - HandId: #4661644738712043522-76-1775054364 - Holdem no limit (80/350/700) - 2026/04/01 14:39:24 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #1 is the button
+Seat 1: Hero (11209)
+Seat 2: P0010 (35461)
+Seat 3: P0019 (4252)
+Seat 4: P0023 (23952)
+Seat 5: P0007 (11142)
+Seat 6: P0024 (4617)
+*** ANTE/BLINDS ***
+P0010 posts ante 80
+P0019 posts ante 80
+Hero posts ante 80
+P0023 posts ante 80
+P0007 posts ante 80
+P0024 posts ante 80
+P0010 posts small blind 350
+P0019 posts big blind 700
+Dealt to Hero [Qd 7c]
+*** PRE-FLOP *** 
+P0023 folds
+P0007 folds
+P0024 folds
+Hero folds
+P0010 raises 34681 to 35381 and is all-in
+P0019 calls 3472 and is all-in
+*** FLOP *** [2h 6h Kh]
+*** TURN *** [2h 6h Kh][Ad]
+*** RIVER *** [2h 6h Kh Ad][2c]
+*** SHOW DOWN ***
+P0010 shows [4d Ks] (Two pairs : Kings and 2)
+P0019 shows [8c Kd] (Two pairs : Kings and 2)
+P0019 collected 4412 from main pot
+P0010 collected 35621 from side pot 1
+*** SUMMARY ***
+Total pot 40033 | No rake
+Board: [2h 6h Kh Ad 2c]
+Seat 2: P0010 (small blind) showed [4d Ks] and won 35621 with Two pairs : Kings and 2
+Seat 3: P0019 (big blind) showed [8c Kd] and won 4412 with Two pairs : Kings and 2
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 12 - HandId: #4661644738712043522-77-1775054422 - Holdem no limit (80/350/700) - 2026/04/01 14:40:22 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #2 is the button
+Seat 1: Hero (11622)
+Seat 2: P0010 (36114)
+Seat 3: P0019 (4906)
+Seat 4: P0023 (24365)
+Seat 5: P0007 (11555)
+Seat 6: P0024 (5031)
+*** ANTE/BLINDS ***
+P0019 posts ante 80
+P0023 posts ante 80
+Hero posts ante 80
+P0010 posts ante 80
+P0007 posts ante 80
+P0024 posts ante 80
+P0019 posts small blind 350
+P0023 posts big blind 700
+Dealt to Hero [2h Kd]
+*** PRE-FLOP *** 
+P0007 folds
+P0024 folds
+Hero folds
+P0010 folds
+P0019 raises 4126 to 4826 and is all-in
+P0023 folds
+P0019 collected 6006 from pot
+*** SUMMARY ***
+Total pot 6006 | No rake
+Seat 3: P0019 (small blind) won 6006
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 12 - HandId: #4661644738712043522-78-1775054449 - Holdem no limit (80/350/700) - 2026/04/01 14:40:49 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #3 is the button
+Seat 1: Hero (11542)
+Seat 2: P0010 (36034)
+Seat 3: P0019 (6006)
+Seat 4: P0023 (23585)
+Seat 5: P0007 (11475)
+*** ANTE/BLINDS ***
+P0023 posts ante 80
+P0007 posts ante 80
+Hero posts ante 80
+P0010 posts ante 80
+P0019 posts ante 80
+P0023 posts small blind 350
+P0007 posts big blind 700
+Dealt to Hero [3s Qh]
+*** PRE-FLOP *** 
+Hero folds
+P0010 raises 1050 to 1750
+P0019 folds
+P0023 calls 1400
+P0007 folds
+*** FLOP *** [4d 5s 6s]
+P0023 checks
+P0010 bets 1610
+P0023 raises 20145 to 21755 and is all-in
+P0010 folds
+P0023 collected 27965 from pot
+*** SUMMARY ***
+Total pot 27965 | No rake
+Board: [4d 5s 6s]
+Seat 4: P0023 (small blind) won 27965
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 13 - HandId: #4661644738712043522-79-1775054478 - Holdem no limit (100/400/800) - 2026/04/01 14:41:18 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #4 is the button
+Seat 1: Hero (11462)
+Seat 2: P0010 (32594)
+Seat 3: P0019 (5926)
+Seat 4: P0023 (27965)
+Seat 5: P0007 (10695)
+*** ANTE/BLINDS ***
+P0007 posts ante 100
+Hero posts ante 100
+P0010 posts ante 100
+P0019 posts ante 100
+P0023 posts ante 100
+P0007 posts small blind 400
+Hero posts big blind 800
+Dealt to Hero [7d Ah]
+*** PRE-FLOP *** 
+P0010 raises 800 to 1600
+P0019 folds
+P0023 folds
+P0007 folds
+Hero raises 9762 to 11362 and is all-in
+P0010 folds
+Hero collected 13862 from pot
+*** SUMMARY ***
+Total pot 13862 | No rake
+Seat 1: Hero (big blind) won 13862
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 13 - HandId: #4661644738712043522-80-1775054590 - Holdem no limit (100/400/800) - 2026/04/01 14:43:10 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #5 is the button
+Seat 1: Hero (15187)
+Seat 2: P0010 (32219)
+Seat 3: P0019 (7151)
+Seat 4: P0023 (29190)
+Seat 5: P0007 (11520)
+*** ANTE/BLINDS ***
+Hero posts ante 100
+P0010 posts ante 100
+P0019 posts ante 100
+P0023 posts ante 100
+P0007 posts ante 100
+Hero posts small blind 400
+P0010 posts big blind 800
+Dealt to Hero [Js 4h]
+*** PRE-FLOP *** 
+P0019 raises 800 to 1600
+P0023 folds
+P0007 raises 9820 to 11420 and is all-in
+Hero folds
+P0010 folds
+P0019 folds
+P0007 collected 14720 from pot
+*** SUMMARY ***
+Total pot 14720 | No rake
+Seat 5: P0007 (button) won 14720
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 13 - HandId: #4661644738712043522-81-1775054621 - Holdem no limit (100/400/800) - 2026/04/01 14:43:41 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #1 is the button
+Seat 1: Hero (14687)
+Seat 2: P0010 (31319)
+Seat 4: P0023 (29090)
+Seat 5: P0007 (14720)
+Seat 6: P0021 (9000)
+*** ANTE/BLINDS ***
+P0010 posts ante 100
+P0023 posts ante 100
+Hero posts ante 100
+P0007 posts ante 100
+P0021 posts ante 100
+P0010 posts small blind 400
+P0023 posts big blind 800
+Dealt to Hero [Ah 7c]
+*** PRE-FLOP *** 
+P0007 folds
+P0021 folds
+Hero folds
+P0010 calls 400
+P0023 checks
+*** FLOP *** [Ts 9h Qh]
+P0010 bets 800
+P0023 calls 800
+*** TURN *** [Ts 9h Qh][Jd]
+P0010 bets 1850
+P0023 folds
+P0010 collected 5550 from pot
+*** SUMMARY ***
+Total pot 5550 | No rake
+Board: [Ts 9h Qh Jd]
+Seat 2: P0010 (small blind) won 5550
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 13 - HandId: #4661644738712043522-82-1775054680 - Holdem no limit (100/400/800) - 2026/04/01 14:44:40 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #2 is the button
+Seat 1: Hero (14980)
+Seat 2: P0010 (33712)
+Seat 4: P0023 (27783)
+Seat 5: P0007 (15013)
+Seat 6: P0021 (9293)
+*** ANTE/BLINDS ***
+P0023 posts ante 100
+P0007 posts ante 100
+Hero posts ante 100
+P0010 posts ante 100
+P0021 posts ante 100
+P0023 posts small blind 400
+P0007 posts big blind 800
+Dealt to Hero [7s Ac]
+*** PRE-FLOP *** 
+P0021 raises 8393 to 9193 and is all-in
+Hero folds
+P0010 folds
+P0023 folds
+P0007 raises 5720 to 14913 and is all-in
+*** FLOP *** [Ad Ks 5c]
+*** TURN *** [Ad Ks 5c][Jh]
+*** RIVER *** [Ad Ks 5c Jh][4s]
+*** SHOW DOWN ***
+P0021 shows [Ah Qc] (One pair : Aces)
+P0007 shows [Jc Jd] (Trips of Jacks)
+P0007 collected 25006 from pot
+*** SUMMARY ***
+Total pot 25006 | No rake
+Board: [Ad Ks 5c Jh 4s]
+Seat 5: P0007 (big blind) showed [Jc Jd] and won 25006 with Trips of Jacks
+Seat 6: P0021 showed [Ah Qc] and lost with One pair : Aces
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 13 - HandId: #4661644738712043522-83-1775054711 - Holdem no limit (100/400/800) - 2026/04/01 14:45:11 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #4 is the button
+Seat 1: Hero (14880)
+Seat 2: P0010 (33612)
+Seat 3: P0024 (9000)
+Seat 4: P0023 (27283)
+Seat 5: P0007 (25006)
+*** ANTE/BLINDS ***
+P0007 posts ante 100
+Hero posts ante 100
+P0010 posts ante 100
+P0024 posts ante 100
+P0023 posts ante 100
+P0007 posts small blind 400
+Hero posts big blind 800
+Dealt to Hero [2c 8h]
+*** PRE-FLOP *** 
+P0010 folds
+P0024 raises 800 to 1600
+P0023 folds
+P0007 folds
+Hero folds
+P0024 collected 3300 from pot
+*** SUMMARY ***
+Total pot 3300 | No rake
+Seat 3: P0024 won 3300
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 13 - HandId: #4661644738712043522-84-1775054736 - Holdem no limit (100/400/800) - 2026/04/01 14:45:36 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #5 is the button
+Seat 1: Hero (13980)
+Seat 3: P0024 (10600)
+Seat 4: P0023 (27183)
+Seat 5: P0007 (24506)
+Seat 6: P0019 (11785)
+*** ANTE/BLINDS ***
+Hero posts ante 100
+P0024 posts ante 100
+P0023 posts ante 100
+P0007 posts ante 100
+Hero posts small blind 400
+P0024 posts big blind 800
+Dealt to Hero [9h As]
+*** PRE-FLOP *** 
+P0023 raises 1600 to 2400
+P0007 calls 2400
+Hero folds
+P0024 folds
+*** FLOP *** [Ad 5s 2c]
+P0023 bets 2240
+P0007 folds
+P0023 collected 8640 from pot
+*** SUMMARY ***
+Total pot 8640 | No rake
+Board: [Ad 5s 2c]
+Seat 4: P0023 won 8640
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 14 - HandId: #4661644738712043522-85-1775054765 - Holdem no limit (120/500/1000) - 2026/04/01 14:46:05 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #1 is the button
+Seat 1: Hero (13480)
+Seat 3: P0024 (9700)
+Seat 4: P0023 (31083)
+Seat 5: P0007 (22006)
+Seat 6: P0019 (11785)
+*** ANTE/BLINDS ***
+P0024 posts ante 120
+P0023 posts ante 120
+Hero posts ante 120
+P0007 posts ante 120
+P0019 posts ante 120
+P0024 posts small blind 500
+P0023 posts big blind 1000
+Dealt to Hero [4d 9c]
+*** PRE-FLOP *** 
+P0007 folds
+P0019 folds
+Hero folds
+P0024 folds
+P0023 collected 2100 from pot
+*** SUMMARY ***
+Total pot 2100 | No rake
+Seat 4: P0023 (big blind) won 2100
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 14 - HandId: #4661644738712043522-86-1775054781 - Holdem no limit (120/500/1000) - 2026/04/01 14:46:21 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #3 is the button
+Seat 1: Hero (13360)
+Seat 3: P0024 (9080)
+Seat 4: P0023 (32063)
+Seat 5: P0007 (21886)
+Seat 6: P0019 (11665)
+*** ANTE/BLINDS ***
+P0023 posts ante 120
+P0007 posts ante 120
+Hero posts ante 120
+P0024 posts ante 120
+P0019 posts ante 120
+P0023 posts small blind 500
+P0007 posts big blind 1000
+Dealt to Hero [Ts 7d]
+*** PRE-FLOP *** 
+P0019 raises 1000 to 2000
+Hero folds
+P0024 folds
+P0023 folds
+P0007 folds
+P0019 collected 4100 from pot
+*** SUMMARY ***
+Total pot 4100 | No rake
+Seat 6: P0019 won 4100
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 14 - HandId: #4661644738712043522-87-1775054796 - Holdem no limit (120/500/1000) - 2026/04/01 14:46:36 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #4 is the button
+Seat 1: Hero (13240)
+Seat 3: P0024 (8960)
+Seat 4: P0023 (31443)
+Seat 5: P0007 (20766)
+Seat 6: P0019 (13645)
+*** ANTE/BLINDS ***
+P0007 posts ante 120
+P0019 posts ante 120
+Hero posts ante 120
+P0024 posts ante 120
+P0023 posts ante 120
+P0007 posts small blind 500
+P0019 posts big blind 1000
+Dealt to Hero [Ad 7c]
+*** PRE-FLOP *** 
+Hero folds
+P0024 folds
+P0023 raises 1500 to 2500
+P0007 folds
+P0019 calls 1500
+*** FLOP *** [2h 2s Ah]
+P0019 checks
+P0023 checks
+*** TURN *** [2h 2s Ah][Qs]
+P0019 checks
+P0023 bets 2135
+P0019 calls 2135
+*** RIVER *** [2h 2s Ah Qs][6h]
+P0019 bets 8890 and is all-in
+P0023 folds
+P0019 collected 19260 from pot
+*** SUMMARY ***
+Total pot 19260 | No rake
+Board: [2h 2s Ah Qs 6h]
+Seat 6: P0019 (big blind) won 19260
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 14 - HandId: #4661644738712043522-88-1775054848 - Holdem no limit (120/500/1000) - 2026/04/01 14:47:28 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #5 is the button
+Seat 1: Hero (13120)
+Seat 3: P0024 (8840)
+Seat 4: P0023 (26688)
+Seat 5: P0007 (20146)
+Seat 6: P0019 (19260)
+*** ANTE/BLINDS ***
+P0019 posts ante 120
+Hero posts ante 120
+P0024 posts ante 120
+P0023 posts ante 120
+P0007 posts ante 120
+P0019 posts small blind 500
+Hero posts big blind 1000
+Dealt to Hero [Ks 6c]
+*** PRE-FLOP *** 
+P0024 raises 7720 to 8720 and is all-in
+P0023 folds
+P0007 raises 11306 to 20026 and is all-in
+P0019 folds
+Hero folds
+*** FLOP *** [7c 7s Qs]
+*** TURN *** [7c 7s Qs][8c]
+*** RIVER *** [7c 7s Qs 8c][Ad]
+*** SHOW DOWN ***
+P0024 shows [Tc 9d] (One pair : 7)
+P0007 shows [2h 2d] (Two pairs : 7 and 2)
+P0007 collected 30846 from pot
+*** SUMMARY ***
+Total pot 30846 | No rake
+Board: [7c 7s Qs 8c Ad]
+Seat 3: P0024 showed [Tc 9d] and lost with One pair : 7
+Seat 5: P0007 (button) showed [2h 2d] and won 30846 with Two pairs : 7 and 2
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 14 - HandId: #4661644738712043522-89-1775054888 - Holdem no limit (120/500/1000) - 2026/04/01 14:48:08 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #6 is the button
+Seat 1: Hero (12742)
+Seat 2: P0025 (27353)
+Seat 4: P0023 (27310)
+Seat 5: P0007 (31587)
+Seat 6: P0019 (19382)
+*** ANTE/BLINDS ***
+Hero posts ante 120
+P0025 posts ante 120
+P0023 posts ante 120
+P0007 posts ante 120
+P0019 posts ante 120
+Hero posts small blind 500
+P0025 posts big blind 1000
+Dealt to Hero [Qh Qc]
+*** PRE-FLOP *** 
+P0023 folds
+P0007 raises 30467 to 31467 and is all-in
+P0019 folds
+Hero calls 12122 and is all-in
+P0025 folds
+*** FLOP *** [Qd Ah As]
+*** TURN *** [Qd Ah As][Ts]
+*** RIVER *** [Qd Ah As Ts][Qs]
+*** SHOW DOWN ***
+Hero shows [Qh Qc] (Quads of Queens)
+P0007 shows [8h 8c] (Two pairs : Aces and Queens)
+P0007 collected 18845 from side pot 1
+Hero collected 26844 from main pot
+*** SUMMARY ***
+Total pot 45689 | No rake
+Board: [Qd Ah As Ts Qs]
+Seat 1: Hero (small blind) showed [Qh Qc] and won 26844 with Quads of Queens
+Seat 5: P0007 showed [8h 8c] and won 18845 with Two pairs : Aces and Queens
+
+
+Winamax Poker - Tournament "Hit&Run W Series Ticket 10€" buyIn: 1.80€ + 0.20€ level: 14 - HandId: #4661644738712043522-90-1775054925 - Holdem no limit (120/500/1000) - 2026/04/01 14:48:45 UTC
+Table: 'Hit&Run W Series Ticket 10€(1085373745)#001' 6-max (real money) Seat #1 is the button
+Seat 1: Hero (26844)
+Seat 2: P0025 (26233)
+Seat 4: P0023 (27190)
+Seat 5: P0007 (18845)
+Seat 6: P0019 (19262)
+*** ANTE/BLINDS ***
+P0025 posts ante 120
+P0023 posts ante 120
+Hero posts ante 120
+P0007 posts ante 120
+P0019 posts ante 120
+P0025 posts small blind 500
+P0023 posts big blind 1000
+Dealt to Hero [Tc Td]
+*** PRE-FLOP *** 
+P0007 folds
+P0019 raises 1000 to 2000
+Hero raises 24724 to 26724 and is all-in
+P0025 folds
+P0023 calls 25724
+P0019 folds
+*** FLOP *** [9d 4d 5d]
+*** TURN *** [9d 4d 5d][Ah]
+*** RIVER *** [9d 4d 5d Ah][4c]
+*** SHOW DOWN ***
+Hero shows [Tc Td] (Two pairs : Tens and 4)
+P0023 shows [9c Ac] (Two pairs : Aces and 9)
+P0023 collected 56548 from pot
+*** SUMMARY ***
+Total pot 56548 | No rake
+Board: [9d 4d 5d Ah 4c]
+Seat 1: Hero (button) showed [Tc Td] and lost with Two pairs : Tens and 4
+Seat 4: P0023 (big blind) showed [9c Ac] and won 56548 with Two pairs : Aces and 9
+
+

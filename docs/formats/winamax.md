@@ -5,8 +5,13 @@
 > |---|---|---|---|
 > | `space-ko/` | VELOCITY - SPACE KO (1174075270), 25/09/2026, semiturbo | 117 | 6-max, 1 table, sortie 222e/606, 1 bounty gagné |
 > | `space-ko-3max-itm-reentry/` | OBELISK - TRIDENT SPACE KO (1173012730), 23/09/2026, turbo | 328 | **3-max**, **9 tables**, **re-entry**, **ITM 7e/1141**, split pots, heads-up à table 3-max |
+> | `classic-itm/` | Monster Stack (1147651469), 10/08/2026, normal | 373 | **Type: normal** (sans KO), ITM 4e/154, `Buy-In` à 2 composantes (prize+fee) |
+> | `mystery-ko/` | MYSTERY KO (1053279557), 26/02/2026, normal | 364 | Mystery KO, ITM 6e/151, structure identique à un KO classique |
+> | `freeroll/` | CITY OF GOLD - Daily 10K (1075117655), 16/03/2026, turbo | 29 | **Freeroll MTT** (`Buy-In : 0€ + 0€`), 16 580 inscrits, sortie 6260e (hors ITM) |
+> | `final-table-heads-up/` | Kill The Fish (1065146114), 18/03/2026, semiturbo | 363 | **Table finale + heads-up réel**, 218 inscrits, 2e place |
+> | `multi-flight-day1/` | #4 - W SERIES - GIANT - DAY 1 (1160235973), 10/09/2026, normal | 14 | **Multi-flight** (`Type: flight`, `Flight ID: 4199`), Late Registration, élimination en Day 1 |
 >
-> **Invariant de conservation des jetons vérifié sur 445/445 mains.** Timestamp du HandId = date de l'en-tête sur 445/445 mains.
+> **Invariant de conservation des jetons vérifié sur 445/445 mains** (`space-ko/` + `space-ko-3max-itm-reentry/`, PAR-11). Timestamp du HandId = date de l'en-tête sur 445/445 mains. **Les 1143 mains des 5 nouveaux fixtures (M0-4, 27/09) ne sont pas encore vérifiées programmatiquement : à faire en M1-5** dès que le parser existe.
 > **Statut :** ✅ = observé et vérifié · ⚠️ = déduit, à confirmer · ❓ = non encore observé
 > Règle R-FORMAT (CLAUDE.md) : toute règle ajoutée ici doit citer un fichier de `fixtures/`.
 
@@ -64,7 +69,7 @@ Seat 1: CeBoLLuSSS (45494, 31.41€ bounty)
 - **Bounty courant** avec décimales (`18.38€`). Il évolue au fil des KO.
 - **Tapis de départ** : 20 000 (VELOCITY) et 500 (OBELISK). Il varie selon le tournoi.
 - ⚠️ **Joueurs assis mais non distribués** (aucune ligne posts ni action) : 7 cas dans chaque fichier. Ils sont **exclus de la main** (positions, stats).
-- Nombre de joueurs dans la main : de 2 à N-max. **Heads-up à une table 3-max** : 48 mains dans OBELISK.
+- Nombre de joueurs dans la main : de 2 à N-max. **Heads-up à une table 3-max** : 48 mains dans OBELISK. **Heads-up sur une table 6/7-max** (déclarée `7-max`, occupée à 2) confirmé sur `final-table-heads-up/`, dernière main : le libellé `X-max` de la table reste celui d'origine, il ne redescend jamais avec le nombre de joueurs restants — ne pas s'en servir pour détecter une table finale ou un heads-up.
 
 ### 4.4 Sections ✅
 `*** ANTE/BLINDS ***` · `*** PRE-FLOP ***` · `*** FLOP *** [a b c]` · `*** TURN *** [a b c][d]` · `*** RIVER *** [a b c d][e]` · `*** SHOW DOWN ***` · `*** SUMMARY ***`
@@ -150,12 +155,12 @@ You won 34.79€ + Bounty 17.40€
 |---|---|---|
 | `Tournament summary : <nom>(<ID>)[ - Late Registration]` | nom, ID (clé de rattachement), flag `late_reg_bust` | ✅ |
 | `Player : <pseudo>` | pseudo Hero | ✅ |
-| `Buy-In : P€ + B€ + F€` | prize / bounty / fee pour les KO. ❓ non-KO : probablement `P€ + F€` | ✅ KO |
+| `Buy-In : P€ + B€ + F€` (KO) / `Buy-In : P€ + F€` (non-KO) | prize / bounty / fee pour les KO (`mystery-ko/`, `final-table-heads-up/`) ; **2 composantes prize+fee pour les non-KO** (`classic-itm/` : `1.80€ + 0.20€`), bounty absent. Freeroll : `0€ + 0€` (`freeroll/`). | ✅ KO · ✅ non-KO |
 | `Registered players : N` | ⚠️ **instantané au moment de l'écriture du bloc** (812 pendant les inscriptions tardives, puis 1141 à la fin). Pour le tournoi, prendre la valeur du **dernier bloc**. | ✅ |
-| `Mode : tt` | ❓ sens inconnu | ⚠️ |
-| `Type : knockout` | ❓ autres valeurs à observer | ✅ KO |
-| `Speed : semiturbo` / `turbo` | vitesse | ✅ |
-| `Flight ID : 0` | multi-flights ; 0 = aucun | ⚠️ |
+| `Mode : tt` / `Mode : sng` | `tt` = tournoi MTT normal (tous nos fixtures MTT). **`sng` = format sit'n'go à table unique, observé uniquement sur Expresso et un petit freeroll 6 joueurs (hors corpus commité) : hors périmètre (D2), le parser doit l'ignorer.** | ✅ |
+| `Type : knockout` / `normal` / `flight` / `freeroll100k` | `knockout` = KO/PKO (`mystery-ko/`) ; **`normal` = tournoi classique sans bounty**, y compris les gros freerolls MTT (`classic-itm/`, `freeroll/`) ; **`flight` = tournoi multi-flights** (`multi-flight-day1/`). ❓ non commités mais observés dans le corpus brut : `sitngo` (Expresso, hors périmètre), `wys` (nom marketing contenant « Ticket », **aucun rapport confirmé avec un mécanisme de ticket**), `madtilt` (événement spécial « Trident »). | ✅ normal · ✅ flight · ⚠️ autres |
+| `Speed : semiturbo` / `turbo` / `normal` | vitesse (`normal` observé en plus de `semiturbo`/`turbo`) | ✅ |
+| `Flight ID : 0` / `Flight ID : N` | `0` = tournoi à un seul flight. **`N` (ex. `4199`) identifie le flight/jour de départ d'un tournoi multi-flights** (`multi-flight-day1/`, cumulable avec le suffixe ` - Late Registration`). ❓ format du fichier « Day 2 » de consolidation des flights : Hero n'a jamais atteint un Day 2 dans ce corpus. | ✅ |
 | `Levels : Levels : [SB-BB:ante:durée:jeu,…]` | structure complète. Durée en s : niveau 1 = 1500 (semiturbo) ou 600 (turbo), puis 300 ou 150. ⚠️ Des durées valent `1` sur certains niveaux (niveau 7 ou 13 selon le bloc) : **pause probable**. Ignorer les durées ≤ 1 dans les calculs de temps. | ✅ format |
 | `Prizepool : X€` | ⚠️ sens à confirmer : 616 € pour 606 inscrits et 1529,60 € pour 1141 (cohérent avec la part prize × nombre d'entrées, re-entries comprises). Le bloc Late Registration affiche 2002 € (garantie ?). **Ne pas utiliser pour le ROI** ; affichage seulement, depuis le dernier bloc. | ⚠️ |
 | `Tournament started … UTC` | début du tournoi | ✅ |
@@ -164,9 +169,9 @@ You won 34.79€ + Bounty 17.40€
 | `You won X€ + Bounty Y€` | **ITM** : X = gains prize pool, Y = bounties | ✅ |
 | `You won Bounty Y€` | hors ITM, avec bounties | ✅ |
 | *(ligne absente)* | hors ITM, sans bounty | ✅ |
-| ❓ ITM sans bounty (tournoi classique) | probablement `You won X€` | ❓ |
-| ❓ ticket gagné / buy-in payé par ticket | à observer | ❓ |
-| ❓ places payées | absentes des 3 blocs | ✅ absence |
+| `You won X€` (sans bounty) | **ITM sur tournoi classique/non-KO**, confirmé (`classic-itm/` : `You won 30.47€`) | ✅ |
+| ticket gagné / buy-in payé par ticket | **toujours non observé**, même sur un corpus de 620+ tournois réels (dont un nommé « … Ticket 10€ » qui n'est qu'un nom marketing, `Type: wys`, sans rapport). Le format HH/summary ne semble exposer aucun mécanisme de ticket en texte : §8.6 du PRD (métadonnée manuelle) reste la seule voie tant qu'un exemple concret n'est pas fourni. | ❓ |
+| ❓ places payées | absentes des blocs | ✅ absence |
 
 ### 5.3 Calcul du résultat d'un tournoi (validé sur OBELISK)
 - **Entrées** = nombre de blocs (2) ; **coût** = 2 × (0,80 + 1 + 0,20) = **4,00 €**, dont 0,40 € de frais.
@@ -175,21 +180,23 @@ You won 34.79€ + Bounty 17.40€
 - **Place retenue pour le tournoi** = celle du **dernier bloc** (7e) ; ITM = oui.
 - **Durée jouée** = Σ `You played` = 5 min 27 s + 1 h 36 min 43 s.
 
+### 5.4 ⚠️ Nom de tournoi mal ré-encodé (M0-4)
+`fixtures/winamax/edge-cases/escaped-currency-in-title/` : dans le nom du tournoi « Hit&Run W Series Ticket 10€ », le caractère `€` est remplacé par les six caractères ASCII littéraux **backslash, u, 2, 0, a, c** — la séquence d'échappement JSON `€` non décodée — dans la ligne `Tournament summary : …` **et dans le nom de fichier**. Le `Buy-In` de la ligne suivante, lui, utilise le glyphe UTF-8 `€` normal. Cause probable : le nom du tournoi transite par un encodage JSON côté serveur Winamax qui n'est pas toujours décodé avant l'écriture du fichier, contrairement aux montants. **Conséquence pour le parser :** aucune (la capture du nom est un `.+` générique), mais ne jamais supposer que le nom d'un tournoi est un texte « propre » pour l'affichage — l'afficher tel quel, sans le réinterpréter ni tenter de le corriger.
+
 ## 6. Conséquences pour le PRD (intégrées)
 1. La clé d'unicité d'une main est le **HandId complet**. Le préfixe X identifie la table, pas le tournoi.
 2. **Re-entries :** summary = un bloc par entrée ; dans le fichier de mains, l'entrée se déduit de la réapparition du Hero après son élimination. Ajout de la table `tournament_bullets` (PRD §15).
 3. **Positions :** gérer le **3-max** et le **heads-up à une table 3-max** (BTN = SB).
 4. **Pots partagés :** plusieurs `collected … from pot`.
 5. **Phases (méthode A) :** structure `Levels` réelle ; ignorer les durées ≤ 1.
-6. **Table finale :** pas de marqueur fiable pour l'instant. Le % de tables finales se calcule sur la **place** (≤ taille de la table finale paramétrée).
+6. **Table finale :** pas de marqueur fiable pour l'instant — confirmé sur `final-table-heads-up/` : le `X-max` du nom de table reste celui d'origine même à 2 joueurs restants (§4.3). Le % de tables finales se calcule sur la **place** (≤ taille de la table finale paramétrée).
+7. **Multi-flights (`Type: flight`) :** `Flight ID` réel non nul identifie le flight de départ (ex. `4199`). Traiter comme un tournoi normal jusqu'à ce qu'un fichier « Day 2 » de consolidation soit observé (❓, non rencontré).
+8. **Formats hors périmètre à détecter et ignorer (D2) :** `Mode : sng` (Expresso, mini-freerolls à table unique) et les fichiers `*_real_omaha_pot-limit*` (Omaha/PLO). Le `detect()` du parser (PAR-1/PAR-2) doit reconnaître ces cas et les rejeter proprement plutôt que tenter de les parser comme du Hold'em MTT.
 
 ## 7. Fichiers encore nécessaires (M0-4)
-Déjà couverts : ✅ ITM · ✅ re-entry · ✅ changements de table · ✅ KO (Space KO).
-Reste à fournir (paires mains + summary) :
-1. **tournoi classique sans KO** (idéalement ITM) ;
-2. **Mystery KO** ;
-3. tournoi **payé avec un ticket** ;
-4. **satellite** ayant rapporté un ticket ;
-5. **freeroll** ;
-6. une **vraie table finale** (9 ou 6 joueurs) ;
-7. si possible, un fichier copié **pendant** un tournoi en cours (lecture incrémentale).
+✅ Couverts (26/09 puis 27/09, corpus élargi de 620+ tournois réels) : ITM · re-entry · changements de table · KO (Space KO) · **classique sans KO** (`classic-itm/`) · **Mystery KO** (`mystery-ko/`) · **freeroll** (`freeroll/`) · **vraie table finale + heads-up** (`final-table-heads-up/`) · **multi-flights** (`multi-flight-day1/`, bonus non prévu initialement).
+
+❓ Toujours manquants — non observés même sur ce corpus élargi, à fournir spécifiquement si possible :
+1. tournoi **payé avec un ticket** — aucune trace exploitable trouvée ; le format HH/summary ne semble rien exposer sur ce mécanisme (voir §5.2). Sans nouvel exemple, l'implémentation restera limitée à la métadonnée manuelle du PRD §8.6.
+2. **satellite** ayant rapporté un ticket — idem, aucun `You won` ne mentionne de ticket dans 620+ tournois.
+3. un fichier copié **pendant** un tournoi en cours (lecture incrémentale) — nécessite une copie faite *avant* la fin du tournoi ; à refaire la prochaine fois qu'un tournoi est en cours.

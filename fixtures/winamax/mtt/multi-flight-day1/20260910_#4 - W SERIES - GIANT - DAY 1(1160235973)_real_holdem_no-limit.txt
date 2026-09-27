@@ -1,0 +1,530 @@
+Winamax Poker - Tournament "#4 - W SERIES - GIANT - DAY 1" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4983175559677739015-25-1789039199 - Holdem no limit (25/100/200) - 2026/09/10 11:19:59 UTC
+Table: '#4 - W SERIES - GIANT - DAY 1(1160235973)#0006' 6-max (real money) Seat #3 is the button
+Seat 2: P0001 (19575, 1€ bounty)
+Seat 3: P0002 (97398, 6.40€ bounty)
+Seat 5: Hero (20000, 1€ bounty)
+Seat 6: P0003 (19975, 1€ bounty)
+*** ANTE/BLINDS ***
+Hero posts ante 25
+P0001 posts ante 25
+P0002 posts ante 25
+P0003 posts ante 25
+Hero posts big blind 200
+Dealt to Hero [Tc Kh]
+*** PRE-FLOP *** 
+P0003 folds
+P0001 folds
+P0002 folds
+Hero collected 300 from pot
+*** SUMMARY ***
+Total pot 300 | No rake
+Seat 5: Hero (big blind) won 300
+
+
+Winamax Poker - Tournament "#4 - W SERIES - GIANT - DAY 1" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4983175559677739015-26-1789039219 - Holdem no limit (25/100/200) - 2026/09/10 11:20:19 UTC
+Table: '#4 - W SERIES - GIANT - DAY 1(1160235973)#0006' 6-max (real money) Seat #4 is the button
+Seat 2: P0001 (19550, 1€ bounty)
+Seat 3: P0002 (97373, 6.40€ bounty)
+Seat 4: P0004 (24598, 1€ bounty)
+Seat 5: Hero (20075, 1€ bounty)
+Seat 6: P0003 (19950, 1€ bounty)
+*** ANTE/BLINDS ***
+Hero posts ante 25
+P0003 posts ante 25
+P0001 posts ante 25
+P0002 posts ante 25
+Hero posts small blind 100
+P0003 posts big blind 200
+Dealt to Hero [Td Ks]
+*** PRE-FLOP *** 
+P0001 folds
+P0002 raises 300 to 500
+Hero folds
+P0003 calls 300
+*** FLOP *** [4c 3c Ac]
+P0003 checks
+P0002 bets 420
+P0003 folds
+P0002 collected 1620 from pot
+*** SUMMARY ***
+Total pot 1620 | No rake
+Board: [4c 3c Ac]
+Seat 3: P0002 won 1620
+
+
+Winamax Poker - Tournament "#4 - W SERIES - GIANT - DAY 1" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4983175559677739015-27-1789039245 - Holdem no limit (25/100/200) - 2026/09/10 11:20:45 UTC
+Table: '#4 - W SERIES - GIANT - DAY 1(1160235973)#0006' 6-max (real money) Seat #5 is the button
+Seat 1: P0005 (20000, 1€ bounty)
+Seat 2: P0001 (19525, 1€ bounty)
+Seat 3: P0002 (98048, 6.40€ bounty)
+Seat 4: P0004 (24598, 1€ bounty)
+Seat 5: Hero (19950, 1€ bounty)
+Seat 6: P0003 (19425, 1€ bounty)
+*** ANTE/BLINDS ***
+P0003 posts ante 25
+P0005 posts ante 25
+P0001 posts ante 25
+P0002 posts ante 25
+P0004 posts ante 25
+Hero posts ante 25
+P0003 posts small blind 100
+P0005 posts big blind 200
+Dealt to Hero [7c Qh]
+*** PRE-FLOP *** 
+P0001 folds
+P0002 folds
+P0004 raises 200 to 400
+Hero folds
+P0003 calls 300
+P0005 calls 200
+*** FLOP *** [5s 3h Th]
+P0003 checks
+P0005 checks
+P0004 bets 338
+P0003 calls 338
+P0005 folds
+*** TURN *** [5s 3h Th][8c]
+P0003 checks
+P0004 bets 1317
+P0003 folds
+P0004 collected 3343 from pot
+*** SUMMARY ***
+Total pot 3343 | No rake
+Board: [5s 3h Th 8c]
+Seat 4: P0004 won 3343
+
+
+Winamax Poker - Tournament "#4 - W SERIES - GIANT - DAY 1" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4983175559677739015-28-1789039345 - Holdem no limit (25/100/200) - 2026/09/10 11:22:25 UTC
+Table: '#4 - W SERIES - GIANT - DAY 1(1160235973)#0006' 6-max (real money) Seat #6 is the button
+Seat 1: P0005 (19575, 1€ bounty)
+Seat 2: P0001 (19500, 1€ bounty)
+Seat 3: P0002 (98023, 6.40€ bounty)
+Seat 4: P0004 (25861, 1€ bounty)
+Seat 5: Hero (19925, 1€ bounty)
+Seat 6: P0003 (18662, 1€ bounty)
+*** ANTE/BLINDS ***
+P0005 posts ante 25
+P0001 posts ante 25
+P0002 posts ante 25
+P0004 posts ante 25
+Hero posts ante 25
+P0003 posts ante 25
+P0005 posts small blind 100
+P0001 posts big blind 200
+Dealt to Hero [Ks Qd]
+*** PRE-FLOP *** 
+P0002 folds
+P0004 folds
+Hero raises 250 to 450
+P0003 folds
+P0005 folds
+P0001 folds
+Hero collected 900 from pot
+*** SUMMARY ***
+Total pot 900 | No rake
+Seat 5: Hero won 900
+
+
+Winamax Poker - Tournament "#4 - W SERIES - GIANT - DAY 1" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4983175559677739015-29-1789039384 - Holdem no limit (25/100/200) - 2026/09/10 11:23:04 UTC
+Table: '#4 - W SERIES - GIANT - DAY 1(1160235973)#0006' 6-max (real money) Seat #1 is the button
+Seat 1: P0005 (19450, 1€ bounty)
+Seat 2: P0001 (19275, 1€ bounty)
+Seat 3: P0002 (97998, 6.40€ bounty)
+Seat 5: Hero (20350, 1€ bounty)
+Seat 6: P0003 (18637, 1€ bounty)
+*** ANTE/BLINDS ***
+P0001 posts ante 25
+P0002 posts ante 25
+P0005 posts ante 25
+Hero posts ante 25
+P0003 posts ante 25
+P0001 posts small blind 100
+P0002 posts big blind 200
+Dealt to Hero [4c 8c]
+*** PRE-FLOP *** 
+Hero folds
+P0003 folds
+P0005 raises 300 to 500
+P0001 calls 400
+P0002 calls 300
+*** FLOP *** [2s Js 3s]
+P0001 checks
+P0002 bets 569
+P0005 calls 569
+P0001 folds
+*** TURN *** [2s Js 3s][5c]
+P0002 bets 1796
+P0005 folds
+P0002 collected 4559 from pot
+*** SUMMARY ***
+Total pot 4559 | No rake
+Board: [2s Js 3s 5c]
+Seat 3: P0002 (big blind) won 4559
+
+
+Winamax Poker - Tournament "#4 - W SERIES - GIANT - DAY 1" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4983175559677739015-30-1789039451 - Holdem no limit (25/100/200) - 2026/09/10 11:24:11 UTC
+Table: '#4 - W SERIES - GIANT - DAY 1(1160235973)#0006' 6-max (real money) Seat #2 is the button
+Seat 1: P0005 (18356, 1€ bounty)
+Seat 2: P0001 (18750, 1€ bounty)
+Seat 3: P0002 (99667, 6.40€ bounty)
+Seat 4: P0006 (20000, 1€ bounty)
+Seat 5: Hero (20325, 1€ bounty)
+Seat 6: P0003 (18612, 1€ bounty)
+*** ANTE/BLINDS ***
+P0002 posts ante 25
+P0006 posts ante 25
+P0005 posts ante 25
+P0001 posts ante 25
+Hero posts ante 25
+P0003 posts ante 25
+P0002 posts small blind 100
+P0006 posts big blind 200
+Dealt to Hero [8s 7s]
+*** PRE-FLOP *** 
+Hero raises 250 to 450
+P0003 folds
+P0005 folds
+P0001 folds
+P0002 raises 900 to 1350
+P0006 folds
+Hero calls 900
+*** FLOP *** [6d Td 2h]
+P0002 checks
+Hero checks
+*** TURN *** [6d Td 2h][7d]
+P0002 checks
+Hero bets 1700
+P0002 calls 1700
+*** RIVER *** [6d Td 2h 7d][Qs]
+P0002 bets 4193
+Hero folds
+P0002 collected 10643 from pot
+*** SUMMARY ***
+Total pot 10643 | No rake
+Board: [6d Td 2h 7d Qs]
+Seat 3: P0002 (small blind) won 10643
+
+
+Winamax Poker - Tournament "#4 - W SERIES - GIANT - DAY 1" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4983175559677739015-31-1789039496 - Holdem no limit (25/100/200) - 2026/09/10 11:24:56 UTC
+Table: '#4 - W SERIES - GIANT - DAY 1(1160235973)#0006' 6-max (real money) Seat #3 is the button
+Seat 1: P0005 (18331, 1€ bounty)
+Seat 2: P0001 (18725, 1€ bounty)
+Seat 3: P0002 (103042, 6.40€ bounty)
+Seat 4: P0006 (19775, 1€ bounty)
+Seat 5: Hero (17250, 1€ bounty)
+Seat 6: P0003 (18587, 1€ bounty)
+*** ANTE/BLINDS ***
+P0006 posts ante 25
+Hero posts ante 25
+P0005 posts ante 25
+P0001 posts ante 25
+P0002 posts ante 25
+P0003 posts ante 25
+P0006 posts small blind 100
+Hero posts big blind 200
+Dealt to Hero [5h 9s]
+*** PRE-FLOP *** 
+P0003 calls 200
+P0005 folds
+P0001 folds
+P0002 raises 200 to 400
+P0006 raises 1350 to 1750
+Hero folds
+P0003 folds
+P0002 calls 1350
+*** FLOP *** [7c 5c 7s]
+P0006 bets 18000 and is all-in
+P0002 calls 18000
+*** TURN *** [7c 5c 7s][6c]
+*** RIVER *** [7c 5c 7s 6c][8s]
+*** SHOW DOWN ***
+P0006 shows [9h Ah] (Straight 9 high)
+P0002 shows [Kc 8c] (Flush King high)
+P0002 collected 40050 from pot
+*** SUMMARY ***
+Total pot 40050 | No rake
+Board: [7c 5c 7s 6c 8s]
+Seat 3: P0002 (button) showed [Kc 8c] and won 40050 with Flush King high
+Seat 4: P0006 (small blind) showed [9h Ah] and lost with Straight 9 high
+
+
+Winamax Poker - Tournament "#4 - W SERIES - GIANT - DAY 1" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4983175559677739015-32-1789039535 - Holdem no limit (25/100/200) - 2026/09/10 11:25:35 UTC
+Table: '#4 - W SERIES - GIANT - DAY 1(1160235973)#0006' 6-max (real money) Seat #4 is the button
+Seat 1: P0005 (18306, 1€ bounty)
+Seat 2: P0001 (18700, 1€ bounty)
+Seat 3: P0002 (123317, 6.60€ bounty)
+Seat 5: Hero (17025, 1€ bounty)
+Seat 6: P0003 (18362, 1€ bounty)
+*** ANTE/BLINDS ***
+Hero posts ante 25
+P0003 posts ante 25
+P0005 posts ante 25
+P0001 posts ante 25
+P0002 posts ante 25
+Hero posts small blind 100
+P0003 posts big blind 200
+Dealt to Hero [4s 9s]
+*** PRE-FLOP *** 
+P0005 folds
+P0001 folds
+P0002 raises 200 to 400
+Hero folds
+P0003 folds
+P0002 collected 825 from pot
+*** SUMMARY ***
+Total pot 825 | No rake
+Seat 3: P0002 won 825
+
+
+Winamax Poker - Tournament "#4 - W SERIES - GIANT - DAY 1" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4983175559677739015-33-1789039560 - Holdem no limit (25/100/200) - 2026/09/10 11:26:00 UTC
+Table: '#4 - W SERIES - GIANT - DAY 1(1160235973)#0006' 6-max (real money) Seat #5 is the button
+Seat 1: P0005 (18281, 1€ bounty)
+Seat 2: P0001 (18675, 1€ bounty)
+Seat 3: P0002 (123717, 6.60€ bounty)
+Seat 5: Hero (16900, 1€ bounty)
+Seat 6: P0003 (18137, 1€ bounty)
+*** ANTE/BLINDS ***
+P0003 posts ante 25
+P0005 posts ante 25
+P0001 posts ante 25
+P0002 posts ante 25
+Hero posts ante 25
+P0003 posts small blind 100
+P0005 posts big blind 200
+Dealt to Hero [8h As]
+*** PRE-FLOP *** 
+P0001 raises 300 to 500
+P0002 calls 500
+Hero folds
+P0003 raises 17612 to 18112 and is all-in
+P0005 folds
+P0001 folds
+P0002 folds
+P0003 collected 19437 from pot
+*** SUMMARY ***
+Total pot 19437 | No rake
+Seat 6: P0003 (small blind) won 19437
+
+
+Winamax Poker - Tournament "#4 - W SERIES - GIANT - DAY 1" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4983175559677739015-34-1789039583 - Holdem no limit (25/100/200) - 2026/09/10 11:26:23 UTC
+Table: '#4 - W SERIES - GIANT - DAY 1(1160235973)#0006' 6-max (real money) Seat #6 is the button
+Seat 1: P0005 (18056, 1€ bounty)
+Seat 2: P0001 (18150, 1€ bounty)
+Seat 3: P0002 (123192, 6.60€ bounty)
+Seat 4: P0007 (20000, 1€ bounty)
+Seat 5: Hero (16875, 1€ bounty)
+Seat 6: P0003 (19437, 1€ bounty)
+*** ANTE/BLINDS ***
+P0005 posts ante 25
+P0001 posts ante 25
+P0002 posts ante 25
+P0007 posts ante 25
+Hero posts ante 25
+P0003 posts ante 25
+P0005 posts small blind 100
+P0001 posts big blind 200
+Dealt to Hero [Kd 9c]
+*** PRE-FLOP *** 
+P0002 folds
+P0007 calls 200
+Hero folds
+P0003 folds
+P0005 folds
+P0001 checks
+*** FLOP *** [3c 5c As]
+P0001 checks
+P0007 checks
+*** TURN *** [3c 5c As][8c]
+P0001 checks
+P0007 checks
+*** RIVER *** [3c 5c As 8c][7s]
+P0001 checks
+P0007 checks
+*** SHOW DOWN ***
+P0001 shows [4d Jh] (High card : Ace)
+P0007 shows [6d Qd] (High card : Ace)
+P0007 collected 650 from pot
+*** SUMMARY ***
+Total pot 650 | No rake
+Board: [3c 5c As 8c 7s]
+Seat 2: P0001 (big blind) showed [4d Jh] and lost with High card : Ace
+Seat 4: P0007 showed [6d Qd] and won 650 with High card : Ace
+
+
+Winamax Poker - Tournament "#4 - W SERIES - GIANT - DAY 1" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4983175559677739015-35-1789039624 - Holdem no limit (25/100/200) - 2026/09/10 11:27:04 UTC
+Table: '#4 - W SERIES - GIANT - DAY 1(1160235973)#0006' 6-max (real money) Seat #1 is the button
+Seat 1: P0005 (17931, 1€ bounty)
+Seat 2: P0001 (17925, 1€ bounty)
+Seat 3: P0002 (123167, 6.60€ bounty)
+Seat 4: P0007 (20425, 1€ bounty)
+Seat 5: Hero (16850, 1€ bounty)
+Seat 6: P0003 (19412, 1€ bounty)
+*** ANTE/BLINDS ***
+P0001 posts ante 25
+P0002 posts ante 25
+P0005 posts ante 25
+P0007 posts ante 25
+Hero posts ante 25
+P0003 posts ante 25
+P0001 posts small blind 100
+P0002 posts big blind 200
+Dealt to Hero [2c 3d]
+*** PRE-FLOP *** 
+P0007 calls 200
+Hero folds
+P0003 folds
+P0005 folds
+P0001 calls 100
+P0002 checks
+*** FLOP *** [9c Ts 9s]
+P0001 checks
+P0002 checks
+P0007 checks
+*** TURN *** [9c Ts 9s][Kd]
+P0001 checks
+P0002 bets 263
+P0007 calls 263
+P0001 folds
+*** RIVER *** [9c Ts 9s Kd][6c]
+P0002 bets 829
+P0007 raises 2934 to 3763
+P0002 calls 2934
+*** SHOW DOWN ***
+P0002 shows [5d 9d] (Trips of 9)
+P0007 shows [7h 8h] (Straight Ten high)
+P0007 collected 8802 from pot
+*** SUMMARY ***
+Total pot 8802 | No rake
+Board: [9c Ts 9s Kd 6c]
+Seat 3: P0002 (big blind) showed [5d 9d] and lost with Trips of 9
+Seat 4: P0007 showed [7h 8h] and won 8802 with Straight Ten high
+
+
+Winamax Poker - Tournament "#4 - W SERIES - GIANT - DAY 1" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4983175559677739015-36-1789039716 - Holdem no limit (25/100/200) - 2026/09/10 11:28:36 UTC
+Table: '#4 - W SERIES - GIANT - DAY 1(1160235973)#0006' 6-max (real money) Seat #2 is the button
+Seat 1: P0005 (17906, 1€ bounty)
+Seat 2: P0001 (17700, 1€ bounty)
+Seat 3: P0002 (118916, 6.60€ bounty)
+Seat 4: P0007 (24976, 1€ bounty)
+Seat 5: Hero (16825, 1€ bounty)
+Seat 6: P0003 (19387, 1€ bounty)
+*** ANTE/BLINDS ***
+P0002 posts ante 25
+P0007 posts ante 25
+P0005 posts ante 25
+P0001 posts ante 25
+Hero posts ante 25
+P0003 posts ante 25
+P0002 posts small blind 100
+P0007 posts big blind 200
+Dealt to Hero [Td 2s]
+*** PRE-FLOP *** 
+Hero folds
+P0003 folds
+P0005 folds
+P0001 raises 250 to 450
+P0002 calls 350
+P0007 calls 250
+*** FLOP *** [Kc Kh 2d]
+P0002 checks
+P0007 checks
+P0001 checks
+*** TURN *** [Kc Kh 2d][9d]
+P0002 bets 525
+P0007 folds
+P0001 folds
+P0002 collected 2025 from pot
+*** SUMMARY ***
+Total pot 2025 | No rake
+Board: [Kc Kh 2d 9d]
+Seat 3: P0002 (small blind) won 2025
+
+
+Winamax Poker - Tournament "#4 - W SERIES - GIANT - DAY 1" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4983175559677739015-37-1789039752 - Holdem no limit (25/100/200) - 2026/09/10 11:29:12 UTC
+Table: '#4 - W SERIES - GIANT - DAY 1(1160235973)#0006' 6-max (real money) Seat #3 is the button
+Seat 1: P0005 (17881, 1€ bounty)
+Seat 2: P0001 (17225, 1€ bounty)
+Seat 3: P0002 (119941, 6.60€ bounty)
+Seat 4: P0007 (24501, 1€ bounty)
+Seat 5: Hero (16800, 1€ bounty)
+Seat 6: P0003 (19362, 1€ bounty)
+*** ANTE/BLINDS ***
+P0007 posts ante 25
+Hero posts ante 25
+P0005 posts ante 25
+P0001 posts ante 25
+P0002 posts ante 25
+P0003 posts ante 25
+P0007 posts small blind 100
+Hero posts big blind 200
+Dealt to Hero [7d 3s]
+*** PRE-FLOP *** 
+P0003 folds
+P0005 folds
+P0001 raises 300 to 500
+P0002 raises 1000 to 1500
+P0007 folds
+Hero folds
+P0001 calls 1000
+*** FLOP *** [Js 5d Qc]
+P0001 checks
+P0002 checks
+*** TURN *** [Js 5d Qc][Td]
+P0001 bets 1825
+P0002 calls 1825
+*** RIVER *** [Js 5d Qc Td][5c]
+P0001 bets 3285
+P0002 calls 3285
+*** SHOW DOWN ***
+P0002 shows [Jc Ah] (Two pairs : Jacks and 5)
+P0001 shows [Ad Qs] (Two pairs : Queens and 5)
+P0001 collected 13670 from pot
+*** SUMMARY ***
+Total pot 13670 | No rake
+Board: [Js 5d Qc Td 5c]
+Seat 2: P0001 showed [Ad Qs] and won 13670 with Two pairs : Queens and 5
+Seat 3: P0002 (button) showed [Jc Ah] and lost with Two pairs : Jacks and 5
+
+
+Winamax Poker - Tournament "#4 - W SERIES - GIANT - DAY 1" buyIn: 1.80€ + 0.20€ level: 1 - HandId: #4983175559677739015-38-1789039808 - Holdem no limit (25/100/200) - 2026/09/10 11:30:08 UTC
+Table: '#4 - W SERIES - GIANT - DAY 1(1160235973)#0006' 6-max (real money) Seat #4 is the button
+Seat 1: P0005 (17856, 1€ bounty)
+Seat 2: P0001 (24260, 1€ bounty)
+Seat 3: P0002 (113306, 6.60€ bounty)
+Seat 4: P0007 (24376, 1€ bounty)
+Seat 5: Hero (16575, 1€ bounty)
+Seat 6: P0003 (19337, 1€ bounty)
+*** ANTE/BLINDS ***
+Hero posts ante 25
+P0003 posts ante 25
+P0005 posts ante 25
+P0001 posts ante 25
+P0002 posts ante 25
+P0007 posts ante 25
+Hero posts small blind 100
+P0003 posts big blind 200
+Dealt to Hero [Jh Ah]
+*** PRE-FLOP *** 
+P0005 folds
+P0001 raises 300 to 500
+P0002 calls 500
+P0007 folds
+Hero raises 1800 to 2300
+P0003 folds
+P0001 raises 21935 to 24235 and is all-in
+P0002 folds
+Hero calls 14250 and is all-in
+*** FLOP *** [6c 5d 5s]
+*** TURN *** [6c 5d 5s][3h]
+*** RIVER *** [6c 5d 5s 3h][8c]
+*** SHOW DOWN ***
+Hero shows [Jh Ah] (One pair : 5)
+P0001 shows [Js Jc] (Two pairs : Jacks and 5)
+P0001 collected 41635 from pot
+*** SUMMARY ***
+Total pot 41635 | No rake
+Board: [6c 5d 5s 3h 8c]
+Seat 2: P0001 showed [Js Jc] and won 41635 with Two pairs : Jacks and 5
+Seat 5: Hero (small blind) showed [Jh Ah] and lost with One pair : 5
+
+
