@@ -2,6 +2,7 @@
 
 //! Parser du format Winamax (fichiers de mains et de summaries, en anglais — ADR-005).
 
+mod board;
 mod datetime;
 mod detect;
 mod hand;

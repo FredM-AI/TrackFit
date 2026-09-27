@@ -50,14 +50,147 @@ expression: hands
                 dealt_in: true,
             },
         ],
-        actions: [],
+        actions: [
+            ActionRecord {
+                street: Preflop,
+                pseudo: "Jean Dupont",
+                kind: PostAnte,
+                amount: Some(
+                    Chips(
+                        10,
+                    ),
+                ),
+                to_amount: None,
+                is_all_in: false,
+                pot: None,
+                shown_cards: None,
+                shown_label: None,
+            },
+            ActionRecord {
+                street: Preflop,
+                pseudo: "Marie-Claire.99_x",
+                kind: PostAnte,
+                amount: Some(
+                    Chips(
+                        10,
+                    ),
+                ),
+                to_amount: None,
+                is_all_in: false,
+                pot: None,
+                shown_cards: None,
+                shown_label: None,
+            },
+            ActionRecord {
+                street: Preflop,
+                pseudo: "Hero",
+                kind: PostAnte,
+                amount: Some(
+                    Chips(
+                        10,
+                    ),
+                ),
+                to_amount: None,
+                is_all_in: false,
+                pot: None,
+                shown_cards: None,
+                shown_label: None,
+            },
+            ActionRecord {
+                street: Preflop,
+                pseudo: "Marie-Claire.99_x",
+                kind: PostSmallBlind,
+                amount: Some(
+                    Chips(
+                        50,
+                    ),
+                ),
+                to_amount: None,
+                is_all_in: false,
+                pot: None,
+                shown_cards: None,
+                shown_label: None,
+            },
+            ActionRecord {
+                street: Preflop,
+                pseudo: "Hero",
+                kind: PostBigBlind,
+                amount: Some(
+                    Chips(
+                        100,
+                    ),
+                ),
+                to_amount: None,
+                is_all_in: false,
+                pot: None,
+                shown_cards: None,
+                shown_label: None,
+            },
+            ActionRecord {
+                street: Preflop,
+                pseudo: "Jean Dupont",
+                kind: Fold,
+                amount: None,
+                to_amount: None,
+                is_all_in: false,
+                pot: None,
+                shown_cards: None,
+                shown_label: None,
+            },
+            ActionRecord {
+                street: Preflop,
+                pseudo: "Marie-Claire.99_x",
+                kind: Fold,
+                amount: None,
+                to_amount: None,
+                is_all_in: false,
+                pot: None,
+                shown_cards: None,
+                shown_label: None,
+            },
+            ActionRecord {
+                street: Preflop,
+                pseudo: "Hero",
+                kind: Collected,
+                amount: Some(
+                    Chips(
+                        180,
+                    ),
+                ),
+                to_amount: None,
+                is_all_in: false,
+                pot: Some(
+                    Pot,
+                ),
+                shown_cards: None,
+                shown_label: None,
+            },
+        ],
         board: [],
-        pots: [],
+        pots: [
+            PotResult {
+                pot: Pot,
+                amount: Chips(
+                    180,
+                ),
+                winners: [
+                    (
+                        "Hero",
+                        Chips(
+                            180,
+                        ),
+                    ),
+                ],
+            },
+        ],
         total_pot: Chips(
-            0,
+            180,
         ),
         rake: Chips(
             0,
+        ),
+        uncalled_excess: Chips(
+            50,
         ),
         hero_pseudo: None,
         hero_cards: None,

@@ -3,3 +3,8 @@
 # git les reecrire en CRLF au checkout (comportement par defaut de core.autocrlf=true
 # sur les runners Windows, y compris GitHub Actions windows-latest).
 fixtures/**/*.txt text eol=lf
+
+# Snapshots insta : generes et compares tels quels par `cargo test` (comparaison
+# de chaines exactes). Meme piege CRLF que les fixtures si on laisse core.autocrlf
+# les reecrire au checkout sur un runner Windows.
+*.snap text eol=lf
