@@ -36,7 +36,8 @@ jobs:
         run: cargo install tauri-cli --version "^2" --locked
 
       - name: Build portable exe
-        run: cargo tauri build --no-bundle --features analytics-duckdb
+        # TODO(M7-6): add --features analytics-duckdb once gr-analytics implements it (ADR-002).
+        run: cargo tauri build --no-bundle
 
       - name: Package portable zip
         shell: pwsh
