@@ -111,10 +111,10 @@ Card, Rank, Suit, Street, ActionKind, Position, Money(cents), Chips, HandRecord,
 - Parsing et affichage des cartes (`"Ah"`). ✅ (`FromStr`/`Display` sur `Card`, erreurs typées via `thiserror`)
 - Tests unitaires. ✅ (14 tests, `cargo clippy -p gr-core -- -D warnings` et `cargo fmt --check` verts)
 
-### M1-2 · Trait `RoomParser` et détection · M · `TODO`
-Détection de room et de langue par signature d'en-tête ; gestion de l'encodage (BOM UTF-8, repli Windows-1252 si le corpus l'exige).
+### M1-2 · Trait `RoomParser` et détection · M · `DONE` — le 27/09.
+`gr-parser-api` : trait `RoomParser` (`detect`/`parse_hand`/`parse_summary`), `Detection`/`Room`/`Language`, `ParseError`/`ParseErrorCode` (`UNKNOWN_LINE`, `CHIP_MISMATCH`), `strip_bom`. `gr-parser-winamax` : `WinamaxParser::detect` (signature commune main/summary `"Winamax Poker - Tournament"`). Repli Windows-1252 **non implémenté** : aucun fichier du corpus (620+ tournois) n'en a jamais eu besoin — à ajouter seulement si un cas se présente. `parse_hand`/`parse_summary` restent à implémenter (M1-3 à M1-6) ; `WinamaxParser` n'implémente donc pas encore le trait complet, seulement `detect`.
 
-**CA :** les fichiers du corpus sont détectés `winamax` à 100 %.
+**CA :** les fichiers du corpus sont détectés `winamax` à 100 %. ✅ (test sur tous les fichiers commités de `fixtures/winamax/**`, 8 tournois)
 
 ### M1-3 · Découpage des mains et blocs incomplets · M · `TODO`
 **CA :**
