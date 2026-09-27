@@ -6,9 +6,9 @@
   "packageManager": "pnpm@12.6.0",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "lint": "eslint .",
-    "typecheck": "tsc -b --noEmit",
+    "typecheck": "vite build && tsc -b --noEmit",
     "test": "vitest run",
     "preview": "vite preview"
   },
