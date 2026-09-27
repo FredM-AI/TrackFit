@@ -5,12 +5,13 @@ use crate::card::Card;
 use crate::money::Chips;
 use crate::seat::SeatInfo;
 
-/// Un pot dispute et ses gagnants (§4.5-4.7 : pots partages, main/side pots).
+/// Un pot dispute et la part de chaque gagnant (§4.5-4.7 : pots partages, main/side pots).
+/// `amount` = somme des parts (peut differer d'un partage a l'euro/jeton pres).
 #[derive(Debug, Clone, PartialEq, Serialize, Deserialize)]
 pub struct PotResult {
     pub pot: PotKind,
     pub amount: Chips,
-    pub winners: Vec<String>,
+    pub winners: Vec<(String, Chips)>,
 }
 
 /// Une main complete, telle qu'extraite d'un fichier d'historique Winamax (PAR-4 a PAR-10).
@@ -36,6 +37,9 @@ pub struct HandRecord {
     pub pots: Vec<PotResult>,
     pub total_pot: Chips,
     pub rake: Chips,
+    /// Part d'une mise/relance jamais suivie, rendue a son auteur (§4.6). A
+    /// soustraire de `total_pot` pour obtenir le pot reellement dispute (EV all-in, M5-4).
+    pub uncalled_excess: Chips,
     /// Pseudo du Hero, identifie par la ligne `Dealt to <pseudo>` (seul joueur dont les cartes sont connues avant l'abattage).
     pub hero_pseudo: Option<String>,
     pub hero_cards: Option<(Card, Card)>,
@@ -67,6 +71,7 @@ mod tests {
             pots: vec![],
             total_pot: Chips::ZERO,
             rake: Chips::ZERO,
+            uncalled_excess: Chips::ZERO,
             hero_pseudo: Some("Hero".to_string()),
             hero_cards: Some((
                 Card::new(Rank::Ace, Suit::Spades),

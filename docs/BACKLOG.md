@@ -131,13 +131,15 @@ Card, Rank, Suit, Street, ActionKind, Position, Money(cents), Chips, HandRecord,
 - Snapshots validés sur tout le corpus. ✅ (`insta`, un snapshot par fichier de mains — 9 fichiers, 1679 mains réelles + 1 main synthétique)
 - Les pseudos avec espaces et caractères spéciaux sont couverts par un edge-case. ✅ `fixtures/winamax/edge-cases/special-pseudos/` — fixture **synthétique** (l'anonymisation ayant effacé ces caractères des pseudos réels dans tous les autres fixtures), pseudos fictifs avec espace (« Jean Dupont ») et points/tirets/underscores (« Marie-Claire.99_x »)
 
-### M1-5 · Actions, streets, board, showdown, pots · M · `TODO` (PAR-7 à PAR-10)
+### M1-5 · Actions, streets, board, showdown, pots · M · `DONE` (PAR-7 à PAR-10) — le 27/09.
+Parsing complet des actions (posts/folds/checks/calls/bets/raises/shows/collected, suffixe `and is all-in`), streets (board reconstruit en concatenant les groupes `[...]` de chaque en-tête `*** FLOP/TURN/RIVER ***`), pots (`PotResult.winners` en `Vec<(pseudo, part)>` pour gérer les pots partagés à parts inégales). `uncalled_excess` calculé par une **formule arithmétique générale** (écart entre les deux plus fortes contributions totales de la main) plutôt qu'en détectant le texte « side pot » — valable pour n'importe quel nombre de side pots, vérifié sur un cas réel multiway. Bug trouvé et corrigé en cours de route : le passage de `*** ANTE/BLINDS ***` à `*** PRE-FLOP ***` ne doit **pas** réinitialiser les mises de la street (les blindes restent la mise de référence pour les relances preflop) — seul le passage vers flop/turn/river en ouvre une nouvelle.
+
 **CA :**
-- Invariant de conservation PAR-11 vérifié sur 100 % du corpus.
-- Side pots corrects sur le fixture multiway (main 49 du fixture Space KO : `side pot 1` = excédent non suivi).
-- Joueurs assis mais non distribués exclus (mains 1 et 2 du fixture Space KO).
-- Pots partagés (7 cas dans le fixture OBELISK) et heads-up à une table 3-max (`(small blind) (button)`).
-- Calcul de l'excédent non suivi par main (champ `uncalled_excess`), utilisé par l'EV all-in (M5-4).
+- Invariant de conservation PAR-11 vérifié sur 100 % du corpus. ✅ (9 fichiers, 1679+ mains réelles, aucune `ChipMismatch`/`UnknownLine`)
+- Side pots corrects sur le fixture multiway (main 49 du fixture Space KO : `side pot 1` = excédent non suivi). ✅ (main pot 35015 + side pot 1 = 3195, `uncalled_excess` = 3195)
+- Joueurs assis mais non distribués exclus (mains 1 et 2 du fixture Space KO). ✅
+- Pots partagés (7 cas dans le fixture OBELISK) et heads-up à une table 3-max (`(small blind) (button)`). ✅ (7/7 détectés ; le heads-up ne demande aucun code dédié, il découle de l'ordre séquentiel des actions dans le texte)
+- Calcul de l'excédent non suivi par main (champ `uncalled_excess`), utilisé par l'EV all-in (M5-4). ✅
 
 ### M1-6 · Parser de summaries · M · `TODO` (PAR-12, §8.6)
 **CA :**
