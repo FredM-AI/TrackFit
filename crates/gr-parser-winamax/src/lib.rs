@@ -5,6 +5,8 @@
 mod board;
 mod datetime;
 mod detect;
+#[cfg(test)]
+mod fuzz_tests;
 mod hand;
 mod money_format;
 #[cfg(test)]

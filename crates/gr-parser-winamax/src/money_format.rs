@@ -14,7 +14,9 @@ pub(crate) fn parse_euros_to_cents(s: &str) -> Option<i64> {
     };
     let whole: i64 = whole.parse().ok()?;
     let cents: i64 = cents.parse().ok()?;
-    Some(whole * 100 + cents)
+    // checked_* (R-NOPANIC) : un montant fuzze/adversarial proche de i64::MAX
+    // ne doit jamais faire deborder la multiplication/addition.
+    whole.checked_mul(100)?.checked_add(cents)
 }
 
 #[cfg(test)]

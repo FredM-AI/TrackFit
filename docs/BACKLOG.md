@@ -153,11 +153,17 @@ Parsing complet des actions (posts/folds/checks/calls/bets/raises/shows/collecte
 - Tickets : uniquement quand le fixture sera fourni. ✅ (toujours aucun exemple, non implémenté — cf. Idées/à trier)
 - Snapshots validés. ✅ (9 fichiers summary, `insta`)
 
-### M1-7 · Robustesse et benchs du parser · M · `TODO` (PAR-14/15)
+### M1-7 · Robustesse et benchs du parser · M · `DONE` (PAR-14/15) — le 27/09. **M1 (Parser Winamax) est entièrement terminé.**
+7 tests `proptest` (512 cas chacun) : octets/chaînes arbitraires sur `detect`/`parse_hand`/`parse_summary`/`split_hand_blocks`, troncature de la vraie main OBELISK à *tout* octet (pas seulement les frontières de ligne comme M1-3), et corruption caractère par caractère. **3 vrais risques de panique trouvés et corrigés** au passage (aucun n'était couvert par les tests précédents, qui n'utilisaient que des nombres réalistes) :
+1. `Money`/`Chips` faisaient `+`/`-` sur `i64` bruts → overflow/underflow paniquent en debug avec des montants fuzzés énormes. Passés en arithmétique saturante (`saturating_add`/`saturating_sub`).
+2. `parse_euros_to_cents` faisait `whole * 100 + cents` sans protection → passé en `checked_mul`/`checked_add` (renvoie `None`, donc une `ParseError`, plutôt que de paniquer).
+3. `parse_duration_seconds` faisait `heures * 3600` sur `u32` sans protection → passé en `saturating_mul`/`saturating_add`.
+4. Deux `expect()` restaient dans `parse_hand` (hors tests, violation de R-NOPANIC) sur le montant/pot d'un `Collected` — remplacés par un `if let` qui ignore silencieusement plutôt que de paniquer si l'invariant interne venait à être brisé.
+
 **CA :**
-- Fuzz léger (proptest) sans panique.
-- Bench `criterion` ≥ 5 000 mains/s mesuré sur la machine de Frédéric.
-- Chaque `ParseError` porte un code et une ligne.
+- Fuzz léger (proptest) sans panique. ✅ (7 tests, voir ci-dessus)
+- Bench `criterion` ≥ 5 000 mains/s mesuré sur la machine de Frédéric. ✅ **~30 600 mains/s** (29,5–31,7 k élém/s), mesuré sur le fixture réel OBELISK (328 mains, 3-max/re-entry) — largement au-dessus de la cible.
+- Chaque `ParseError` porte un code et une ligne. ✅ (garanti par construction : `code`/`line_no` sont des champs non-optionnels de la struct)
 
 ---
 
