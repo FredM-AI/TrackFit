@@ -69,7 +69,7 @@ Le calendrier est serré. En cas de retard, les stories **C** glissent d'abord e
 
 **Note sur le quota :** repo privé = 2 000 min/mois gratuites, et les minutes Windows comptent double. Le job Linux fait l'essentiel des tests. Le job Windows ne tourne que sur les PR et `main`.
 
-### M0-4 · Corpus réel et documentation du format Winamax · M · `DOING` — corpus élargi (620+ tournois réels, pseudo `AFeuDoux`) déposé et anonymisé le 27/09. Reste : validation de Frédéric sur la liste des inconnues (CA #2).
+### M0-4 · Corpus réel et documentation du format Winamax · M · `DONE` — corpus élargi (620+ tournois réels, pseudo `AFeuDoux`) déposé et anonymisé le 27/09. Liste des inconnues validée par Frédéric le 27/09 (les 3 cas encore manquants sont différés, voir « Idées / à trier »).
 **Déjà fait :**
 - `docs/formats/winamax.md`, `tools/anonymize.py` (porté en Python, exécuté via un Python installé pour l'occasion — `just` ne le requiert pas, seul Claude Code s'en sert ponctuellement).
 - 5 nouveaux fixtures anonymisés à partir du corpus réel déposé dans `fixtures/raw/` (1056 fichiers, 528 tournois, gitignoré) : `classic-itm/` (classique sans KO, ITM), `mystery-ko/` (Mystery KO), `freeroll/` (freeroll MTT 16 580 inscrits), `final-table-heads-up/` (table finale + heads-up réel sur 218 inscrits), `multi-flight-day1/` (multi-flights, `Flight ID` non nul). Plus un edge-case `escaped-currency-in-title/` (nom de tournoi mal ré-encodé).
@@ -391,3 +391,7 @@ Guide d'installation portable (dézipper, lancer, assistant), FAQ (langue du cli
 
 ## Idées / à trier
 _(Claude Code ajoute ici les idées hors périmètre rencontrées en cours de route.)_
+
+- **Corpus tickets manquant (différé le 27/09, validé par Frédéric)** : aucun exemple de tournoi payé par ticket ni de satellite ayant rapporté un ticket dans les 620+ tournois du corpus M0-4. À refournir si Frédéric en rencontre un. Impact : M1-6 (parsing du ticket dans le summary) et M5-2 (métadonnées ticket) resteront limités à la saisie manuelle (PRD §8.6) tant qu'un exemple réel n'existe pas.
+- **Fichier Winamax copié pendant un tournoi en cours** (M0-4, item 7) : nécessite une copie faite *avant* la fin du tournoi, donc impossible à obtenir après coup. À refaire la prochaine fois qu'un tournoi de Frédéric est en cours. Impact : le test de « lecture incrémentale d'un bloc de main incomplet » (M1-3) reste couvert par des troncatures synthétiques uniquement, pas encore par un vrai fichier partiel.
+- **Fichier « Day 2 » de consolidation multi-flights** : jamais observé (Hero n'a pas atteint un Day 2 dans le corpus M0-4). Le comportement du parser sur un multi-flights reste donc non vérifié au-delà du Day 1 (`Type: flight`, `Flight ID` non nul).
