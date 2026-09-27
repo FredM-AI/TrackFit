@@ -88,14 +88,16 @@ Le calendrier est serré. En cas de retard, les stories **C** glissent d'abord e
 - Chaque type de ligne rencontré est listé avec un exemple réel anonymisé.
 - La liste des inconnues restantes est rédigée et validée par Frédéric.
 
-### M0-5 · Shell UI et design tokens · S · `TODO`
-- `tokens.css` (§16), polices Inter et JetBrains Mono embarquées, layout : barre latérale, barre de filtres (vide), barre d'état.
-- Routes vides pour les 8 écrans + Logs.
-- i18next FR/EN branché, avec sélecteur de langue.
+### M0-5 · Shell UI et design tokens · S · `DONE` — le 27/09.
+- `ui/src/styles/tokens.css` (§16) : palette monochrome stricte, option couleurs sémantiques discrètes désactivée par défaut (`data-semantic-colors`). Polices Inter Variable et JetBrains Mono Variable embarquées via `@fontsource-variable/*` (locales, pas de CDN — R-NET).
+- Layout (`ui/src/app/AppShell.tsx`) : barre latérale (icônes `lucide-react` + libellés), barre de filtres vide (placeholder, remplie en M6-1), barre d'état (statut import, mains du jour, dernière main, sélecteur de langue).
+- Routeur : **TanStack Router** (file-based, `ui/src/routes/`), choisi pour la cohérence avec TanStack Query/Table déjà présents — décision validée avec Frédéric (absente de CLAUDE.md/PRD). Routes vides pour les 8 écrans (`ui/src/screens/`) + Logs, code-splittées automatiquement.
+- i18next FR/EN branché (`ui/src/lib/i18n.ts`, `ui/src/locales/{fr,en}/common.json`) avec sélecteur de langue dans la barre d'état.
+- Règle ESLint `i18next/no-literal-string` activée (`markupOnly`, désactivée sur les fichiers de test).
 
 **CA :**
-- Navigation fonctionnelle.
-- Aucune chaîne en dur (règle ESLint `i18next/no-literal-string` active).
+- Navigation fonctionnelle. ✅ (`just dev` : fenêtre « Graphite », 9 liens de la barre latérale, testé par Frédéric)
+- Aucune chaîne en dur (règle ESLint `i18next/no-literal-string` active). ✅ (`pnpm lint` / `just check` verts)
 
 ---
 

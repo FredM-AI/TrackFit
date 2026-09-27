@@ -1,0 +1,30 @@
+{
+  "app": {
+    "name": "Graphite"
+  },
+  "nav": {
+    "home": "Accueil",
+    "results": "Résultats",
+    "tournaments": "Tournois",
+    "hands": "Mains",
+    "reports": "Rapports",
+    "leaks": "Leaks",
+    "replayer": "Replayer",
+    "settings": "Paramètres",
+    "logs": "Logs"
+  },
+  "statusBar": {
+    "importIdle": "Import : inactif",
+    "handsToday": "Mains aujourd'hui : {{count}}",
+    "lastHand": "Dernière main : {{value}}",
+    "lastHandNone": "aucune"
+  },
+  "language": {
+    "label": "Langue",
+    "fr": "Français",
+    "en": "Anglais"
+  },
+  "placeholder": {
+    "screenBody": "Écran « {{screen}} » — à venir."
+  }
+}
