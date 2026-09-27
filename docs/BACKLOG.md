@@ -116,10 +116,12 @@ Card, Rank, Suit, Street, ActionKind, Position, Money(cents), Chips, HandRecord,
 
 **CA :** les fichiers du corpus sont détectés `winamax` à 100 %. ✅ (test sur tous les fichiers commités de `fixtures/winamax/**`, 8 tournois)
 
-### M1-3 · Découpage des mains et blocs incomplets · M · `TODO`
+### M1-3 · Découpage des mains et blocs incomplets · M · `DONE` — le 27/09.
+`gr-parser-winamax::split_hand_blocks(text) -> (Vec<&str>, usize)` : decoupe sur le separateur `\n\n\n`, renvoie les blocs complets + l'offset (octets) où reprendre une lecture incrementale (PAR-3).
+
 **CA :**
-- Un fichier tronqué au milieu d'une main renvoie N mains complètes, plus un offset qui s'arrête avant la main incomplète.
-- Tests avec des troncatures à chaque ligne d'une main (property test).
+- Un fichier tronqué au milieu d'une main renvoie N mains complètes, plus un offset qui s'arrête avant la main incomplète. ✅
+- Tests avec des troncatures à chaque ligne d'une main (property test). ✅ (troncature à chaque ligne de la 2e main **et** de la dernière main du fixture réel `space-ko/`, 117 mains)
 
 ### M1-4 · En-tête, table, sièges, blindes/antes · M · `TODO` (PAR-4/5/6)
 **CA :**

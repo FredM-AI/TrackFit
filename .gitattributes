@@ -1,0 +1,5 @@
+# Les fixtures Winamax sont des exports reels : LF sans BOM, verifie (docs/formats/winamax.md §3).
+# Le parser recherche des sequences "\n\n\n" litterales (PAR-3) : ne jamais laisser
+# git les reecrire en CRLF au checkout (comportement par defaut de core.autocrlf=true
+# sur les runners Windows, y compris GitHub Actions windows-latest).
+fixtures/**/*.txt text eol=lf
