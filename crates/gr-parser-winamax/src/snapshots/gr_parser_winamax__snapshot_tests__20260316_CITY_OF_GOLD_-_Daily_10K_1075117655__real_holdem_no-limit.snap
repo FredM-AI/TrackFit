@@ -1,0 +1,2511 @@
+---
+source: crates/gr-parser-winamax/src/snapshot_tests.rs
+expression: hands
+---
+[
+    HandRecord {
+        room_hand_id: "#4617595167577212968-1-1773687777",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#2087",
+        table_max_seats: 6,
+        button_seat: 4,
+        level: 1,
+        sb: Chips(
+            100,
+        ),
+        bb: Chips(
+            200,
+        ),
+        ante: Chips(
+            25,
+        ),
+        played_at: 1773687777000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    20000,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    20000,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    20000,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0003",
+                starting_stack: Chips(
+                    20000,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0004",
+                starting_stack: Chips(
+                    20000,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0005",
+                starting_stack: Chips(
+                    20000,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577212968-2-1773687819",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#2087",
+        table_max_seats: 6,
+        button_seat: 6,
+        level: 1,
+        sb: Chips(
+            100,
+        ),
+        bb: Chips(
+            200,
+        ),
+        ante: Chips(
+            25,
+        ),
+        played_at: 1773687819000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    19775,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    19975,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    21094,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0003",
+                starting_stack: Chips(
+                    19975,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0004",
+                starting_stack: Chips(
+                    20000,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0005",
+                starting_stack: Chips(
+                    19181,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577212968-3-1773687868",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#2087",
+        table_max_seats: 6,
+        button_seat: 1,
+        level: 1,
+        sb: Chips(
+            100,
+        ),
+        bb: Chips(
+            200,
+        ),
+        ante: Chips(
+            25,
+        ),
+        played_at: 1773687868000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    19650,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    19750,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    21985,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0003",
+                starting_stack: Chips(
+                    19950,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0004",
+                starting_stack: Chips(
+                    18592,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0005",
+                starting_stack: Chips(
+                    20073,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577212968-4-1773687994",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#2087",
+        table_max_seats: 6,
+        button_seat: 2,
+        level: 1,
+        sb: Chips(
+            100,
+        ),
+        bb: Chips(
+            200,
+        ),
+        ante: Chips(
+            25,
+        ),
+        played_at: 1773687994000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    19625,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    19625,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    21360,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0003",
+                starting_stack: Chips(
+                    19925,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0004",
+                starting_stack: Chips(
+                    19417,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0005",
+                starting_stack: Chips(
+                    20048,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577212968-5-1773688064",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#2087",
+        table_max_seats: 6,
+        button_seat: 3,
+        level: 1,
+        sb: Chips(
+            100,
+        ),
+        bb: Chips(
+            200,
+        ),
+        ante: Chips(
+            25,
+        ),
+        played_at: 1773688064000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    19600,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    18450,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    20485,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0003",
+                starting_stack: Chips(
+                    19700,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0004",
+                starting_stack: Chips(
+                    22592,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0005",
+                starting_stack: Chips(
+                    19173,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577212968-6-1773688146",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#2087",
+        table_max_seats: 6,
+        button_seat: 4,
+        level: 2,
+        sb: Chips(
+            125,
+        ),
+        bb: Chips(
+            250,
+        ),
+        ante: Chips(
+            30,
+        ),
+        played_at: 1773688146000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    19575,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    9391,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    20010,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0003",
+                starting_stack: Chips(
+                    19575,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0004",
+                starting_stack: Chips(
+                    32301,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0005",
+                starting_stack: Chips(
+                    19148,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577212968-7-1773688172",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#2087",
+        table_max_seats: 6,
+        button_seat: 5,
+        level: 2,
+        sb: Chips(
+            125,
+        ),
+        bb: Chips(
+            250,
+        ),
+        ante: Chips(
+            30,
+        ),
+        played_at: 1773688172000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    19545,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    9361,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    19980,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0003",
+                starting_stack: Chips(
+                    19295,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0004",
+                starting_stack: Chips(
+                    33881,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0005",
+                starting_stack: Chips(
+                    17938,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577212968-8-1773688243",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#2087",
+        table_max_seats: 6,
+        button_seat: 6,
+        level: 3,
+        sb: Chips(
+            150,
+        ),
+        bb: Chips(
+            300,
+        ),
+        ante: Chips(
+            35,
+        ),
+        played_at: 1773688243000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0001",
+                starting_stack: Chips(
+                    39585,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    9331,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    435,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0003",
+                starting_stack: Chips(
+                    19265,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0004",
+                starting_stack: Chips(
+                    33601,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0005",
+                starting_stack: Chips(
+                    17783,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577212182-11-1773688332",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#1301",
+        table_max_seats: 6,
+        button_seat: 6,
+        level: 4,
+        sb: Chips(
+            175,
+        ),
+        bb: Chips(
+            350,
+        ),
+        ante: Chips(
+            40,
+        ),
+        played_at: 1773688332000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    24706,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    46127,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    19888,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0009",
+                starting_stack: Chips(
+                    11052,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    8296,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    18227,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577212182-12-1773688415",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#1301",
+        table_max_seats: 6,
+        button_seat: 1,
+        level: 5,
+        sb: Chips(
+            200,
+        ),
+        bb: Chips(
+            400,
+        ),
+        ante: Chips(
+            50,
+        ),
+        played_at: 1773688415000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    23742,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    45163,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    22286,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0009",
+                starting_stack: Chips(
+                    10662,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    8256,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    18187,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577212182-13-1773688504",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#1301",
+        table_max_seats: 6,
+        button_seat: 2,
+        level: 6,
+        sb: Chips(
+            250,
+        ),
+        bb: Chips(
+            500,
+        ),
+        ante: Chips(
+            60,
+        ),
+        played_at: 1773688504000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    23292,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    44048,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    24401,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0009",
+                starting_stack: Chips(
+                    10212,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    8206,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    18137,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577212182-14-1773688552",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#1301",
+        table_max_seats: 6,
+        button_seat: 3,
+        level: 6,
+        sb: Chips(
+            250,
+        ),
+        bb: Chips(
+            500,
+        ),
+        ante: Chips(
+            60,
+        ),
+        played_at: 1773688552000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    23232,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    43988,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    23841,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0009",
+                starting_stack: Chips(
+                    11012,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    8146,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    18077,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577212182-15-1773688638",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#1301",
+        table_max_seats: 6,
+        button_seat: 4,
+        level: 7,
+        sb: Chips(
+            300,
+        ),
+        bb: Chips(
+            600,
+        ),
+        ante: Chips(
+            70,
+        ),
+        played_at: 1773688638000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    22672,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    41678,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    23781,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0009",
+                starting_stack: Chips(
+                    2866,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    19782,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    17517,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577212182-16-1773688696",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#1301",
+        table_max_seats: 6,
+        button_seat: 5,
+        level: 8,
+        sb: Chips(
+            350,
+        ),
+        bb: Chips(
+            700,
+        ),
+        ante: Chips(
+            80,
+        ),
+        played_at: 1773688696000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    22602,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    41008,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    23111,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0009",
+                starting_stack: Chips(
+                    2796,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    26349,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    12430,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577212182-17-1773688715",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#1301",
+        table_max_seats: 6,
+        button_seat: 6,
+        level: 8,
+        sb: Chips(
+            350,
+        ),
+        bb: Chips(
+            700,
+        ),
+        ante: Chips(
+            80,
+        ),
+        played_at: 1773688715000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    21822,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    40928,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    22331,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0009",
+                starting_stack: Chips(
+                    2716,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    26269,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    14230,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577212182-18-1773688774",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#1301",
+        table_max_seats: 6,
+        button_seat: 1,
+        level: 9,
+        sb: Chips(
+            400,
+        ),
+        bb: Chips(
+            800,
+        ),
+        ante: Chips(
+            100,
+        ),
+        played_at: 1773688774000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    22332,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    40148,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    22251,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0009",
+                starting_stack: Chips(
+                    2636,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    26189,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    14740,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577212182-19-1773688823",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#1301",
+        table_max_seats: 6,
+        button_seat: 2,
+        level: 9,
+        sb: Chips(
+            400,
+        ),
+        bb: Chips(
+            800,
+        ),
+        ante: Chips(
+            100,
+        ),
+        played_at: 1773688823000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    22232,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    41448,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    21351,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0009",
+                starting_stack: Chips(
+                    2536,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    26089,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    14640,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577212182-20-1773688882",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#1301",
+        table_max_seats: 6,
+        button_seat: 3,
+        level: 10,
+        sb: Chips(
+            500,
+        ),
+        bb: Chips(
+            1000,
+        ),
+        ante: Chips(
+            120,
+        ),
+        played_at: 1773688882000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    19696,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    47220,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    20851,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    25989,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    14540,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577212182-21-1773688919",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#1301",
+        table_max_seats: 6,
+        button_seat: 4,
+        level: 10,
+        sb: Chips(
+            500,
+        ),
+        bb: Chips(
+            1000,
+        ),
+        ante: Chips(
+            120,
+        ),
+        played_at: 1773688919000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    19576,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    49900,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    20731,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0011",
+                starting_stack: Chips(
+                    51293,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    23669,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0010",
+                starting_stack: Chips(
+                    14420,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577212182-22-1773688963",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#1301",
+        table_max_seats: 6,
+        button_seat: 5,
+        level: 11,
+        sb: Chips(
+            600,
+        ),
+        bb: Chips(
+            1200,
+        ),
+        ante: Chips(
+            140,
+        ),
+        played_at: 1773688963000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    19456,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    65180,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    20611,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0011",
+                starting_stack: Chips(
+                    51293,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    23049,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577212182-23-1773689004",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#1301",
+        table_max_seats: 6,
+        button_seat: 6,
+        level: 11,
+        sb: Chips(
+            600,
+        ),
+        bb: Chips(
+            1200,
+        ),
+        ante: Chips(
+            140,
+        ),
+        played_at: 1773689004000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    16916,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    65040,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    20471,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0011",
+                starting_stack: Chips(
+                    51153,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    26009,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0012",
+                starting_stack: Chips(
+                    44466,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577212182-24-1773689084",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#1301",
+        table_max_seats: 6,
+        button_seat: 1,
+        level: 12,
+        sb: Chips(
+            700,
+        ),
+        bb: Chips(
+            1400,
+        ),
+        ante: Chips(
+            160,
+        ),
+        played_at: 1773689084000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    16176,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    55763,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    20331,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0011",
+                starting_stack: Chips(
+                    61450,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    25869,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0012",
+                starting_stack: Chips(
+                    44466,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577212182-25-1773689112",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#1301",
+        table_max_seats: 6,
+        button_seat: 2,
+        level: 13,
+        sb: Chips(
+            800,
+        ),
+        bb: Chips(
+            1600,
+        ),
+        ante: Chips(
+            200,
+        ),
+        played_at: 1773689112000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    16016,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    54903,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    18771,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0011",
+                starting_stack: Chips(
+                    59890,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    30169,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0012",
+                starting_stack: Chips(
+                    44306,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577212182-26-1773689171",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#1301",
+        table_max_seats: 6,
+        button_seat: 3,
+        level: 13,
+        sb: Chips(
+            800,
+        ),
+        bb: Chips(
+            1600,
+        ),
+        ante: Chips(
+            200,
+        ),
+        played_at: 1773689171000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    15816,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    54703,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    16971,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0011",
+                starting_stack: Chips(
+                    62490,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    29969,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0012",
+                starting_stack: Chips(
+                    44106,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577212182-27-1773689239",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#1301",
+        table_max_seats: 6,
+        button_seat: 4,
+        level: 14,
+        sb: Chips(
+            1000,
+        ),
+        bb: Chips(
+            2000,
+        ),
+        ante: Chips(
+            250,
+        ),
+        played_at: 1773689239000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0006",
+                starting_stack: Chips(
+                    15616,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0007",
+                starting_stack: Chips(
+                    54503,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "P0008",
+                starting_stack: Chips(
+                    16771,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0011",
+                starting_stack: Chips(
+                    32521,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    60738,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0012",
+                starting_stack: Chips(
+                    43906,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577211299-43-1773689316",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#0418",
+        table_max_seats: 6,
+        button_seat: 4,
+        level: 15,
+        sb: Chips(
+            1250,
+        ),
+        bb: Chips(
+            2500,
+        ),
+        ante: Chips(
+            300,
+        ),
+        played_at: 1773689316000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    7800,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0014",
+                starting_stack: Chips(
+                    56690,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    59488,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0015",
+                starting_stack: Chips(
+                    38564,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0016",
+                starting_stack: Chips(
+                    67349,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    71479,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577211299-44-1773689338",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#0418",
+        table_max_seats: 6,
+        button_seat: 5,
+        level: 15,
+        sb: Chips(
+            1250,
+        ),
+        bb: Chips(
+            2500,
+        ),
+        ante: Chips(
+            300,
+        ),
+        played_at: 1773689338000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    7500,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0014",
+                starting_stack: Chips(
+                    61940,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    59188,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0015",
+                starting_stack: Chips(
+                    38264,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0016",
+                starting_stack: Chips(
+                    65799,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    68679,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577211299-45-1773689387",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#0418",
+        table_max_seats: 6,
+        button_seat: 6,
+        level: 16,
+        sb: Chips(
+            1500,
+        ),
+        bb: Chips(
+            3000,
+        ),
+        ante: Chips(
+            350,
+        ),
+        played_at: 1773689387000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    4700,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0014",
+                starting_stack: Chips(
+                    61640,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    50138,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0015",
+                starting_stack: Chips(
+                    37964,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0016",
+                starting_stack: Chips(
+                    79799,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    67129,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+    HandRecord {
+        room_hand_id: "#4617595167577211299-46-1773689421",
+        tournament_name: "CITY OF GOLD - Daily 10K",
+        tournament_room_id: "1075117655",
+        table_name: "CITY OF GOLD - Daily 10K(1075117655)#0418",
+        table_max_seats: 6,
+        button_seat: 1,
+        level: 16,
+        sb: Chips(
+            1500,
+        ),
+        bb: Chips(
+            3000,
+        ),
+        ante: Chips(
+            350,
+        ),
+        played_at: 1773689421000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "P0013",
+                starting_stack: Chips(
+                    2850,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0014",
+                starting_stack: Chips(
+                    72390,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 3,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    49788,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 4,
+                pseudo: "P0015",
+                starting_stack: Chips(
+                    37614,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 5,
+                pseudo: "P0016",
+                starting_stack: Chips(
+                    71949,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 6,
+                pseudo: "P0017",
+                starting_stack: Chips(
+                    66779,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [],
+        board: [],
+        pots: [],
+        total_pot: Chips(
+            0,
+        ),
+        rake: Chips(
+            0,
+        ),
+        hero_pseudo: None,
+        hero_cards: None,
+        parser_version: "0.0.1",
+    },
+]

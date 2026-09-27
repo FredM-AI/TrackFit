@@ -10,6 +10,7 @@
 > | `freeroll/` | CITY OF GOLD - Daily 10K (1075117655), 16/03/2026, turbo | 29 | **Freeroll MTT** (`Buy-In : 0€ + 0€`), 16 580 inscrits, sortie 6260e (hors ITM) |
 > | `final-table-heads-up/` | Kill The Fish (1065146114), 18/03/2026, semiturbo | 363 | **Table finale + heads-up réel**, 218 inscrits, 2e place |
 > | `multi-flight-day1/` | #4 - W SERIES - GIANT - DAY 1 (1160235973), 10/09/2026, normal | 14 | **Multi-flight** (`Type: flight`, `Flight ID: 4199`), Late Registration, élimination en Day 1 |
+> | `edge-cases/special-pseudos/` | EDGE CASE - SPECIAL PSEUDOS (2222222222), fictif | 1 | **Fixture synthétique (M1-4)** : pseudos avec espace (« Jean Dupont ») et points/tirets/underscores (« Marie-Claire.99_x »). L'anonymisation remplace les vrais pseudos par des `P0001` génériques dans tous les autres fixtures, effaçant ces caractères ; ce fixture les réintroduit délibérément (aucune identité réelle) pour tester la regex de `Seat N: ...` sur les motifs déjà documentés en §4.3. |
 >
 > **Invariant de conservation des jetons vérifié sur 445/445 mains** (`space-ko/` + `space-ko-3max-itm-reentry/`, PAR-11). Timestamp du HandId = date de l'en-tête sur 445/445 mains. **Les 1143 mains des 5 nouveaux fixtures (M0-4, 27/09) ne sont pas encore vérifiées programmatiquement : à faire en M1-5** dès que le parser existe.
 > **Statut :** ✅ = observé et vérifié · ⚠️ = déduit, à confirmer · ❓ = non encore observé

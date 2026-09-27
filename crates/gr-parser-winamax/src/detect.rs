@@ -1,4 +1,7 @@
-use gr_parser_api::{strip_bom, Detection, Language, Room};
+use gr_core::HandRecord;
+use gr_parser_api::{strip_bom, Detection, Language, ParseError, Room};
+
+use crate::hand;
 
 /// Signature commune aux fichiers de mains (`Winamax Poker - Tournament "..."`)
 /// et de summary (`Winamax Poker - Tournament summary : ...`), §4.1/§5.1.
@@ -23,6 +26,16 @@ impl WinamaxParser {
         } else {
             None
         }
+    }
+
+    /// Parse une main (PAR-4/5/6). Les actions, le board et les pots restent
+    /// vides jusqu'a M1-5.
+    ///
+    /// # Errors
+    /// Renvoie une [`ParseError`] si l'en-tete, la table ou un siege ne
+    /// correspond a aucun motif connu (PAR-15).
+    pub fn parse_hand(text: &str) -> Result<HandRecord, ParseError> {
+        hand::parse_hand(text)
     }
 }
 

@@ -2,7 +2,12 @@
 
 //! Parser du format Winamax (fichiers de mains et de summaries, en anglais — ADR-005).
 
+mod datetime;
 mod detect;
+mod hand;
+mod money_format;
+#[cfg(test)]
+mod snapshot_tests;
 mod split;
 
 pub use detect::WinamaxParser;

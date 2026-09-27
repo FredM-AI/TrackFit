@@ -1,0 +1,20 @@
+Winamax Poker - Tournament "EDGE CASE - SPECIAL PSEUDOS" buyIn: 1€ + 0€ level: 1 - HandId: #1111111111111111111-1-1000000000 - Holdem no limit (10/50/100) - 2026/01/01 00:00:00 UTC
+Table: 'EDGE CASE - SPECIAL PSEUDOS(2222222222)#0001' 6-max (real money) Seat #1 is the button
+Seat 1: Jean Dupont (20000)
+Seat 2: Marie-Claire.99_x (20000)
+Seat 3: Hero (20000)
+*** ANTE/BLINDS ***
+Jean Dupont posts ante 10
+Marie-Claire.99_x posts ante 10
+Hero posts ante 10
+Marie-Claire.99_x posts small blind 50
+Hero posts big blind 100
+*** PRE-FLOP ***
+Jean Dupont folds
+Marie-Claire.99_x folds
+Hero collected 180 from pot
+*** SUMMARY ***
+Total pot 180 | No rake
+Seat 3: Hero (big blind) won 180
+
+
