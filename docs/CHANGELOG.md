@@ -10,3 +10,4 @@
 - feat(ui): shell UI (barre latérale, filtres, barre d'état), tokens de design monochrome (§16), TanStack Router (9 écrans + Logs), i18next FR/EN, règle ESLint i18next/no-literal-string active (M0-5).
 - feat(gr-core): types de domaine (Card/Rank/Suit, Money/Chips, Street, Position, ActionKind/ActionRecord, SeatInfo, HandRecord, TournamentSummary/KoType), sérialisation serde, parsing/affichage des cartes, 14 tests (M1-1). M1 démarré.
 - feat(parser): trait `RoomParser` (`gr-parser-api`) et détection Winamax (`gr-parser-winamax`) ; 100% des fixtures committés détectés (M1-2).
+- feat(parser): découpage des mains (`split_hand_blocks`, séparateur `\n\n\n`) avec gestion des blocs incomplets et offset de reprise ; testé par troncature ligne par ligne sur un vrai fixture (M1-3).
