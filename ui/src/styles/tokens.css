@@ -1,0 +1,30 @@
+/* Design tokens — PRD §16 (D15). Monochrome strict par defaut. */
+:root {
+  --color-bg: #0a0a0a;
+  --color-surface-1: #121212;
+  --color-surface-2: #1a1a1a;
+  --color-surface-3: #222222;
+  --color-border: #2a2a2a;
+
+  --color-text-primary: #f5f5f5;
+  --color-text-secondary: #a3a3a3;
+  --color-text-disabled: #5c5c5c;
+
+  --color-accent: #ffffff;
+
+  /* Mode "monochrome strict" (defaut, PRD §16) : gains/pertes signales par signe + graisse */
+  --color-positive: var(--color-text-primary);
+  --color-negative: var(--color-text-secondary);
+
+  --font-sans: 'Inter Variable', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
+  --font-size-base: 13px;
+
+  --row-height-compact: 28px;
+}
+
+/* Option "couleurs semantiques discretes", desactivee par defaut (PRD §16) */
+[data-semantic-colors='true'] {
+  --color-positive: #7fa88a;
+  --color-negative: #b07a7a;
+}
