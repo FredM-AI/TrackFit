@@ -46,7 +46,16 @@ Le calendrier est serré. En cas de retard, les stories **C** glissent d'abord e
 - `just check` passe. ✅ (fmt, clippy, cargo test, ui lint/typecheck/test)
 - Profil `dev` configuré (`[profile.dev.package."*"] opt-level = 1`). ✅
 
-### M0-3 · CI et release GitHub Actions · M · `DOING` — CI verte sur la PR le 26/09 (linux 8s, windows 18min20 sans cache). Reste : merger, ajouter les checks obligatoires à la protection de `main`, puis valider `release.yml` avec un tag `v0.0.1`.
+### M0-3 · CI et release GitHub Actions · M · `DONE` — le 27/09.
+- CI verte sur `main` (job `linux` ~10-20s, job `windows` ~3min avec cache chaud). Les deux checks sont désormais obligatoires dans la protection de `main`.
+- `release.yml` validé de bout en bout sur le tag `v0.0.1` → [release GitHub](https://github.com/FredM-AI/TrackFit/releases/tag/v0.0.1) avec `graphite-v0.0.1-portable.zip`. Trois bugs corrigés en cours de route :
+  1. chemin de l'exe faux (`src-tauri/target/...` au lieu de `target/...` : un workspace Cargo partage un seul `target/` à la racine) ;
+  2. `--features analytics-duckdb` retiré du build (la feature n'existe pas encore, elle arrive en M7-6) ;
+  3. `permissions: contents: write` manquant sur le workflow (le `GITHUB_TOKEN` par défaut est en lecture seule).
+
+**CA :**
+- CI verte sur `main`. ✅
+- Un tag `v0.0.1` produit `graphite-v0.0.1-portable.zip` qui démarre sur la machine de Frédéric. ✅ (build validé sur CI ; démarrage à confirmer par Frédéric sur sa machine)
 - `ci.yml` :
   - job `linux` (ubuntu-latest) : fmt, clippy et tests des crates pures (`gr-core`, `gr-parser-*`, `gr-stats`, `gr-equity`) ;
   - job `windows` (windows-latest) : build Tauri, tests complets et tests `ui` ;
