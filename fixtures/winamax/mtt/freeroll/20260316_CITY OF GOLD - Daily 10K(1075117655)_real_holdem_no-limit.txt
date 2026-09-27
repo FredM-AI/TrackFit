@@ -1,0 +1,1222 @@
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 1 - HandId: #4617595167577212968-1-1773687777 - Holdem no limit (25/100/200) - 2026/03/16 19:02:57 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#2087' 6-max (real money) Seat #4 is the button
+Seat 1: P0001 (20000)
+Seat 2: Hero (20000)
+Seat 3: P0002 (20000)
+Seat 4: P0003 (20000)
+Seat 5: P0004 (20000)
+Seat 6: P0005 (20000)
+*** ANTE/BLINDS ***
+P0005 posts ante 25
+P0001 posts ante 25
+Hero posts ante 25
+P0002 posts ante 25
+P0003 posts ante 25
+P0005 posts small blind 100
+P0001 posts big blind 200
+Dealt to Hero [Jd Tc]
+*** PRE-FLOP *** 
+Hero folds
+P0002 calls 200
+P0003 folds
+P0005 calls 100
+P0001 checks
+*** FLOP *** [Qd Qc 6c]
+P0005 checks
+P0001 checks
+P0002 checks
+*** TURN *** [Qd Qc 6c][8c]
+P0005 bets 200
+P0001 folds
+P0002 calls 200
+*** RIVER *** [Qd Qc 6c 8c][9d]
+P0005 bets 394
+P0002 calls 394
+*** SHOW DOWN ***
+P0005 shows [Js 2s] (One pair : Queens)
+P0002 shows [Kd 8d] (Two pairs : Queens and 8)
+P0002 collected 1913 from pot
+*** SUMMARY ***
+Total pot 1913 | No rake
+Board: [Qd Qc 6c 8c 9d]
+Seat 3: P0002 showed [Kd 8d] and won 1913 with Two pairs : Queens and 8
+Seat 6: P0005 (small blind) showed [Js 2s] and lost with One pair : Queens
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 1 - HandId: #4617595167577212968-2-1773687819 - Holdem no limit (25/100/200) - 2026/03/16 19:03:39 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#2087' 6-max (real money) Seat #6 is the button
+Seat 1: P0001 (19775)
+Seat 2: Hero (19975)
+Seat 3: P0002 (21094)
+Seat 4: P0003 (19975)
+Seat 5: P0004 (20000)
+Seat 6: P0005 (19181)
+*** ANTE/BLINDS ***
+P0001 posts ante 25
+Hero posts ante 25
+P0002 posts ante 25
+P0003 posts ante 25
+P0004 posts ante 25
+P0005 posts ante 25
+P0001 posts small blind 100
+Hero posts big blind 200
+Dealt to Hero [2h 3d]
+*** PRE-FLOP *** 
+P0002 calls 200
+P0003 folds
+P0004 raises 300 to 500
+P0005 calls 500
+P0001 folds
+Hero folds
+P0002 calls 300
+*** FLOP *** [Ad 8c Kc]
+P0002 checks
+P0004 bets 683
+P0005 calls 683
+P0002 calls 683
+*** TURN *** [Ad 8c Kc][Th]
+P0002 checks
+P0004 checks
+P0005 checks
+*** RIVER *** [Ad 8c Kc Th][6s]
+P0002 checks
+P0004 bets 200
+P0005 calls 200
+P0002 calls 200
+*** SHOW DOWN ***
+P0004 shows [4c Jd] (High card : Ace)
+P0002 shows [Ac 3s] (One pair : Aces)
+P0005 shows [7h Ah] (One pair : Aces)
+P0005 collected 2300 from pot
+P0002 collected 2299 from pot
+*** SUMMARY ***
+Total pot 4599 | No rake
+Board: [Ad 8c Kc Th 6s]
+Seat 3: P0002 showed [Ac 3s] and won 2299 with One pair : Aces
+Seat 5: P0004 showed [4c Jd] and lost with High card : Ace
+Seat 6: P0005 (button) showed [7h Ah] and won 2300 with One pair : Aces
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 1 - HandId: #4617595167577212968-3-1773687868 - Holdem no limit (25/100/200) - 2026/03/16 19:04:28 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#2087' 6-max (real money) Seat #1 is the button
+Seat 1: P0001 (19650)
+Seat 2: Hero (19750)
+Seat 3: P0002 (21985)
+Seat 4: P0003 (19950)
+Seat 5: P0004 (18592)
+Seat 6: P0005 (20073)
+*** ANTE/BLINDS ***
+Hero posts ante 25
+P0002 posts ante 25
+P0001 posts ante 25
+P0003 posts ante 25
+P0004 posts ante 25
+P0005 posts ante 25
+Hero posts small blind 100
+P0002 posts big blind 200
+Dealt to Hero [3h 8c]
+*** PRE-FLOP *** 
+P0003 folds
+P0004 raises 400 to 600
+P0005 folds
+P0001 folds
+Hero folds
+P0002 calls 400
+*** FLOP *** [7c 6s Ah]
+P0002 checks
+P0004 bets 943
+P0002 folds
+P0004 collected 2393 from pot
+*** SUMMARY ***
+Total pot 2393 | No rake
+Board: [7c 6s Ah]
+Seat 5: P0004 won 2393
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 1 - HandId: #4617595167577212968-4-1773687994 - Holdem no limit (25/100/200) - 2026/03/16 19:06:34 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#2087' 6-max (real money) Seat #2 is the button
+Seat 1: P0001 (19625)
+Seat 2: Hero (19625)
+Seat 3: P0002 (21360)
+Seat 4: P0003 (19925)
+Seat 5: P0004 (19417)
+Seat 6: P0005 (20048)
+*** ANTE/BLINDS ***
+P0002 posts ante 25
+P0003 posts ante 25
+P0001 posts ante 25
+Hero posts ante 25
+P0004 posts ante 25
+P0005 posts ante 25
+P0002 posts small blind 100
+P0003 posts big blind 200
+Dealt to Hero [As 5s]
+*** PRE-FLOP *** 
+P0004 raises 650 to 850
+P0005 calls 850
+P0001 folds
+Hero calls 850
+P0002 calls 750
+P0003 folds
+*** FLOP *** [2c 8s 8d]
+P0002 checks
+P0004 bets 300
+P0005 folds
+Hero calls 300
+P0002 folds
+*** TURN *** [2c 8s 8d][9h]
+P0004 bets 1523
+Hero folds
+P0004 collected 5873 from pot
+*** SUMMARY ***
+Total pot 5873 | No rake
+Board: [2c 8s 8d 9h]
+Seat 5: P0004 won 5873
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 1 - HandId: #4617595167577212968-5-1773688064 - Holdem no limit (25/100/200) - 2026/03/16 19:07:44 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#2087' 6-max (real money) Seat #3 is the button
+Seat 1: P0001 (19600)
+Seat 2: Hero (18450)
+Seat 3: P0002 (20485)
+Seat 4: P0003 (19700)
+Seat 5: P0004 (22592)
+Seat 6: P0005 (19173)
+*** ANTE/BLINDS ***
+P0003 posts ante 25
+P0004 posts ante 25
+P0001 posts ante 25
+Hero posts ante 25
+P0002 posts ante 25
+P0005 posts ante 25
+P0003 posts small blind 100
+P0004 posts big blind 200
+Dealt to Hero [9h 9c]
+*** PRE-FLOP *** 
+P0005 folds
+P0001 folds
+Hero raises 250 to 450
+P0002 calls 450
+P0003 folds
+P0004 raises 1600 to 2050
+Hero calls 1600
+P0002 folds
+*** FLOP *** [7d As Ac]
+P0004 bets 1680
+Hero calls 1680
+*** TURN *** [7d As Ac][Ad]
+P0004 checks
+Hero checks
+*** RIVER *** [7d As Ac Ad][Tc]
+P0004 bets 5304
+Hero calls 5304
+*** SHOW DOWN ***
+Hero shows [9h 9c] (Full of Aces and 9)
+P0004 shows [Kh Kc] (Full of Aces and Kings)
+P0004 collected 18768 from pot
+*** SUMMARY ***
+Total pot 18768 | No rake
+Board: [7d As Ac Ad Tc]
+Seat 2: Hero showed [9h 9c] and lost with Full of Aces and 9
+Seat 5: P0004 (big blind) showed [Kh Kc] and won 18768 with Full of Aces and Kings
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 2 - HandId: #4617595167577212968-6-1773688146 - Holdem no limit (30/125/250) - 2026/03/16 19:09:06 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#2087' 6-max (real money) Seat #4 is the button
+Seat 1: P0001 (19575)
+Seat 2: Hero (9391)
+Seat 3: P0002 (20010)
+Seat 4: P0003 (19575)
+Seat 5: P0004 (32301)
+Seat 6: P0005 (19148)
+*** ANTE/BLINDS ***
+P0004 posts ante 30
+P0005 posts ante 30
+P0001 posts ante 30
+Hero posts ante 30
+P0002 posts ante 30
+P0003 posts ante 30
+P0004 posts small blind 125
+P0005 posts big blind 250
+Dealt to Hero [9d 7d]
+*** PRE-FLOP *** 
+P0001 folds
+Hero folds
+P0002 folds
+P0003 calls 250
+P0004 raises 930 to 1180
+P0005 calls 930
+P0003 folds
+*** FLOP *** [5s Ac Js]
+P0004 bets 976
+P0005 folds
+P0004 collected 3766 from pot
+*** SUMMARY ***
+Total pot 3766 | No rake
+Board: [5s Ac Js]
+Seat 5: P0004 (small blind) won 3766
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 2 - HandId: #4617595167577212968-7-1773688172 - Holdem no limit (30/125/250) - 2026/03/16 19:09:32 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#2087' 6-max (real money) Seat #5 is the button
+Seat 1: P0001 (19545)
+Seat 2: Hero (9361)
+Seat 3: P0002 (19980)
+Seat 4: P0003 (19295)
+Seat 5: P0004 (33881)
+Seat 6: P0005 (17938)
+*** ANTE/BLINDS ***
+P0005 posts ante 30
+P0001 posts ante 30
+Hero posts ante 30
+P0002 posts ante 30
+P0003 posts ante 30
+P0004 posts ante 30
+P0005 posts small blind 125
+P0001 posts big blind 250
+Dealt to Hero [3h Th]
+*** PRE-FLOP *** 
+Hero folds
+P0002 calls 250
+P0003 folds
+P0004 calls 250
+P0005 folds
+P0001 checks
+*** FLOP *** [2c 2s Ah]
+P0001 checks
+P0002 bets 250
+P0004 folds
+P0001 calls 250
+*** TURN *** [2c 2s Ah][4d]
+P0001 checks
+P0002 bets 19450 and is all-in
+P0001 calls 19015 and is all-in
+*** RIVER *** [2c 2s Ah 4d][4c]
+*** SHOW DOWN ***
+P0001 shows [2h 9c] (Full of 2 and 4)
+P0002 shows [5d Ad] (Two pairs : Aces and 4)
+P0002 collected 435 from side pot 1
+P0001 collected 39585 from main pot
+*** SUMMARY ***
+Total pot 40020 | No rake
+Board: [2c 2s Ah 4d 4c]
+Seat 1: P0001 (big blind) showed [2h 9c] and won 39585 with Full of 2 and 4
+Seat 3: P0002 showed [5d Ad] and won 435 with Two pairs : Aces and 4
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 3 - HandId: #4617595167577212968-8-1773688243 - Holdem no limit (35/150/300) - 2026/03/16 19:10:43 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#2087' 6-max (real money) Seat #6 is the button
+Seat 1: P0001 (39585)
+Seat 2: Hero (9331)
+Seat 3: P0002 (435)
+Seat 4: P0003 (19265)
+Seat 5: P0004 (33601)
+Seat 6: P0005 (17783)
+*** ANTE/BLINDS ***
+P0001 posts ante 35
+Hero posts ante 35
+P0002 posts ante 35
+P0003 posts ante 35
+P0004 posts ante 35
+P0005 posts ante 35
+P0001 posts small blind 150
+Hero posts big blind 300
+Dealt to Hero [Qc Jc]
+*** PRE-FLOP *** 
+P0002 raises 100 to 400 and is all-in
+P0003 folds
+P0004 calls 400
+P0005 calls 400
+P0001 calls 250
+Hero calls 100
+*** FLOP *** [4c Tc 4s]
+P0001 checks
+Hero checks
+P0004 bets 300
+P0005 calls 300
+P0001 folds
+Hero calls 300
+*** TURN *** [4c Tc 4s][3h]
+Hero checks
+P0004 bets 300
+P0005 folds
+Hero calls 300
+*** RIVER *** [4c Tc 4s 3h][5s]
+Hero checks
+P0004 bets 3710
+Hero folds
+*** SHOW DOWN ***
+P0002 shows [As 2s] (Straight 5 high)
+P0004 shows [6s 2h] (Straight 6 high)
+P0004 collected 7420 from pot
+*** SUMMARY ***
+Total pot 7420 | No rake
+Board: [4c Tc 4s 3h 5s]
+Seat 3: P0002 showed [As 2s] and lost with Straight 5 high
+Seat 5: P0004 showed [6s 2h] and won 7420 with Straight 6 high
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 4 - HandId: #4617595167577212182-11-1773688332 - Holdem no limit (40/175/350) - 2026/03/16 19:12:12 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#1301' 6-max (real money) Seat #6 is the button
+Seat 1: P0006 (24706)
+Seat 2: P0007 (46127)
+Seat 3: P0008 (19888)
+Seat 4: P0009 (11052)
+Seat 5: Hero (8296)
+Seat 6: P0010 (18227)
+*** ANTE/BLINDS ***
+P0006 posts ante 40
+P0007 posts ante 40
+P0008 posts ante 40
+P0009 posts ante 40
+Hero posts ante 40
+P0010 posts ante 40
+P0006 posts small blind 175
+P0007 posts big blind 350
+Dealt to Hero [Kc 7s]
+*** PRE-FLOP *** 
+P0008 calls 350
+P0009 calls 350
+Hero folds
+P0010 folds
+P0006 calls 175
+P0007 checks
+*** FLOP *** [Th 8c 3h]
+P0006 checks
+P0007 checks
+P0008 checks
+P0009 checks
+*** TURN *** [Th 8c 3h][2d]
+P0006 checks
+P0007 checks
+P0008 bets 574
+P0009 folds
+P0006 calls 574
+P0007 calls 574
+*** RIVER *** [Th 8c 3h 2d][Tc]
+P0006 checks
+P0007 checks
+P0008 bets 1177
+P0006 folds
+P0007 folds
+P0008 collected 4539 from pot
+*** SUMMARY ***
+Total pot 4539 | No rake
+Board: [Th 8c 3h 2d Tc]
+Seat 3: P0008 won 4539
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 5 - HandId: #4617595167577212182-12-1773688415 - Holdem no limit (50/200/400) - 2026/03/16 19:13:35 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#1301' 6-max (real money) Seat #1 is the button
+Seat 1: P0006 (23742)
+Seat 2: P0007 (45163)
+Seat 3: P0008 (22286)
+Seat 4: P0009 (10662)
+Seat 5: Hero (8256)
+Seat 6: P0010 (18187)
+*** ANTE/BLINDS ***
+P0007 posts ante 50
+P0008 posts ante 50
+P0006 posts ante 50
+P0009 posts ante 50
+Hero posts ante 50
+P0010 posts ante 50
+P0007 posts small blind 200
+P0008 posts big blind 400
+Dealt to Hero [8s Jh]
+*** PRE-FLOP *** 
+P0009 calls 400
+Hero folds
+P0010 folds
+P0006 calls 400
+P0007 calls 200
+P0008 checks
+*** FLOP *** [6s 6h Jc]
+P0007 checks
+P0008 checks
+P0009 checks
+P0006 checks
+*** TURN *** [6s 6h Jc][2c]
+P0007 checks
+P0008 checks
+P0009 checks
+P0006 checks
+*** RIVER *** [6s 6h Jc 2c][2h]
+P0007 checks
+P0008 bets 665
+P0009 folds
+P0006 folds
+P0007 calls 665
+*** SHOW DOWN ***
+P0007 shows [Ac 7s] (Two pairs : 6 and 2)
+P0008 shows [8d 6d] (Full of 6 and 2)
+P0008 collected 3230 from pot
+*** SUMMARY ***
+Total pot 3230 | No rake
+Board: [6s 6h Jc 2c 2h]
+Seat 2: P0007 (small blind) showed [Ac 7s] and lost with Two pairs : 6 and 2
+Seat 3: P0008 (big blind) showed [8d 6d] and won 3230 with Full of 6 and 2
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 6 - HandId: #4617595167577212182-13-1773688504 - Holdem no limit (60/250/500) - 2026/03/16 19:15:04 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#1301' 6-max (real money) Seat #2 is the button
+Seat 1: P0006 (23292)
+Seat 2: P0007 (44048)
+Seat 3: P0008 (24401)
+Seat 4: P0009 (10212)
+Seat 5: Hero (8206)
+Seat 6: P0010 (18137)
+*** ANTE/BLINDS ***
+P0008 posts ante 60
+P0009 posts ante 60
+P0006 posts ante 60
+P0007 posts ante 60
+Hero posts ante 60
+P0010 posts ante 60
+P0008 posts small blind 250
+P0009 posts big blind 500
+Dealt to Hero [9s 4d]
+*** PRE-FLOP *** 
+Hero folds
+P0010 folds
+P0006 folds
+P0007 folds
+P0008 calls 250
+P0009 checks
+*** FLOP *** [7h Th 7c]
+P0008 checks
+P0009 checks
+*** TURN *** [7h Th 7c][Qc]
+P0008 checks
+P0009 checks
+*** RIVER *** [7h Th 7c Qc][Kd]
+P0008 checks
+P0009 checks
+*** SHOW DOWN ***
+P0008 shows [3d 8d] (One pair : 7)
+P0009 shows [8c Jc] (One pair : 7)
+P0009 collected 1360 from pot
+*** SUMMARY ***
+Total pot 1360 | No rake
+Board: [7h Th 7c Qc Kd]
+Seat 3: P0008 (small blind) showed [3d 8d] and lost with One pair : 7
+Seat 4: P0009 (big blind) showed [8c Jc] and won 1360 with One pair : 7
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 6 - HandId: #4617595167577212182-14-1773688552 - Holdem no limit (60/250/500) - 2026/03/16 19:15:52 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#1301' 6-max (real money) Seat #3 is the button
+Seat 1: P0006 (23232)
+Seat 2: P0007 (43988)
+Seat 3: P0008 (23841)
+Seat 4: P0009 (11012)
+Seat 5: Hero (8146)
+Seat 6: P0010 (18077)
+*** ANTE/BLINDS ***
+P0009 posts ante 60
+Hero posts ante 60
+P0006 posts ante 60
+P0007 posts ante 60
+P0008 posts ante 60
+P0010 posts ante 60
+P0009 posts small blind 250
+Hero posts big blind 500
+Dealt to Hero [Jc 5h]
+*** PRE-FLOP *** 
+P0010 calls 500
+P0006 calls 500
+P0007 calls 500
+P0008 folds
+P0009 calls 250
+Hero checks
+*** FLOP *** [5c 9d Jd]
+P0009 checks
+Hero checks
+P0010 checks
+P0006 checks
+P0007 checks
+*** TURN *** [5c 9d Jd][Ac]
+P0009 bets 500
+Hero raises 1250 to 1750
+P0010 folds
+P0006 folds
+P0007 calls 1750
+P0009 calls 1250
+*** RIVER *** [5c 9d Jd Ac][4s]
+P0009 checks
+Hero bets 5836 and is all-in
+P0007 folds
+P0009 calls 5836
+*** SHOW DOWN ***
+P0009 shows [4h Jh] (Two pairs : Jacks and 4)
+Hero shows [Jc 5h] (Two pairs : Jacks and 5)
+Hero collected 19782 from pot
+*** SUMMARY ***
+Total pot 19782 | No rake
+Board: [5c 9d Jd Ac 4s]
+Seat 4: P0009 (small blind) showed [4h Jh] and lost with Two pairs : Jacks and 4
+Seat 5: Hero (big blind) showed [Jc 5h] and won 19782 with Two pairs : Jacks and 5
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 7 - HandId: #4617595167577212182-15-1773688638 - Holdem no limit (70/300/600) - 2026/03/16 19:17:18 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#1301' 6-max (real money) Seat #4 is the button
+Seat 1: P0006 (22672)
+Seat 2: P0007 (41678)
+Seat 3: P0008 (23781)
+Seat 4: P0009 (2866)
+Seat 5: Hero (19782)
+Seat 6: P0010 (17517)
+*** ANTE/BLINDS ***
+Hero posts ante 70
+P0010 posts ante 70
+P0006 posts ante 70
+P0007 posts ante 70
+P0008 posts ante 70
+P0009 posts ante 70
+Hero posts small blind 300
+P0010 posts big blind 600
+Dealt to Hero [Qh Kh]
+*** PRE-FLOP *** 
+P0006 folds
+P0007 calls 600
+P0008 calls 600
+P0009 folds
+Hero raises 2100 to 2700
+P0010 calls 2100
+P0007 folds
+P0008 folds
+*** FLOP *** [2s 5s 2h]
+Hero bets 2317
+P0010 calls 2317
+*** TURN *** [2s 5s 2h][Jd]
+Hero bets 3846
+P0010 folds
+Hero collected 15500 from pot
+*** SUMMARY ***
+Total pot 15500 | No rake
+Board: [2s 5s 2h Jd]
+Seat 5: Hero (small blind) won 15500
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 8 - HandId: #4617595167577212182-16-1773688696 - Holdem no limit (80/350/700) - 2026/03/16 19:18:16 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#1301' 6-max (real money) Seat #5 is the button
+Seat 1: P0006 (22602)
+Seat 2: P0007 (41008)
+Seat 3: P0008 (23111)
+Seat 4: P0009 (2796)
+Seat 5: Hero (26349)
+Seat 6: P0010 (12430)
+*** ANTE/BLINDS ***
+P0010 posts ante 80
+P0006 posts ante 80
+P0007 posts ante 80
+P0008 posts ante 80
+P0009 posts ante 80
+Hero posts ante 80
+P0010 posts small blind 350
+P0006 posts big blind 700
+Dealt to Hero [4d Ah]
+*** PRE-FLOP *** 
+P0007 folds
+P0008 calls 700
+P0009 folds
+Hero folds
+P0010 raises 11650 to 12350 and is all-in
+P0006 folds
+P0008 folds
+P0010 collected 14230 from pot
+*** SUMMARY ***
+Total pot 14230 | No rake
+Seat 6: P0010 (small blind) won 14230
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 8 - HandId: #4617595167577212182-17-1773688715 - Holdem no limit (80/350/700) - 2026/03/16 19:18:35 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#1301' 6-max (real money) Seat #6 is the button
+Seat 1: P0006 (21822)
+Seat 2: P0007 (40928)
+Seat 3: P0008 (22331)
+Seat 4: P0009 (2716)
+Seat 5: Hero (26269)
+Seat 6: P0010 (14230)
+*** ANTE/BLINDS ***
+P0006 posts ante 80
+P0007 posts ante 80
+P0008 posts ante 80
+P0009 posts ante 80
+Hero posts ante 80
+P0010 posts ante 80
+P0006 posts small blind 350
+P0007 posts big blind 700
+Dealt to Hero [3h 8c]
+*** PRE-FLOP *** 
+P0008 folds
+P0009 folds
+Hero folds
+P0010 calls 700
+P0006 calls 350
+P0007 checks
+*** FLOP *** [2s 4d Ac]
+P0006 checks
+P0007 checks
+P0010 checks
+*** TURN *** [2s 4d Ac][Ad]
+P0006 checks
+P0007 checks
+P0010 checks
+*** RIVER *** [2s 4d Ac Ad][2d]
+P0006 checks
+P0007 checks
+P0010 checks
+*** SHOW DOWN ***
+P0007 shows [Ts 6s] (Two pairs : Aces and 2)
+P0006 shows [Kh Td] (Two pairs : Aces and 2)
+P0010 shows [Ks 3c] (Two pairs : Aces and 2)
+P0010 collected 1290 from pot
+P0006 collected 1290 from pot
+*** SUMMARY ***
+Total pot 2580 | No rake
+Board: [2s 4d Ac Ad 2d]
+Seat 1: P0006 (small blind) showed [Kh Td] and won 1290 with Two pairs : Aces and 2
+Seat 2: P0007 (big blind) showed [Ts 6s] and lost with Two pairs : Aces and 2
+Seat 6: P0010 (button) showed [Ks 3c] and won 1290 with Two pairs : Aces and 2
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 9 - HandId: #4617595167577212182-18-1773688774 - Holdem no limit (100/400/800) - 2026/03/16 19:19:34 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#1301' 6-max (real money) Seat #1 is the button
+Seat 1: P0006 (22332)
+Seat 2: P0007 (40148)
+Seat 3: P0008 (22251)
+Seat 4: P0009 (2636)
+Seat 5: Hero (26189)
+Seat 6: P0010 (14740)
+*** ANTE/BLINDS ***
+P0007 posts ante 100
+P0008 posts ante 100
+P0006 posts ante 100
+P0009 posts ante 100
+Hero posts ante 100
+P0010 posts ante 100
+P0007 posts small blind 400
+P0008 posts big blind 800
+Dealt to Hero [3c 9h]
+*** PRE-FLOP *** 
+P0009 folds
+Hero folds
+P0010 folds
+P0006 folds
+P0007 calls 400
+P0008 checks
+*** FLOP *** [Qd As 7h]
+P0007 checks
+P0008 checks
+*** TURN *** [Qd As 7h][5s]
+P0007 bets 1430
+P0008 folds
+P0007 collected 3630 from pot
+*** SUMMARY ***
+Total pot 3630 | No rake
+Board: [Qd As 7h 5s]
+Seat 2: P0007 (small blind) won 3630
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 9 - HandId: #4617595167577212182-19-1773688823 - Holdem no limit (100/400/800) - 2026/03/16 19:20:23 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#1301' 6-max (real money) Seat #2 is the button
+Seat 1: P0006 (22232)
+Seat 2: P0007 (41448)
+Seat 3: P0008 (21351)
+Seat 4: P0009 (2536)
+Seat 5: Hero (26089)
+Seat 6: P0010 (14640)
+*** ANTE/BLINDS ***
+P0008 posts ante 100
+P0009 posts ante 100
+P0006 posts ante 100
+P0007 posts ante 100
+Hero posts ante 100
+P0010 posts ante 100
+P0008 posts small blind 400
+P0009 posts big blind 800
+Dealt to Hero [4d Ks]
+*** PRE-FLOP *** 
+Hero folds
+P0010 folds
+P0006 calls 800
+P0007 calls 800
+P0008 folds
+P0009 raises 1636 to 2436 and is all-in
+P0006 calls 1636
+P0007 calls 1636
+*** FLOP *** [5c 3c Tc]
+P0006 checks
+P0007 bets 2492
+P0006 folds
+*** TURN *** [5c 3c Tc][Qc]
+*** RIVER *** [5c 3c Tc Qc][7h]
+*** SHOW DOWN ***
+P0009 shows [Js Jh] (One pair : Jacks)
+P0007 shows [6c 6h] (Flush Queen high)
+P0007 collected 10800 from pot
+*** SUMMARY ***
+Total pot 10800 | No rake
+Board: [5c 3c Tc Qc 7h]
+Seat 2: P0007 (button) showed [6c 6h] and won 10800 with Flush Queen high
+Seat 4: P0009 (big blind) showed [Js Jh] and lost with One pair : Jacks
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 10 - HandId: #4617595167577212182-20-1773688882 - Holdem no limit (120/500/1000) - 2026/03/16 19:21:22 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#1301' 6-max (real money) Seat #3 is the button
+Seat 1: P0006 (19696)
+Seat 2: P0007 (47220)
+Seat 3: P0008 (20851)
+Seat 5: Hero (25989)
+Seat 6: P0010 (14540)
+*** ANTE/BLINDS ***
+Hero posts ante 120
+P0006 posts ante 120
+P0007 posts ante 120
+P0008 posts ante 120
+P0010 posts ante 120
+Hero posts big blind 1000
+Dealt to Hero [6d Td]
+*** PRE-FLOP *** 
+P0010 folds
+P0006 folds
+P0007 raises 1200 to 2200
+P0008 folds
+Hero calls 1200
+*** FLOP *** [As 8h 4h]
+Hero checks
+P0007 bets 2750
+Hero folds
+P0007 collected 7750 from pot
+*** SUMMARY ***
+Total pot 7750 | No rake
+Board: [As 8h 4h]
+Seat 2: P0007 won 7750
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 10 - HandId: #4617595167577212182-21-1773688919 - Holdem no limit (120/500/1000) - 2026/03/16 19:21:59 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#1301' 6-max (real money) Seat #4 is the button
+Seat 1: P0006 (19576)
+Seat 2: P0007 (49900)
+Seat 3: P0008 (20731)
+Seat 4: P0011 (51293)
+Seat 5: Hero (23669)
+Seat 6: P0010 (14420)
+*** ANTE/BLINDS ***
+Hero posts ante 120
+P0010 posts ante 120
+P0006 posts ante 120
+P0007 posts ante 120
+P0008 posts ante 120
+Hero posts small blind 500
+P0010 posts big blind 1000
+Dealt to Hero [Tc 3d]
+*** PRE-FLOP *** 
+P0006 folds
+P0007 raises 1200 to 2200
+P0008 folds
+Hero folds
+P0010 raises 12100 to 14300 and is all-in
+P0007 calls 12100
+*** FLOP *** [9h 4s 5d]
+*** TURN *** [9h 4s 5d][8s]
+*** RIVER *** [9h 4s 5d 8s][5h]
+*** SHOW DOWN ***
+P0010 shows [2d Ah] (One pair : 5)
+P0007 shows [Qh Ac] (One pair : 5)
+P0007 collected 29700 from pot
+*** SUMMARY ***
+Total pot 29700 | No rake
+Board: [9h 4s 5d 8s 5h]
+Seat 2: P0007 showed [Qh Ac] and won 29700 with One pair : 5
+Seat 6: P0010 (big blind) showed [2d Ah] and lost with One pair : 5
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 11 - HandId: #4617595167577212182-22-1773688963 - Holdem no limit (140/600/1200) - 2026/03/16 19:22:43 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#1301' 6-max (real money) Seat #5 is the button
+Seat 1: P0006 (19456)
+Seat 2: P0007 (65180)
+Seat 3: P0008 (20611)
+Seat 4: P0011 (51293)
+Seat 5: Hero (23049)
+*** ANTE/BLINDS ***
+P0006 posts ante 140
+P0007 posts ante 140
+P0008 posts ante 140
+P0011 posts ante 140
+Hero posts ante 140
+P0006 posts big blind 1200
+Dealt to Hero [4d Kd]
+*** PRE-FLOP *** 
+P0007 folds
+P0008 folds
+P0011 folds
+Hero raises 1200 to 2400
+P0006 calls 1200
+*** FLOP *** [9h 3d Kc]
+P0006 checks
+Hero checks
+*** TURN *** [9h 3d Kc][7s]
+P0006 checks
+Hero bets 3575
+P0006 folds
+Hero collected 9075 from pot
+*** SUMMARY ***
+Total pot 9075 | No rake
+Board: [9h 3d Kc 7s]
+Seat 5: Hero (button) won 9075
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 11 - HandId: #4617595167577212182-23-1773689004 - Holdem no limit (140/600/1200) - 2026/03/16 19:23:24 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#1301' 6-max (real money) Seat #6 is the button
+Seat 1: P0006 (16916)
+Seat 2: P0007 (65040)
+Seat 3: P0008 (20471)
+Seat 4: P0011 (51153)
+Seat 5: Hero (26009)
+Seat 6: P0012 (44466)
+*** ANTE/BLINDS ***
+P0006 posts ante 140
+P0007 posts ante 140
+P0008 posts ante 140
+P0011 posts ante 140
+Hero posts ante 140
+P0006 posts small blind 600
+P0007 posts big blind 1200
+Dealt to Hero [5c Tc]
+*** PRE-FLOP *** 
+P0008 folds
+P0011 calls 1200
+Hero folds
+P0006 folds
+P0007 checks
+*** FLOP *** [Qh Ks Jd]
+P0007 checks
+P0011 checks
+*** TURN *** [Qh Ks Jd][5s]
+P0007 bets 2405
+P0011 calls 2405
+*** RIVER *** [Qh Ks Jd 5s][4c]
+P0007 checks
+P0011 bets 5532
+P0007 calls 5532
+*** SHOW DOWN ***
+P0007 shows [2s Qs] (One pair : Queens)
+P0011 shows [Jc Qd] (Two pairs : Queens and Jacks)
+P0011 collected 19574 from pot
+*** SUMMARY ***
+Total pot 19574 | No rake
+Board: [Qh Ks Jd 5s 4c]
+Seat 2: P0007 (big blind) showed [2s Qs] and lost with One pair : Queens
+Seat 4: P0011 showed [Jc Qd] and won 19574 with Two pairs : Queens and Jacks
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 12 - HandId: #4617595167577212182-24-1773689084 - Holdem no limit (160/700/1400) - 2026/03/16 19:24:44 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#1301' 6-max (real money) Seat #1 is the button
+Seat 1: P0006 (16176)
+Seat 2: P0007 (55763)
+Seat 3: P0008 (20331)
+Seat 4: P0011 (61450)
+Seat 5: Hero (25869)
+Seat 6: P0012 (44466)
+*** ANTE/BLINDS ***
+P0007 posts ante 160
+P0008 posts ante 160
+P0006 posts ante 160
+P0011 posts ante 160
+Hero posts ante 160
+P0012 posts ante 160
+P0007 posts small blind 700
+P0008 posts big blind 1400
+Dealt to Hero [8h 8c]
+*** PRE-FLOP *** 
+P0011 calls 1400
+Hero raises 24309 to 25709 and is all-in
+P0012 folds
+P0006 folds
+P0007 folds
+P0008 folds
+P0011 folds
+Hero collected 30169 from pot
+*** SUMMARY ***
+Total pot 30169 | No rake
+Seat 5: Hero won 30169
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 13 - HandId: #4617595167577212182-25-1773689112 - Holdem no limit (200/800/1600) - 2026/03/16 19:25:12 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#1301' 6-max (real money) Seat #2 is the button
+Seat 1: P0006 (16016)
+Seat 2: P0007 (54903)
+Seat 3: P0008 (18771)
+Seat 4: P0011 (59890)
+Seat 5: Hero (30169)
+Seat 6: P0012 (44306)
+*** ANTE/BLINDS ***
+P0008 posts ante 200
+P0011 posts ante 200
+P0006 posts ante 200
+P0007 posts ante 200
+Hero posts ante 200
+P0012 posts ante 200
+P0008 posts small blind 800
+P0011 posts big blind 1600
+Dealt to Hero [5s 6s]
+*** PRE-FLOP *** 
+Hero folds
+P0012 folds
+P0006 folds
+P0007 folds
+P0008 calls 800
+P0011 checks
+*** FLOP *** [9h 8h 2c]
+P0008 checks
+P0011 checks
+*** TURN *** [9h 8h 2c][As]
+P0008 checks
+P0011 checks
+*** RIVER *** [9h 8h 2c As][5d]
+P0008 checks
+P0011 checks
+*** SHOW DOWN ***
+P0008 shows [4h Qh] (High card : Ace)
+P0011 shows [Th Kc] (High card : Ace)
+P0011 collected 4400 from pot
+*** SUMMARY ***
+Total pot 4400 | No rake
+Board: [9h 8h 2c As 5d]
+Seat 3: P0008 (small blind) showed [4h Qh] and lost with High card : Ace
+Seat 4: P0011 (big blind) showed [Th Kc] and won 4400 with High card : Ace
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 13 - HandId: #4617595167577212182-26-1773689171 - Holdem no limit (200/800/1600) - 2026/03/16 19:26:11 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#1301' 6-max (real money) Seat #3 is the button
+Seat 1: P0006 (15816)
+Seat 2: P0007 (54703)
+Seat 3: P0008 (16971)
+Seat 4: P0011 (62490)
+Seat 5: Hero (29969)
+Seat 6: P0012 (44106)
+*** ANTE/BLINDS ***
+P0011 posts ante 200
+Hero posts ante 200
+P0006 posts ante 200
+P0007 posts ante 200
+P0008 posts ante 200
+P0012 posts ante 200
+P0011 posts small blind 800
+Hero posts big blind 1600
+Dealt to Hero [5d As]
+*** PRE-FLOP *** 
+P0012 folds
+P0006 folds
+P0007 folds
+P0008 folds
+P0011 calls 800
+Hero checks
+*** FLOP *** [Js Tc 5c]
+P0011 checks
+Hero checks
+*** TURN *** [Js Tc 5c][5s]
+P0011 checks
+Hero bets 4000
+P0011 calls 4000
+*** RIVER *** [Js Tc 5c 5s][5h]
+P0011 checks
+Hero bets 24169 and is all-in
+P0011 calls 24169
+*** SHOW DOWN ***
+P0011 shows [Jc 6c] (Full of 5 and Jacks)
+Hero shows [5d As] (Quads of 5)
+Hero collected 60738 from pot
+*** SUMMARY ***
+Total pot 60738 | No rake
+Board: [Js Tc 5c 5s 5h]
+Seat 4: P0011 (small blind) showed [Jc 6c] and lost with Full of 5 and Jacks
+Seat 5: Hero (big blind) showed [5d As] and won 60738 with Quads of 5
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 14 - HandId: #4617595167577212182-27-1773689239 - Holdem no limit (250/1000/2000) - 2026/03/16 19:27:19 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#1301' 6-max (real money) Seat #4 is the button
+Seat 1: P0006 (15616)
+Seat 2: P0007 (54503)
+Seat 3: P0008 (16771)
+Seat 4: P0011 (32521)
+Seat 5: Hero (60738)
+Seat 6: P0012 (43906)
+*** ANTE/BLINDS ***
+Hero posts ante 250
+P0012 posts ante 250
+P0006 posts ante 250
+P0007 posts ante 250
+P0008 posts ante 250
+P0011 posts ante 250
+Hero posts small blind 1000
+P0012 posts big blind 2000
+Dealt to Hero [7s Ac]
+*** PRE-FLOP *** 
+P0006 folds
+P0007 folds
+P0008 folds
+P0011 calls 2000
+Hero folds
+P0012 checks
+*** FLOP *** [9c Qc 4s]
+P0012 checks
+P0011 checks
+*** TURN *** [9c Qc 4s][9s]
+P0012 checks
+P0011 checks
+*** RIVER *** [9c Qc 4s 9s][2c]
+P0012 checks
+P0011 checks
+*** SHOW DOWN ***
+P0011 shows [6s Kd] (One pair : 9)
+P0012 shows [Th Ks] (One pair : 9)
+P0012 collected 6500 from pot
+*** SUMMARY ***
+Total pot 6500 | No rake
+Board: [9c Qc 4s 9s 2c]
+Seat 4: P0011 (button) showed [6s Kd] and lost with One pair : 9
+Seat 6: P0012 (big blind) showed [Th Ks] and won 6500 with One pair : 9
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 15 - HandId: #4617595167577211299-43-1773689316 - Holdem no limit (300/1250/2500) - 2026/03/16 19:28:36 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#0418' 6-max (real money) Seat #4 is the button
+Seat 1: P0013 (7800)
+Seat 2: P0014 (56690)
+Seat 3: Hero (59488)
+Seat 4: P0015 (38564)
+Seat 5: P0016 (67349)
+Seat 6: P0017 (71479)
+*** ANTE/BLINDS ***
+P0016 posts ante 300
+P0017 posts ante 300
+P0013 posts ante 300
+P0014 posts ante 300
+Hero posts ante 300
+P0015 posts ante 300
+P0016 posts small blind 1250
+P0017 posts big blind 2500
+Dealt to Hero [8d 4s]
+*** PRE-FLOP *** 
+P0013 folds
+P0014 raises 53890 to 56390 and is all-in
+Hero folds
+P0015 folds
+P0016 folds
+P0017 folds
+P0014 collected 61940 from pot
+*** SUMMARY ***
+Total pot 61940 | No rake
+Seat 2: P0014 won 61940
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 15 - HandId: #4617595167577211299-44-1773689338 - Holdem no limit (300/1250/2500) - 2026/03/16 19:28:58 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#0418' 6-max (real money) Seat #5 is the button
+Seat 1: P0013 (7500)
+Seat 2: P0014 (61940)
+Seat 3: Hero (59188)
+Seat 4: P0015 (38264)
+Seat 5: P0016 (65799)
+Seat 6: P0017 (68679)
+*** ANTE/BLINDS ***
+P0017 posts ante 300
+P0013 posts ante 300
+P0014 posts ante 300
+Hero posts ante 300
+P0015 posts ante 300
+P0016 posts ante 300
+P0017 posts small blind 1250
+P0013 posts big blind 2500
+Dealt to Hero [8s Js]
+*** PRE-FLOP *** 
+P0014 folds
+Hero raises 2500 to 5000
+P0015 folds
+P0016 raises 3750 to 8750
+P0017 folds
+P0013 folds
+Hero calls 3750
+*** FLOP *** [2h Qh Td]
+Hero checks
+P0016 bets 14983
+Hero folds
+P0016 collected 38033 from pot
+*** SUMMARY ***
+Total pot 38033 | No rake
+Board: [2h Qh Td]
+Seat 5: P0016 (button) won 38033
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 16 - HandId: #4617595167577211299-45-1773689387 - Holdem no limit (350/1500/3000) - 2026/03/16 19:29:47 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#0418' 6-max (real money) Seat #6 is the button
+Seat 1: P0013 (4700)
+Seat 2: P0014 (61640)
+Seat 3: Hero (50138)
+Seat 4: P0015 (37964)
+Seat 5: P0016 (79799)
+Seat 6: P0017 (67129)
+*** ANTE/BLINDS ***
+P0013 posts ante 350
+P0014 posts ante 350
+Hero posts ante 350
+P0015 posts ante 350
+P0016 posts ante 350
+P0017 posts ante 350
+P0013 posts small blind 1500
+P0014 posts big blind 3000
+Dealt to Hero [2s 8s]
+*** PRE-FLOP *** 
+Hero folds
+P0015 folds
+P0016 raises 4500 to 7500
+P0017 folds
+P0013 folds
+P0014 raises 53790 to 61290 and is all-in
+P0016 folds
+P0014 collected 72390 from pot
+*** SUMMARY ***
+Total pot 72390 | No rake
+Seat 2: P0014 (big blind) won 72390
+
+
+Winamax Poker - Tournament "CITY OF GOLD - Daily 10K" buyIn: 0€ + 0€ level: 16 - HandId: #4617595167577211299-46-1773689421 - Holdem no limit (350/1500/3000) - 2026/03/16 19:30:21 UTC
+Table: 'CITY OF GOLD - Daily 10K(1075117655)#0418' 6-max (real money) Seat #1 is the button
+Seat 1: P0013 (2850)
+Seat 2: P0014 (72390)
+Seat 3: Hero (49788)
+Seat 4: P0015 (37614)
+Seat 5: P0016 (71949)
+Seat 6: P0017 (66779)
+*** ANTE/BLINDS ***
+P0014 posts ante 350
+Hero posts ante 350
+P0013 posts ante 350
+P0015 posts ante 350
+P0016 posts ante 350
+P0017 posts ante 350
+P0014 posts small blind 1500
+Hero posts big blind 3000
+Dealt to Hero [8c As]
+*** PRE-FLOP *** 
+P0015 folds
+P0016 raises 4500 to 7500
+P0017 folds
+P0013 folds
+P0014 folds
+Hero raises 41938 to 49438 and is all-in
+P0016 calls 41938
+*** FLOP *** [4d 4h 9c]
+*** TURN *** [4d 4h 9c][9s]
+*** RIVER *** [4d 4h 9c 9s][Qs]
+*** SHOW DOWN ***
+Hero shows [8c As] (Two pairs : 9 and 4)
+P0016 shows [Ac 4s] (Full of 4 and 9)
+P0016 collected 102476 from pot
+*** SUMMARY ***
+Total pot 102476 | No rake
+Board: [4d 4h 9c 9s Qs]
+Seat 3: Hero (big blind) showed [8c As] and lost with Two pairs : 9 and 4
+Seat 5: P0016 showed [Ac 4s] and won 102476 with Full of 4 and 9
+
+

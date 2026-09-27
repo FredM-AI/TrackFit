@@ -69,8 +69,13 @@ Le calendrier est serré. En cas de retard, les stories **C** glissent d'abord e
 
 **Note sur le quota :** repo privé = 2 000 min/mois gratuites, et les minutes Windows comptent double. Le job Linux fait l'essentiel des tests. Le job Windows ne tourne que sur les PR et `main`.
 
-### M0-4 · Corpus réel et documentation du format Winamax · M · `DOING` — 2 tournois reçus et documentés le 26/09
-**Déjà fait :** `docs/formats/winamax.md` (445 mains, conservation vérifiée 445/445) ; fixtures anonymisés `fixtures/winamax/mtt/space-ko/` et `space-ko-3max-itm-reentry/` ; `tools/anonymize.py`. Constats : **fichiers en anglais** ; ITM, re-entry, 3-max et changements de table couverts. **Reste :** les 7 cas du §7 de `winamax.md` (classique, Mystery KO, tickets, satellite, freeroll, table finale, fichier en cours). M1-1 à M1-6 peuvent démarrer ; seules les parties tickets et formats non-KO de M1-6 attendent ces fichiers.
+### M0-4 · Corpus réel et documentation du format Winamax · M · `DOING` — corpus élargi (620+ tournois réels, pseudo `AFeuDoux`) déposé et anonymisé le 27/09. Reste : validation de Frédéric sur la liste des inconnues (CA #2).
+**Déjà fait :**
+- `docs/formats/winamax.md`, `tools/anonymize.py` (porté en Python, exécuté via un Python installé pour l'occasion — `just` ne le requiert pas, seul Claude Code s'en sert ponctuellement).
+- 5 nouveaux fixtures anonymisés à partir du corpus réel déposé dans `fixtures/raw/` (1056 fichiers, 528 tournois, gitignoré) : `classic-itm/` (classique sans KO, ITM), `mystery-ko/` (Mystery KO), `freeroll/` (freeroll MTT 16 580 inscrits), `final-table-heads-up/` (table finale + heads-up réel sur 218 inscrits), `multi-flight-day1/` (multi-flights, `Flight ID` non nul). Plus un edge-case `escaped-currency-in-title/` (nom de tournoi mal ré-encodé).
+- 7/7 cas du §7 de `winamax.md` traités : 4 couverts avec fixture (classique, Mystery KO, freeroll, table finale/heads-up), 3 confirmés **toujours non observables** dans ce corpus de 620+ tournois (ticket payé, satellite ticket gagné, fichier copié en cours de tournoi — voir §7 de `winamax.md` pour le détail).
+- Bonus hors périmètre initial : multi-flights documentés (`Type: flight`, `Flight ID` réel), formats hors scope D2 identifiés dans le corpus brut (Expresso `Mode: sng`, Omaha `*_real_omaha_pot-limit*`) — à faire détecter/rejeter par le parser plutôt qu'à parser.
+- M1-1 à M1-6 peuvent démarrer sans blocage ; seules les parties « payé/gagné via ticket » de M1-6/M5-2 resteront non implémentables tant qu'un exemple n'existe pas.
 
 **Action de Frédéric :** copier dans `fixtures/raw/` (ignoré par git) le contenu de `%APPDATA%\winamax\documents\accounts\<pseudo>\History\`. Le corpus doit contenir au minimum 300 mains et 20 summaries couvrant : classique, PKO, Mystery KO, Space KO, freeroll, satellite avec ticket gagné, tournoi joué via ticket, re-entry, heads-up final, all-in multiway avec side pots.
 
