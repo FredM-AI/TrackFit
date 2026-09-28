@@ -1465,6 +1465,7 @@ dependencies = [
  "gr-parser-api",
  "gr-parser-winamax",
  "gr-store",
+ "gr-synth",
  "tempfile",
  "thiserror 1.0.69",
 ]
@@ -1511,6 +1512,10 @@ dependencies = [
 [[package]]
 name = "gr-synth"
 version = "0.0.1"
+dependencies = [
+ "gr-parser-winamax",
+ "tempfile",
+]
 
 [[package]]
 name = "gr-winmon"

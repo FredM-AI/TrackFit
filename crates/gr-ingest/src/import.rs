@@ -271,4 +271,41 @@ mod tests {
         assert_eq!(summary.files_imported, 0);
         assert_eq!(summary.hands_inserted, 0);
     }
+
+    /// Valide le CA de perf differe de M2-3 (≥1000 mains/s sur 100k mains
+    /// synthetiques), desormais mesurable grace a `gr-synth` (M2-4).
+    /// Ignore par defaut (ecrit ~100k mains sur disque, quelques secondes) :
+    /// `cargo test -p gr-ingest -- --ignored perf_100k`.
+    #[test]
+    #[ignore = "ecrit ~100k mains sur disque ; lancer explicitement avec --ignored"]
+    fn perf_100k_synthetic_hands_imports_at_least_1000_hands_per_second() {
+        let synth_dir = tempfile::tempdir().expect("temp dir for synthetic hands");
+        let mut written = 0usize;
+        for tournament in gr_synth::SynthCorpus::new(100_000, 0x00C0_FFEE) {
+            let path = synth_dir
+                .path()
+                .join(format!("{}.txt", tournament.file_stem));
+            std::fs::write(&path, &tournament.content).expect("write synthetic tournament file");
+            written += tournament.hand_count;
+        }
+        assert_eq!(written, 100_000);
+
+        let (_db_dir, store) = open_store();
+        let roots = vec![synth_dir.path().to_path_buf()];
+
+        let start = std::time::Instant::now();
+        let summary = run_import(&store, &roots, &CancelToken::new(), |_| {})
+            .expect("import of the synthetic corpus should not hit a storage error");
+        let elapsed = start.elapsed();
+
+        assert_eq!(summary.hands_failed, 0);
+        assert_eq!(summary.hands_inserted, 100_000);
+
+        let hands_per_sec = 100_000.0 / elapsed.as_secs_f64();
+        println!("M2-3 perf (differee) : {hands_per_sec:.0} mains/s ({elapsed:?} pour 100k mains)");
+        assert!(
+            hands_per_sec >= 1000.0,
+            "cible PRD/BACKLOG M2-3 : >= 1000 mains/s, mesure {hands_per_sec:.0}"
+        );
+    }
 }
