@@ -227,10 +227,22 @@ Limite documentée (R-FORMAT) : le champ `Type` du summary ne distingue pas KO/P
 
 ## M3 — Temps réel et sessions (§8.4)
 
-### M3-1 · Assistant de premier lancement · M · `TODO` (UC1)
+### M3-1 · Assistant de premier lancement · M · `DOING` (UC1) — implémenté, CA à valider par Frédéric
 Détection de `%APPDATA%\winamax\documents\accounts\*\History`, choix des pseudos → profil Hero, import initial.
 
-**CA :** un ami configure l'application en moins de 5 min sans aide.
+**CA :** un ami configure l'application en moins de 5 min sans aide. ⏸ **Ce CA est un test d'usage humain, pas une vérification automatisable** : Claude Code a construit l'assistant complet (backend + écran React), mais seul Frédéric peut chronométrer un vrai « ami sans aide » via `just dev`. À repasser `DONE` après ce test manuel.
+
+Réalisé :
+- `gr-ingest::detect_winamax_accounts` — scan de `accounts_dir`, un compte par sous-dossier ayant un sous-dossier `history` (casse tolérée insensible, §8.1 ⚠️), avec décompte de fichiers de mains déjà présents. Testé (dossier manquant, casse `History`, comptes sans historique ignorés, tri par pseudo).
+- `gr-store::hero` — `hero_profiles`/`hero_accounts` (D19) : création de profil (un seul par défaut à la fois), rattachement de pseudo idempotent (réutilise `get_or_create_player_id` de M2-6), liste des profils. Table `settings` (clé/valeur) pour le flag « premier lancement terminé ».
+- **Première infra IPC frontend** : `ts-rs` génère `ui/src/bindings.ts` (types `WinamaxAccountPayload`/`ImportProgressPayload`/`ImportSummaryPayload`) à chaque `cargo test -p graphite` (donc `just check`) ; `ui/src/lib/api.ts` encapsule les appels `invoke`/`listen`. `@tauri-apps/api` épinglé en `~2.11.1` pour rester sur la même mineure que le crate `tauri` (2.11.6) — `cargo tauri build` refuse sinon (« version mismatched Tauri packages »).
+- Commandes Tauri : `detect_winamax_accounts`, `create_hero_profile_and_accounts`, `is_first_launch_complete`, `mark_first_launch_complete`. L'import initial réutilise `import_paths` (M2-3) tel quel, avec sa progression (`import://progress`).
+- Écran `ui/src/screens/Setup.tsx` (route `/setup`) : détection → sélection des comptes (ou saisie manuelle si aucun détecté) → nom du profil → import avec barre de progression → résumé. `routes/index.tsx` redirige vers `/setup` tant que le premier lancement n'est pas terminé (dégrade silencieusement vers l'accueil si l'appel IPC échoue, ex. hors contexte Tauri).
+
+Limites documentées (simplifications volontaires, périmètre M3-1 uniquement) :
+- L'assistant s'affiche dans l'`AppShell` normal (barre latérale visible) plutôt que dans une mise en page dédiée sans navigation — accepté pour rester dans le budget de cette story.
+- Aucun sélecteur de dossier manuel (dialogue de fichiers) si la détection automatique échoue : seule une saisie de pseudo est proposée, sans import associé.
+- `ImportSummaryPayload` (Tauri) a été complété avec `summaries_attached`/`summaries_failed`, oubliés lors du câblage initial de M2-6.
 
 ### M3-2 · Watcher temps réel · M · `TODO`
 `notify` + polling de secours (2 s) ; lecture incrémentale par offset ; backoff sur fichier verrouillé ; gestion de la troncature et du renommage.

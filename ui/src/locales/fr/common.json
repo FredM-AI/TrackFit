@@ -26,5 +26,21 @@
   },
   "placeholder": {
     "screenBody": "Écran « {{screen}} » — à venir."
+  },
+  "setup": {
+    "title": "Bienvenue sur Graphite",
+    "intro": "Configurons votre profil Hero et importons vos mains existantes.",
+    "detecting": "Recherche des comptes Winamax…",
+    "accountsFound": "Comptes Winamax détectés",
+    "handFileCount": "{{count}} fichier(s) de mains",
+    "noAccountsFound": "Aucun compte Winamax détecté sous %APPDATA%\\winamax\\documents\\accounts\\. Vous pouvez continuer en saisissant votre pseudo ; l'import se fera plus tard.",
+    "manualPseudo": "Votre pseudo Winamax",
+    "profileName": "Nom du profil Hero",
+    "start": "Démarrer",
+    "importing": "Import en cours…",
+    "importProgress": "{{done}}/{{total}} fichiers — {{hands}} mains importées",
+    "done": "Configuration terminée !",
+    "doneSummary": "{{hands}} mains importées, {{tournaments}} tournois rattachés.",
+    "finish": "Aller à l'accueil"
   }
 }

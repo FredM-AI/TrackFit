@@ -1,6 +1,9 @@
+#[cfg(test)]
+mod bindings_gen;
 mod import;
 mod import_errors;
 mod logs;
+mod setup;
 
 use std::sync::Arc;
 
@@ -45,6 +48,10 @@ pub fn run() {
             import_errors::list_import_errors,
             import_errors::reparse_import_error_cmd,
             import_errors::ignore_import_error,
+            setup::detect_winamax_accounts,
+            setup::create_hero_profile_and_accounts,
+            setup::is_first_launch_complete,
+            setup::mark_first_launch_complete,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

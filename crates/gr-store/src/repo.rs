@@ -189,11 +189,13 @@ fn insert_actions(
     Ok(())
 }
 
-pub(crate) fn get_or_create_room(tx: &Transaction<'_>, room: Room) -> Result<i64, StoreError> {
+/// Prend `&Connection` (pas `&Transaction`) : appelable depuis une
+/// transaction existante (deref coercion) ou sans transaction (M3-1).
+pub(crate) fn get_or_create_room(conn: &Connection, room: Room) -> Result<i64, StoreError> {
     let (code, name) = match room {
         Room::Winamax => ("winamax", "Winamax"),
     };
-    if let Some(id) = tx
+    if let Some(id) = conn
         .query_row("SELECT id FROM rooms WHERE code = ?1", [code], |row| {
             row.get(0)
         })
@@ -201,11 +203,11 @@ pub(crate) fn get_or_create_room(tx: &Transaction<'_>, room: Room) -> Result<i64
     {
         return Ok(id);
     }
-    tx.execute(
+    conn.execute(
         "INSERT INTO rooms (code, name) VALUES (?1, ?2)",
         params![code, name],
     )?;
-    Ok(tx.last_insert_rowid())
+    Ok(conn.last_insert_rowid())
 }
 
 /// Cree le tournoi "provisoire" s'il est inconnu pour `(room_id,
@@ -261,22 +263,23 @@ pub(crate) fn get_or_create_player(
 
 /// Cree le joueur s'il est inconnu, sans toucher `first_seen_at`/
 /// `last_seen_at` (laisses `NULL`) : pour un appelant qui n'a pas
-/// d'horodatage de main fiable (rattachement d'un summary, M2-6).
+/// d'horodatage de main fiable (rattachement d'un summary, M2-6, ou
+/// creation d'un compte Hero, M3-1). Prend `&Connection` (pas `&Transaction`).
 pub(crate) fn get_or_create_player_id(
-    tx: &Transaction<'_>,
+    conn: &Connection,
     room_id: i64,
     screen_name: &str,
 ) -> Result<i64, StoreError> {
-    tx.execute(
+    conn.execute(
         "INSERT INTO players (room_id, screen_name) VALUES (?1, ?2)
          ON CONFLICT(room_id, screen_name) DO NOTHING",
         params![room_id, screen_name],
     )?;
-    get_player_id(tx, room_id, screen_name)
+    get_player_id(conn, room_id, screen_name)
 }
 
-fn get_player_id(tx: &Transaction<'_>, room_id: i64, screen_name: &str) -> Result<i64, StoreError> {
-    Ok(tx.query_row(
+fn get_player_id(conn: &Connection, room_id: i64, screen_name: &str) -> Result<i64, StoreError> {
+    Ok(conn.query_row(
         "SELECT id FROM players WHERE room_id = ?1 AND screen_name = ?2",
         params![room_id, screen_name],
         |row| row.get(0),
