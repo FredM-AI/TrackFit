@@ -1,4 +1,6 @@
 mod import;
+mod import_errors;
+mod logs;
 
 use std::sync::Arc;
 
@@ -22,6 +24,10 @@ pub fn run() {
                 .and_then(|exe| exe.parent().map(std::path::Path::to_path_buf))
                 .unwrap_or_else(|| std::path::PathBuf::from("."));
             let data_dir = gr_store::resolve_data_dir(&exe_dir);
+
+            let log_guard = logs::init(&data_dir)?;
+            app.manage(log_guard);
+
             let store = gr_store::Store::open(&data_dir)?;
             app.manage(ImportState {
                 store: Arc::new(store),
@@ -32,7 +38,10 @@ pub fn run() {
         })
         .invoke_handler(tauri::generate_handler![
             import::import_paths,
-            import::cancel_import
+            import::cancel_import,
+            import_errors::list_import_errors,
+            import_errors::reparse_import_error_cmd,
+            import_errors::ignore_import_error,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

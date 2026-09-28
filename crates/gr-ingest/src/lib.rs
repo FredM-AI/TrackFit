@@ -8,5 +8,8 @@ mod import;
 mod scan;
 
 pub use error::IngestError;
-pub use import::{run_import, CancelToken, ImportFailure, ImportProgress, ImportSummary};
+pub use import::{
+    reparse_import_error, run_import, CancelToken, ImportFailure, ImportProgress, ImportSummary,
+    ReparseOutcome,
+};
 pub use scan::discover_hand_files;
