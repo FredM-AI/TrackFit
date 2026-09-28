@@ -3,3 +3,13 @@ name = "gr-ingest"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
+
+[dependencies]
+gr-core = { path = "../gr-core" }
+gr-parser-api = { path = "../gr-parser-api" }
+gr-parser-winamax = { path = "../gr-parser-winamax" }
+gr-store = { path = "../gr-store" }
+thiserror = "1"
+
+[dev-dependencies]
+tempfile = "3"
