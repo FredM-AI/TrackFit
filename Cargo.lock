@@ -1460,6 +1460,14 @@ version = "0.0.1"
 [[package]]
 name = "gr-ingest"
 version = "0.0.1"
+dependencies = [
+ "gr-core",
+ "gr-parser-api",
+ "gr-parser-winamax",
+ "gr-store",
+ "tempfile",
+ "thiserror 1.0.69",
+]
 
 [[package]]
 name = "gr-parser-api"
@@ -1512,6 +1520,8 @@ version = "0.0.1"
 name = "graphite"
 version = "0.0.1"
 dependencies = [
+ "gr-ingest",
+ "gr-store",
  "log",
  "serde",
  "serde_json",

@@ -184,13 +184,15 @@ Insertion `hands`, `hand_players` (sans flags de stats pour l'instant), `actions
 - Transaction par lot de 500 mains. ✅ `BATCH_SIZE = 500` ; `insert_hands` découpe la tranche reçue en lots (`chunks(BATCH_SIZE)`), chacun dans sa propre transaction SQLite, avec récupération/création du tournoi provisoire (`status = 'PROVISIONAL'`) une fois par lot. Testé sur un lot fractionné en plusieurs transactions successives (aucune main perdue ni dupliquée).
 - Insertion testée de bout en bout contre une vraie main parsée du corpus (`fixtures/winamax/mtt/space-ko-3max-itm-reentry/`) : `hands`, `hand_players`, `actions` et `hand_raw` (compressé zstd) tous peuplés et cohérents en nombre de lignes. `players`/`rooms` upsertés par `(room_id, screen_name)`/`code`. Positions, profondeurs, `hand_class`, `net_chips`, showdown et flags de stats restent volontairement hors périmètre (M4).
 
-### M2-3 · Import en masse · M · `TODO`
+### M2-3 · Import en masse · M · `DONE` (perf différée, voir note)
 Sélection de dossiers ou de fichiers, progression (événement IPC), annulation, rapport final.
 
 **CA :**
-- Import du corpus complet sans erreur.
-- Réimport = 0 insertion, N doublons.
-- Premier jet de ≥ 1 000 mains/s sur 100 000 mains synthétiques.
+- Import du corpus complet sans erreur. ✅ `gr-ingest::run_import` (nouveau crate) : découverte récursive des fichiers `.txt` (hors `_summary.txt`, docs/formats/winamax.md §2), parsing + insertion par lots via `gr-store`. Testé sur tout le corpus committé (`fixtures/winamax/`) : 0 échec, 0 doublon au premier passage.
+- Réimport = 0 insertion, N doublons. ✅ Deuxième passage sur le même corpus : `hands_inserted = 0`, `hands_duplicate` = total de la première passe.
+- Premier jet de ≥ 1 000 mains/s sur 100 000 mains synthétiques. ⏸ **Différé à M2-4** (décision Frédéric, 28/09) : ce CA nécessite `gr-synth`, qui n'existe pas encore et qui est la story suivante — dépendance amont non résolue à l'écriture du BACKLOG. Le pipeline (scan + parse + insertion par lots) est en place et testé fonctionnellement ; la mesure quantitative sera faite dès que `gr-synth` fournira les 100k mains synthétiques.
+
+Câblage : `gr-ingest` est un crate pur (testable, aucune dépendance Tauri) ; `src-tauri` expose `import_paths`/`cancel_import` (état `ImportState` géré via `app.manage`, `Store` ouvert au démarrage via `resolve_data_dir`+ADR-007) et émet `import://progress`. Annulation coopérative testée (`CancelToken`, arrêt avant le fichier suivant). Aucun écran ne consomme encore ces commandes (sélecteur de dossier/fichier still à faire en UI, cf. M3-1) : câblage backend uniquement à ce stade.
 
 ### M2-4 · `gr-synth` : générateur de mains synthétiques · M · `TODO`
 Générateur de tournois cohérents au format Winamax, basé **exclusivement** sur les motifs documentés en M0-4, avec une graine déterministe.
