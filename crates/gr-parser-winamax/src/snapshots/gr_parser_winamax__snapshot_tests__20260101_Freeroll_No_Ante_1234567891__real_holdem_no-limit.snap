@@ -1,0 +1,147 @@
+---
+source: crates/gr-parser-winamax/src/snapshot_tests.rs
+expression: hands
+---
+[
+    HandRecord {
+        room_hand_id: "#1234567891-1-1",
+        tournament_name: "Freeroll No Ante",
+        tournament_room_id: "1234567891",
+        table_name: "Freeroll No Ante(1234567891)#1",
+        table_max_seats: 6,
+        button_seat: 1,
+        level: 1,
+        sb: Chips(
+            10,
+        ),
+        bb: Chips(
+            25,
+        ),
+        ante: Chips(
+            0,
+        ),
+        played_at: 1767225600000,
+        seats: [
+            SeatInfo {
+                seat: 1,
+                pseudo: "Hero",
+                starting_stack: Chips(
+                    1500,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+            SeatInfo {
+                seat: 2,
+                pseudo: "P0002",
+                starting_stack: Chips(
+                    1500,
+                ),
+                bounty: None,
+                dealt_in: true,
+            },
+        ],
+        actions: [
+            ActionRecord {
+                street: Preflop,
+                pseudo: "Hero",
+                kind: PostSmallBlind,
+                amount: Some(
+                    Chips(
+                        10,
+                    ),
+                ),
+                to_amount: None,
+                is_all_in: false,
+                pot: None,
+                shown_cards: None,
+                shown_label: None,
+            },
+            ActionRecord {
+                street: Preflop,
+                pseudo: "P0002",
+                kind: PostBigBlind,
+                amount: Some(
+                    Chips(
+                        25,
+                    ),
+                ),
+                to_amount: None,
+                is_all_in: false,
+                pot: None,
+                shown_cards: None,
+                shown_label: None,
+            },
+            ActionRecord {
+                street: Preflop,
+                pseudo: "Hero",
+                kind: Fold,
+                amount: None,
+                to_amount: None,
+                is_all_in: false,
+                pot: None,
+                shown_cards: None,
+                shown_label: None,
+            },
+            ActionRecord {
+                street: Preflop,
+                pseudo: "P0002",
+                kind: Collected,
+                amount: Some(
+                    Chips(
+                        35,
+                    ),
+                ),
+                to_amount: None,
+                is_all_in: false,
+                pot: Some(
+                    Pot,
+                ),
+                shown_cards: None,
+                shown_label: None,
+            },
+        ],
+        board: [],
+        pots: [
+            PotResult {
+                pot: Pot,
+                amount: Chips(
+                    35,
+                ),
+                winners: [
+                    (
+                        "P0002",
+                        Chips(
+                            35,
+                        ),
+                    ),
+                ],
+            },
+        ],
+        total_pot: Chips(
+            35,
+        ),
+        rake: Chips(
+            0,
+        ),
+        uncalled_excess: Chips(
+            15,
+        ),
+        hero_pseudo: Some(
+            "Hero",
+        ),
+        hero_cards: Some(
+            (
+                Card {
+                    rank: Ace,
+                    suit: Hearts,
+                },
+                Card {
+                    rank: King,
+                    suit: Diamonds,
+                },
+            ),
+        ),
+        parser_version: "0.0.1",
+    },
+]

@@ -70,18 +70,34 @@ fn parse_header_line(line: &str, line_no: usize) -> Result<HeaderFields, ParseEr
     let (blinds, rest) = rest
         .split_once(") - ")
         .ok_or_else(|| err(line_no, line, "parenthese fermante des blindes"))?;
-    let mut blind_parts = blinds.split('/');
-    let mut next_chips = |what: &'static str| -> Result<Chips, ParseError> {
-        blind_parts
-            .next()
-            .ok_or_else(|| err(line_no, line, what))?
-            .parse::<i64>()
+    let parse_component = |s: &str, what: &'static str| -> Result<Chips, ParseError> {
+        s.parse::<i64>()
             .map(Chips::from_i64)
             .map_err(|_| err(line_no, line, what))
     };
-    let ante = next_chips("ante")?;
-    let sb = next_chips("small blind")?;
-    let bb = next_chips("big blind")?;
+    // `(ante/SB/BB)` avec ante, mais `(SB/BB)` sans ante au niveau 1 de
+    // certains freerolls/tournois observe reellement (docs/formats/winamax.md
+    // §4.1 notait deja ce cas comme "a observer" ; confirme, cf.
+    // fixtures/winamax/edge-cases/no-ante-blinds/).
+    let (ante, sb, bb) = match blinds.split('/').collect::<Vec<_>>().as_slice() {
+        [ante_str, sb_str, bb_str] => (
+            parse_component(ante_str, "ante")?,
+            parse_component(sb_str, "small blind")?,
+            parse_component(bb_str, "big blind")?,
+        ),
+        [sb_str, bb_str] => (
+            Chips::ZERO,
+            parse_component(sb_str, "small blind")?,
+            parse_component(bb_str, "big blind")?,
+        ),
+        _ => {
+            return Err(err(
+                line_no,
+                line,
+                "nombre de composantes de blindes inattendu",
+            ))
+        }
+    };
 
     let date_str = rest
         .strip_suffix(" UTC")
@@ -112,9 +128,15 @@ fn parse_table_line(line: &str, line_no: usize) -> Result<TableFields, ParseErro
     let rest = line
         .strip_prefix("Table: '")
         .ok_or_else(|| err(line_no, line, "prefixe de la ligne de table"))?;
-    let (table_name, rest) = rest
-        .split_once('\'')
+    // Le nom du tournoi peut contenir une apostrophe (ex. reel : "Hold'em
+    // [180 Max]", "Deepstack Hold'em") : s'arreter a la PREMIERE apostrophe
+    // tronquerait le nom a "Hold". Le vrai guillemet fermant est toujours
+    // suivi d'un espace (avant "N-max"), ce qu'une apostrophe interne au nom
+    // n'est jamais (fixtures/winamax/edge-cases/apostrophe-in-tournament-name/).
+    let close = rest
+        .rfind("' ")
         .ok_or_else(|| err(line_no, line, "guillemet fermant du nom de table"))?;
+    let (table_name, rest) = (&rest[..close], &rest[close + 1..]);
 
     let open = table_name
         .rfind('(')
@@ -228,116 +250,33 @@ fn base_action(street: Street, is_all_in: bool, kind: ActionKind, pseudo: &str) 
     }
 }
 
-/// Verbes de mise simple : `<marker><montant>[ and is all-in]`. Toutes partagent
-/// la meme mecanique (montant ajoute litteralement, cumule dans les deux
-/// tables de contributions) ; seule l'ante ne compte pas dans la street (§4.1).
+/// Verbes de mise simple : `<verbe><montant>[ and is all-in]`. Toutes
+/// partagent la meme mecanique (montant ajoute litteralement, cumule dans
+/// les deux tables de contributions) ; seule l'ante ne compte pas dans la
+/// street (§4.1). Sans espace de tete : le pseudo est deja isole par
+/// [`strip_known_pseudo`] avant que ces verbes ne soient testes.
 const WAGER_VERBS: &[(&str, ActionKind, bool)] = &[
-    (" posts ante ", ActionKind::PostAnte, false),
-    (" posts small blind ", ActionKind::PostSmallBlind, true),
-    (" posts big blind ", ActionKind::PostBigBlind, true),
-    (" calls ", ActionKind::Call, true),
-    (" bets ", ActionKind::Bet, true),
+    ("posts ante ", ActionKind::PostAnte, false),
+    ("posts small blind ", ActionKind::PostSmallBlind, true),
+    ("posts big blind ", ActionKind::PostBigBlind, true),
+    ("calls ", ActionKind::Call, true),
+    ("bets ", ActionKind::Bet, true),
 ];
 
-fn try_parse_wager(
-    line: &str,
-    line_no: usize,
-    street_contrib: &mut HashMap<String, Chips>,
-    total_contrib: &mut HashMap<String, Chips>,
-) -> Option<Result<(ActionKind, String, Chips), ParseError>> {
-    for &(marker, kind, counts_toward_street) in WAGER_VERBS {
-        if let Some(idx) = line.rfind(marker) {
-            let pseudo = &line[..idx];
-            let amount_str = &line[idx + marker.len()..];
-            return Some(
-                parse_chips(amount_str, line, line_no, marker.trim()).map(|amount| {
-                    add_contrib(total_contrib, pseudo, amount);
-                    if counts_toward_street {
-                        add_contrib(street_contrib, pseudo, amount);
-                    }
-                    (kind, pseudo.to_string(), amount)
-                }),
-            );
-        }
-    }
-    None
-}
-
-/// `P raises X to Y` : X est relatif a la mise de table courante (pas au deja-mise
-/// du joueur), donc inutilise ; l'ajout reel = `Y - street_contrib[pseudo]` (§8.2-7).
-fn parse_raise(
-    line: &str,
-    line_no: usize,
-    idx: usize,
-    marker_len: usize,
-    street_contrib: &mut HashMap<String, Chips>,
-    total_contrib: &mut HashMap<String, Chips>,
-) -> Result<(String, Chips, Chips), ParseError> {
-    let pseudo = &line[..idx];
-    let rest = &line[idx + marker_len..];
-    let (_, to_str) = rest
-        .split_once(" to ")
-        .ok_or_else(|| err(line_no, line, "marqueur \" to \" de la relance"))?;
-    let to_amount = parse_chips(to_str, line, line_no, "montant total de la relance")?;
-    let previous = street_contrib.get(pseudo).copied().unwrap_or(Chips::ZERO);
-    let added = to_amount - previous;
-    add_contrib(total_contrib, pseudo, added);
-    street_contrib.insert(pseudo.to_string(), to_amount);
-    Ok((pseudo.to_string(), added, to_amount))
-}
-
-fn parse_shows(
-    line: &str,
-    line_no: usize,
-    idx: usize,
-    marker_len: usize,
-) -> Result<(String, Vec<Card>, Option<String>), ParseError> {
-    let pseudo = &line[..idx];
-    let rest = &line[idx + marker_len..];
-    let (cards_str, rest) = rest
-        .split_once(']')
-        .ok_or_else(|| err(line_no, line, "crochet fermant des cartes montrees"))?;
-    let cards = cards_str
-        .split_whitespace()
-        .map(|t| {
-            t.parse::<Card>()
-                .map_err(|_| err(line_no, line, "carte montree invalide"))
-        })
-        .collect::<Result<Vec<_>, _>>()?;
-    let label = rest
-        .trim()
-        .strip_prefix('(')
-        .and_then(|s| s.strip_suffix(')'))
-        .map(str::to_string);
-    Ok((pseudo.to_string(), cards, label))
-}
-
-fn parse_collected(
-    line: &str,
-    line_no: usize,
-    idx: usize,
-    marker_len: usize,
-) -> Result<(String, Chips, PotKind), ParseError> {
-    let pseudo = &line[..idx];
-    let rest = &line[idx + marker_len..];
-    let (amount_str, pot_str) = rest
-        .split_once(" from ")
-        .ok_or_else(|| err(line_no, line, "marqueur \" from \" du pot"))?;
-    let amount = parse_chips(amount_str, line, line_no, "montant collecte")?;
-    let pot = match pot_str {
-        "pot" => PotKind::Pot,
-        "main pot" => PotKind::Main,
-        other => {
-            let k = other
-                .strip_prefix("side pot ")
-                .ok_or_else(|| err(line_no, line, "type de pot inconnu"))?;
-            PotKind::Side(
-                k.parse()
-                    .map_err(|_| err(line_no, line, "numero de side pot"))?,
-            )
-        }
-    };
-    Ok((pseudo.to_string(), amount, pot))
+/// Isole le pseudo en tete de `line` parmi les pseudos connus de la main
+/// (issus des lignes `Seat N: ...`, deja parsees avant toute action), en
+/// retenant le plus long qui correspond. Necessaire des qu'un pseudo peut
+/// lui-meme contenir un mot d'action : observe reellement avec le pseudo
+/// "Big Bets 99", qui faisait matcher a tort le verbe "bets" par une
+/// recherche de sous-chaine avant meme d'atteindre le vrai verbe de la ligne
+/// (fixtures/winamax/edge-cases/pseudo-contains-action-verb/).
+fn strip_known_pseudo<'a>(line: &'a str, known_pseudos: &[String]) -> Option<(&'a str, &'a str)> {
+    let len = known_pseudos
+        .iter()
+        .filter(|p| line.starts_with(p.as_str()))
+        .map(String::len)
+        .max()?;
+    Some((&line[..len], &line[len..]))
 }
 
 /// Parse une ligne d'action (PAR-7), en tenant a jour les mises de la street
@@ -346,50 +285,96 @@ fn parse_action_line(
     line: &str,
     line_no: usize,
     street: Street,
+    known_pseudos: &[String],
     street_contrib: &mut HashMap<String, Chips>,
     total_contrib: &mut HashMap<String, Chips>,
 ) -> Result<ActionRecord, ParseError> {
-    let (line, is_all_in) = match line.strip_suffix(" and is all-in") {
-        Some(rest) => (rest, true),
-        None => (line, false),
+    let (pseudo, rest) = strip_known_pseudo(line, known_pseudos)
+        .ok_or_else(|| err(line_no, line, "pseudo connu en tete de ligne d'action"))?;
+    let rest = rest
+        .strip_prefix(' ')
+        .ok_or_else(|| err(line_no, line, "espace apres le pseudo"))?;
+
+    let (rest, is_all_in) = match rest.strip_suffix(" and is all-in") {
+        Some(r) => (r, true),
+        None => (rest, false),
     };
 
-    if let Some(pseudo) = line.strip_suffix(" folds") {
+    if rest == "folds" {
         return Ok(base_action(street, is_all_in, ActionKind::Fold, pseudo));
     }
-    if let Some(pseudo) = line.strip_suffix(" checks") {
+    if rest == "checks" {
         return Ok(base_action(street, is_all_in, ActionKind::Check, pseudo));
     }
-    if let Some(result) = try_parse_wager(line, line_no, street_contrib, total_contrib) {
-        let (kind, pseudo, amount) = result?;
-        let mut a = base_action(street, is_all_in, kind, &pseudo);
-        a.amount = Some(amount);
-        return Ok(a);
+    for &(verb, kind, counts_toward_street) in WAGER_VERBS {
+        if let Some(amount_str) = rest.strip_prefix(verb) {
+            let amount = parse_chips(amount_str, line, line_no, verb.trim())?;
+            add_contrib(total_contrib, pseudo, amount);
+            if counts_toward_street {
+                add_contrib(street_contrib, pseudo, amount);
+            }
+            let mut a = base_action(street, is_all_in, kind, pseudo);
+            a.amount = Some(amount);
+            return Ok(a);
+        }
     }
-    if let Some(idx) = line.rfind(" raises ") {
-        let (pseudo, added, to_amount) = parse_raise(
-            line,
-            line_no,
-            idx,
-            " raises ".len(),
-            street_contrib,
-            total_contrib,
-        )?;
-        let mut a = base_action(street, is_all_in, ActionKind::Raise, &pseudo);
+    // `P raises X to Y` : X est relatif a la mise de table courante (pas au
+    // deja-mise du joueur), donc inutilise ; l'ajout reel =
+    // `Y - street_contrib[pseudo]` (§8.2-7).
+    if let Some(rest) = rest.strip_prefix("raises ") {
+        let (_, to_str) = rest
+            .split_once(" to ")
+            .ok_or_else(|| err(line_no, line, "marqueur \" to \" de la relance"))?;
+        let to_amount = parse_chips(to_str, line, line_no, "montant total de la relance")?;
+        let previous = street_contrib.get(pseudo).copied().unwrap_or(Chips::ZERO);
+        let added = to_amount - previous;
+        add_contrib(total_contrib, pseudo, added);
+        street_contrib.insert(pseudo.to_string(), to_amount);
+        let mut a = base_action(street, is_all_in, ActionKind::Raise, pseudo);
         a.amount = Some(added);
         a.to_amount = Some(to_amount);
         return Ok(a);
     }
-    if let Some(idx) = line.rfind(" shows [") {
-        let (pseudo, cards, label) = parse_shows(line, line_no, idx, " shows [".len())?;
-        let mut a = base_action(street, is_all_in, ActionKind::Shows, &pseudo);
+    if let Some(rest) = rest.strip_prefix("shows [") {
+        let (cards_str, rest) = rest
+            .split_once(']')
+            .ok_or_else(|| err(line_no, line, "crochet fermant des cartes montrees"))?;
+        let cards = cards_str
+            .split_whitespace()
+            .map(|t| {
+                t.parse::<Card>()
+                    .map_err(|_| err(line_no, line, "carte montree invalide"))
+            })
+            .collect::<Result<Vec<_>, _>>()?;
+        let label = rest
+            .trim()
+            .strip_prefix('(')
+            .and_then(|s| s.strip_suffix(')'))
+            .map(str::to_string);
+        let mut a = base_action(street, is_all_in, ActionKind::Shows, pseudo);
         a.shown_cards = Some(cards);
         a.shown_label = label;
         return Ok(a);
     }
-    if let Some(idx) = line.rfind(" collected ") {
-        let (pseudo, amount, pot) = parse_collected(line, line_no, idx, " collected ".len())?;
-        let mut a = base_action(street, is_all_in, ActionKind::Collected, &pseudo);
+    if let Some(rest) = rest.strip_prefix("collected ") {
+        let (amount_str, pot_str) = rest
+            .split_once(" from ")
+            .ok_or_else(|| err(line_no, line, "marqueur \" from \" du pot"))?;
+        let amount = parse_chips(amount_str, line, line_no, "montant collecte")?;
+        let pot = match pot_str {
+            "pot" => PotKind::Pot,
+            "main pot" => PotKind::Main,
+            other => {
+                let k = other
+                    .strip_prefix("side pot ")
+                    .ok_or_else(|| err(line_no, line, "type de pot inconnu"))?;
+                PotKind::Side(
+                    k.parse()
+                        .map_err(|_| err(line_no, line, "numero de side pot"))?,
+                )
+            }
+        };
+        let mut a = base_action(street, is_all_in, ActionKind::Collected, pseudo);
         a.amount = Some(amount);
         a.pot = Some(pot);
         return Ok(a);
@@ -547,6 +532,10 @@ pub(crate) fn parse_hand(text: &str) -> Result<HandRecord, ParseError> {
     let (header, table, mut seats) = parse_prelude(&lines, &mut idx)?;
     let mut dealt_in: HashMap<String, bool> =
         seats.iter().map(|s| (s.pseudo.clone(), false)).collect();
+    // Les pseudos sont connus des la lecture des sieges, avant toute action :
+    // necessaire pour isoler le pseudo en tete de chaque ligne d'action sans
+    // ambiguite (voir `strip_known_pseudo`).
+    let known_pseudos: Vec<String> = seats.iter().map(|s| s.pseudo.clone()).collect();
 
     let mut street = Street::Preflop;
     let mut street_contrib: HashMap<String, Chips> = HashMap::new();
@@ -601,6 +590,7 @@ pub(crate) fn parse_hand(text: &str) -> Result<HandRecord, ParseError> {
             line,
             line_no,
             street,
+            &known_pseudos,
             &mut street_contrib,
             &mut total_contrib,
         )?;
@@ -750,5 +740,73 @@ mod tests {
         assert_eq!(seat.pseudo, "Marie-Claire.99_x");
         let seat = parse_seat_line("Seat 1: Jean Dupont (20000)", 3).unwrap();
         assert_eq!(seat.pseudo, "Jean Dupont");
+    }
+
+    use crate::split_hand_blocks;
+
+    fn read_fixture(rel_path: &str) -> String {
+        let path = std::path::Path::new(env!("CARGO_MANIFEST_DIR"))
+            .join("../..")
+            .join(rel_path);
+        std::fs::read_to_string(&path).unwrap_or_else(|e| panic!("{path:?}: {e}"))
+    }
+
+    /// Trouve reellement sur des vrais tournois Winamax ("Hold'em [180 Max]",
+    /// "Deepstack Hold'em") : la ligne `Table:` ne doit pas s'arreter a la
+    /// premiere apostrophe du nom du tournoi.
+    #[test]
+    fn apostrophe_in_tournament_name_does_not_truncate_the_table_name() {
+        let text = read_fixture(
+            "fixtures/winamax/edge-cases/apostrophe-in-tournament-name/20260101_Hold'em Test(1234567890)_real_holdem_no-limit.txt",
+        );
+        let (blocks, _) = split_hand_blocks(&text);
+        let hand = parse_hand(blocks[0]).unwrap();
+        assert_eq!(hand.tournament_name, "Hold'em Test");
+        assert_eq!(hand.tournament_room_id, "1234567890");
+        assert_eq!(hand.table_name, "Hold'em Test(1234567890)#1");
+    }
+
+    /// Confirme un cas jusqu'ici marque "a observer" (docs/formats/winamax.md
+    /// §4.1) : au niveau 1 de certains freerolls/tournois, l'en-tete ne
+    /// porte que `(SB/BB)`, sans composante d'ante.
+    #[test]
+    fn blinds_without_an_ante_default_ante_to_zero() {
+        let text = read_fixture(
+            "fixtures/winamax/edge-cases/no-ante-blinds/20260101_Freeroll No Ante(1234567891)_real_holdem_no-limit.txt",
+        );
+        let (blocks, _) = split_hand_blocks(&text);
+        let hand = parse_hand(blocks[0]).unwrap();
+        assert_eq!(hand.ante, Chips::ZERO);
+        assert_eq!(hand.sb, Chips::from_i64(10));
+        assert_eq!(hand.bb, Chips::from_i64(25));
+        assert_eq!(hand.total_pot, Chips::from_i64(35));
+    }
+
+    /// Trouve reellement : le pseudo "Big Bets 99" contient le mot d'action
+    /// "bets", ce qui faisait echouer une recherche de sous-chaine sur cette
+    /// ligne de relance avant meme d'atteindre le vrai verbe `raises`.
+    #[test]
+    fn pseudo_containing_an_action_verb_is_not_confused_with_it() {
+        let text = read_fixture(
+            "fixtures/winamax/edge-cases/pseudo-contains-action-verb/20260101_Verb Pseudo Test(1234567892)_real_holdem_no-limit.txt",
+        );
+        let (blocks, _) = split_hand_blocks(&text);
+        let hand = parse_hand(blocks[0]).unwrap();
+
+        let raise = hand
+            .actions
+            .iter()
+            .find(|a| a.kind == ActionKind::Raise)
+            .unwrap();
+        assert_eq!(raise.pseudo, "Big Bets 99");
+        assert_eq!(raise.to_amount, Some(Chips::from_i64(40)));
+
+        let collected = hand
+            .actions
+            .iter()
+            .find(|a| a.kind == ActionKind::Collected)
+            .unwrap();
+        assert_eq!(collected.pseudo, "Big Bets 99");
+        assert_eq!(collected.amount, Some(Chips::from_i64(79)));
     }
 }

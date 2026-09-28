@@ -11,6 +11,9 @@
 > | `final-table-heads-up/` | Kill The Fish (1065146114), 18/03/2026, semiturbo | 363 | **Table finale + heads-up réel**, 218 inscrits, 2e place |
 > | `multi-flight-day1/` | #4 - W SERIES - GIANT - DAY 1 (1160235973), 10/09/2026, normal | 14 | **Multi-flight** (`Type: flight`, `Flight ID: 4199`), Late Registration, élimination en Day 1 |
 > | `edge-cases/special-pseudos/` | EDGE CASE - SPECIAL PSEUDOS (2222222222), fictif | 1 | **Fixture synthétique (M1-4)** : pseudos avec espace (« Jean Dupont ») et points/tirets/underscores (« Marie-Claire.99_x »). L'anonymisation remplace les vrais pseudos par des `P0001` génériques dans tous les autres fixtures, effaçant ces caractères ; ce fixture les réintroduit délibérément (aucune identité réelle) pour tester la regex de `Seat N: ...` sur les motifs déjà documentés en §4.3. |
+> | `edge-cases/apostrophe-in-tournament-name/` | Hold'em Test (1234567890), fictif | 1 | **Fixture synthétique (M3-1)**, motif observé réellement (« Hold'em [180 Max] », « Deepstack Hold'em ») : apostrophe dans le nom du tournoi, casse le découpage naïf de la ligne `Table:` (§4.2). |
+> | `edge-cases/no-ante-blinds/` | Freeroll No Ante (1234567891), fictif | 1 | **Fixture synthétique (M3-1)**, motif observé réellement (freerolls/Expresso niveau 1) : en-tête `(SB/BB)` sans ante, ante = 0 (§4.1). |
+> | `edge-cases/pseudo-contains-action-verb/` | Verb Pseudo Test (1234567892), fictif | 1 | **Fixture synthétique (M3-1)**, motif observé réellement (pseudo `Big Bets 99`) : un pseudo contenant un mot d'action casse le découpage par sous-chaîne des lignes d'action (§4.5). |
 >
 > **Invariant de conservation des jetons vérifié sur 445/445 mains** (`space-ko/` + `space-ko-3max-itm-reentry/`, PAR-11). Timestamp du HandId = date de l'en-tête sur 445/445 mains. **Les 1143 mains des 5 nouveaux fixtures (M0-4, 27/09) ne sont pas encore vérifiées programmatiquement : à faire en M1-5** dès que le parser existe.
 > **Statut :** ✅ = observé et vérifié · ⚠️ = déduit, à confirmer · ❓ = non encore observé
@@ -49,7 +52,7 @@ Winamax Poker - Tournament "OBELISK - TRIDENT SPACE KO" buyIn: 1.80€ + 0.20€
 | `buyIn: A€ + F€` | A = prize **+ bounty cumulés** (1,80 = 0,80 + 1), F = fee. **Le découpage vient du summary.** |
 | `level: N` | n° de niveau (1-based) = index dans `Levels` du summary (observé de 1 à 34) |
 | `HandId: #X-Y-Z` | ⚠️ **X = identifiant de la TABLE** (et non du tournoi : 9 valeurs de X pour les 9 tables d'OBELISK) ; Y = n° de main **sur cette table** (il n'est pas unique dans le tournoi) ; Z = **timestamp Unix (s)** de la main. **Clé d'unicité = chaîne complète `X-Y-Z`.** |
-| `(ante/SB/BB)` | avec ante : `(3/10/20)`, `(25/100/200)`. ❓ sans ante, format à observer |
+| `(ante/SB/BB)` | avec ante : `(3/10/20)`, `(25/100/200)`. ✅ **Sans ante (2 composantes `(SB/BB)`, ex. `(10/25)`)** : observé réellement au niveau 1 de freerolls et d'Expresso, corrigé en M3-1 (`fixtures/winamax/edge-cases/no-ante-blinds/`). Ante vaut alors 0. |
 | date | `AAAA/MM/JJ HH:MM:SS UTC` |
 
 ### 4.2 Table ✅
@@ -60,6 +63,7 @@ Table: 'OBELISK - TRIDENT SPACE KO(1173012730)#0194' 3-max (real money) Seat #3 
 - Formats observés : **6-max** et **3-max** (Trident).
 - Changement de table : le nom et le préfixe X du HandId changent (9 tables : `#0194 → #0155 → … → #0003 → #0000`).
 - ⚠️ `#0000` est la dernière table observée, mais le Hero y finit 7e alors qu'elle compte 3 joueurs : **ne pas en déduire « table finale »**.
+- ⚠️ **Le nom du tournoi peut contenir une apostrophe** (observé réellement : `Hold'em [180 Max]`, `Deepstack Hold'em`). Le guillemet fermant `'` de la ligne `Table:` n'est donc pas forcément le premier rencontré après `Table: '` : chercher la **dernière** occurrence de `' ` (apostrophe suivie d'un espace), toujours suivie de `N-max`, jamais le cas d'une apostrophe interne au nom. Corrigé en M3-1 (`fixtures/winamax/edge-cases/apostrophe-in-tournament-name/`).
 
 ### 4.3 Sièges ✅
 ```
@@ -93,6 +97,8 @@ Après un all-in, les streets restantes sont listées sans action.
 | `P collected N from main pot` / `… from side pot K` | pots multiples |
 
 **Toujours non observées** ❓ : `mucks`, `doesn't show`, `is sitting out`, `Uncalled bet … returned`, straddle, timeout/déconnexion, run it twice. Une ligne inconnue produit `ParseError UNKNOWN_LINE`.
+
+⚠️ **Un pseudo peut contenir un mot d'action** (observé réellement : `Big Bets 99`, littéralement le mot `bets`). Une ligne d'action ne peut donc pas être découpée en cherchant le verbe par sous-chaîne dans le texte brut : le pseudo est isolé **en premier**, par correspondance avec la liste des pseudos connus de la main (lignes `Seat N: ...`, toujours lues avant les actions), en retenant le plus long qui correspond. Corrigé en M3-1 (`fixtures/winamax/edge-cases/pseudo-contains-action-verb/`).
 
 ### 4.6 ⚠️ Mises non suivies laissées dans le pot ✅
 Il n'y a pas de ligne de remboursement. L'excédent non suivi est compté dans `Total pot` et revient via `collected`, parfois sous la forme `side pot K`.
