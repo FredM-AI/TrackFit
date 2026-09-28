@@ -176,12 +176,13 @@ DDL §15 en `0001_init.sql` ; PRAGMA WAL ; pool de lecture et writer unique.
 - Base créée au premier lancement dans le dossier de données (ADR-007, mode portable compris). ✅ `gr-store::paths::resolve_data_dir` implémente la logique ADR-007 (dossier `graphite-data/` existant ou lecteur amovible → mode portable ; sinon `%LOCALAPPDATA%\Graphite\`, avec repli portable si la variable est absente), testée en pur (4 tests). `Store::open` crée le dossier de données et le fichier `graphite.db` s'il n'existe pas encore (test `creates_the_database_file_on_first_launch`, `creates_the_data_dir_when_it_does_not_exist_yet`).
 - Tests de migration. ✅ `gr-store::migrate` : création de la table `schema_migrations`, application idempotente (`is_idempotent_when_run_twice`), et rejet d'une migration déjà appliquée mais modifiée (`rejects_a_tampered_already_applied_migration`, empreinte non cryptographique — protège R-SCHEMA contre une dérive silencieuse). PRAGMA `journal_mode=WAL`/`foreign_keys=ON`/`synchronous=NORMAL` appliqués à chaque connexion (writer + chaque connexion du pool `r2d2`), contrainte FK vérifiée par un test dédié. 12 tests au total, `cargo test/clippy/fmt --workspace` verts.
 
-### M2-2 · Repositories et insertion par lots · M · `TODO`
+### M2-2 · Repositories et insertion par lots · M · `DONE`
 Insertion `hands`, `hand_players` (sans flags de stats pour l'instant), `actions`, `hand_raw` (zstd) et `tournaments` provisoires.
 
 **CA :**
-- Dédoublonnage `UNIQUE(room, hand_id)` testé.
-- Transaction par lot de 500 mains.
+- Dédoublonnage `UNIQUE(room, hand_id)` testé. ✅ `gr-store::repo::insert_hands` utilise `INSERT OR IGNORE` sur `hands` et lit `changes()` : une main déjà présente (même `room_id`/`room_hand_id`) est comptée dans `duplicates` et n'écrit ni `hand_players`, ni `actions`, ni `hand_raw` une seconde fois (testé avec une vraie main du corpus OBELISK, ré-insérée telle quelle).
+- Transaction par lot de 500 mains. ✅ `BATCH_SIZE = 500` ; `insert_hands` découpe la tranche reçue en lots (`chunks(BATCH_SIZE)`), chacun dans sa propre transaction SQLite, avec récupération/création du tournoi provisoire (`status = 'PROVISIONAL'`) une fois par lot. Testé sur un lot fractionné en plusieurs transactions successives (aucune main perdue ni dupliquée).
+- Insertion testée de bout en bout contre une vraie main parsée du corpus (`fixtures/winamax/mtt/space-ko-3max-itm-reentry/`) : `hands`, `hand_players`, `actions` et `hand_raw` (compressé zstd) tous peuplés et cohérents en nombre de lignes. `players`/`rooms` upsertés par `(room_id, screen_name)`/`code`. Positions, profondeurs, `hand_class`, `net_chips`, showdown et flags de stats restent volontairement hors périmètre (M4).
 
 ### M2-3 · Import en masse · M · `TODO`
 Sélection de dossiers ou de fichiers, progression (événement IPC), annulation, rapport final.

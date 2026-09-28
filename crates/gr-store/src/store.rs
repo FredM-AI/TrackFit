@@ -1,12 +1,14 @@
 use std::path::Path;
 use std::sync::{Mutex, MutexGuard, PoisonError};
 
+use gr_parser_api::Room;
 use r2d2::{Pool, PooledConnection};
 use r2d2_sqlite::SqliteConnectionManager;
 use rusqlite::Connection;
 
 use crate::error::StoreError;
 use crate::migrate::run_migrations;
+use crate::repo::{self, HandInsert, ImportReport};
 
 const DB_FILE_NAME: &str = "graphite.db";
 
@@ -60,6 +62,22 @@ impl Store {
     /// (base verrouillee, pool epuise, connexion invalide).
     pub fn reader(&self) -> Result<PooledConnection<SqliteConnectionManager>, StoreError> {
         Ok(self.readers.get()?)
+    }
+
+    /// Insere des mains deja parsees (M2-2), par lots transactionnels de
+    /// [`repo::BATCH_SIZE`]. Voir [`repo::insert_hands`] pour le detail
+    /// (deduplication, tournois provisoires, `hand_raw` compresse).
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si une ecriture SQLite ou la compression du
+    /// texte brut echoue.
+    pub fn insert_hands(
+        &self,
+        room: Room,
+        hands: &[HandInsert<'_>],
+    ) -> Result<ImportReport, StoreError> {
+        let mut writer = self.writer();
+        repo::insert_hands(&mut writer, room, hands)
     }
 }
 

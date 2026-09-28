@@ -20,6 +20,9 @@ pub enum StoreError {
     #[error("erreur de pool de connexions: {0}")]
     Pool(#[from] r2d2::Error),
 
+    #[error("erreur de compression zstd du texte brut d'une main: {0}")]
+    Codec(#[from] std::io::Error),
+
     /// R-SCHEMA : une migration deja appliquee ne doit jamais etre modifiee.
     /// Cette erreur protege contre une derive silencieuse du schema.
     #[error(

@@ -6,8 +6,10 @@
 mod error;
 mod migrate;
 mod paths;
+mod repo;
 mod store;
 
 pub use error::StoreError;
 pub use paths::resolve_data_dir;
+pub use repo::{HandInsert, ImportReport, BATCH_SIZE};
 pub use store::Store;
