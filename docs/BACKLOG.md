@@ -184,21 +184,23 @@ Insertion `hands`, `hand_players` (sans flags de stats pour l'instant), `actions
 - Transaction par lot de 500 mains. ✅ `BATCH_SIZE = 500` ; `insert_hands` découpe la tranche reçue en lots (`chunks(BATCH_SIZE)`), chacun dans sa propre transaction SQLite, avec récupération/création du tournoi provisoire (`status = 'PROVISIONAL'`) une fois par lot. Testé sur un lot fractionné en plusieurs transactions successives (aucune main perdue ni dupliquée).
 - Insertion testée de bout en bout contre une vraie main parsée du corpus (`fixtures/winamax/mtt/space-ko-3max-itm-reentry/`) : `hands`, `hand_players`, `actions` et `hand_raw` (compressé zstd) tous peuplés et cohérents en nombre de lignes. `players`/`rooms` upsertés par `(room_id, screen_name)`/`code`. Positions, profondeurs, `hand_class`, `net_chips`, showdown et flags de stats restent volontairement hors périmètre (M4).
 
-### M2-3 · Import en masse · M · `DONE` (perf différée, voir note)
+### M2-3 · Import en masse · M · `DONE`
 Sélection de dossiers ou de fichiers, progression (événement IPC), annulation, rapport final.
 
 **CA :**
 - Import du corpus complet sans erreur. ✅ `gr-ingest::run_import` (nouveau crate) : découverte récursive des fichiers `.txt` (hors `_summary.txt`, docs/formats/winamax.md §2), parsing + insertion par lots via `gr-store`. Testé sur tout le corpus committé (`fixtures/winamax/`) : 0 échec, 0 doublon au premier passage.
 - Réimport = 0 insertion, N doublons. ✅ Deuxième passage sur le même corpus : `hands_inserted = 0`, `hands_duplicate` = total de la première passe.
-- Premier jet de ≥ 1 000 mains/s sur 100 000 mains synthétiques. ⏸ **Différé à M2-4** (décision Frédéric, 28/09) : ce CA nécessite `gr-synth`, qui n'existe pas encore et qui est la story suivante — dépendance amont non résolue à l'écriture du BACKLOG. Le pipeline (scan + parse + insertion par lots) est en place et testé fonctionnellement ; la mesure quantitative sera faite dès que `gr-synth` fournira les 100k mains synthétiques.
+- Premier jet de ≥ 1 000 mains/s sur 100 000 mains synthétiques. ✅ **Validé le 28/09 une fois M2-4 livré** : test `gr-ingest::import::tests::perf_100k_synthetic_hands_imports_at_least_1000_hands_per_second` (ignoré par défaut, `cargo test -p gr-ingest --release -- --ignored perf_100k`) — **1430 mains/s** mesurées sur 100 000 mains synthétiques (100% insérées, 0 échec) sur la machine de dev (Celeron N5095A). Marge modeste (×1,4) au-dessus de la cible ; à surveiller lors de la campagne de perf M8-4.
 
 Câblage : `gr-ingest` est un crate pur (testable, aucune dépendance Tauri) ; `src-tauri` expose `import_paths`/`cancel_import` (état `ImportState` géré via `app.manage`, `Store` ouvert au démarrage via `resolve_data_dir`+ADR-007) et émet `import://progress`. Annulation coopérative testée (`CancelToken`, arrêt avant le fichier suivant). Aucun écran ne consomme encore ces commandes (sélecteur de dossier/fichier still à faire en UI, cf. M3-1) : câblage backend uniquement à ce stade.
 
-### M2-4 · `gr-synth` : générateur de mains synthétiques · M · `TODO`
+### M2-4 · `gr-synth` : générateur de mains synthétiques · M · `DONE`
 Générateur de tournois cohérents au format Winamax, basé **exclusivement** sur les motifs documentés en M0-4, avec une graine déterministe.
 
 **CA :**
-- `just synth N=1000000` génère environ 1 M de mains parsables à 100 %.
+- `just synth N=1000000` génère environ 1 M de mains parsables à 100 %. ✅ Exécuté réellement (`cargo run -p gr-synth --release -- --count 1000000 --out ./target/synth`) : **1 000 000 mains générées dans 4412 fichiers en ~20 s**. Parsabilité à 100% revalidée par un test dédié (`gr-synth::corpus::tests::one_million_synthetic_hands_are_100_percent_parsable`, ignoré par défaut vu son coût) : 1 000 000/1 000 000 mains parsées sans erreur par `WinamaxParser`.
+
+Conception : PRNG interne déterministe (SplitMix64, pas de nouvelle dépendance) ; motif de main généré = un tour préflop où tous les joueurs se couchent sauf la grosse blinde (`P folds` puis `P collected N from pot`), littéralement observé dans le corpus réel (docs/formats/winamax.md §4.5/§4.6) et suffisant pour PAR-4 à PAR-11 (le parser ignore les lignes `Board:`/`Seat N: … won` du `*** SUMMARY ***`, non requises). Tailles de table (3/6/7-max), structures de blindes de niveau 1 (`3/10/20`, `25/100/200`, `40/175/350`) et tapis de départ (500, 20000) tirés exclusivement parmi des valeurs déjà documentées ou déjà utilisées comme fixture de test (R-FORMAT). Heads-up (bouton = petite blinde) généré et vérifié explicitement. Un tournoi = un fichier, une seule table, pas de re-entry ni de summary (hors périmètre de cette story).
 
 ### M2-5 · Logs et erreurs d'import · M · `TODO`
 `tracing` + rotation quotidienne, rétention 30 jours ; table `import_errors` ; écran Logs (visionneuse + onglet Erreurs d'import, avec les actions Reparser / Ignorer / Copier).
