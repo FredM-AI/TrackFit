@@ -3,3 +3,17 @@ name = "gr-store"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
+
+[dependencies]
+r2d2 = "0.8"
+r2d2_sqlite = "0.24"
+rusqlite = { version = "0.31", features = ["bundled"] }
+thiserror = "1"
+windows-sys = { version = "0.59", features = [
+  "Win32_Foundation",
+  "Win32_Storage_FileSystem",
+  "Win32_System_WindowsProgramming",
+] }
+
+[dev-dependencies]
+tempfile = "3"
