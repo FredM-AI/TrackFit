@@ -13,6 +13,7 @@ use ts_rs::TS;
 
 use crate::import::{ImportProgressPayload, ImportSummaryPayload};
 use crate::setup::WinamaxAccountPayload;
+use crate::watch::HandsNewPayload;
 
 #[test]
 fn generate_ui_bindings() {
@@ -20,6 +21,7 @@ fn generate_ui_bindings() {
         WinamaxAccountPayload::decl(),
         ImportProgressPayload::decl(),
         ImportSummaryPayload::decl(),
+        HandsNewPayload::decl(),
     ];
     decls.sort();
 

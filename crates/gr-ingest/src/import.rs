@@ -79,11 +79,11 @@ pub struct ImportSummary {
 }
 
 #[derive(Debug, Default)]
-struct FileImportReport {
-    inserted: usize,
-    duplicates: usize,
-    failed: usize,
-    failures: Vec<ImportFailure>,
+pub(crate) struct FileImportReport {
+    pub(crate) inserted: usize,
+    pub(crate) duplicates: usize,
+    pub(crate) failed: usize,
+    pub(crate) failures: Vec<ImportFailure>,
 }
 
 /// Importe toutes les mains trouvees sous `roots` (fichiers ou dossiers,
@@ -178,7 +178,27 @@ fn import_one_file(store: &Store, path: &Path) -> Result<FileImportReport, Inges
     let file_id = store.upsert_import_file(&path_str, "HANDS", size, mtime, now)?;
 
     let (blocks, _offset) = split_hand_blocks(&text);
+    let block_report = insert_blocks(store, file_id, path, &blocks, now)?;
+    report.inserted += block_report.inserted;
+    report.duplicates += block_report.duplicates;
+    report.failed += block_report.failed;
+    report.failures.extend(block_report.failures);
+    Ok(report)
+}
 
+/// Parse et insere une liste de blocs de mains deja decoupes (une ligne
+/// commune a l'import en masse et a la lecture incrementale temps reel,
+/// M3-2) : chaque main en erreur est consignee (PAR-15) sans interrompre
+/// les suivantes, puis le lot valide est insere en une fois (dedoublonnage
+/// `UNIQUE(room_id, room_hand_id)`).
+pub(crate) fn insert_blocks(
+    store: &Store,
+    file_id: i64,
+    path: &Path,
+    blocks: &[&str],
+    now: i64,
+) -> Result<FileImportReport, IngestError> {
+    let mut report = FileImportReport::default();
     let mut hands: Vec<HandRecord> = Vec::with_capacity(blocks.len());
     let mut raw_texts: Vec<&str> = Vec::with_capacity(blocks.len());
     for block in blocks {
@@ -222,7 +242,7 @@ fn import_one_file(store: &Store, path: &Path) -> Result<FileImportReport, Inges
     Ok(report)
 }
 
-fn file_size_and_mtime(path: &Path, fallback: i64) -> (i64, i64) {
+pub(crate) fn file_size_and_mtime(path: &Path, fallback: i64) -> (i64, i64) {
     let Ok(metadata) = std::fs::metadata(path) else {
         return (0, fallback);
     };
@@ -231,7 +251,7 @@ fn file_size_and_mtime(path: &Path, fallback: i64) -> (i64, i64) {
     (size, mtime)
 }
 
-fn now_ms() -> i64 {
+pub(crate) fn now_ms() -> i64 {
     system_time_to_ms(std::time::SystemTime::now())
 }
 

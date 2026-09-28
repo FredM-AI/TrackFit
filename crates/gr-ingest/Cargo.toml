@@ -9,6 +9,7 @@ gr-core = { path = "../gr-core" }
 gr-parser-api = { path = "../gr-parser-api" }
 gr-parser-winamax = { path = "../gr-parser-winamax" }
 gr-store = { path = "../gr-store" }
+notify = "8.2.0"
 thiserror = "1"
 
 [dev-dependencies]

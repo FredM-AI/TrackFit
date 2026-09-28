@@ -4,11 +4,13 @@ mod import;
 mod import_errors;
 mod logs;
 mod setup;
+mod watch;
 
 use std::sync::Arc;
 
 use import::ImportState;
 use tauri::Manager;
+use watch::WatcherState;
 
 #[cfg_attr(mobile, tauri::mobile_entry_point)]
 pub fn run() {
@@ -31,12 +33,17 @@ pub fn run() {
             let log_guard = logs::init(&data_dir)?;
             app.manage(log_guard);
 
-            let store = gr_store::Store::open(&data_dir)?;
+            let store = Arc::new(gr_store::Store::open(&data_dir)?);
             // PRD §8.5 / BACKLOG M2-6 : un tournoi encore PROVISIONAL sans
             // nouvelle main depuis 24h passe INCOMPLETE, a chaque demarrage.
             store.mark_stale_provisional_tournaments_incomplete(now_ms(), 24)?;
+
+            let watcher_state = WatcherState::default();
+            watch::start_from_persisted_roots(app.handle(), &store, &watcher_state);
+            app.manage(watcher_state);
+
             app.manage(ImportState {
-                store: Arc::new(store),
+                store,
                 cancel: gr_ingest::CancelToken::new(),
             });
 
@@ -52,6 +59,7 @@ pub fn run() {
             setup::create_hero_profile_and_accounts,
             setup::is_first_launch_complete,
             setup::mark_first_launch_complete,
+            watch::set_watched_roots,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
