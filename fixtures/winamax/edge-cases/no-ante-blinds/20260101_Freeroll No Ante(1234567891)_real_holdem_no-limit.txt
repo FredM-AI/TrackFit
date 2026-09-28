@@ -1,0 +1,15 @@
+Winamax Poker - Tournament "Freeroll No Ante" buyIn: 0€ + 0€ level: 1 - HandId: #1234567891-1-1 - Holdem no limit (10/25) - 2026/01/01 00:00:00 UTC
+Table: 'Freeroll No Ante(1234567891)#1' 6-max (real money) Seat #1 is the button
+Seat 1: Hero (1500)
+Seat 2: P0002 (1500)
+*** ANTE/BLINDS ***
+Hero posts small blind 10
+P0002 posts big blind 25
+Dealt to Hero [Ah Kd]
+*** PRE-FLOP ***
+Hero folds
+P0002 collected 35 from pot
+*** SUMMARY ***
+Total pot 35 | No rake
+
+

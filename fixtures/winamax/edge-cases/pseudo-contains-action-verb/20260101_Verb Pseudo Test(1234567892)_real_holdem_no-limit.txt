@@ -1,0 +1,21 @@
+Winamax Poker - Tournament "Verb Pseudo Test" buyIn: 1€ + 0€ level: 1 - HandId: #1234567892-1-1 - Holdem no limit (3/10/20) - 2026/01/01 00:00:00 UTC
+Table: 'Verb Pseudo Test(1234567892)#1' 3-max (real money) Seat #1 is the button
+Seat 1: Big Bets 99 (1000)
+Seat 2: P0002 (1000)
+Seat 3: Hero (1000)
+*** ANTE/BLINDS ***
+Big Bets 99 posts ante 3
+P0002 posts ante 3
+Hero posts ante 3
+P0002 posts small blind 10
+Hero posts big blind 20
+Dealt to Hero [Ah Kd]
+*** PRE-FLOP ***
+Big Bets 99 raises 20 to 40
+P0002 folds
+Hero folds
+Big Bets 99 collected 79 from pot
+*** SUMMARY ***
+Total pot 79 | No rake
+
+
