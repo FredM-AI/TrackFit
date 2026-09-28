@@ -18,6 +18,7 @@ tauri-build = { version = "2.6.3", features = [] }
 
 [dependencies]
 gr-ingest = { path = "../crates/gr-ingest" }
+gr-parser-api = { path = "../crates/gr-parser-api" }
 gr-store = { path = "../crates/gr-store" }
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
@@ -27,6 +28,7 @@ tauri-plugin-log = "2"
 tracing = "0.1"
 tracing-appender = "0.2"
 tracing-subscriber = "0.3"
+ts-rs = "9"
 
 [dev-dependencies]
 tempfile = "3"

@@ -9,6 +9,7 @@ use gr_ingest::{run_import, CancelToken, ImportProgress, ImportSummary};
 use gr_store::Store;
 use serde::Serialize;
 use tauri::{AppHandle, Emitter, State};
+use ts_rs::TS;
 
 /// Etat partage par les commandes d'import (gere par Tauri, `app.manage`).
 pub struct ImportState {
@@ -16,13 +17,13 @@ pub struct ImportState {
     pub cancel: CancelToken,
 }
 
-#[derive(Debug, Clone, Serialize)]
-struct ImportProgressPayload {
-    files_total: usize,
-    files_done: usize,
-    hands_inserted: usize,
-    hands_duplicate: usize,
-    hands_failed: usize,
+#[derive(Debug, Clone, Serialize, TS)]
+pub struct ImportProgressPayload {
+    pub files_total: usize,
+    pub files_done: usize,
+    pub hands_inserted: usize,
+    pub hands_duplicate: usize,
+    pub hands_failed: usize,
 }
 
 impl From<&ImportProgress> for ImportProgressPayload {
@@ -37,15 +38,17 @@ impl From<&ImportProgress> for ImportProgressPayload {
     }
 }
 
-/// Rapport final renvoye au frontend (PRD §8.4 point 4).
-#[derive(Debug, Clone, Serialize)]
+/// Rapport final renvoye au frontend (PRD §8.4 point 4, M2-6 pour les summaries).
+#[derive(Debug, Clone, Serialize, TS)]
 pub struct ImportSummaryPayload {
-    files_scanned: usize,
-    files_imported: usize,
-    hands_inserted: usize,
-    hands_duplicate: usize,
-    hands_failed: usize,
-    cancelled: bool,
+    pub files_scanned: usize,
+    pub files_imported: usize,
+    pub hands_inserted: usize,
+    pub hands_duplicate: usize,
+    pub hands_failed: usize,
+    pub summaries_attached: usize,
+    pub summaries_failed: usize,
+    pub cancelled: bool,
 }
 
 impl From<ImportSummary> for ImportSummaryPayload {
@@ -56,6 +59,8 @@ impl From<ImportSummary> for ImportSummaryPayload {
             hands_inserted: summary.hands_inserted,
             hands_duplicate: summary.hands_duplicate,
             hands_failed: summary.hands_failed,
+            summaries_attached: summary.summaries_attached,
+            summaries_failed: summary.summaries_failed,
             cancelled: summary.cancelled,
         }
     }

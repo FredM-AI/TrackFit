@@ -9,6 +9,7 @@ use rusqlite::Connection;
 use gr_core::TournamentSummary;
 
 use crate::error::StoreError;
+use crate::hero::{self, HeroProfileRow};
 use crate::import_log::{self, ImportErrorRow, NewImportError};
 use crate::migrate::run_migrations;
 use crate::repo::{self, HandInsert, ImportReport};
@@ -184,6 +185,58 @@ impl Store {
             now_ms,
             stale_after_hours,
         )
+    }
+
+    /// Cree un profil Hero (M3-1/M3-5, D19). Si `is_default` est vrai, les
+    /// autres profils existants sont retrogrades.
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si l'ecriture SQLite echoue (ex. nom deja pris).
+    pub fn create_hero_profile(&self, name: &str, is_default: bool) -> Result<i64, StoreError> {
+        let writer = self.writer();
+        hero::create_hero_profile(&writer, name, is_default)
+    }
+
+    /// Rattache le pseudo `screen_name` (cree s'il est inconnu) au profil
+    /// `profile_id` (M3-1/M3-5).
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si l'ecriture SQLite echoue.
+    pub fn link_hero_account(
+        &self,
+        profile_id: i64,
+        room: Room,
+        screen_name: &str,
+    ) -> Result<(), StoreError> {
+        let writer = self.writer();
+        hero::link_hero_account(&writer, profile_id, room, screen_name)
+    }
+
+    /// Liste tous les profils Hero, le profil par defaut d'abord.
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si la lecture SQLite echoue.
+    pub fn list_hero_profiles(&self) -> Result<Vec<HeroProfileRow>, StoreError> {
+        let reader = self.reader()?;
+        hero::list_hero_profiles(&reader)
+    }
+
+    /// Lit une valeur de `settings` (M3-1 : flag "premier lancement termine").
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si la lecture SQLite echoue.
+    pub fn get_setting(&self, key: &str) -> Result<Option<String>, StoreError> {
+        let reader = self.reader()?;
+        hero::get_setting(&reader, key)
+    }
+
+    /// Ecrit (ou remplace) une valeur de `settings`.
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si l'ecriture SQLite echoue.
+    pub fn set_setting(&self, key: &str, value_json: &str) -> Result<(), StoreError> {
+        let writer = self.writer();
+        hero::set_setting(&writer, key, value_json)
     }
 }
 
