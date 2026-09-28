@@ -14,11 +14,15 @@ pub struct HeroProfileRow {
     pub is_default: bool,
 }
 
-/// Cree un profil Hero. Si `is_default` est vrai, les autres profils
-/// existants sont retrogrades (un seul profil par defaut a la fois).
+/// Cree un profil Hero, ou reutilise le profil existant du meme nom
+/// (idempotent : l'assistant de premier lancement peut etre rejoue, par ex.
+/// apres une interruption entre la creation du profil et le marquage
+/// "premier lancement termine", sans violer la contrainte `UNIQUE(name)`).
+/// Si `is_default` est vrai, les autres profils existants sont retrogrades
+/// (un seul profil par defaut a la fois).
 ///
 /// # Errors
-/// Renvoie une [`StoreError`] si l'ecriture SQLite echoue (ex. `name` deja pris).
+/// Renvoie une [`StoreError`] si l'ecriture ou la lecture SQLite echoue.
 pub(crate) fn create_hero_profile(
     conn: &Connection,
     name: &str,
@@ -28,10 +32,16 @@ pub(crate) fn create_hero_profile(
         conn.execute("UPDATE hero_profiles SET is_default = 0", [])?;
     }
     conn.execute(
-        "INSERT INTO hero_profiles (name, is_default) VALUES (?1, ?2)",
+        "INSERT INTO hero_profiles (name, is_default) VALUES (?1, ?2)
+         ON CONFLICT(name) DO UPDATE SET is_default = excluded.is_default",
         params![name, is_default],
     )?;
-    Ok(conn.last_insert_rowid())
+    conn.query_row(
+        "SELECT id FROM hero_profiles WHERE name = ?1",
+        [name],
+        |row| row.get(0),
+    )
+    .map_err(StoreError::from)
 }
 
 /// Rattache le pseudo `screen_name` (cree s'il est inconnu) au profil
@@ -176,6 +186,34 @@ mod tests {
             )
             .unwrap();
         assert!(!first_is_default, "un seul profil par defaut a la fois");
+    }
+
+    #[test]
+    fn creating_a_profile_with_an_existing_name_reuses_its_id_instead_of_erroring() {
+        let conn = migrated_connection();
+        let first_id = create_hero_profile(&conn, "Frederic", true).unwrap();
+        link_hero_account(&conn, first_id, Room::Winamax, "Fred_W").unwrap();
+
+        let second_id = create_hero_profile(&conn, "Frederic", true).unwrap();
+        assert_eq!(
+            first_id, second_id,
+            "rejouer l'assistant avec le meme nom ne doit pas creer un doublon"
+        );
+
+        let profiles = list_hero_profiles(&conn).unwrap();
+        assert_eq!(profiles.len(), 1);
+
+        let account_count: i64 = conn
+            .query_row(
+                "SELECT COUNT(*) FROM hero_accounts WHERE profile_id = ?1",
+                [first_id],
+                |row| row.get(0),
+            )
+            .unwrap();
+        assert_eq!(
+            account_count, 1,
+            "le pseudo deja rattache au premier passage doit etre conserve"
+        );
     }
 
     #[test]
