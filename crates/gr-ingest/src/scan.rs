@@ -2,35 +2,49 @@ use std::path::{Path, PathBuf};
 
 /// Explore chaque racine (fichier ou dossier, recursivement) et retourne,
 /// triee et sans doublon, la liste des fichiers de mains `.txt` trouves.
-/// Les fichiers `_summary.txt` sont exclus (rattaches au tournoi en M2-6,
-/// docs/formats/winamax.md §2).
+/// Les fichiers `_summary.txt` sont exclus (rattaches au tournoi via
+/// [`crate::import_summaries`], M2-6, docs/formats/winamax.md §2).
 #[must_use]
 pub fn discover_hand_files(roots: &[PathBuf]) -> Vec<PathBuf> {
+    discover(roots, is_hand_file)
+}
+
+/// Meme exploration, mais ne retient que les fichiers summary `_summary.txt`
+/// (M2-6).
+#[must_use]
+pub fn discover_summary_files(roots: &[PathBuf]) -> Vec<PathBuf> {
+    discover(roots, is_summary_file)
+}
+
+fn discover(roots: &[PathBuf], matches: fn(&Path) -> bool) -> Vec<PathBuf> {
     let mut files = Vec::new();
     for root in roots {
-        collect(root, &mut files);
+        collect(root, matches, &mut files);
     }
     files.sort();
     files.dedup();
     files
 }
 
-fn collect(path: &Path, out: &mut Vec<PathBuf>) {
+fn collect(path: &Path, matches: fn(&Path) -> bool, out: &mut Vec<PathBuf>) {
     if path.is_dir() {
         let Ok(entries) = std::fs::read_dir(path) else {
             return;
         };
         for entry in entries.flatten() {
-            collect(&entry.path(), out);
+            collect(&entry.path(), matches, out);
         }
-    } else if is_hand_file(path) {
+    } else if matches(path) {
         out.push(path.to_path_buf());
     }
 }
 
 fn is_hand_file(path: &Path) -> bool {
-    path.extension().is_some_and(|ext| ext == "txt")
-        && !path.to_string_lossy().ends_with("_summary.txt")
+    path.extension().is_some_and(|ext| ext == "txt") && !is_summary_file(path)
+}
+
+fn is_summary_file(path: &Path) -> bool {
+    path.to_string_lossy().ends_with("_summary.txt")
 }
 
 #[cfg(test)]
@@ -58,6 +72,19 @@ mod tests {
         let files = discover_hand_files(&[dir.path().to_path_buf()]);
 
         assert_eq!(files, vec![hand_a, hand_b]);
+    }
+
+    #[test]
+    fn finds_only_summary_files() {
+        let dir = tempfile::tempdir().expect("temp dir");
+        let hand = dir.path().join("a.txt");
+        let summary = dir.path().join("nested").join("a_summary.txt");
+        touch(&hand);
+        touch(&summary);
+
+        let files = discover_summary_files(&[dir.path().to_path_buf()]);
+
+        assert_eq!(files, vec![summary]);
     }
 
     #[test]

@@ -12,6 +12,7 @@ use gr_store::{HandInsert, NewImportError, Store};
 
 use crate::error::IngestError;
 use crate::scan::discover_hand_files;
+use crate::summary::import_summaries;
 
 /// Jeton d'annulation cooperatif : l'import en cours termine le fichier
 /// entame puis s'arrete au prochain fichier des que le jeton est signale.
@@ -62,7 +63,7 @@ pub struct ImportFailure {
     pub message: String,
 }
 
-/// Rapport final d'un import (PRD §8.4 point 4 ; BACKLOG M2-3).
+/// Rapport final d'un import (PRD §8.4 point 4 ; BACKLOG M2-3/M2-6).
 #[derive(Debug, Clone, Default, PartialEq, Eq)]
 pub struct ImportSummary {
     pub files_scanned: usize,
@@ -70,6 +71,9 @@ pub struct ImportSummary {
     pub hands_inserted: usize,
     pub hands_duplicate: usize,
     pub hands_failed: usize,
+    /// Fichiers summary rattaches a leur tournoi (M2-6).
+    pub summaries_attached: usize,
+    pub summaries_failed: usize,
     pub failures: Vec<ImportFailure>,
     pub cancelled: bool,
 }
@@ -129,6 +133,13 @@ pub fn run_import(
         progress.hands_duplicate = summary.hands_duplicate;
         progress.hands_failed = summary.hands_failed;
         on_progress(&progress);
+    }
+
+    if !summary.cancelled {
+        let summaries = import_summaries(store, roots);
+        summary.summaries_attached = summaries.files_attached;
+        summary.summaries_failed = summaries.files_failed;
+        summary.failures.extend(summaries.failures);
     }
 
     Ok(summary)
@@ -312,6 +323,7 @@ mod tests {
         let (_dir, store) = open_store();
         let roots = vec![corpus_root()];
         let expected_files = discover_hand_files(&roots).len();
+        let expected_summaries = crate::scan::discover_summary_files(&roots).len();
         assert!(expected_files > 0, "the fixtures corpus must not be empty");
 
         let mut progress_calls = 0;
@@ -326,6 +338,37 @@ mod tests {
         assert_eq!(summary.hands_duplicate, 0);
         assert!(!summary.cancelled);
         assert_eq!(progress_calls, expected_files);
+        assert_eq!(summary.summaries_attached, expected_summaries);
+        assert_eq!(summary.summaries_failed, 0);
+    }
+
+    /// CA de M2-6 : le rattachement d'un tournoi (buy-in, statut `COMPLETE`,
+    /// re-entries comptees) fonctionne au fil d'un import unique, hands puis
+    /// summary, sur un vrai fichier du corpus (re-entry OBELISK).
+    #[test]
+    fn run_import_completes_a_tournament_with_its_re_entries_in_a_single_pass() {
+        let (_dir, store) = open_store();
+        let roots = vec![Path::new(env!("CARGO_MANIFEST_DIR"))
+            .join("../../fixtures/winamax/mtt/space-ko-3max-itm-reentry")];
+
+        let summary = run_import(&store, &roots, &CancelToken::new(), |_| {})
+            .expect("import should not hit a storage error");
+        assert_eq!(summary.hands_failed, 0);
+        assert_eq!(summary.summaries_attached, 1);
+        assert_eq!(summary.summaries_failed, 0);
+
+        let writer = store.writer();
+        let (status, entries_count): (String, i64) = writer
+            .query_row(
+                "SELECT status, entries_count FROM tournaments
+                 JOIN tournament_entries ON tournament_entries.tournament_id = tournaments.id
+                 WHERE tournaments.room_tournament_id = '1173012730'",
+                [],
+                |row| Ok((row.get(0)?, row.get(1)?)),
+            )
+            .expect("the OBELISK tournament should be complete with its entry");
+        assert_eq!(status, "COMPLETE");
+        assert_eq!(entries_count, 2, "OBELISK has 2 entries (re-entry)");
     }
 
     #[test]

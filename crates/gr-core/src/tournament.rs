@@ -31,6 +31,9 @@ pub struct TournamentBullet {
 pub struct TournamentSummary {
     pub room_tournament_id: String,
     pub name: String,
+    /// Pseudo du Hero (ligne `Player : <pseudo>`, §5.2), pris du dernier
+    /// bloc comme les autres champs constants du header.
+    pub hero_pseudo: String,
     pub buyin_prize: Money,
     pub buyin_bounty: Money,
     pub buyin_fee: Money,
@@ -53,6 +56,7 @@ mod tests {
         let summary = TournamentSummary {
             room_tournament_id: "1173012730".to_string(),
             name: "OBELISK - TRIDENT SPACE KO".to_string(),
+            hero_pseudo: "Hero".to_string(),
             buyin_prize: Money::from_cents(80),
             buyin_bounty: Money::from_cents(100),
             buyin_fee: Money::from_cents(20),

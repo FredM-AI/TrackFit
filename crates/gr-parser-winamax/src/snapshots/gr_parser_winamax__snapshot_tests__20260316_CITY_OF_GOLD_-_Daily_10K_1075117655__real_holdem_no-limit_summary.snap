@@ -5,6 +5,7 @@ expression: summary
 TournamentSummary {
     room_tournament_id: "1075117655",
     name: "CITY OF GOLD - Daily 10K",
+    hero_pseudo: "Hero",
     buyin_prize: Money(
         0,
     ),

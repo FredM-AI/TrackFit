@@ -129,6 +129,7 @@ fn parse_won_line(line: &str, line_no: usize) -> Result<(Money, Money), ParseErr
 struct HeaderFields {
     room_tournament_id: String,
     name: String,
+    hero_pseudo: String,
     buyin_prize: Money,
     buyin_bounty: Money,
     buyin_fee: Money,
@@ -179,7 +180,7 @@ fn parse_summary_block(
     let room_tournament_id = rest[open + 1..open + close_rel].to_string();
 
     let (line_no, player_line) = expect_line(&mut lines, line_no, "ligne \"Player : \" manquante")?;
-    parse_prefixed(player_line, line_no, "Player : ")?;
+    let hero_pseudo = parse_prefixed(player_line, line_no, "Player : ")?.to_string();
 
     let (line_no, buyin_line) = expect_line(&mut lines, line_no, "ligne \"Buy-In\" manquante")?;
     let (buyin_prize, buyin_bounty, buyin_fee) = parse_buyin_line(buyin_line, line_no)?;
@@ -239,6 +240,7 @@ fn parse_summary_block(
         HeaderFields {
             room_tournament_id,
             name,
+            hero_pseudo,
             buyin_prize,
             buyin_bounty,
             buyin_fee,
@@ -278,6 +280,7 @@ pub(crate) fn parse_summary(text: &str) -> Result<TournamentSummary, ParseError>
     Ok(TournamentSummary {
         room_tournament_id: header.room_tournament_id,
         name: header.name,
+        hero_pseudo: header.hero_pseudo,
         buyin_prize: header.buyin_prize,
         buyin_bounty: header.buyin_bounty,
         buyin_fee: header.buyin_fee,
@@ -308,6 +311,7 @@ mod tests {
         let summary = parse_summary(&obelisk_summary()).unwrap();
         assert_eq!(summary.room_tournament_id, "1173012730");
         assert_eq!(summary.name, "OBELISK - TRIDENT SPACE KO");
+        assert_eq!(summary.hero_pseudo, "Hero");
         assert_eq!(summary.buyin_prize, Money::from_cents(80));
         assert_eq!(summary.buyin_bounty, Money::from_cents(100));
         assert_eq!(summary.buyin_fee, Money::from_cents(20));

@@ -5,6 +5,7 @@ expression: summary
 TournamentSummary {
     room_tournament_id: "1085373745",
     name: "Hit&Run W Series Ticket 10\\u20ac",
+    hero_pseudo: "Hero",
     buyin_prize: Money(
         180,
     ),
