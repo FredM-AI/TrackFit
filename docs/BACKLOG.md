@@ -169,12 +169,12 @@ Parsing complet des actions (posts/folds/checks/calls/bets/raises/shows/collecte
 
 ## M2 — Stockage, import en masse, logs (§8.4, §15, §13.10)
 
-### M2-1 · Migrations SQLite initiales · M · `TODO`
+### M2-1 · Migrations SQLite initiales · M · `DONE`
 DDL §15 en `0001_init.sql` ; PRAGMA WAL ; pool de lecture et writer unique.
 
 **CA :**
-- Base créée au premier lancement dans le dossier de données (ADR-007, mode portable compris).
-- Tests de migration.
+- Base créée au premier lancement dans le dossier de données (ADR-007, mode portable compris). ✅ `gr-store::paths::resolve_data_dir` implémente la logique ADR-007 (dossier `graphite-data/` existant ou lecteur amovible → mode portable ; sinon `%LOCALAPPDATA%\Graphite\`, avec repli portable si la variable est absente), testée en pur (4 tests). `Store::open` crée le dossier de données et le fichier `graphite.db` s'il n'existe pas encore (test `creates_the_database_file_on_first_launch`, `creates_the_data_dir_when_it_does_not_exist_yet`).
+- Tests de migration. ✅ `gr-store::migrate` : création de la table `schema_migrations`, application idempotente (`is_idempotent_when_run_twice`), et rejet d'une migration déjà appliquée mais modifiée (`rejects_a_tampered_already_applied_migration`, empreinte non cryptographique — protège R-SCHEMA contre une dérive silencieuse). PRAGMA `journal_mode=WAL`/`foreign_keys=ON`/`synchronous=NORMAL` appliqués à chaque connexion (writer + chaque connexion du pool `r2d2`), contrainte FK vérifiée par un test dédié. 12 tests au total, `cargo test/clippy/fmt --workspace` verts.
 
 ### M2-2 · Repositories et insertion par lots · M · `TODO`
 Insertion `hands`, `hand_players` (sans flags de stats pour l'instant), `actions`, `hand_raw` (zstd) et `tournaments` provisoires.
