@@ -1,6 +1,7 @@
 import { invoke } from '@tauri-apps/api/core'
 import { listen } from '@tauri-apps/api/event'
 import type {
+  HandsNewPayload,
   ImportProgressPayload,
   ImportSummaryPayload,
   WinamaxAccountPayload,
@@ -39,4 +40,14 @@ export function cancelImport() {
 /** M2-3 : ecoute la progression d'un import (`import://progress`). */
 export function onImportProgress(callback: (progress: ImportProgressPayload) => void) {
   return listen<ImportProgressPayload>('import://progress', (event) => callback(event.payload))
+}
+
+/** M3-2 : persiste les dossiers a surveiller en temps reel et (re)demarre le watcher. */
+export function setWatchedRoots(roots: string[]) {
+  return invoke<void>('set_watched_roots', { roots })
+}
+
+/** M3-2 : ecoute l'arrivee de nouvelles mains detectees par le watcher (`hands://new`). */
+export function onHandsNew(callback: (payload: HandsNewPayload) => void) {
+  return listen<HandsNewPayload>('hands://new', (event) => callback(event.payload))
 }

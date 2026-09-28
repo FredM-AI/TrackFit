@@ -10,7 +10,7 @@ use gr_core::TournamentSummary;
 
 use crate::error::StoreError;
 use crate::hero::{self, HeroProfileRow};
-use crate::import_log::{self, ImportErrorRow, NewImportError};
+use crate::import_log::{self, ImportErrorRow, ImportFileProgress, NewImportError};
 use crate::migrate::run_migrations;
 use crate::repo::{self, HandInsert, ImportReport};
 use crate::summary_repo::{self, AttachSummaryReport};
@@ -135,6 +135,58 @@ impl Store {
     /// Renvoie une [`StoreError`] si l'ecriture SQLite echoue.
     pub fn set_import_error_status(&self, id: i64, status: &str) -> Result<(), StoreError> {
         import_log::set_import_error_status(&self.writer(), id, status)
+    }
+
+    /// Lit le progres de lecture connu d'un fichier de mains (M3-2, lecture
+    /// incrementale) ; `None` si le fichier n'a jamais ete vu.
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si la lecture SQLite echoue.
+    pub fn get_import_file_progress(
+        &self,
+        path: &str,
+    ) -> Result<Option<ImportFileProgress>, StoreError> {
+        let reader = self.reader()?;
+        import_log::get_import_file_progress(&reader, path)
+    }
+
+    /// Avance `last_offset`/`size` d'un fichier apres une lecture
+    /// incrementale reussie (M3-2).
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si l'ecriture SQLite echoue.
+    pub fn update_import_file_progress(
+        &self,
+        file_id: i64,
+        size: i64,
+        last_offset: i64,
+        updated_at: i64,
+    ) -> Result<(), StoreError> {
+        import_log::update_import_file_progress(
+            &self.writer(),
+            file_id,
+            size,
+            last_offset,
+            updated_at,
+        )
+    }
+
+    /// Chemins actuellement suivis comme fichiers de mains presents (M3-2).
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si la lecture SQLite echoue.
+    pub fn list_tracked_hand_file_paths(&self) -> Result<Vec<String>, StoreError> {
+        let reader = self.reader()?;
+        import_log::list_tracked_hand_file_paths(&reader)
+    }
+
+    /// Marque un fichier de mains comme introuvable (renomme/supprime,
+    /// M3-2) ; les mains deja importees restent en base.
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si l'ecriture SQLite echoue.
+    pub fn mark_import_file_missing(&self, path: &str, updated_at: i64) -> Result<(), StoreError> {
+        import_log::mark_import_file_missing(&self.writer(), path, updated_at)
     }
 
     /// Met a jour une erreur d'import apres un reparse toujours infructueux

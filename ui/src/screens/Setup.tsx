@@ -9,6 +9,7 @@ import {
   importPaths,
   markFirstLaunchComplete,
   onImportProgress,
+  setWatchedRoots,
 } from '@/lib/api'
 
 type Step = 'choose' | 'importing' | 'done'
@@ -67,6 +68,9 @@ export function Setup() {
         } finally {
           unlisten()
         }
+        // M3-2 : les memes dossiers passent en surveillance temps reel des
+        // maintenant (sans attendre un redemarrage de l'app).
+        await setWatchedRoots(historyDirs)
       }
 
       await markFirstLaunchComplete()

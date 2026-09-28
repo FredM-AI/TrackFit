@@ -8,8 +8,10 @@
 mod accounts;
 mod error;
 mod import;
+mod incremental;
 mod scan;
 mod summary;
+mod watch;
 
 pub use accounts::{detect_winamax_accounts, WinamaxAccount};
 pub use error::IngestError;
@@ -19,3 +21,4 @@ pub use import::{
 };
 pub use scan::{discover_hand_files, discover_summary_files};
 pub use summary::{import_summaries, SummaryImportSummary};
+pub use watch::{spawn_watcher, WatchTick, WatcherHandle};

@@ -255,12 +255,25 @@ Limites documentées (simplifications volontaires, périmètre M3-1 uniquement) 
 
 **2e bug réel trouvé après réinitialisation manuelle de `first_launch_completed` (28/09) :** rejouer l'assistant avec un profil déjà existant en base levait `erreur SQLite: UNIQUE constraint failed: hero_profiles.name` (`create_hero_profile` faisait un `INSERT` simple sans gérer le conflit). Corrigé en rendant `create_hero_profile` idempotent (`ON CONFLICT(name) DO UPDATE`, réutilise l'id existant) ; ce même crash aurait pu survenir après toute interruption réelle entre la création du profil et le marquage « premier lancement terminé », pas seulement après un reset manuel. Test de régression ajouté.
 
-### M3-2 · Watcher temps réel · M · `TODO`
+### M3-2 · Watcher temps réel · M · `DONE` — le 28/09. CA complet mesuré : 2376 mains sur 12 fichiers/10 min, **p95 = 62 ms** (max 248 ms, cible < 2 s), 0 perte, 0 doublon.
 `notify` + polling de secours (2 s) ; lecture incrémentale par offset ; backoff sur fichier verrouillé ; gestion de la troncature et du renommage.
 
-**CA :**
-- Test d'intégration qui simule 12 fichiers écrits en parallèle (1 main/3 s/table) pendant 10 min : p95 < 2 s, 0 perte, 0 doublon.
-- CPU < 10 % en moyenne.
+**Décisions validées par Frédéric avant implémentation** (nouvelle dépendance + architecture, `CLAUDE.md` §2.8) :
+- Dépendance `notify` (8.2, watcher natif `ReadDirectoryChangesW` sous Windows) ajoutée à `gr-ingest`, aucun appel réseau.
+- Nouvelle clé `settings.watched_roots` (JSON) : les dossiers choisis à la fin de l'assistant M3-1 sont persistés et réarment le watcher à chaque démarrage de l'app (rien ne le faisait avant M3-2).
+
+**Réalisé :**
+- `gr-store::import_log` — `import_files.last_offset` (colonne déjà prévue au schéma M2-1 mais jamais alimentée) : `get_import_file_progress`/`update_import_file_progress`/`list_tracked_hand_file_paths`/`mark_import_file_missing`.
+- `gr-ingest::import` — extraction de `insert_blocks` (parsing + insertion d'une liste de blocs déjà découpés), partagée entre l'import en masse (`import_one_file`, M2-3, inchangé) et la nouvelle lecture incrémentale.
+- `gr-ingest::incremental::import_incremental_file` — lit uniquement les octets ajoutés depuis `last_offset` (`split_hand_blocks` renvoie déjà l'octet du dernier bloc complet, M1-3, jusqu'ici ignoré par l'import en masse qui relit tout à chaque fois) ; fichier tronqué/réécrit (taille < offset connu) → relecture complète depuis 0 (dédoublonnage `UNIQUE(room_id, room_hand_id)`, sans risque) ; fichier verrouillé → 2 tentatives rapprochées (100 ms, 300 ms) puis abandon pour ce passage.
+- `gr-ingest::watch::spawn_watcher` — un seul thread de fond : reveil sur le premier évènement `notify` reçu OU au plus tard après 2 s (polling de secours), les deux déclenchent le même passage (redécouverte + lecture incrémentale par fichier). Fichiers disparus du scan disque (renommage/suppression) → `import_files.status = 'MISSING'`, mains conservées ; un fichier qui réapparaît au même chemin repasse `OK` automatiquement (`upsert_import_file`).
+- `src-tauri::watch` — `set_watched_roots` (commande IPC, persiste + démarre le watcher immédiatement, sans attendre un redémarrage) appelée par `Setup.tsx` juste après l'import initial ; `start_from_persisted_roots` relit `watched_roots` au démarrage de l'app. Évènement `hands://new` (`HandsNewPayload`) émis uniquement quand `hands_inserted > 0` — pas encore consommé côté UI (la barre d'état réelle est le périmètre de M3-3).
+- Tests : `gr-store` (4 nouveaux, offset/missing), `gr-ingest::incremental` (5, dont troncature et bloc partiel non consommé), `gr-ingest::watch` (4 unitaires + 1 test CA "smoke" rapide non ignoré + 1 test CA complet `#[ignore]` fidèle à l'énoncé : 12 fichiers, 1 main/3 s, 10 min réelles, `cargo test -p gr-ingest --release -- --ignored watcher_meets_the_m3_2`).
+
+**Écarts documentés par rapport à l'énoncé PRD §8.4 :**
+- Le backoff « 100 ms → 2 s » sur fichier verrouillé est réparti sur deux échelles plutôt qu'une seule boucle bloquante : 2 tentatives rapprochées (100 ms, 300 ms) dans `import_incremental_file` pour absorber une écriture Winamax en cours, puis le polling de secours du watcher (au plus 2 s) fournit la suite naturellement au passage suivant — évite qu'un fichier récalcitrant bloque le thread du watcher (et donc la latence des 11 autres fichiers) jusqu'à 5 s.
+- Le filtre PRD « fichiers modifiés depuis moins de 12h » (optimisation du polling) est remplacé par une comparaison taille-disque-courante vs `last_offset` connu (`import_incremental_file` retourne immédiatement si égales) : plus précis (détecte toute reprise d'écriture, même sur un vieux fichier), et déjà suffisant en pratique (un historique Winamax de plusieurs centaines de fichiers reste un `read_dir` + quelques stats bon marché toutes les 2 s).
+- CA « CPU < 10 % en moyenne » non mesuré automatiquement (mesure fiable et portable du temps CPU d'un test Rust hors périmètre raisonnable de cette story) — à vérifier par Frédéric via le Gestionnaire des tâches pendant une session réelle, comme le CA manuel de M0-2.
 
 ### M3-3 · Tray et barre d'état · S · `TODO`
 Icône dans la zone de notification (Pause/Reprendre import, Ouvrir, Quitter) ; barre d'état avec le statut d'import, les mains du jour et la dernière main ; priorité processus Below Normal (§6.2).

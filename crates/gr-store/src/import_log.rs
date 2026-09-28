@@ -32,6 +32,93 @@ pub(crate) fn upsert_import_file(
     )?)
 }
 
+/// Etat de suivi d'un fichier de mains deja connu (M3-2, lecture incrementale).
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub struct ImportFileProgress {
+    pub file_id: i64,
+    pub last_offset: i64,
+}
+
+/// Lit le progres de lecture connu pour `path` (`None` si jamais vu :
+/// l'appelant part alors d'un offset 0).
+///
+/// # Errors
+/// Renvoie une [`StoreError`] si la lecture SQLite echoue.
+pub(crate) fn get_import_file_progress(
+    conn: &Connection,
+    path: &str,
+) -> Result<Option<ImportFileProgress>, StoreError> {
+    conn.query_row(
+        "SELECT id, last_offset FROM import_files WHERE path = ?1",
+        [path],
+        |row| {
+            Ok(ImportFileProgress {
+                file_id: row.get(0)?,
+                last_offset: row.get(1)?,
+            })
+        },
+    )
+    .optional()
+    .map_err(StoreError::from)
+}
+
+/// Avance `last_offset`/`size` d'un fichier apres une lecture incrementale
+/// reussie (M3-2). Remet `status` a `'OK'` (le fichier vient d'etre lu avec
+/// succes, meme s'il avait ete marque `MISSING` auparavant).
+///
+/// # Errors
+/// Renvoie une [`StoreError`] si l'ecriture SQLite echoue.
+pub(crate) fn update_import_file_progress(
+    conn: &Connection,
+    file_id: i64,
+    size: i64,
+    last_offset: i64,
+    updated_at: i64,
+) -> Result<(), StoreError> {
+    conn.execute(
+        "UPDATE import_files SET size = ?1, last_offset = ?2, status = 'OK', updated_at = ?3
+         WHERE id = ?4",
+        params![size, last_offset, updated_at, file_id],
+    )?;
+    Ok(())
+}
+
+/// Chemins actuellement suivis comme fichiers de mains presents (M3-2, sert
+/// a detecter les renommages/suppressions par difference avec le scan disque
+/// courant).
+///
+/// # Errors
+/// Renvoie une [`StoreError`] si la lecture SQLite echoue.
+pub(crate) fn list_tracked_hand_file_paths(conn: &Connection) -> Result<Vec<String>, StoreError> {
+    let mut stmt =
+        conn.prepare("SELECT path FROM import_files WHERE kind = 'HANDS' AND status = 'OK'")?;
+    let rows = stmt.query_map([], |row| row.get(0))?;
+    let mut out = Vec::new();
+    for row in rows {
+        out.push(row?);
+    }
+    Ok(out)
+}
+
+/// Marque un fichier de mains comme introuvable (renomme ou supprime,
+/// PRD §8.4 "Robustesse") : les mains deja importees restent en base,
+/// mais le fichier n'est plus relu tant qu'il ne reapparait pas au meme
+/// chemin (`upsert_import_file` repasse alors son statut a `'OK'`).
+///
+/// # Errors
+/// Renvoie une [`StoreError`] si l'ecriture SQLite echoue.
+pub(crate) fn mark_import_file_missing(
+    conn: &Connection,
+    path: &str,
+    updated_at: i64,
+) -> Result<(), StoreError> {
+    conn.execute(
+        "UPDATE import_files SET status = 'MISSING', updated_at = ?1 WHERE path = ?2",
+        params![updated_at, path],
+    )?;
+    Ok(())
+}
+
 /// Une nouvelle erreur d'import a consigner. PAR-15 : une defaillance isolee
 /// (une main, un fichier) n'interrompt jamais le reste de l'import, elle est
 /// juste enregistree ici pour l'onglet Erreurs d'import.
@@ -268,6 +355,52 @@ mod tests {
         assert_eq!(
             row.status, "OPEN",
             "a failed reparse must not change the status"
+        );
+    }
+
+    #[test]
+    fn get_import_file_progress_is_none_for_an_unknown_path() {
+        let conn = migrated_connection();
+        assert_eq!(
+            get_import_file_progress(&conn, "C:/hands/unknown.txt").unwrap(),
+            None
+        );
+    }
+
+    #[test]
+    fn update_import_file_progress_advances_offset_and_size() {
+        let conn = migrated_connection();
+        let file_id = upsert_import_file(&conn, "C:/hands/a.txt", "HANDS", 0, 10, 1).unwrap();
+
+        update_import_file_progress(&conn, file_id, 500, 500, 2).unwrap();
+
+        let progress = get_import_file_progress(&conn, "C:/hands/a.txt")
+            .unwrap()
+            .unwrap();
+        assert_eq!(progress.file_id, file_id);
+        assert_eq!(progress.last_offset, 500);
+    }
+
+    #[test]
+    fn marking_a_file_missing_excludes_it_from_tracked_paths_until_it_reappears() {
+        let conn = migrated_connection();
+        upsert_import_file(&conn, "C:/hands/a.txt", "HANDS", 100, 10, 1).unwrap();
+        upsert_import_file(&conn, "C:/hands/b.txt", "HANDS", 100, 10, 1).unwrap();
+
+        mark_import_file_missing(&conn, "C:/hands/a.txt", 2).unwrap();
+        assert_eq!(
+            list_tracked_hand_file_paths(&conn).unwrap(),
+            vec!["C:/hands/b.txt".to_string()]
+        );
+
+        // The file reappears at the same path (renamed back, or recreated):
+        // a fresh upsert must bring it back to 'OK'.
+        upsert_import_file(&conn, "C:/hands/a.txt", "HANDS", 120, 30, 3).unwrap();
+        let mut tracked = list_tracked_hand_file_paths(&conn).unwrap();
+        tracked.sort();
+        assert_eq!(
+            tracked,
+            vec!["C:/hands/a.txt".to_string(), "C:/hands/b.txt".to_string()]
         );
     }
 }

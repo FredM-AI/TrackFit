@@ -14,7 +14,7 @@ mod summary_repo;
 
 pub use error::StoreError;
 pub use hero::HeroProfileRow;
-pub use import_log::{ImportErrorRow, NewImportError};
+pub use import_log::{ImportErrorRow, ImportFileProgress, NewImportError};
 pub use paths::resolve_data_dir;
 pub use repo::{HandInsert, ImportReport, BATCH_SIZE};
 pub use store::Store;
