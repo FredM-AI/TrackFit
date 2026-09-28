@@ -244,6 +244,8 @@ Limites documentées (simplifications volontaires, périmètre M3-1 uniquement) 
 - Aucun sélecteur de dossier manuel (dialogue de fichiers) si la détection automatique échoue : seule une saisie de pseudo est proposée, sans import associé.
 - `ImportSummaryPayload` (Tauri) a été complété avec `summaries_attached`/`summaries_failed`, oubliés lors du câblage initial de M2-6.
 
+**Bug réel trouvé par le premier test manuel de Frédéric (28/09) :** l'import semblait « ne plus rien faire » après « Import en cours... ». Cause : `ui/src/lib/i18n.ts` utilise le plugin `i18next-icu` (format ICU MessageFormat, accolades simples `{var}`), alors que toutes les clés de traduction — y compris `statusBar.handsToday`/`lastHand` de M0-5, jamais vraiment testées à l'affichage — utilisaient la syntaxe i18next par défaut `{{var}}`. Résultat : aucune substitution, le texte brut `{{count}}` s'affichait tel quel, y compris dans la barre de progression de l'import (`setup.importProgress`), ce qui donnait l'impression d'un blocage alors que l'import continuait probablement en tâche de fond (CPU actif observé). Corrigé dans les deux locales (fr/en), plus un test de régression dédié (`ui/src/lib/i18n.test.ts`, 6 cas dont un avec apostrophe française pour vérifier que `l'import`/`aujourd'hui` ne perturbent pas le parseur ICU — confirmé sans problème). Petits polish associés : attributs `name`/`autoComplete` sur les champs du formulaire (warning navigateur). **Le vrai chronométrage « 5 minutes sans aide » reste à refaire par Frédéric avec ce correctif.**
+
 ### M3-2 · Watcher temps réel · M · `TODO`
 `notify` + polling de secours (2 s) ; lecture incrémentale par offset ; backoff sur fichier verrouillé ; gestion de la troncature et du renommage.
 

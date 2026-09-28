@@ -101,6 +101,7 @@ export function Setup() {
                 >
                   <input
                     type="checkbox"
+                    name={`account-${account.pseudo}`}
                     checked={selected.has(account.pseudo)}
                     onChange={() => toggle(account.pseudo)}
                   />
@@ -122,6 +123,8 @@ export function Setup() {
                 {t('setup.manualPseudo')}
                 <input
                   type="text"
+                  name="manual-pseudo"
+                  autoComplete="off"
                   value={manualPseudo}
                   onChange={(event) => setManualPseudo(event.target.value)}
                   className="rounded border border-[var(--color-border)] bg-[var(--color-surface-2)] px-2 py-1"
@@ -134,6 +137,8 @@ export function Setup() {
             {t('setup.profileName')}
             <input
               type="text"
+              name="profile-name"
+              autoComplete="off"
               value={profileName}
               onChange={(event) => setProfileNameOverride(event.target.value)}
               className="rounded border border-[var(--color-border)] bg-[var(--color-surface-2)] px-2 py-1"
