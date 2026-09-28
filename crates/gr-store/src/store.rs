@@ -7,6 +7,7 @@ use r2d2_sqlite::SqliteConnectionManager;
 use rusqlite::Connection;
 
 use crate::error::StoreError;
+use crate::import_log::{self, ImportErrorRow, NewImportError};
 use crate::migrate::run_migrations;
 use crate::repo::{self, HandInsert, ImportReport};
 
@@ -78,6 +79,73 @@ impl Store {
     ) -> Result<ImportReport, StoreError> {
         let mut writer = self.writer();
         repo::insert_hands(&mut writer, room, hands)
+    }
+
+    /// Enregistre (ou rafraichit) le fichier importe par son chemin (M2-5).
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si l'ecriture SQLite echoue.
+    pub fn upsert_import_file(
+        &self,
+        path: &str,
+        kind: &str,
+        size: i64,
+        mtime: i64,
+        updated_at: i64,
+    ) -> Result<i64, StoreError> {
+        import_log::upsert_import_file(&self.writer(), path, kind, size, mtime, updated_at)
+    }
+
+    /// Consigne une erreur d'import isolee (M2-5, onglet Erreurs d'import).
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si l'ecriture SQLite echoue.
+    pub fn record_import_error(&self, error: &NewImportError<'_>) -> Result<i64, StoreError> {
+        import_log::record_import_error(&self.writer(), error)
+    }
+
+    /// Liste les erreurs d'import, la plus recente d'abord (M2-5).
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si la lecture SQLite echoue.
+    pub fn list_import_errors(
+        &self,
+        status: Option<&str>,
+    ) -> Result<Vec<ImportErrorRow>, StoreError> {
+        let reader = self.reader()?;
+        import_log::list_import_errors(&reader, status)
+    }
+
+    /// Recupere une erreur d'import par id (M2-5, action Reparser/Copier).
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si la lecture SQLite echoue.
+    pub fn get_import_error(&self, id: i64) -> Result<Option<ImportErrorRow>, StoreError> {
+        let reader = self.reader()?;
+        import_log::get_import_error(&reader, id)
+    }
+
+    /// Change le statut d'une erreur d'import (M2-5, action Ignorer/Reparser).
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si l'ecriture SQLite echoue.
+    pub fn set_import_error_status(&self, id: i64, status: &str) -> Result<(), StoreError> {
+        import_log::set_import_error_status(&self.writer(), id, status)
+    }
+
+    /// Met a jour une erreur d'import apres un reparse toujours infructueux
+    /// (M2-5) : le statut reste `OPEN`.
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si l'ecriture SQLite echoue.
+    pub fn update_import_error_failure(
+        &self,
+        id: i64,
+        code: &str,
+        message: &str,
+        parser_version: &str,
+    ) -> Result<(), StoreError> {
+        import_log::update_import_error_failure(&self.writer(), id, code, message, parser_version)
     }
 }
 

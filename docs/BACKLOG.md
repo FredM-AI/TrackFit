@@ -202,12 +202,16 @@ Générateur de tournois cohérents au format Winamax, basé **exclusivement** s
 
 Conception : PRNG interne déterministe (SplitMix64, pas de nouvelle dépendance) ; motif de main généré = un tour préflop où tous les joueurs se couchent sauf la grosse blinde (`P folds` puis `P collected N from pot`), littéralement observé dans le corpus réel (docs/formats/winamax.md §4.5/§4.6) et suffisant pour PAR-4 à PAR-11 (le parser ignore les lignes `Board:`/`Seat N: … won` du `*** SUMMARY ***`, non requises). Tailles de table (3/6/7-max), structures de blindes de niveau 1 (`3/10/20`, `25/100/200`, `40/175/350`) et tapis de départ (500, 20000) tirés exclusivement parmi des valeurs déjà documentées ou déjà utilisées comme fixture de test (R-FORMAT). Heads-up (bouton = petite blinde) généré et vérifié explicitement. Un tournoi = un fichier, une seule table, pas de re-entry ni de summary (hors périmètre de cette story).
 
-### M2-5 · Logs et erreurs d'import · M · `TODO`
+### M2-5 · Logs et erreurs d'import · M · `DONE` (backend ; écran différé, voir note)
 `tracing` + rotation quotidienne, rétention 30 jours ; table `import_errors` ; écran Logs (visionneuse + onglet Erreurs d'import, avec les actions Reparser / Ignorer / Copier).
 
+**Décision de périmètre (Frédéric, 28/09) :** backend complet et testé (`tracing`/rotation/rétention, `import_files`/`import_errors`, logique Reparser/Ignorer, commandes Tauri prêtes) ; l'écran React réel (visionneuse + onglet, boutons) est **différé à M6** (écrans), comme le reste des écrans — aucun outillage IPC (`specta`/`ts-rs`, `ui/src/lib/api.ts`) n'existe encore côté frontend, et sa mise en place mérite sa propre story plutôt que d'être improvisée ici. Les CA ci-dessous sont donc validés au niveau données/IPC (tests bout en bout Rust), pas visuellement dans l'écran (toujours un placeholder).
+
 **CA :**
-- Une main corrompue injectée apparaît dans l'onglet Erreurs.
-- « Reparser » fonctionne après correction du parser.
+- Une main corrompue injectée apparaît dans l'onglet Erreurs. ✅ Validé au niveau données : `gr-ingest::import_one_file` consigne toute main/fichier en échec dans `import_errors` (via `gr-store::record_import_error`, avec `raw_excerpt` conservé) sans interrompre le reste de l'import (PAR-15). Testé de bout en bout (`a_corrupted_hand_is_recorded_in_import_errors`) : une main injectée avec une ligne invalide produit exactement 1 ligne `import_errors` (code `UNKNOWN_LINE`, statut `OPEN`, texte brut conservé).
+- « Reparser » fonctionne après correction du parser. ✅ `gr-ingest::reparse_import_error` relit `raw_excerpt`, retente `WinamaxParser::parse_hand`, insère la main et marque l'erreur `RESOLVED` en cas de succès ; sinon rafraîchit le message et laisse `OPEN`. Testé (impossible de « corriger le parser » dans un test — on simule la même mécanique en corrigeant le texte source conservé, ce qui exerce exactement le chemin de code de l'action Reparser) : succès → `RESOLVED` + main insérée ; échec persistant → `OPEN` + message rafraîchi ; id inconnu → erreur typée.
+
+Réalisé en plus des CA : `tracing`/`tracing-subscriber`/`tracing-appender` (fichier tournant quotidien dans `<data_dir>/logs/`, purge des fichiers >30 jours au démarrage, testée avec une horloge injectée) ; commandes Tauri `list_import_errors`/`reparse_import_error_cmd`/`ignore_import_error` prêtes (non consommées par l'UI). Build `cargo tauri build --no-bundle` validé avec le câblage complet.
 
 ### M2-6 · Rattachement des summaries et des tournois · M · `TODO` (§8.5)
 **CA :**
