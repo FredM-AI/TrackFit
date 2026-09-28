@@ -213,11 +213,15 @@ Conception : PRNG interne déterministe (SplitMix64, pas de nouvelle dépendance
 
 Réalisé en plus des CA : `tracing`/`tracing-subscriber`/`tracing-appender` (fichier tournant quotidien dans `<data_dir>/logs/`, purge des fichiers >30 jours au démarrage, testée avec une horloge injectée) ; commandes Tauri `list_import_errors`/`reparse_import_error_cmd`/`ignore_import_error` prêtes (non consommées par l'UI). Build `cargo tauri build --no-bundle` validé avec le câblage complet.
 
-### M2-6 · Rattachement des summaries et des tournois · M · `TODO` (§8.5)
+### M2-6 · Rattachement des summaries et des tournois · M · `DONE` (§8.5). **M2 est intégralement terminé.**
 **CA :**
-- Un tournoi passe de `PROVISIONAL` à `COMPLETE` à l'import de son summary, quel que soit l'ordre d'import.
-- Les re-entries sont comptées.
-- Un tournoi sans summary passe `INCOMPLETE` après 24 h sans nouvelle main.
+- Un tournoi passe de `PROVISIONAL` à `COMPLETE` à l'import de son summary, quel que soit l'ordre d'import. ✅ `gr-store::summary_repo::attach_summary` crée le tournoi "provisoire" au besoin (summary arrivé avant toute main) via le même `get_or_create_tournament` que M2-2, met à jour buy-in exact/`ko_type`/`is_freeroll`/`entrants` et passe `status = 'COMPLETE'`. Testé dans les deux ordres (hands puis summary, et summary puis hands) sur le vrai fixture OBELISK, ainsi qu'en un seul `run_import` (hands + summary du même dossier).
+- Les re-entries sont comptées. ✅ `tournament_entries.entries_count` = nombre de blocs du summary (2 pour OBELISK) ; gains = somme de tous les blocs (3479+1740 = 5219 centimes, conforme à `docs/formats/winamax.md` §5.3) ; place retenue = celle du dernier bloc (7e). `tournament_bullets` : une ligne par entrée (late_reg_bust, place, durée, gains). Rattachement idempotent (réattacher le même summary ne duplique ni l'entrée ni les bullets).
+- Un tournoi sans summary passe `INCOMPLETE` après 24 h sans nouvelle main. ✅ `gr-store::Store::mark_stale_provisional_tournaments_incomplete(now_ms, stale_after_hours)` — fonction pure testée avec une horloge injectée (23h → toujours `PROVISIONAL`, 25h → `INCOMPLETE`), sans jamais rétrograder un tournoi déjà `COMPLETE`. Appelée une fois au démarrage de `src-tauri` (pas de tâche planifiée récurrente à ce stade — cohérent avec le watcher temps réel de M3-2 qui, lui, tournera en continu).
+
+Extension du parser (M2-6) : `TournamentSummary.hero_pseudo` capture la ligne `Player : <pseudo>` déjà matchée mais jusqu'ici jetée par `gr-parser-winamax` — nécessaire pour savoir à quel joueur rattacher `tournament_entries`. Les 9 snapshots `insta` de summary régénérés (un seul champ ajouté, aucune régression).
+
+Limite documentée (R-FORMAT) : le champ `Type` du summary ne distingue pas KO/PKO/Mystery/Space (les 4 valent littéralement `knockout`, docs/formats/winamax.md §5.2) ; `ko_type` n'est donc renseigné qu'en `KO`/`NONE` (présence ou non d'un bounty), pas dans le détail du sous-type — une heuristique sur le nom du tournoi serait non documentée. `prize_pool_cents`/`paid_places` restent `NULL` : la ligne `Prizepool` du summary n'est pas encore parsée (marquée « non utilisée pour l'instant » depuis M1-6) et les places payées n'apparaissent pas dans les summaries observés.
 
 ---
 

@@ -9,9 +9,11 @@ mod migrate;
 mod paths;
 mod repo;
 mod store;
+mod summary_repo;
 
 pub use error::StoreError;
 pub use import_log::{ImportErrorRow, NewImportError};
 pub use paths::resolve_data_dir;
 pub use repo::{HandInsert, ImportReport, BATCH_SIZE};
 pub use store::Store;
+pub use summary_repo::AttachSummaryReport;

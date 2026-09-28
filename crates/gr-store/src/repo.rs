@@ -68,7 +68,7 @@ fn insert_one_hand(
         room_id,
         &hand.tournament_room_id,
         &hand.tournament_name,
-        hand.played_at,
+        Some(hand.played_at),
     )?;
     let hero_player_id = match &hand.hero_pseudo {
         Some(pseudo) => Some(get_or_create_player(tx, room_id, pseudo, hand.played_at)?),
@@ -189,7 +189,7 @@ fn insert_actions(
     Ok(())
 }
 
-fn get_or_create_room(tx: &Transaction<'_>, room: Room) -> Result<i64, StoreError> {
+pub(crate) fn get_or_create_room(tx: &Transaction<'_>, room: Room) -> Result<i64, StoreError> {
     let (code, name) = match room {
         Room::Winamax => ("winamax", "Winamax"),
     };
@@ -208,12 +208,17 @@ fn get_or_create_room(tx: &Transaction<'_>, room: Room) -> Result<i64, StoreErro
     Ok(tx.last_insert_rowid())
 }
 
-fn get_or_create_tournament(
+/// Cree le tournoi "provisoire" s'il est inconnu pour `(room_id,
+/// room_tournament_id)` (M2-2), sinon renvoie son id sans le modifier (le
+/// rattachement du summary, M2-6, met a jour les autres colonnes separement).
+/// `started_at` est `None` quand l'appelant n'a pas de main a s'y referer
+/// (summary arrive avant toute main, PRD §8.5 : l'ordre d'import est libre).
+pub(crate) fn get_or_create_tournament(
     tx: &Transaction<'_>,
     room_id: i64,
     room_tournament_id: &str,
     name: &str,
-    started_at: i64,
+    started_at: Option<i64>,
 ) -> Result<i64, StoreError> {
     if let Some(id) = tx
         .query_row(
@@ -235,7 +240,9 @@ fn get_or_create_tournament(
 
 /// Cree le joueur s'il est inconnu pour cette salle, sinon elargit la plage
 /// `first_seen_at`/`last_seen_at` (§14, prealable a l'auto-classification).
-fn get_or_create_player(
+/// N'utiliser qu'avec un horodatage fiable (celui d'une vraie main) : voir
+/// [`get_or_create_player_id`] sinon.
+pub(crate) fn get_or_create_player(
     tx: &Transaction<'_>,
     room_id: i64,
     screen_name: &str,
@@ -249,6 +256,26 @@ fn get_or_create_player(
             last_seen_at = MAX(players.last_seen_at, excluded.last_seen_at)",
         params![room_id, screen_name, seen_at],
     )?;
+    get_player_id(tx, room_id, screen_name)
+}
+
+/// Cree le joueur s'il est inconnu, sans toucher `first_seen_at`/
+/// `last_seen_at` (laisses `NULL`) : pour un appelant qui n'a pas
+/// d'horodatage de main fiable (rattachement d'un summary, M2-6).
+pub(crate) fn get_or_create_player_id(
+    tx: &Transaction<'_>,
+    room_id: i64,
+    screen_name: &str,
+) -> Result<i64, StoreError> {
+    tx.execute(
+        "INSERT INTO players (room_id, screen_name) VALUES (?1, ?2)
+         ON CONFLICT(room_id, screen_name) DO NOTHING",
+        params![room_id, screen_name],
+    )?;
+    get_player_id(tx, room_id, screen_name)
+}
+
+fn get_player_id(tx: &Transaction<'_>, room_id: i64, screen_name: &str) -> Result<i64, StoreError> {
     Ok(tx.query_row(
         "SELECT id FROM players WHERE room_id = ?1 AND screen_name = ?2",
         params![room_id, screen_name],

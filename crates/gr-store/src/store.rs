@@ -6,10 +6,13 @@ use r2d2::{Pool, PooledConnection};
 use r2d2_sqlite::SqliteConnectionManager;
 use rusqlite::Connection;
 
+use gr_core::TournamentSummary;
+
 use crate::error::StoreError;
 use crate::import_log::{self, ImportErrorRow, NewImportError};
 use crate::migrate::run_migrations;
 use crate::repo::{self, HandInsert, ImportReport};
+use crate::summary_repo::{self, AttachSummaryReport};
 
 const DB_FILE_NAME: &str = "graphite.db";
 
@@ -146,6 +149,41 @@ impl Store {
         parser_version: &str,
     ) -> Result<(), StoreError> {
         import_log::update_import_error_failure(&self.writer(), id, code, message, parser_version)
+    }
+
+    /// Rattache un summary deja parse a son tournoi (M2-6, PRD §8.5) : cree
+    /// le tournoi "provisoire" au besoin, met a jour le buy-in exact et le
+    /// statut (`COMPLETE`), ecrit `tournament_entries`/`tournament_bullets`.
+    /// Fonctionne quel que soit l'ordre d'import par rapport aux mains.
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si l'ecriture SQLite echoue.
+    pub fn attach_summary(
+        &self,
+        room: Room,
+        summary: &TournamentSummary,
+    ) -> Result<AttachSummaryReport, StoreError> {
+        let mut writer = self.writer();
+        summary_repo::attach_summary(&mut writer, room, summary)
+    }
+
+    /// Marque `INCOMPLETE` tout tournoi encore `PROVISIONAL` dont la
+    /// derniere main connue remonte a plus de `stale_after_hours` heures
+    /// avant `now_ms` (M2-6, PRD §8.5). Renvoie le nombre de tournois marques.
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si l'ecriture SQLite echoue.
+    pub fn mark_stale_provisional_tournaments_incomplete(
+        &self,
+        now_ms: i64,
+        stale_after_hours: i64,
+    ) -> Result<usize, StoreError> {
+        let writer = self.writer();
+        summary_repo::mark_stale_provisional_tournaments_incomplete(
+            &writer,
+            now_ms,
+            stale_after_hours,
+        )
     }
 }
 

@@ -5,6 +5,7 @@ expression: summary
 TournamentSummary {
     room_tournament_id: "1160235973",
     name: "#4 - W SERIES - GIANT - DAY 1",
+    hero_pseudo: "Hero",
     buyin_prize: Money(
         80,
     ),

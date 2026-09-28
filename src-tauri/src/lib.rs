@@ -29,6 +29,9 @@ pub fn run() {
             app.manage(log_guard);
 
             let store = gr_store::Store::open(&data_dir)?;
+            // PRD §8.5 / BACKLOG M2-6 : un tournoi encore PROVISIONAL sans
+            // nouvelle main depuis 24h passe INCOMPLETE, a chaque demarrage.
+            store.mark_stale_provisional_tournaments_incomplete(now_ms(), 24)?;
             app.manage(ImportState {
                 store: Arc::new(store),
                 cancel: gr_ingest::CancelToken::new(),
@@ -45,4 +48,12 @@ pub fn run() {
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
+}
+
+fn now_ms() -> i64 {
+    std::time::SystemTime::now()
+        .duration_since(std::time::UNIX_EPOCH)
+        .ok()
+        .and_then(|d| i64::try_from(d.as_millis()).ok())
+        .unwrap_or(0)
 }
