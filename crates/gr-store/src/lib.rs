@@ -3,6 +3,7 @@
 //! Stockage SQLite (ADR-001) : resolution du dossier de donnees (ADR-007),
 //! migrations numerotees (R-SCHEMA), writer unique + pool de lecture.
 
+mod backfill;
 mod error;
 mod hero;
 mod import_log;

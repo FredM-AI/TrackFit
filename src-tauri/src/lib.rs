@@ -6,6 +6,7 @@ mod import;
 mod import_errors;
 mod logs;
 mod priority;
+mod results;
 mod setup;
 mod status;
 mod tray;
@@ -42,6 +43,21 @@ pub fn run() {
             // PRD §8.5 / BACKLOG M2-6 : un tournoi encore PROVISIONAL sans
             // nouvelle main depuis 24h passe INCOMPLETE, a chaque demarrage.
             store.mark_stale_provisional_tournaments_incomplete(now_ms(), 24)?;
+
+            // M6-3 : rattrapage de hand_players.net_chips/net_bb pour les
+            // mains importees avant que ce calcul n'existe (M2-1, jamais
+            // fait jusqu'ici). En thread separe (pas dans .setup(), qui
+            // bloquerait le demarrage) : ce reparse peut prendre plusieurs
+            // dizaines de secondes sur un gros corpus deja importe ; sans
+            // effet (quasi instantane) une fois le rattrapage initial fait.
+            {
+                let store = Arc::clone(&store);
+                std::thread::spawn(move || match store.backfill_net_chips() {
+                    Ok(0) => {}
+                    Ok(n) => log::info!("net_chips retro-rempli pour {n} main(s)"),
+                    Err(e) => log::warn!("echec du retro-remplissage net_chips : {e}"),
+                });
+            }
 
             app.manage(ImportState {
                 store: Arc::clone(&store),
@@ -80,6 +96,7 @@ pub fn run() {
             hero_profiles::add_hero_pseudo_cmd,
             hero_profiles::remove_hero_pseudo_cmd,
             home::get_home_snapshot,
+            results::get_results_snapshot,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

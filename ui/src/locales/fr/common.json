@@ -86,6 +86,35 @@
       "unresolvedErrors": "{count} erreur(s) non résolue(s)"
     }
   },
+  "results": {
+    "profitCurveTitle": "Courbe de profit (G1)",
+    "chipCurve": {
+      "title": "Jetons réels vs EV all-in (G2)",
+      "real": "Jetons réels",
+      "evAdjusted": "Ajusté EV all-in",
+      "empty": "Aucune main avec jetons calculés pour l'instant."
+    },
+    "volume": {
+      "title": "Volume de tournois (G6)",
+      "empty": "Aucun tournoi pour l'instant."
+    },
+    "pivot": {
+      "title": "Pivot buy-in × format",
+      "buyinColumn": "Buy-in",
+      "formatColumn": "Format",
+      "ko": "KO",
+      "nonKo": "Classique",
+      "tournamentsColumn": "Tournois",
+      "costColumn": "Coût",
+      "feesColumn": "Frais",
+      "profitColumn": "Profit",
+      "roiColumn": "ROI",
+      "itmColumn": "ITM",
+      "abiColumn": "ABI",
+      "exportCsv": "Exporter en CSV",
+      "empty": "Aucun tournoi pour l'instant."
+    }
+  },
   "setup": {
     "title": "Bienvenue sur Graphite",
     "intro": "Configurons votre profil Hero et importons vos mains existantes.",

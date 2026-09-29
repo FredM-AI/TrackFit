@@ -174,6 +174,9 @@ struct SeatStats {
     /// `None` hors evenement all-in (la grande majorite des mains, M5-4)
     /// ou si ce siege n'y est pas implique.
     allin_ev_diff_chips: Option<f64>,
+    net_chips: i64,
+    /// `None` si `hand.bb == 0` (R-NOPANIC, jamais observe en pratique).
+    net_bb: Option<f64>,
 }
 
 fn compute_seat_stats(
@@ -226,6 +229,8 @@ fn compute_seat_stats(
                 .find(|(pseudo, _)| *pseudo == seat.pseudo)
                 .map(|(_, diff)| *diff)
         }),
+        net_chips: gr_stats::compute_net_chips(hand, &seat.pseudo),
+        net_bb: gr_stats::compute_net_bb(hand, &seat.pseudo),
     }
 }
 
@@ -263,7 +268,7 @@ fn insert_hand_players(
                 saw_flop, saw_turn, saw_river, went_sd, won_sd, won_hand,
                 cbf_opp, cbf, cbt_opp, cbt, fcbf_opp, fcbf,
                 pf_bets, pf_raises, pf_calls, pf_folds, pf_checks,
-                allin_ev_diff_chips
+                allin_ev_diff_chips, net_chips, net_bb
             ) VALUES (
                 ?1, ?2, ?3, ?4, ?5, ?6, ?7,
                 ?8, ?9, ?10, ?11, ?12, ?13,
@@ -274,7 +279,7 @@ fn insert_hand_players(
                 ?32, ?33, ?34, ?35, ?36, ?37,
                 ?38, ?39, ?40, ?41, ?42, ?43,
                 ?44, ?45, ?46, ?47, ?48,
-                ?49
+                ?49, ?50, ?51
             )",
             params![
                 hand_id,
@@ -326,6 +331,8 @@ fn insert_hand_players(
                 s.postflop_counts.folds,
                 s.postflop_counts.checks,
                 s.allin_ev_diff_chips,
+                s.net_chips,
+                s.net_bb,
             ],
         )?;
     }
@@ -802,6 +809,44 @@ mod tests {
              (attendu : au moins un vrai all-in dans ces {} mains)",
             hands.len()
         );
+    }
+
+    #[test]
+    fn hand_players_get_net_chips_summing_to_zero_per_hand_on_real_obelisk_hands() {
+        let mut conn = migrated_connection();
+        let hands = obelisk_hands();
+        let inserts: Vec<HandInsert<'_>> = hands
+            .iter()
+            .map(|(raw_text, hand)| HandInsert { hand, raw_text })
+            .collect();
+        insert_hands(&mut conn, Room::Winamax, &inserts).expect("insertion should succeed");
+
+        let populated: i64 = conn
+            .query_row(
+                "SELECT COUNT(*) FROM hand_players WHERE net_chips != 0",
+                [],
+                |row| row.get(0),
+            )
+            .expect("hand_players should be readable");
+        assert!(
+            populated > 0,
+            "net_chips devrait etre non nul sur au moins un siege"
+        );
+
+        let mut stmt = conn
+            .prepare("SELECT hand_id, SUM(net_chips) FROM hand_players GROUP BY hand_id")
+            .expect("query should prepare");
+        let sums: Vec<(i64, i64)> = stmt
+            .query_map([], |row| Ok((row.get(0)?, row.get(1)?)))
+            .expect("query should run")
+            .collect::<rusqlite::Result<Vec<_>>>()
+            .expect("rows should be readable");
+        for (hand_id, sum) in sums {
+            assert_eq!(
+                sum, 0,
+                "hand_id={hand_id} : Σ net_chips devrait valoir 0 (pas de rake sur ce corpus)"
+            );
+        }
     }
 
     #[test]

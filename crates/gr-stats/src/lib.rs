@@ -3,12 +3,14 @@
 //! Moteur de statistiques (PRD §10, M4) : positions, profondeurs de tapis,
 //! flags d'action/opportunite par main.
 
+mod chips;
 mod depth;
 mod flag;
 mod position;
 mod postflop;
 mod preflop;
 
+pub use chips::{compute_net_bb, compute_net_chips};
 pub use depth::{depth_bb, depth_bracket_label, DepthMode, DEFAULT_DEPTH_BRACKETS};
 pub use flag::StatFlag;
 pub use position::{assign_positions, position_group, sb_bb_seats};

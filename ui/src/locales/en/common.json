@@ -86,6 +86,35 @@
       "unresolvedErrors": "{count} unresolved error(s)"
     }
   },
+  "results": {
+    "profitCurveTitle": "Profit curve (G1)",
+    "chipCurve": {
+      "title": "Real vs all-in EV chips (G2)",
+      "real": "Real chips",
+      "evAdjusted": "All-in EV adjusted",
+      "empty": "No hand with computed chips yet."
+    },
+    "volume": {
+      "title": "Tournament volume (G6)",
+      "empty": "No tournament yet."
+    },
+    "pivot": {
+      "title": "Buy-in × format pivot",
+      "buyinColumn": "Buy-in",
+      "formatColumn": "Format",
+      "ko": "KO",
+      "nonKo": "Regular",
+      "tournamentsColumn": "Tournaments",
+      "costColumn": "Cost",
+      "feesColumn": "Fees",
+      "profitColumn": "Profit",
+      "roiColumn": "ROI",
+      "itmColumn": "ITM",
+      "abiColumn": "ABI",
+      "exportCsv": "Export as CSV",
+      "empty": "No tournament yet."
+    }
+  },
   "setup": {
     "title": "Welcome to Graphite",
     "intro": "Let's set up your Hero profile and import your existing hands.",

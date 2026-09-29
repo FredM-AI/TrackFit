@@ -6,3 +6,6 @@ license.workspace = true
 
 [dependencies]
 gr-core = { path = "../gr-core" }
+
+[dev-dependencies]
+gr-parser-winamax = { path = "../gr-parser-winamax" }

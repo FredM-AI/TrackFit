@@ -16,11 +16,18 @@
 mod error;
 mod home;
 mod kpis;
+mod lttb;
+mod results;
 mod sqlite;
 
 pub use error::AnalyticsError;
 pub use home::{fetch_hero_tournament_results, hero_allin_ev_diff_bb, TournamentResultRow};
 pub use kpis::{compute_results_kpis, Bullet, ResultsKpis, TicketValuation, TournamentResult};
+pub use lttb::lttb;
+pub use results::{
+    fetch_hero_chip_history, fetch_hero_tournament_volume_by_day, pivot_by_buyin_and_ko,
+    pivot_to_csv, ChipHistoryPoint, PivotRow, TournamentVolumePoint, BUYIN_BRACKETS_CENTS,
+};
 pub use sqlite::SqliteAnalyticsBackend;
 
 /// Dimension de regroupement d'un rapport (PRD §13.5). Portee a ce que
