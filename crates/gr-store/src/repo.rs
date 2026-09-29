@@ -133,10 +133,94 @@ fn insert_hand_raw(tx: &Transaction<'_>, hand_id: i64, raw_text: &str) -> Result
     Ok(())
 }
 
+/// Tous les champs derives par `gr-stats` pour un siege d'une main (PRD
+/// §10.2/§10.3/§10.4, M4-3/M4-4) : position, profondeur, ligne preflop et
+/// flags de stats preflop/postflop. Beaucoup de booleens (`StatFlag` inclus)
+/// parce que le schema `hand_players` les stocke lui-meme comme autant de
+/// colonnes independantes (pas un etat exclusif) — regroupes ici seulement
+/// pour eviter de repeter les 48 appels `gr_stats::compute_*` a chaque
+/// insertion.
+#[allow(clippy::struct_excessive_bools)]
+struct SeatStats {
+    position_label: Option<String>,
+    position_group_label: Option<&'static str>,
+    stack_bb: Option<f64>,
+    eff_stack_bb: Option<f64>,
+    depth_bucket: Option<String>,
+    eff_depth_bucket: Option<String>,
+    preflop_line: Option<String>,
+    vpip: gr_stats::StatFlag,
+    pfr: gr_stats::StatFlag,
+    rfi: gr_stats::StatFlag,
+    limp: gr_stats::StatFlag,
+    oshove: gr_stats::StatFlag,
+    three_bet: gr_stats::StatFlag,
+    f3b: gr_stats::StatFlag,
+    four_bet: gr_stats::StatFlag,
+    ats: gr_stats::StatFlag,
+    fsteal: gr_stats::StatFlag,
+    rsteal: gr_stats::StatFlag,
+    saw_flop: bool,
+    saw_turn: bool,
+    saw_river: bool,
+    went_sd: bool,
+    won_sd: bool,
+    won_hand: bool,
+    cbf: gr_stats::StatFlag,
+    cbt: gr_stats::StatFlag,
+    fcbf: gr_stats::StatFlag,
+    postflop_counts: gr_stats::PostflopActionCounts,
+}
+
+fn compute_seat_stats(
+    hand: &HandRecord,
+    seat: &gr_core::SeatInfo,
+    positions: &std::collections::HashMap<u8, gr_core::Position>,
+) -> SeatStats {
+    let position = positions.get(&seat.seat).copied();
+    let went_sd = gr_stats::went_to_showdown(hand, &seat.pseudo);
+    let won_hand = gr_stats::won_pot(hand, &seat.pseudo);
+    let stack_bb = gr_stats::depth_bb(hand, seat.seat, gr_stats::DepthMode::Player);
+    let eff_stack_bb = gr_stats::depth_bb(hand, seat.seat, gr_stats::DepthMode::Effective);
+
+    SeatStats {
+        position_label: position.map(|p| p.to_string()),
+        position_group_label: position.map(gr_stats::position_group),
+        stack_bb,
+        eff_stack_bb,
+        depth_bucket: stack_bb
+            .map(|d| gr_stats::depth_bracket_label(d, gr_stats::DEFAULT_DEPTH_BRACKETS)),
+        eff_depth_bucket: eff_stack_bb
+            .map(|d| gr_stats::depth_bracket_label(d, gr_stats::DEFAULT_DEPTH_BRACKETS)),
+        preflop_line: gr_stats::preflop_line(hand, &seat.pseudo),
+        vpip: gr_stats::compute_vpip(hand, &seat.pseudo),
+        pfr: gr_stats::compute_pfr(hand, &seat.pseudo),
+        rfi: gr_stats::compute_rfi(hand, &seat.pseudo),
+        limp: gr_stats::compute_limp(hand, &seat.pseudo),
+        oshove: gr_stats::compute_oshove(hand, &seat.pseudo),
+        three_bet: gr_stats::compute_3b(hand, &seat.pseudo),
+        f3b: gr_stats::compute_f3b(hand, &seat.pseudo),
+        four_bet: gr_stats::compute_4b(hand, &seat.pseudo),
+        ats: gr_stats::compute_ats(hand, &seat.pseudo),
+        fsteal: gr_stats::compute_fsteal(hand, &seat.pseudo),
+        rsteal: gr_stats::compute_rsteal(hand, &seat.pseudo),
+        saw_flop: gr_stats::saw_street(hand, &seat.pseudo, Street::Flop),
+        saw_turn: gr_stats::saw_street(hand, &seat.pseudo, Street::Turn),
+        saw_river: gr_stats::saw_street(hand, &seat.pseudo, Street::River),
+        went_sd,
+        won_sd: went_sd && won_hand,
+        won_hand,
+        cbf: gr_stats::compute_cbf(hand, &seat.pseudo),
+        cbt: gr_stats::compute_cbt(hand, &seat.pseudo),
+        fcbf: gr_stats::compute_fcbf(hand, &seat.pseudo),
+        postflop_counts: gr_stats::compute_postflop_counts(hand, &seat.pseudo),
+    }
+}
+
 /// Insere `hand_players`, avec les positions, profondeurs et flags de
-/// stats preflop calcules par `gr-stats` (PRD §10.2/§10.3/§10.4, M4-3).
-/// Un seul `assign_positions` par main (pas par siege) : evite de
-/// recalculer les positions de tous les sieges N fois.
+/// stats preflop et postflop calcules par `gr-stats` (PRD §10.2/§10.3/
+/// §10.4, M4-3/M4-4). Un seul `assign_positions` par main (pas par siege) :
+/// evite de recalculer les positions de tous les sieges N fois.
 fn insert_hand_players(
     tx: &Transaction<'_>,
     room_id: i64,
@@ -152,31 +236,7 @@ fn insert_hand_players(
         } else {
             None
         };
-
-        let position = positions.get(&seat.seat).copied();
-        let position_label = position.map(|p| p.to_string());
-        let position_group_label = position.map(gr_stats::position_group);
-
-        let stack_bb = gr_stats::depth_bb(hand, seat.seat, gr_stats::DepthMode::Player);
-        let eff_stack_bb = gr_stats::depth_bb(hand, seat.seat, gr_stats::DepthMode::Effective);
-        let depth_bucket =
-            stack_bb.map(|d| gr_stats::depth_bracket_label(d, gr_stats::DEFAULT_DEPTH_BRACKETS));
-        let eff_depth_bucket = eff_stack_bb
-            .map(|d| gr_stats::depth_bracket_label(d, gr_stats::DEFAULT_DEPTH_BRACKETS));
-
-        let preflop_line = gr_stats::preflop_line(hand, &seat.pseudo);
-
-        let vpip = gr_stats::compute_vpip(hand, &seat.pseudo);
-        let pfr = gr_stats::compute_pfr(hand, &seat.pseudo);
-        let rfi = gr_stats::compute_rfi(hand, &seat.pseudo);
-        let limp = gr_stats::compute_limp(hand, &seat.pseudo);
-        let oshove = gr_stats::compute_oshove(hand, &seat.pseudo);
-        let three_bet = gr_stats::compute_3b(hand, &seat.pseudo);
-        let f3b = gr_stats::compute_f3b(hand, &seat.pseudo);
-        let four_bet = gr_stats::compute_4b(hand, &seat.pseudo);
-        let ats = gr_stats::compute_ats(hand, &seat.pseudo);
-        let fsteal = gr_stats::compute_fsteal(hand, &seat.pseudo);
-        let rsteal = gr_stats::compute_rsteal(hand, &seat.pseudo);
+        let s = compute_seat_stats(hand, seat, &positions);
 
         tx.execute(
             "INSERT INTO hand_players (
@@ -185,47 +245,70 @@ fn insert_hand_players(
                 vpip_opp, vpip, pfr,
                 rfi_opp, rfi, limp, oshove,
                 tb_opp, tb, f3b_opp, f3b, fb_opp, fb,
-                ats_opp, ats, fsteal_opp, fsteal, rsteal
+                ats_opp, ats, fsteal_opp, fsteal, rsteal,
+                saw_flop, saw_turn, saw_river, went_sd, won_sd, won_hand,
+                cbf_opp, cbf, cbt_opp, cbt, fcbf_opp, fcbf,
+                pf_bets, pf_raises, pf_calls, pf_folds, pf_checks
             ) VALUES (
                 ?1, ?2, ?3, ?4, ?5, ?6, ?7,
                 ?8, ?9, ?10, ?11, ?12, ?13,
                 ?14, ?15, ?16,
                 ?17, ?18, ?19, ?20,
                 ?21, ?22, ?23, ?24, ?25, ?26,
-                ?27, ?28, ?29, ?30, ?31
+                ?27, ?28, ?29, ?30, ?31,
+                ?32, ?33, ?34, ?35, ?36, ?37,
+                ?38, ?39, ?40, ?41, ?42, ?43,
+                ?44, ?45, ?46, ?47, ?48
             )",
             params![
                 hand_id,
                 player_id,
                 seat.seat,
-                position_label,
-                position_group_label,
+                s.position_label,
+                s.position_group_label,
                 is_hero,
                 seat.starting_stack.amount(),
-                stack_bb,
-                eff_stack_bb,
-                depth_bucket,
-                eff_depth_bucket,
+                s.stack_bb,
+                s.eff_stack_bb,
+                s.depth_bucket,
+                s.eff_depth_bucket,
                 hole_cards,
-                preflop_line,
-                vpip.opp,
-                vpip.act,
-                pfr.act,
-                rfi.opp,
-                rfi.act,
-                limp.act,
-                oshove.act,
-                three_bet.opp,
-                three_bet.act,
-                f3b.opp,
-                f3b.act,
-                four_bet.opp,
-                four_bet.act,
-                ats.opp,
-                ats.act,
-                fsteal.opp,
-                fsteal.act,
-                rsteal.act,
+                s.preflop_line,
+                s.vpip.opp,
+                s.vpip.act,
+                s.pfr.act,
+                s.rfi.opp,
+                s.rfi.act,
+                s.limp.act,
+                s.oshove.act,
+                s.three_bet.opp,
+                s.three_bet.act,
+                s.f3b.opp,
+                s.f3b.act,
+                s.four_bet.opp,
+                s.four_bet.act,
+                s.ats.opp,
+                s.ats.act,
+                s.fsteal.opp,
+                s.fsteal.act,
+                s.rsteal.act,
+                s.saw_flop,
+                s.saw_turn,
+                s.saw_river,
+                s.went_sd,
+                s.won_sd,
+                s.won_hand,
+                s.cbf.opp,
+                s.cbf.act,
+                s.cbt.opp,
+                s.cbt.act,
+                s.fcbf.opp,
+                s.fcbf.act,
+                s.postflop_counts.bets,
+                s.postflop_counts.raises,
+                s.postflop_counts.calls,
+                s.postflop_counts.folds,
+                s.postflop_counts.checks,
             ],
         )?;
     }
@@ -390,6 +473,26 @@ mod tests {
     use super::*;
     use crate::migrate::run_migrations;
 
+    /// Assertion helper pour `hand_players_have_postflop_stats_computed_at_insertion` :
+    /// autant de booleens que de colonnes independantes du schema (M4-4),
+    /// pas un etat exclusif — pas de state-machine plus adaptee ici.
+    #[derive(Debug, PartialEq)]
+    #[allow(clippy::struct_excessive_bools)]
+    struct PostflopRow {
+        saw_flop: bool,
+        saw_turn: bool,
+        saw_river: bool,
+        went_sd: bool,
+        won_sd: bool,
+        won_hand: bool,
+        cbf_opp: bool,
+        cbf: bool,
+        fcbf_opp: bool,
+        pf_bets: i64,
+        pf_calls: i64,
+        pf_checks: i64,
+    }
+
     fn migrated_connection() -> Connection {
         let mut conn = Connection::open_in_memory().expect("in-memory sqlite connection");
         conn.execute_batch("PRAGMA foreign_keys = ON;")
@@ -497,6 +600,95 @@ mod tests {
         );
         assert!(vpip_opp.is_some(), "vpip_opp not computed at import (M4-3)");
         assert!(stack_bb.is_some(), "stack_bb not computed at import (M4-3)");
+    }
+
+    /// Main reelle (OBELISK, 3-max) : Hero relance preflop (seule relance
+    /// de la main), flop et turn checkes des deux cotes, riviere
+    /// mise/suivie, abattage — Hero montre et perd. Verifie les valeurs
+    /// exactes des colonnes postflop (M4-4), pas seulement leur non-nullite
+    /// (ce sont des booleens/compteurs, jamais `NULL`).
+    #[test]
+    fn hand_players_have_postflop_stats_computed_at_insertion() {
+        let mut conn = migrated_connection();
+        let hands = obelisk_hands();
+        let (raw_text, hand) = &hands[0];
+        let insert = HandInsert { hand, raw_text };
+        insert_hands(&mut conn, Room::Winamax, &[insert]).expect("insertion should succeed");
+
+        let player_id = |screen_name: &str| -> i64 {
+            conn.query_row(
+                "SELECT id FROM players WHERE screen_name = ?1",
+                [screen_name],
+                |row| row.get(0),
+            )
+            .expect("player should exist")
+        };
+
+        let row = |screen_name: &str| -> PostflopRow {
+            conn.query_row(
+                "SELECT saw_flop, saw_turn, saw_river, went_sd, won_sd, won_hand,
+                        cbf_opp, cbf, fcbf_opp, pf_bets, pf_calls, pf_checks
+                 FROM hand_players WHERE player_id = ?1",
+                [player_id(screen_name)],
+                |r| {
+                    Ok(PostflopRow {
+                        saw_flop: r.get(0)?,
+                        saw_turn: r.get(1)?,
+                        saw_river: r.get(2)?,
+                        went_sd: r.get(3)?,
+                        won_sd: r.get(4)?,
+                        won_hand: r.get(5)?,
+                        cbf_opp: r.get(6)?,
+                        cbf: r.get(7)?,
+                        fcbf_opp: r.get(8)?,
+                        pf_bets: r.get(9)?,
+                        pf_calls: r.get(10)?,
+                        pf_checks: r.get(11)?,
+                    })
+                },
+            )
+            .expect("hand_players row should exist")
+        };
+
+        // Hero : dernier (et seul) relanceur preflop, checke le flop en
+        // premier a agir sur cette rue (P0002 a checke avant) -> opportunite
+        // CBF mais pas d'action ; checke aussi le turn ; suit la mise de
+        // riviere ; abattage perdu.
+        assert_eq!(
+            row("Hero"),
+            PostflopRow {
+                saw_flop: true,
+                saw_turn: true,
+                saw_river: true,
+                went_sd: true,
+                won_sd: false,
+                won_hand: false,
+                cbf_opp: true,
+                cbf: false,
+                fcbf_opp: false,
+                pf_bets: 0,
+                pf_calls: 1,
+                pf_checks: 2,
+            }
+        );
+        // P0002 : n'a pas relance preflop, mise la riviere, gagne l'abattage.
+        assert_eq!(
+            row("P0002"),
+            PostflopRow {
+                saw_flop: true,
+                saw_turn: true,
+                saw_river: true,
+                went_sd: true,
+                won_sd: true,
+                won_hand: true,
+                cbf_opp: false,
+                cbf: false,
+                fcbf_opp: false,
+                pf_bets: 1,
+                pf_calls: 0,
+                pf_checks: 2,
+            }
+        );
     }
 
     #[test]

@@ -6,8 +6,12 @@
 //! (fold/call/raise...) sont a fournir dans `preflop`, exactement ce dont
 //! les flags de stats (VPIP, PFR... M4-3) ont besoin.
 //!
-//! Portee volontairement limitee au preflop pour l'instant (M4-3 en a
-//! besoin) ; a etendre avec des rues postflop quand M4-4 en aura besoin.
+//!
+//! Le postflop (M4-4) vit dans `tests/support/postflop.rs`, un module
+//! frere inclus uniquement par `postflop_flags.rs` (`#[path]`) : ses
+//! helpers ne seraient jamais utilises par `hand_macro.rs`/
+//! `preflop_flags.rs`, qui ne testent que le preflop, et `dead_code`
+//! (clippy `-D warnings`) le detecterait binaire par binaire.
 
 use gr_core::{ActionKind, ActionRecord, Chips, HandRecord, SeatInfo, Street};
 use gr_stats::sb_bb_seats;
