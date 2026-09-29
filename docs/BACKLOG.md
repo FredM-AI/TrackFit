@@ -386,18 +386,29 @@ Méthode A (profils de structure) basée sur la structure `Levels` du summary, e
 
 **Décision (29/09) :** différé en V2. En creusant la story avant de l'implémenter, deux points non triviaux sont apparus : (1) la méthode A suppose la structure `Levels` du summary parsée en données structurées (durée par niveau) — elle ne l'est pas encore aujourd'hui (`gr-parser-winamax::summary` ignore actuellement cette ligne, `_levels_line` jamais exploitée) ; (2) le PRD ne donne aucune borne par défaut pour Early/Middle/Late en méthode A (contrairement à la méthode B qui a 300 %/150 %/100 % explicites) — les inventer serait un choix produit, pas un détail d'implémentation. Frédéric préfère reporter les deux décisions (parser `Levels` maintenant ou pas, bornes par défaut) à la V2 plutôt que de les trancher maintenant. `hands.phase_by_level`/`phase_by_players`/`players_left_est` restent `NULL` jusque-là (colonnes déjà prévues dans `0001_init.sql`, comme M4-3/M4-4).
 
-### M4-6 · Compteurs incrémentaux `player_stat_counters` · M · `TODO` (§10.7)
+### M4-6 · Compteurs incrémentaux `player_stat_counters` · M · `BLOCKED(différé en V2, décision Frédéric le 29/09)` (§10.7)
 **CA :**
 - Compteurs = recalcul complet (test d'équivalence sur le corpus).
 - Lecture de 10 joueurs < 20 ms.
 - Job de reconstruction.
 
-### M4-7 · `AnalyticsBackend` (implémentation SQLite) · M · `TODO`
+**Décision (29/09) :** différé en V2, comme M4-5. C'est explicitement de la préparation HUD (D16, PRD §10.7 : « préparation HUD ») — or le HUD lui-même est V2 (CLAUDE.md §1). La clé de contexte du PRD (`format|position_group|depth_bucket|phase|street_line`) dépend en partie de `phase`, déjà différé (M4-5), et le PRD ne précise pas quelle granularité matérialiser (agrégat global seul, contexte complet, ou aussi les combinaisons intermédiaires comme « VPIP par position seule ») — un vrai choix produit, pas un détail. Aucun écran V1 ne consomme ces compteurs aujourd'hui. M4-7 (`AnalyticsBackend`) agrège directement depuis `hand_players` sans dépendre de compteurs incrémentaux.
+
+### M4-7 · `AnalyticsBackend` (implémentation SQLite) · M · `DONE` — le 29/09.
 API de requête générique : dimensions, mesures (stats/KPIs), filtres → table de résultats.
 
 **CA :**
 - Toutes les stats par position × profondeur pour le Hero.
 - Performances NFR-P6 (version SQLite) mesurées et consignées.
+
+**Réalisé :**
+- Nouveau crate `gr-analytics` (jusqu'ici vide) : trait `AnalyticsBackend::run_report(&ReportRequest) -> Vec<ReportRow>` (PRD §13.5/ADR-002), agnostique du backend (SQLite livré ici, DuckDB en M6 derrière le même trait). `Dimension` (`PositionGroup`, `DepthBucket`), `Measure` (17 stats action/opportunité de PRD §10.2, VPIP à WWSF), `StatCell{opportunities, actions}` (+ `percentage()`, `None` si `opportunities == 0` plutôt qu'un faux `0.0 %`).
+- **Portée volontairement limitée** aux 17 stats à couple opportunité/action : AF/AFQ (ratios de compteurs, pas un couple opp/act, cf. `gr_stats::PostflopActionCounts`) et les dimensions phase/format/cartes/jour (aucun écran ne les consomme encore ; phase différée en V2, M4-5) sont hors périmètre.
+- `SqliteAnalyticsBackend` agrège directement `hand_players`/`hands` par `SUM`/`GROUP BY` (pas de compteurs incrémentaux : `player_stat_counters` différé en V2, M4-6) — un seul profil Hero à la fois, scopé via `hero_accounts` (même motif que M3-3/M3-4/M3-5).
+- **Bug trouvé et corrigé par le test de perf lui-même** : `SUM()` sur un ensemble vide (ou une colonne jamais renseignée) renvoie `NULL` en SQL, pas `0` — `InvalidColumnType` sans `COALESCE(SUM(...), 0)`. Un test de régression dédié (`report_with_no_matching_hands_returns_zero_not_null`) couvre le cas réel correspondant : un profil Hero fraîchement créé, sans aucune main encore importée.
+- **Nouvelle migration `0002_hands_hero_player_index.sql`** (`CREATE INDEX ix_hands_hero_player ON hands(hero_player_id)`) — la première vraie migration `0002` du projet (contrairement à M4-3/M4-4 où les colonnes existaient déjà). Justifiée par la mesure : le rapport à 2 dimensions × 10 stats sur 2M mains passait de 7,99 s à 5,6-5,8 s (cible NFR-P6 SQLite : < 8 s), une marge quasi nulle avant l'index jugée trop fragile pour la garder telle quelle.
+- Perf (R-PERF, NFR-P6) : jeu de 2M lignes `hand_players` semé directement en SQL (pas via `gr-store::insert_hands`, qui mesurerait le coût de l'import — déjà couvert par M2-3/M2-4/M4-3/M4-4 — pas celui du rapport). **5,6-5,8 s mesurés** (3 lancers), sous la cible de 8 s avec une marge confortable après l'index.
+- 4 tests d'intégration (`gr-analytics/tests/report.rs`, mains réellement insérées via `gr-store` donc flags `gr-stats` réels, pas une fixture SQL à la main) + 1 test de perf différé (`--ignored`, `gr-analytics/tests/perf.rs`).
 
 ### M4-8 · Validation croisée des stats · S · `TODO`
 Si Frédéric a accès à un autre tracker (essai PT4/HM3 ou Xeester), comparer les stats du Hero sur un même échantillon.

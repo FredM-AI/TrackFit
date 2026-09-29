@@ -15,10 +15,16 @@ struct Migration {
 
 /// Migrations dans l'ordre d'application. R-SCHEMA : on n'en modifie jamais
 /// une deja mergee, on en ajoute seulement de nouvelles a la fin.
-const MIGRATIONS: &[Migration] = &[Migration {
-    version: "0001_init",
-    sql: include_str!("../migrations/0001_init.sql"),
-}];
+const MIGRATIONS: &[Migration] = &[
+    Migration {
+        version: "0001_init",
+        sql: include_str!("../migrations/0001_init.sql"),
+    },
+    Migration {
+        version: "0002_hands_hero_player_index",
+        sql: include_str!("../migrations/0002_hands_hero_player_index.sql"),
+    },
+];
 
 /// Cree la table de suivi si besoin, puis applique les migrations manquantes
 /// dans l'ordre, chacune dans sa propre transaction. Idempotent : relancer sur
@@ -117,7 +123,7 @@ mod tests {
                 row.get(0)
             })
             .expect("schema_migrations should be readable");
-        assert_eq!(applied, 1);
+        assert_eq!(applied, i64::try_from(MIGRATIONS.len()).unwrap_or(i64::MAX));
     }
 
     #[test]
