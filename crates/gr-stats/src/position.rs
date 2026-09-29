@@ -29,6 +29,35 @@ use gr_core::{HandRecord, Position};
 /// exemple reel apparait.
 #[must_use]
 pub fn assign_positions(hand: &HandRecord) -> HashMap<u8, Position> {
+    let Some(ordered) = ordered_dealt_in_seats(hand) else {
+        return HashMap::new();
+    };
+    let n = ordered.len();
+    ordered.into_iter().zip(position_labels(n)).collect()
+}
+
+/// Sieges qui postent la petite et la grosse blinde (dans cet ordre),
+/// utile independamment du nommage complet des positions (ex. `gr-stats`
+/// lui-meme, ou le DSL de test `hand!{}`, M4-2). `None` dans les memes cas
+/// que [`assign_positions`] (moins de 2 ou plus de 9 sieges distribues,
+/// bouton mort).
+#[must_use]
+pub fn sb_bb_seats(hand: &HandRecord) -> Option<(u8, u8)> {
+    let ordered = ordered_dealt_in_seats(hand)?;
+    if ordered.len() == 2 {
+        // Heads-up : le bouton poste la petite blinde (PRD §10.4).
+        Some((ordered[0], ordered[1]))
+    } else {
+        Some((ordered[1], ordered[2]))
+    }
+}
+
+/// Sieges distribues de `hand`, tries a partir du bouton dans le sens du
+/// jeu (numeros de siege croissants, verifie sur deux vrais fixtures —
+/// voir le commentaire de module). `None` si moins de 2 ou plus de 9
+/// sieges sont distribues, ou si le bouton n'est pas parmi eux (bouton
+/// mort, jamais observe).
+fn ordered_dealt_in_seats(hand: &HandRecord) -> Option<Vec<u8>> {
     let mut seats: Vec<u8> = hand
         .seats
         .iter()
@@ -40,15 +69,19 @@ pub fn assign_positions(hand: &HandRecord) -> HashMap<u8, Position> {
 
     let n = seats.len();
     if !(2..=9).contains(&n) {
-        return HashMap::new();
+        return None;
     }
 
-    let Some(button_index) = seats.iter().position(|&s| s == hand.button_seat) else {
-        return HashMap::new();
-    };
-
-    let ordered = seats.iter().copied().cycle().skip(button_index).take(n);
-    ordered.zip(position_labels(n)).collect()
+    let button_index = seats.iter().position(|&s| s == hand.button_seat)?;
+    Some(
+        seats
+            .iter()
+            .copied()
+            .cycle()
+            .skip(button_index)
+            .take(n)
+            .collect(),
+    )
 }
 
 /// Etiquettes dans l'ordre BTN, SB, BB, UTG... CO (PRD §10.4), pour une
@@ -245,5 +278,17 @@ mod tests {
         // seulement que la fonction ne panique pas et se degrade proprement.
         let hand = hand_with(1, (1..=10).map(|n| seat(n, true)).collect());
         assert!(assign_positions(&hand).is_empty());
+    }
+
+    #[test]
+    fn sb_bb_seats_matches_assign_positions_for_six_max() {
+        let hand = hand_with(3, (1..=6).map(|n| seat(n, true)).collect());
+        assert_eq!(sb_bb_seats(&hand), Some((4, 5)));
+    }
+
+    #[test]
+    fn sb_bb_seats_in_heads_up_has_the_button_post_small_blind() {
+        let hand = hand_with(1, vec![seat(1, true), seat(2, true)]);
+        assert_eq!(sb_bb_seats(&hand), Some((1, 2)));
     }
 }

@@ -342,8 +342,13 @@ Icône dans la zone de notification (Pause/Reprendre import, Ouvrir, Quitter) ; 
 - Limite connue non traitée (jamais observée dans le corpus, PRD la mentionne comme cas particulier) : le **bouton mort** (`button_seat` absent des sièges distribués) — `assign_positions` renvoie une map vide dans ce cas plutôt que d'inventer un comportement ; à traiter si un exemple réel apparaît (même pattern que les autres inconnues du corpus, cf. « Idées / à trier »).
 - Portée volontairement limitée à des fonctions pures dans `gr-stats` : le câblage dans `hand_players` (colonnes `position`/`stack_bb`/`eff_stack_bb`/`depth_bucket`/...) est explicitement le périmètre de **M4-3**, pas de M4-1 (déjà indiqué par son propre CA "Colonnes hand_players remplies à l'import").
 
-### M4-2 · DSL de test `hand!{}` · M · `TODO`
+### M4-2 · DSL de test `hand!{}` · M · `DONE` — le 29/09.
 Construction concise de mains de test pour `gr-stats`.
+
+**Réalisé :**
+- `gr-stats/tests/support/mod.rs` — macro `hand!{}` (`#[macro_export]` depuis un module `tests/` : visible sans import dans tout fichier de `gr-stats/tests/*.rs` faisant `mod support;`, vérifié empiriquement). Postes d'ante/blindes **générés automatiquement** à partir de `button`/`sb`/`bb`/`ante` et des sièges (réutilise `gr_stats::sb_bb_seats`, nouvelle fonction extraite de M4-1) : seules les actions volontaires (fold/call/raise/check/shove) sont à fournir dans `preflop`, exactement ce dont les flags préflop (M4-3) ont besoin.
+- Portée volontairement limitée au préflop pour l'instant (M4-3 n'en a besoin que pour ça) ; à étendre avec des rues postflop quand M4-4 en aura besoin.
+- Tests du DSL lui-même (6, `gr-stats/tests/hand_macro.rs`) : ordre des postes générés, ante, détection de `hero_pseudo`, montants des actions volontaires, `shove` marqué all-in, `check` de la BB.
 
 ### M4-3 · Flags préflop · M · `TODO`
 VPIP, PFR, RFI, LIMP, OSHOVE, 3B, F3B, 4B, ATS, FSTEAL (SB/BB), RSTEAL, et la ligne préflop synthétique.
