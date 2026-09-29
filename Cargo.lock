@@ -1473,6 +1473,12 @@ dependencies = [
 [[package]]
 name = "gr-equity"
 version = "0.0.1"
+dependencies = [
+ "gr-core",
+ "rand 0.10.3",
+ "rs_poker",
+ "thiserror 1.0.69",
+]
 
 [[package]]
 name = "gr-ingest"
@@ -3315,6 +3321,16 @@ dependencies = [
  "wasm-bindgen-futures",
  "wasm-streams",
  "web-sys",
+]
+
+[[package]]
+name = "rs_poker"
+version = "5.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b773ee9ce87668d3842124279a523f70e89cb689c601e7d01b95a59a3c41d1a1"
+dependencies = [
+ "rand 0.10.3",
+ "thiserror 2.0.21",
 ]
 
 [[package]]
