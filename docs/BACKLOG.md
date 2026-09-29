@@ -328,11 +328,19 @@ Icône dans la zone de notification (Pause/Reprendre import, Ouvrir, Quitter) ; 
 
 ## M4 — Moteur de stats (§10)
 
-### M4-1 · Positions et profondeurs · M · `TODO` (§10.3, §10.4)
+### M4-1 · Positions et profondeurs · M · `DONE` (§10.3, §10.4) — le 29/09. M4 démarré.
 **CA :**
-- Positions correctes de 2 à 10 joueurs (tests table-driven).
-- bb joueur et effectifs.
-- Tranches configurables.
+- Positions correctes de 2 à 10 joueurs (tests table-driven). ✅ (2 à 9, voir décision ci-dessous)
+- bb joueur et effectifs. ✅
+- Tranches configurables. ✅
+
+**Décision validée par Frédéric avant implémentation** (le CA mentionne "10 joueurs", mais l'enum `Position` posée en M1-1 n'a que 9 étiquettes distinctes — BTN/SB/BB + UTG/UTG+1/UTG+2/LJ/HJ/CO — et le corpus de fixtures ne dépasse pas 7-max) : confirmé que 9-max est le vrai plafond sur Winamax, jamais 10. Implémenté rigoureusement pour 2 à 9 joueurs ; au-delà, `assign_positions` renvoie une map vide plutôt que d'inventer une 10ᵉ position (R-NOPANIC : pas de panique, juste un résultat vide).
+
+**Réalisé (nouveau crate `gr-stats`, premier code réel) :**
+- `gr-stats::position::assign_positions` — rotation des sièges **distribués** (`SeatInfo::dealt_in`) à partir du bouton (sens horaire = numéros de siège croissants, confirmé sur deux vrais fixtures : 6-max `mtt/classic-itm/` bouton 3→SB 4→BB 5→UTG 6, et 7-max `mtt/final-table-heads-up/` bouton 4→SB 5→BB 6→UTG 7). Convention de réduction du nombre de positions nommées quand la table rétrécit de 9 à 4 joueurs (aucune règle explicite dans le PRD au-delà du cas 3-max) déduite et vérifiée cohérente avec les deux seuls points d'ancrage donnés : le cas **3-max** explicite du PRD (aucune position du milieu) et la convention **6-max** universellement admise (UTG, HJ, CO) — ordre de retrait : LJ, UTG+2, UTG+1, HJ, CO. 11 tests table-driven (2 à 9 joueurs, sièges non distribués exclus, tables >9 dégradées proprement).
+- `gr-stats::depth::depth_bb`/`depth_bracket_label` — bb joueur (tapis / bb) et bb effectifs (min(tapis du joueur, plus gros tapis adverse **distribué**) / bb, PRD §10.3 littéral). Tranches par défaut du PRD (`<10`, `10-15`, ... `100+`, bornes basses incluses/hautes exclues) exposées via `DEFAULT_DEPTH_BRACKETS`, mais la fonction accepte n'importe quelle liste de bornes triée (CA "tranches configurables"). 8 tests.
+- Limite connue non traitée (jamais observée dans le corpus, PRD la mentionne comme cas particulier) : le **bouton mort** (`button_seat` absent des sièges distribués) — `assign_positions` renvoie une map vide dans ce cas plutôt que d'inventer un comportement ; à traiter si un exemple réel apparaît (même pattern que les autres inconnues du corpus, cf. « Idées / à trier »).
+- Portée volontairement limitée à des fonctions pures dans `gr-stats` : le câblage dans `hand_players` (colonnes `position`/`stack_bb`/`eff_stack_bb`/`depth_bucket`/...) est explicitement le périmètre de **M4-3**, pas de M4-1 (déjà indiqué par son propre CA "Colonnes hand_players remplies à l'import").
 
 ### M4-2 · DSL de test `hand!{}` · M · `TODO`
 Construction concise de mains de test pour `gr-stats`.

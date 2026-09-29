@@ -1502,6 +1502,9 @@ dependencies = [
 [[package]]
 name = "gr-stats"
 version = "0.0.1"
+dependencies = [
+ "gr-core",
+]
 
 [[package]]
 name = "gr-store"
