@@ -2,6 +2,7 @@ import { invoke } from '@tauri-apps/api/core'
 import { listen } from '@tauri-apps/api/event'
 import type {
   HandsNewPayload,
+  HeroProfilePayload,
   ImportProgressPayload,
   ImportSummaryPayload,
   StatusSnapshotPayload,
@@ -66,4 +67,39 @@ export function onTrayFirstHideNotice(callback: () => void) {
 /** M3-3 : n'affiche plus jamais le mot d'explication du masquage en tray. */
 export function markTrayNoticeShown() {
   return invoke<void>('mark_tray_notice_shown')
+}
+
+/** M3-5 : liste tous les profils Hero avec leurs pseudos rattaches. */
+export function listHeroProfiles() {
+  return invoke<HeroProfilePayload[]>('list_hero_profiles_cmd')
+}
+
+/** M3-5 : id du profil Hero actif, `null` si aucun profil n'existe encore. */
+export function getActiveHeroProfileId() {
+  return invoke<number | null>('get_active_hero_profile_id')
+}
+
+/** M3-5 : change le profil Hero actif (filtre toutes les requetes Hero). */
+export function setActiveHeroProfileId(profileId: number) {
+  return invoke<void>('set_active_hero_profile_id', { profileId })
+}
+
+/** M3-5 : cree un nouveau profil Hero avec les pseudos donnes. */
+export function createHeroProfile(name: string, pseudos: string[]) {
+  return invoke<number>('create_hero_profile_cmd', { name, pseudos })
+}
+
+/** M3-5 : renomme un profil Hero. */
+export function renameHeroProfile(profileId: number, newName: string) {
+  return invoke<void>('rename_hero_profile_cmd', { profileId, newName })
+}
+
+/** M3-5 : rattache un pseudo supplementaire a un profil Hero. */
+export function addHeroPseudo(profileId: number, pseudo: string) {
+  return invoke<void>('add_hero_pseudo_cmd', { profileId, pseudo })
+}
+
+/** M3-5 : detache un pseudo d'un profil Hero. */
+export function removeHeroPseudo(profileId: number, pseudo: string) {
+  return invoke<void>('remove_hero_pseudo_cmd', { profileId, pseudo })
 }

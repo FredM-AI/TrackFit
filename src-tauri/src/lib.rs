@@ -1,5 +1,6 @@
 #[cfg(test)]
 mod bindings_gen;
+mod hero_profiles;
 mod import;
 mod import_errors;
 mod logs;
@@ -70,6 +71,13 @@ pub fn run() {
             watch::set_watched_roots,
             status::get_status_snapshot,
             tray::mark_tray_notice_shown,
+            hero_profiles::list_hero_profiles_cmd,
+            hero_profiles::get_active_hero_profile_id,
+            hero_profiles::set_active_hero_profile_id,
+            hero_profiles::create_hero_profile_cmd,
+            hero_profiles::rename_hero_profile_cmd,
+            hero_profiles::add_hero_pseudo_cmd,
+            hero_profiles::remove_hero_pseudo_cmd,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

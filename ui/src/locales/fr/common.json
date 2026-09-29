@@ -34,6 +34,23 @@
   "placeholder": {
     "screenBody": "Écran « {screen} » — à venir."
   },
+  "settings": {
+    "heroProfiles": {
+      "title": "Profils Hero",
+      "intro": "Regroupez vos pseudos Winamax en profils. Le profil sélectionné (point actif) détermine quelles mains comptent dans la barre d'état et les sessions.",
+      "defaultBadge": "par défaut",
+      "rename": "Renommer",
+      "save": "Enregistrer",
+      "noPseudos": "Aucun pseudo rattaché.",
+      "removePseudo": "Détacher {pseudo}",
+      "addPseudoPlaceholder": "Ajouter un pseudo…",
+      "addPseudo": "Ajouter",
+      "createTitle": "Nouveau profil",
+      "createNamePlaceholder": "Nom du profil",
+      "createPseudoPlaceholder": "Pseudo (optionnel)",
+      "create": "Créer"
+    }
+  },
   "setup": {
     "title": "Bienvenue sur Graphite",
     "intro": "Configurons votre profil Hero et importons vos mains existantes.",

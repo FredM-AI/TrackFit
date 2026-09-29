@@ -11,6 +11,7 @@ use std::path::Path;
 
 use ts_rs::TS;
 
+use crate::hero_profiles::HeroProfilePayload;
 use crate::import::{ImportProgressPayload, ImportSummaryPayload};
 use crate::setup::WinamaxAccountPayload;
 use crate::status::StatusSnapshotPayload;
@@ -25,6 +26,7 @@ fn generate_ui_bindings() {
         HandsNewPayload::decl(),
         StatusSnapshotPayload::decl(),
         WatcherRunState::decl(),
+        HeroProfilePayload::decl(),
     ];
     decls.sort();
 

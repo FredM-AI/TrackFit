@@ -5,6 +5,7 @@ use serde::Serialize;
 use tauri::State;
 use ts_rs::TS;
 
+use crate::hero_profiles::resolve_active_hero_profile_id;
 use crate::import::ImportState;
 use crate::watch::{WatcherRunState, WatcherState};
 
@@ -22,22 +23,33 @@ pub struct StatusSnapshotPayload {
     pub watcher_run_state: WatcherRunState,
 }
 
-/// Instantane pour la barre d'etat. `since_ms` (minuit local, calcule cote
-/// UI en JS) delimite "aujourd'hui" : le backend ne connait que l'UTC
-/// (R-MONEY) et ignore le fuseau horaire de l'utilisateur.
+/// Instantane pour la barre d'etat, scope au profil Hero actif (M3-5).
+/// `since_ms` (minuit local, calcule cote UI en JS) delimite "aujourd'hui" :
+/// le backend ne connait que l'UTC (R-MONEY) et ignore le fuseau horaire de
+/// l'utilisateur.
 #[tauri::command]
 pub fn get_status_snapshot(
     state: State<'_, ImportState>,
     watcher_state: State<'_, WatcherState>,
     since_ms: i64,
 ) -> Result<StatusSnapshotPayload, String> {
+    let Some(profile_id) =
+        resolve_active_hero_profile_id(&state.store).map_err(|e| e.to_string())?
+    else {
+        // Aucun profil Hero encore (avant la fin de l'assistant M3-1).
+        return Ok(StatusSnapshotPayload {
+            hands_today: 0,
+            last_hand_at: None,
+            watcher_run_state: watcher_state.run_state(),
+        });
+    };
     let hands_today = state
         .store
-        .count_hero_hands_since(since_ms)
+        .count_hero_hands_since(profile_id, since_ms)
         .map_err(|e| e.to_string())?;
     let last_hand_at = state
         .store
-        .latest_hero_hand_played_at()
+        .latest_hero_hand_played_at(profile_id)
         .map_err(|e| e.to_string())?;
     Ok(StatusSnapshotPayload {
         hands_today,

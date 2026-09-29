@@ -380,9 +380,16 @@ mod tests {
     #[test]
     fn run_import_recomputes_hero_sessions_after_insertion() {
         let (_dir, store) = open_store();
-        store
+        let profile_id = store
             .create_hero_profile("Hero", true)
             .expect("create default hero profile");
+        // Rattache le pseudo AVANT l'import, comme le fait l'assistant M3-1 :
+        // `link_hero_account` cree la ligne `players` si besoin, que le
+        // parser reutilise ensuite pour `hands.hero_player_id`. Sans ce
+        // rattachement prealable, M3-5 exclurait ces mains du profil.
+        store
+            .link_hero_account(profile_id, Room::Winamax, "Hero")
+            .expect("link Hero pseudo to the profile");
 
         let files_dir = tempfile::tempdir().expect("temp dir for hand files");
         write_single_hand_file(
@@ -627,13 +634,17 @@ mod tests {
         assert_eq!(written, 100_000);
 
         let (_db_dir, store) = open_store();
-        // M3-4 : un profil Hero doit exister pour que `run_import` declenche
-        // reellement `recompute_hero_sessions` sur les 100k mains (gr-synth
-        // genere un siege "Hero" sur chacune) ; sans profil, le recalcul
-        // court-circuite a `Ok(0)` et ce test ne mesurerait pas son cout.
-        store
+        // M3-4/M3-5 : un profil Hero doit exister ET avoir "Hero" rattache
+        // via `hero_accounts` pour que `run_import` declenche reellement
+        // `recompute_hero_sessions` sur les 100k mains (gr-synth genere un
+        // siege "Hero" sur chacune) ; sinon aucune main n'est scopee dans un
+        // profil et ce test ne mesurerait pas le vrai cout du recalcul.
+        let profile_id = store
             .create_hero_profile("Hero", true)
             .expect("create default hero profile");
+        store
+            .link_hero_account(profile_id, Room::Winamax, "Hero")
+            .expect("link Hero pseudo to the profile");
         let roots = vec![synth_dir.path().to_path_buf()];
 
         let start = std::time::Instant::now();
