@@ -15,6 +15,8 @@
   },
   "statusBar": {
     "importIdle": "Import: idle",
+    "importActive": "Import: active",
+    "importPaused": "Import: paused",
     "handsToday": "Hands today: {count}",
     "lastHand": "Last hand: {value}",
     "lastHandNone": "none"

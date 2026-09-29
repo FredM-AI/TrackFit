@@ -4,6 +4,7 @@ import type {
   HandsNewPayload,
   ImportProgressPayload,
   ImportSummaryPayload,
+  StatusSnapshotPayload,
   WinamaxAccountPayload,
 } from '@/bindings'
 
@@ -50,4 +51,9 @@ export function setWatchedRoots(roots: string[]) {
 /** M3-2 : ecoute l'arrivee de nouvelles mains detectees par le watcher (`hands://new`). */
 export function onHandsNew(callback: (payload: HandsNewPayload) => void) {
   return listen<HandsNewPayload>('hands://new', (event) => callback(event.payload))
+}
+
+/** M3-3 : instantane pour la barre d'etat (mains aujourd'hui, derniere main, statut watcher). */
+export function getStatusSnapshot(sinceMs: number) {
+  return invoke<StatusSnapshotPayload>('get_status_snapshot', { sinceMs })
 }
