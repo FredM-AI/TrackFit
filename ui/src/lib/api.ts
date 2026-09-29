@@ -57,3 +57,13 @@ export function onHandsNew(callback: (payload: HandsNewPayload) => void) {
 export function getStatusSnapshot(sinceMs: number) {
   return invoke<StatusSnapshotPayload>('get_status_snapshot', { sinceMs })
 }
+
+/** M3-3 : premiere fermeture de la fenetre (masquage en tray) a acquitter. */
+export function onTrayFirstHideNotice(callback: () => void) {
+  return listen('tray://first-hide-notice', () => callback())
+}
+
+/** M3-3 : n'affiche plus jamais le mot d'explication du masquage en tray. */
+export function markTrayNoticeShown() {
+  return invoke<void>('mark_tray_notice_shown')
+}

@@ -69,6 +69,7 @@ pub fn run() {
             setup::mark_first_launch_complete,
             watch::set_watched_roots,
             status::get_status_snapshot,
+            tray::mark_tray_notice_shown,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
