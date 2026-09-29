@@ -16,6 +16,7 @@ use crate::repo::{self, HandInsert, ImportReport};
 use crate::sessions;
 use crate::status;
 use crate::summary_repo::{self, AttachSummaryReport};
+use crate::ticket_types::{self, TicketTypeRow};
 
 const DB_FILE_NAME: &str = "graphite.db";
 
@@ -362,6 +363,75 @@ impl Store {
     pub fn recompute_hero_sessions(&self) -> Result<usize, StoreError> {
         let mut writer = self.writer();
         sessions::recompute_hero_sessions(&mut writer)
+    }
+
+    /// Crée un type de ticket, ou met à jour sa valeur faciale s'il existe
+    /// déjà (M5-2, PRD §8.6).
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si l'écriture ou la lecture SQLite échoue.
+    pub fn create_or_update_ticket_type(
+        &self,
+        room: Room,
+        label: &str,
+        face_value_cents: Option<i64>,
+    ) -> Result<i64, StoreError> {
+        let writer = self.writer();
+        let room_id = repo::get_or_create_room(&writer, room)?;
+        ticket_types::create_or_update_ticket_type(&writer, room_id, label, face_value_cents)
+    }
+
+    /// Liste les types de tickets connus pour `room` (M5-2).
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si la lecture SQLite échoue.
+    pub fn list_ticket_types(&self, room: Room) -> Result<Vec<TicketTypeRow>, StoreError> {
+        let reader = self.reader()?;
+        let room_id = repo::get_or_create_room(&reader, room)?;
+        ticket_types::list_ticket_types(&reader, room_id)
+    }
+
+    /// Marque (ou démarque, avec `ticket_type_id: None`) le tournoi
+    /// `tournament_id` comme payé avec un ticket par `player_id` (M5-2,
+    /// PRD §8.6, édition de métadonnée).
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si l'écriture SQLite échoue.
+    pub fn set_tournament_entry_ticket_used(
+        &self,
+        tournament_id: i64,
+        player_id: i64,
+        ticket_type_id: Option<i64>,
+    ) -> Result<(), StoreError> {
+        let writer = self.writer();
+        ticket_types::set_tournament_entry_ticket_used(
+            &writer,
+            tournament_id,
+            player_id,
+            ticket_type_id,
+        )
+    }
+
+    /// Enregistre (ou efface, avec `ticket_type_id: None`) le ticket gagné
+    /// par `player_id` au tournoi `tournament_id` (M5-2, PRD §8.6).
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si l'écriture SQLite échoue.
+    pub fn set_tournament_entry_ticket_won(
+        &self,
+        tournament_id: i64,
+        player_id: i64,
+        ticket_type_id: Option<i64>,
+        count: i64,
+    ) -> Result<(), StoreError> {
+        let writer = self.writer();
+        ticket_types::set_tournament_entry_ticket_won(
+            &writer,
+            tournament_id,
+            player_id,
+            ticket_type_id,
+            count,
+        )
     }
 }
 
