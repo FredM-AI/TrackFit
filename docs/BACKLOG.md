@@ -297,8 +297,16 @@ Icône dans la zone de notification (Pause/Reprendre import, Ouvrir, Quitter) ; 
 - `ui/app/AppShell.tsx` — barre d'état enfin branchée sur de vraies données (`statusBar.handsToday`/`lastHand`/`importIdle`|`importActive`|`importPaused` n'affichaient que des placeholders statiques depuis M0-5) ; rafraîchie sur `hands://new` (TanStack Query, `invalidateQueries`) et toutes les heures en secours.
 - Tests : `gr-store::status` (2), `AppShell.test.tsx` corrigé (manquait `QueryClientProvider`, révélé par le nouveau `useQuery`) + fix d'une rejection non attrapée de `onHandsNew` hors contexte Tauri (tests/aperçu navigateur).
 
-### M3-4 · Sessions · S · `TODO` (§9.3, H3)
-**CA :** regroupement avec seuil paramétrable ; recalcul correct lors d'un import hors ordre.
+### M3-4 · Sessions · S · `DONE` (§9.3, H3) — le 29/09.
+**CA :** regroupement avec seuil paramétrable ; recalcul correct lors d'un import hors ordre. ✅
+
+**Réalisé :**
+- `gr-store::sessions::recompute_hero_sessions` — recalcul **intégral** (pas incrémental) des sessions d'Hero à chaque appel : plus simple, et garantit "recalcul correct lors d'un import hors ordre" par construction (le regroupement ne dépend que de l'ordre chronologique final des mains via l'index déjà présent `ix_hands_played_at`, jamais de leur ordre d'insertion). Seuil `settings.session_gap_minutes` (30 par défaut, paramétrable dès maintenant même sans écran Réglages — M8) ; "plus de N minutes" (PRD) : un écart de exactement N minutes ne casse pas la session.
+- Rattachées au profil Hero par défaut (`hero_profiles.is_default`) : M3-5 (multi-pseudos) n'est pas encore implémenté, un seul profil existe en pratique. `hands.hero_player_id` (déjà fiable depuis le parser, Winamax étiquette toujours son propre siège "Hero") évite toute jointure `hero_accounts`.
+- `hands`/`tournaments` (distinct) par session : triviaux, sous-produit du regroupement. `max_tables` : **approximation documentée** — nombre de tables distinctes vues pendant la session, pas un vrai calcul de chevauchement temporel (on ne connaît que l'instant de chaque main, pas sa durée). `profit`/`EV` cités par le PRD comme métriques de session ne sont **pas stockés** (cohérent avec le schéma existant depuis M2-1, qui ne les prévoyait déjà pas) : à calculer en jointure au moment de l'affichage (écran Sessions, M6), pas dénormalisés ici.
+- Appelé une fois par lot après `run_import` (import en masse, M2-3) et après chaque passage du watcher ayant inséré au moins une main (M3-2) — jamais par fichier, pour ne pas payer le recalcul plusieurs fois inutilement.
+- Perf (R-PERF, la story touche l'import) : le recalcul ajoute un `UPDATE ... WHERE id IN (...)` par lot de 500 mains plutôt qu'un par main (optimisation appliquée après une première mesure ligne-par-ligne). Débit mesuré sur 100k mains synthétiques (`gr-synth`, avec profil Hero pour que le recalcul s'exécute réellement) : **~1220-1330 mains/s** selon les runs (bruit de mesure sur cette machine sous charge répétée), contre 1430 mains/s sans recalcul de sessions (M2-4). Reste largement au-dessus de la cible PRD/BACKLOG (≥1000 mains/s).
+- Tests : `gr-store::sessions` (9, dont les deux scénarios hors-ordre explicites — backfill isolé et backfill comblant un écart entre deux sessions existantes, qui doit les fusionner), `gr-ingest` (1, câblage bout-en-bout de `run_import`).
 
 ### M3-5 · Profils Hero multi-pseudos · M · `TODO` (D19)
 **CA :**

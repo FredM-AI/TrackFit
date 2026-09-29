@@ -142,6 +142,12 @@ pub fn run_import(
         summary.failures.extend(summaries.failures);
     }
 
+    if summary.hands_inserted > 0 {
+        // M3-4 : recalcul integral (correct quel que soit l'ordre d'import),
+        // une seule fois pour tout le lot plutot qu'apres chaque fichier.
+        store.recompute_hero_sessions()?;
+    }
+
     Ok(summary)
 }
 
@@ -362,6 +368,52 @@ mod tests {
         assert_eq!(summary.summaries_failed, 0);
     }
 
+    fn hand_at(id: &str, timestamp: &str) -> String {
+        format!(
+            "Winamax Poker - Tournament \"T\" buyIn: 1\u{20ac} + 0\u{20ac} level: 1 - HandId: #{id}-1-1 - Holdem no limit (0/10/20) - {timestamp} UTC\nTable: 'T(1)#1' 2-max (real money) Seat #1 is the button\nSeat 1: Hero (1000)\nSeat 2: P0002 (1000)\n*** ANTE/BLINDS ***\nHero posts small blind 10\nP0002 posts big blind 20\nDealt to Hero [Ah Kd]\n*** PRE-FLOP ***\nHero folds\nP0002 collected 30 from pot\n*** SUMMARY ***\nTotal pot 30 | No rake\n"
+        )
+    }
+
+    /// CA de M3-4 : `run_import` recalcule les sessions d'Hero apres coup
+    /// (pas seulement les tests unitaires internes de `gr-store::sessions`) —
+    /// deux mains a plus de 30 min d'ecart doivent produire 2 sessions.
+    #[test]
+    fn run_import_recomputes_hero_sessions_after_insertion() {
+        let (_dir, store) = open_store();
+        store
+            .create_hero_profile("Hero", true)
+            .expect("create default hero profile");
+
+        let files_dir = tempfile::tempdir().expect("temp dir for hand files");
+        write_single_hand_file(
+            files_dir.path(),
+            "a.txt",
+            &hand_at("1", "2026/01/01 00:00:00"),
+        );
+        write_single_hand_file(
+            files_dir.path(),
+            "b.txt",
+            &hand_at("2", "2026/01/01 01:00:00"),
+        );
+
+        let summary = run_import(
+            &store,
+            &[files_dir.path().to_path_buf()],
+            &CancelToken::new(),
+            |_| {},
+        )
+        .expect("import should not hit a storage error");
+        assert_eq!(summary.hands_inserted, 2);
+
+        let sessions_recomputed_again = store
+            .recompute_hero_sessions()
+            .expect("recompute should not fail once hands exist");
+        assert_eq!(
+            sessions_recomputed_again, 2,
+            "1h d'ecart depasse le seuil par defaut de 30 min : 2 sessions"
+        );
+    }
+
     /// CA de M2-6 : le rattachement d'un tournoi (buy-in, statut `COMPLETE`,
     /// re-entries comptees) fonctionne au fil d'un import unique, hands puis
     /// summary, sur un vrai fichier du corpus (re-entry OBELISK).
@@ -575,6 +627,13 @@ mod tests {
         assert_eq!(written, 100_000);
 
         let (_db_dir, store) = open_store();
+        // M3-4 : un profil Hero doit exister pour que `run_import` declenche
+        // reellement `recompute_hero_sessions` sur les 100k mains (gr-synth
+        // genere un siege "Hero" sur chacune) ; sans profil, le recalcul
+        // court-circuite a `Ok(0)` et ce test ne mesurerait pas son cout.
+        store
+            .create_hero_profile("Hero", true)
+            .expect("create default hero profile");
         let roots = vec![synth_dir.path().to_path_buf()];
 
         let start = std::time::Instant::now();
@@ -586,7 +645,9 @@ mod tests {
         assert_eq!(summary.hands_inserted, 100_000);
 
         let hands_per_sec = 100_000.0 / elapsed.as_secs_f64();
-        println!("M2-3 perf (differee) : {hands_per_sec:.0} mains/s ({elapsed:?} pour 100k mains)");
+        println!(
+            "M2-3/M3-4 perf (differee) : {hands_per_sec:.0} mains/s ({elapsed:?} pour 100k mains, recalcul de sessions inclus)"
+        );
         assert!(
             hands_per_sec >= 1000.0,
             "cible PRD/BACKLOG M2-3 : >= 1000 mains/s, mesure {hands_per_sec:.0}"
