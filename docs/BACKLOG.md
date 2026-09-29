@@ -419,10 +419,16 @@ Si Frédéric a accès à un autre tracker (essai PT4/HM3 ou Xeester), comparer 
 
 ## M5 — Résultats MTT et EV all-in (§9, §10.6)
 
-### M5-1 · Calcul des KPIs de résultats · M · `TODO` (§9.1)
+### M5-1 · Calcul des KPIs de résultats · M · `DONE` — le 29/09.
 Coût, frais, prize/bounty, tickets (paramètre FACE_VALUE/ZERO), profit, ROI, ROI hors frais, ROI prize pool / bounties, ITM, ABI, freerolls.
 
 **CA :** scénarios chiffrés au centime (fichier `tests/results_scenarios.rs`), y compris re-entry, ticket utilisé et gagné, et PKO.
+
+**Réalisé :**
+- `gr-analytics::kpis` — `compute_results_kpis(&[TournamentResult], TicketValuation) -> ResultsKpis`, fonction pure (pas d'I/O, cohérent avec `gr-core`/`gr-stats`) sur des résultats déjà agrégés (`TournamentResult` = 1..N `Bullet` par re-entry). Couvre exactement la liste du BACKLOG : coût, frais, gains prize/bounty/tickets, gains totaux, profit, ROI, ROI hors frais, ROI prize pool/bounties (KO), ITM %, ABI, freerolls.
+- **Portée volontairement limitée** à cette liste (pas tout le tableau PRD §9.1) : place moyenne, % de tables finales, meilleur gain, plus gros tournoi et $/heure sont dans le PRD mais pas dans la description BACKLOG de M5-1 — différés à une story dédiée (écran Résultats, M6+). Pas d'intégration `gr-store` non plus (le CA ne demande que les scénarios chiffrés, pas un branchement sur `tournament_entries`/`tournament_bullets` réels) : à faire quand un écran en aura besoin.
+- **Simplification documentée** (aucun exemple réel de ticket dans le corpus pour la valider, `docs/formats/winamax.md` §5.2/§7) : ROI prize pool/bounties (KO) se limite aux bullets payés cash — un ticket utilisé ne se décompose pas en part prize/bounty/fee, donc les bullets payés par ticket sont exclus de ces deux ratios spécifiquement (mais comptent normalement dans le coût/profit/ROI global).
+- 7 scénarios chiffrés au centime (`gr-analytics/tests/results_scenarios.rs`) : tournoi simple, re-entry (2 bullets d'un même tournoi, ABI divisé par le nombre de tournois pas d'entrées), ticket utilisé (FACE_VALUE vs ZERO), ticket gagné (ITM dépend du statut "ticket gagné", pas de sa valorisation — vérifié explicitement), PKO (bounty seul ≠ ITM, ROI prize pool/bounties calculés séparément), freeroll seul (ROI exclu via `None`, pas un ratio infini) et freeroll mélangé à un tournoi payant.
 
 ### M5-2 · Tickets : métadonnées et types · M · `TODO` (§8.6)
 Table `ticket_types` ; édition « joué via ticket » et « valeur du ticket » par tournoi ; filtre Via ticket.

@@ -14,9 +14,11 @@
 //! ecran ne les consomme encore ; phase notamment differee en V2, M4-5).
 
 mod error;
+mod kpis;
 mod sqlite;
 
 pub use error::AnalyticsError;
+pub use kpis::{compute_results_kpis, Bullet, ResultsKpis, TicketValuation, TournamentResult};
 pub use sqlite::SqliteAnalyticsBackend;
 
 /// Dimension de regroupement d'un rapport (PRD §13.5). Portee a ce que
