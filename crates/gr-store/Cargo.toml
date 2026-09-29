@@ -6,6 +6,7 @@ license.workspace = true
 
 [dependencies]
 gr-core = { path = "../gr-core" }
+gr-equity = { path = "../gr-equity" }
 gr-parser-api = { path = "../gr-parser-api" }
 gr-stats = { path = "../gr-stats" }
 r2d2 = "0.8"

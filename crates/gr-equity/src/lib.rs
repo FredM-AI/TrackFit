@@ -1,12 +1,14 @@
 #![warn(clippy::pedantic)]
 
-//! Evaluateur de mains et equite (PRD §10.6, M5-3). Fonctions pures (pas
-//! d'I/O), comme `gr-core`/`gr-stats`.
+//! Evaluateur de mains et equite (PRD §10.6, M5-3/M5-4). Fonctions pures
+//! (pas d'I/O), comme `gr-core`/`gr-stats`.
 //!
 //! **R-COMP-1 (rappel) :** ce crate ne sait rien d'une "main en cours" ou
-//! "terminee" — c'est a l'appelant (M5-4, detection des evenements all-in)
-//! de ne l'invoquer que sur des mains deja completement importees. Aucun
-//! calcul d'equite ne doit jamais accompagner une decision en temps reel.
+//! "terminee" — c'est a l'appelant (`gr-store`, a l'import) de ne
+//! l'invoquer que sur des mains deja completement importees. Satisfait par
+//! construction : Winamax n'ecrit une main sur disque qu'une fois
+//! terminee, jamais une main "en cours". Aucun calcul d'equite ne doit
+//! jamais accompagner une decision en temps reel.
 //!
 //! L'evaluateur de mains lui-meme (perfect-hash 5/7 cartes) vient du crate
 //! `rs_poker` (`default-features = false` : coeur + Hold'em seulement, pas
@@ -21,7 +23,13 @@
 //!   CA (HU preflop < 60 ms sur le Celeron cible).
 //! - **4 joueurs ou plus** : Monte Carlo a 200 000 tirages, graine fixe
 //!   ([`monte_carlo`]) — reproductible (memes cartes -> meme resultat).
+//!
+//! [`detect_all_in_event`] (M5-4) applique tout ca a une main entiere :
+//! detecte le (au plus un) evenement all-in et calcule l'EV en jetons de
+//! chaque joueur implique, synchrone (voir le commentaire de module
+//! d'[`allin`]).
 
+mod allin;
 mod combinations;
 mod convert;
 mod deck;
@@ -29,6 +37,7 @@ mod error;
 mod exact;
 mod monte_carlo;
 
+pub use allin::{detect_all_in_event, AllInEvent};
 pub use error::EquityError;
 
 use convert::to_rs_card;

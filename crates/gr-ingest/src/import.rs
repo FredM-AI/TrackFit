@@ -657,9 +657,9 @@ mod tests {
 
         let hands_per_sec = 100_000.0 / elapsed.as_secs_f64();
         println!(
-            "M2-3/M3-4/M4-3/M4-4 perf (differee) : {hands_per_sec:.0} mains/s ({elapsed:?} pour 100k mains, recalcul de sessions et flags preflop/postflop inclus). \
-             NB : le corpus synthetique (gr-synth) suit uniquement le motif \"tout le monde se couche sauf la BB\" (jamais de flop) : \
-             ne mesure donc que le cout des flags preflop et le chemin de sortie rapide des flags postflop, pas le parcours complet des rues postflop."
+            "M2-3/M3-4/M4-3/M4-4/M5-4 perf (differee) : {hands_per_sec:.0} mains/s ({elapsed:?} pour 100k mains, recalcul de sessions, flags preflop/postflop et detection all-in inclus). \
+             NB : le corpus synthetique (gr-synth) suit uniquement le motif \"tout le monde se couche sauf la BB\" (jamais de flop, jamais d'all-in) : \
+             ne mesure donc que le chemin de sortie rapide de la detection all-in (`detect_all_in_event`, M5-4), pas le cout d'un vrai calcul d'equite."
         );
         assert!(
             hands_per_sec >= 1000.0,

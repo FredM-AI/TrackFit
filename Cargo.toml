@@ -22,3 +22,12 @@ license = "UNLICENSED"
 # ADR-004: dependencies compile at opt-level 1 in dev to keep the Celeron build fast.
 [profile.dev.package."*"]
 opt-level = 1
+
+# gr-equity (M5-4) is compute-heavy (enumeration exacte d'equite) ; a
+# opt-level 0 (le defaut, "*" ci-dessus ne s'applique pas aux membres du
+# workspace), un lot d'imports contenant un vrai all-in devient trop lent
+# en debug pour une suite de tests ciblee (`cargo test -p gr-store` :
+# 15s+ pour une seule main all-in, contre <1s avant M5-4). Override nomme
+# explicitement (les membres du workspace ne sont pas couverts par "*").
+[profile.dev.package.gr-equity]
+opt-level = 2

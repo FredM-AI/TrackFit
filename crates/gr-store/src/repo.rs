@@ -1,7 +1,8 @@
 //! Insertion des mains parsees (M2-2) : `hands`, `hand_players` (positions,
-//! profondeurs et flags de stats preflop calcules par `gr-stats`, M4-3),
-//! `actions`, `hand_raw` (zstd) et `tournaments` provisoires (rattaches au
-//! summary en M2-6).
+//! profondeurs, flags de stats preflop/postflop calcules par `gr-stats`,
+//! M4-3/M4-4, et EV all-in calculee par `gr-equity`, M5-4), `actions`,
+//! `hand_raw` (zstd) et `tournaments` provisoires (rattaches au summary en
+//! M2-6).
 
 use gr_core::{ActionKind, Chips, HandRecord, Street};
 use gr_parser_api::Room;
@@ -170,12 +171,16 @@ struct SeatStats {
     cbt: gr_stats::StatFlag,
     fcbf: gr_stats::StatFlag,
     postflop_counts: gr_stats::PostflopActionCounts,
+    /// `None` hors evenement all-in (la grande majorite des mains, M5-4)
+    /// ou si ce siege n'y est pas implique.
+    allin_ev_diff_chips: Option<f64>,
 }
 
 fn compute_seat_stats(
     hand: &HandRecord,
     seat: &gr_core::SeatInfo,
     positions: &std::collections::HashMap<u8, gr_core::Position>,
+    allin_event: Option<&gr_equity::AllInEvent>,
 ) -> SeatStats {
     let position = positions.get(&seat.seat).copied();
     let went_sd = gr_stats::went_to_showdown(hand, &seat.pseudo);
@@ -214,13 +219,21 @@ fn compute_seat_stats(
         cbt: gr_stats::compute_cbt(hand, &seat.pseudo),
         fcbf: gr_stats::compute_fcbf(hand, &seat.pseudo),
         postflop_counts: gr_stats::compute_postflop_counts(hand, &seat.pseudo),
+        allin_ev_diff_chips: allin_event.and_then(|event| {
+            event
+                .player_diffs
+                .iter()
+                .find(|(pseudo, _)| *pseudo == seat.pseudo)
+                .map(|(_, diff)| *diff)
+        }),
     }
 }
 
 /// Insere `hand_players`, avec les positions, profondeurs et flags de
 /// stats preflop et postflop calcules par `gr-stats` (PRD §10.2/§10.3/
-/// §10.4, M4-3/M4-4). Un seul `assign_positions` par main (pas par siege) :
-/// evite de recalculer les positions de tous les sieges N fois.
+/// §10.4, M4-3/M4-4), et l'EV all-in calculee par `gr-equity` (PRD §10.6,
+/// M5-4). Un seul `assign_positions`/`detect_all_in_event` par main (pas
+/// par siege) : evite de recalculer/redetecter pour tous les sieges N fois.
 fn insert_hand_players(
     tx: &Transaction<'_>,
     room_id: i64,
@@ -228,6 +241,7 @@ fn insert_hand_players(
     hand: &HandRecord,
 ) -> Result<(), StoreError> {
     let positions = gr_stats::assign_positions(hand);
+    let allin_event = gr_equity::detect_all_in_event(hand);
     for seat in &hand.seats {
         let player_id = get_or_create_player(tx, room_id, &seat.pseudo, hand.played_at)?;
         let is_hero = hand.hero_pseudo.as_deref() == Some(seat.pseudo.as_str());
@@ -236,7 +250,7 @@ fn insert_hand_players(
         } else {
             None
         };
-        let s = compute_seat_stats(hand, seat, &positions);
+        let s = compute_seat_stats(hand, seat, &positions, allin_event.as_ref());
 
         tx.execute(
             "INSERT INTO hand_players (
@@ -248,7 +262,8 @@ fn insert_hand_players(
                 ats_opp, ats, fsteal_opp, fsteal, rsteal,
                 saw_flop, saw_turn, saw_river, went_sd, won_sd, won_hand,
                 cbf_opp, cbf, cbt_opp, cbt, fcbf_opp, fcbf,
-                pf_bets, pf_raises, pf_calls, pf_folds, pf_checks
+                pf_bets, pf_raises, pf_calls, pf_folds, pf_checks,
+                allin_ev_diff_chips
             ) VALUES (
                 ?1, ?2, ?3, ?4, ?5, ?6, ?7,
                 ?8, ?9, ?10, ?11, ?12, ?13,
@@ -258,7 +273,8 @@ fn insert_hand_players(
                 ?27, ?28, ?29, ?30, ?31,
                 ?32, ?33, ?34, ?35, ?36, ?37,
                 ?38, ?39, ?40, ?41, ?42, ?43,
-                ?44, ?45, ?46, ?47, ?48
+                ?44, ?45, ?46, ?47, ?48,
+                ?49
             )",
             params![
                 hand_id,
@@ -309,6 +325,7 @@ fn insert_hand_players(
                 s.postflop_counts.calls,
                 s.postflop_counts.folds,
                 s.postflop_counts.checks,
+                s.allin_ev_diff_chips,
             ],
         )?;
     }
@@ -756,6 +773,35 @@ mod tests {
             .query_row("SELECT COUNT(*) FROM hands", [], |row| row.get(0))
             .expect("hands should be readable");
         assert_eq!(hand_count, i64::try_from(hands.len()).unwrap());
+    }
+
+    /// M5-4 : le corpus reel OBELISK contient de vrais all-in (necessaire
+    /// pour que ce test veuille dire quelque chose). Verifie que
+    /// `insert_hand_players` calcule reellement `allin_ev_diff_chips` pour
+    /// au moins une main, pas seulement que la colonne existe.
+    #[test]
+    fn hand_players_get_an_allin_ev_diff_when_the_hand_has_a_real_all_in() {
+        let mut conn = migrated_connection();
+        let hands = obelisk_hands();
+        let inserts: Vec<HandInsert<'_>> = hands
+            .iter()
+            .map(|(raw_text, hand)| HandInsert { hand, raw_text })
+            .collect();
+        insert_hands(&mut conn, Room::Winamax, &inserts).expect("insertion should succeed");
+
+        let diffs_computed: i64 = conn
+            .query_row(
+                "SELECT COUNT(*) FROM hand_players WHERE allin_ev_diff_chips IS NOT NULL",
+                [],
+                |row| row.get(0),
+            )
+            .expect("hand_players should be readable");
+        assert!(
+            diffs_computed > 0,
+            "aucune ligne hand_players n'a d'EV all-in calculee sur le corpus OBELISK \
+             (attendu : au moins un vrai all-in dans ces {} mains)",
+            hands.len()
+        );
     }
 
     #[test]
