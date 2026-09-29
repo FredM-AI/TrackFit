@@ -44,7 +44,7 @@ pub struct PeriodKpis {
     pub dollars_per_hour_cents: Option<f64>,
 }
 
-#[derive(Debug, Clone, Serialize, TS)]
+#[derive(Debug, Clone, PartialEq, Serialize, TS)]
 pub struct ProfitCurvePoint {
     #[ts(type = "number")]
     pub tournament_id: i64,
@@ -157,7 +157,7 @@ fn period_kpis(
 /// tries chronologiquement. Les tournois sans `started_at` connu (summary
 /// rattachee avant toute main, tres rare en pratique) sont exclus : sans
 /// horodatage, impossible de les placer sur l'axe X ou dans une periode.
-fn profit_curve(all_results: &[TournamentResultRow]) -> Vec<ProfitCurvePoint> {
+pub(crate) fn profit_curve(all_results: &[TournamentResultRow]) -> Vec<ProfitCurvePoint> {
     let mut sorted: Vec<&TournamentResultRow> = all_results
         .iter()
         .filter(|r| r.started_at.is_some())

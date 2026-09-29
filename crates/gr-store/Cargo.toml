@@ -8,6 +8,7 @@ license.workspace = true
 gr-core = { path = "../gr-core" }
 gr-equity = { path = "../gr-equity" }
 gr-parser-api = { path = "../gr-parser-api" }
+gr-parser-winamax = { path = "../gr-parser-winamax" }
 gr-stats = { path = "../gr-stats" }
 r2d2 = "0.8"
 r2d2_sqlite = "0.24"
@@ -21,5 +22,4 @@ windows-sys = { version = "0.59", features = [
 zstd = "0.13"
 
 [dev-dependencies]
-gr-parser-winamax = { path = "../gr-parser-winamax" }
 tempfile = "3"

@@ -8,6 +8,7 @@ use rusqlite::Connection;
 
 use gr_core::TournamentSummary;
 
+use crate::backfill;
 use crate::error::StoreError;
 use crate::hero::{self, HeroProfileRow};
 use crate::import_log::{self, ImportErrorRow, ImportFileProgress, NewImportError};
@@ -240,6 +241,18 @@ impl Store {
             now_ms,
             stale_after_hours,
         )
+    }
+
+    /// Calcule `net_chips`/`net_bb` pour les mains importees avant M6-3
+    /// (colonnes prevues depuis M2-1, jamais calculees jusqu'ici). Sans
+    /// effet (renvoie `0`) si tout est deja a jour — appelable a chaque
+    /// demarrage sans cout notable une fois le rattrapage initial fait.
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si l'ecriture SQLite echoue.
+    pub fn backfill_net_chips(&self) -> Result<usize, StoreError> {
+        let mut writer = self.writer();
+        backfill::backfill_net_chips(&mut writer)
     }
 
     /// Cree un profil Hero (M3-1/M3-5, D19). Si `is_default` est vrai, les

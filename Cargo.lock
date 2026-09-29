@@ -1518,6 +1518,7 @@ name = "gr-stats"
 version = "0.0.1"
 dependencies = [
  "gr-core",
+ "gr-parser-winamax",
 ]
 
 [[package]]

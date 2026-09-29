@@ -6,6 +6,7 @@ import type {
   HomeSnapshotPayload,
   ImportProgressPayload,
   ImportSummaryPayload,
+  ResultsSnapshotPayload,
   StatusSnapshotPayload,
   WinamaxAccountPayload,
 } from '@/bindings'
@@ -109,4 +110,10 @@ export function removeHeroPseudo(profileId: number, pseudo: string) {
  * G1, derniere session, etat de l'import), scope au profil Hero actif. */
 export function getHomeSnapshot(nowMs: number) {
   return invoke<HomeSnapshotPayload>('get_home_snapshot', { nowMs })
+}
+
+/** M6-3 : instantane de l'ecran Resultats (G1, G2, G6, pivot buy-in x
+ * KO/non-KO + CSV), scope au profil Hero actif. */
+export function getResultsSnapshot() {
+  return invoke<ResultsSnapshotPayload>('get_results_snapshot')
 }
