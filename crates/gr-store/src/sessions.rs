@@ -15,7 +15,7 @@
 
 use std::collections::HashSet;
 
-use rusqlite::{params, Connection};
+use rusqlite::{params, Connection, OptionalExtension};
 
 use crate::error::StoreError;
 use crate::hero;
@@ -188,6 +188,96 @@ fn flush_session(
         stmt.execute(bound_params.as_slice())?;
     }
     Ok(())
+}
+
+/// La derniere session (par `started_at`) du profil Hero `hero_profile_id`,
+/// avec les tournois qu'elle a touches (PRD §13.1, "derniere session" :
+/// duree, tournois, profit, meilleurs et pires tournois — le profit et le
+/// classement des tournois restent a calculer par l'appelant via
+/// `gr-analytics`, cf. `hands.session_id` deja rattache par
+/// [`recompute_hero_sessions`]). `None` si ce profil n'a encore aucune
+/// session.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct LastSessionRow {
+    pub started_at: i64,
+    pub ended_at: i64,
+    pub hands: i64,
+    pub tournaments: i64,
+    pub max_tables: i64,
+    pub tournament_ids: Vec<i64>,
+}
+
+/// # Errors
+/// Renvoie une [`StoreError`] si la lecture SQLite echoue.
+pub(crate) fn latest_session(
+    conn: &Connection,
+    hero_profile_id: i64,
+) -> Result<Option<LastSessionRow>, StoreError> {
+    let Some((session_id, started_at, ended_at, hands, tournaments, max_tables)) = conn
+        .query_row(
+            "SELECT id, started_at, ended_at, hands, tournaments, max_tables
+             FROM sessions WHERE hero_profile_id = ?1
+             ORDER BY started_at DESC LIMIT 1",
+            [hero_profile_id],
+            |row| {
+                Ok((
+                    row.get::<_, i64>(0)?,
+                    row.get::<_, i64>(1)?,
+                    row.get::<_, i64>(2)?,
+                    row.get::<_, i64>(3)?,
+                    row.get::<_, i64>(4)?,
+                    row.get::<_, i64>(5)?,
+                ))
+            },
+        )
+        .optional()?
+    else {
+        return Ok(None);
+    };
+
+    let mut stmt = conn.prepare(
+        "SELECT DISTINCT tournament_id FROM hands
+         WHERE session_id = ?1 AND tournament_id IS NOT NULL",
+    )?;
+    let tournament_ids = stmt
+        .query_map([session_id], |row| row.get(0))?
+        .collect::<rusqlite::Result<Vec<i64>>>()?;
+
+    Ok(Some(LastSessionRow {
+        started_at,
+        ended_at,
+        hands,
+        tournaments,
+        max_tables,
+        tournament_ids,
+    }))
+}
+
+/// Somme des durees de session (`ended_at - started_at`, ms) du profil Hero
+/// `hero_profile_id` dont `started_at` tombe dans `[since_ms, until_ms)`
+/// (`None` = pas de borne). PRD §13.1, KPI "$/h" (M6-2) : une session est
+/// comptee entierement dans la periode ou elle a commence, pas repartie au
+/// prorata si elle la chevauche — approximation documentee, dans le meme
+/// esprit que la simplification EV all-in de M5-4 (rare en pratique, une
+/// session depasse tres rarement une borne de periode de 30 jours).
+///
+/// # Errors
+/// Renvoie une [`StoreError`] si la lecture SQLite echoue.
+pub(crate) fn total_session_ms_in_range(
+    conn: &Connection,
+    hero_profile_id: i64,
+    since_ms: Option<i64>,
+    until_ms: Option<i64>,
+) -> Result<i64, StoreError> {
+    conn.query_row(
+        "SELECT COALESCE(SUM(ended_at - started_at), 0) FROM sessions
+         WHERE hero_profile_id = ?1
+           AND (?2 IS NULL OR started_at >= ?2)
+           AND (?3 IS NULL OR started_at < ?3)",
+        params![hero_profile_id, since_ms, until_ms],
+        |row| row.get(0),
+    )
+    .map_err(StoreError::from)
 }
 
 fn all_hero_profile_ids(conn: &Connection) -> Result<Vec<i64>, StoreError> {
@@ -558,5 +648,103 @@ mod tests {
             .collect::<rusqlite::Result<Vec<_>>>()
             .unwrap();
         assert_eq!(rows, vec![(profile_a, 1), (profile_b, 2)]);
+    }
+
+    #[test]
+    fn latest_session_is_none_without_any_session_yet() {
+        let conn = migrated_connection();
+        assert_eq!(latest_session(&conn, 1).unwrap(), None);
+    }
+
+    #[test]
+    fn latest_session_returns_the_most_recent_one_with_its_tournament_ids() {
+        let mut conn = migrated_connection();
+        let profile_id = create_default_hero_profile(&conn);
+        let room_id = insert_room(&conn);
+        let hero_id = insert_hero_player(&conn, room_id, profile_id);
+        let tournament_1 = insert_tournament(&conn, room_id, "T1");
+        let tournament_2 = insert_tournament(&conn, room_id, "T2");
+
+        // Deux sessions (60 min d'ecart) : la plus ancienne touche T1, la
+        // plus recente touche T1 et T2.
+        insert_hand(
+            &conn,
+            room_id,
+            "h1",
+            0,
+            Some(hero_id),
+            Some(tournament_1),
+            "T1",
+        );
+        insert_hand(
+            &conn,
+            room_id,
+            "h2",
+            60 * MINUTE,
+            Some(hero_id),
+            Some(tournament_1),
+            "T1",
+        );
+        insert_hand(
+            &conn,
+            room_id,
+            "h3",
+            61 * MINUTE,
+            Some(hero_id),
+            Some(tournament_2),
+            "T2",
+        );
+        recompute_hero_sessions(&mut conn).unwrap();
+
+        let latest = latest_session(&conn, profile_id)
+            .unwrap()
+            .expect("a session should exist");
+        assert_eq!(latest.started_at, 60 * MINUTE);
+        assert_eq!(latest.ended_at, 61 * MINUTE);
+        assert_eq!(latest.hands, 2);
+        let mut tournament_ids = latest.tournament_ids;
+        tournament_ids.sort_unstable();
+        let mut expected = vec![tournament_1, tournament_2];
+        expected.sort_unstable();
+        assert_eq!(tournament_ids, expected);
+    }
+
+    #[test]
+    fn total_session_ms_in_range_only_counts_sessions_started_in_the_window() {
+        let mut conn = migrated_connection();
+        let profile_id = create_default_hero_profile(&conn);
+        let room_id = insert_room(&conn);
+        let hero_id = insert_hero_player(&conn, room_id, profile_id);
+
+        // Session 1 : [0, 10min), demarre avant la fenetre -> exclue.
+        insert_hand(&conn, room_id, "h1", 0, Some(hero_id), None, "T1");
+        insert_hand(&conn, room_id, "h2", 10 * MINUTE, Some(hero_id), None, "T1");
+        // Ecart de 60 min pour forcer une nouvelle session.
+        // Session 2 : [100min, 105min), demarre dans la fenetre -> comptee.
+        insert_hand(
+            &conn,
+            room_id,
+            "h3",
+            100 * MINUTE,
+            Some(hero_id),
+            None,
+            "T1",
+        );
+        insert_hand(
+            &conn,
+            room_id,
+            "h4",
+            105 * MINUTE,
+            Some(hero_id),
+            None,
+            "T1",
+        );
+        recompute_hero_sessions(&mut conn).unwrap();
+
+        let total = total_session_ms_in_range(&conn, profile_id, Some(50 * MINUTE), None).unwrap();
+        assert_eq!(total, 5 * MINUTE);
+
+        let unbounded = total_session_ms_in_range(&conn, profile_id, None, None).unwrap();
+        assert_eq!(unbounded, 10 * MINUTE + 5 * MINUTE);
     }
 }

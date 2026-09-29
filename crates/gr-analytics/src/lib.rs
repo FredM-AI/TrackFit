@@ -14,10 +14,12 @@
 //! ecran ne les consomme encore ; phase notamment differee en V2, M4-5).
 
 mod error;
+mod home;
 mod kpis;
 mod sqlite;
 
 pub use error::AnalyticsError;
+pub use home::{fetch_hero_tournament_results, hero_allin_ev_diff_bb, TournamentResultRow};
 pub use kpis::{compute_results_kpis, Bullet, ResultsKpis, TicketValuation, TournamentResult};
 pub use sqlite::SqliteAnalyticsBackend;
 

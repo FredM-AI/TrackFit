@@ -51,6 +51,41 @@
       "create": "Créer"
     }
   },
+  "home": {
+    "kpis": {
+      "profit": "Profit",
+      "roi": "ROI",
+      "itm": "ITM",
+      "abi": "ABI",
+      "tournamentsCount": "Tournois",
+      "fees": "Frais payés",
+      "allinEvDiff": "Écart EV all-in",
+      "dollarsPerHour": "$/h"
+    },
+    "previousPeriod": "Période précédente : {value}",
+    "profitCurve": {
+      "title": "Courbe de profit",
+      "withBounty": "Profit total",
+      "withoutBounty": "Profit hors bounties",
+      "empty": "Aucun tournoi terminé pour l'instant."
+    },
+    "lastSession": {
+      "title": "Dernière session",
+      "duration": "Durée : {value}",
+      "tournamentsCount": "{count} tournoi(s)",
+      "handsCount": "{count} main(s)",
+      "profit": "Profit : {value}",
+      "best": "Meilleur : {name} ({value})",
+      "worst": "Pire : {name} ({value})",
+      "none": "Aucune session pour l'instant."
+    },
+    "importStatus": {
+      "title": "État de l'import",
+      "watchedRoots": "{count} dossier(s) surveillé(s)",
+      "totalHands": "{count} main(s) importée(s)",
+      "unresolvedErrors": "{count} erreur(s) non résolue(s)"
+    }
+  },
   "setup": {
     "title": "Bienvenue sur Graphite",
     "intro": "Configurons votre profil Hero et importons vos mains existantes.",

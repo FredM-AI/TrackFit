@@ -12,6 +12,9 @@ use std::path::Path;
 use ts_rs::TS;
 
 use crate::hero_profiles::HeroProfilePayload;
+use crate::home::{
+    HomeSnapshotPayload, ImportStatusPayload, LastSessionPayload, PeriodKpis, ProfitCurvePoint,
+};
 use crate::import::{ImportProgressPayload, ImportSummaryPayload};
 use crate::setup::WinamaxAccountPayload;
 use crate::status::StatusSnapshotPayload;
@@ -27,6 +30,11 @@ fn generate_ui_bindings() {
         StatusSnapshotPayload::decl(),
         WatcherRunState::decl(),
         HeroProfilePayload::decl(),
+        HomeSnapshotPayload::decl(),
+        PeriodKpis::decl(),
+        ProfitCurvePoint::decl(),
+        LastSessionPayload::decl(),
+        ImportStatusPayload::decl(),
     ];
     decls.sort();
 

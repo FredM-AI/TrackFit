@@ -17,9 +17,11 @@ crate-type = ["staticlib", "cdylib", "rlib"]
 tauri-build = { version = "2.6.3", features = [] }
 
 [dependencies]
+gr-analytics = { path = "../crates/gr-analytics" }
 gr-ingest = { path = "../crates/gr-ingest" }
 gr-parser-api = { path = "../crates/gr-parser-api" }
 gr-store = { path = "../crates/gr-store" }
+rusqlite = { version = "0.31", features = ["bundled"] }
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
 log = "0.4"

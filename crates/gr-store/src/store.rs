@@ -341,6 +341,16 @@ impl Store {
         status::count_hero_hands_since(&reader, profile_id, since_ms)
     }
 
+    /// Nombre total de mains importees, tous profils/salles confondus (PRD
+    /// §13.1, ecran Accueil M6-2, carte "etat de l'import").
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si la lecture SQLite echoue.
+    pub fn count_all_hands(&self) -> Result<i64, StoreError> {
+        let reader = self.reader()?;
+        status::count_all_hands(&reader)
+    }
+
     /// Horodatage de la derniere main jouee par le profil Hero `profile_id`,
     /// pour la barre d'etat "Derniere main" (M3-3, scopee par profil depuis
     /// M3-5). `None` si aucune main de ce profil n'est encore en base.
@@ -363,6 +373,37 @@ impl Store {
     pub fn recompute_hero_sessions(&self) -> Result<usize, StoreError> {
         let mut writer = self.writer();
         sessions::recompute_hero_sessions(&mut writer)
+    }
+
+    /// La derniere session du profil Hero `profile_id` (PRD §13.1, ecran
+    /// Accueil M6-2), avec les tournois qu'elle a touches. `None` si ce
+    /// profil n'a encore aucune session (aucune main importee).
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si la lecture SQLite echoue.
+    pub fn latest_session(
+        &self,
+        profile_id: i64,
+    ) -> Result<Option<crate::LastSessionRow>, StoreError> {
+        let reader = self.reader()?;
+        sessions::latest_session(&reader, profile_id)
+    }
+
+    /// Somme des durees de session du profil Hero `profile_id` dont
+    /// `started_at` tombe dans `[since_ms, until_ms)` (PRD §13.1, KPI "$/h",
+    /// M6-2). Voir [`sessions::total_session_ms_in_range`] pour
+    /// l'approximation documentee.
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si la lecture SQLite echoue.
+    pub fn total_session_ms_in_range(
+        &self,
+        profile_id: i64,
+        since_ms: Option<i64>,
+        until_ms: Option<i64>,
+    ) -> Result<i64, StoreError> {
+        let reader = self.reader()?;
+        sessions::total_session_ms_in_range(&reader, profile_id, since_ms, until_ms)
     }
 
     /// Crée un type de ticket, ou met à jour sa valeur faciale s'il existe

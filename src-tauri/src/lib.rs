@@ -1,6 +1,7 @@
 #[cfg(test)]
 mod bindings_gen;
 mod hero_profiles;
+mod home;
 mod import;
 mod import_errors;
 mod logs;
@@ -78,6 +79,7 @@ pub fn run() {
             hero_profiles::rename_hero_profile_cmd,
             hero_profiles::add_hero_pseudo_cmd,
             hero_profiles::remove_hero_pseudo_cmd,
+            home::get_home_snapshot,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

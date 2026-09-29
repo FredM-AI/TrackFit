@@ -34,6 +34,17 @@ pub(crate) fn count_hero_hands_since(
     .map_err(StoreError::from)
 }
 
+/// Nombre total de mains importees, tous profils/salles confondus (PRD
+/// §13.1, "etat de l'import" : sante globale de l'import, pas une mesure
+/// scopee a un profil Hero).
+///
+/// # Errors
+/// Renvoie une [`StoreError`] si la lecture SQLite echoue.
+pub(crate) fn count_all_hands(conn: &Connection) -> Result<i64, StoreError> {
+    conn.query_row("SELECT COUNT(*) FROM hands", [], |row| row.get(0))
+        .map_err(StoreError::from)
+}
+
 /// Horodatage (`played_at`, epoch ms UTC) de la derniere main jouee par le
 /// profil Hero `profile_id`, toutes tables confondues. `None` si aucune
 /// main de ce profil n'est encore en base.
@@ -115,6 +126,18 @@ mod tests {
             rusqlite::params![room_id, room_hand_id, played_at, hero_player_id],
         )
         .unwrap();
+    }
+
+    #[test]
+    fn count_all_hands_ignores_the_hero_profile_scope() {
+        let conn = migrated_connection();
+        let (room_id, hero_id) = insert_room_and_player(&conn, "Hero");
+        let (_, other_id) = insert_room_and_player(&conn, "OtherHero");
+        insert_hand(&conn, room_id, "h1", 1_000, Some(hero_id));
+        insert_hand(&conn, room_id, "h2", 2_000, Some(other_id));
+        insert_hand(&conn, room_id, "h3", 3_000, None);
+
+        assert_eq!(count_all_hands(&conn).unwrap(), 3);
     }
 
     #[test]
