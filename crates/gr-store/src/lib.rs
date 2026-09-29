@@ -13,6 +13,7 @@ mod sessions;
 mod status;
 mod store;
 mod summary_repo;
+mod ticket_types;
 
 pub use error::StoreError;
 pub use hero::HeroProfileRow;
@@ -21,3 +22,4 @@ pub use paths::resolve_data_dir;
 pub use repo::{HandInsert, ImportReport, BATCH_SIZE};
 pub use store::Store;
 pub use summary_repo::AttachSummaryReport;
+pub use ticket_types::TicketTypeRow;

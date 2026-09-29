@@ -430,8 +430,13 @@ Coût, frais, prize/bounty, tickets (paramètre FACE_VALUE/ZERO), profit, ROI, R
 - **Simplification documentée** (aucun exemple réel de ticket dans le corpus pour la valider, `docs/formats/winamax.md` §5.2/§7) : ROI prize pool/bounties (KO) se limite aux bullets payés cash — un ticket utilisé ne se décompose pas en part prize/bounty/fee, donc les bullets payés par ticket sont exclus de ces deux ratios spécifiquement (mais comptent normalement dans le coût/profit/ROI global).
 - 7 scénarios chiffrés au centime (`gr-analytics/tests/results_scenarios.rs`) : tournoi simple, re-entry (2 bullets d'un même tournoi, ABI divisé par le nombre de tournois pas d'entrées), ticket utilisé (FACE_VALUE vs ZERO), ticket gagné (ITM dépend du statut "ticket gagné", pas de sa valorisation — vérifié explicitement), PKO (bounty seul ≠ ITM, ROI prize pool/bounties calculés séparément), freeroll seul (ROI exclu via `None`, pas un ratio infini) et freeroll mélangé à un tournoi payant.
 
-### M5-2 · Tickets : métadonnées et types · M · `TODO` (§8.6)
+### M5-2 · Tickets : métadonnées et types · M · `DONE` — le 29/09 (backend uniquement, voir Réalisé).
 Table `ticket_types` ; édition « joué via ticket » et « valeur du ticket » par tournoi ; filtre Via ticket.
+
+**Réalisé :**
+- `gr-store::ticket_types` — `create_or_update_ticket_type`/`list_ticket_types` (table `ticket_types`, déjà prévue dans `0001_init.sql`, pas de migration) ; `set_tournament_entry_ticket_used`/`set_tournament_entry_ticket_won` éditent les colonnes ticket de `tournament_entries` (déjà prévues elles aussi). Exposé sur `Store` (`create_or_update_ticket_type`, `list_ticket_types`, `set_tournament_entry_ticket_used`, `set_tournament_entry_ticket_won`).
+- Écrit pour fonctionner **avant** qu'un summary ne soit attaché (`ON CONFLICT ... DO UPDATE` qui ne touche que ses propres colonnes, jamais `entries_count`/`finish_position`/`prize_cents`/`bounty_cents`) : un `attach_summary` (M2-6) ultérieur ne peut pas écraser une édition manuelle antérieure, et inversement. Testé explicitement (5 tests).
+- **Portée volontairement limitée au backend, même raisonnement que les commandes Tauri de M2-5 (Logs) prêtes avant leur consommateur UI :** ni le filtre « Via ticket » (PRD §11, panneau de filtres global qui n'existe pas encore dans l'UI) ni l'écran d'édition (`Tournaments.tsx` est toujours un placeholder depuis M0-5) ne sont câblés. Sans surprise vu l'absence totale d'exemple de ticket dans le corpus (§7, non résolu) : rien à valider côté UI/parsing tant qu'un exemple réel n'existe pas de toute façon.
 
 ### M5-3 · Évaluateur de mains et équité · M · `TODO` (§10.6)
 **CA :**
