@@ -1525,6 +1525,7 @@ name = "gr-store"
 version = "0.0.1"
 dependencies = [
  "gr-core",
+ "gr-equity",
  "gr-parser-api",
  "gr-parser-winamax",
  "gr-stats",
