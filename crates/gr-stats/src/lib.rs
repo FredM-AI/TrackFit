@@ -7,4 +7,4 @@ mod depth;
 mod position;
 
 pub use depth::{depth_bb, depth_bracket_label, DepthMode, DEFAULT_DEPTH_BRACKETS};
-pub use position::assign_positions;
+pub use position::{assign_positions, sb_bb_seats};
