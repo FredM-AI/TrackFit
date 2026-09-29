@@ -69,6 +69,71 @@ pub(crate) fn link_hero_account(
     Ok(())
 }
 
+/// Detache le pseudo `screen_name` du profil `profile_id` (M3-5,
+/// "modification de profil"). Sans effet si le pseudo n'est pas connu ou
+/// n'etait pas rattache a ce profil. Les mains deja importees et leur
+/// `hero_player_id` ne sont pas touches ; seul le rattachement au profil
+/// change (un prochain `recompute_hero_sessions` re-scope les sessions).
+///
+/// # Errors
+/// Renvoie une [`StoreError`] si l'ecriture SQLite echoue.
+pub(crate) fn unlink_hero_account(
+    conn: &Connection,
+    profile_id: i64,
+    room: Room,
+    screen_name: &str,
+) -> Result<(), StoreError> {
+    let room_id = get_or_create_room(conn, room)?;
+    conn.execute(
+        "DELETE FROM hero_accounts WHERE profile_id = ?1 AND player_id = (
+            SELECT id FROM players WHERE room_id = ?2 AND screen_name = ?3
+         )",
+        params![profile_id, room_id, screen_name],
+    )?;
+    Ok(())
+}
+
+/// Renomme un profil Hero (M3-5, "modification de profil").
+///
+/// # Errors
+/// Renvoie une [`StoreError`] si l'ecriture SQLite echoue (ex. nom deja
+/// pris par un autre profil, `UNIQUE(name)`).
+pub(crate) fn rename_hero_profile(
+    conn: &Connection,
+    profile_id: i64,
+    new_name: &str,
+) -> Result<(), StoreError> {
+    conn.execute(
+        "UPDATE hero_profiles SET name = ?1 WHERE id = ?2",
+        params![new_name, profile_id],
+    )?;
+    Ok(())
+}
+
+/// Pseudos actuellement rattaches a un profil (M3-5, ecran Parametres).
+/// Un seul `Room` existe en V1 (`Winamax`) : pas de colonne room distincte
+/// pour l'instant, a etendre si un jour une deuxieme room est supportee.
+///
+/// # Errors
+/// Renvoie une [`StoreError`] si la lecture SQLite echoue.
+pub(crate) fn list_hero_account_pseudos(
+    conn: &Connection,
+    profile_id: i64,
+) -> Result<Vec<String>, StoreError> {
+    let mut stmt = conn.prepare(
+        "SELECT p.screen_name FROM hero_accounts ha
+         JOIN players p ON p.id = ha.player_id
+         WHERE ha.profile_id = ?1
+         ORDER BY p.screen_name",
+    )?;
+    let rows = stmt.query_map([profile_id], |row| row.get(0))?;
+    let mut out = Vec::new();
+    for row in rows {
+        out.push(row?);
+    }
+    Ok(out)
+}
+
 /// Liste tous les profils Hero, le profil par defaut d'abord.
 ///
 /// # Errors
@@ -214,6 +279,48 @@ mod tests {
             account_count, 1,
             "le pseudo deja rattache au premier passage doit etre conserve"
         );
+    }
+
+    #[test]
+    fn unlinking_a_pseudo_removes_only_that_account() {
+        let conn = migrated_connection();
+        let profile_id = create_hero_profile(&conn, "Frederic", true).unwrap();
+        link_hero_account(&conn, profile_id, Room::Winamax, "Fred_W").unwrap();
+        link_hero_account(&conn, profile_id, Room::Winamax, "FredMTT").unwrap();
+
+        unlink_hero_account(&conn, profile_id, Room::Winamax, "Fred_W").unwrap();
+
+        assert_eq!(
+            list_hero_account_pseudos(&conn, profile_id).unwrap(),
+            vec!["FredMTT".to_string()]
+        );
+    }
+
+    #[test]
+    fn unlinking_an_unknown_pseudo_is_a_no_op() {
+        let conn = migrated_connection();
+        let profile_id = create_hero_profile(&conn, "Frederic", true).unwrap();
+        link_hero_account(&conn, profile_id, Room::Winamax, "Fred_W").unwrap();
+
+        unlink_hero_account(&conn, profile_id, Room::Winamax, "DoesNotExist").unwrap();
+
+        assert_eq!(
+            list_hero_account_pseudos(&conn, profile_id).unwrap(),
+            vec!["Fred_W".to_string()]
+        );
+    }
+
+    #[test]
+    fn renaming_a_profile_updates_only_its_name() {
+        let conn = migrated_connection();
+        let profile_id = create_hero_profile(&conn, "Frederic", true).unwrap();
+
+        rename_hero_profile(&conn, profile_id, "Fred Pro").unwrap();
+
+        let profiles = list_hero_profiles(&conn).unwrap();
+        assert_eq!(profiles.len(), 1);
+        assert_eq!(profiles[0].name, "Fred Pro");
+        assert!(profiles[0].is_default, "renaming must not touch is_default");
     }
 
     #[test]

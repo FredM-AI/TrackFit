@@ -6,16 +6,16 @@
 //! ordre" (BACKLOG M3-4) par construction : le regroupement ne depend que de
 //! l'ordre chronologique final des mains, jamais de leur ordre d'insertion.
 //!
-//! `hands.hero_player_id` identifie deja le siege d'Hero sur chaque main
-//! (Winamax etiquette toujours son propre siege "Hero", quel que soit le
-//! pseudo, docs/formats/winamax.md) : aucune jointure via `hero_accounts`
-//! n'est necessaire ici. Les sessions sont rattachees au profil Hero par
-//! defaut ; M3-5 (profils multi-pseudos) n'est pas encore implemente et un
-//! seul profil existe en pratique.
+//! `hands.hero_player_id` identifie le siege d'Hero sur chaque main (Winamax
+//! etiquette toujours son propre siege "Hero", quel que soit le pseudo,
+//! docs/formats/winamax.md), mais une main n'appartient a un profil Hero que
+//! si ce siege est rattache a ce profil via `hero_accounts` (M3-5, D19) :
+//! chaque profil est recalcule independamment, avec son propre decoupage en
+//! sessions (des mains rattachees a un autre profil n'y comptent pas).
 
 use std::collections::HashSet;
 
-use rusqlite::{params, Connection, OptionalExtension};
+use rusqlite::{params, Connection};
 
 use crate::error::StoreError;
 use crate::hero;
@@ -68,32 +68,46 @@ impl SessionAcc {
     }
 }
 
-/// Regroupe toutes les mains d'Hero en sessions, avec un seuil
+/// Regroupe les mains de **chaque** profil Hero en sessions, avec un seuil
 /// d'interruption de `settings.session_gap_minutes` minutes (30 par defaut,
 /// PRD §9.3/H3 ; "plus de N minutes" -> un ecart de N minutes pile
-/// n'interrompt pas la session). Renvoie le nombre de sessions creees.
-/// Sans effet si aucun profil Hero n'existe encore (avant la fin de
-/// l'assistant M3-1).
+/// n'interrompt pas la session). Renvoie le nombre total de sessions creees,
+/// tous profils confondus. Sans effet si aucun profil Hero n'existe encore
+/// (avant la fin de l'assistant M3-1).
 ///
 /// # Errors
 /// Renvoie une [`StoreError`] si l'ecriture SQLite echoue.
 pub(crate) fn recompute_hero_sessions(conn: &mut Connection) -> Result<usize, StoreError> {
-    let Some(hero_profile_id) = default_hero_profile_id(conn)? else {
-        return Ok(0);
-    };
     let gap_minutes = hero::get_setting(conn, SESSION_GAP_MINUTES_SETTING_KEY)?
         .and_then(|v| v.parse::<i64>().ok())
         .unwrap_or(DEFAULT_SESSION_GAP_MINUTES);
     let gap_ms = gap_minutes * 60_000;
 
-    let tx = conn.transaction()?;
+    let profile_ids = all_hero_profile_ids(conn)?;
 
+    let tx = conn.transaction()?;
+    let mut sessions_created = 0usize;
+    for hero_profile_id in profile_ids {
+        sessions_created += recompute_for_profile(&tx, hero_profile_id, gap_ms)?;
+    }
+    tx.commit()?;
+    Ok(sessions_created)
+}
+
+fn recompute_for_profile(
+    tx: &Connection,
+    hero_profile_id: i64,
+    gap_ms: i64,
+) -> Result<usize, StoreError> {
     let hands: Vec<HeroHand> = {
         let mut stmt = tx.prepare(
-            "SELECT id, played_at, tournament_id, table_name FROM hands
-             WHERE hero_player_id IS NOT NULL ORDER BY played_at, id",
+            "SELECT h.id, h.played_at, h.tournament_id, h.table_name FROM hands h
+             WHERE h.hero_player_id IN (
+               SELECT player_id FROM hero_accounts WHERE profile_id = ?1
+             )
+             ORDER BY h.played_at, h.id",
         )?;
-        let rows = stmt.query_map([], |row| {
+        let rows = stmt.query_map([hero_profile_id], |row| {
             Ok(HeroHand {
                 id: row.get(0)?,
                 played_at: row.get(1)?,
@@ -107,8 +121,10 @@ pub(crate) fn recompute_hero_sessions(conn: &mut Connection) -> Result<usize, St
     // Ordre FK-safe : detacher les mains avant de supprimer les sessions
     // (`hands.session_id` n'a pas de ON DELETE CASCADE, foreign_keys = ON).
     tx.execute(
-        "UPDATE hands SET session_id = NULL WHERE hero_player_id IS NOT NULL",
-        [],
+        "UPDATE hands SET session_id = NULL WHERE hero_player_id IN (
+           SELECT player_id FROM hero_accounts WHERE profile_id = ?1
+         )",
+        [hero_profile_id],
     )?;
     tx.execute(
         "DELETE FROM sessions WHERE hero_profile_id = ?1",
@@ -124,7 +140,7 @@ pub(crate) fn recompute_hero_sessions(conn: &mut Connection) -> Result<usize, St
         };
         if starts_new_session {
             if let Some(acc) = current.replace(SessionAcc::start(hand)) {
-                flush_session(&tx, hero_profile_id, &acc)?;
+                flush_session(tx, hero_profile_id, &acc)?;
                 sessions_created += 1;
             }
         } else if let Some(acc) = current.as_mut() {
@@ -132,11 +148,10 @@ pub(crate) fn recompute_hero_sessions(conn: &mut Connection) -> Result<usize, St
         }
     }
     if let Some(acc) = current.take() {
-        flush_session(&tx, hero_profile_id, &acc)?;
+        flush_session(tx, hero_profile_id, &acc)?;
         sessions_created += 1;
     }
 
-    tx.commit()?;
     Ok(sessions_created)
 }
 
@@ -175,14 +190,14 @@ fn flush_session(
     Ok(())
 }
 
-fn default_hero_profile_id(conn: &Connection) -> Result<Option<i64>, StoreError> {
-    conn.query_row(
-        "SELECT id FROM hero_profiles WHERE is_default = 1 LIMIT 1",
-        [],
-        |row| row.get(0),
-    )
-    .optional()
-    .map_err(StoreError::from)
+fn all_hero_profile_ids(conn: &Connection) -> Result<Vec<i64>, StoreError> {
+    let mut stmt = conn.prepare("SELECT id FROM hero_profiles")?;
+    let rows = stmt.query_map([], |row| row.get(0))?;
+    let mut out = Vec::new();
+    for row in rows {
+        out.push(row?);
+    }
+    Ok(out)
 }
 
 #[cfg(test)]
@@ -225,13 +240,22 @@ mod tests {
         conn.last_insert_rowid()
     }
 
-    fn insert_hero_player(conn: &Connection, room_id: i64) -> i64 {
+    /// Cree le siege "Hero" et le rattache immediatement au profil
+    /// `profile_id` via `hero_accounts` (M3-5) : sans ce rattachement, les
+    /// mains de ce siege ne seraient scopees dans aucun profil.
+    fn insert_hero_player(conn: &Connection, room_id: i64, profile_id: i64) -> i64 {
         conn.execute(
             "INSERT INTO players (room_id, screen_name) VALUES (?1, 'Hero')",
             [room_id],
         )
         .unwrap();
-        conn.last_insert_rowid()
+        let player_id = conn.last_insert_rowid();
+        conn.execute(
+            "INSERT INTO hero_accounts (profile_id, player_id) VALUES (?1, ?2)",
+            params![profile_id, player_id],
+        )
+        .unwrap();
+        player_id
     }
 
     #[allow(clippy::too_many_arguments)]
@@ -279,7 +303,15 @@ mod tests {
     fn does_nothing_when_no_hero_profile_exists_yet() {
         let mut conn = migrated_connection();
         let room_id = insert_room(&conn);
-        let hero_id = insert_hero_player(&conn, room_id);
+        // Pas de profil du tout ici (c'est ce que ce test verifie) : pas
+        // d'appel a `insert_hero_player`, qui exigerait un `profile_id`
+        // valide pour le rattachement `hero_accounts`.
+        conn.execute(
+            "INSERT INTO players (room_id, screen_name) VALUES (?1, 'Hero')",
+            [room_id],
+        )
+        .unwrap();
+        let hero_id = conn.last_insert_rowid();
         insert_hand(&conn, room_id, "h1", 0, Some(hero_id), None, "T1");
 
         let created = recompute_hero_sessions(&mut conn).unwrap();
@@ -290,9 +322,9 @@ mod tests {
     #[test]
     fn hands_within_the_default_30_minute_gap_form_a_single_session() {
         let mut conn = migrated_connection();
-        create_default_hero_profile(&conn);
+        let profile_id = create_default_hero_profile(&conn);
         let room_id = insert_room(&conn);
-        let hero_id = insert_hero_player(&conn, room_id);
+        let hero_id = insert_hero_player(&conn, room_id, profile_id);
         insert_hand(&conn, room_id, "h1", 0, Some(hero_id), None, "T1");
         insert_hand(&conn, room_id, "h2", 29 * MINUTE, Some(hero_id), None, "T1");
 
@@ -305,9 +337,9 @@ mod tests {
     #[test]
     fn a_gap_of_exactly_30_minutes_does_not_start_a_new_session() {
         let mut conn = migrated_connection();
-        create_default_hero_profile(&conn);
+        let profile_id = create_default_hero_profile(&conn);
         let room_id = insert_room(&conn);
-        let hero_id = insert_hero_player(&conn, room_id);
+        let hero_id = insert_hero_player(&conn, room_id, profile_id);
         insert_hand(&conn, room_id, "h1", 0, Some(hero_id), None, "T1");
         insert_hand(&conn, room_id, "h2", 30 * MINUTE, Some(hero_id), None, "T1");
 
@@ -322,9 +354,9 @@ mod tests {
     #[test]
     fn a_gap_of_more_than_30_minutes_starts_a_new_session() {
         let mut conn = migrated_connection();
-        create_default_hero_profile(&conn);
+        let profile_id = create_default_hero_profile(&conn);
         let room_id = insert_room(&conn);
-        let hero_id = insert_hero_player(&conn, room_id);
+        let hero_id = insert_hero_player(&conn, room_id, profile_id);
         insert_hand(&conn, room_id, "h1", 0, Some(hero_id), None, "T1");
         insert_hand(
             &conn,
@@ -343,9 +375,9 @@ mod tests {
     #[test]
     fn tournaments_and_tables_are_counted_distinctly() {
         let mut conn = migrated_connection();
-        create_default_hero_profile(&conn);
+        let profile_id = create_default_hero_profile(&conn);
         let room_id = insert_room(&conn);
-        let hero_id = insert_hero_player(&conn, room_id);
+        let hero_id = insert_hero_player(&conn, room_id, profile_id);
         let tournament_1 = insert_tournament(&conn, room_id, "T1");
         let tournament_2 = insert_tournament(&conn, room_id, "T2");
         // 2 tournois, 3 tables distinctes, 4 mains, une seule session.
@@ -401,9 +433,9 @@ mod tests {
     #[test]
     fn a_hand_ignored_by_hero_player_id_is_excluded() {
         let mut conn = migrated_connection();
-        create_default_hero_profile(&conn);
+        let profile_id = create_default_hero_profile(&conn);
         let room_id = insert_room(&conn);
-        let hero_id = insert_hero_player(&conn, room_id);
+        let hero_id = insert_hero_player(&conn, room_id, profile_id);
         insert_hand(&conn, room_id, "h1", 0, Some(hero_id), None, "T1");
         insert_hand(&conn, room_id, "h2", MINUTE, None, None, "T1");
 
@@ -416,9 +448,9 @@ mod tests {
     #[test]
     fn recomputing_after_an_out_of_order_backfill_matches_the_chronological_result() {
         let mut conn = migrated_connection();
-        create_default_hero_profile(&conn);
+        let profile_id = create_default_hero_profile(&conn);
         let room_id = insert_room(&conn);
-        let hero_id = insert_hero_player(&conn, room_id);
+        let hero_id = insert_hero_player(&conn, room_id, profile_id);
 
         // Import "temps reel" : les deux mains les plus recentes d'abord.
         insert_hand(&conn, room_id, "h2", 40 * MINUTE, Some(hero_id), None, "T1");
@@ -442,9 +474,9 @@ mod tests {
     #[test]
     fn a_backfilled_hand_filling_the_gap_merges_two_sessions_into_one() {
         let mut conn = migrated_connection();
-        create_default_hero_profile(&conn);
+        let profile_id = create_default_hero_profile(&conn);
         let room_id = insert_room(&conn);
-        let hero_id = insert_hero_player(&conn, room_id);
+        let hero_id = insert_hero_player(&conn, room_id, profile_id);
 
         insert_hand(&conn, room_id, "h1", 0, Some(hero_id), None, "T1");
         insert_hand(&conn, room_id, "h3", 60 * MINUTE, Some(hero_id), None, "T1");
@@ -466,10 +498,10 @@ mod tests {
     #[test]
     fn a_custom_gap_setting_is_respected() {
         let mut conn = migrated_connection();
-        create_default_hero_profile(&conn);
+        let profile_id = create_default_hero_profile(&conn);
         hero::set_setting(&conn, SESSION_GAP_MINUTES_SETTING_KEY, "10").unwrap();
         let room_id = insert_room(&conn);
-        let hero_id = insert_hero_player(&conn, room_id);
+        let hero_id = insert_hero_player(&conn, room_id, profile_id);
         insert_hand(&conn, room_id, "h1", 0, Some(hero_id), None, "T1");
         insert_hand(&conn, room_id, "h2", 11 * MINUTE, Some(hero_id), None, "T1");
 
@@ -479,5 +511,52 @@ mod tests {
             2,
             "seuil personnalise a 10 min : 11 min d'ecart doit couper"
         );
+    }
+
+    /// CA de M3-5 : "toutes les requetes Hero filtrent par `hero_accounts`
+    /// du profil selectionne" — deux profils ont chacun leur propre decoupage
+    /// en sessions, sans se melanger.
+    #[test]
+    fn two_hero_profiles_get_independent_sessions() {
+        let mut conn = migrated_connection();
+        let profile_a = create_default_hero_profile(&conn);
+        conn.execute(
+            "INSERT INTO hero_profiles (name, is_default) VALUES ('Profil B', 0)",
+            [],
+        )
+        .unwrap();
+        let profile_b = conn.last_insert_rowid();
+
+        let room_id = insert_room(&conn);
+        let hero_a = insert_hero_player(&conn, room_id, profile_a);
+        conn.execute(
+            "INSERT INTO players (room_id, screen_name) VALUES (?1, 'HeroB')",
+            [room_id],
+        )
+        .unwrap();
+        let hero_b = conn.last_insert_rowid();
+        conn.execute(
+            "INSERT INTO hero_accounts (profile_id, player_id) VALUES (?1, ?2)",
+            params![profile_b, hero_b],
+        )
+        .unwrap();
+
+        // Memes horodatages, deux profils distincts : chacun doit voir
+        // exactement ses propres mains, pas celles de l'autre.
+        insert_hand(&conn, room_id, "a1", 0, Some(hero_a), None, "T1");
+        insert_hand(&conn, room_id, "b1", 0, Some(hero_b), None, "T1");
+        insert_hand(&conn, room_id, "b2", MINUTE, Some(hero_b), None, "T1");
+
+        recompute_hero_sessions(&mut conn).unwrap();
+
+        let mut stmt = conn
+            .prepare("SELECT hero_profile_id, hands FROM sessions ORDER BY hero_profile_id")
+            .unwrap();
+        let rows: Vec<(i64, i64)> = stmt
+            .query_map([], |row| Ok((row.get(0)?, row.get(1)?)))
+            .unwrap()
+            .collect::<rusqlite::Result<Vec<_>>>()
+            .unwrap();
+        assert_eq!(rows, vec![(profile_a, 1), (profile_b, 2)]);
     }
 }

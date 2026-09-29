@@ -302,16 +302,27 @@ Icône dans la zone de notification (Pause/Reprendre import, Ouvrir, Quitter) ; 
 
 **Réalisé :**
 - `gr-store::sessions::recompute_hero_sessions` — recalcul **intégral** (pas incrémental) des sessions d'Hero à chaque appel : plus simple, et garantit "recalcul correct lors d'un import hors ordre" par construction (le regroupement ne dépend que de l'ordre chronologique final des mains via l'index déjà présent `ix_hands_played_at`, jamais de leur ordre d'insertion). Seuil `settings.session_gap_minutes` (30 par défaut, paramétrable dès maintenant même sans écran Réglages — M8) ; "plus de N minutes" (PRD) : un écart de exactement N minutes ne casse pas la session.
-- Rattachées au profil Hero par défaut (`hero_profiles.is_default`) : M3-5 (multi-pseudos) n'est pas encore implémenté, un seul profil existe en pratique. `hands.hero_player_id` (déjà fiable depuis le parser, Winamax étiquette toujours son propre siège "Hero") évite toute jointure `hero_accounts`.
+- Rattachées au profil Hero par défaut au moment de M3-4 ; **revu en M3-5** pour boucler sur chaque profil et filtrer via `hero_accounts` (voir plus bas), sans changer l'algorithme de regroupement lui-même.
 - `hands`/`tournaments` (distinct) par session : triviaux, sous-produit du regroupement. `max_tables` : **approximation documentée** — nombre de tables distinctes vues pendant la session, pas un vrai calcul de chevauchement temporel (on ne connaît que l'instant de chaque main, pas sa durée). `profit`/`EV` cités par le PRD comme métriques de session ne sont **pas stockés** (cohérent avec le schéma existant depuis M2-1, qui ne les prévoyait déjà pas) : à calculer en jointure au moment de l'affichage (écran Sessions, M6), pas dénormalisés ici.
 - Appelé une fois par lot après `run_import` (import en masse, M2-3) et après chaque passage du watcher ayant inséré au moins une main (M3-2) — jamais par fichier, pour ne pas payer le recalcul plusieurs fois inutilement.
 - Perf (R-PERF, la story touche l'import) : le recalcul ajoute un `UPDATE ... WHERE id IN (...)` par lot de 500 mains plutôt qu'un par main (optimisation appliquée après une première mesure ligne-par-ligne). Débit mesuré sur 100k mains synthétiques (`gr-synth`, avec profil Hero pour que le recalcul s'exécute réellement) : **~1220-1330 mains/s** selon les runs (bruit de mesure sur cette machine sous charge répétée), contre 1430 mains/s sans recalcul de sessions (M2-4). Reste largement au-dessus de la cible PRD/BACKLOG (≥1000 mains/s).
 - Tests : `gr-store::sessions` (9, dont les deux scénarios hors-ordre explicites — backfill isolé et backfill comblant un écart entre deux sessions existantes, qui doit les fusionner), `gr-ingest` (1, câblage bout-en-bout de `run_import`).
 
-### M3-5 · Profils Hero multi-pseudos · M · `TODO` (D19)
+### M3-5 · Profils Hero multi-pseudos · M · `DONE` (D19) — le 29/09. **M3 est intégralement terminé.**
 **CA :**
-- Création et modification de profils.
-- Toutes les requêtes Hero filtrent par `hero_accounts` du profil sélectionné.
+- Création et modification de profils. ✅
+- Toutes les requêtes Hero filtrent par `hero_accounts` du profil sélectionné. ✅
+
+**Décisions validées par Frédéric avant implémentation** (ambiguïté PRD — aucun écran Paramètres/Filtres réel n'existait encore, `CLAUDE.md` §2.8) :
+- Interface minimale dans l'écran **Paramètres** (remplace son placeholder depuis M0-5) plutôt que d'attendre M6 (panneau de filtres complet, §11) ou M8 (reste de Paramètres) : cohérent avec le PRD (§13.10 place déjà "profils Hero et pseudos" sous Paramètres).
+- Un seul profil suffit en pratique aujourd'hui (confirmé par Frédéric) : pas de sélecteur multi-profils proéminent construit, mais le filtrage par `hero_accounts` est correctement implémenté dès maintenant pour que plusieurs profils fonctionnent sans retouche future.
+
+**Réalisé :**
+- `gr-store::hero` — `rename_hero_profile`, `unlink_hero_account` (détache un pseudo, sans toucher aux mains déjà importées ni à leur `hero_player_id`), `list_hero_account_pseudos`. `create_hero_profile`/`link_hero_account`/`list_hero_profiles` inchangés (M3-1).
+- `gr-store::status` et `gr-store::sessions` **revus** pour filtrer par profil via `hero_accounts` plutôt que par "profil par défaut" (M3-3/M3-4) ou "n'importe quel siège Hero" global : `count_hero_hands_since`/`latest_hero_hand_played_at` prennent désormais un `profile_id` explicite ; `recompute_hero_sessions` boucle sur **tous** les profils existants et donne à chacun son propre découpage en sessions indépendant (une main d'un autre profil n'y compte jamais). Comportement inchangé pour l'usage réel actuel (un seul profil, tous ses pseudos déjà rattachés via l'assistant M3-1).
+- `src-tauri::hero_profiles` — nouveau module : `list_hero_profiles_cmd` (profils + pseudos), `get_active_hero_profile_id`/`set_active_hero_profile_id` (nouveau réglage `settings.active_hero_profile_id`, retombe sur le profil par défaut si absent/invalide), `create_hero_profile_cmd`, `rename_hero_profile_cmd`, `add_hero_pseudo_cmd`, `remove_hero_pseudo_cmd`. `status::get_status_snapshot` (M3-3) résout désormais le profil actif en interne au lieu de scanner tous les profils sans distinction.
+- `ui/screens/Settings.tsx` — remplace le placeholder par une vraie section "Profils Hero" : liste des profils avec leurs pseudos, sélection du profil actif (bouton radio), renommage, ajout/retrait de pseudo, création d'un nouveau profil. Pas de test dédié (même limite que `Setup.tsx` : pas d'infrastructure de mock IPC dans le projet) — CA à valider par Frédéric via `just dev`.
+- Perf (R-PERF, la story touche les requêtes utilisées par l'import) : la jointure `hero_accounts` ajoutée au recalcul de sessions n'a pas d'impact mesurable au-delà du bruit déjà observé en M3-4 — ~1185 mains/s sur 100k mains synthétiques (contre ~1220-1330 en M3-4), toujours au-dessus de la cible ≥1000 mains/s.
 
 ---
 

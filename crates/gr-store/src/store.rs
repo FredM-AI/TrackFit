@@ -275,6 +275,38 @@ impl Store {
         hero::list_hero_profiles(&reader)
     }
 
+    /// Detache un pseudo d'un profil Hero (M3-5). Sans effet si non rattache.
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si l'ecriture SQLite echoue.
+    pub fn unlink_hero_account(
+        &self,
+        profile_id: i64,
+        room: Room,
+        screen_name: &str,
+    ) -> Result<(), StoreError> {
+        let writer = self.writer();
+        hero::unlink_hero_account(&writer, profile_id, room, screen_name)
+    }
+
+    /// Renomme un profil Hero (M3-5).
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si l'ecriture SQLite echoue.
+    pub fn rename_hero_profile(&self, profile_id: i64, new_name: &str) -> Result<(), StoreError> {
+        let writer = self.writer();
+        hero::rename_hero_profile(&writer, profile_id, new_name)
+    }
+
+    /// Pseudos actuellement rattaches a un profil Hero (M3-5).
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si la lecture SQLite echoue.
+    pub fn list_hero_account_pseudos(&self, profile_id: i64) -> Result<Vec<String>, StoreError> {
+        let reader = self.reader()?;
+        hero::list_hero_account_pseudos(&reader, profile_id)
+    }
+
     /// Lit une valeur de `settings` (M3-1 : flag "premier lancement termine").
     ///
     /// # Errors
@@ -293,25 +325,30 @@ impl Store {
         hero::set_setting(&writer, key, value_json)
     }
 
-    /// Nombre de mains jouees par Hero depuis `since_ms` (epoch ms UTC),
-    /// pour la barre d'etat "Mains aujourd'hui" (M3-3).
+    /// Nombre de mains du profil Hero `profile_id` jouees depuis `since_ms`
+    /// (epoch ms UTC), pour la barre d'etat "Mains aujourd'hui" (M3-3,
+    /// scopee par profil depuis M3-5).
     ///
     /// # Errors
     /// Renvoie une [`StoreError`] si la lecture SQLite echoue.
-    pub fn count_hero_hands_since(&self, since_ms: i64) -> Result<i64, StoreError> {
+    pub fn count_hero_hands_since(
+        &self,
+        profile_id: i64,
+        since_ms: i64,
+    ) -> Result<i64, StoreError> {
         let reader = self.reader()?;
-        status::count_hero_hands_since(&reader, since_ms)
+        status::count_hero_hands_since(&reader, profile_id, since_ms)
     }
 
-    /// Horodatage de la derniere main jouee par Hero, pour la barre d'etat
-    /// "Derniere main" (M3-3). `None` si aucune main Hero n'est encore en
-    /// base.
+    /// Horodatage de la derniere main jouee par le profil Hero `profile_id`,
+    /// pour la barre d'etat "Derniere main" (M3-3, scopee par profil depuis
+    /// M3-5). `None` si aucune main de ce profil n'est encore en base.
     ///
     /// # Errors
     /// Renvoie une [`StoreError`] si la lecture SQLite echoue.
-    pub fn latest_hero_hand_played_at(&self) -> Result<Option<i64>, StoreError> {
+    pub fn latest_hero_hand_played_at(&self, profile_id: i64) -> Result<Option<i64>, StoreError> {
         let reader = self.reader()?;
-        status::latest_hero_hand_played_at(&reader)
+        status::latest_hero_hand_played_at(&reader, profile_id)
     }
 
     /// Regroupe les mains d'Hero en sessions (M3-4, PRD §9.3/H3), avec un
