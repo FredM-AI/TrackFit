@@ -20,6 +20,7 @@ pub use hero::HeroProfileRow;
 pub use import_log::{ImportErrorRow, ImportFileProgress, NewImportError};
 pub use paths::resolve_data_dir;
 pub use repo::{HandInsert, ImportReport, BATCH_SIZE};
+pub use sessions::LastSessionRow;
 pub use store::Store;
 pub use summary_repo::AttachSummaryReport;
 pub use ticket_types::TicketTypeRow;

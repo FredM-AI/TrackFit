@@ -76,7 +76,7 @@ pub fn start_from_persisted_roots(
     }
 }
 
-fn read_watched_roots(store: &Store) -> Vec<PathBuf> {
+pub(crate) fn read_watched_roots(store: &Store) -> Vec<PathBuf> {
     let Ok(Some(json)) = store.get_setting(WATCHED_ROOTS_SETTING_KEY) else {
         return Vec::new();
     };

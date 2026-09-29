@@ -1554,10 +1554,12 @@ version = "0.0.1"
 name = "graphite"
 version = "0.0.1"
 dependencies = [
+ "gr-analytics",
  "gr-ingest",
  "gr-parser-api",
  "gr-store",
  "log",
+ "rusqlite",
  "serde",
  "serde_json",
  "tauri",

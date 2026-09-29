@@ -3,6 +3,7 @@ import { listen } from '@tauri-apps/api/event'
 import type {
   HandsNewPayload,
   HeroProfilePayload,
+  HomeSnapshotPayload,
   ImportProgressPayload,
   ImportSummaryPayload,
   StatusSnapshotPayload,
@@ -102,4 +103,10 @@ export function addHeroPseudo(profileId: number, pseudo: string) {
 /** M3-5 : detache un pseudo d'un profil Hero. */
 export function removeHeroPseudo(profileId: number, pseudo: string) {
   return invoke<void>('remove_hero_pseudo_cmd', { profileId, pseudo })
+}
+
+/** M6-2 : instantane de l'ecran Accueil (KPIs 30j vs 30j precedents, courbe
+ * G1, derniere session, etat de l'import), scope au profil Hero actif. */
+export function getHomeSnapshot(nowMs: number) {
+  return invoke<HomeSnapshotPayload>('get_home_snapshot', { nowMs })
 }
