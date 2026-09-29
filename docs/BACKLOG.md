@@ -350,12 +350,20 @@ Construction concise de mains de test pour `gr-stats`.
 - Portée volontairement limitée au préflop pour l'instant (M4-3 n'en a besoin que pour ça) ; à étendre avec des rues postflop quand M4-4 en aura besoin.
 - Tests du DSL lui-même (6, `gr-stats/tests/hand_macro.rs`) : ordre des postes générés, ante, détection de `hero_pseudo`, montants des actions volontaires, `shove` marqué all-in, `check` de la BB.
 
-### M4-3 · Flags préflop · M · `TODO`
+### M4-3 · Flags préflop · M · `DONE` — le 29/09.
 VPIP, PFR, RFI, LIMP, OSHOVE, 3B, F3B, 4B, ATS, FSTEAL (SB/BB), RSTEAL, et la ligne préflop synthétique.
 
 **CA :**
 - 3 tests minimum par stat (positif, négatif, pas d'opportunité).
 - Colonnes `hand_players` remplies à l'import (migration `0002`).
+
+**Réalisé :**
+- `gr-stats/src/preflop.rs` — une fonction pure par stat (CLAUDE.md §6), `compute_<code>(hand: &HandRecord, pseudo: &str) -> StatFlag` (`{opp, act}`) : `compute_vpip`, `compute_pfr`, `compute_rfi`, `compute_limp`, `compute_oshove`, `compute_3b`, `compute_f3b`, `compute_4b`, `compute_ats`, `compute_fsteal`, `compute_rsteal`. Reconstruit en interne une chronologie des décisions volontaires préflop (`raises_before`/`entrants_before` par décision) partagée par toutes les fonctions, sans jamais l'exposer publiquement. `preflop_line(hand, pseudo) -> Option<String>` pour la ligne synthétique (ex. `RFI`, `RFI-F3B`, `CALL-OPEN`, `SQZ` — les 4 exemples de l'annexe schéma valident exactement l'algorithme retenu). 31 tests (`gr-stats/tests/preflop_flags.rs`, DSL `hand!{}` de M4-2), ≥ 3 par stat.
+- `gr-stats::position::position_group` (EP/MP/LP/Blinds, PRD §10.4), 9 tests.
+- **Décision technique (pas d'ambiguïté nécessitant validation, cf. CLAUDE.md §2.8) :** pas de migration `0002` — les colonnes de `hand_players` visées par cette story (`position`, `position_group`, `stack_bb`, `eff_stack_bb`, `depth_bucket`, `eff_depth_bucket`, `preflop_line`, et les paires `vpip_opp/vpip`, `pfr`, `rfi_opp/rfi`, `limp`, `oshove`, `tb_opp/tb`, `f3b_opp/f3b`, `fb_opp/fb`, `ats_opp/ats`, `fsteal_opp/fsteal`, `rsteal`) existent déjà intégralement dans `0001_init.sql` (schéma initial complet, PRD annexe). Seul `insert_hand_players` (`gr-store/src/repo.rs`) les laissait `NULL` faute de moteur de stats disponible (M2-2). Le CA visait donc le *remplissage*, pas une modification de schéma (R-SCHEMA ne s'applique pas ici) ; la mention « migration 0002 » dans le CA d'origine anticipait un besoin qui s'avère déjà couvert.
+- `gr-store/src/repo.rs::insert_hand_players` calcule et insère désormais toutes ces colonnes à l'import, via `gr-stats` (un seul `assign_positions` par main, pas par siège). Profondeur : mode effectif ET joueur stockés tous les deux (`DepthMode::Player`/`Effective`, tranches `DEFAULT_DEPTH_BRACKETS` du PRD) — rendre le mode/les tranches configurables en Paramètres est explicitement hors périmètre (aucune UI de stats n'existe encore, cf. M3-3/M3-5).
+- Nouveau test d'intégration `repo::tests::hand_players_have_preflop_stats_computed_at_insertion` (fixture réelle OBELISK 3-max) : vérifie que `position`/`position_group`/`vpip_opp`/`stack_bb` ne sont plus `NULL` après import.
+- Perf (R-PERF, import touché) : avant M4-3 (M3-5) ~1185–1330 mains/s (bruit machine documenté) ; après M4-3, mesuré 1245 mains/s sur le corpus synthétique 100k, recalcul de sessions + flags préflop inclus — dans la même fourchette de bruit, toujours très au-dessus de la cible ≥ 1000 mains/s (M2-3).
 
 ### M4-4 · Flags postflop · M · `TODO`
 CBF, CBT, FCBF, WTSD, W$SD, WWSF, compteurs AF/AFQ.

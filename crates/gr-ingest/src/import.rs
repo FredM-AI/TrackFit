@@ -657,7 +657,7 @@ mod tests {
 
         let hands_per_sec = 100_000.0 / elapsed.as_secs_f64();
         println!(
-            "M2-3/M3-4 perf (differee) : {hands_per_sec:.0} mains/s ({elapsed:?} pour 100k mains, recalcul de sessions inclus)"
+            "M2-3/M3-4/M4-3 perf (differee) : {hands_per_sec:.0} mains/s ({elapsed:?} pour 100k mains, recalcul de sessions et flags preflop inclus)"
         );
         assert!(
             hands_per_sec >= 1000.0,

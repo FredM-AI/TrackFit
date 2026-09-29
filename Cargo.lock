@@ -1513,6 +1513,7 @@ dependencies = [
  "gr-core",
  "gr-parser-api",
  "gr-parser-winamax",
+ "gr-stats",
  "r2d2",
  "r2d2_sqlite",
  "rusqlite",
