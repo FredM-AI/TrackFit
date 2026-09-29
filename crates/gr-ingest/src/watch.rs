@@ -137,6 +137,12 @@ fn scan_once(store: &Store, roots: &[PathBuf]) -> WatchTick {
         // suivant reessaiera naturellement.
     }
 
+    if tick.hands_inserted > 0 {
+        // M3-4 : recalcul integral des sessions apres chaque passage ayant
+        // insere au moins une main (correct quel que soit l'ordre d'import).
+        let _ = store.recompute_hero_sessions();
+    }
+
     tick
 }
 

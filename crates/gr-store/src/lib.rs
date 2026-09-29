@@ -9,6 +9,7 @@ mod import_log;
 mod migrate;
 mod paths;
 mod repo;
+mod sessions;
 mod status;
 mod store;
 mod summary_repo;

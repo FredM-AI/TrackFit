@@ -13,6 +13,7 @@ use crate::hero::{self, HeroProfileRow};
 use crate::import_log::{self, ImportErrorRow, ImportFileProgress, NewImportError};
 use crate::migrate::run_migrations;
 use crate::repo::{self, HandInsert, ImportReport};
+use crate::sessions;
 use crate::status;
 use crate::summary_repo::{self, AttachSummaryReport};
 
@@ -311,6 +312,19 @@ impl Store {
     pub fn latest_hero_hand_played_at(&self) -> Result<Option<i64>, StoreError> {
         let reader = self.reader()?;
         status::latest_hero_hand_played_at(&reader)
+    }
+
+    /// Regroupe les mains d'Hero en sessions (M3-4, PRD §9.3/H3), avec un
+    /// seuil configurable (`settings.session_gap_minutes`, 30 par defaut).
+    /// Recalcul integral a chaque appel : correct quelle que soit l'ordre
+    /// d'arrivee des mains (import hors ordre, reparse). Renvoie le nombre
+    /// de sessions creees ; `0` si aucun profil Hero n'existe encore.
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si l'ecriture SQLite echoue.
+    pub fn recompute_hero_sessions(&self) -> Result<usize, StoreError> {
+        let mut writer = self.writer();
+        sessions::recompute_hero_sessions(&mut writer)
     }
 }
 
