@@ -275,10 +275,23 @@ Limites documentées (simplifications volontaires, périmètre M3-1 uniquement) 
 - Le filtre PRD « fichiers modifiés depuis moins de 12h » (optimisation du polling) est remplacé par une comparaison taille-disque-courante vs `last_offset` connu (`import_incremental_file` retourne immédiatement si égales) : plus précis (détecte toute reprise d'écriture, même sur un vieux fichier), et déjà suffisant en pratique (un historique Winamax de plusieurs centaines de fichiers reste un `read_dir` + quelques stats bon marché toutes les 2 s).
 - CA « CPU < 10 % en moyenne » non mesuré automatiquement (mesure fiable et portable du temps CPU d'un test Rust hors périmètre raisonnable de cette story) — à vérifier par Frédéric via le Gestionnaire des tâches pendant une session réelle, comme le CA manuel de M0-2.
 
-### M3-3 · Tray et barre d'état · S · `TODO`
+### M3-3 · Tray et barre d'état · S · `DOING` — implémenté le 29/09, CA à valider par Frédéric via `just dev`.
 Icône dans la zone de notification (Pause/Reprendre import, Ouvrir, Quitter) ; barre d'état avec le statut d'import, les mains du jour et la dernière main ; priorité processus Below Normal (§6.2).
 
-**CA :** fermer la fenêtre garde l'import actif (option).
+**CA :** fermer la fenêtre garde l'import actif (option). ⏸ **Comportement OS (icône tray, menu, priorité processus) : test d'usage humain, pas vérifiable automatiquement** — à confirmer par Frédéric via `just dev` (icône visible, menu Ouvrir/Pause-Reprendre/bascule/Quitter fonctionnels, fermeture de la fenêtre = masquage par défaut, priorité Below Normal visible dans le Gestionnaire des tâches).
+
+**Décisions validées par Frédéric avant implémentation** (ambiguïté PRD, `CLAUDE.md` §2.8) :
+- Priorité Below Normal appliquée **inconditionnellement** au démarrage plutôt que seulement "pendant le jeu" — `gr-winmon` (détection de fenêtre Win32) reste vide, une détection en direct aurait élargi le périmètre au-delà de cette story.
+- Fermer la fenêtre **masque par défaut** (garde le watcher actif) ; une bascule cochable dans le menu tray lui-même ("Garder actif en arrière-plan à la fermeture") permet de repasser en fermeture réelle — pas d'écran Paramètres dédié (prévu seulement en M8), le tray sert de surface d'option pour ce seul réglage.
+
+**Réalisé :**
+- `gr-store::status` — `count_hero_hands_since`/`latest_hero_hand_played_at` (sur `hands.hero_player_id`/`played_at`, déjà en base depuis M1/M2, jamais interrogés jusqu'ici).
+- `src-tauri::watch` — `WatcherRunState` (Idle/Active/Paused) suivi à côté de la poignée du watcher ; `pause`/`resume` réutilisent `WatcherHandle::stop`/`spawn_watcher` de M3-2 sans rien dupliquer.
+- `src-tauri::status::get_status_snapshot` — instantané barre d'état (mains aujourd'hui, dernière main, statut watcher) ; `since_ms` (minuit local) calculé côté UI, le backend ne connaît que l'UTC (R-MONEY). Bug ts-rs évité : `i64` est mappé en `bigint` par défaut alors que l'IPC Tauri sérialise en JSON (donc en `number` côté JS) — annoté `#[ts(type = "number")]`.
+- `src-tauri::tray` — icône système (id fixe pour pouvoir reconstruire le menu après chaque action), menu Ouvrir/Pause-Reprendre/bascule "garder actif"/Quitter, clic gauche sur l'icône = Ouvrir. Interception `WindowEvent::CloseRequested` → masque la fenêtre au lieu de la fermer tant que la bascule est active.
+- `src-tauri::priority::set_below_normal` — `SetPriorityClass`/`BELOW_NORMAL_PRIORITY_CLASS` via `windows-sys` (nouvelle dépendance ciblée `cfg(windows)` uniquement, réutilise une version déjà présente transitivement).
+- `ui/app/AppShell.tsx` — barre d'état enfin branchée sur de vraies données (`statusBar.handsToday`/`lastHand`/`importIdle`|`importActive`|`importPaused` n'affichaient que des placeholders statiques depuis M0-5) ; rafraîchie sur `hands://new` (TanStack Query, `invalidateQueries`) et toutes les heures en secours.
+- Tests : `gr-store::status` (2), `AppShell.test.tsx` corrigé (manquait `QueryClientProvider`, révélé par le nouveau `useQuery`) + fix d'une rejection non attrapée de `onHandsNew` hors contexte Tauri (tests/aperçu navigateur).
 
 ### M3-4 · Sessions · S · `TODO` (§9.3, H3)
 **CA :** regroupement avec seuil paramétrable ; recalcul correct lors d'un import hors ordre.

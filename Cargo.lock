@@ -1549,6 +1549,7 @@ dependencies = [
  "tracing-appender",
  "tracing-subscriber",
  "ts-rs",
+ "windows-sys 0.60.2",
 ]
 
 [[package]]

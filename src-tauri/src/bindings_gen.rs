@@ -13,7 +13,8 @@ use ts_rs::TS;
 
 use crate::import::{ImportProgressPayload, ImportSummaryPayload};
 use crate::setup::WinamaxAccountPayload;
-use crate::watch::HandsNewPayload;
+use crate::status::StatusSnapshotPayload;
+use crate::watch::{HandsNewPayload, WatcherRunState};
 
 #[test]
 fn generate_ui_bindings() {
@@ -22,6 +23,8 @@ fn generate_ui_bindings() {
         ImportProgressPayload::decl(),
         ImportSummaryPayload::decl(),
         HandsNewPayload::decl(),
+        StatusSnapshotPayload::decl(),
+        WatcherRunState::decl(),
     ];
     decls.sort();
 

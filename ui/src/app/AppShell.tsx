@@ -1,11 +1,59 @@
 import { Link, Outlet, useRouterState } from '@tanstack/react-router'
+import { useQuery, useQueryClient } from '@tanstack/react-query'
+import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LanguageSwitcher } from '@/components/LanguageSwitcher'
 import { navItems } from '@/app/nav'
+import { getStatusSnapshot, onHandsNew } from '@/lib/api'
+
+const STATUS_QUERY_KEY = ['status', 'snapshot']
+
+/** Minuit local en epoch ms : le backend ne connait que l'UTC (R-MONEY), le
+ * decoupage "aujourd'hui" se fait donc cote UI. */
+function startOfTodayMs(): number {
+  const now = new Date()
+  now.setHours(0, 0, 0, 0)
+  return now.getTime()
+}
 
 export function AppShell() {
   const { t } = useTranslation()
   const pathname = useRouterState({ select: (state) => state.location.pathname })
+  const queryClient = useQueryClient()
+
+  const statusQuery = useQuery({
+    queryKey: STATUS_QUERY_KEY,
+    queryFn: () => getStatusSnapshot(startOfTodayMs()),
+    // Reste correct si l'app tourne a cheval sur minuit ; pas critique pour
+    // une barre d'etat, un refetch une fois par heure suffit entre deux
+    // `hands://new`.
+    refetchInterval: 60 * 60 * 1000,
+  })
+
+  useEffect(() => {
+    // Hors contexte Tauri (tests, apercu navigateur), `listen` rejette :
+    // on degrade silencieusement plutot que de planter le montage.
+    const unlisten = onHandsNew(() => {
+      void queryClient.invalidateQueries({ queryKey: STATUS_QUERY_KEY })
+    }).catch(() => undefined)
+    return () => {
+      void unlisten.then((fn) => fn?.())
+    }
+  }, [queryClient])
+
+  const status = statusQuery.data
+  const importStatusKey =
+    status?.watcher_run_state === 'active'
+      ? 'statusBar.importActive'
+      : status?.watcher_run_state === 'paused'
+        ? 'statusBar.importPaused'
+        : 'statusBar.importIdle'
+  const lastHandValue =
+    status?.last_hand_at == null
+      ? t('statusBar.lastHandNone')
+      : new Intl.DateTimeFormat(undefined, { hour: '2-digit', minute: '2-digit' }).format(
+          new Date(status.last_hand_at),
+        )
 
   return (
     <div className="flex h-screen bg-[var(--color-bg)] text-[var(--color-text-primary)]">
@@ -44,10 +92,10 @@ export function AppShell() {
         </main>
 
         <footer className="flex h-8 items-center justify-between border-t border-[var(--color-border)] bg-[var(--color-surface-1)] px-3 text-xs text-[var(--color-text-secondary)]">
-          <span>{t('statusBar.importIdle')}</span>
+          <span>{t(importStatusKey)}</span>
           <div className="flex items-center gap-4">
-            <span>{t('statusBar.handsToday', { count: 0 })}</span>
-            <span>{t('statusBar.lastHand', { value: t('statusBar.lastHandNone') })}</span>
+            <span>{t('statusBar.handsToday', { count: status?.hands_today ?? 0 })}</span>
+            <span>{t('statusBar.lastHand', { value: lastHandValue })}</span>
             <LanguageSwitcher />
           </div>
         </footer>

@@ -13,6 +13,7 @@ use crate::hero::{self, HeroProfileRow};
 use crate::import_log::{self, ImportErrorRow, ImportFileProgress, NewImportError};
 use crate::migrate::run_migrations;
 use crate::repo::{self, HandInsert, ImportReport};
+use crate::status;
 use crate::summary_repo::{self, AttachSummaryReport};
 
 const DB_FILE_NAME: &str = "graphite.db";
@@ -289,6 +290,27 @@ impl Store {
     pub fn set_setting(&self, key: &str, value_json: &str) -> Result<(), StoreError> {
         let writer = self.writer();
         hero::set_setting(&writer, key, value_json)
+    }
+
+    /// Nombre de mains jouees par Hero depuis `since_ms` (epoch ms UTC),
+    /// pour la barre d'etat "Mains aujourd'hui" (M3-3).
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si la lecture SQLite echoue.
+    pub fn count_hero_hands_since(&self, since_ms: i64) -> Result<i64, StoreError> {
+        let reader = self.reader()?;
+        status::count_hero_hands_since(&reader, since_ms)
+    }
+
+    /// Horodatage de la derniere main jouee par Hero, pour la barre d'etat
+    /// "Derniere main" (M3-3). `None` si aucune main Hero n'est encore en
+    /// base.
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si la lecture SQLite echoue.
+    pub fn latest_hero_hand_played_at(&self) -> Result<Option<i64>, StoreError> {
+        let reader = self.reader()?;
+        status::latest_hero_hand_played_at(&reader)
     }
 }
 

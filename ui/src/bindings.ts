@@ -6,5 +6,9 @@ export type ImportProgressPayload = { files_total: number, files_done: number, h
 
 export type ImportSummaryPayload = { files_scanned: number, files_imported: number, hands_inserted: number, hands_duplicate: number, hands_failed: number, summaries_attached: number, summaries_failed: number, cancelled: boolean, };
 
+export type StatusSnapshotPayload = { hands_today: number, last_hand_at: number | null, watcher_run_state: WatcherRunState, };
+
+export type WatcherRunState = "idle" | "active" | "paused";
+
 export type WinamaxAccountPayload = { pseudo: string, history_dir: string, hand_file_count: number, };
 

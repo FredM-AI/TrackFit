@@ -4,7 +4,7 @@
 //! nouvelles mains sont inserees.
 
 use std::path::PathBuf;
-use std::sync::{Arc, Mutex, PoisonError};
+use std::sync::{Arc, Mutex, MutexGuard, PoisonError};
 
 use gr_ingest::WatcherHandle;
 use gr_store::Store;
@@ -16,10 +16,47 @@ use crate::import::ImportState;
 
 const WATCHED_ROOTS_SETTING_KEY: &str = "watched_roots";
 
-/// Poignee du watcher courant, geree par Tauri (`app.manage`). `None` tant
-/// qu'aucun dossier n'est encore connu (avant la fin de l'assistant).
-#[derive(Default)]
-pub struct WatcherState(Mutex<Option<WatcherHandle>>);
+/// Etat courant du watcher (M3-3, barre d'etat + menu tray "Pause/Reprendre
+/// l'import").
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Serialize, TS)]
+#[serde(rename_all = "lowercase")]
+pub enum WatcherRunState {
+    /// Aucun dossier connu (assistant de premier lancement pas encore fait).
+    Idle,
+    /// Le watcher tourne.
+    Active,
+    /// Des dossiers sont connus mais le watcher a ete arrete par l'utilisateur
+    /// (menu tray).
+    Paused,
+}
+
+struct WatcherInner {
+    handle: Option<WatcherHandle>,
+    run_state: WatcherRunState,
+}
+
+/// Poignee du watcher courant, geree par Tauri (`app.manage`).
+pub struct WatcherState(Mutex<WatcherInner>);
+
+impl Default for WatcherState {
+    fn default() -> Self {
+        Self(Mutex::new(WatcherInner {
+            handle: None,
+            run_state: WatcherRunState::Idle,
+        }))
+    }
+}
+
+impl WatcherState {
+    #[must_use]
+    pub fn run_state(&self) -> WatcherRunState {
+        self.lock().run_state
+    }
+
+    fn lock(&self) -> MutexGuard<'_, WatcherInner> {
+        self.0.lock().unwrap_or_else(PoisonError::into_inner)
+    }
+}
 
 #[derive(Debug, Clone, Serialize, TS)]
 pub struct HandsNewPayload {
@@ -62,10 +99,32 @@ fn respawn(app: &AppHandle, store: Arc<Store>, roots: Vec<PathBuf>, watcher_stat
             );
         }
     });
-    *watcher_state
-        .0
-        .lock()
-        .unwrap_or_else(PoisonError::into_inner) = Some(handle);
+    let mut inner = watcher_state.lock();
+    inner.handle = Some(handle);
+    inner.run_state = WatcherRunState::Active;
+}
+
+/// Arrete le watcher sans oublier les dossiers surveilles (menu tray "Pause
+/// l'import", M3-3). Sans effet si deja `Idle`/`Paused`.
+pub fn pause(watcher_state: &WatcherState) {
+    let mut inner = watcher_state.lock();
+    if inner.run_state != WatcherRunState::Active {
+        return;
+    }
+    inner.handle = None; // le Drop de WatcherHandle arrete le thread.
+    inner.run_state = WatcherRunState::Paused;
+}
+
+/// Redemarre le watcher sur les dossiers persistes (menu tray "Reprendre
+/// l'import", M3-3). Sans effet si `Idle` (aucun dossier connu).
+pub fn resume(app: &AppHandle, store: &Arc<Store>, watcher_state: &WatcherState) {
+    if watcher_state.run_state() != WatcherRunState::Paused {
+        return;
+    }
+    let roots = read_watched_roots(store);
+    if !roots.is_empty() {
+        respawn(app, Arc::clone(store), roots, watcher_state);
+    }
 }
 
 /// Persiste les dossiers a surveiller en temps reel (M3-1, fin de

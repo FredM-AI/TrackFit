@@ -3,7 +3,10 @@ mod bindings_gen;
 mod import;
 mod import_errors;
 mod logs;
+mod priority;
 mod setup;
+mod status;
+mod tray;
 mod watch;
 
 use std::sync::Arc;
@@ -38,14 +41,19 @@ pub fn run() {
             // nouvelle main depuis 24h passe INCOMPLETE, a chaque demarrage.
             store.mark_stale_provisional_tournaments_incomplete(now_ms(), 24)?;
 
+            app.manage(ImportState {
+                store: Arc::clone(&store),
+                cancel: gr_ingest::CancelToken::new(),
+            });
+
             let watcher_state = WatcherState::default();
             watch::start_from_persisted_roots(app.handle(), &store, &watcher_state);
             app.manage(watcher_state);
 
-            app.manage(ImportState {
-                store,
-                cancel: gr_ingest::CancelToken::new(),
-            });
+            // PRD §6.2 : ne jamais concurrencer le client Winamax pour le
+            // CPU sur cette machine faible (M3-3).
+            priority::set_below_normal();
+            tray::setup(app.handle())?;
 
             Ok(())
         })
@@ -60,6 +68,7 @@ pub fn run() {
             setup::is_first_launch_complete,
             setup::mark_first_launch_complete,
             watch::set_watched_roots,
+            status::get_status_snapshot,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
