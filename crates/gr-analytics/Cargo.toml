@@ -3,3 +3,13 @@ name = "gr-analytics"
 version.workspace = true
 edition.workspace = true
 license.workspace = true
+
+[dependencies]
+rusqlite = { version = "0.31", features = ["bundled"] }
+thiserror = "1"
+
+[dev-dependencies]
+gr-core = { path = "../gr-core" }
+gr-store = { path = "../gr-store" }
+gr-parser-api = { path = "../gr-parser-api" }
+tempfile = "3"

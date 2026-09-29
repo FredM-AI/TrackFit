@@ -1452,6 +1452,14 @@ dependencies = [
 [[package]]
 name = "gr-analytics"
 version = "0.0.1"
+dependencies = [
+ "gr-core",
+ "gr-parser-api",
+ "gr-store",
+ "rusqlite",
+ "tempfile",
+ "thiserror 1.0.69",
+]
 
 [[package]]
 name = "gr-core"
