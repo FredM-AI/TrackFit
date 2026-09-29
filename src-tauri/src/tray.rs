@@ -6,12 +6,13 @@
 use gr_store::Store;
 use tauri::menu::{CheckMenuItem, Menu, MenuItem, PredefinedMenuItem};
 use tauri::tray::{MouseButton, MouseButtonState, TrayIconBuilder, TrayIconEvent};
-use tauri::{AppHandle, Manager, WindowEvent, Wry};
+use tauri::{AppHandle, Emitter, Manager, State, WindowEvent, Wry};
 
 use crate::import::ImportState;
 use crate::watch::{self, WatcherRunState, WatcherState};
 
 const CLOSE_TO_TRAY_SETTING_KEY: &str = "close_to_tray";
+const TRAY_NOTICE_SHOWN_SETTING_KEY: &str = "tray_notice_shown";
 const TRAY_ID: &str = "main";
 const OPEN_ID: &str = "open";
 const TOGGLE_IMPORT_ID: &str = "toggle_import";
@@ -26,6 +27,30 @@ fn is_close_to_tray_enabled(store: &Store) -> bool {
         .ok()
         .flatten()
         .is_none_or(|v| v == "true")
+}
+
+/// `false` par defaut : le petit mot d'explication (idée backlog du 29/09,
+/// suite au retour de Frédéric comme quoi rien n'indique que l'app tourne
+/// encore) n'a jamais ete acquitte.
+fn is_tray_notice_shown(store: &Store) -> bool {
+    store
+        .get_setting(TRAY_NOTICE_SHOWN_SETTING_KEY)
+        .ok()
+        .flatten()
+        .is_some_and(|v| v == "true")
+}
+
+/// Acquitte le mot d'explication affiche au premier masquage (M3-3,
+/// composant React `TrayFirstHideNotice`) : ne sera plus jamais reaffiche.
+///
+/// # Errors
+/// Renvoie une erreur si l'ecriture SQLite echoue.
+#[tauri::command]
+pub fn mark_tray_notice_shown(state: State<'_, ImportState>) -> Result<(), String> {
+    state
+        .store
+        .set_setting(TRAY_NOTICE_SHOWN_SETTING_KEY, "true")
+        .map_err(|e| e.to_string())
 }
 
 fn build_menu(
@@ -109,8 +134,17 @@ pub fn setup(app: &AppHandle) -> tauri::Result<()> {
                 let import_state = app_handle.state::<ImportState>();
                 if is_close_to_tray_enabled(&import_state.store) {
                     api.prevent_close();
-                    if let Some(window) = app_handle.get_webview_window("main") {
-                        let _ = window.hide();
+                    if is_tray_notice_shown(&import_state.store) {
+                        if let Some(window) = app_handle.get_webview_window("main") {
+                            let _ = window.hide();
+                        }
+                    } else {
+                        // Premier masquage : la fenetre reste visible, c'est
+                        // `TrayFirstHideNotice` (React) qui la masquera une
+                        // fois le mot d'explication acquitte par l'utilisateur
+                        // (mark_tray_notice_shown), pour respecter R-I18N
+                        // (pas de texte natif en dur hors du systeme i18next).
+                        let _ = app_handle.emit("tray://first-hide-notice", ());
                     }
                 }
             }

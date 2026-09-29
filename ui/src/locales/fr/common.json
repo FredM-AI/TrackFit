@@ -26,6 +26,11 @@
     "fr": "Français",
     "en": "Anglais"
   },
+  "tray": {
+    "firstHideTitle": "Graphite continue de tourner",
+    "firstHideBody": "Fermer cette fenêtre ne quitte pas Graphite : l'import en temps réel continue en arrière-plan. Pour quitter vraiment, faites un clic droit sur l'icône dans la zone de notification et choisissez « Quitter ».",
+    "firstHideConfirm": "Compris"
+  },
   "placeholder": {
     "screenBody": "Écran « {screen} » — à venir."
   },

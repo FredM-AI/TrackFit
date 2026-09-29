@@ -3,6 +3,7 @@ import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { LanguageSwitcher } from '@/components/LanguageSwitcher'
+import { TrayFirstHideNotice } from '@/components/TrayFirstHideNotice'
 import { navItems } from '@/app/nav'
 import { getStatusSnapshot, onHandsNew } from '@/lib/api'
 
@@ -57,6 +58,7 @@ export function AppShell() {
 
   return (
     <div className="flex h-screen bg-[var(--color-bg)] text-[var(--color-text-primary)]">
+      <TrayFirstHideNotice />
       <nav
         aria-label={t('app.name')}
         className="flex w-48 flex-col gap-1 border-r border-[var(--color-border)] bg-[var(--color-surface-1)] p-3"

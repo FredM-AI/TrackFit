@@ -26,6 +26,11 @@
     "fr": "French",
     "en": "English"
   },
+  "tray": {
+    "firstHideTitle": "Graphite keeps running",
+    "firstHideBody": "Closing this window doesn't quit Graphite: real-time import keeps running in the background. To actually quit, right-click the icon in the notification area and choose \"Quit\".",
+    "firstHideConfirm": "Got it"
+  },
   "placeholder": {
     "screenBody": "\"{screen}\" screen — coming soon."
   },
