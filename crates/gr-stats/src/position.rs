@@ -84,6 +84,20 @@ fn ordered_dealt_in_seats(hand: &HandRecord) -> Option<Vec<u8>> {
     )
 }
 
+/// Regroupement d'une position (PRD §10.4) : EP (UTG a UTG+2), MP (LJ, HJ),
+/// LP (CO, BTN), Blinds (SB, BB).
+#[must_use]
+pub fn position_group(position: Position) -> &'static str {
+    use Position::{Bb, Btn, Co, Hj, Lj, Sb, Utg, Utg1, Utg2};
+
+    match position {
+        Utg | Utg1 | Utg2 => "EP",
+        Lj | Hj => "MP",
+        Co | Btn => "LP",
+        Sb | Bb => "Blinds",
+    }
+}
+
 /// Etiquettes dans l'ordre BTN, SB, BB, UTG... CO (PRD §10.4), pour une
 /// table de `n` sieges distribues (2 a 9, garanti par l'appelant).
 fn position_labels(n: usize) -> Vec<Position> {
@@ -290,5 +304,18 @@ mod tests {
     fn sb_bb_seats_in_heads_up_has_the_button_post_small_blind() {
         let hand = hand_with(1, vec![seat(1, true), seat(2, true)]);
         assert_eq!(sb_bb_seats(&hand), Some((1, 2)));
+    }
+
+    #[test]
+    fn position_group_matches_the_prd_regroupings() {
+        assert_eq!(position_group(Position::Utg), "EP");
+        assert_eq!(position_group(Position::Utg1), "EP");
+        assert_eq!(position_group(Position::Utg2), "EP");
+        assert_eq!(position_group(Position::Lj), "MP");
+        assert_eq!(position_group(Position::Hj), "MP");
+        assert_eq!(position_group(Position::Co), "LP");
+        assert_eq!(position_group(Position::Btn), "LP");
+        assert_eq!(position_group(Position::Sb), "Blinds");
+        assert_eq!(position_group(Position::Bb), "Blinds");
     }
 }

@@ -1,6 +1,7 @@
-//! Insertion des mains parsees (M2-2) : `hands`, `hand_players` (sans flags
-//! de stats pour l'instant, cf. M4), `actions`, `hand_raw` (zstd) et
-//! `tournaments` provisoires (rattaches au summary en M2-6).
+//! Insertion des mains parsees (M2-2) : `hands`, `hand_players` (positions,
+//! profondeurs et flags de stats preflop calcules par `gr-stats`, M4-3),
+//! `actions`, `hand_raw` (zstd) et `tournaments` provisoires (rattaches au
+//! summary en M2-6).
 
 use gr_core::{ActionKind, Chips, HandRecord, Street};
 use gr_parser_api::Room;
@@ -132,12 +133,17 @@ fn insert_hand_raw(tx: &Transaction<'_>, hand_id: i64, raw_text: &str) -> Result
     Ok(())
 }
 
+/// Insere `hand_players`, avec les positions, profondeurs et flags de
+/// stats preflop calcules par `gr-stats` (PRD §10.2/§10.3/§10.4, M4-3).
+/// Un seul `assign_positions` par main (pas par siege) : evite de
+/// recalculer les positions de tous les sieges N fois.
 fn insert_hand_players(
     tx: &Transaction<'_>,
     room_id: i64,
     hand_id: i64,
     hand: &HandRecord,
 ) -> Result<(), StoreError> {
+    let positions = gr_stats::assign_positions(hand);
     for seat in &hand.seats {
         let player_id = get_or_create_player(tx, room_id, &seat.pseudo, hand.played_at)?;
         let is_hero = hand.hero_pseudo.as_deref() == Some(seat.pseudo.as_str());
@@ -146,16 +152,80 @@ fn insert_hand_players(
         } else {
             None
         };
+
+        let position = positions.get(&seat.seat).copied();
+        let position_label = position.map(|p| p.to_string());
+        let position_group_label = position.map(gr_stats::position_group);
+
+        let stack_bb = gr_stats::depth_bb(hand, seat.seat, gr_stats::DepthMode::Player);
+        let eff_stack_bb = gr_stats::depth_bb(hand, seat.seat, gr_stats::DepthMode::Effective);
+        let depth_bucket =
+            stack_bb.map(|d| gr_stats::depth_bracket_label(d, gr_stats::DEFAULT_DEPTH_BRACKETS));
+        let eff_depth_bucket = eff_stack_bb
+            .map(|d| gr_stats::depth_bracket_label(d, gr_stats::DEFAULT_DEPTH_BRACKETS));
+
+        let preflop_line = gr_stats::preflop_line(hand, &seat.pseudo);
+
+        let vpip = gr_stats::compute_vpip(hand, &seat.pseudo);
+        let pfr = gr_stats::compute_pfr(hand, &seat.pseudo);
+        let rfi = gr_stats::compute_rfi(hand, &seat.pseudo);
+        let limp = gr_stats::compute_limp(hand, &seat.pseudo);
+        let oshove = gr_stats::compute_oshove(hand, &seat.pseudo);
+        let three_bet = gr_stats::compute_3b(hand, &seat.pseudo);
+        let f3b = gr_stats::compute_f3b(hand, &seat.pseudo);
+        let four_bet = gr_stats::compute_4b(hand, &seat.pseudo);
+        let ats = gr_stats::compute_ats(hand, &seat.pseudo);
+        let fsteal = gr_stats::compute_fsteal(hand, &seat.pseudo);
+        let rsteal = gr_stats::compute_rsteal(hand, &seat.pseudo);
+
         tx.execute(
-            "INSERT INTO hand_players (hand_id, player_id, seat, is_hero, start_stack, hole_cards)
-             VALUES (?1, ?2, ?3, ?4, ?5, ?6)",
+            "INSERT INTO hand_players (
+                hand_id, player_id, seat, position, position_group, is_hero, start_stack,
+                stack_bb, eff_stack_bb, depth_bucket, eff_depth_bucket, hole_cards, preflop_line,
+                vpip_opp, vpip, pfr,
+                rfi_opp, rfi, limp, oshove,
+                tb_opp, tb, f3b_opp, f3b, fb_opp, fb,
+                ats_opp, ats, fsteal_opp, fsteal, rsteal
+            ) VALUES (
+                ?1, ?2, ?3, ?4, ?5, ?6, ?7,
+                ?8, ?9, ?10, ?11, ?12, ?13,
+                ?14, ?15, ?16,
+                ?17, ?18, ?19, ?20,
+                ?21, ?22, ?23, ?24, ?25, ?26,
+                ?27, ?28, ?29, ?30, ?31
+            )",
             params![
                 hand_id,
                 player_id,
                 seat.seat,
+                position_label,
+                position_group_label,
                 is_hero,
                 seat.starting_stack.amount(),
+                stack_bb,
+                eff_stack_bb,
+                depth_bucket,
+                eff_depth_bucket,
                 hole_cards,
+                preflop_line,
+                vpip.opp,
+                vpip.act,
+                pfr.act,
+                rfi.opp,
+                rfi.act,
+                limp.act,
+                oshove.act,
+                three_bet.opp,
+                three_bet.act,
+                f3b.opp,
+                f3b.act,
+                four_bet.opp,
+                four_bet.act,
+                ats.opp,
+                ats.act,
+                fsteal.opp,
+                fsteal.act,
+                rsteal.act,
             ],
         )?;
     }
@@ -384,6 +454,49 @@ mod tests {
             .query_row("SELECT status FROM tournaments", [], |row| row.get(0))
             .expect("a provisional tournament should have been created");
         assert_eq!(tournament_status, "PROVISIONAL");
+    }
+
+    #[test]
+    fn hand_players_have_preflop_stats_computed_at_insertion() {
+        let mut conn = migrated_connection();
+        let hands = obelisk_hands();
+        let (raw_text, hand) = &hands[0];
+        let insert = HandInsert { hand, raw_text };
+        insert_hands(&mut conn, Room::Winamax, &[insert]).expect("insertion should succeed");
+
+        let hero_pseudo = hand
+            .hero_pseudo
+            .as_deref()
+            .expect("fixture hand should have a hero");
+        let player_id: i64 = conn
+            .query_row(
+                "SELECT id FROM players WHERE screen_name = ?1",
+                [hero_pseudo],
+                |row| row.get(0),
+            )
+            .expect("hero player should exist");
+
+        let (position, position_group, vpip_opp, stack_bb): (
+            Option<String>,
+            Option<String>,
+            Option<i64>,
+            Option<f64>,
+        ) = conn
+            .query_row(
+                "SELECT position, position_group, vpip_opp, stack_bb
+                 FROM hand_players WHERE player_id = ?1",
+                [player_id],
+                |row| Ok((row.get(0)?, row.get(1)?, row.get(2)?, row.get(3)?)),
+            )
+            .expect("hero hand_players row should exist");
+
+        assert!(position.is_some(), "position not computed at import (M4-3)");
+        assert!(
+            position_group.is_some(),
+            "position_group not computed at import (M4-3)"
+        );
+        assert!(vpip_opp.is_some(), "vpip_opp not computed at import (M4-3)");
+        assert!(stack_bb.is_some(), "stack_bb not computed at import (M4-3)");
     }
 
     #[test]
