@@ -377,12 +377,14 @@ CBF, CBT, FCBF, WTSD, W$SD, WWSF, compteurs AF/AFQ.
 - `gr-store/src/repo.rs::insert_hand_players` remplit désormais aussi `saw_flop/saw_turn/saw_river`, `went_sd/won_sd/won_hand`, `cbf_opp/cbf`, `cbt_opp/cbt`, `fcbf_opp/fcbf`, `pf_bets/pf_raises/pf_calls/pf_folds/pf_checks` — même décision que M4-3 (pas de migration, colonnes déjà présentes dans `0001_init.sql`). Extraction d'un `SeatStats`/`compute_seat_stats` (`clippy::too_many_lines` sur `insert_hand_players` sinon, 48 colonnes au total désormais). Nouveau test d'intégration `hand_players_have_postflop_stats_computed_at_insertion` : valeurs exactes (pas seulement non-`NULL`, ces colonnes sont des booléens/compteurs toujours renseignés) vérifiées à la main sur la fixture réelle OBELISK (Hero relance preflop, checke le flop après un check adverse, checke le turn, suit la rivière, abattage perdu).
 - Perf (R-PERF, import touché) : 1166 mains/s mesurées sur le corpus synthétique 100k (contre 1166–1330 sur les mesures M4-3/M3-5 précédentes, bruit machine), toujours au-dessus de la cible ≥1000/s. **Mise en garde documentée dans le test lui-même** : `gr-synth` ne génère que le motif "tout le monde se couche sauf la BB" (jamais de flop, PRD/BACKLOG M2-4) — cette mesure ne couvre donc que le coût des flags préflop et le chemin de sortie rapide des flags postflop (`saw_street`/`last_preflop_raiser` retournent tôt sans board), pas un parcours réel de rues postflop avec board/actions. Étendre `gr-synth` à des mains multi-rues est hors périmètre de cette story (proposé dans « Idées / à trier » si un bench plus réaliste est jugé utile avant M4-4+).
 
-### M4-5 · Phases du tournoi · M · `TODO` (§10.5)
+### M4-5 · Phases du tournoi · M · `BLOCKED(différé en V2, décision Frédéric le 29/09)` (§10.5)
 Méthode A (profils de structure) basée sur la structure `Levels` du summary, et méthode B (estimation par interpolation, car les places payées et les joueurs restants sont absents) ; choix dans les paramètres.
 
 **CA :**
 - Les deux colonnes sont remplies.
 - La méthode B est marquée « estimation » si elle est interpolée.
+
+**Décision (29/09) :** différé en V2. En creusant la story avant de l'implémenter, deux points non triviaux sont apparus : (1) la méthode A suppose la structure `Levels` du summary parsée en données structurées (durée par niveau) — elle ne l'est pas encore aujourd'hui (`gr-parser-winamax::summary` ignore actuellement cette ligne, `_levels_line` jamais exploitée) ; (2) le PRD ne donne aucune borne par défaut pour Early/Middle/Late en méthode A (contrairement à la méthode B qui a 300 %/150 %/100 % explicites) — les inventer serait un choix produit, pas un détail d'implémentation. Frédéric préfère reporter les deux décisions (parser `Levels` maintenant ou pas, bornes par défaut) à la V2 plutôt que de les trancher maintenant. `hands.phase_by_level`/`phase_by_players`/`players_left_est` restent `NULL` jusque-là (colonnes déjà prévues dans `0001_init.sql`, comme M4-3/M4-4).
 
 ### M4-6 · Compteurs incrémentaux `player_stat_counters` · M · `TODO` (§10.7)
 **CA :**
