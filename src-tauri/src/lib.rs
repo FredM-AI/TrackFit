@@ -79,6 +79,20 @@ pub fn run() {
                 });
             }
 
+            // Trouve le 30/09 (retour de Frederic via just dev) : meme
+            // rattrapage que ci-dessus pour position/profondeur/flags
+            // preflop-postflop/EV all-in (M4-3/M4-4/M5-4), jamais calcules
+            // pour les mains reelles importees le 28/09, la veille de ces
+            // stories. Thread separe pour la meme raison.
+            {
+                let store = Arc::clone(&store);
+                std::thread::spawn(move || match store.backfill_seat_stats() {
+                    Ok(0) => {}
+                    Ok(n) => log::info!("stats de siege retro-remplies pour {n} main(s)"),
+                    Err(e) => log::warn!("echec du retro-remplissage des stats de siege : {e}"),
+                });
+            }
+
             app.manage(ImportState {
                 store: Arc::clone(&store),
                 cancel: gr_ingest::CancelToken::new(),
