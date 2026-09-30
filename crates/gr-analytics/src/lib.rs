@@ -26,6 +26,7 @@ mod lttb;
 mod reports;
 mod results;
 mod sqlite;
+mod starting_hands;
 mod tournaments;
 
 #[cfg(feature = "analytics-duckdb")]
@@ -48,6 +49,7 @@ pub use results::{
     TournamentVolumePoint, BUYIN_BRACKETS_CENTS,
 };
 pub use sqlite::SqliteAnalyticsBackend;
+pub use starting_hands::{fetch_hand_class_grid, HandClassCell};
 pub use tournaments::{
     fetch_hero_tournament_aggregates, fetch_tournament_hero_hands, fetch_tournament_opponents,
     TournamentAggregates, TournamentHandRow, TournamentOpponentRow,
@@ -172,16 +174,19 @@ pub struct StatCell {
 }
 
 impl StatCell {
-    /// Pourcentage (PRD §10.1 : "pourcentage avec 1 decimale"). `None` sans
-    /// aucune opportunite (division par zero), pour que l'appelant affiche
-    /// un tiret plutot qu'un faux `0.0 %`.
+    /// Ratio `actions / opportunities`, en `0.0..=1.0` (PRD §10.1 :
+    /// "pourcentage avec 1 decimale" — la mise en forme, y compris la
+    /// multiplication par 100, revient a l'appelant ; `ui/src/lib/format.ts::
+    /// formatPercent` attend deja un ratio 0-1 via `Intl.NumberFormat`
+    /// `style: 'percent'`). `None` sans aucune opportunite (division par
+    /// zero), pour que l'appelant affiche un tiret plutot qu'un faux `0 %`.
     #[must_use]
     pub fn percentage(&self) -> Option<f64> {
         if self.opportunities == 0 {
             None
         } else {
             #[allow(clippy::cast_precision_loss)]
-            Some(100.0 * self.actions as f64 / self.opportunities as f64)
+            Some(self.actions as f64 / self.opportunities as f64)
         }
     }
 }

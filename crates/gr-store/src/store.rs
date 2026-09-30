@@ -257,6 +257,19 @@ impl Store {
         backfill::backfill_net_chips(&mut writer)
     }
 
+    /// Calcule `hand_players.hand_class` (PRD §13.5, grille 13×13) pour les
+    /// mains Hero importees avant M7-7 (colonne prevue depuis M2-1, jamais
+    /// calculee jusqu'ici). Sans effet (renvoie `0`) si tout est deja a
+    /// jour — appelable a chaque demarrage sans cout notable une fois le
+    /// rattrapage initial fait.
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si l'ecriture SQLite echoue.
+    pub fn backfill_hand_class(&self) -> Result<usize, StoreError> {
+        let mut writer = self.writer();
+        backfill::backfill_hand_class(&mut writer)
+    }
+
     /// Cree un profil Hero (M3-1/M3-5, D19). Si `is_default` est vrai, les
     /// autres profils existants sont retrogrades.
     ///

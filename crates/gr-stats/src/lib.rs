@@ -6,6 +6,7 @@
 mod chips;
 mod depth;
 mod flag;
+mod hand_class;
 mod position;
 mod postflop;
 mod preflop;
@@ -13,6 +14,7 @@ mod preflop;
 pub use chips::{compute_net_bb, compute_net_chips};
 pub use depth::{depth_bb, depth_bracket_label, DepthMode, DEFAULT_DEPTH_BRACKETS};
 pub use flag::StatFlag;
+pub use hand_class::compute_hand_class;
 pub use position::{assign_positions, position_group, sb_bb_seats};
 pub use postflop::{
     compute_cbf, compute_cbt, compute_fcbf, compute_postflop_counts, compute_wsd, compute_wtsd,

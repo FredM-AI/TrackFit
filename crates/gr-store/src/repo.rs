@@ -255,6 +255,15 @@ fn insert_hand_players(
         } else {
             None
         };
+        // M7-7 : meme garde `is_hero` que `hole_cards` ci-dessus — la
+        // grille 13×13 (PRD §13.5) ne porte que sur les mains de depart du
+        // Hero, jamais sur les adversaires (cartes inconnues avant showdown).
+        let hand_class = if is_hero {
+            hand.hero_cards
+                .map(|(a, b)| gr_stats::compute_hand_class(a, b))
+        } else {
+            None
+        };
         let s = compute_seat_stats(hand, seat, &positions, allin_event.as_ref());
 
         tx.execute(
@@ -268,7 +277,7 @@ fn insert_hand_players(
                 saw_flop, saw_turn, saw_river, went_sd, won_sd, won_hand,
                 cbf_opp, cbf, cbt_opp, cbt, fcbf_opp, fcbf,
                 pf_bets, pf_raises, pf_calls, pf_folds, pf_checks,
-                allin_ev_diff_chips, net_chips, net_bb
+                allin_ev_diff_chips, net_chips, net_bb, hand_class
             ) VALUES (
                 ?1, ?2, ?3, ?4, ?5, ?6, ?7,
                 ?8, ?9, ?10, ?11, ?12, ?13,
@@ -279,7 +288,7 @@ fn insert_hand_players(
                 ?32, ?33, ?34, ?35, ?36, ?37,
                 ?38, ?39, ?40, ?41, ?42, ?43,
                 ?44, ?45, ?46, ?47, ?48,
-                ?49, ?50, ?51
+                ?49, ?50, ?51, ?52
             )",
             params![
                 hand_id,
@@ -333,6 +342,7 @@ fn insert_hand_players(
                 s.allin_ev_diff_chips,
                 s.net_chips,
                 s.net_bb,
+                hand_class,
             ],
         )?;
     }

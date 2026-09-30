@@ -10,6 +10,8 @@ export type DayOfWeekPivotRowPayload = { weekday: number, kpis: PivotKpisPayload
 
 export type FinishPercentileBucketPayload = { floor_percent: number, tournaments_count: number, };
 
+export type HandClassCellPayload = { hand_class: string, hands_played: number, vpip: ReportCellPayload, pfr: ReportCellPayload, avg_net_bb: number | null, };
+
 export type HandListRowPayload = { hand_id: number, played_at: number, tournament_name: string | null, level: number | null, position: string | null, eff_stack_bb: number | null, hole_cards: string | null, preflop_line: string | null, board: string | null, net_bb: number | null, allin_ev_diff_bb: number | null, tag_label_keys: Array<string>, };
 
 export type HandReplayPayload = { hand_id: number, room_hand_id: string, tournament_name: string, table_max_seats: number, button_seat: number, level: number, sb: number, bb: number, ante: number, played_at: number, hero_pseudo: string | null, seats: Array<ReplaySeatSummaryPayload>, steps: Array<ReplayStepPayload>, final_pots: Array<ReplayPotPayload>, raw_text: string, all_in: ReplayAllInPayload | null, prev_hand_id: number | null, next_hand_id: number | null, };

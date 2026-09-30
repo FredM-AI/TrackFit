@@ -21,7 +21,7 @@ use crate::replayer::{
     HandReplayPayload, ReplayAllInPayload, ReplayAllInPlayerPayload, ReplayPotPayload,
     ReplayPotWinnerPayload, ReplaySeatStatePayload, ReplaySeatSummaryPayload, ReplayStepPayload,
 };
-use crate::reports::{ReportCellPayload, ReportRowPayload};
+use crate::reports::{HandClassCellPayload, ReportCellPayload, ReportRowPayload};
 use crate::results::{
     AdditionalKpisPayload, BuyinRoiRowPayload, ChipCurvePoint, DayOfWeekPivotRowPayload,
     FinishPercentileBucketPayload, HourPivotRowPayload, MonthPivotRowPayload, PivotKpisPayload,
@@ -79,6 +79,7 @@ fn generate_ui_bindings() {
         ReplayPotWinnerPayload::decl(),
         ReplayAllInPayload::decl(),
         ReplayAllInPlayerPayload::decl(),
+        HandClassCellPayload::decl(),
     ];
     decls.sort();
 

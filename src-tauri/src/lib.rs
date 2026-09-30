@@ -66,6 +66,19 @@ pub fn run() {
                 });
             }
 
+            // M7-7 : meme rattrapage que ci-dessus pour hand_players.hand_class
+            // (grille 13×13, PRD §13.5), colonne prevue depuis M2-1 mais
+            // calculee seulement a partir de cette story. Thread separe pour
+            // la meme raison (pas de blocage du demarrage).
+            {
+                let store = Arc::clone(&store);
+                std::thread::spawn(move || match store.backfill_hand_class() {
+                    Ok(0) => {}
+                    Ok(n) => log::info!("hand_class retro-rempli pour {n} main(s)"),
+                    Err(e) => log::warn!("echec du retro-remplissage hand_class : {e}"),
+                });
+            }
+
             app.manage(ImportState {
                 store: Arc::clone(&store),
                 cancel: gr_ingest::CancelToken::new(),
@@ -123,6 +136,7 @@ pub fn run() {
             reports::get_oshove_by_depth_and_position_report,
             reports::get_postflop_cbet_report,
             reports::get_bb_defense_by_depth_report,
+            reports::get_starting_hands_grid_report,
             replayer::get_hand_replay,
             analytics_duckdb::reconstruct_analytics_index,
         ])
