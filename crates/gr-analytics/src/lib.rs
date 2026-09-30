@@ -18,6 +18,7 @@ mod hands;
 mod home;
 mod kpis;
 mod lttb;
+mod reports;
 mod results;
 mod sqlite;
 mod tournaments;
@@ -27,6 +28,7 @@ pub use hands::{count_hero_hands, fetch_hero_hands_page, HandListRow};
 pub use home::{fetch_hero_tournament_results, hero_allin_ev_diff_bb, TournamentResultRow};
 pub use kpis::{compute_results_kpis, Bullet, ResultsKpis, TicketValuation, TournamentResult};
 pub use lttb::lttb;
+pub use reports::fetch_bb_defense_by_depth;
 pub use results::{
     compute_additional_kpis, day_of_week_pivot_to_csv, fetch_hero_chip_history,
     fetch_hero_tournament_volume_by_day, finish_percentile_distribution, hour_pivot_to_csv,

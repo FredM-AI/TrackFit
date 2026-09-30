@@ -265,6 +265,35 @@
     "icmSpot": "Spot ICM",
     "coachQuestion": "Question coach"
   },
+  "reports": {
+    "empty": "Aucune donnée pour ce rapport.",
+    "titles": {
+      "preflopByPosition": "Préflop par position",
+      "oshoveByDepthAndPosition": "Open-shove par profondeur × position",
+      "postflopCbet": "Postflop (c-bet)",
+      "bbDefenseByDepth": "Défense de BB par profondeur"
+    },
+    "dimensions": {
+      "position": "Position",
+      "depth": "Profondeur"
+    },
+    "measures": {
+      "vpip": "VPIP",
+      "pfr": "PFR",
+      "rfi": "RFI",
+      "limp": "LIMP",
+      "oshove": "OSHOVE",
+      "threeBet": "3-bet",
+      "foldToThreeBet": "F3B",
+      "fourBet": "4-bet",
+      "ats": "ATS",
+      "fsteal": "Fold to steal",
+      "rsteal": "Re-steal",
+      "cbf": "C-bet flop",
+      "cbt": "C-bet turn",
+      "fcbf": "Fold au c-bet flop"
+    }
+  },
   "setup": {
     "title": "Bienvenue sur Graphite",
     "intro": "Configurons votre profil Hero et importons vos mains existantes.",

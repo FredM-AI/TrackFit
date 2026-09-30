@@ -17,6 +17,7 @@ use crate::home::{
     HomeSnapshotPayload, ImportStatusPayload, LastSessionPayload, PeriodKpis, ProfitCurvePoint,
 };
 use crate::import::{ImportProgressPayload, ImportSummaryPayload};
+use crate::reports::{ReportCellPayload, ReportRowPayload};
 use crate::results::{
     AdditionalKpisPayload, BuyinRoiRowPayload, ChipCurvePoint, DayOfWeekPivotRowPayload,
     FinishPercentileBucketPayload, HourPivotRowPayload, MonthPivotRowPayload, PivotKpisPayload,
@@ -64,6 +65,8 @@ fn generate_ui_bindings() {
         TournamentOpponentRowPayload::decl(),
         HandListRowPayload::decl(),
         TagPayload::decl(),
+        ReportCellPayload::decl(),
+        ReportRowPayload::decl(),
     ];
     decls.sort();
 
