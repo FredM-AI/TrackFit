@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { ReplayerEmpty } from '@/screens/Replayer'
+import { ReplayerLayout } from '@/screens/Replayer'
 
 export const Route = createFileRoute('/replayer')({
-  component: ReplayerEmpty,
+  component: ReplayerLayout,
 })
