@@ -319,6 +319,12 @@ mod tests {
             tournament_id,
             name: name.to_string(),
             started_at,
+            speed: None,
+            entrants: None,
+            finish_position: None,
+            weekday_utc: None,
+            hour_utc: None,
+            month_utc: None,
             result,
         }
     }

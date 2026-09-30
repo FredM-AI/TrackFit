@@ -16,7 +16,11 @@ use crate::home::{
     HomeSnapshotPayload, ImportStatusPayload, LastSessionPayload, PeriodKpis, ProfitCurvePoint,
 };
 use crate::import::{ImportProgressPayload, ImportSummaryPayload};
-use crate::results::{ChipCurvePoint, PivotRowPayload, ResultsSnapshotPayload, VolumePointPayload};
+use crate::results::{
+    AdditionalKpisPayload, BuyinRoiRowPayload, ChipCurvePoint, DayOfWeekPivotRowPayload,
+    FinishPercentileBucketPayload, HourPivotRowPayload, MonthPivotRowPayload, PivotKpisPayload,
+    PivotRowPayload, ResultsSnapshotPayload, SpeedPivotRowPayload, VolumePointPayload,
+};
 use crate::setup::WinamaxAccountPayload;
 use crate::status::StatusSnapshotPayload;
 use crate::watch::{HandsNewPayload, WatcherRunState};
@@ -40,6 +44,14 @@ fn generate_ui_bindings() {
         ChipCurvePoint::decl(),
         VolumePointPayload::decl(),
         PivotRowPayload::decl(),
+        PivotKpisPayload::decl(),
+        BuyinRoiRowPayload::decl(),
+        FinishPercentileBucketPayload::decl(),
+        AdditionalKpisPayload::decl(),
+        SpeedPivotRowPayload::decl(),
+        DayOfWeekPivotRowPayload::decl(),
+        HourPivotRowPayload::decl(),
+        MonthPivotRowPayload::decl(),
     ];
     decls.sort();
 
