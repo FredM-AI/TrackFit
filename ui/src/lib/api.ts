@@ -1,6 +1,7 @@
 import { invoke } from '@tauri-apps/api/core'
 import { listen } from '@tauri-apps/api/event'
 import type {
+  HandClassCellPayload,
   HandListRowPayload,
   HandReplayPayload,
   HandsNewPayload,
@@ -219,6 +220,12 @@ export function getPostflopCbetReport() {
  * steal") — position brute BB uniquement, pas le groupe "Blinds". */
 export function getBbDefenseByDepthReport() {
   return invoke<ReportRowPayload[]>('get_bb_defense_by_depth_report')
+}
+
+/** M7-7 : grille 13×13 des mains de depart (frequence, VPIP/PFR, resultat
+ * moyen en bb/main), une cellule par `hand_class`. */
+export function getStartingHandsGridReport() {
+  return invoke<HandClassCellPayload[]>('get_starting_hands_grid_report')
 }
 
 /** M7-3 : rejeu complet d'une main (table, pas, historique brut, pots,

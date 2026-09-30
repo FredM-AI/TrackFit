@@ -334,7 +334,8 @@
       "preflopByPosition": "Preflop by position",
       "oshoveByDepthAndPosition": "Open-shove by depth × position",
       "postflopCbet": "Postflop (c-bet)",
-      "bbDefenseByDepth": "BB defense by depth"
+      "bbDefenseByDepth": "BB defense by depth",
+      "startingHands": "Hand grid"
     },
     "dimensions": {
       "position": "Position",
@@ -355,6 +356,10 @@
       "cbf": "C-bet flop",
       "cbt": "C-bet turn",
       "fcbf": "Fold to c-bet flop"
+    },
+    "startingHands": {
+      "tooltip": "{handClass} — {hands} hand(s), VPIP {vpip}, PFR {pfr}, average result {bb}",
+      "tooltipEmpty": "{handClass} — no hand"
     }
   },
   "setup": {

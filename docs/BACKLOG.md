@@ -638,9 +638,16 @@ Feature `analytics-duckdb`, synchronisation incrémentale par curseur, bouton «
 - Section « Analytique » minimale dans l'écran Paramètres (bouton « Reconstruire l'index analytique ») — ajout autonome en attendant la refonte complète M8-1, décision validée par Frédéric.
 - Nouvelle dépendance `duckdb` (crate, feature `bundled`) : déjà nommée par le PRD (§7.3/ADR-002), pas une dépendance à reconfirmer. Coût de compilation réel et notable (C++ vendoré) confirmé en pratique (~35-40 min la première fois, `cargo build`/`cargo clippy` ont des caches de compilation séparés donc chacun recompile une fois) — déjà anticipé par ADR-004 (`just dev` sans la feature, `just dev-full` avec).
 
-### M7-7 · Grille 13×13 des mains de départ · S · `TODO` (§13.5)
+### M7-7 · Grille 13×13 des mains de départ · S · `DONE` — le 30/09 (§13.5)
 
 **Vérifié avant de commencer (30/09, demande de Frédéric) :** rien n'existe encore — ni composant UI, ni donnée backend. `hand_players.hand_class` (ex. `'AKs'`, `'TT'`, `'Q9o'`) est une colonne prévue depuis `0001_init.sql` (M2-1) mais **jamais calculée**, même situation que `net_chips` avant sa découverte en M6-3. Une vraie story à construire de zéro (calcul de `hand_class` depuis `hole_cards` + rétro-remplissage des mains déjà importées, puis la grille elle-même), pas une simple UI à brancher sur une donnée existante.
+
+**Réalisé :**
+- `gr_stats::compute_hand_class(a, b)` (nouveau, `crates/gr-stats/src/hand_class.rs`) — pure, rang le plus fort d'abord (`Rank` déjà `Ord`), `"XX"` pour une paire sinon `"XYs"`/`"XYo"`.
+- `gr-store::repo::insert_hand_players` calcule `hand_class` **uniquement pour Hero** (même garde que `hole_cards` juste au-dessus) ; `gr-store::backfill::backfill_hand_class` (même squelette que `backfill_net_chips`, reparse `hand_raw`) pour les mains déjà importées, lancé dans un thread séparé au démarrage comme le retro-remplissage `net_chips`.
+- `gr_analytics::fetch_hand_class_grid` (nouveau module `starting_hands.rs`) — requête dédiée (forme différente de `ReportRow`/`StatCell`, même raisonnement que `fetch_bb_defense_by_depth`) : fréquence (`COUNT(*)`), VPIP/PFR, résultat moyen (`AVG(net_bb)`), groupé par `hand_class`.
+- `src-tauri::reports::get_starting_hands_grid_report` + `ui/src/components/HandClassGrid.tsx` (grille 13×13 CSS, convention standard lignes/colonnes A→2, diagonale = paires, triangle supérieur = suited, triangle inférieur = offsuit, teinte de gris proportionnelle à la fréquence via `color-mix`) — 5ᵉ entrée de l'écran Rapports (M7-1), rendue à part (forme différente du tableau générique).
+- **Bug trouvé et corrigé au passage (30/09, décision de Frédéric)** : `StatCell::percentage()` renvoyait un ratio 0-100 alors que `ui/src/lib/format.ts::formatPercent` (utilisée par `Reports.tsx` depuis M7-1) attend un ratio 0-1 — l'écran Rapports affichait des pourcentages ×100 trop grands (ex. "2500 %" au lieu de "25 %"). Un seul point d'appel affecté, corrigé dans `gr-analytics::StatCell::percentage` (renvoie désormais `actions/opportunities` sans le ×100).
 
 ---
 

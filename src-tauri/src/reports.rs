@@ -17,10 +17,14 @@
 //! pas encore branches sur le panneau de filtres global (`FilterBar` ne
 //! reconnait que les 4 ecrans deja branches), differe naturellement avec
 //! l'extension du panneau si besoin.
+//!
+//! `get_starting_hands_grid_report` (M7-7, PRD §13.5) : grille 13×13 des
+//! mains de depart, forme differente des 4 rapports ci-dessus (pas de
+//! dimensions/mesures choisies), commande dediee.
 
 use gr_analytics::{
-    fetch_bb_defense_by_depth, AnalyticsBackend, Dimension, Measure, ReportRequest, ReportRow,
-    SqliteAnalyticsBackend,
+    fetch_bb_defense_by_depth, fetch_hand_class_grid, AnalyticsBackend, Dimension, HandClassCell,
+    Measure, ReportRequest, ReportRow, SqliteAnalyticsBackend,
 };
 use serde::Serialize;
 use tauri::State;
@@ -150,4 +154,52 @@ pub fn get_bb_defense_by_depth_report(
     let reader = state.store.reader().map_err(|e| e.to_string())?;
     let rows = fetch_bb_defense_by_depth(&reader, hero_profile_id).map_err(|e| e.to_string())?;
     Ok(rows.into_iter().map(ReportRowPayload::from).collect())
+}
+
+#[derive(Debug, Clone, Serialize, TS)]
+pub struct HandClassCellPayload {
+    pub hand_class: String,
+    #[ts(type = "number")]
+    pub hands_played: i64,
+    pub vpip: ReportCellPayload,
+    pub pfr: ReportCellPayload,
+    pub avg_net_bb: Option<f64>,
+}
+
+impl From<HandClassCell> for HandClassCellPayload {
+    fn from(cell: HandClassCell) -> Self {
+        Self {
+            hand_class: cell.hand_class,
+            hands_played: cell.hands_played,
+            vpip: ReportCellPayload {
+                opportunities: cell.vpip.opportunities,
+                actions: cell.vpip.actions,
+                percentage: cell.vpip.percentage(),
+            },
+            pfr: ReportCellPayload {
+                opportunities: cell.pfr.opportunities,
+                actions: cell.pfr.actions,
+                percentage: cell.pfr.percentage(),
+            },
+            avg_net_bb: cell.avg_net_bb,
+        }
+    }
+}
+
+/// Grille 13×13 des mains de depart (PRD §13.5, M7-7) : frequence, VPIP/PFR
+/// et resultat moyen en bb/main par `hand_class`. Pas un rapport comme les
+/// 4 autres (forme differente, pas de dimensions/mesures) : commande
+/// dediee plutot qu'un passage par `run`.
+#[tauri::command]
+pub fn get_starting_hands_grid_report(
+    state: State<'_, ImportState>,
+) -> Result<Vec<HandClassCellPayload>, String> {
+    let Some(hero_profile_id) =
+        resolve_active_hero_profile_id(&state.store).map_err(|e| e.to_string())?
+    else {
+        return Ok(Vec::new());
+    };
+    let reader = state.store.reader().map_err(|e| e.to_string())?;
+    let cells = fetch_hand_class_grid(&reader, hero_profile_id).map_err(|e| e.to_string())?;
+    Ok(cells.into_iter().map(HandClassCellPayload::from).collect())
 }
