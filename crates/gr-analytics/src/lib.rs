@@ -19,6 +19,7 @@ mod kpis;
 mod lttb;
 mod results;
 mod sqlite;
+mod tournaments;
 
 pub use error::AnalyticsError;
 pub use home::{fetch_hero_tournament_results, hero_allin_ev_diff_bb, TournamentResultRow};
@@ -34,6 +35,10 @@ pub use results::{
     TournamentVolumePoint, BUYIN_BRACKETS_CENTS,
 };
 pub use sqlite::SqliteAnalyticsBackend;
+pub use tournaments::{
+    fetch_hero_tournament_aggregates, fetch_tournament_hero_hands, fetch_tournament_opponents,
+    TournamentAggregates, TournamentHandRow, TournamentOpponentRow,
+};
 
 /// Dimension de regroupement d'un rapport (PRD §13.5). Portee a ce que
 /// M4-7 exige explicitement (position × profondeur) ; d'autres dimensions

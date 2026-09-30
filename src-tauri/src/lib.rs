@@ -9,6 +9,7 @@ mod priority;
 mod results;
 mod setup;
 mod status;
+mod tournaments;
 mod tray;
 mod watch;
 
@@ -97,6 +98,8 @@ pub fn run() {
             hero_profiles::remove_hero_pseudo_cmd,
             home::get_home_snapshot,
             results::get_results_snapshot,
+            tournaments::get_tournaments_list,
+            tournaments::get_tournament_detail,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

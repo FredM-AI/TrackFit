@@ -41,6 +41,12 @@ pub struct TournamentResultRow {
     /// Mois calendaire UTC (1-12) de `started_at`, meme provenance que
     /// `weekday_utc`.
     pub month_utc: Option<i64>,
+    /// `tournaments.status` (`PROVISIONAL`/`COMPLETE`/`INCOMPLETE`, PRD §8.5,
+    /// M6-4 : colonne "statut" de la liste des tournois).
+    pub status: String,
+    /// Somme de `tournament_bullets.played_seconds` sur tous les bullets de
+    /// ce tournoi (M6-4, colonne "duree" de la liste des tournois).
+    pub total_played_seconds: i64,
     pub result: TournamentResult,
 }
 
@@ -58,6 +64,8 @@ struct TournamentBulletRow {
     weekday_utc: Option<i64>,
     hour_utc: Option<i64>,
     month_utc: Option<i64>,
+    status: String,
+    played_seconds: i64,
     buyin_prize_cents: i64,
     buyin_bounty_cents: i64,
     buyin_fee_cents: i64,
@@ -106,11 +114,13 @@ fn push_bullet(result: &mut TournamentResult, row: &TournamentBulletRow) {
 }
 
 /// Resultats de tournois du profil Hero, filtres sur `tournaments.started_at`
-/// (`None` = pas de borne). Un bullet (re-entry) par ligne `tournament_bullets`
-/// (PRD §5.1) ; le ticket utilise/gagne (rarement renseigne, jamais observe
-/// dans le corpus — M5-2) est attribue au premier/dernier bullet, faute de
-/// granularite par bullet dans le schema (`tournament_entries` le stocke au
-/// niveau de l'entree, pas du bullet).
+/// (`None` = pas de borne) et optionnellement sur un seul tournoi
+/// (`tournament_id`, M6-4 : detail d'un tournoi ; `None` = tous). Un bullet
+/// (re-entry) par ligne `tournament_bullets` (PRD §5.1) ; le ticket
+/// utilise/gagne (rarement renseigne, jamais observe dans le corpus — M5-2)
+/// est attribue au premier/dernier bullet, faute de granularite par bullet
+/// dans le schema (`tournament_entries` le stocke au niveau de l'entree, pas
+/// du bullet).
 ///
 /// # Errors
 /// Renvoie une [`AnalyticsError`] si la lecture SQLite echoue.
@@ -119,6 +129,7 @@ pub fn fetch_hero_tournament_results(
     hero_profile_id: i64,
     since_ms: Option<i64>,
     until_ms: Option<i64>,
+    tournament_id: Option<i64>,
 ) -> Result<Vec<TournamentResultRow>, AnalyticsError> {
     let mut stmt = conn.prepare(
         "SELECT t.id, t.name, t.started_at, t.buyin_prize_cents, t.buyin_bounty_cents,
@@ -129,7 +140,8 @@ pub fn fetch_hero_tournament_results(
                 t.speed, t.entrants, e.finish_position,
                 CAST(strftime('%w', t.started_at / 1000, 'unixepoch') AS INTEGER),
                 CAST(strftime('%H', t.started_at / 1000, 'unixepoch') AS INTEGER),
-                CAST(strftime('%m', t.started_at / 1000, 'unixepoch') AS INTEGER)
+                CAST(strftime('%m', t.started_at / 1000, 'unixepoch') AS INTEGER),
+                t.status, b.played_seconds
          FROM tournament_entries e
          JOIN tournaments t ON t.id = e.tournament_id
          JOIN tournament_bullets b ON b.entry_id = e.id
@@ -138,35 +150,41 @@ pub fn fetch_hero_tournament_results(
          WHERE e.player_id IN (SELECT player_id FROM hero_accounts WHERE profile_id = ?1)
            AND (?2 IS NULL OR t.started_at >= ?2)
            AND (?3 IS NULL OR t.started_at < ?3)
+           AND (?4 IS NULL OR t.id = ?4)
          ORDER BY t.id, b.entry_no",
     )?;
 
-    let rows = stmt.query_map(params![hero_profile_id, since_ms, until_ms], |row| {
-        let ko_type: String = row.get(6)?;
-        Ok(TournamentBulletRow {
-            tournament_id: row.get(0)?,
-            name: row.get(1)?,
-            started_at: row.get(2)?,
-            buyin_prize_cents: row.get(3)?,
-            buyin_bounty_cents: row.get(4)?,
-            buyin_fee_cents: row.get(5)?,
-            is_ko: ko_type != "NONE",
-            is_freeroll: row.get(7)?,
-            paid_with_ticket: row.get(8)?,
-            used_ticket_value_cents: row.get(9)?,
-            ticket_won: row.get::<_, Option<i64>>(10)?.is_some(),
-            won_ticket_value_cents: row.get(11)?,
-            entry_no: row.get(12)?,
-            prize_cents: row.get(13)?,
-            bounty_cents: row.get(14)?,
-            speed: row.get(15)?,
-            entrants: row.get(16)?,
-            finish_position: row.get(17)?,
-            weekday_utc: row.get(18)?,
-            hour_utc: row.get(19)?,
-            month_utc: row.get(20)?,
-        })
-    })?;
+    let rows = stmt.query_map(
+        params![hero_profile_id, since_ms, until_ms, tournament_id],
+        |row| {
+            let ko_type: String = row.get(6)?;
+            Ok(TournamentBulletRow {
+                tournament_id: row.get(0)?,
+                name: row.get(1)?,
+                started_at: row.get(2)?,
+                buyin_prize_cents: row.get(3)?,
+                buyin_bounty_cents: row.get(4)?,
+                buyin_fee_cents: row.get(5)?,
+                is_ko: ko_type != "NONE",
+                is_freeroll: row.get(7)?,
+                paid_with_ticket: row.get(8)?,
+                used_ticket_value_cents: row.get(9)?,
+                ticket_won: row.get::<_, Option<i64>>(10)?.is_some(),
+                won_ticket_value_cents: row.get(11)?,
+                entry_no: row.get(12)?,
+                prize_cents: row.get(13)?,
+                bounty_cents: row.get(14)?,
+                speed: row.get(15)?,
+                entrants: row.get(16)?,
+                finish_position: row.get(17)?,
+                weekday_utc: row.get(18)?,
+                hour_utc: row.get(19)?,
+                month_utc: row.get(20)?,
+                status: row.get(21)?,
+                played_seconds: row.get(22)?,
+            })
+        },
+    )?;
 
     let mut results: Vec<TournamentResultRow> = Vec::new();
     for row in rows {
@@ -174,6 +192,7 @@ pub fn fetch_hero_tournament_results(
         match results.last_mut() {
             Some(current) if current.tournament_id == row.tournament_id => {
                 push_bullet(&mut current.result, &row);
+                current.total_played_seconds += row.played_seconds;
             }
             _ => {
                 let mut result = TournamentResult {
@@ -192,6 +211,8 @@ pub fn fetch_hero_tournament_results(
                     weekday_utc: row.weekday_utc,
                     hour_utc: row.hour_utc,
                     month_utc: row.month_utc,
+                    status: row.status.clone(),
+                    total_played_seconds: row.played_seconds,
                     result,
                 });
             }

@@ -284,7 +284,7 @@ pub fn get_results_snapshot(
 
     let reader = state.store.reader().map_err(|e| e.to_string())?;
 
-    let all_results = fetch_hero_tournament_results(&reader, profile_id, None, None)
+    let all_results = fetch_hero_tournament_results(&reader, profile_id, None, None, None)
         .map_err(|e| e.to_string())?;
     let profit_curve = downsample_profit_curve(profit_curve(&all_results));
 

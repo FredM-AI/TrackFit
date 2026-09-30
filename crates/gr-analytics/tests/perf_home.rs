@@ -160,7 +160,7 @@ fn perf_home_kpis_stay_under_one_second_at_1m_hands() {
         (Some(current_start), Some(now_ms)),
         (Some(previous_start), Some(current_start)),
     ] {
-        let results = fetch_hero_tournament_results(&reader, profile_id, since, until)
+        let results = fetch_hero_tournament_results(&reader, profile_id, since, until, None)
             .expect("fetch_hero_tournament_results should succeed");
         std::hint::black_box(&results);
         let diff_bb = hero_allin_ev_diff_bb(&reader, profile_id, since, until)
@@ -173,7 +173,7 @@ fn perf_home_kpis_stay_under_one_second_at_1m_hands() {
     }
 
     // Courbe G1 : tout l'historique, non filtre.
-    let all_results = fetch_hero_tournament_results(&reader, profile_id, None, None)
+    let all_results = fetch_hero_tournament_results(&reader, profile_id, None, None, None)
         .expect("unfiltered fetch_hero_tournament_results should succeed");
     assert_eq!(
         i64::try_from(all_results.len()).unwrap_or(-1),

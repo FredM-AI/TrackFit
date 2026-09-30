@@ -8,6 +8,8 @@ import type {
   ImportSummaryPayload,
   ResultsSnapshotPayload,
   StatusSnapshotPayload,
+  TournamentDetailPayload,
+  TournamentListRowPayload,
   WinamaxAccountPayload,
 } from '@/bindings'
 
@@ -116,4 +118,16 @@ export function getHomeSnapshot(nowMs: number) {
  * KO/non-KO + CSV), scope au profil Hero actif. */
 export function getResultsSnapshot() {
   return invoke<ResultsSnapshotPayload>('get_results_snapshot')
+}
+
+/** M6-4 : liste des tournois du profil Hero actif (tout l'historique,
+ * tableau virtualise cote UI). */
+export function getTournamentsList() {
+  return invoke<TournamentListRowPayload[]>('get_tournaments_list')
+}
+
+/** M6-4 : detail d'un tournoi (tapis par main, all-in, adversaires),
+ * `null` si aucun profil actif ou si ce tournoi n'a aucune main du Hero. */
+export function getTournamentDetail(tournamentId: number) {
+  return invoke<TournamentDetailPayload | null>('get_tournament_detail', { tournamentId })
 }

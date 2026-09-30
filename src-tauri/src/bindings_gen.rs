@@ -23,6 +23,10 @@ use crate::results::{
 };
 use crate::setup::WinamaxAccountPayload;
 use crate::status::StatusSnapshotPayload;
+use crate::tournaments::{
+    TournamentAllInRowPayload, TournamentDetailPayload, TournamentListRowPayload,
+    TournamentOpponentRowPayload, TournamentStackPointPayload,
+};
 use crate::watch::{HandsNewPayload, WatcherRunState};
 
 #[test]
@@ -52,6 +56,11 @@ fn generate_ui_bindings() {
         DayOfWeekPivotRowPayload::decl(),
         HourPivotRowPayload::decl(),
         MonthPivotRowPayload::decl(),
+        TournamentListRowPayload::decl(),
+        TournamentDetailPayload::decl(),
+        TournamentStackPointPayload::decl(),
+        TournamentAllInRowPayload::decl(),
+        TournamentOpponentRowPayload::decl(),
     ];
     decls.sort();
 
