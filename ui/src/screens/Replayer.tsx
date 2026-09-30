@@ -1,5 +1,5 @@
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
-import { Link, useNavigate, useParams } from '@tanstack/react-router'
+import { Link, Outlet, useNavigate, useParams } from '@tanstack/react-router'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { ReplayerTable } from '@/components/ReplayerTable'
@@ -28,9 +28,21 @@ const ACTION_LABEL_KEYS: Record<string, string> = {
   collected: 'replayer.actions.collected',
 }
 
-/** Route `/replayer` (sans `handId`) : le Replayer n'a de sens que pour une
- * main precise, redirige l'utilisateur vers l'ecran Mains plutot que
- * d'afficher un ecran vide. */
+/** Route parente `/replayer` (layout) : ne rend que ses enfants
+ * (`/replayer/` -> [[ReplayerEmpty]], `/replayer/$handId` -> [[Replayer]]).
+ * `routes/replayer.tsx` et `routes/replayer.$handId.tsx` sont imbriquees par
+ * la convention TanStack Router (meme prefixe de nom de fichier) : sans cet
+ * `<Outlet />`, le routeur ne rend jamais l'enfant, meme quand son URL est
+ * bien celle qui matche (bug trouve via `just dev`, 30/09 : double-clic sur
+ * une main naviguait bien vers `/replayer/$handId` mais affichait toujours
+ * l'etat "aucune main selectionnee" de la route parente). */
+export function ReplayerLayout() {
+  return <Outlet />
+}
+
+/** Route index `/replayer` (sans `handId`) : le Replayer n'a de sens que
+ * pour une main precise, redirige l'utilisateur vers l'ecran Mains plutot
+ * que d'afficher un ecran vide. */
 export function ReplayerEmpty() {
   const { t } = useTranslation()
   return (
