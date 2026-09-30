@@ -4,10 +4,12 @@
 //! Frederic (29/09) : sparklines et "top 3 leaks" differes (historique par
 //! periode et moteur de benchmarks/leaks, M7-2, pas encore construits).
 //!
-//! Periode par defaut : les 30 derniers jours vs les 30 jours precedents
-//! (pas de filtre de date reglable, M6-1 differe faute d'ecran consommateur
-//! au moment de M6-2). `now_ms` est calcule cote UI (comme `since_ms` dans
-//! `status.rs`) : le backend ne connait que l'UTC (R-MONEY).
+//! Periode filtrable depuis M6-1 (panneau de filtres global) : `since_ms`/
+//! `until_ms` sont resolus cote UI a partir du preset choisi (le defaut
+//! reste "30 derniers jours", mais ce n'est plus fige cote backend) et
+//! calcules par rapport a l'horloge locale (le backend ne connait que
+//! l'UTC, R-MONEY). `None`/`None` = periode "tout", sans comparaison a une
+//! periode precedente (pas de sens pour une plage non bornee).
 
 use gr_analytics::{
     compute_results_kpis, fetch_hero_tournament_results, hero_allin_ev_diff_bb, TicketValuation,
@@ -21,8 +23,6 @@ use ts_rs::TS;
 use crate::hero_profiles::resolve_active_hero_profile_id;
 use crate::import::ImportState;
 use crate::watch::read_watched_roots;
-
-const PERIOD_MS: i64 = 30 * 24 * 3_600_000;
 
 #[derive(Debug, Clone, Copy, Default, Serialize, TS)]
 pub struct PeriodKpis {
@@ -91,7 +91,9 @@ pub struct ImportStatusPayload {
 #[derive(Debug, Clone, Serialize, TS)]
 pub struct HomeSnapshotPayload {
     pub current_period: PeriodKpis,
-    pub previous_period: PeriodKpis,
+    /// `None` quand la periode courante est non bornee (filtre "tout",
+    /// M6-1) : pas de "periode precedente" bien definie a comparer.
+    pub previous_period: Option<PeriodKpis>,
     pub profit_curve: Vec<ProfitCurvePoint>,
     pub last_session: Option<LastSessionPayload>,
     pub import_status: ImportStatusPayload,
@@ -217,10 +219,17 @@ fn last_session_payload(
 }
 
 /// Instantane de l'ecran Accueil (M6-2), scope au profil Hero actif (M3-5).
+/// `since_ms`/`until_ms` viennent du panneau de filtres global (M6-1,
+/// resolus cote UI a partir du preset choisi — presets nommes et periode
+/// libre) ; `None`/`None` = periode "tout" (pas de "periode precedente"
+/// bien definie dans ce cas, `previous_period` vaut alors `None`). La
+/// courbe G1 reste volontairement non filtree (vue d'ensemble complete,
+/// meme decision que M6-2/M6-3 pour les courbes de tendance).
 #[tauri::command]
 pub fn get_home_snapshot(
     state: State<'_, ImportState>,
-    now_ms: i64,
+    since_ms: Option<i64>,
+    until_ms: Option<i64>,
 ) -> Result<HomeSnapshotPayload, String> {
     let import_status = ImportStatusPayload {
         watched_roots_count: i64::try_from(read_watched_roots(&state.store).len())
@@ -242,31 +251,28 @@ pub fn get_home_snapshot(
         // Aucun profil Hero encore (avant la fin de l'assistant M3-1).
         return Ok(HomeSnapshotPayload {
             current_period: PeriodKpis::default(),
-            previous_period: PeriodKpis::default(),
+            previous_period: None,
             profit_curve: Vec::new(),
             last_session: None,
             import_status,
         });
     };
 
-    let current_start = now_ms - PERIOD_MS;
-    let previous_start = now_ms - 2 * PERIOD_MS;
-
     let reader = state.store.reader().map_err(|e| e.to_string())?;
-    let current_period = period_kpis(
-        &reader,
-        &state,
-        profile_id,
-        Some(current_start),
-        Some(now_ms),
-    )?;
-    let previous_period = period_kpis(
-        &reader,
-        &state,
-        profile_id,
-        Some(previous_start),
-        Some(current_start),
-    )?;
+    let current_period = period_kpis(&reader, &state, profile_id, since_ms, until_ms)?;
+    let previous_period = match (since_ms, until_ms) {
+        (Some(since), Some(until)) => {
+            let period_length = until - since;
+            Some(period_kpis(
+                &reader,
+                &state,
+                profile_id,
+                Some(since - period_length),
+                Some(since),
+            )?)
+        }
+        _ => None,
+    };
 
     let all_results = fetch_hero_tournament_results(&reader, profile_id, None, None, None)
         .map_err(|e| e.to_string())?;

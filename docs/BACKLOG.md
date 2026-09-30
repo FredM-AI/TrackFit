@@ -478,8 +478,25 @@ Calcul post-main, asynchrone, par pot (side pots compris).
 
 ## M6 — Écrans principaux (§11, §13.1–13.4)
 
-### M6-1 · Panneau de filtres global et presets · M · `TODO` (§11)
+### M6-1 · Panneau de filtres global et presets · M · `DONE (phase 1)` — le 30/09 (§11)
 Tous les filtres H4, y compris la grille 13×13 et la saisie texte de ranges ; presets sauvegardés ; état persistant par écran.
+
+**Décision de périmètre validée par Frédéric (30/09), avant implémentation :** le PRD §11 liste 16 dimensions de filtre (profil Hero, dates, room, buy-in, format, ticket, vitesse, taille de table, position, profondeur, phase, grille 13×13, situations préflop, all-in, tags, résultat de main) qui devraient en plus se brancher sur les 4 écrans déjà construits (Accueil, Résultats, Tournois, Mains) — story disproportionnée par rapport aux précédentes. **Phase 1 : dates (presets + plage libre) + profil Hero + presets nommés + état persistant par écran**, branchée sur les 4 écrans. Les 14 autres dimensions restent `TODO` (phase 2 ou V2, à trier — beaucoup nécessitent une capacité backend qui n'existe pas encore : cartes, situations préflop, phase, all-in).
+
+**Réutilisation plutôt que nouveauté :** le filtre "Profil Hero / pseudos" (D19) ne réintroduit rien — il réutilise tel quel le mécanisme `hero_profiles`/`hero_accounts` déjà construit (M3-5) via un sélecteur dans la barre de filtres, qui appelle `set_active_hero_profile_id` déjà existant. Aucun nouveau concept de "profil différent par écran" : c'est un réglage global, comme avant M6-1.
+
+**Persistance :** état de filtre par écran + presets nommés stockés dans `settings` (`Store::get_setting`/`set_setting`, déjà public, même mécanisme que `watched_roots` depuis M3-2) — contenu JSON opaque côté Rust (jamais relu/validé), les types vivent côté TypeScript (`ui/src/lib/filters.ts`). Pas de nouvelle table ni de migration nécessaire.
+
+**Réalisé :**
+- `fetch_hero_tournament_results` (M6-2/M6-3) réutilisé tel quel pour Résultats/Tournois (avait déjà `since_ms`/`until_ms`). Deux nouvelles fonctions filtrables ajoutées à `gr_analytics::results` : `fetch_hero_chip_history` (G2) et `fetch_hero_tournament_volume_by_day` (G6), qui ne l'étaient pas encore. `gr_analytics::hands::{count_hero_hands, fetch_hero_hands_page}` (M6-5) gagnent aussi `since_ms`/`until_ms` (littéraux liés directement, même précaution qu'en M6-5 pour ne pas réintroduire un tri complet — revérifié par `perf_hands`, 182 ms à 1M mains après ajout du filtre, toujours largement sous la cible NFR-P7 de 500 ms).
+- `src-tauri::home::get_home_snapshot` : la période fixe "30 derniers jours vs 30 jours précédents" (`PERIOD_MS`) est remplacée par `since_ms`/`until_ms` explicites, résolus côté UI. `previous_period` devient `Option<PeriodKpis>` : `None` pour une période non bornée ("tout"), pas de comparaison bien définie dans ce cas. La courbe G1 de l'Accueil reste volontairement **non filtrée** (vue d'ensemble complète, même décision que pour Résultats en M6-2/M6-3 avant que M6-1 n'existe).
+- `src-tauri::{results::get_results_snapshot, tournaments::get_tournaments_list, hands::{get_hands_count, get_hands_page}}` gagnent tous `since_ms`/`until_ms`.
+- `src-tauri::filters` (nouveau module) — 4 commandes passe-plat vers `settings` (`get_filter_state`/`set_filter_state` par écran, `get_filter_presets`/`set_filter_presets`).
+- `ui/src/lib/filters.ts` — store Zustand (première vraie utilisation du package, présent depuis M0-2 mais jamais utilisé jusqu'ici), `resolveDateRange` (presets → bornes concrètes, horloge locale car le backend ne connaît que l'UTC, R-MONEY), hydratation depuis `settings` au montage.
+- `FilterBar.tsx` (nouveau), rendu dans l'en-tête partagé de `AppShell` (placeholder vide depuis M0-5) : sélecteur de profil Hero (visible seulement si plusieurs profils existent), boutons de preset de date + plage libre, application/sauvegarde de presets nommés — visible uniquement sur les 4 écrans branchés (pas sur le détail d'un tournoi ni les écrans sans données filtrables).
+- **Piège de purity React Compiler trouvé et corrigé avant merge** : `Date.now()` appelé directement dans le corps de rendu (pour résoudre le preset et calculer la clé de requête) est rejeté par la règle ESLint `react-hooks/purity` ("Cannot call impure function during render"). Corrigé en utilisant l'objet `DateRangeState` (le preset choisi, pas les bornes résolues) comme clé de requête TanStack Query, et en ne résolvant les bornes concrètes (`resolveDateRange(range, Date.now())`) qu'à l'intérieur de `queryFn`, jamais pendant le rendu — même principe que `AppShell.tsx` le faisait déjà pour `startOfTodayMs()`.
+- Home/Results/Tournaments/Hands mis à jour pour lire leur propre plage depuis le store et la passer aux commandes IPC.
+- **CA (comportement visuel du panneau, persistance entre sessions)** à valider par Frédéric via `just dev` : test d'usage humain, pas vérifiable automatiquement depuis cet environnement.
 
 ### M6-2 · Accueil / KPIs · M · `DONE` — le 29/09.
 **CA :** < 1 s à 1 M mains (NFR-P5) ; variations par rapport à la période précédente.

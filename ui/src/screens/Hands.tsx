@@ -5,6 +5,7 @@ import { useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import type { HandListRowPayload } from '@/bindings'
 import { getHandsCount, getHandsPage, listTags, tagHands } from '@/lib/api'
+import { resolveDateRange, useFilterStore } from '@/lib/filters'
 import { formatBb, formatCount, formatDate, signedValueClassName } from '@/lib/format'
 
 /** Taille de page cote frontend (pas liee a une valeur backend) : assez
@@ -33,7 +34,12 @@ export function Hands() {
   const parentRef = useRef<HTMLDivElement>(null)
   const [selected, setSelected] = useState<Set<number>>(new Set())
 
-  const countQuery = useQuery({ queryKey: ['hands', 'count'], queryFn: getHandsCount })
+  const range = useFilterStore((s) => s.perScreen.hands)
+
+  const countQuery = useQuery({
+    queryKey: ['hands', 'count', range],
+    queryFn: () => getHandsCount(resolveDateRange(range, Date.now())),
+  })
   const total = countQuery.data ?? 0
 
   const tagsQuery = useQuery({ queryKey: ['tags'], queryFn: listTags })
@@ -54,8 +60,8 @@ export function Hands() {
 
   const pageQueries = useQueries({
     queries: neededPages.map((pageIndex) => ({
-      queryKey: ['hands', 'page', pageIndex],
-      queryFn: () => getHandsPage(PAGE_SIZE, pageIndex * PAGE_SIZE),
+      queryKey: ['hands', 'page', range, pageIndex],
+      queryFn: () => getHandsPage(PAGE_SIZE, pageIndex * PAGE_SIZE, resolveDateRange(range, Date.now())),
       staleTime: 60_000,
     })),
   })

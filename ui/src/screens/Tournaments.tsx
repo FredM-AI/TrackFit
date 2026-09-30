@@ -5,9 +5,9 @@ import { useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import type { TournamentListRowPayload } from '@/bindings'
 import { getTournamentsList } from '@/lib/api'
+import { resolveDateRange, useFilterStore } from '@/lib/filters'
 import { formatBb, formatCents, formatCount, formatDate, formatDurationMs } from '@/lib/format'
 
-const TOURNAMENTS_QUERY_KEY = ['tournaments', 'list']
 const ROW_HEIGHT_PX = 32
 
 function formatLabel(row: TournamentListRowPayload, t: (key: string) => string): string {
@@ -137,15 +137,17 @@ function TournamentsTable({ rows }: TournamentsTableProps) {
 
 /** Ecran Tournois (M6-4, phase 1, PRD §13.3) : liste virtualisee en lecture
  * seule (colonnes PRD), tout l'historique du profil Hero actif — pas de
- * panneau de filtres reglable tant que M6-1 n'existe pas. L'edition des
- * metadonnees (via ticket, vitesse, valeur du ticket gagne) est differee a
- * la V2 (decision de Frederic, 30/09) : cette liste est en lecture seule. */
+ * filtrable par periode depuis M6-1. L'edition des metadonnees (via
+ * ticket, vitesse, valeur du ticket gagne) est differee a la V2 (decision
+ * de Frederic, 30/09) : cette liste est en lecture seule. */
 export function Tournaments() {
   const { t } = useTranslation()
 
+  const range = useFilterStore((s) => s.perScreen.tournaments)
+
   const listQuery = useQuery({
-    queryKey: TOURNAMENTS_QUERY_KEY,
-    queryFn: getTournamentsList,
+    queryKey: ['tournaments', 'list', range],
+    queryFn: () => getTournamentsList(resolveDateRange(range, Date.now())),
   })
 
   const rows = listQuery.data ?? []

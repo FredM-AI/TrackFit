@@ -36,27 +36,35 @@ pub struct HandListRowPayload {
 }
 
 /// Nombre total de mains du profil Hero actif (pour dimensionner le
-/// virtualizer). Commande separee de [`get_hands_page`] : `COUNT(*)` coute
-/// ~85 ms a 1M mains (mesure `perf_hands`), pas la peine de le repayer a
-/// chaque page demandee pendant le defilement — le frontend l'appelle une
-/// seule fois au montage de l'ecran.
+/// virtualizer), filtrable par periode depuis M6-1 (`since_ms`/`until_ms`,
+/// `None`/`None` = tout l'historique). Commande separee de
+/// [`get_hands_page`] : `COUNT(*)` coute ~85 ms a 1M mains (mesure
+/// `perf_hands`), pas la peine de le repayer a chaque page demandee pendant
+/// le defilement — le frontend l'appelle une seule fois par changement de
+/// filtre, pas par page.
 #[tauri::command]
-pub fn get_hands_count(state: State<'_, ImportState>) -> Result<i64, String> {
+pub fn get_hands_count(
+    since_ms: Option<i64>,
+    until_ms: Option<i64>,
+    state: State<'_, ImportState>,
+) -> Result<i64, String> {
     let Some(profile_id) =
         resolve_active_hero_profile_id(&state.store).map_err(|e| e.to_string())?
     else {
         return Ok(0);
     };
     let reader = state.store.reader().map_err(|e| e.to_string())?;
-    count_hero_hands(&reader, profile_id).map_err(|e| e.to_string())
+    count_hero_hands(&reader, profile_id, since_ms, until_ms).map_err(|e| e.to_string())
 }
 
 /// Page de la liste des mains (PRD §13.4), la plus recente d'abord, scope
-/// au profil Hero actif.
+/// au profil Hero actif et filtrable par periode (M6-1).
 #[tauri::command]
 pub fn get_hands_page(
     limit: i64,
     offset: i64,
+    since_ms: Option<i64>,
+    until_ms: Option<i64>,
     state: State<'_, ImportState>,
 ) -> Result<Vec<HandListRowPayload>, String> {
     let Some(profile_id) =
@@ -66,7 +74,7 @@ pub fn get_hands_page(
     };
 
     let reader = state.store.reader().map_err(|e| e.to_string())?;
-    let rows = fetch_hero_hands_page(&reader, profile_id, limit, offset)
+    let rows = fetch_hero_hands_page(&reader, profile_id, limit, offset, since_ms, until_ms)
         .map_err(|e| e.to_string())?
         .into_iter()
         .map(|r| HandListRowPayload {

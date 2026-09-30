@@ -87,8 +87,9 @@ fn perf_hands_first_page_stays_under_500ms_at_1m_hands() {
     let reader = store.reader().expect("reader connection");
     let start = std::time::Instant::now();
 
-    let total = count_hero_hands(&reader, profile_id).expect("count_hero_hands should succeed");
-    let page = fetch_hero_hands_page(&reader, profile_id, PAGE_SIZE, 0)
+    let total =
+        count_hero_hands(&reader, profile_id, None, None).expect("count_hero_hands should succeed");
+    let page = fetch_hero_hands_page(&reader, profile_id, PAGE_SIZE, 0, None, None)
         .expect("fetch_hero_hands_page should succeed");
 
     let elapsed = start.elapsed();

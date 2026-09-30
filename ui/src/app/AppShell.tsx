@@ -2,6 +2,7 @@ import { Link, Outlet, useRouterState } from '@tanstack/react-router'
 import { useQuery, useQueryClient } from '@tanstack/react-query'
 import { useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import { FilterBar } from '@/components/FilterBar'
 import { LanguageSwitcher } from '@/components/LanguageSwitcher'
 import { TrayFirstHideNotice } from '@/components/TrayFirstHideNotice'
 import { navItems } from '@/app/nav'
@@ -87,7 +88,9 @@ export function AppShell() {
         <header
           aria-label="filters"
           className="flex h-10 items-center border-b border-[var(--color-border)] bg-[var(--color-surface-1)] px-3"
-        />
+        >
+          <FilterBar />
+        </header>
 
         <main className="flex-1 overflow-auto">
           <Outlet />
