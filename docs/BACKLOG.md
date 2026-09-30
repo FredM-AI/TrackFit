@@ -623,12 +623,20 @@ Table monochrome, contrôles, raccourcis, historique brut surligné, pots/SPR, �
 ### M7-5 · Classification des joueurs · M · `BLOCKED(différé en V2, décision Frédéric le 30/09)` (§14)
 Moteur de règles (JSON), éditeur avec prévisualisation, recalcul en fond, badges dans le Replayer et dans le détail d'un tournoi ; notes et label couleur par joueur.
 
-### M7-6 · Backend DuckDB · S · `TODO` (ADR-002)
+### M7-6 · Backend DuckDB · S · `DONE` — le 30/09 (ADR-002)
 Feature `analytics-duckdb`, synchronisation incrémentale par curseur, bouton « Reconstruire ».
 
 **CA :**
-- Mêmes résultats que le backend SQLite (tests d'équivalence).
-- Gain ≥ ×3 sur NFR-P6 à 2 M mains ; sinon, rapport de benchmark et décision consignée dans l'ADR.
+- ✅ Mêmes résultats que le backend SQLite (tests d'équivalence) : `crates/gr-analytics/tests/duckdb_equivalence.rs`, 4 tests (1 dimension, 2 dimensions × 17 mesures, agrégat sans dimension, reconstruction), sur de vraies mains insérées via `gr-store`.
+- ✅ Gain ≥ ×3 sur NFR-P6 à 2 M mains — **mesuré : ×44,3** (SQLite 5,39 s, DuckDB 122 ms ; SQLite lui-même sous sa propre cible < 8 s). `cargo test -p gr-analytics --release --features analytics-duckdb -- --ignored --nocapture perf_duckdb`. Gain largement au-dessus du seuil : pas de rapport de benchmark/ADR nécessaire (la CA ne l'exige qu'en cas d'échec de la porte ×3).
+
+**Décision de périmètre (validée par Frédéric, 30/09) :** `DuckDbAnalyticsBackend` implémente uniquement le trait générique `AnalyticsBackend` (les 4 rapports prédéfinis de l'écran Rapports, M7-1) — c'est tout ce que ce trait sert aujourd'hui. Étendre DuckDB aux pivots/KPIs de Résultats et Accueil (requêtes SQL dédiées, jamais passées par ce trait) est **différé en V2** (`docs/V2.md`).
+
+**Réalisé :**
+- `gr-analytics::duckdb_backend` (nouveau module, `#[cfg(feature = "analytics-duckdb")]`) — `open`/`sync_incremental`/`rebuild`/`DuckDbAnalyticsBackend`. Deux tables dénormalisées **hero-only** (`f_hand_player`, `hero_accounts` — simplification documentée : c'est tout ce que `SqliteAnalyticsBackend` lit déjà) synchronisées par curseur `hands.id` (`sync_state`, persisté dans `analytics.duckdb` lui-même, pas dans `gr-store::settings` — le fichier n'est jamais sauvegardé donc le curseur repart naturellement à zéro s'il est supprimé). Résolution `hero_player_id -> profile_id` à la requête (pas au sync, via `hero_accounts` resynchronisée en entier à chaque fois) pour éviter qu'un rattachement de pseudo après le sync ne rende le cache silencieusement faux.
+- `src-tauri::analytics_duckdb` (nouveau module, compile toujours) — thread dédié, seul propriétaire de la `duckdb::Connection` (`Send`, pas besoin de `Mutex`/`Sync`), reçoit les demandes par canal `mpsc` : notification (débounce 5 s, PRD §7.3 point 8, coalescée) ou reconstruction (immédiate, bloque sur une réponse). Déclencheurs : fin d'import manuel (`import::import_paths`) et watcher temps réel (`watch.rs`, tick `hands://new`). Commande `reconstruct_analytics_index` toujours enregistrée — renvoie une erreur explicite (pas un branchement conditionnel côté frontend) si le build n'a pas la feature ou si l'ouverture a échoué au démarrage.
+- Section « Analytique » minimale dans l'écran Paramètres (bouton « Reconstruire l'index analytique ») — ajout autonome en attendant la refonte complète M8-1, décision validée par Frédéric.
+- Nouvelle dépendance `duckdb` (crate, feature `bundled`) : déjà nommée par le PRD (§7.3/ADR-002), pas une dépendance à reconfirmer. Coût de compilation réel et notable (C++ vendoré) confirmé en pratique (~35-40 min la première fois, `cargo build`/`cargo clippy` ont des caches de compilation séparés donc chacun recompile une fois) — déjà anticipé par ADR-004 (`just dev` sans la feature, `just dev-full` avec).
 
 ### M7-7 · Grille 13×13 des mains de départ · S · `TODO` (§13.5)
 

@@ -67,6 +67,13 @@
       "createNamePlaceholder": "Nom du profil",
       "createPseudoPlaceholder": "Pseudo (optionnel)",
       "create": "Créer"
+    },
+    "analytics": {
+      "title": "Analytique",
+      "intro": "L'index analytique DuckDB (rapports, M7-6) est reconstructible à tout moment — utile si un rapport semble désynchronisé, ou si l'app n'a pas été compilée avec ce backend (le bouton échoue alors proprement).",
+      "rebuild": "Reconstruire l'index analytique",
+      "rebuilding": "Reconstruction…",
+      "rebuildDone": "{count} ligne(s) resynchronisée(s)."
     }
   },
   "home": {

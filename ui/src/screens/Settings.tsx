@@ -1,4 +1,4 @@
-import { useQuery, useQueryClient } from '@tanstack/react-query'
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import {
@@ -6,6 +6,7 @@ import {
   createHeroProfile,
   getActiveHeroProfileId,
   listHeroProfiles,
+  reconstructAnalyticsIndex,
   removeHeroPseudo,
   renameHeroProfile,
   setActiveHeroProfileId,
@@ -16,11 +17,14 @@ const ACTIVE_PROFILE_QUERY_KEY = ['hero-profile-active']
 
 /** M3-5 (D19) : section "Profils Hero" — creation/modification, selection
  * du profil dont les requetes Hero (barre d'etat, sessions...) sont
- * filtrees. Seule section reelle de l'ecran Parametres pour l'instant, le
- * reste (sauvegardes, perf...) arrive en M8. */
+ * filtrees. Section "Analytique" (M7-6) : reconstruction de l'index
+ * DuckDB, ajout minimal en attendant la refonte complete de l'ecran
+ * Parametres (M8-1, sauvegardes/perf/maintenance). */
 export function Settings() {
   const { t } = useTranslation()
   const queryClient = useQueryClient()
+
+  const reconstructMutation = useMutation({ mutationFn: reconstructAnalyticsIndex })
 
   const profilesQuery = useQuery({ queryKey: PROFILES_QUERY_KEY, queryFn: listHeroProfiles })
   const activeProfileQuery = useQuery({
@@ -253,6 +257,33 @@ export function Settings() {
         >
           {t('settings.heroProfiles.create')}
         </button>
+      </div>
+
+      <div className="mt-6 flex flex-col gap-2 rounded border border-[var(--color-border)] bg-[var(--color-surface-2)] p-3">
+        <h2 className="text-sm font-medium">{t('settings.analytics.title')}</h2>
+        <p className="text-xs text-[var(--color-text-secondary)]">{t('settings.analytics.intro')}</p>
+        <button
+          type="button"
+          onClick={() => reconstructMutation.mutate()}
+          disabled={reconstructMutation.isPending}
+          className="self-start rounded bg-[var(--color-surface-3)] px-4 py-1.5 text-sm disabled:opacity-40"
+        >
+          {reconstructMutation.isPending
+            ? t('settings.analytics.rebuilding')
+            : t('settings.analytics.rebuild')}
+        </button>
+        {reconstructMutation.isSuccess && (
+          <p className="text-xs text-[var(--color-text-secondary)]">
+            {t('settings.analytics.rebuildDone', { count: reconstructMutation.data })}
+          </p>
+        )}
+        {reconstructMutation.isError && (
+          <p className="text-xs text-[var(--color-negative)]">
+            {reconstructMutation.error instanceof Error
+              ? reconstructMutation.error.message
+              : String(reconstructMutation.error)}
+          </p>
+        )}
       </div>
     </div>
   )

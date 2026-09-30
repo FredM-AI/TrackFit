@@ -2,8 +2,11 @@
 
 //! Backend de requetage generique pour les rapports (PRD §13.5, ADR-002) :
 //! dimensions, mesures (stats §10.2), filtres → table de resultats.
-//! L'implementation SQLite (M4-7) est livree en premier ; `DuckDB` suivra en
-//! M6, derriere le meme trait [`AnalyticsBackend`].
+//! L'implementation SQLite (M4-7) est livree en premier ; `DuckDB` (M7-6,
+//! derriere la feature cargo `analytics-duckdb`) implemente le meme trait
+//! [`AnalyticsBackend`] — voir `duckdb_backend` pour le perimetre exact
+//! (seulement ce trait, pas Resultats/Accueil, decision documentee dans le
+//! module).
 //!
 //! Portee de M4-7 : les 17 stats action/opportunite de PRD §10.2 (VPIP a
 //! WWSF), par position et/ou profondeur, pour un profil Hero. AF/AFQ sont
@@ -13,6 +16,8 @@
 //! Filtres, dimensions phase/format/cartes/jour : hors perimetre (aucun
 //! ecran ne les consomme encore ; phase notamment differee en V2, M4-5).
 
+#[cfg(feature = "analytics-duckdb")]
+mod duckdb_backend;
 mod error;
 mod hands;
 mod home;
@@ -23,6 +28,10 @@ mod results;
 mod sqlite;
 mod tournaments;
 
+#[cfg(feature = "analytics-duckdb")]
+pub use duckdb::Connection as DuckDbConnection;
+#[cfg(feature = "analytics-duckdb")]
+pub use duckdb_backend::{open as open_duckdb, rebuild, sync_incremental, DuckDbAnalyticsBackend};
 pub use error::AnalyticsError;
 pub use hands::{count_hero_hands, fetch_hero_hands_page, HandListRow};
 pub use home::{fetch_hero_tournament_results, hero_allin_ev_diff_bb, TournamentResultRow};
@@ -200,7 +209,7 @@ pub struct ReportRow {
 }
 
 /// Backend de requetage generique pour les rapports (PRD §13.5, ADR-002) :
-/// SQLite livre en premier (M4-7), `DuckDB` en M6.
+/// SQLite livre en premier (M4-7), `DuckDB` en M7-6.
 pub trait AnalyticsBackend {
     /// # Errors
     /// Renvoie une [`AnalyticsError`] si la requete echoue.

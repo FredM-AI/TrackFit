@@ -7,4 +7,8 @@ use thiserror::Error;
 pub enum AnalyticsError {
     #[error("erreur SQLite: {0}")]
     Sqlite(#[from] rusqlite::Error),
+
+    #[cfg(feature = "analytics-duckdb")]
+    #[error("erreur DuckDB: {0}")]
+    DuckDb(#[from] duckdb::Error),
 }

@@ -11,6 +11,8 @@ use serde::Serialize;
 use tauri::{AppHandle, Emitter, State};
 use ts_rs::TS;
 
+use crate::analytics_duckdb::AnalyticsSyncState;
+
 /// Etat partage par les commandes d'import (gere par Tauri, `app.manage`).
 pub struct ImportState {
     pub store: Arc<Store>,
@@ -72,6 +74,7 @@ impl From<ImportSummary> for ImportSummaryPayload {
 pub fn import_paths(
     app: AppHandle,
     state: State<'_, ImportState>,
+    sync_state: State<'_, AnalyticsSyncState>,
     paths: Vec<PathBuf>,
 ) -> Result<ImportSummaryPayload, String> {
     state.cancel.reset();
@@ -79,6 +82,11 @@ pub fn import_paths(
         let _ = app.emit("import://progress", ImportProgressPayload::from(progress));
     })
     .map_err(|e| e.to_string())?;
+    if summary.hands_inserted > 0 {
+        // M7-6 : signale la synchronisation DuckDB (debattue 5 s, no-op
+        // sans la feature analytics-duckdb).
+        sync_state.notify();
+    }
     Ok(summary.into())
 }
 
