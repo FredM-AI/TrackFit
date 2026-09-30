@@ -270,6 +270,19 @@ impl Store {
         backfill::backfill_hand_class(&mut writer)
     }
 
+    /// Calcule position/profondeur/flags preflop-postflop/EV all-in (PRD
+    /// §10.2/§10.3/§10.4/§10.6, M4-3/M4-4/M5-4) pour les mains importees
+    /// avant que ces stories ne cablent ce calcul (trouve le 30/09 : mains
+    /// reelles importees le 28/09, avant M4-3/M4-4 le 29/09). Sans effet
+    /// (renvoie `0`) si tout est deja a jour.
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si l'ecriture SQLite echoue.
+    pub fn backfill_seat_stats(&self) -> Result<usize, StoreError> {
+        let mut writer = self.writer();
+        backfill::backfill_seat_stats(&mut writer)
+    }
+
     /// Cree un profil Hero (M3-1/M3-5, D19). Si `is_default` est vrai, les
     /// autres profils existants sont retrogrades.
     ///
