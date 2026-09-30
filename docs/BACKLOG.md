@@ -585,10 +585,17 @@ Détail : évolution du tapis, all-in, mains, adversaires avec badge de classifi
 
 **Décisions de périmètre pour tout le jalon, validées par Frédéric (30/09) avant de commencer :** M7-2, M7-4 et M7-5 sont reportées en V2 ; M7-1 est réduite aux rapports prédéfinis (pas le constructeur générique) ; M7-3, M7-6, M7-7 gardent leur périmètre PRD tel quel.
 
-### M7-1 · Constructeur de rapports · M · `TODO` (§13.5)
+### M7-1 · Constructeur de rapports · M · `DONE (phase 1)` — le 30/09 (§13.5)
 1 à 2 dimensions × N mesures, filtres, tri, mise en forme par rapport aux benchmarks, sauvegarde, et les 5 rapports prédéfinis.
 
 **Décision de périmètre (30/09) :** **uniquement les rapports prédéfinis** — pas le constructeur générique (choix libre de dimensions/mesures, filtres, tri, sauvegarde/duplication/renommage), différé. Des 5 rapports prédéfinis du PRD §13.5, seuls 4 sont construits maintenant : « Préflop par position », « Défense de BB par profondeur », « Open-shove par profondeur × position », « Postflop (c-bet) ». **« Résultats par phase » est bloqué** : il a besoin de la phase du tournoi (`hands.phase_by_level`/`phase_by_players`), et M4-5 (qui les calcule) a déjà été reportée en V2 le 29/09 — ce rapport la rejoint en V2 plutôt que d'afficher un unique groupe « phase inconnue » sans intérêt fonctionnel.
+
+**Réalisé :**
+- 3 des 4 rapports réutilisent directement `AnalyticsBackend::run_report` (M4-7, déjà construit et testé) : « Préflop par position » (dimension `PositionGroup`, 9 mesures préflop), « Open-shove par profondeur × position » (dimensions `DepthBucket`×`PositionGroup`, mesure OSHOVE), « Postflop (c-bet) » (dimension `PositionGroup`, mesures CBF/CBT/FCBF) — aucune nouvelle requête, juste la bonne combinaison dimension(s)/mesures.
+- « Défense de BB par profondeur » (PRD §12.2 : « Fold BB to steal ») a besoin d'une requête dédiée (nouveau `gr_analytics::fetch_bb_defense_by_depth`) : filtre sur la position brute `BB` (`hand_players.position`), pas le groupe `"Blinds"` qui fusionne SB et BB (PRD §10.4) — la `AnalyticsBackend` générique ne fait pas de filtre (portée de M4-7).
+- `src-tauri::reports` (nouveau module) — 4 commandes dédiées (pas un dispatcher générique par id de rapport), chacune scoping au profil Hero actif.
+- Écran `Reports.tsx` : 4 boutons de sélection, un tableau générique pour les 4 formes de rapport (1 ou 2 dimensions, N mesures), valeurs sous le seuil d'échantillon (30 par défaut, PRD §10.1, pas d'écran de paramètres pour le régler) grisées plutôt que masquées.
+- Pas de filtre de période (M6-1) pour l'instant : `FilterBar` ne reconnaît pas encore l'écran Rapports — à étendre si besoin dans une story dédiée plutôt que d'élargir M7-1.
 
 ### M7-2 · Leaks et benchmarks · M · `BLOCKED(différé en V2, décision Frédéric le 30/09)` (§12)
 Table `benchmarks` + valeurs par défaut §12.2 ; matrice stat × profondeur ; Top 10 pondéré ; clic → mains filtrées ; import/export JSON.

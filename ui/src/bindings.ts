@@ -57,6 +57,10 @@ export type ProfitCurvePoint = { tournament_id: number, started_at: number, cumu
  */
 cumulative_profit_excluding_bounty_cents: number, };
 
+export type ReportCellPayload = { opportunities: number, actions: number, percentage: number | null, };
+
+export type ReportRowPayload = { dimension_values: Array<string | null>, cells: Array<ReportCellPayload>, };
+
 export type ResultsSnapshotPayload = { 
 /**
  * G1, repris de M6-2. Filtrable par periode depuis M6-1.

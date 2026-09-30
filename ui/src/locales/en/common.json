@@ -265,6 +265,35 @@
     "icmSpot": "ICM spot",
     "coachQuestion": "Coach question"
   },
+  "reports": {
+    "empty": "No data for this report.",
+    "titles": {
+      "preflopByPosition": "Preflop by position",
+      "oshoveByDepthAndPosition": "Open-shove by depth × position",
+      "postflopCbet": "Postflop (c-bet)",
+      "bbDefenseByDepth": "BB defense by depth"
+    },
+    "dimensions": {
+      "position": "Position",
+      "depth": "Depth"
+    },
+    "measures": {
+      "vpip": "VPIP",
+      "pfr": "PFR",
+      "rfi": "RFI",
+      "limp": "LIMP",
+      "oshove": "OSHOVE",
+      "threeBet": "3-bet",
+      "foldToThreeBet": "F3B",
+      "fourBet": "4-bet",
+      "ats": "ATS",
+      "fsteal": "Fold to steal",
+      "rsteal": "Re-steal",
+      "cbf": "C-bet flop",
+      "cbt": "C-bet turn",
+      "fcbf": "Fold to c-bet flop"
+    }
+  },
   "setup": {
     "title": "Welcome to Graphite",
     "intro": "Let's set up your Hero profile and import your existing hands.",

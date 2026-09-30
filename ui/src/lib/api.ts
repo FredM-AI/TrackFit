@@ -7,6 +7,7 @@ import type {
   HomeSnapshotPayload,
   ImportProgressPayload,
   ImportSummaryPayload,
+  ReportRowPayload,
   ResultsSnapshotPayload,
   StatusSnapshotPayload,
   TagPayload,
@@ -193,4 +194,28 @@ export function getFilterPresets() {
 /** M6-1 : enregistre la liste des presets de dates nommes. */
 export function setFilterPresets(json: string) {
   return invoke<void>('set_filter_presets', { json })
+}
+
+/** M7-1 : rapports predefinis (perimetre reduit, pas de constructeur
+ * generique). « Preflop par position » : VPIP/PFR/RFI/LIMP/OSHOVE/3-bet/
+ * fold-to-3-bet/4-bet/ATS par groupe de position. */
+export function getPreflopByPositionReport() {
+  return invoke<ReportRowPayload[]>('get_preflop_by_position_report')
+}
+
+/** M7-1 : « Open-shove par profondeur × position ». */
+export function getOshoveByDepthAndPositionReport() {
+  return invoke<ReportRowPayload[]>('get_oshove_by_depth_and_position_report')
+}
+
+/** M7-1 : « Postflop (c-bet) » — c-bet flop/turn, fold au c-bet flop, par
+ * groupe de position. */
+export function getPostflopCbetReport() {
+  return invoke<ReportRowPayload[]>('get_postflop_cbet_report')
+}
+
+/** M7-1 : « Defense de BB par profondeur » (PRD §12.2 : "Fold BB to
+ * steal") — position brute BB uniquement, pas le groupe "Blinds". */
+export function getBbDefenseByDepthReport() {
+  return invoke<ReportRowPayload[]>('get_bb_defense_by_depth_report')
 }

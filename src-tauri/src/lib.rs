@@ -8,6 +8,7 @@ mod import;
 mod import_errors;
 mod logs;
 mod priority;
+mod reports;
 mod results;
 mod setup;
 mod status;
@@ -110,6 +111,10 @@ pub fn run() {
             filters::set_filter_state,
             filters::get_filter_presets,
             filters::set_filter_presets,
+            reports::get_preflop_by_position_report,
+            reports::get_oshove_by_depth_and_position_report,
+            reports::get_postflop_cbet_report,
+            reports::get_bb_defense_by_depth_report,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
