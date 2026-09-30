@@ -78,10 +78,17 @@ fn apply_if_missing(conn: &mut Connection, migration: &Migration) -> Result<(), 
 
 /// Empreinte non cryptographique : sert uniquement a detecter qu'une
 /// migration deja mergee a ete modifiee par erreur (R-SCHEMA), pas a
-/// authentifier quoi que ce soit.
+/// authentifier quoi que ce soit. Les fins de ligne sont normalisees avant
+/// hachage : `include_str!` embarque les octets tels qu'ils sont sur le
+/// disque au moment de la compilation, et `core.autocrlf=true` (Windows)
+/// peut reecrire un `.sql` en CRLF ou LF selon le moment du checkout —
+/// meme piege que celui deja evite pour `fixtures/**/*.txt` et `*.snap`
+/// (`.gitattributes`), sans quoi une simple recompilation apres un
+/// checkout suffit a declencher un faux positif de "migration modifiee".
 fn checksum_of(sql: &str) -> String {
+    let normalized = sql.replace("\r\n", "\n");
     let mut hasher = DefaultHasher::new();
-    sql.hash(&mut hasher);
+    normalized.hash(&mut hasher);
     format!("{:016x}", hasher.finish())
 }
 
@@ -146,5 +153,21 @@ mod tests {
             err,
             StoreError::MigrationChecksumMismatch { version } if version == "0001_init"
         ));
+    }
+
+    /// Regression : `crates/gr-store/migrations/*.sql` n'etait pas couvert
+    /// par `.gitattributes` (`eol=lf`), donc `core.autocrlf=true` (Windows)
+    /// pouvait faire flotter les octets embarques par `include_str!` entre
+    /// deux checkouts/recompilations du meme contenu, provoquant un faux
+    /// positif "migration deja appliquee avec un contenu different" sur une
+    /// base reelle n'ayant jamais ete modifiee (observe en pratique le
+    /// 30/09). `.gitattributes` est desormais corrige, mais `checksum_of`
+    /// doit rester robuste independamment de ca : les fins de ligne ne
+    /// portent aucune information sur le contenu SQL lui-meme.
+    #[test]
+    fn checksum_is_stable_across_crlf_and_lf_line_endings() {
+        let lf = "CREATE INDEX foo ON bar(baz);\n-- commentaire\n";
+        let crlf = lf.replace('\n', "\r\n");
+        assert_eq!(checksum_of(lf), checksum_of(&crlf));
     }
 }
