@@ -28,6 +28,14 @@ const MIGRATIONS: &[Migration] = &[
         version: "0003_hand_players_hero_allin_index",
         sql: include_str!("../migrations/0003_hand_players_hero_allin_index.sql"),
     },
+    Migration {
+        version: "0004_predefined_tags",
+        sql: include_str!("../migrations/0004_predefined_tags.sql"),
+    },
+    Migration {
+        version: "0005_hands_hero_player_played_at_index",
+        sql: include_str!("../migrations/0005_hands_hero_player_played_at_index.sql"),
+    },
 ];
 
 /// Cree la table de suivi si besoin, puis applique les migrations manquantes

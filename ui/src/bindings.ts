@@ -10,6 +10,8 @@ export type DayOfWeekPivotRowPayload = { weekday: number, kpis: PivotKpisPayload
 
 export type FinishPercentileBucketPayload = { floor_percent: number, tournaments_count: number, };
 
+export type HandListRowPayload = { hand_id: number, played_at: number, tournament_name: string | null, level: number | null, position: string | null, eff_stack_bb: number | null, hole_cards: string | null, preflop_line: string | null, board: string | null, net_bb: number | null, allin_ev_diff_bb: number | null, tag_label_keys: Array<string>, };
+
 export type HandsNewPayload = { hands_inserted: number, };
 
 export type HeroProfilePayload = { id: number, name: string, is_default: boolean, pseudos: Array<string>, };
@@ -92,6 +94,8 @@ pivot_speed: Array<SpeedPivotRowPayload>, pivot_speed_csv: string, pivot_day_of_
 export type SpeedPivotRowPayload = { speed: string | null, kpis: PivotKpisPayload, };
 
 export type StatusSnapshotPayload = { hands_today: number, last_hand_at: number | null, watcher_run_state: WatcherRunState, };
+
+export type TagPayload = { id: number, label_key: string, is_predefined: boolean, };
 
 export type TournamentAllInRowPayload = { hand_id: number, played_at: number, level: number, allin_ev_diff_bb: number, net_bb: number | null, };
 

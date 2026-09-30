@@ -14,6 +14,7 @@ mod sessions;
 mod status;
 mod store;
 mod summary_repo;
+mod tags;
 mod ticket_types;
 
 pub use error::StoreError;
@@ -24,4 +25,5 @@ pub use repo::{HandInsert, ImportReport, BATCH_SIZE};
 pub use sessions::LastSessionRow;
 pub use store::Store;
 pub use summary_repo::AttachSummaryReport;
+pub use tags::TagRow;
 pub use ticket_types::TicketTypeRow;
