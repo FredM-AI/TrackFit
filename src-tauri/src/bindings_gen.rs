@@ -17,6 +17,10 @@ use crate::home::{
     HomeSnapshotPayload, ImportStatusPayload, LastSessionPayload, PeriodKpis, ProfitCurvePoint,
 };
 use crate::import::{ImportProgressPayload, ImportSummaryPayload};
+use crate::replayer::{
+    HandReplayPayload, ReplayAllInPayload, ReplayAllInPlayerPayload, ReplayPotPayload,
+    ReplayPotWinnerPayload, ReplaySeatStatePayload, ReplaySeatSummaryPayload, ReplayStepPayload,
+};
 use crate::reports::{ReportCellPayload, ReportRowPayload};
 use crate::results::{
     AdditionalKpisPayload, BuyinRoiRowPayload, ChipCurvePoint, DayOfWeekPivotRowPayload,
@@ -67,6 +71,14 @@ fn generate_ui_bindings() {
         TagPayload::decl(),
         ReportCellPayload::decl(),
         ReportRowPayload::decl(),
+        HandReplayPayload::decl(),
+        ReplaySeatSummaryPayload::decl(),
+        ReplaySeatStatePayload::decl(),
+        ReplayStepPayload::decl(),
+        ReplayPotPayload::decl(),
+        ReplayPotWinnerPayload::decl(),
+        ReplayAllInPayload::decl(),
+        ReplayAllInPlayerPayload::decl(),
     ];
     decls.sort();
 

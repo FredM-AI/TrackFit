@@ -265,6 +265,62 @@
     "icmSpot": "Spot ICM",
     "coachQuestion": "Question coach"
   },
+  "replayer": {
+    "noHandSelected": "Sélectionnez une main depuis l'écran Mains (double-clic).",
+    "loading": "Chargement…",
+    "notFound": "Main introuvable.",
+    "header": {
+      "level": "niveau {level}",
+      "blinds": "{sb}/{bb} (ante {ante})"
+    },
+    "controls": {
+      "start": "⏮ Début",
+      "prev": "◀ Précédent",
+      "play": "▶ Lecture",
+      "pause": "⏸ Pause",
+      "next": "Suivant ▶",
+      "end": "Fin ⏭"
+    },
+    "table": {
+      "pot": "Pot : {value}",
+      "noBoard": "—",
+      "button": "D",
+      "allIn": "All-in"
+    },
+    "actions": {
+      "postAnte": "poste l'ante",
+      "postSmallBlind": "poste la petite blinde",
+      "postBigBlind": "poste la grosse blinde",
+      "fold": "se couche",
+      "check": "parole",
+      "call": "suit",
+      "bet": "mise",
+      "raise": "relance",
+      "shows": "montre",
+      "collected": "remporte",
+      "to": "à"
+    },
+    "spr": "SPR {value}",
+    "betPctPot": "{value} du pot",
+    "raw": {
+      "title": "Historique brut"
+    },
+    "allIn": {
+      "title": "Équité à l'all-in",
+      "estimated": "estimation",
+      "equity": "Équité",
+      "ev": "EV (jetons)"
+    },
+    "pots": {
+      "title": "Pots",
+      "empty": "Aucun pot distribué."
+    },
+    "tagsTitle": "Tags",
+    "nav": {
+      "prevHand": "← Main précédente",
+      "nextHand": "Main suivante →"
+    }
+  },
   "reports": {
     "empty": "Aucune donnée pour ce rapport.",
     "titles": {

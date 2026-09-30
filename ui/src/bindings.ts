@@ -12,6 +12,8 @@ export type FinishPercentileBucketPayload = { floor_percent: number, tournaments
 
 export type HandListRowPayload = { hand_id: number, played_at: number, tournament_name: string | null, level: number | null, position: string | null, eff_stack_bb: number | null, hole_cards: string | null, preflop_line: string | null, board: string | null, net_bb: number | null, allin_ev_diff_bb: number | null, tag_label_keys: Array<string>, };
 
+export type HandReplayPayload = { hand_id: number, room_hand_id: string, tournament_name: string, table_max_seats: number, button_seat: number, level: number, sb: number, bb: number, ante: number, played_at: number, hero_pseudo: string | null, seats: Array<ReplaySeatSummaryPayload>, steps: Array<ReplayStepPayload>, final_pots: Array<ReplayPotPayload>, raw_text: string, all_in: ReplayAllInPayload | null, prev_hand_id: number | null, next_hand_id: number | null, };
+
 export type HandsNewPayload = { hands_inserted: number, };
 
 export type HeroProfilePayload = { id: number, name: string, is_default: boolean, pseudos: Array<string>, };
@@ -56,6 +58,20 @@ export type ProfitCurvePoint = { tournament_id: number, started_at: number, cumu
  * profit sans bounties").
  */
 cumulative_profit_excluding_bounty_cents: number, };
+
+export type ReplayAllInPayload = { street: string, is_estimated: boolean, players: Array<ReplayAllInPlayerPayload>, };
+
+export type ReplayAllInPlayerPayload = { pseudo: string, equity: number, ev_chips: number, actual_won_chips: number, };
+
+export type ReplayPotPayload = { label: string, amount: number, winners: Array<ReplayPotWinnerPayload>, };
+
+export type ReplayPotWinnerPayload = { pseudo: string, amount: number, };
+
+export type ReplaySeatStatePayload = { seat: number, pseudo: string, is_hero: boolean, stack: number, folded: boolean, all_in: boolean, cards: [string, string] | null, };
+
+export type ReplaySeatSummaryPayload = { seat: number, pseudo: string, is_hero: boolean, starting_stack: number, bounty_cents: number | null, };
+
+export type ReplayStepPayload = { street: string, pseudo: string, kind: string, amount: number | null, to_amount: number | null, is_all_in: boolean, shown_label: string | null, raw_line: number | null, board: Array<string>, pot_total: number, seats: Array<ReplaySeatStatePayload>, spr_before: number | null, bet_pct_pot: number | null, };
 
 export type ReportCellPayload = { opportunities: number, actions: number, percentage: number | null, };
 

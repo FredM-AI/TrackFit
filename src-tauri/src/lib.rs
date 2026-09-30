@@ -8,6 +8,7 @@ mod import;
 mod import_errors;
 mod logs;
 mod priority;
+mod replayer;
 mod reports;
 mod results;
 mod setup;
@@ -115,6 +116,7 @@ pub fn run() {
             reports::get_oshove_by_depth_and_position_report,
             reports::get_postflop_cbet_report,
             reports::get_bb_defense_by_depth_report,
+            replayer::get_hand_replay,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
