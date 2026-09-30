@@ -218,6 +218,35 @@
       "handResult": "Résultat"
     }
   },
+  "hands": {
+    "empty": "Aucune main importée pour l'instant.",
+    "selectedCount": "{count} sélectionnée(s)",
+    "loadingRow": "Chargement…",
+    "columns": {
+      "date": "Date",
+      "tournament": "Tournoi",
+      "level": "Niveau",
+      "position": "Position",
+      "depth": "Profondeur",
+      "cards": "Cartes",
+      "preflopLine": "Préflop",
+      "board": "Board",
+      "result": "Résultat",
+      "evDiff": "Écart EV",
+      "tags": "Tags"
+    }
+  },
+  "tags": {
+    "badBeat": "Bad beat",
+    "cooler": "Cooler",
+    "heroCall": "Hero call",
+    "bluff": "Bluff",
+    "preflopMistake": "Erreur préflop",
+    "postflopMistake": "Erreur postflop",
+    "toReview": "À revoir",
+    "icmSpot": "Spot ICM",
+    "coachQuestion": "Question coach"
+  },
   "setup": {
     "title": "Bienvenue sur Graphite",
     "intro": "Configurons votre profil Hero et importons vos mains existantes.",

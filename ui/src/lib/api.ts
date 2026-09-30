@@ -1,6 +1,7 @@
 import { invoke } from '@tauri-apps/api/core'
 import { listen } from '@tauri-apps/api/event'
 import type {
+  HandListRowPayload,
   HandsNewPayload,
   HeroProfilePayload,
   HomeSnapshotPayload,
@@ -8,6 +9,7 @@ import type {
   ImportSummaryPayload,
   ResultsSnapshotPayload,
   StatusSnapshotPayload,
+  TagPayload,
   TournamentDetailPayload,
   TournamentListRowPayload,
   WinamaxAccountPayload,
@@ -130,4 +132,26 @@ export function getTournamentsList() {
  * `null` si aucun profil actif ou si ce tournoi n'a aucune main du Hero. */
 export function getTournamentDetail(tournamentId: number) {
   return invoke<TournamentDetailPayload | null>('get_tournament_detail', { tournamentId })
+}
+
+/** M6-5 : nombre total de mains du profil Hero actif (dimensionne le
+ * tableau virtualise), appele une seule fois au montage de l'ecran. */
+export function getHandsCount() {
+  return invoke<number>('get_hands_count')
+}
+
+/** M6-5 : une page de la liste des mains (la plus recente d'abord). */
+export function getHandsPage(limit: number, offset: number) {
+  return invoke<HandListRowPayload[]>('get_hands_page', { limit, offset })
+}
+
+/** M6-5 : tags connus (predefinis d'abord). */
+export function listTags() {
+  return invoke<TagPayload[]>('list_tags')
+}
+
+/** M6-5 : applique `tagId` a chaque main de `handIds` ("selection multiple
+ * -> tag en masse", PRD §13.4). */
+export function tagHands(handIds: number[], tagId: number, nowMs: number) {
+  return invoke<void>('tag_hands', { handIds, tagId, nowMs })
 }

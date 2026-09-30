@@ -11,6 +11,7 @@ use std::path::Path;
 
 use ts_rs::TS;
 
+use crate::hands::{HandListRowPayload, TagPayload};
 use crate::hero_profiles::HeroProfilePayload;
 use crate::home::{
     HomeSnapshotPayload, ImportStatusPayload, LastSessionPayload, PeriodKpis, ProfitCurvePoint,
@@ -61,6 +62,8 @@ fn generate_ui_bindings() {
         TournamentStackPointPayload::decl(),
         TournamentAllInRowPayload::decl(),
         TournamentOpponentRowPayload::decl(),
+        HandListRowPayload::decl(),
+        TagPayload::decl(),
     ];
     decls.sort();
 

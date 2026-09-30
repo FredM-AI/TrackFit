@@ -1,5 +1,6 @@
 #[cfg(test)]
 mod bindings_gen;
+mod hands;
 mod hero_profiles;
 mod home;
 mod import;
@@ -100,6 +101,10 @@ pub fn run() {
             results::get_results_snapshot,
             tournaments::get_tournaments_list,
             tournaments::get_tournament_detail,
+            hands::get_hands_count,
+            hands::get_hands_page,
+            hands::list_tags,
+            hands::tag_hands,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

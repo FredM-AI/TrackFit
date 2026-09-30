@@ -14,6 +14,7 @@
 //! ecran ne les consomme encore ; phase notamment differee en V2, M4-5).
 
 mod error;
+mod hands;
 mod home;
 mod kpis;
 mod lttb;
@@ -22,6 +23,7 @@ mod sqlite;
 mod tournaments;
 
 pub use error::AnalyticsError;
+pub use hands::{count_hero_hands, fetch_hero_hands_page, HandListRow};
 pub use home::{fetch_hero_tournament_results, hero_allin_ev_diff_bb, TournamentResultRow};
 pub use kpis::{compute_results_kpis, Bullet, ResultsKpis, TicketValuation, TournamentResult};
 pub use lttb::lttb;

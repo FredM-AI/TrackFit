@@ -17,6 +17,7 @@ use crate::repo::{self, HandInsert, ImportReport};
 use crate::sessions;
 use crate::status;
 use crate::summary_repo::{self, AttachSummaryReport};
+use crate::tags::{self, TagRow};
 use crate::ticket_types::{self, TicketTypeRow};
 
 const DB_FILE_NAME: &str = "graphite.db";
@@ -486,6 +487,25 @@ impl Store {
             ticket_type_id,
             count,
         )
+    }
+
+    /// Liste les tags connus (predefinis d'abord, M6-5/M7-4).
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si la lecture SQLite echoue.
+    pub fn list_tags(&self) -> Result<Vec<TagRow>, StoreError> {
+        let reader = self.reader()?;
+        tags::list_tags(&reader)
+    }
+
+    /// Applique `tag_id` a chaque main de `hand_ids` (M6-5, PRD §13.4 :
+    /// "selection multiple -> tag en masse").
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si l'ecriture SQLite echoue.
+    pub fn tag_hands(&self, hand_ids: &[i64], tag_id: i64, now_ms: i64) -> Result<(), StoreError> {
+        let mut writer = self.writer();
+        tags::tag_hands(&mut writer, hand_ids, tag_id, now_ms)
     }
 }
 

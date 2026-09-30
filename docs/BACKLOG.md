@@ -537,11 +537,30 @@ Détail : évolution du tapis, all-in, mains, adversaires avec badge de classifi
 - Écran `Tournaments.tsx` : tableau virtualisé (`@tanstack/react-virtual`, grille CSS plutôt qu'un `<table>` HTML — incompatible avec le positionnement `absolute` des lignes virtualisées), toutes les colonnes PRD §13.3, clic sur une ligne → détail. Écran `TournamentDetail.tsx` (nouvelle route `/tournaments/$tournamentId`) : en-tête (buy-in, place, gains, profit), `TournamentStackChart` (nouveau, ECharts, mêmes conventions que G1/G2 — import dynamique), tableau des all-in, tableau des adversaires, liste des mains (non virtualisée : une seule tournoi tient toujours en quelques dizaines/centaines de mains, pas besoin).
 - **CA (comportement visuel du tableau virtualisé, navigation liste→détail)** à valider par Frédéric via `just dev` : test d'usage humain sur une vraie fenêtre Tauri, pas vérifiable automatiquement depuis cet environnement (même limite que M3-1/M3-3).
 
-### M6-5 · Mains : liste virtualisée · M · `TODO` (§13.4)
+### M6-5 · Mains : liste virtualisée · M · `DONE` — le 30/09 (§13.4)
 **CA :**
 - Premier affichage < 500 ms avec 1 M mains en base.
 - Tag en masse.
 - Double-clic → Replayer (placeholder avant M7-3).
+
+**Décision de périmètre :** contrairement à M6-2/M6-3/M6-4, aucune négociation de périmètre nécessaire ici — les 3 CA ci-dessus couvraient déjà exactement ce qui a été livré. Les 9 tags prédéfinis (PRD §13.7/D27 : « Bad beat, Cooler, Hero call, Bluff, Erreur préflop, Erreur postflop, À revoir, Spot ICM, Question coach ») sont déjà entièrement spécifiés par le PRD (pas une donnée à inventer, R-FORMAT ne s'applique pas ici) : semés directement plutôt que d'attendre M7-4. **Tags libres, note texte par main et filtre par tag restent le périmètre de M7-4** (Tags et notes) — non touchés ici.
+
+**Nouvelle dépendance :** aucune (`@tanstack/react-virtual`, ajoutée pour M6-4, est réutilisée).
+
+**Architecture — pagination côté backend (différent de M6-2/M6-3/M6-4) :** contrairement aux écrans précédents (quelques milliers de tournois, tout l'historique tient en mémoire), le volume de mains vise 1 M+ (NFR-P7). Le frontend ne charge donc que les pages visibles du tableau virtualisé (`@tanstack/react-query` `useQueries`, une requête par page de 100 lignes, mise en cache), pas un instantané complet.
+
+**Perf (NFR-P7), avec un vrai problème d'index trouvé et corrigé avant merge, en 3 temps :**
+1. 1ʳᵉ mesure (requête telle qu'écrite au départ, avec un `LEFT JOIN`/`GROUP_CONCAT` des tags avant la `LIMIT`) : **4,6 s** à 1M mains — le `GROUP BY` sur l'ensemble filtré forçait SQLite à tout matérialiser et trier avant de ne garder que la page. Corrigé en sortant les tags de la requête paginée (page d'abord, tags de cette seule page ensuite, 2ᵉ requête ciblée sur au plus 100 `hand_id`).
+2. 2ᵉ mesure (nouvel index composé `ix_hands_hero_player_played_at (hero_player_id, played_at DESC)`, migration `0005`, forcé via `INDEXED BY` comme en M6-2) : toujours **2,4 s**. Diagnostiqué via `EXPLAIN QUERY PLAN` (déjà la méthode de M6-2) : `USE TEMP B-TREE FOR ORDER BY` restait présent malgré l'index composé et malgré `INDEXED BY`.
+3. **Cause racine trouvée** : le filtre `hero_player_id IN (SELECT player_id FROM hero_accounts WHERE profile_id = ?1)` est une sous-requête — SQLite ne peut pas prouver à la compilation qu'elle ne renverra qu'une seule valeur, donc il ne peut pas garantir que le résultat reste déjà trié par l'index et rajoute systématiquement un tri complet. Fixé en résolvant les `player_id` du profil **côté Rust d'abord** (`resolve_hero_player_ids`), puis en liant des entiers littéraux : SQLite reconnaît alors le cas courant (un seul pseudo Hero) comme une simple égalité et n'a plus besoin de trier. Mesure finale : **85,6 ms** (page : 1,1 ms, `COUNT` : 84 ms — inévitable, doit visiter les ~1M entrées d'index correspondantes), marge ~83 % sur la cible de 500 ms. Cette limite (sous-requête empêchant l'exploitation de l'ordre d'un index) n'était pas apparue en M6-2/M6-3 : leurs requêtes filtraient par plage de dates ou par tournoi, jamais par un ensemble de `player_id` potentiellement multi-valeurs.
+- Cas multi-pseudos (plusieurs `hero_accounts` pour un même profil, rare) : reste sur le chemin `IN (littéraux multiples)`, donc un tri reste possible — limite acceptée et documentée dans le code, pas mesurée spécifiquement (cas non prioritaire).
+
+**Réalisé :**
+- `gr_analytics::hands` (nouveau module) — `count_hero_hands`, `fetch_hero_hands_page` (colonnes déjà calculées à l'import : position, `eff_stack_bb`, `preflop_line`, `net_bb`, écart EV all-in en bb — aucun nouveau calcul).
+- `gr-store::tags` (nouveau module) — `list_tags`, `tag_hands` (application en masse, idempotente par `INSERT OR IGNORE` sur `(hand_id, tag_id)`). **Nouvelle migration `0004_predefined_tags.sql`** (seed des 9 tags, `label_key` = clé i18n) et **`0005_hands_hero_player_played_at_index.sql`** (index de perf ci-dessus).
+- `src-tauri::hands::{get_hands_count, get_hands_page, list_tags, tag_hands}` — `get_hands_count` séparée de `get_hands_page` pour ne pas repayer le `COUNT` (~84 ms) à chaque page demandée pendant le défilement.
+- Écran `Hands.tsx` : tableau virtualisé (grille CSS, mêmes conventions que M6-4), pages chargées à la demande selon la plage visible du virtualizer (`useQueries`), sélection multiple (cases à cocher) + barre d'action « tag en masse » (les 9 tags prédéfinis), double-clic → `/replayer` (placeholder).
+- **CA de perf et comportement visuel** à valider par Frédéric via `just dev` (fenêtre Tauri réelle) : la mesure automatisée ci-dessus couvre la requête, pas le rendu React lui-même.
 
 ---
 

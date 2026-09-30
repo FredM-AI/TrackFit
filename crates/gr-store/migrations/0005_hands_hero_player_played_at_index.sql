@@ -1,0 +1,11 @@
+-- M6-5 (fetch_hero_hands_page/count_hero_hands, NFR-P7) : la liste des
+-- mains filtre "hands.hero_player_id IN (...)" puis trie sur "played_at
+-- DESC" avec une LIMIT/OFFSET. Sans index dedie, `hands.hero_player_id`
+-- n'est indexe nulle part (seuls ix_hands_played_at et ix_hands_tournament
+-- existent depuis 0001_init.sql) : mesure a 1M mains, ~4.4s pour la
+-- premiere page (COUNT + LIMIT 100), tres au-dessus de la cible NFR-P7 de
+-- 500ms -- meme categorie de probleme que ix_hp_hero_allin (M6-2, 0003).
+-- Index compose (hero_player_id, played_at DESC) : couvre a la fois le
+-- WHERE et l'ORDER BY, permet un scan ordonne direct qui s'arrete des la
+-- LIMIT atteinte plutot qu'un scan complet + tri.
+CREATE INDEX ix_hands_hero_player_played_at ON hands(hero_player_id, played_at DESC);
