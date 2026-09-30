@@ -583,10 +583,14 @@ Détail : évolution du tapis, all-in, mains, adversaires avec badge de classifi
 
 ## M7 — Analyse (§12, §13.5–13.8, §14)
 
+**Décisions de périmètre pour tout le jalon, validées par Frédéric (30/09) avant de commencer :** M7-2, M7-4 et M7-5 sont reportées en V2 ; M7-1 est réduite aux rapports prédéfinis (pas le constructeur générique) ; M7-3, M7-6, M7-7 gardent leur périmètre PRD tel quel.
+
 ### M7-1 · Constructeur de rapports · M · `TODO` (§13.5)
 1 à 2 dimensions × N mesures, filtres, tri, mise en forme par rapport aux benchmarks, sauvegarde, et les 5 rapports prédéfinis.
 
-### M7-2 · Leaks et benchmarks · M · `TODO` (§12)
+**Décision de périmètre (30/09) :** **uniquement les rapports prédéfinis** — pas le constructeur générique (choix libre de dimensions/mesures, filtres, tri, sauvegarde/duplication/renommage), différé. Des 5 rapports prédéfinis du PRD §13.5, seuls 4 sont construits maintenant : « Préflop par position », « Défense de BB par profondeur », « Open-shove par profondeur × position », « Postflop (c-bet) ». **« Résultats par phase » est bloqué** : il a besoin de la phase du tournoi (`hands.phase_by_level`/`phase_by_players`), et M4-5 (qui les calcule) a déjà été reportée en V2 le 29/09 — ce rapport la rejoint en V2 plutôt que d'afficher un unique groupe « phase inconnue » sans intérêt fonctionnel.
+
+### M7-2 · Leaks et benchmarks · M · `BLOCKED(différé en V2, décision Frédéric le 30/09)` (§12)
 Table `benchmarks` + valeurs par défaut §12.2 ; matrice stat × profondeur ; Top 10 pondéré ; clic → mains filtrées ; import/export JSON.
 
 ### M7-3 · Replayer · M · `TODO` (§13.7)
@@ -594,10 +598,12 @@ Table monochrome, contrôles, raccourcis, historique brut surligné, pots/SPR, �
 
 **CA :** rejoue correctement 100 % des mains du corpus (test de bout en bout : état final du replayer = résultat parsé).
 
-### M7-4 · Tags et notes · M · `TODO` (D27)
+### M7-4 · Tags et notes · M · `BLOCKED(différé en V2, décision Frédéric le 30/09)` (D27)
 9 tags prédéfinis + tags libres + note par main ; filtre par tag.
 
-### M7-5 · Classification des joueurs · M · `TODO` (§14)
+**Note :** les 9 tags prédéfinis et l'application en masse depuis l'écran Mains sont déjà livrés (M6-5, 30/09) — seuls les tags libres, la note texte par main et le filtre par tag (dans le panneau de filtres global, M6-1) restent différés ici.
+
+### M7-5 · Classification des joueurs · M · `BLOCKED(différé en V2, décision Frédéric le 30/09)` (§14)
 Moteur de règles (JSON), éditeur avec prévisualisation, recalcul en fond, badges dans le Replayer et dans le détail d'un tournoi ; notes et label couleur par joueur.
 
 ### M7-6 · Backend DuckDB · S · `TODO` (ADR-002)
@@ -608,6 +614,8 @@ Feature `analytics-duckdb`, synchronisation incrémentale par curseur, bouton «
 - Gain ≥ ×3 sur NFR-P6 à 2 M mains ; sinon, rapport de benchmark et décision consignée dans l'ADR.
 
 ### M7-7 · Grille 13×13 des mains de départ · S · `TODO` (§13.5)
+
+**Vérifié avant de commencer (30/09, demande de Frédéric) :** rien n'existe encore — ni composant UI, ni donnée backend. `hand_players.hand_class` (ex. `'AKs'`, `'TT'`, `'Q9o'`) est une colonne prévue depuis `0001_init.sql` (M2-1) mais **jamais calculée**, même situation que `net_chips` avant sa découverte en M6-3. Une vraie story à construire de zéro (calcul de `hand_class` depuis `hole_cards` + rétro-remplissage des mains déjà importées, puis la grille elle-même), pas une simple UI à brancher sur une donnée existante.
 
 ---
 
