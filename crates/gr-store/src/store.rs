@@ -13,6 +13,7 @@ use crate::error::StoreError;
 use crate::hero::{self, HeroProfileRow};
 use crate::import_log::{self, ImportErrorRow, ImportFileProgress, NewImportError};
 use crate::migrate::run_migrations;
+use crate::replay::{self, HandReplay};
 use crate::repo::{self, HandInsert, ImportReport};
 use crate::sessions;
 use crate::status;
@@ -506,6 +507,17 @@ impl Store {
     pub fn tag_hands(&self, hand_ids: &[i64], tag_id: i64, now_ms: i64) -> Result<(), StoreError> {
         let mut writer = self.writer();
         tags::tag_hands(&mut writer, hand_ids, tag_id, now_ms)
+    }
+
+    /// Rejeu pas-a-pas de la main `hand_id` (M7-3, PRD §13.7). `None` si la
+    /// main est inconnue ou si son texte brut ne reparse plus (jamais
+    /// observe, meme garde que [`Store::backfill_net_chips`]).
+    ///
+    /// # Errors
+    /// Renvoie une [`StoreError`] si la lecture SQLite echoue.
+    pub fn get_hand_replay(&self, hand_id: i64) -> Result<Option<HandReplay>, StoreError> {
+        let reader = self.reader()?;
+        replay::get_hand_replay(&reader, hand_id)
     }
 }
 

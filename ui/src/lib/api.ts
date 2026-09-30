@@ -2,6 +2,7 @@ import { invoke } from '@tauri-apps/api/core'
 import { listen } from '@tauri-apps/api/event'
 import type {
   HandListRowPayload,
+  HandReplayPayload,
   HandsNewPayload,
   HeroProfilePayload,
   HomeSnapshotPayload,
@@ -218,4 +219,10 @@ export function getPostflopCbetReport() {
  * steal") — position brute BB uniquement, pas le groupe "Blinds". */
 export function getBbDefenseByDepthReport() {
   return invoke<ReportRowPayload[]>('get_bb_defense_by_depth_report')
+}
+
+/** M7-3 : rejeu complet d'une main (table, pas, historique brut, pots,
+ * all-in). `null` si la main est inconnue ou ne reparse plus. */
+export function getHandReplay(handId: number) {
+  return invoke<HandReplayPayload | null>('get_hand_replay', { handId })
 }

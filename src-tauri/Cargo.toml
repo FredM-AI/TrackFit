@@ -18,6 +18,7 @@ tauri-build = { version = "2.6.3", features = [] }
 
 [dependencies]
 gr-analytics = { path = "../crates/gr-analytics" }
+gr-core = { path = "../crates/gr-core" }
 gr-ingest = { path = "../crates/gr-ingest" }
 gr-parser-api = { path = "../crates/gr-parser-api" }
 gr-store = { path = "../crates/gr-store" }

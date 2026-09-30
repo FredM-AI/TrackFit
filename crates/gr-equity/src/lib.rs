@@ -37,7 +37,9 @@ mod error;
 mod exact;
 mod monte_carlo;
 
-pub use allin::{detect_all_in_event, AllInEvent};
+pub use allin::{
+    compute_all_in_details, detect_all_in_event, AllInDetails, AllInEvent, AllInPlayerDetail,
+};
 pub use error::EquityError;
 
 use convert::to_rs_card;

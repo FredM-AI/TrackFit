@@ -600,10 +600,18 @@ Détail : évolution du tapis, all-in, mains, adversaires avec badge de classifi
 ### M7-2 · Leaks et benchmarks · M · `BLOCKED(différé en V2, décision Frédéric le 30/09)` (§12)
 Table `benchmarks` + valeurs par défaut §12.2 ; matrice stat × profondeur ; Top 10 pondéré ; clic → mains filtrées ; import/export JSON.
 
-### M7-3 · Replayer · M · `TODO` (§13.7)
+### M7-3 · Replayer · M · `DONE` — le 30/09 (§13.7)
 Table monochrome, contrôles, raccourcis, historique brut surligné, pots/SPR, équité et EV aux all-in.
 
-**CA :** rejoue correctement 100 % des mains du corpus (test de bout en bout : état final du replayer = résultat parsé).
+**CA :** rejoue correctement 100 % des mains du corpus (test de bout en bout : état final du replayer = résultat parsé). ✅ `every_action_of_the_real_corpus_finds_a_raw_line` (`gr-store`) rejoue chaque main de `fixtures/winamax/**/*_real_holdem_no-limit.txt` et vérifie que chaque action trouve sa ligne brute.
+
+**Réalisé :**
+- `gr-store::replay` (nouveau module) — reparse `hand_raw` (même motif `backfill::backfill_net_chips`) puis reconstruit un `ReplayStep` par action (tapis/pot/cartes visibles/board juste après l'action). Pot affiché = pot unique cumulé (Σ contributions − Σ collectes), pas un découpage main pot/side pots pendant le jeu — même simplification documentée que `gr_equity::allin` (side pots réels visibles au moment de leur collecte et dans `final_pots`). SPR = tapis de l'acteur (pas le "tapis effectif" plafonné par le plus gros adversaire, différent de `gr_stats::depth`), documenté dans le code.
+- **Correspondance ligne brute** : chaque action associée à sa ligne 0-indexée dans le texte brut via un marcheur séquentiel (pseudo entier inclus dans le préfixe recherché, jamais ambigu même sur un pseudo contenant un mot d'action, cf. fixture `edge-cases/pseudo-contains-action-verb`).
+- `gr-equity::allin` étendu avec `compute_all_in_details`/`AllInDetails`/`AllInPlayerDetail` (équité + EV par joueur, pas seulement l'écart) — `detect_all_in_event` réécrit par-dessus pour préserver exactement son comportement existant (callers `gr-store::repo`/`gr-ingest::import` inchangés).
+- Navigation main précédente/suivante : simplification documentée — chronologique simple sur `hands.hero_player_id`, pas la liste filtrée d'origine (aucun contexte de filtre courant transmis par le routing actuellement).
+- `src-tauri::replayer::get_hand_replay` — une seule commande (pas de scope par profil Hero actif, le `hand_id` suffit).
+- Écran `Replayer.tsx` (route `/replayer/$handId`) : table ovale monochrome (disposition trigonométrique CSS, `ReplayerTable.tsx`, aucune dépendance graphique), contrôles début/précédent/lecture-pause/suivant/fin + vitesse 0,5×–4×, raccourcis clavier ←/→/espace, panneau historique brut avec ligne courante surlignée (auto-scroll), panneau équité/EV à l'all-in (révélé une fois la rue de l'all-in atteinte en lecture), pots finaux, SPR/mise en % du pot par décision, tags (réutilise l'API M6-5). `Hands.tsx` : double-clic navigue désormais vers `/replayer/$handId` avec le vrai `hand_id` (route `/replayer` sans id redirige vers Mains).
 
 ### M7-4 · Tags et notes · M · `BLOCKED(différé en V2, décision Frédéric le 30/09)` (D27)
 9 tags prédéfinis + tags libres + note par main ; filtre par tag.

@@ -26,7 +26,7 @@ function pageIndexOf(rowIndex: number): number {
  * milliers de tournois tiennent en memoire mais pas des millions de
  * mains). Selection multiple -> tag en masse (les 9 tags predefinis,
  * `docs/BACKLOG.md` : creer un tag libre reste le perimetre de M7-4).
- * Double-clic -> Replayer (placeholder avant M7-3). */
+ * Double-clic -> Replayer (M7-3, `/replayer/$handId`). */
 export function Hands() {
   const { t } = useTranslation()
   const navigate = useNavigate()
@@ -162,7 +162,12 @@ export function Hands() {
                   <div
                     key={virtualRow.index}
                     onDoubleClick={() => {
-                      if (row) void navigate({ to: '/replayer' })
+                      if (row) {
+                        void navigate({
+                          to: '/replayer/$handId',
+                          params: { handId: String(row.hand_id) },
+                        })
+                      }
                     }}
                     className="grid gap-2 border-b border-[var(--color-border)] px-2 text-xs [font-variant-numeric:tabular-nums] hover:bg-[var(--color-surface-2)]"
                     style={{

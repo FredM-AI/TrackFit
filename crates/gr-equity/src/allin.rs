@@ -43,6 +43,27 @@ pub struct AllInEvent {
     pub method: EquityMethod,
 }
 
+/// Detail complet (pas seulement l'ecart) d'un evenement all-in, pour un
+/// affichage replayer (M7-3) : equite et EV en jetons de chaque joueur
+/// implique, plus la rue a laquelle la decision a eu lieu (pour savoir a
+/// quel pas de rejeu l'afficher).
+#[derive(Debug, Clone, PartialEq)]
+pub struct AllInPlayerDetail {
+    pub pseudo: String,
+    /// Part du pot gagnee en moyenne (`0.0..=1.0`), ties compris.
+    pub equity: f64,
+    pub ev_chips: f64,
+    pub actual_won_chips: i64,
+}
+
+#[derive(Debug, Clone, PartialEq)]
+pub struct AllInDetails {
+    pub street: Street,
+    pub method: EquityMethod,
+    /// Dans l'ordre des sieges, comme [`AllInEvent::player_diffs`].
+    pub players: Vec<AllInPlayerDetail>,
+}
+
 /// Detecte un evenement all-in dans `hand` et calcule l'EV de chaque
 /// joueur implique (PRD §10.6). `None` si la main n'en a pas (showdown
 /// normal, main terminee par un fold avant la river, ou main sans
@@ -50,6 +71,29 @@ pub struct AllInEvent {
 /// (jamais observe dans le corpus, mais pas de calcul possible sans elles).
 #[must_use]
 pub fn detect_all_in_event(hand: &HandRecord) -> Option<AllInEvent> {
+    let details = compute_all_in_details(hand)?;
+    Some(AllInEvent {
+        player_diffs: details
+            .players
+            .iter()
+            .map(|p| {
+                #[allow(clippy::cast_precision_loss)]
+                let actual_won = p.actual_won_chips as f64;
+                (p.pseudo.clone(), actual_won - p.ev_chips)
+            })
+            .collect(),
+        method: details.method,
+    })
+}
+
+/// Comme [`detect_all_in_event`], mais renvoie le detail complet (equite +
+/// EV par joueur, pas seulement l'ecart) — utilise par le replayer (M7-3)
+/// pour l'affichage "a chaque all-in, equite de chaque joueur et EV" (PRD
+/// §13.7). Meme detection, memes limites (au plus un evenement par main,
+/// simplification "un seul calcul d'equite pour tout le pot" documentee en
+/// tete de module).
+#[must_use]
+pub fn compute_all_in_details(hand: &HandRecord) -> Option<AllInDetails> {
     let street = last_active_street(hand)?;
     let known_board_len = known_board_len(street)?;
     // Main terminee par un fold plutot que jusqu'au bout : le board ne
@@ -90,20 +134,25 @@ pub fn detect_all_in_event(hand: &HandRecord) -> Option<AllInEvent> {
     #[allow(clippy::cast_precision_loss)]
     let pool_chips = hand.pots.iter().map(|p| p.amount.amount()).sum::<i64>() as f64;
 
-    let player_diffs = involved_seats
+    let players = involved_seats
         .iter()
         .zip(&calculation.players)
         .map(|(seat, equity)| {
             let ev_chips = equity.equity * pool_chips;
-            #[allow(clippy::cast_precision_loss)]
-            let actual_won = actual_chips_won(hand, &seat.pseudo) as f64;
-            (seat.pseudo.clone(), actual_won - ev_chips)
+            let actual_won_chips = actual_chips_won(hand, &seat.pseudo);
+            AllInPlayerDetail {
+                pseudo: seat.pseudo.clone(),
+                equity: equity.equity,
+                ev_chips,
+                actual_won_chips,
+            }
         })
         .collect();
 
-    Some(AllInEvent {
-        player_diffs,
+    Some(AllInDetails {
+        street,
         method: calculation.method,
+        players,
     })
 }
 

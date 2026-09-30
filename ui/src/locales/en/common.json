@@ -265,6 +265,62 @@
     "icmSpot": "ICM spot",
     "coachQuestion": "Coach question"
   },
+  "replayer": {
+    "noHandSelected": "Select a hand from the Hands screen (double-click).",
+    "loading": "Loading…",
+    "notFound": "Hand not found.",
+    "header": {
+      "level": "level {level}",
+      "blinds": "{sb}/{bb} (ante {ante})"
+    },
+    "controls": {
+      "start": "⏮ Start",
+      "prev": "◀ Previous",
+      "play": "▶ Play",
+      "pause": "⏸ Pause",
+      "next": "Next ▶",
+      "end": "End ⏭"
+    },
+    "table": {
+      "pot": "Pot: {value}",
+      "noBoard": "—",
+      "button": "D",
+      "allIn": "All-in"
+    },
+    "actions": {
+      "postAnte": "posts ante",
+      "postSmallBlind": "posts small blind",
+      "postBigBlind": "posts big blind",
+      "fold": "folds",
+      "check": "checks",
+      "call": "calls",
+      "bet": "bets",
+      "raise": "raises",
+      "shows": "shows",
+      "collected": "collected",
+      "to": "to"
+    },
+    "spr": "SPR {value}",
+    "betPctPot": "{value} of pot",
+    "raw": {
+      "title": "Raw history"
+    },
+    "allIn": {
+      "title": "All-in equity",
+      "estimated": "estimated",
+      "equity": "Equity",
+      "ev": "EV (chips)"
+    },
+    "pots": {
+      "title": "Pots",
+      "empty": "No pot distributed."
+    },
+    "tagsTitle": "Tags",
+    "nav": {
+      "prevHand": "← Previous hand",
+      "nextHand": "Next hand →"
+    }
+  },
   "reports": {
     "empty": "No data for this report.",
     "titles": {

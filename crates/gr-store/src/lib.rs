@@ -9,6 +9,7 @@ mod hero;
 mod import_log;
 mod migrate;
 mod paths;
+mod replay;
 mod repo;
 mod sessions;
 mod status;
@@ -21,6 +22,10 @@ pub use error::StoreError;
 pub use hero::HeroProfileRow;
 pub use import_log::{ImportErrorRow, ImportFileProgress, NewImportError};
 pub use paths::resolve_data_dir;
+pub use replay::{
+    HandReplay, ReplayAllIn, ReplayAllInPlayer, ReplayPot, ReplaySeatState, ReplaySeatSummary,
+    ReplayStep,
+};
 pub use repo::{HandInsert, ImportReport, BATCH_SIZE};
 pub use sessions::LastSessionRow;
 pub use store::Store;
