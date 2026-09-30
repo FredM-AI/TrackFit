@@ -97,13 +97,15 @@ fn list_row_from(
     }
 }
 
-/// Liste des tournois du profil Hero actif (PRD §13.3), tout l'historique
-/// (pas de panneau de filtres reglable tant que M6-1 n'existe pas, meme
-/// convention que G1/M6-2). Le frontend virtualise l'affichage
+/// Liste des tournois du profil Hero actif (PRD §13.3), filtrable par
+/// periode depuis M6-1 (`since_ms`/`until_ms`, resolus cote UI ; `None`/
+/// `None` = tout l'historique). Le frontend virtualise l'affichage
 /// (`@tanstack/react-virtual`) plutot que de paginer cote backend : le volume
 /// reel (quelques milliers de tournois) tient sans souci en memoire.
 #[tauri::command]
 pub fn get_tournaments_list(
+    since_ms: Option<i64>,
+    until_ms: Option<i64>,
     state: State<'_, ImportState>,
 ) -> Result<Vec<TournamentListRowPayload>, String> {
     let Some(profile_id) =
@@ -113,7 +115,7 @@ pub fn get_tournaments_list(
     };
 
     let reader = state.store.reader().map_err(|e| e.to_string())?;
-    let results = fetch_hero_tournament_results(&reader, profile_id, None, None, None)
+    let results = fetch_hero_tournament_results(&reader, profile_id, since_ms, until_ms, None)
         .map_err(|e| e.to_string())?;
     let aggregates =
         fetch_hero_tournament_aggregates(&reader, profile_id).map_err(|e| e.to_string())?;

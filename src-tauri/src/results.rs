@@ -7,6 +7,11 @@
 //! gros tournoi). G4 (ROI par format complet KO/PKO/Mystery/Space) reste
 //! bloque en permanence (ambiguite du summary Winamax, deja documentee
 //! depuis M2-6).
+//!
+//! Filtrable par periode depuis M6-1 (panneau de filtres global) :
+//! `since_ms`/`until_ms` resolus cote UI, `None`/`None` = tout l'historique
+//! (comportement par defaut avant M6-1, toujours disponible via le preset
+//! "tout").
 
 use gr_analytics::{
     compute_additional_kpis, day_of_week_pivot_to_csv, fetch_hero_chip_history,
@@ -153,7 +158,7 @@ pub struct MonthPivotRowPayload {
 
 #[derive(Debug, Clone, Serialize, TS)]
 pub struct ResultsSnapshotPayload {
-    /// G1, repris de M6-2 (tout l'historique, non filtre par periode).
+    /// G1, repris de M6-2. Filtrable par periode depuis M6-1.
     pub profit_curve: Vec<ProfitCurvePoint>,
     /// G2 : reel vs ajuste EV all-in, cumule, en bb.
     pub chip_curve: Vec<ChipCurvePoint>,
@@ -252,6 +257,8 @@ fn downsample_profit_curve(points: Vec<ProfitCurvePoint>) -> Vec<ProfitCurvePoin
 #[tauri::command]
 pub fn get_results_snapshot(
     state: State<'_, ImportState>,
+    since_ms: Option<i64>,
+    until_ms: Option<i64>,
 ) -> Result<ResultsSnapshotPayload, String> {
     let Some(profile_id) =
         resolve_active_hero_profile_id(&state.store).map_err(|e| e.to_string())?
@@ -284,11 +291,12 @@ pub fn get_results_snapshot(
 
     let reader = state.store.reader().map_err(|e| e.to_string())?;
 
-    let all_results = fetch_hero_tournament_results(&reader, profile_id, None, None, None)
+    let all_results = fetch_hero_tournament_results(&reader, profile_id, since_ms, until_ms, None)
         .map_err(|e| e.to_string())?;
     let profit_curve = downsample_profit_curve(profit_curve(&all_results));
 
-    let history = fetch_hero_chip_history(&reader, profile_id).map_err(|e| e.to_string())?;
+    let history = fetch_hero_chip_history(&reader, profile_id, since_ms, until_ms)
+        .map_err(|e| e.to_string())?;
     let mut cumulative_real = 0.0;
     let mut cumulative_ev = 0.0;
     let chip_rows: Vec<(i64, f64, f64)> = history
@@ -301,7 +309,7 @@ pub fn get_results_snapshot(
         .collect();
     let chip_curve = downsample_chip_curve(&chip_rows);
 
-    let volume = fetch_hero_tournament_volume_by_day(&reader, profile_id)
+    let volume = fetch_hero_tournament_volume_by_day(&reader, profile_id, since_ms, until_ms)
         .map_err(|e| e.to_string())?
         .into_iter()
         .map(|v| VolumePointPayload {

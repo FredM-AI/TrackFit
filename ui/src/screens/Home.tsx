@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next'
 import type { PeriodKpis } from '@/bindings'
 import { ProfitCurveChart } from '@/components/ProfitCurveChart'
 import { getHomeSnapshot, onHandsNew } from '@/lib/api'
+import { resolveDateRange, useFilterStore } from '@/lib/filters'
 import {
   formatBb,
   formatCents,
@@ -13,8 +14,6 @@ import {
   formatPercent,
   signedValueClassName,
 } from '@/lib/format'
-
-const HOME_QUERY_KEY = ['home', 'snapshot']
 
 function emptyPeriod(): PeriodKpis {
   return {
@@ -33,7 +32,7 @@ function emptyPeriod(): PeriodKpis {
 interface KpiCardProps {
   label: string
   valueText: string
-  previousValueText: string
+  previousValueText?: string
   signedValue?: number
 }
 
@@ -49,33 +48,37 @@ function KpiCard({ label, valueText, previousValueText, signedValue }: KpiCardPr
       >
         {valueText}
       </span>
-      <span className="text-xs text-[var(--color-text-secondary)] [font-variant-numeric:tabular-nums]">
-        {t('home.previousPeriod', { value: previousValueText })}
-      </span>
+      {previousValueText != null && (
+        <span className="text-xs text-[var(--color-text-secondary)] [font-variant-numeric:tabular-nums]">
+          {t('home.previousPeriod', { value: previousValueText })}
+        </span>
+      )}
     </div>
   )
 }
 
-/** Ecran Accueil (M6-2, PRD §13.1) : cartes KPI (30 derniers jours vs les 30
- * jours precedents, pas de filtre de date reglable tant que M6-1 n'existe
- * pas), graphe G1 en format reduit, derniere session, etat de l'import.
- * Sparklines et "top 3 leaks" differes (perimetre convenu avec Frederic,
- * 29/09 : historique par periode et moteur de benchmarks/leaks, M7-2, pas
- * encore construits). */
+/** Ecran Accueil (M6-2, PRD §13.1) : cartes KPI (periode courante vs
+ * precedente, filtrable depuis M6-1 — par defaut les 30 derniers jours),
+ * graphe G1 en format reduit (non filtre), derniere session, etat de
+ * l'import. Sparklines et "top 3 leaks" differes (perimetre convenu avec
+ * Frederic, 29/09 : historique par periode et moteur de benchmarks/leaks,
+ * M7-2, pas encore construits). */
 export function Home() {
   const { t } = useTranslation()
   const queryClient = useQueryClient()
 
+  const range = useFilterStore((s) => s.perScreen.home)
+
   const snapshotQuery = useQuery({
-    queryKey: HOME_QUERY_KEY,
-    queryFn: () => getHomeSnapshot(Date.now()),
+    queryKey: ['home', 'snapshot', range],
+    queryFn: () => getHomeSnapshot(resolveDateRange(range, Date.now())),
   })
 
   useEffect(() => {
     // Hors contexte Tauri (tests, apercu navigateur), `listen` rejette : on
     // degrade silencieusement, meme convention que AppShell.tsx.
     const unlisten = onHandsNew(() => {
-      void queryClient.invalidateQueries({ queryKey: HOME_QUERY_KEY })
+      void queryClient.invalidateQueries({ queryKey: ['home', 'snapshot'] })
     }).catch(() => undefined)
     return () => {
       void unlisten.then((fn) => fn?.())
@@ -84,51 +87,51 @@ export function Home() {
 
   const snapshot = snapshotQuery.data
   const current = snapshot?.current_period ?? emptyPeriod()
-  const previous = snapshot?.previous_period ?? emptyPeriod()
+  const previous = snapshot?.previous_period ?? undefined
 
   const kpis: KpiCardProps[] = [
     {
       label: t('home.kpis.profit'),
       valueText: formatCents(current.profit_cents),
-      previousValueText: formatCents(previous.profit_cents),
+      previousValueText: previous && formatCents(previous.profit_cents),
       signedValue: current.profit_cents,
     },
     {
       label: t('home.kpis.roi'),
       valueText: formatPercent(current.roi),
-      previousValueText: formatPercent(previous.roi),
+      previousValueText: previous && formatPercent(previous.roi),
       signedValue: current.roi ?? undefined,
     },
     {
       label: t('home.kpis.itm'),
       valueText: formatPercent(current.itm_rate),
-      previousValueText: formatPercent(previous.itm_rate),
+      previousValueText: previous && formatPercent(previous.itm_rate),
     },
     {
       label: t('home.kpis.abi'),
       valueText: formatCents(current.abi_cents),
-      previousValueText: formatCents(previous.abi_cents),
+      previousValueText: previous && formatCents(previous.abi_cents),
     },
     {
       label: t('home.kpis.tournamentsCount'),
       valueText: formatCount(current.tournaments_count),
-      previousValueText: formatCount(previous.tournaments_count),
+      previousValueText: previous && formatCount(previous.tournaments_count),
     },
     {
       label: t('home.kpis.fees'),
       valueText: formatCents(current.fees_cents),
-      previousValueText: formatCents(previous.fees_cents),
+      previousValueText: previous && formatCents(previous.fees_cents),
     },
     {
       label: t('home.kpis.allinEvDiff'),
       valueText: formatBb(current.allin_ev_diff_bb),
-      previousValueText: formatBb(previous.allin_ev_diff_bb),
+      previousValueText: previous && formatBb(previous.allin_ev_diff_bb),
       signedValue: current.allin_ev_diff_bb,
     },
     {
       label: t('home.kpis.dollarsPerHour'),
       valueText: formatCentsPerHour(current.dollars_per_hour_cents),
-      previousValueText: formatCentsPerHour(previous.dollars_per_hour_cents),
+      previousValueText: previous && formatCentsPerHour(previous.dollars_per_hour_cents),
       signedValue: current.dollars_per_hour_cents ?? undefined,
     },
   ]

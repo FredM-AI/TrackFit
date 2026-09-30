@@ -192,8 +192,8 @@ fn fetch_hero_chip_history_orders_chronologically_and_adjusts_for_a_real_all_in(
         .expect("insertion should succeed");
 
     let reader = store.reader().expect("reader connection");
-    let history =
-        fetch_hero_chip_history(&reader, profile_id).expect("chip history query should succeed");
+    let history = fetch_hero_chip_history(&reader, profile_id, None, None)
+        .expect("chip history query should succeed");
 
     assert_eq!(history.len(), 2);
     assert_eq!(history[0].played_at, 1_000);
@@ -251,7 +251,7 @@ fn fetch_hero_tournament_volume_by_day_buckets_tournaments_by_utc_calendar_day()
         .expect("insertion should succeed");
 
     let reader = store.reader().expect("reader connection");
-    let volume = fetch_hero_tournament_volume_by_day(&reader, profile_id)
+    let volume = fetch_hero_tournament_volume_by_day(&reader, profile_id, None, None)
         .expect("volume query should succeed");
 
     assert_eq!(volume.len(), 2, "2 jours distincts : {volume:?}");

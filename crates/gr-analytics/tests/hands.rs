@@ -122,18 +122,50 @@ fn count_and_page_reflect_the_total_and_return_the_most_recent_hands_first() {
         .expect("insertion should succeed");
 
     let reader = store.reader().expect("reader connection");
-    let total = count_hero_hands(&reader, profile_id).expect("count should succeed");
+    let total = count_hero_hands(&reader, profile_id, None, None).expect("count should succeed");
     assert_eq!(total, 5);
 
-    let page = fetch_hero_hands_page(&reader, profile_id, 2, 0).expect("page 0 should succeed");
+    let page = fetch_hero_hands_page(&reader, profile_id, 2, 0, None, None)
+        .expect("page 0 should succeed");
     assert_eq!(page.len(), 2);
     assert_eq!(page[0].played_at, 4_000, "la plus recente d'abord");
     assert_eq!(page[1].played_at, 3_000);
     assert_eq!(page[0].tournament_name.as_deref(), Some("T"));
 
-    let page2 = fetch_hero_hands_page(&reader, profile_id, 2, 4).expect("page 2 should succeed");
+    let page2 = fetch_hero_hands_page(&reader, profile_id, 2, 4, None, None)
+        .expect("page 2 should succeed");
     assert_eq!(page2.len(), 1, "dernier reste : la plus ancienne");
     assert_eq!(page2[0].played_at, 0);
+}
+
+#[test]
+fn count_and_page_respect_the_since_until_range_from_the_m6_1_filter_panel() {
+    let (_db_dir, store, profile_id) = open_store();
+
+    let hands: Vec<HandRecord> = (0..5)
+        .map(|i| base_hand(&format!("#{i}"), i * 1_000))
+        .collect();
+    let inserts: Vec<HandInsert<'_>> = hands
+        .iter()
+        .map(|hand| HandInsert {
+            hand,
+            raw_text: "irrelevant",
+        })
+        .collect();
+    store
+        .insert_hands(Room::Winamax, &inserts)
+        .expect("insertion should succeed");
+
+    let reader = store.reader().expect("reader connection");
+    // [1000, 3000) : mains a 1000 et 2000 seulement (bornes PRD demi-ouvertes).
+    let total = count_hero_hands(&reader, profile_id, Some(1_000), Some(3_000))
+        .expect("count should succeed");
+    assert_eq!(total, 2);
+
+    let page = fetch_hero_hands_page(&reader, profile_id, 10, 0, Some(1_000), Some(3_000))
+        .expect("page should succeed");
+    let played_ats: Vec<i64> = page.iter().map(|r| r.played_at).collect();
+    assert_eq!(played_ats, vec![2_000, 1_000]);
 }
 
 #[test]
@@ -152,8 +184,9 @@ fn tags_applied_to_a_hand_are_returned_as_their_label_keys() {
         .expect("insertion should succeed");
 
     let reader = store.reader().expect("reader connection");
-    let hand_id =
-        fetch_hero_hands_page(&reader, profile_id, 1, 0).expect("page should succeed")[0].hand_id;
+    let hand_id = fetch_hero_hands_page(&reader, profile_id, 1, 0, None, None)
+        .expect("page should succeed")[0]
+        .hand_id;
     drop(reader);
 
     let tags = store.list_tags().expect("list tags");
@@ -173,7 +206,8 @@ fn tags_applied_to_a_hand_are_returned_as_their_label_keys() {
         .expect("tag hand again with a second tag");
 
     let reader = store.reader().expect("reader connection");
-    let page = fetch_hero_hands_page(&reader, profile_id, 1, 0).expect("page should succeed");
+    let page =
+        fetch_hero_hands_page(&reader, profile_id, 1, 0, None, None).expect("page should succeed");
     let mut tag_keys = page[0].tag_label_keys.clone();
     tag_keys.sort();
     assert_eq!(

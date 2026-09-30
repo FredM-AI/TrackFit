@@ -110,22 +110,33 @@ export function removeHeroPseudo(profileId: number, pseudo: string) {
   return invoke<void>('remove_hero_pseudo_cmd', { profileId, pseudo })
 }
 
-/** M6-2 : instantane de l'ecran Accueil (KPIs 30j vs 30j precedents, courbe
- * G1, derniere session, etat de l'import), scope au profil Hero actif. */
-export function getHomeSnapshot(nowMs: number) {
-  return invoke<HomeSnapshotPayload>('get_home_snapshot', { nowMs })
+/** Plage de dates resolue (M6-1) : `null`/`null` = tout l'historique. Les
+ * commandes de snapshot/liste ci-dessous l'acceptent toutes en parametres
+ * optionnels, resolus cote UI (`ui/src/lib/filters.ts`) a partir du preset
+ * choisi dans le panneau de filtres global. */
+export interface DateRangeParams {
+  sinceMs: number | null
+  untilMs: number | null
+}
+
+/** M6-2 : instantane de l'ecran Accueil (KPIs periode courante vs
+ * precedente, courbe G1 non filtree, derniere session, etat de l'import),
+ * scope au profil Hero actif. Filtrable par periode depuis M6-1. */
+export function getHomeSnapshot({ sinceMs, untilMs }: DateRangeParams) {
+  return invoke<HomeSnapshotPayload>('get_home_snapshot', { sinceMs, untilMs })
 }
 
 /** M6-3 : instantane de l'ecran Resultats (G1, G2, G6, pivot buy-in x
- * KO/non-KO + CSV), scope au profil Hero actif. */
-export function getResultsSnapshot() {
-  return invoke<ResultsSnapshotPayload>('get_results_snapshot')
+ * KO/non-KO + CSV), scope au profil Hero actif. Filtrable par periode
+ * depuis M6-1. */
+export function getResultsSnapshot({ sinceMs, untilMs }: DateRangeParams) {
+  return invoke<ResultsSnapshotPayload>('get_results_snapshot', { sinceMs, untilMs })
 }
 
-/** M6-4 : liste des tournois du profil Hero actif (tout l'historique,
- * tableau virtualise cote UI). */
-export function getTournamentsList() {
-  return invoke<TournamentListRowPayload[]>('get_tournaments_list')
+/** M6-4 : liste des tournois du profil Hero actif (tableau virtualise cote
+ * UI). Filtrable par periode depuis M6-1. */
+export function getTournamentsList({ sinceMs, untilMs }: DateRangeParams) {
+  return invoke<TournamentListRowPayload[]>('get_tournaments_list', { sinceMs, untilMs })
 }
 
 /** M6-4 : detail d'un tournoi (tapis par main, all-in, adversaires),
@@ -135,14 +146,20 @@ export function getTournamentDetail(tournamentId: number) {
 }
 
 /** M6-5 : nombre total de mains du profil Hero actif (dimensionne le
- * tableau virtualise), appele une seule fois au montage de l'ecran. */
-export function getHandsCount() {
-  return invoke<number>('get_hands_count')
+ * tableau virtualise), appele une seule fois par changement de filtre.
+ * Filtrable par periode depuis M6-1. */
+export function getHandsCount({ sinceMs, untilMs }: DateRangeParams) {
+  return invoke<number>('get_hands_count', { sinceMs, untilMs })
 }
 
-/** M6-5 : une page de la liste des mains (la plus recente d'abord). */
-export function getHandsPage(limit: number, offset: number) {
-  return invoke<HandListRowPayload[]>('get_hands_page', { limit, offset })
+/** M6-5 : une page de la liste des mains (la plus recente d'abord).
+ * Filtrable par periode depuis M6-1. */
+export function getHandsPage(
+  limit: number,
+  offset: number,
+  { sinceMs, untilMs }: DateRangeParams,
+) {
+  return invoke<HandListRowPayload[]>('get_hands_page', { limit, offset, sinceMs, untilMs })
 }
 
 /** M6-5 : tags connus (predefinis d'abord). */
@@ -154,4 +171,26 @@ export function listTags() {
  * -> tag en masse", PRD §13.4). */
 export function tagHands(handIds: number[], tagId: number, nowMs: number) {
   return invoke<void>('tag_hands', { handIds, tagId, nowMs })
+}
+
+/** M6-1 : etat de filtre persiste pour `screen` (JSON brut, deserialise
+ * cote appelant), `null` si jamais enregistre. */
+export function getFilterState(screen: string) {
+  return invoke<string | null>('get_filter_state', { screen })
+}
+
+/** M6-1 : enregistre l'etat de filtre de `screen` (JSON deja serialise). */
+export function setFilterState(screen: string, json: string) {
+  return invoke<void>('set_filter_state', { screen, json })
+}
+
+/** M6-1 : presets de dates nommes (JSON brut, un tableau), partages entre
+ * tous les ecrans. */
+export function getFilterPresets() {
+  return invoke<string | null>('get_filter_presets')
+}
+
+/** M6-1 : enregistre la liste des presets de dates nommes. */
+export function setFilterPresets(json: string) {
+  return invoke<void>('set_filter_presets', { json })
 }

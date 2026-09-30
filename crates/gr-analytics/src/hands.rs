@@ -34,18 +34,40 @@ fn resolve_hero_player_ids(
     Ok(ids)
 }
 
-/// Nombre total de mains du profil Hero (pour dimensionner le virtualizer).
+/// Nombre total de mains du profil Hero (pour dimensionner le virtualizer),
+/// filtrable par periode depuis M6-1 (`since_ms`/`until_ms`, `None`/`None`
+/// = tout l'historique).
 ///
 /// # Errors
 /// Renvoie une [`AnalyticsError`] si la lecture SQLite echoue.
-pub fn count_hero_hands(conn: &Connection, hero_profile_id: i64) -> Result<i64, AnalyticsError> {
+pub fn count_hero_hands(
+    conn: &Connection,
+    hero_profile_id: i64,
+    since_ms: Option<i64>,
+    until_ms: Option<i64>,
+) -> Result<i64, AnalyticsError> {
     let player_ids = resolve_hero_player_ids(conn, hero_profile_id)?;
     if player_ids.is_empty() {
         return Ok(0);
     }
     let placeholders = player_ids.iter().map(|_| "?").collect::<Vec<_>>().join(",");
-    let sql = format!("SELECT COUNT(*) FROM hands WHERE hero_player_id IN ({placeholders})");
-    conn.query_row(&sql, rusqlite::params_from_iter(player_ids.iter()), |row| {
+    let sql = format!(
+        "SELECT COUNT(*) FROM hands
+         WHERE hero_player_id IN ({placeholders})
+           AND (? IS NULL OR played_at >= ?)
+           AND (? IS NULL OR played_at < ?)"
+    );
+    let params: Vec<Box<dyn rusqlite::ToSql>> = player_ids
+        .iter()
+        .map(|id| Box::new(*id) as Box<dyn rusqlite::ToSql>)
+        .chain([
+            Box::new(since_ms) as Box<dyn rusqlite::ToSql>,
+            Box::new(since_ms) as Box<dyn rusqlite::ToSql>,
+            Box::new(until_ms) as Box<dyn rusqlite::ToSql>,
+            Box::new(until_ms) as Box<dyn rusqlite::ToSql>,
+        ])
+        .collect();
+    conn.query_row(&sql, rusqlite::params_from_iter(params.iter()), |row| {
         row.get(0)
     })
     .map_err(AnalyticsError::from)
@@ -83,6 +105,8 @@ pub fn fetch_hero_hands_page(
     hero_profile_id: i64,
     limit: i64,
     offset: i64,
+    since_ms: Option<i64>,
+    until_ms: Option<i64>,
 ) -> Result<Vec<HandListRow>, AnalyticsError> {
     let player_ids = resolve_hero_player_ids(conn, hero_profile_id)?;
     if player_ids.is_empty() {
@@ -97,7 +121,10 @@ pub fn fetch_hero_hands_page(
     // ids deja limites (`attach_tags`), bien moins couteuse. Voir aussi le
     // commentaire de `resolve_hero_player_ids` : les `player_id` sont lies
     // comme entiers litteraux (pas une sous-requete) pour que SQLite evite
-    // un tri complet quand il n'y en a qu'un seul (le cas courant).
+    // un tri complet quand il n'y en a qu'un seul (le cas courant). Le
+    // filtre de periode (M6-1) est une condition supplementaire sur la
+    // meme colonne indexee `played_at` : verifie par `perf_hands` de ne pas
+    // reintroduire le meme probleme de tri.
     let placeholders = player_ids.iter().map(|_| "?").collect::<Vec<_>>().join(",");
     let sql = format!(
         "SELECT h.id, h.played_at, t.name, h.level,
@@ -107,13 +134,24 @@ pub fn fetch_hero_hands_page(
          JOIN hand_players hp ON hp.hand_id = h.id AND hp.is_hero = 1
          LEFT JOIN tournaments t ON t.id = h.tournament_id
          WHERE h.hero_player_id IN ({placeholders})
+           AND (? IS NULL OR h.played_at >= ?)
+           AND (? IS NULL OR h.played_at < ?)
          ORDER BY h.played_at DESC, h.id DESC
          LIMIT ? OFFSET ?"
     );
     let mut stmt = conn.prepare(&sql)?;
-    let mut bind_params: Vec<i64> = player_ids.clone();
-    bind_params.push(limit);
-    bind_params.push(offset);
+    let bind_params: Vec<Box<dyn rusqlite::ToSql>> = player_ids
+        .iter()
+        .map(|id| Box::new(*id) as Box<dyn rusqlite::ToSql>)
+        .chain([
+            Box::new(since_ms) as Box<dyn rusqlite::ToSql>,
+            Box::new(since_ms) as Box<dyn rusqlite::ToSql>,
+            Box::new(until_ms) as Box<dyn rusqlite::ToSql>,
+            Box::new(until_ms) as Box<dyn rusqlite::ToSql>,
+            Box::new(limit) as Box<dyn rusqlite::ToSql>,
+            Box::new(offset) as Box<dyn rusqlite::ToSql>,
+        ])
+        .collect();
     let mut rows: Vec<HandListRow> = stmt
         .query_map(rusqlite::params_from_iter(bind_params.iter()), |row| {
             let allin_ev_diff_chips: Option<f64> = row.get(10)?;

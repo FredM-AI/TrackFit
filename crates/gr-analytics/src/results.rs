@@ -37,12 +37,16 @@ pub struct ChipHistoryPoint {
 /// deja retro-remplie, M6-3 ; les mains pas encore traitees par
 /// `Store::backfill_net_chips` sont silencieusement absentes, elles
 /// reapparaitront au prochain appel une fois le rattrapage termine).
+/// Filtrable par periode (M6-1) : `since_ms`/`until_ms`, `None`/`None` =
+/// tout l'historique.
 ///
 /// # Errors
 /// Renvoie une [`AnalyticsError`] si la lecture SQLite echoue.
 pub fn fetch_hero_chip_history(
     conn: &Connection,
     hero_profile_id: i64,
+    since_ms: Option<i64>,
+    until_ms: Option<i64>,
 ) -> Result<Vec<ChipHistoryPoint>, AnalyticsError> {
     let mut stmt = conn.prepare(
         "SELECT h.played_at, hp.net_bb, hp.allin_ev_diff_chips, h.bb
@@ -51,9 +55,11 @@ pub fn fetch_hero_chip_history(
          WHERE hp.is_hero = 1
            AND hp.net_bb IS NOT NULL
            AND h.hero_player_id IN (SELECT player_id FROM hero_accounts WHERE profile_id = ?1)
+           AND (?2 IS NULL OR h.played_at >= ?2)
+           AND (?3 IS NULL OR h.played_at < ?3)
          ORDER BY h.played_at, h.id",
     )?;
-    let rows = stmt.query_map(params![hero_profile_id], |row| {
+    let rows = stmt.query_map(params![hero_profile_id, since_ms, until_ms], |row| {
         let played_at: i64 = row.get(0)?;
         let net_bb: f64 = row.get(1)?;
         let allin_ev_diff_chips: Option<f64> = row.get(2)?;
@@ -84,13 +90,16 @@ pub struct TournamentVolumePoint {
 
 /// Basee sur `hands`/`tournaments` (pas `tournament_entries`, qui n'existe
 /// qu'une fois le summary attache, M2-6) : un tournoi compte des qu'au
-/// moins une main d'Hero y a ete importee, meme incomplet.
+/// moins une main d'Hero y a ete importee, meme incomplet. Filtrable par
+/// periode (M6-1) : `since_ms`/`until_ms`, `None`/`None` = tout l'historique.
 ///
 /// # Errors
 /// Renvoie une [`AnalyticsError`] si la lecture SQLite echoue.
 pub fn fetch_hero_tournament_volume_by_day(
     conn: &Connection,
     hero_profile_id: i64,
+    since_ms: Option<i64>,
+    until_ms: Option<i64>,
 ) -> Result<Vec<TournamentVolumePoint>, AnalyticsError> {
     let mut stmt = conn.prepare(
         "SELECT (t.started_at / 86400000) * 86400000 AS day, COUNT(DISTINCT t.id)
@@ -98,10 +107,12 @@ pub fn fetch_hero_tournament_volume_by_day(
          JOIN tournaments t ON t.id = h.tournament_id
          WHERE h.hero_player_id IN (SELECT player_id FROM hero_accounts WHERE profile_id = ?1)
            AND t.started_at IS NOT NULL
+           AND (?2 IS NULL OR t.started_at >= ?2)
+           AND (?3 IS NULL OR t.started_at < ?3)
          GROUP BY day
          ORDER BY day",
     )?;
-    let rows = stmt.query_map(params![hero_profile_id], |row| {
+    let rows = stmt.query_map(params![hero_profile_id, since_ms, until_ms], |row| {
         Ok(TournamentVolumePoint {
             day_epoch_ms: row.get(0)?,
             tournaments_count: row.get(1)?,

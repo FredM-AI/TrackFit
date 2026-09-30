@@ -15,9 +15,8 @@ import { ProfitCurveChart } from '@/components/ProfitCurveChart'
 import { RoiByBuyinChart } from '@/components/RoiByBuyinChart'
 import { VolumeChart } from '@/components/VolumeChart'
 import { getResultsSnapshot } from '@/lib/api'
+import { resolveDateRange, useFilterStore } from '@/lib/filters'
 import { formatCents, formatCount, formatPercent } from '@/lib/format'
-
-const RESULTS_QUERY_KEY = ['results', 'snapshot']
 
 function downloadCsv(csv: string, filename: string) {
   const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' })
@@ -110,9 +109,11 @@ export function Results() {
   const { t } = useTranslation()
   const [pivotDimension, setPivotDimension] = useState<PivotDimension>('buyinKo')
 
+  const range = useFilterStore((s) => s.perScreen.results)
+
   const snapshotQuery = useQuery({
-    queryKey: RESULTS_QUERY_KEY,
-    queryFn: getResultsSnapshot,
+    queryKey: ['results', 'snapshot', range],
+    queryFn: () => getResultsSnapshot(resolveDateRange(range, Date.now())),
   })
 
   const snapshot = snapshotQuery.data

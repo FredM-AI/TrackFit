@@ -16,7 +16,12 @@ export type HandsNewPayload = { hands_inserted: number, };
 
 export type HeroProfilePayload = { id: number, name: string, is_default: boolean, pseudos: Array<string>, };
 
-export type HomeSnapshotPayload = { current_period: PeriodKpis, previous_period: PeriodKpis, profit_curve: Array<ProfitCurvePoint>, last_session: LastSessionPayload | null, import_status: ImportStatusPayload, };
+export type HomeSnapshotPayload = { current_period: PeriodKpis, 
+/**
+ * `None` quand la periode courante est non bornee (filtre "tout",
+ * M6-1) : pas de "periode precedente" bien definie a comparer.
+ */
+previous_period: PeriodKpis | null, profit_curve: Array<ProfitCurvePoint>, last_session: LastSessionPayload | null, import_status: ImportStatusPayload, };
 
 export type HourPivotRowPayload = { hour: number, kpis: PivotKpisPayload, };
 
@@ -54,7 +59,7 @@ cumulative_profit_excluding_bounty_cents: number, };
 
 export type ResultsSnapshotPayload = { 
 /**
- * G1, repris de M6-2 (tout l'historique, non filtre par periode).
+ * G1, repris de M6-2. Filtrable par periode depuis M6-1.
  */
 profit_curve: Array<ProfitCurvePoint>, 
 /**
