@@ -8,3 +8,11 @@ fixtures/**/*.txt text eol=lf
 # de chaines exactes). Meme piege CRLF que les fixtures si on laisse core.autocrlf
 # les reecrire au checkout sur un runner Windows.
 *.snap text eol=lf
+
+# Migrations gr-store : leur contenu est embarque via `include_str!` et hache
+# (schema_migrations.checksum, R-SCHEMA) pour detecter une modification
+# apres merge. Meme piege CRLF que les fixtures/snapshots ci-dessus : sans
+# `eol=lf`, une simple recompilation apres un checkout Windows suffit a
+# changer les octets embarques et declencher un faux positif "migration
+# deja appliquee avec un contenu different" (`gr_store::migrate`).
+crates/gr-store/migrations/*.sql text eol=lf
