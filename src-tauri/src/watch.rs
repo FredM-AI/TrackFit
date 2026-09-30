@@ -9,9 +9,10 @@ use std::sync::{Arc, Mutex, MutexGuard, PoisonError};
 use gr_ingest::WatcherHandle;
 use gr_store::Store;
 use serde::Serialize;
-use tauri::{AppHandle, Emitter, State};
+use tauri::{AppHandle, Emitter, Manager, State};
 use ts_rs::TS;
 
+use crate::analytics_duckdb::AnalyticsSyncState;
 use crate::import::ImportState;
 
 const WATCHED_ROOTS_SETTING_KEY: &str = "watched_roots";
@@ -97,6 +98,9 @@ fn respawn(app: &AppHandle, store: Arc<Store>, roots: Vec<PathBuf>, watcher_stat
                     hands_inserted: tick.hands_inserted,
                 },
             );
+            // M7-6 : signale la synchronisation DuckDB (debattue 5 s cote
+            // AnalyticsSyncState, no-op sans la feature analytics-duckdb).
+            app_handle.state::<AnalyticsSyncState>().notify();
         }
     });
     let mut inner = watcher_state.lock();

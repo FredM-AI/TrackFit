@@ -67,6 +67,13 @@
       "createNamePlaceholder": "Profile name",
       "createPseudoPlaceholder": "Pseudo (optional)",
       "create": "Create"
+    },
+    "analytics": {
+      "title": "Analytics",
+      "intro": "The DuckDB analytics index (reports, M7-6) can be rebuilt at any time — useful if a report looks out of sync, or if this build wasn't compiled with that backend (the button then fails cleanly).",
+      "rebuild": "Rebuild the analytics index",
+      "rebuilding": "Rebuilding…",
+      "rebuildDone": "{count} row(s) resynced."
     }
   },
   "home": {

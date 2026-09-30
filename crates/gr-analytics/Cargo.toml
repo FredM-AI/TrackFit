@@ -5,6 +5,7 @@ edition.workspace = true
 license.workspace = true
 
 [dependencies]
+duckdb = { version = "1.10506.0", features = ["bundled"], optional = true }
 rusqlite = { version = "0.31", features = ["bundled"] }
 thiserror = "1"
 
@@ -13,3 +14,6 @@ gr-core = { path = "../gr-core" }
 gr-store = { path = "../gr-store" }
 gr-parser-api = { path = "../gr-parser-api" }
 tempfile = "3"
+
+[features]
+analytics-duckdb = ["dep:duckdb"]

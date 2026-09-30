@@ -226,3 +226,10 @@ export function getBbDefenseByDepthReport() {
 export function getHandReplay(handId: number) {
   return invoke<HandReplayPayload | null>('get_hand_replay', { handId })
 }
+
+/** M7-6 : reconstruit entierement l'index analytique DuckDB (bouton
+ * Parametres). Renvoie le nombre de lignes resynchronisees ; echoue si le
+ * build n'a pas la feature `analytics-duckdb` (`just dev-full`). */
+export function reconstructAnalyticsIndex() {
+  return invoke<number>('reconstruct_analytics_index')
+}

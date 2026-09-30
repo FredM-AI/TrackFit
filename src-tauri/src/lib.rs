@@ -1,3 +1,4 @@
+mod analytics_duckdb;
 #[cfg(test)]
 mod bindings_gen;
 mod filters;
@@ -19,6 +20,7 @@ mod watch;
 
 use std::sync::Arc;
 
+use analytics_duckdb::AnalyticsSyncState;
 use import::ImportState;
 use tauri::Manager;
 use watch::WatcherState;
@@ -69,6 +71,11 @@ pub fn run() {
                 cancel: gr_ingest::CancelToken::new(),
             });
 
+            // M7-6 : synchronisation DuckDB debattue (5 s, PRD §7.3 point 8) —
+            // gere quel que soit le build (`AnalyticsSyncState::notify` est un
+            // no-op sans la feature `analytics-duckdb`, ADR-004).
+            app.manage(AnalyticsSyncState::start(Arc::clone(&store), &data_dir));
+
             let watcher_state = WatcherState::default();
             watch::start_from_persisted_roots(app.handle(), &store, &watcher_state);
             app.manage(watcher_state);
@@ -117,6 +124,7 @@ pub fn run() {
             reports::get_postflop_cbet_report,
             reports::get_bb_defense_by_depth_report,
             replayer::get_hand_replay,
+            analytics_duckdb::reconstruct_analytics_index,
         ])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");

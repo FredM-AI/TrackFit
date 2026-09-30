@@ -38,3 +38,9 @@ windows-sys = { version = "0.60", features = ["Win32_System_Threading"] }
 
 [dev-dependencies]
 tempfile = "3"
+
+[features]
+# ADR-002/ADR-004 : DuckDB desactive par defaut (`just dev`), active via
+# `just dev-full`/`cargo tauri dev --features analytics-duckdb` (deja dans
+# le justfile depuis M0-2, la feature elle-meme arrive en M7-6).
+analytics-duckdb = ["gr-analytics/analytics-duckdb"]
