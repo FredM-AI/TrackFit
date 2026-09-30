@@ -269,6 +269,46 @@ fn fetch_hero_tournament_results_filters_on_the_started_at_range() {
 }
 
 #[test]
+fn fetch_hero_tournament_results_derives_speed_entrants_finish_position_and_utc_calendar_fields() {
+    let db_dir = tempfile::tempdir().expect("temp dir for the test database");
+    let store = Store::open(db_dir.path()).expect("store should open");
+    let profile_id = store
+        .create_hero_profile("Hero", true)
+        .expect("create hero profile");
+    store
+        .link_hero_account(profile_id, Room::Winamax, "Hero")
+        .expect("link Hero pseudo to the profile");
+
+    // Epoch 0 = jeudi 1er janvier 1970, 00:00:00 UTC (fait connu, verifie
+    // aussi par un `EXPLAIN` manuel sur `strftime`) : weekday=4 (`%w`,
+    // 0=dimanche), hour=0, month=1.
+    seed_tournament_started_at(&store, "T1", 0);
+    store
+        .attach_summary(
+            Room::Winamax,
+            &summary("T1", "normal", vec![bullet(1, 5, 1000)]),
+        )
+        .expect("attach summary should succeed");
+
+    let reader = store.reader().expect("reader connection");
+    let results = fetch_hero_tournament_results(&reader, profile_id, None, None)
+        .expect("query should succeed");
+
+    assert_eq!(results.len(), 1);
+    let t1 = &results[0];
+    assert_eq!(t1.speed.as_deref(), Some("normal"));
+    assert_eq!(
+        t1.entrants,
+        Some(100),
+        "registered_snapshot du dernier bullet"
+    );
+    assert_eq!(t1.finish_position, Some(5));
+    assert_eq!(t1.weekday_utc, Some(4), "jeudi, epoch 0");
+    assert_eq!(t1.hour_utc, Some(0));
+    assert_eq!(t1.month_utc, Some(1));
+}
+
+#[test]
 fn fetch_hero_tournament_results_attributes_ticket_use_to_the_first_bullet_and_ticket_win_to_the_last(
 ) {
     let db_dir = tempfile::tempdir().expect("temp dir for the test database");

@@ -9,12 +9,38 @@ use crate::error::AnalyticsError;
 use crate::kpis::{Bullet, TournamentResult};
 
 /// Un resultat de tournoi du profil Hero, avec de quoi l'identifier a
-/// l'affichage (PRD §13.1 : "meilleurs et pires tournois").
+/// l'affichage (PRD §13.1 : "meilleurs et pires tournois") et le pivoter
+/// (PRD §13.2, M6-3 phase 2 : vitesse/jour de semaine/heure/mois, et les KPI
+/// §9.1 "place moyenne"/"% tables finales" qui ont besoin de `finish_position`
+/// et `entrants`).
 #[derive(Debug, Clone, PartialEq)]
 pub struct TournamentResultRow {
     pub tournament_id: i64,
     pub name: String,
     pub started_at: Option<i64>,
+    /// `tournaments.speed` (PRD §9.2, G "vitesse" du pivot complet) : valeur
+    /// brute du summary (`turbo`/`semiturbo`/`normal`), `None` si le summary
+    /// n'a pas encore ete rattache (tournoi `PROVISIONAL`).
+    pub speed: Option<String>,
+    /// `tournaments.entrants` (dernier `registered_snapshot` du summary,
+    /// M2-6) : nombre d'inscrits, pour le percentile de sortie (G5) et le
+    /// KPI "plus gros tournoi" (§9.1).
+    pub entrants: Option<i64>,
+    /// `tournament_entries.finish_position` (place du dernier bloc, PRD
+    /// §8.5) : pour G5 (distribution des places) et les KPI "place
+    /// moyenne"/"% tables finales" (§9.1).
+    pub finish_position: Option<i64>,
+    /// Jour de la semaine UTC de `started_at` (`strftime('%w', ...)` SQLite :
+    /// 0 = dimanche .. 6 = samedi), `None` si `started_at` est inconnu.
+    /// Calcule cote SQL plutot qu'en Rust pour reutiliser le calendrier
+    /// gregorien deja correct de SQLite (mois de longueur variable, annees
+    /// bissextiles) sans ajouter de dependance (`chrono`) pour ce seul besoin.
+    pub weekday_utc: Option<i64>,
+    /// Heure UTC (0-23) de `started_at`, meme provenance que `weekday_utc`.
+    pub hour_utc: Option<i64>,
+    /// Mois calendaire UTC (1-12) de `started_at`, meme provenance que
+    /// `weekday_utc`.
+    pub month_utc: Option<i64>,
     pub result: TournamentResult,
 }
 
@@ -26,6 +52,12 @@ struct TournamentBulletRow {
     tournament_id: i64,
     name: String,
     started_at: Option<i64>,
+    speed: Option<String>,
+    entrants: Option<i64>,
+    finish_position: Option<i64>,
+    weekday_utc: Option<i64>,
+    hour_utc: Option<i64>,
+    month_utc: Option<i64>,
     buyin_prize_cents: i64,
     buyin_bounty_cents: i64,
     buyin_fee_cents: i64,
@@ -93,7 +125,11 @@ pub fn fetch_hero_tournament_results(
                 t.buyin_fee_cents, t.ko_type, t.is_freeroll,
                 e.paid_with_ticket, ut.face_value_cents,
                 e.ticket_won_type_id, wt.face_value_cents,
-                b.entry_no, b.prize_cents, b.bounty_cents
+                b.entry_no, b.prize_cents, b.bounty_cents,
+                t.speed, t.entrants, e.finish_position,
+                CAST(strftime('%w', t.started_at / 1000, 'unixepoch') AS INTEGER),
+                CAST(strftime('%H', t.started_at / 1000, 'unixepoch') AS INTEGER),
+                CAST(strftime('%m', t.started_at / 1000, 'unixepoch') AS INTEGER)
          FROM tournament_entries e
          JOIN tournaments t ON t.id = e.tournament_id
          JOIN tournament_bullets b ON b.entry_id = e.id
@@ -123,6 +159,12 @@ pub fn fetch_hero_tournament_results(
             entry_no: row.get(12)?,
             prize_cents: row.get(13)?,
             bounty_cents: row.get(14)?,
+            speed: row.get(15)?,
+            entrants: row.get(16)?,
+            finish_position: row.get(17)?,
+            weekday_utc: row.get(18)?,
+            hour_utc: row.get(19)?,
+            month_utc: row.get(20)?,
         })
     })?;
 
@@ -144,6 +186,12 @@ pub fn fetch_hero_tournament_results(
                     tournament_id: row.tournament_id,
                     name: row.name.clone(),
                     started_at: row.started_at,
+                    speed: row.speed.clone(),
+                    entrants: row.entrants,
+                    finish_position: row.finish_position,
+                    weekday_utc: row.weekday_utc,
+                    hour_utc: row.hour_utc,
+                    month_utc: row.month_utc,
                     result,
                 });
             }

@@ -98,12 +98,64 @@
       "title": "Tournament volume (G6)",
       "empty": "No tournament yet."
     },
+    "roiByBuyin": {
+      "title": "ROI by buy-in (G3)",
+      "empty": "No tournament yet."
+    },
+    "finishDistribution": {
+      "title": "Finish distribution (G5)",
+      "empty": "No tournament with a known finish and field size yet."
+    },
+    "additionalKpis": {
+      "avgFinishPosition": "Average finish",
+      "finalTableRate": "% final tables",
+      "bestWin": "Best win",
+      "biggestTournament": "Biggest tournament (entrants)"
+    },
     "pivot": {
-      "title": "Buy-in × format pivot",
+      "title": "Pivot",
+      "dimension": {
+        "buyinKo": "Buy-in × format",
+        "speed": "Speed",
+        "dayOfWeek": "Day of week",
+        "hour": "Hour",
+        "month": "Month"
+      },
       "buyinColumn": "Buy-in",
       "formatColumn": "Format",
       "ko": "KO",
       "nonKo": "Regular",
+      "speedColumn": "Speed",
+      "speedUnknown": "Unknown",
+      "speedTurbo": "Turbo",
+      "speedSemiturbo": "Semi-turbo",
+      "speedNormal": "Normal",
+      "weekdayColumn": "Day",
+      "hourColumn": "Hour",
+      "monthColumn": "Month",
+      "weekday": {
+        "0": "Sunday",
+        "1": "Monday",
+        "2": "Tuesday",
+        "3": "Wednesday",
+        "4": "Thursday",
+        "5": "Friday",
+        "6": "Saturday"
+      },
+      "month": {
+        "1": "January",
+        "2": "February",
+        "3": "March",
+        "4": "April",
+        "5": "May",
+        "6": "June",
+        "7": "July",
+        "8": "August",
+        "9": "September",
+        "10": "October",
+        "11": "November",
+        "12": "December"
+      },
       "tournamentsColumn": "Tournaments",
       "costColumn": "Cost",
       "feesColumn": "Fees",

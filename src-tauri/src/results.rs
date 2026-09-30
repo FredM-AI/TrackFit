@@ -1,15 +1,20 @@
-//! Commande IPC pour l'ecran Resultats (M6-3, PRD §9.2/§13.2). Perimetre
-//! phase 1, valide avec Frederic avant implementation : G1 (repris de
-//! M6-2), G2 (reel vs EV all-in en bb, §10.6), G6 (volume par jour), pivot
-//! reduit buy-in x KO/non-KO + export CSV. G3 (ROI par buy-in), G4 (ROI par
-//! format — bloque par l'ambiguite KO/PKO/Mystery/Space du summary
-//! Winamax, deja documentee depuis M2-6), G5 (distribution des places) et
-//! le pivot complet (§13.2 : format/vitesse/jour/heure/mois, KPI §9.1
-//! encore manquants comme la place moyenne) sont differes.
+//! Commande IPC pour l'ecran Resultats (M6-3, PRD §9.2/§13.2). G1 (repris de
+//! M6-2), G2 (reel vs EV all-in en bb, §10.6), G3 (ROI par buy-in), G6
+//! (volume par jour), G5 (distribution des places, sans la mise en evidence
+//! de "la bulle" — bloquee, voir `gr_analytics::results`), le pivot complet
+//! (buy-in x KO/non-KO + vitesse + jour de semaine + heure + mois) et les
+//! KPI §9.1 restants (place moyenne, % tables finales, meilleur gain, plus
+//! gros tournoi). G4 (ROI par format complet KO/PKO/Mystery/Space) reste
+//! bloque en permanence (ambiguite du summary Winamax, deja documentee
+//! depuis M2-6).
 
 use gr_analytics::{
-    fetch_hero_chip_history, fetch_hero_tournament_results, fetch_hero_tournament_volume_by_day,
-    lttb, pivot_by_buyin_and_ko, pivot_to_csv,
+    compute_additional_kpis, day_of_week_pivot_to_csv, fetch_hero_chip_history,
+    fetch_hero_tournament_results, fetch_hero_tournament_volume_by_day,
+    finish_percentile_distribution as compute_finish_percentile_distribution, hour_pivot_to_csv,
+    lttb, month_pivot_to_csv, pivot_by_buyin_and_ko, pivot_by_day_of_week, pivot_by_hour,
+    pivot_by_month, pivot_by_speed, pivot_to_csv, roi_by_buyin, roi_by_buyin_to_csv,
+    speed_pivot_to_csv, ResultsKpis,
 };
 use serde::Serialize;
 use tauri::State;
@@ -58,6 +63,94 @@ pub struct PivotRowPayload {
     pub abi_cents: Option<f64>,
 }
 
+/// Les 7 colonnes KPI §9.1 deja calculees, partagees par toutes les lignes
+/// de pivot phase 2 (evite de les repeter dans 5 structs quasi identiques).
+#[derive(Debug, Clone, Serialize, TS)]
+pub struct PivotKpisPayload {
+    #[ts(type = "number")]
+    pub tournaments_count: u32,
+    #[ts(type = "number")]
+    pub cost_cents: i64,
+    #[ts(type = "number")]
+    pub fees_cents: i64,
+    #[ts(type = "number")]
+    pub profit_cents: i64,
+    pub roi: Option<f64>,
+    pub itm_rate: Option<f64>,
+    pub abi_cents: Option<f64>,
+}
+
+impl From<ResultsKpis> for PivotKpisPayload {
+    fn from(kpis: ResultsKpis) -> Self {
+        Self {
+            tournaments_count: kpis.tournaments_count,
+            cost_cents: kpis.cost_cents,
+            fees_cents: kpis.fees_cents,
+            profit_cents: kpis.profit_cents,
+            roi: kpis.roi,
+            itm_rate: kpis.itm_rate,
+            abi_cents: kpis.abi_cents,
+        }
+    }
+}
+
+#[derive(Debug, Clone, Serialize, TS)]
+pub struct BuyinRoiRowPayload {
+    #[ts(type = "number")]
+    pub buyin_min_cents: i64,
+    #[ts(type = "number | null")]
+    pub buyin_max_cents: Option<i64>,
+    pub kpis: PivotKpisPayload,
+}
+
+#[derive(Debug, Clone, Serialize, TS)]
+pub struct FinishPercentileBucketPayload {
+    #[ts(type = "number")]
+    pub floor_percent: u32,
+    #[ts(type = "number")]
+    pub tournaments_count: u32,
+}
+
+/// KPI §9.1 restants (place moyenne, % tables finales, meilleur gain, plus
+/// gros tournoi), combles en phase 2 de M6-3 (voir
+/// `gr_analytics::compute_additional_kpis`).
+#[derive(Debug, Clone, Serialize, TS)]
+pub struct AdditionalKpisPayload {
+    pub avg_finish_position: Option<f64>,
+    pub final_table_rate: Option<f64>,
+    #[ts(type = "number")]
+    pub best_win_cents: i64,
+    #[ts(type = "number | null")]
+    pub biggest_tournament_entrants: Option<i64>,
+}
+
+#[derive(Debug, Clone, Serialize, TS)]
+pub struct SpeedPivotRowPayload {
+    pub speed: Option<String>,
+    pub kpis: PivotKpisPayload,
+}
+
+#[derive(Debug, Clone, Serialize, TS)]
+pub struct DayOfWeekPivotRowPayload {
+    #[ts(type = "number")]
+    pub weekday: i64,
+    pub kpis: PivotKpisPayload,
+}
+
+#[derive(Debug, Clone, Serialize, TS)]
+pub struct HourPivotRowPayload {
+    #[ts(type = "number")]
+    pub hour: i64,
+    pub kpis: PivotKpisPayload,
+}
+
+#[derive(Debug, Clone, Serialize, TS)]
+pub struct MonthPivotRowPayload {
+    #[ts(type = "number")]
+    pub month: i64,
+    pub kpis: PivotKpisPayload,
+}
+
 #[derive(Debug, Clone, Serialize, TS)]
 pub struct ResultsSnapshotPayload {
     /// G1, repris de M6-2 (tout l'historique, non filtre par periode).
@@ -66,11 +159,30 @@ pub struct ResultsSnapshotPayload {
     pub chip_curve: Vec<ChipCurvePoint>,
     /// G6, version "par jour" (semaine/mois/heatmap differes).
     pub volume: Vec<VolumePointPayload>,
-    /// Pivot reduit buy-in x KO/non-KO.
+    /// Pivot buy-in x KO/non-KO.
     pub pivot: Vec<PivotRowPayload>,
     /// Export CSV du pivot ci-dessus, deja pret (le frontend n'a qu'a le
     /// proposer en telechargement, pas de logique de formatage cote UI).
     pub pivot_csv: String,
+    /// G3 : ROI par tranche de buy-in, tous formats confondus.
+    pub roi_by_buyin: Vec<BuyinRoiRowPayload>,
+    pub roi_by_buyin_csv: String,
+    /// G5 : distribution des places de sortie en percentile des inscrits.
+    /// Pas de mise en evidence de "la bulle" (PRD §9.2) : bloquee,
+    /// `tournaments.paid_places` n'est jamais renseigne (absent du format de
+    /// summary Winamax, voir `gr_analytics::results`).
+    pub finish_percentile_distribution: Vec<FinishPercentileBucketPayload>,
+    pub additional_kpis: AdditionalKpisPayload,
+    /// Pivot complet (§13.2) : dimensions supplementaires au pivot buy-in x
+    /// KO ci-dessus.
+    pub pivot_speed: Vec<SpeedPivotRowPayload>,
+    pub pivot_speed_csv: String,
+    pub pivot_day_of_week: Vec<DayOfWeekPivotRowPayload>,
+    pub pivot_day_of_week_csv: String,
+    pub pivot_hour: Vec<HourPivotRowPayload>,
+    pub pivot_hour_csv: String,
+    pub pivot_month: Vec<MonthPivotRowPayload>,
+    pub pivot_month_csv: String,
 }
 
 /// Downsample `points` par LTTB en gardant les deux series alignees sur les
@@ -150,6 +262,23 @@ pub fn get_results_snapshot(
             volume: Vec::new(),
             pivot: Vec::new(),
             pivot_csv: String::new(),
+            roi_by_buyin: Vec::new(),
+            roi_by_buyin_csv: String::new(),
+            finish_percentile_distribution: Vec::new(),
+            additional_kpis: AdditionalKpisPayload {
+                avg_finish_position: None,
+                final_table_rate: None,
+                best_win_cents: 0,
+                biggest_tournament_entrants: None,
+            },
+            pivot_speed: Vec::new(),
+            pivot_speed_csv: String::new(),
+            pivot_day_of_week: Vec::new(),
+            pivot_day_of_week_csv: String::new(),
+            pivot_hour: Vec::new(),
+            pivot_hour_csv: String::new(),
+            pivot_month: Vec::new(),
+            pivot_month_csv: String::new(),
         });
     };
 
@@ -199,12 +328,91 @@ pub fn get_results_snapshot(
         })
         .collect();
 
+    let g3_rows = roi_by_buyin(&all_results);
+    let roi_by_buyin_csv = roi_by_buyin_to_csv(&g3_rows);
+    let roi_by_buyin_payload = g3_rows
+        .into_iter()
+        .map(|row| BuyinRoiRowPayload {
+            buyin_min_cents: row.buyin_min_cents,
+            buyin_max_cents: row.buyin_max_cents,
+            kpis: row.kpis.into(),
+        })
+        .collect();
+
+    let finish_percentile_distribution = compute_finish_percentile_distribution(&all_results)
+        .into_iter()
+        .map(|b| FinishPercentileBucketPayload {
+            floor_percent: b.floor_percent,
+            tournaments_count: b.tournaments_count,
+        })
+        .collect();
+
+    let additional = compute_additional_kpis(&all_results);
+    let additional_kpis = AdditionalKpisPayload {
+        avg_finish_position: additional.avg_finish_position,
+        final_table_rate: additional.final_table_rate,
+        best_win_cents: additional.best_win_cents,
+        biggest_tournament_entrants: additional.biggest_tournament_entrants,
+    };
+
+    let speed_rows = pivot_by_speed(&all_results);
+    let pivot_speed_csv = speed_pivot_to_csv(&speed_rows);
+    let pivot_speed = speed_rows
+        .into_iter()
+        .map(|row| SpeedPivotRowPayload {
+            speed: row.speed,
+            kpis: row.kpis.into(),
+        })
+        .collect();
+
+    let day_rows = pivot_by_day_of_week(&all_results);
+    let pivot_day_of_week_csv = day_of_week_pivot_to_csv(&day_rows);
+    let pivot_day_of_week = day_rows
+        .into_iter()
+        .map(|row| DayOfWeekPivotRowPayload {
+            weekday: row.weekday,
+            kpis: row.kpis.into(),
+        })
+        .collect();
+
+    let hour_rows = pivot_by_hour(&all_results);
+    let pivot_hour_csv = hour_pivot_to_csv(&hour_rows);
+    let pivot_hour = hour_rows
+        .into_iter()
+        .map(|row| HourPivotRowPayload {
+            hour: row.hour,
+            kpis: row.kpis.into(),
+        })
+        .collect();
+
+    let month_rows = pivot_by_month(&all_results);
+    let pivot_month_csv = month_pivot_to_csv(&month_rows);
+    let pivot_month = month_rows
+        .into_iter()
+        .map(|row| MonthPivotRowPayload {
+            month: row.month,
+            kpis: row.kpis.into(),
+        })
+        .collect();
+
     Ok(ResultsSnapshotPayload {
         profit_curve,
         chip_curve,
         volume,
         pivot,
         pivot_csv,
+        roi_by_buyin: roi_by_buyin_payload,
+        roi_by_buyin_csv,
+        finish_percentile_distribution,
+        additional_kpis,
+        pivot_speed,
+        pivot_speed_csv,
+        pivot_day_of_week,
+        pivot_day_of_week_csv,
+        pivot_hour,
+        pivot_hour_csv,
+        pivot_month,
+        pivot_month_csv,
     })
 }
 

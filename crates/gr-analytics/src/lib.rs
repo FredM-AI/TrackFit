@@ -25,8 +25,13 @@ pub use home::{fetch_hero_tournament_results, hero_allin_ev_diff_bb, TournamentR
 pub use kpis::{compute_results_kpis, Bullet, ResultsKpis, TicketValuation, TournamentResult};
 pub use lttb::lttb;
 pub use results::{
-    fetch_hero_chip_history, fetch_hero_tournament_volume_by_day, pivot_by_buyin_and_ko,
-    pivot_to_csv, ChipHistoryPoint, PivotRow, TournamentVolumePoint, BUYIN_BRACKETS_CENTS,
+    compute_additional_kpis, day_of_week_pivot_to_csv, fetch_hero_chip_history,
+    fetch_hero_tournament_volume_by_day, finish_percentile_distribution, hour_pivot_to_csv,
+    month_pivot_to_csv, pivot_by_buyin_and_ko, pivot_by_day_of_week, pivot_by_hour, pivot_by_month,
+    pivot_by_speed, pivot_to_csv, roi_by_buyin, roi_by_buyin_to_csv, speed_pivot_to_csv,
+    AdditionalResultsKpis, BuyinRoiRow, ChipHistoryPoint, DayOfWeekPivotRow,
+    FinishPercentileBucket, HourPivotRow, MonthPivotRow, PivotRow, SpeedPivotRow,
+    TournamentVolumePoint, BUYIN_BRACKETS_CENTS,
 };
 pub use sqlite::SqliteAnalyticsBackend;
 
