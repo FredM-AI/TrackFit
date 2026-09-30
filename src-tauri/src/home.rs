@@ -125,7 +125,7 @@ fn period_kpis(
     since_ms: Option<i64>,
     until_ms: Option<i64>,
 ) -> Result<PeriodKpis, String> {
-    let results = fetch_hero_tournament_results(reader, profile_id, since_ms, until_ms)
+    let results = fetch_hero_tournament_results(reader, profile_id, since_ms, until_ms, None)
         .map_err(|e| e.to_string())?;
     let tournament_results: Vec<TournamentResult> = results.into_iter().map(|r| r.result).collect();
     let kpis = compute_results_kpis(&tournament_results, TicketValuation::FaceValue);
@@ -268,7 +268,7 @@ pub fn get_home_snapshot(
         Some(current_start),
     )?;
 
-    let all_results = fetch_hero_tournament_results(&reader, profile_id, None, None)
+    let all_results = fetch_hero_tournament_results(&reader, profile_id, None, None, None)
         .map_err(|e| e.to_string())?;
     let profit_curve = profit_curve(&all_results);
 
@@ -325,6 +325,8 @@ mod tests {
             weekday_utc: None,
             hour_utc: None,
             month_utc: None,
+            status: "COMPLETE".to_string(),
+            total_played_seconds: 0,
             result,
         }
     }

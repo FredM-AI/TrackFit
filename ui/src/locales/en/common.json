@@ -167,6 +167,57 @@
       "empty": "No tournament yet."
     }
   },
+  "tournaments": {
+    "empty": "No tournament imported yet.",
+    "yes": "Yes",
+    "no": "No",
+    "format": {
+      "ko": "KO",
+      "regular": "Regular",
+      "freeroll": "Freeroll"
+    },
+    "status": {
+      "complete": "Complete",
+      "incomplete": "Incomplete",
+      "provisional": "Provisional"
+    },
+    "columns": {
+      "date": "Date",
+      "name": "Name",
+      "format": "Format",
+      "buyin": "Buy-in",
+      "ticket": "Via ticket",
+      "entries": "Entries",
+      "entrants": "Entrants",
+      "place": "Place",
+      "prize": "Winnings",
+      "bounty": "Bounties",
+      "ticketsWon": "Tickets",
+      "profit": "Profit",
+      "hands": "Hands",
+      "duration": "Duration",
+      "evDiff": "EV diff",
+      "status": "Status"
+    },
+    "detail": {
+      "loading": "Loading…",
+      "notFound": "Tournament not found.",
+      "backToList": "← Back to tournaments list",
+      "stackTitle": "Stack evolution",
+      "stackEmpty": "No hand for this tournament.",
+      "allInsTitle": "All-ins",
+      "allInsEmpty": "No all-in in this tournament.",
+      "opponentsTitle": "Opponents faced",
+      "opponentsEmpty": "No opponent identified.",
+      "opponentName": "Screen name",
+      "handsTogether": "Hands together",
+      "handsTitle": "Hands played",
+      "handsEmpty": "No hand for this tournament.",
+      "level": "Level",
+      "stack": "Stack",
+      "handResult": "Result"
+    }
+  },
   "setup": {
     "title": "Welcome to Graphite",
     "intro": "Let's set up your Hero profile and import your existing hands.",

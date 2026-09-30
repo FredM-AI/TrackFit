@@ -41,6 +41,13 @@ export function formatCount(n: number | null | undefined): string {
   return new Intl.NumberFormat(undefined).format(n)
 }
 
+export function formatDate(epochMs: number | null | undefined): string {
+  if (epochMs == null) return DASH
+  return new Intl.DateTimeFormat(undefined, { dateStyle: 'medium', timeStyle: 'short' }).format(
+    new Date(epochMs),
+  )
+}
+
 export function formatDurationMs(ms: number): string {
   const totalMinutes = Math.round(ms / 60_000)
   const hours = Math.floor(totalMinutes / 60)

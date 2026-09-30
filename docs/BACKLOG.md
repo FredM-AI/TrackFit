@@ -521,8 +521,21 @@ Tous les filtres H4, y compris la grille 13×13 et la saisie texte de ranges ; p
 - `src-tauri::results::get_results_snapshot` — assemble les quatre morceaux, applique le downsampling LTTB (>5000 points) à G1 et G2.
 - Écran `Results.tsx` : réutilise `ProfitCurveChart` (M6-2) pour G1 ; nouveaux `ChipCurveChart` (G2, ECharts, mêmes conventions que G1 — import dynamique, couleurs via tokens CSS) et `VolumeChart` (G6, barres) ; tableau du pivot ; bouton d'export CSV (téléchargement navigateur via Blob, pas de nouvelle dépendance Tauri).
 
-### M6-4 · Tournois : liste et détail · M · `TODO` (§13.3)
+### M6-4 · Tournois : liste et détail · M · `DONE (phase 1)` — le 30/09 (§13.3)
 Détail : évolution du tapis, all-in, mains, adversaires avec badge de classification (après M7-5), édition des métadonnées.
+
+**Décision de périmètre validée par Frédéric (30/09), avant implémentation :** Phase 1 = liste virtualisée + détail d'un tournoi, **en lecture seule**. Différé, cette fois **entièrement à la V2** (pas une phase 2 rapprochée comme M6-2/M6-3) :
+- **Édition des métadonnées** (via ticket, vitesse, valeur du ticket gagné) — la partie ticket a son backend prêt depuis M5-2 (jamais câblé), mais l'ajout d'une correction manuelle de vitesse toucherait aussi `attach_summary` (protéger une édition manuelle d'un futur re-rattachement de summary), jugé trop risqué pour être fait rapidement à la suite.
+- Le badge de classification des adversaires (UC10) reste différé après M7-5 (moteur de classification pas encore construit), comme déjà noté avant cette story.
+
+**Nouvelle dépendance ajoutée, confirmée avec Frédéric avant implémentation (CLAUDE.md §2.8) :** `@tanstack/react-virtual` (même famille que `@tanstack/react-table` déjà utilisé) — CLAUDE.md §6 impose un tableau virtualisé au-delà de 200 lignes, et le corpus réel de Frédéric compte des milliers de tournois.
+
+**Réalisé :**
+- `gr-analytics::home::fetch_hero_tournament_results` (M6-2/M6-3) gagne un 5ᵉ paramètre `tournament_id: Option<i64>` (filtre optionnel sur un seul tournoi, `None` = tous — réutilisé tel quel pour l'en-tête du détail, pas de requête dupliquée) ainsi que `status`/`total_played_seconds` sur `TournamentResultRow` (2 colonnes SQL de plus, `t.status` et somme de `tournament_bullets.played_seconds`).
+- `gr-analytics::tournaments` (nouveau module) — `fetch_hero_tournament_aggregates` (mains jouées + écart EV all-in cumulé en bb, groupés par tournoi, un seul passage sur `hand_players`/`hands`) ; `fetch_tournament_hero_hands` (tapis en début de main via `hand_players.start_stack`/`stack_bb`, déjà calculés à l'import — pas de reconstruction depuis `net_chips` comme G2 a dû le faire faute d'alternative) ; `fetch_tournament_opponents` (adversaires distincts rencontrés, sans badge de classification).
+- `src-tauri::tournaments::{get_tournaments_list, get_tournament_detail}` — assemblent les morceaux ci-dessus ; les KPI par tournoi (coût/gains/profit/tickets) réutilisent directement `compute_results_kpis` (M5-1) sur un slice d'un seul élément, sans nouvelle logique de calcul.
+- Écran `Tournaments.tsx` : tableau virtualisé (`@tanstack/react-virtual`, grille CSS plutôt qu'un `<table>` HTML — incompatible avec le positionnement `absolute` des lignes virtualisées), toutes les colonnes PRD §13.3, clic sur une ligne → détail. Écran `TournamentDetail.tsx` (nouvelle route `/tournaments/$tournamentId`) : en-tête (buy-in, place, gains, profit), `TournamentStackChart` (nouveau, ECharts, mêmes conventions que G1/G2 — import dynamique), tableau des all-in, tableau des adversaires, liste des mains (non virtualisée : une seule tournoi tient toujours en quelques dizaines/centaines de mains, pas besoin).
+- **CA (comportement visuel du tableau virtualisé, navigation liste→détail)** à valider par Frédéric via `just dev` : test d'usage humain sur une vraie fenêtre Tauri, pas vérifiable automatiquement depuis cet environnement (même limite que M3-1/M3-3).
 
 ### M6-5 · Mains : liste virtualisée · M · `TODO` (§13.4)
 **CA :**

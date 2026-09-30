@@ -284,6 +284,8 @@ fn result_row(tournament_id: i64, is_ko: bool, bullet: Bullet) -> TournamentResu
         weekday_utc: None,
         hour_utc: None,
         month_utc: None,
+        status: "COMPLETE".to_string(),
+        total_played_seconds: 0,
         result: TournamentResult {
             bullets: vec![bullet],
             is_ko,
@@ -363,6 +365,8 @@ fn result_row_full(
         weekday_utc,
         hour_utc,
         month_utc,
+        status: "COMPLETE".to_string(),
+        total_played_seconds: 0,
         result: TournamentResult {
             bullets: vec![bullet],
             is_ko,

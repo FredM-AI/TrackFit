@@ -167,6 +167,57 @@
       "empty": "Aucun tournoi pour l'instant."
     }
   },
+  "tournaments": {
+    "empty": "Aucun tournoi importé pour l'instant.",
+    "yes": "Oui",
+    "no": "Non",
+    "format": {
+      "ko": "KO",
+      "regular": "Classique",
+      "freeroll": "Freeroll"
+    },
+    "status": {
+      "complete": "Complet",
+      "incomplete": "Incomplet",
+      "provisional": "Provisoire"
+    },
+    "columns": {
+      "date": "Date",
+      "name": "Nom",
+      "format": "Format",
+      "buyin": "Buy-in",
+      "ticket": "Via ticket",
+      "entries": "Entrées",
+      "entrants": "Inscrits",
+      "place": "Place",
+      "prize": "Gains",
+      "bounty": "Bounties",
+      "ticketsWon": "Tickets",
+      "profit": "Profit",
+      "hands": "Mains",
+      "duration": "Durée",
+      "evDiff": "Écart EV",
+      "status": "Statut"
+    },
+    "detail": {
+      "loading": "Chargement…",
+      "notFound": "Tournoi introuvable.",
+      "backToList": "← Retour à la liste des tournois",
+      "stackTitle": "Évolution du tapis",
+      "stackEmpty": "Aucune main pour ce tournoi.",
+      "allInsTitle": "All-in",
+      "allInsEmpty": "Aucun all-in dans ce tournoi.",
+      "opponentsTitle": "Adversaires rencontrés",
+      "opponentsEmpty": "Aucun adversaire identifié.",
+      "opponentName": "Pseudo",
+      "handsTogether": "Mains ensemble",
+      "handsTitle": "Mains jouées",
+      "handsEmpty": "Aucune main pour ce tournoi.",
+      "level": "Niveau",
+      "stack": "Tapis",
+      "handResult": "Résultat"
+    }
+  },
   "setup": {
     "title": "Bienvenue sur Graphite",
     "intro": "Configurons votre profil Hero et importons vos mains existantes.",

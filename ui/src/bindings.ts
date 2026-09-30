@@ -93,6 +93,25 @@ export type SpeedPivotRowPayload = { speed: string | null, kpis: PivotKpisPayloa
 
 export type StatusSnapshotPayload = { hands_today: number, last_hand_at: number | null, watcher_run_state: WatcherRunState, };
 
+export type TournamentAllInRowPayload = { hand_id: number, played_at: number, level: number, allin_ev_diff_bb: number, net_bb: number | null, };
+
+export type TournamentDetailPayload = { tournament_id: number, name: string, started_at: number | null, speed: string | null, is_ko: boolean, is_freeroll: boolean, status: string, buyin_prize_cents: number, buyin_bounty_cents: number, buyin_fee_cents: number, paid_with_ticket: boolean, entries_count: number, entrants: number | null, finish_position: number | null, prize_cents: number, bounty_cents: number, tickets_won_value_cents: number, profit_cents: number, played_seconds: number, 
+/**
+ * "Chronologie du tapis du Hero" (PRD §13.3) : tapis (jetons/bb) en
+ * debut de chaque main, dans l'ordre chronologique.
+ */
+stack_curve: Array<TournamentStackPointPayload>, 
+/**
+ * Sous-ensemble de `stack_curve` dont `allin_ev_diff_bb` est connu.
+ */
+all_ins: Array<TournamentAllInRowPayload>, opponents: Array<TournamentOpponentRowPayload>, };
+
+export type TournamentListRowPayload = { tournament_id: number, name: string, started_at: number | null, speed: string | null, is_ko: boolean, is_freeroll: boolean, status: string, buyin_prize_cents: number, buyin_bounty_cents: number, buyin_fee_cents: number, paid_with_ticket: boolean, entries_count: number, entrants: number | null, finish_position: number | null, prize_cents: number, bounty_cents: number, tickets_won_value_cents: number, profit_cents: number, hands_played: number, played_seconds: number, ev_diff_bb: number, };
+
+export type TournamentOpponentRowPayload = { player_id: number, screen_name: string, hands_together: number, };
+
+export type TournamentStackPointPayload = { hand_id: number, played_at: number, level: number, start_stack: number | null, stack_bb: number | null, net_chips: number | null, net_bb: number | null, };
+
 export type VolumePointPayload = { day_epoch_ms: number, tournaments_count: number, };
 
 export type WatcherRunState = "idle" | "active" | "paused";

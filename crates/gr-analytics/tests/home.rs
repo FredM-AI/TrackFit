@@ -201,7 +201,7 @@ fn fetch_hero_tournament_results_aggregates_bullets_of_a_reentry_tournament() {
         .expect("attach summary should succeed");
 
     let reader = store.reader().expect("reader connection");
-    let results = fetch_hero_tournament_results(&reader, profile_id, None, None)
+    let results = fetch_hero_tournament_results(&reader, profile_id, None, None, None)
         .expect("query should succeed");
 
     assert_eq!(results.len(), 1, "un seul tournoi : {results:?}");
@@ -257,7 +257,7 @@ fn fetch_hero_tournament_results_filters_on_the_started_at_range() {
         .expect("attach summary should succeed");
 
     let reader = store.reader().expect("reader connection");
-    let results = fetch_hero_tournament_results(&reader, profile_id, Some(2_000), None)
+    let results = fetch_hero_tournament_results(&reader, profile_id, Some(2_000), None, None)
         .expect("query should succeed");
 
     assert_eq!(
@@ -291,7 +291,7 @@ fn fetch_hero_tournament_results_derives_speed_entrants_finish_position_and_utc_
         .expect("attach summary should succeed");
 
     let reader = store.reader().expect("reader connection");
-    let results = fetch_hero_tournament_results(&reader, profile_id, None, None)
+    let results = fetch_hero_tournament_results(&reader, profile_id, None, None, None)
         .expect("query should succeed");
 
     assert_eq!(results.len(), 1);
@@ -348,7 +348,7 @@ fn fetch_hero_tournament_results_attributes_ticket_use_to_the_first_bullet_and_t
         .set_tournament_entry_ticket_won(report.tournament_id, hero_player_id, Some(won_type), 1)
         .expect("set ticket won");
 
-    let results = fetch_hero_tournament_results(&reader, profile_id, None, None)
+    let results = fetch_hero_tournament_results(&reader, profile_id, None, None, None)
         .expect("query should succeed");
 
     assert_eq!(results.len(), 1);
